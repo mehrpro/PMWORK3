@@ -14,6 +14,7 @@ namespace PMWORK.Entities
             this.SubGroups = new HashSet<SubGroup>();
             this.Groups = new HashSet<Group>();
             this.Codings = new HashSet<Coding>();
+            Applicants = new HashSet<Applicant>();
 
         }
 
@@ -27,5 +28,6 @@ namespace PMWORK.Entities
         public virtual ICollection<Group> Groups { get; set; }
         public virtual ICollection<SubGroup> SubGroups { get; set; }
         public virtual ICollection<Coding> Codings { get; set; }
+        public virtual ICollection<Applicant> Applicants { get; set; }
     }
 }

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PMWORK.Entities
 {
+
     /// <summary>
     /// درخواست تعمیر
     /// </summary>
@@ -26,9 +27,9 @@ namespace PMWORK.Entities
         public int UserID_FK { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
         public DateTime RequestDataTime { get; set; }
-        public int TypeofRepairID_FK { get; set; }
-        public TypeofRepair TypeofRepair { get; set; }
-        public int EMPM { get; set; }
+        public bool EM { get; set; }
+        public int PublicTypeID_FK { get; set; }
+        public PublicType PublicType { get; set; }
         public int ApplicantID_FK { get; set; }
         public Applicant Applicant { get; set; }
         public string RequestTitle { get; set; }

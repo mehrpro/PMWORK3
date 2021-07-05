@@ -42,8 +42,8 @@ namespace PMWORK
             this.itmCodings = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.itmUnits = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.grpRepair = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.grpMaintanace = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.itmRequestRepair = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.grpMaintanace = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,18 +148,18 @@ namespace PMWORK
             this.grpRepair.Name = "grpRepair";
             this.grpRepair.Text = "تعمیرگاه";
             // 
-            // grpMaintanace
-            // 
-            this.grpMaintanace.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpMaintanace.ImageOptions.Image")));
-            this.grpMaintanace.Name = "grpMaintanace";
-            this.grpMaintanace.Text = "نگهداری تعمیرات";
-            // 
             // itmRequestRepair
             // 
             this.itmRequestRepair.Name = "itmRequestRepair";
             this.itmRequestRepair.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.itmRequestRepair.Text = "درخواست تعمیر";
             this.itmRequestRepair.Click += new System.EventHandler(this.itmRequestRepair_Click);
+            // 
+            // grpMaintanace
+            // 
+            this.grpMaintanace.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpMaintanace.ImageOptions.Image")));
+            this.grpMaintanace.Name = "grpMaintanace";
+            this.grpMaintanace.Text = "نگهداری تعمیرات";
             // 
             // MainForm
             // 

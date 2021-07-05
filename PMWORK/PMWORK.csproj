@@ -109,9 +109,10 @@
     <Compile Include="Entities\Machinery.cs" />
     <Compile Include="Entities\MenuGroup.cs" />
     <Compile Include="Entities\MenuItem.cs" />
+    <Compile Include="Entities\PMDBInitializer.cs" />
+    <Compile Include="Entities\PublicType.cs" />
     <Compile Include="Entities\RequestRepair.cs" />
     <Compile Include="Entities\SubGroup.cs" />
-    <Compile Include="Entities\TypeofRepair.cs" />
     <Compile Include="Entities\UnitOfMeasurement.cs" />
     <Compile Include="Entities\WorkOrder.cs" />
     <Compile Include="LoginForm.cs">
@@ -154,6 +155,18 @@
     <Compile Include="Migrations\202107050522343_UpdateRequestRepair.cs" />
     <Compile Include="Migrations\202107050522343_UpdateRequestRepair.designer.cs">
       <DependentUpon>202107050522343_UpdateRequestRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107051701482_UpdateReq.cs" />
+    <Compile Include="Migrations\202107051701482_UpdateReq.designer.cs">
+      <DependentUpon>202107051701482_UpdateReq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107051821399_RemoveTypeofWork.cs" />
+    <Compile Include="Migrations\202107051821399_RemoveTypeofWork.designer.cs">
+      <DependentUpon>202107051821399_RemoveTypeofWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107051848354_D2.cs" />
+    <Compile Include="Migrations\202107051848354_D2.designer.cs">
+      <DependentUpon>202107051848354_D2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -202,6 +215,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107050522343_UpdateRequestRepair.resx">
       <DependentUpon>202107050522343_UpdateRequestRepair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107051701482_UpdateReq.resx">
+      <DependentUpon>202107051701482_UpdateReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107051821399_RemoveTypeofWork.resx">
+      <DependentUpon>202107051821399_RemoveTypeofWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107051848354_D2.resx">
+      <DependentUpon>202107051848354_D2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

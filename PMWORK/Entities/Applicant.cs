@@ -16,12 +16,11 @@ namespace PMWORK.Entities
 
         }
 
-        [Display(Name = "شناسه")]
         public int ID { get; set; }
-        [Display(Name = "واحد درخواست کننده")]
         public string ApplicantTitle { get; set; }
-        [Display(Name = "توضیحات")]
         public string Description { get; set; }
+        public int CompanyID_FK { get; set; }
+        public Company Company { get; set; }
 
 
         public virtual ICollection<RequestRepair> RequestRepairs { get; set; }

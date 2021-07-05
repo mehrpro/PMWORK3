@@ -9,7 +9,7 @@ namespace PMWORK
 
         public AppDbContext() : base("Conn")
         {
-
+            Database.SetInitializer(new PMDBInitializer());
         }
 
         protected override void OnModelCreating(DbModelBuilder builder)
@@ -116,6 +116,11 @@ namespace PMWORK
                 .WithRequired(x => x.Company)
                 .HasForeignKey(x => x.CompanyID_FK)
                 .WillCascadeOnDelete(false);
+            builder.Entity<Company>()
+    .HasMany<Applicant>(x => x.Applicants)
+    .WithRequired(x => x.Company)
+    .HasForeignKey(x => x.CompanyID_FK)
+    .WillCascadeOnDelete(false);
 
             builder.Entity<ConsumablePart>().HasKey(x => x.ID);
             builder.Entity<ConsumablePart>().Property(x => x.ID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
@@ -149,6 +154,7 @@ namespace PMWORK
                 .IsRequired();
             builder.Entity<Machinery>().Property(x => x.IsActive).IsRequired();
             builder.Entity<Machinery>().Property(x => x.IsDelete).IsRequired();
+            builder.Entity<Machinery>().Property(x => x.CompanyID).IsRequired();
             builder.Entity<Machinery>().Property(x => x.CodeID_FK).IsRequired();
             builder.Entity<Machinery>().Property(x => x.MachineryTitle).HasMaxLength(150).IsRequired();
             builder.Entity<Machinery>().Property(x => x.Description).HasMaxLength(250);
@@ -166,10 +172,11 @@ namespace PMWORK
             builder.Entity<RequestRepair>().Property(x => x.Registered).IsRequired().HasColumnType("datetime");
             builder.Entity<RequestRepair>().Property(x => x.IsActive).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.IsDelete).IsRequired();
+            builder.Entity<RequestRepair>().Property(x => x.EM).IsRequired();
+            builder.Entity<RequestRepair>().Property(x => x.PublicTypeID_FK).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.MachineryID_FK).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.UserID_FK).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.RequestDataTime).IsRequired().HasColumnType("datetime");
-            builder.Entity<RequestRepair>().Property(x => x.TypeofRepairID_FK).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.ApplicantID_FK).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.RequestTitle).HasMaxLength(500).IsRequired();
             builder.Entity<RequestRepair>()
@@ -197,14 +204,6 @@ namespace PMWORK
                 .WillCascadeOnDelete(false);
 
 
-            builder.Entity<TypeofRepair>().HasKey(x => x.ID);
-            builder.Entity<TypeofRepair>().Property(x => x.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            builder.Entity<TypeofRepair>().Property(x => x.TypeTitle).IsRequired().HasMaxLength(250);
-            builder.Entity<TypeofRepair>()
-                .HasMany(x => x.RequestRepairs)
-                .WithRequired(x => x.TypeofRepair)
-                .HasForeignKey(x => x.TypeofRepairID_FK)
-                .WillCascadeOnDelete(false);
 
             builder.Entity<UnitOfMeasurement>().HasKey(x => x.ID);
             builder.Entity<UnitOfMeasurement>().Property(a => a.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
@@ -231,6 +230,15 @@ namespace PMWORK
             builder.Entity<WorkOrder>().Property(p => p.ProductionPlanningDescription).HasMaxLength(250);
 
 
+            builder.Entity<PublicType>().HasKey(x => x.ID);
+            builder.Entity<PublicType>().Property(x => x.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<PublicType>().Property(x => x.Title).IsRequired();
+            builder.Entity<PublicType>().Property(x => x.Group).IsRequired();
+            builder.Entity<PublicType>()
+                .HasMany<RequestRepair>(x => x.RequestRepairs)
+                .WithRequired(x => x.PublicType)
+                .HasForeignKey(x => x.PublicTypeID_FK)
+                .WillCascadeOnDelete(false);
 
 
         }
@@ -246,12 +254,12 @@ namespace PMWORK
         public virtual DbSet<Machinery> Machineries { get; set; }
         public virtual DbSet<RequestRepair> RequestRepairs { get; set; }
         public virtual DbSet<SubGroup> SubGroups { get; set; }
-        public virtual DbSet<TypeofRepair> TypeofRepairs { get; set; }
         public virtual DbSet<WorkOrder> WorkOrders { get; set; }
         public virtual DbSet<UnitOfMeasurement> UnitOfMeasurements { get; set; }
         public virtual DbSet<MenuGroup> MenuGroups { get; set; }
         public virtual DbSet<MenuItem> MenuItems { get; set; }
         public virtual DbSet<Cleam> Cleams { get; set; }
+        public virtual DbSet<PublicType> PublicTypes { get; set; }
 
 
     }
