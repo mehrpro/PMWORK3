@@ -115,16 +115,16 @@
     <Compile Include="Entities\SubGroup.cs" />
     <Compile Include="Entities\UnitOfMeasurement.cs" />
     <Compile Include="Entities\WorkOrder.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm1.Designer.cs">
+    <Compile Include="frmLogin2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LoginForm.resx</DependentUpon>
+      <DependentUpon>frmLogin.resx</DependentUpon>
     </Compile>
     <Compile Include="MachineryForms\MachineryForm.cs">
       <SubType>Form</SubType>
@@ -178,6 +178,13 @@
     <Compile Include="SettingForm.Designer.cs">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartSplash.cs" />
     <EmbeddedResource Include="CodingForms\CodingForm.resx">
       <DependentUpon>CodingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,10 +200,10 @@
     <EmbeddedResource Include="CodingForms\UnitForm.resx">
       <DependentUpon>UnitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>LoginForm1.Designer.cs</LastGenOutput>
+      <LastGenOutput>frmLogin2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MachineryForms\MachineryForm.resx">
       <DependentUpon>MachineryForm.cs</DependentUpon>

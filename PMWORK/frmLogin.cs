@@ -11,9 +11,10 @@ using System.Windows.Forms;
 
 namespace PMWORK
 {
-    public partial class LoginForm : XtraForm
+    public partial class frmLogin2 : XtraForm
     {
-        public LoginForm()
+
+        public frmLogin2()
         {
             InitializeComponent();
             //////

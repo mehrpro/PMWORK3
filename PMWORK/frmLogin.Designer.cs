@@ -1,7 +1,7 @@
 ﻿
 namespace PMWORK
 {
-    partial class LoginForm
+    partial class frmLogin2
     {
         /// <summary>
         /// Required designer variable.
@@ -123,7 +123,7 @@ namespace PMWORK
             this.pictureEdit1.Size = new System.Drawing.Size(126, 111);
             this.pictureEdit1.TabIndex = 7;
             // 
-            // LoginForm
+            // frmLogin
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -140,7 +140,7 @@ namespace PMWORK
             this.Font = new System.Drawing.Font("B Yekan", 9.75F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "LoginForm";
+            this.Name = "frmLogin";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "اتوماسیون نت";
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
