@@ -27,15 +27,15 @@ namespace PMWORK.Entities
             defaultGroup.Add(new Group() { ID = 3, GroupTitle = "کمک تولیدی", CompanyID_FK = 1, GroupIndex = 3, Description = "کمک تولیدی" });
             defaultGroup.Add(new Group() { ID = 4, GroupTitle = "نگهداری تعمیرات", CompanyID_FK = 1, GroupIndex = 4, Description = "نگهداری تعمیرات" });
 
-            defaultGroup.Add(new Group() { ID = 5, GroupTitle = "تولیدی", CompanyID_FK = 2, GroupIndex = 5, Description = "تولیدی" });
-            defaultGroup.Add(new Group() { ID = 6, GroupTitle = "کیفی و آزمایشگاهی", CompanyID_FK = 2, GroupIndex = 6, Description = "کیفی و آزمایشگاهی" });
-            defaultGroup.Add(new Group() { ID = 7, GroupTitle = "کمک تولیدی", CompanyID_FK = 2, GroupIndex = 7, Description = "کمک تولیدی" });
-            defaultGroup.Add(new Group() { ID = 8, GroupTitle = "نگهداری تعمیرات", CompanyID_FK = 2, GroupIndex = 8, Description = "نگهداری تعمیرات" });
+            defaultGroup.Add(new Group() { ID = 5, GroupTitle = "تولیدی", CompanyID_FK = 2, GroupIndex = 1, Description = "تولیدی" });
+            defaultGroup.Add(new Group() { ID = 6, GroupTitle = "کیفی و آزمایشگاهی", CompanyID_FK = 2, GroupIndex = 2, Description = "کیفی و آزمایشگاهی" });
+            defaultGroup.Add(new Group() { ID = 7, GroupTitle = "کمک تولیدی", CompanyID_FK = 2, GroupIndex = 3, Description = "کمک تولیدی" });
+            defaultGroup.Add(new Group() { ID = 8, GroupTitle = "نگهداری تعمیرات", CompanyID_FK = 2, GroupIndex = 4, Description = "نگهداری تعمیرات" });
 
-            defaultGroup.Add(new Group() { ID = 9, GroupTitle = "تولیدی", CompanyID_FK = 3, GroupIndex = 9, Description = "تولیدی" });
-            defaultGroup.Add(new Group() { ID = 10, GroupTitle = "کیفی و آزمایشگاهی", CompanyID_FK = 3, GroupIndex = 10, Description = "کیفی و آزمایشگاهی" });
-            defaultGroup.Add(new Group() { ID = 11, GroupTitle = "کمک تولیدی", CompanyID_FK = 3, GroupIndex = 11, Description = "کمک تولیدی" });
-            defaultGroup.Add(new Group() { ID = 12, GroupTitle = "نگهداری تعمیرات", CompanyID_FK = 3, GroupIndex = 12, Description = "نگهداری تعمیرات" });
+            defaultGroup.Add(new Group() { ID = 9, GroupTitle = "تولیدی", CompanyID_FK = 3, GroupIndex = 1, Description = "تولیدی" });
+            defaultGroup.Add(new Group() { ID = 10, GroupTitle = "کیفی و آزمایشگاهی", CompanyID_FK = 3, GroupIndex = 2, Description = "کیفی و آزمایشگاهی" });
+            defaultGroup.Add(new Group() { ID = 11, GroupTitle = "کمک تولیدی", CompanyID_FK = 3, GroupIndex = 3, Description = "کمک تولیدی" });
+            defaultGroup.Add(new Group() { ID = 12, GroupTitle = "نگهداری تعمیرات", CompanyID_FK = 3, GroupIndex = 4, Description = "نگهداری تعمیرات" });
             context.Groups.AddRange(defaultGroup);
 
             IList<SubGroup> defaultSubGroup = new List<SubGroup>();
@@ -44,10 +44,10 @@ namespace PMWORK.Entities
             defaultSubGroup.Add(new SubGroup() { ID = 3, SubGroupTitle = "پمپ", CompanyID_FK = 1, GroupID_FK = 1, SubGroupIndex = 3, Description = "پمپ" });
             defaultSubGroup.Add(new SubGroup() { ID = 4, SubGroupTitle = "هواساز", CompanyID_FK = 1, GroupID_FK = 1, SubGroupIndex = 4, Description = "هواساز" });
 
-            defaultSubGroup.Add(new SubGroup() { ID = 5, SubGroupTitle = "خردایش", CompanyID_FK = 2, GroupID_FK = 5, SubGroupIndex = 5, Description = "خردایش" });
-            defaultSubGroup.Add(new SubGroup() { ID = 6, SubGroupTitle = "تلغیظ", CompanyID_FK = 2, GroupID_FK = 5, SubGroupIndex = 6, Description = "تلغیظ" });
-            defaultSubGroup.Add(new SubGroup() { ID = 7, SubGroupTitle = "پمپ", CompanyID_FK = 2, GroupID_FK = 5, SubGroupIndex = 7, Description = "پمپ" });
-            defaultSubGroup.Add(new SubGroup() { ID = 8, SubGroupTitle = "هواساز", CompanyID_FK = 2, GroupID_FK = 5, SubGroupIndex = 8, Description = "هواساز" });
+            defaultSubGroup.Add(new SubGroup() { ID = 5, SubGroupTitle = "خردایش", CompanyID_FK = 2, GroupID_FK = 5, SubGroupIndex = 1, Description = "خردایش" });
+            defaultSubGroup.Add(new SubGroup() { ID = 6, SubGroupTitle = "تلغیظ", CompanyID_FK = 2, GroupID_FK = 5, SubGroupIndex = 2, Description = "تلغیظ" });
+            defaultSubGroup.Add(new SubGroup() { ID = 7, SubGroupTitle = "پمپ", CompanyID_FK = 2, GroupID_FK = 5, SubGroupIndex = 3, Description = "پمپ" });
+            defaultSubGroup.Add(new SubGroup() { ID = 8, SubGroupTitle = "هواساز", CompanyID_FK = 2, GroupID_FK = 5, SubGroupIndex = 4, Description = "هواساز" });
             context.SubGroups.AddRange(defaultSubGroup);
 
 

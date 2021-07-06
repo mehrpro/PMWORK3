@@ -173,7 +173,7 @@ namespace PMWORK.CodingForms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (btnClose.Tag.ToString() == "cansel")
+            if (btnClose.Text == "انصراف")
             {
                 btnClose.Tag = "Close";
                 btnClose.Text = "بستن";
@@ -195,7 +195,7 @@ namespace PMWORK.CodingForms
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (btnClose.Tag.ToString() == "cansel")
+            if (btnClose.Text == "انصراف")
             {
                 var select = db.Codings.Find(Row.ID);
                 select.CodeTitle = txtCodeTitle.Text.Trim();
@@ -235,7 +235,6 @@ namespace PMWORK.CodingForms
                 txtCode.EditValue = Row.Code;
                 cbxGroup.ReadOnly = cbxCompany.ReadOnly = cbxSubGroup.ReadOnly = true;
                 btnClose.Text = "انصراف";
-                btnClose.Tag = "cansel";
             }
         }
     }

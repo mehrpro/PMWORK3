@@ -112,7 +112,7 @@ namespace PMWORK.CodingForms
         private void LastGroupIndex()
         {
             int last = 0;
-            var qry = db.SubGroups.AsNoTracking().Select(x => x.SubGroupIndex).ToList();
+            var qry = db.SubGroups.AsNoTracking().Where(x=>x.GroupID_FK == _selectGroup.ID && x.CompanyID_FK == _selectCompany.ID).Select(x => x.SubGroupIndex).ToList();
             if (qry.Count() > 0) last = qry.Max();
             numSubGroup.EditValue = last + 1;
         }
