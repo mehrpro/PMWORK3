@@ -241,6 +241,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,6 +266,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\10460122071.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-factory-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-list-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-separated-lists-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-unit-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-robot-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-document-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-piping-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-electrical-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-settings-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-maintenance-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

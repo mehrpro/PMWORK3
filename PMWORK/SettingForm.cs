@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace PMWORK
 {
-    public partial class SettingForm : Form
+    public partial class SettingForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public SettingForm()
         {

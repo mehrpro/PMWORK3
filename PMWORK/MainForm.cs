@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace PMWORK
 {
-    public partial class MainForm : XtraForm
+    public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public MainForm()
         {
@@ -29,40 +29,42 @@ namespace PMWORK
         }
 
 
-        private void itmCompany_Click(object sender, EventArgs e)
-        {
-            ShowForms(new CompaniesForm());
 
-        }
-
-        private void itmGroups_Click(object sender, EventArgs e)
-        {
-            ShowForms(new GroupForm());
-        }
-
-        private void itmSubGroups_Click(object sender, EventArgs e)
-        {
-            ShowForms(new SubGroupForm());
-        }
-
-        private void itmCodings_Click(object sender, EventArgs e)
-        {
-            ShowForms(new CodingForm());
-        }
-
-        private void itmUnits_Click(object sender, EventArgs e)
-        {
-            ShowForms(new UnitForm());
-        }
-
-        private void itmMachinery_Click(object sender, EventArgs e)
-        {
-            ShowForms(new MachineryForm());
-        }
 
         private void itmRequestRepair_Click(object sender, EventArgs e)
         {
             ShowForms(new RequestRepairForm());
+        }
+
+        private void btnMachinery_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForms(new MachineryForm());
+        }
+
+        private void btnGroups_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForms(new GroupForm());
+        }
+
+        private void btnSubGroups_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForms(new SubGroupForm());
+        }
+
+        private void btnCode_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForms(new CodingForm());
+        }
+
+        private void btnUnit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForms(new UnitForm());
+        }
+
+        private void btnCompany_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForms(new CompaniesForm());
+
         }
     }
 }

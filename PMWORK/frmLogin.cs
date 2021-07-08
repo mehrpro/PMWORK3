@@ -40,7 +40,7 @@ namespace PMWORK
         }
 
 
-        
+
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -51,6 +51,14 @@ namespace PMWORK
         {
             //Environment.Exit(1);
             Application.Exit();
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var frm = new SettingForm();
+            frm.ShowDialog();
+            this.Show();
         }
     }
 }

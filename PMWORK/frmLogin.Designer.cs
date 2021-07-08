@@ -82,13 +82,13 @@ namespace PMWORK
             // btnSetting
             // 
             this.btnSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSetting.Enabled = false;
             this.btnSetting.Location = new System.Drawing.Point(245, 80);
             this.btnSetting.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(80, 25);
             this.btnSetting.TabIndex = 5;
             this.btnSetting.Text = "تنظیمات";
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // btnClose
             // 
