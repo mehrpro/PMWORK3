@@ -78,13 +78,13 @@ namespace PMWORK.CodingForms
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(647, 137);
+            this.panelControl1.Size = new System.Drawing.Size(565, 137);
             this.panelControl1.TabIndex = 0;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(390, 96);
+            this.btnClose.Location = new System.Drawing.Point(308, 96);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 7;
@@ -94,7 +94,7 @@ namespace PMWORK.CodingForms
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(471, 96);
+            this.btnSave.Location = new System.Drawing.Point(389, 96);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 6;
@@ -104,7 +104,7 @@ namespace PMWORK.CodingForms
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(565, 21);
+            this.labelControl1.Location = new System.Drawing.Point(483, 21);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(64, 13);
             this.labelControl1.TabIndex = 0;
@@ -113,25 +113,25 @@ namespace PMWORK.CodingForms
             // txtDescription
             // 
             this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescription.Location = new System.Drawing.Point(218, 70);
+            this.txtDescription.Location = new System.Drawing.Point(12, 70);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Parmida_ActivePlusMultiKeys = false;
-            this.txtDescription.Size = new System.Drawing.Size(328, 20);
+            this.txtDescription.Size = new System.Drawing.Size(452, 20);
             this.txtDescription.TabIndex = 5;
             // 
             // txtCompanyTitle
             // 
             this.txtCompanyTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCompanyTitle.Location = new System.Drawing.Point(218, 44);
+            this.txtCompanyTitle.Location = new System.Drawing.Point(12, 44);
             this.txtCompanyTitle.Name = "txtCompanyTitle";
             this.txtCompanyTitle.Parmida_ActivePlusMultiKeys = false;
-            this.txtCompanyTitle.Size = new System.Drawing.Size(328, 20);
+            this.txtCompanyTitle.Size = new System.Drawing.Size(452, 20);
             this.txtCompanyTitle.TabIndex = 3;
             // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(565, 73);
+            this.labelControl3.Location = new System.Drawing.Point(483, 73);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(40, 13);
             this.labelControl3.TabIndex = 4;
@@ -145,7 +145,7 @@ namespace PMWORK.CodingForms
             0,
             0,
             0});
-            this.numCompanyIndex.Location = new System.Drawing.Point(495, 18);
+            this.numCompanyIndex.Location = new System.Drawing.Point(413, 18);
             this.numCompanyIndex.Name = "numCompanyIndex";
             this.numCompanyIndex.Parmida_ActivePlusMultiKeys = false;
             this.numCompanyIndex.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -175,7 +175,7 @@ namespace PMWORK.CodingForms
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(565, 47);
+            this.labelControl2.Location = new System.Drawing.Point(483, 47);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(47, 13);
             this.labelControl2.TabIndex = 2;
@@ -187,7 +187,7 @@ namespace PMWORK.CodingForms
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 137);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(647, 313);
+            this.panelControl2.Size = new System.Drawing.Size(565, 331);
             this.panelControl2.TabIndex = 5;
             // 
             // dgvCompany
@@ -198,7 +198,7 @@ namespace PMWORK.CodingForms
             this.dgvCompany.Name = "dgvCompany";
             this.dgvCompany.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSelectRow});
-            this.dgvCompany.Size = new System.Drawing.Size(643, 309);
+            this.dgvCompany.Size = new System.Drawing.Size(561, 327);
             this.dgvCompany.TabIndex = 0;
             this.dgvCompany.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCompany});
@@ -269,6 +269,7 @@ namespace PMWORK.CodingForms
             this.gvCompany.Name = "gvCompany";
             this.gvCompany.OptionsBehavior.ReadOnly = true;
             this.gvCompany.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.gvCompany.OptionsView.ShowGroupPanel = false;
             // 
             // SelectedRow
             // 
@@ -276,7 +277,7 @@ namespace PMWORK.CodingForms
             this.SelectedRow.Name = "SelectedRow";
             this.SelectedRow.Visible = true;
             this.SelectedRow.VisibleIndex = 0;
-            this.SelectedRow.Width = 28;
+            this.SelectedRow.Width = 33;
             // 
             // btnSelectRow
             // 
@@ -299,7 +300,7 @@ namespace PMWORK.CodingForms
             this.ID.Name = "ID";
             this.ID.Visible = true;
             this.ID.VisibleIndex = 1;
-            this.ID.Width = 103;
+            this.ID.Width = 55;
             // 
             // CompnayIndex
             // 
@@ -308,7 +309,7 @@ namespace PMWORK.CodingForms
             this.CompnayIndex.Name = "CompnayIndex";
             this.CompnayIndex.Visible = true;
             this.CompnayIndex.VisibleIndex = 2;
-            this.CompnayIndex.Width = 87;
+            this.CompnayIndex.Width = 67;
             // 
             // CompanyTiltle
             // 
@@ -317,7 +318,7 @@ namespace PMWORK.CodingForms
             this.CompanyTiltle.Name = "CompanyTiltle";
             this.CompanyTiltle.Visible = true;
             this.CompanyTiltle.VisibleIndex = 3;
-            this.CompanyTiltle.Width = 198;
+            this.CompanyTiltle.Width = 168;
             // 
             // Description
             // 
@@ -326,18 +327,20 @@ namespace PMWORK.CodingForms
             this.Description.Name = "Description";
             this.Description.Visible = true;
             this.Description.VisibleIndex = 4;
-            this.Description.Width = 209;
+            this.Description.Width = 135;
             // 
             // CompaniesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 450);
+            this.ClientSize = new System.Drawing.Size(565, 468);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CompaniesForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "CompaniesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "شرکت ها";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

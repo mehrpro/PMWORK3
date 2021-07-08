@@ -29,12 +29,12 @@ namespace PMWORK.CodingForms
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CodingForm));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -99,13 +99,13 @@ namespace PMWORK.CodingForms
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(800, 146);
+            this.panelControl1.Size = new System.Drawing.Size(743, 146);
             this.panelControl1.TabIndex = 0;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(188, 104);
+            this.btnClose.Location = new System.Drawing.Point(131, 104);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 21;
@@ -115,7 +115,7 @@ namespace PMWORK.CodingForms
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(269, 104);
+            this.btnSave.Location = new System.Drawing.Point(212, 104);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 20;
@@ -125,7 +125,7 @@ namespace PMWORK.CodingForms
             // txtDescription
             // 
             this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescription.Location = new System.Drawing.Point(188, 78);
+            this.txtDescription.Location = new System.Drawing.Point(131, 78);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Parmida_ActivePlusMultiKeys = false;
             this.txtDescription.Size = new System.Drawing.Size(248, 20);
@@ -134,7 +134,7 @@ namespace PMWORK.CodingForms
             // txtCodeTitle
             // 
             this.txtCodeTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCodeTitle.Location = new System.Drawing.Point(188, 52);
+            this.txtCodeTitle.Location = new System.Drawing.Point(131, 52);
             this.txtCodeTitle.Name = "txtCodeTitle";
             this.txtCodeTitle.Parmida_ActivePlusMultiKeys = false;
             this.txtCodeTitle.Size = new System.Drawing.Size(248, 20);
@@ -143,7 +143,7 @@ namespace PMWORK.CodingForms
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(442, 81);
+            this.labelControl4.Location = new System.Drawing.Point(385, 81);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(40, 13);
             this.labelControl4.TabIndex = 18;
@@ -152,7 +152,7 @@ namespace PMWORK.CodingForms
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Location = new System.Drawing.Point(442, 55);
+            this.labelControl6.Location = new System.Drawing.Point(385, 55);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(50, 13);
             this.labelControl6.TabIndex = 16;
@@ -161,7 +161,7 @@ namespace PMWORK.CodingForms
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(442, 29);
+            this.labelControl7.Location = new System.Drawing.Point(385, 29);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(11, 13);
             this.labelControl7.TabIndex = 14;
@@ -171,7 +171,7 @@ namespace PMWORK.CodingForms
             // 
             this.txtCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCode.EditValue = "";
-            this.txtCode.Location = new System.Drawing.Point(316, 26);
+            this.txtCode.Location = new System.Drawing.Point(259, 26);
             this.txtCode.Name = "txtCode";
             this.txtCode.Parmida_ActivePlusMultiKeys = false;
             this.txtCode.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -187,7 +187,7 @@ namespace PMWORK.CodingForms
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(716, 81);
+            this.labelControl1.Location = new System.Drawing.Point(659, 81);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(51, 13);
             this.labelControl1.TabIndex = 9;
@@ -196,7 +196,7 @@ namespace PMWORK.CodingForms
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(716, 55);
+            this.labelControl5.Location = new System.Drawing.Point(659, 55);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(50, 13);
             this.labelControl5.TabIndex = 9;
@@ -205,7 +205,7 @@ namespace PMWORK.CodingForms
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(716, 29);
+            this.labelControl3.Location = new System.Drawing.Point(659, 29);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(31, 13);
             this.labelControl3.TabIndex = 6;
@@ -214,7 +214,7 @@ namespace PMWORK.CodingForms
             // cbxSubGroup
             // 
             this.cbxSubGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxSubGroup.Location = new System.Drawing.Point(521, 78);
+            this.cbxSubGroup.Location = new System.Drawing.Point(464, 78);
             this.cbxSubGroup.Name = "cbxSubGroup";
             this.cbxSubGroup.Parmida_ActivePlusMultiKeys = false;
             this.cbxSubGroup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -234,7 +234,7 @@ namespace PMWORK.CodingForms
             // cbxGroup
             // 
             this.cbxGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxGroup.Location = new System.Drawing.Point(521, 52);
+            this.cbxGroup.Location = new System.Drawing.Point(464, 52);
             this.cbxGroup.Name = "cbxGroup";
             this.cbxGroup.Parmida_ActivePlusMultiKeys = false;
             this.cbxGroup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -254,7 +254,7 @@ namespace PMWORK.CodingForms
             // cbxCompany
             // 
             this.cbxCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxCompany.Location = new System.Drawing.Point(521, 26);
+            this.cbxCompany.Location = new System.Drawing.Point(464, 26);
             this.cbxCompany.Name = "cbxCompany";
             this.cbxCompany.Parmida_ActivePlusMultiKeys = false;
             this.cbxCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -277,7 +277,7 @@ namespace PMWORK.CodingForms
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 146);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(800, 304);
+            this.panelControl2.Size = new System.Drawing.Size(743, 304);
             this.panelControl2.TabIndex = 1;
             // 
             // dgvCodeList
@@ -288,7 +288,7 @@ namespace PMWORK.CodingForms
             this.dgvCodeList.Name = "dgvCodeList";
             this.dgvCodeList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSelect});
-            this.dgvCodeList.Size = new System.Drawing.Size(796, 300);
+            this.dgvCodeList.Size = new System.Drawing.Size(739, 300);
             this.dgvCodeList.TabIndex = 0;
             this.dgvCodeList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCodeList});
@@ -358,6 +358,8 @@ namespace PMWORK.CodingForms
             this.gvCodeList.GridControl = this.dgvCodeList;
             this.gvCodeList.Name = "gvCodeList";
             this.gvCodeList.OptionsBehavior.ReadOnly = true;
+            this.gvCodeList.OptionsFind.AlwaysVisible = true;
+            this.gvCodeList.OptionsView.ShowGroupPanel = false;
             // 
             // SelectButton
             // 
@@ -370,13 +372,13 @@ namespace PMWORK.CodingForms
             // btnSelect
             // 
             this.btnSelect.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
-            serializableAppearanceObject5.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject6.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject7.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject8.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            serializableAppearanceObject1.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject2.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject3.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject4.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.btnSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSelect.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSelect_ButtonClick);
@@ -421,7 +423,7 @@ namespace PMWORK.CodingForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(743, 450);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "CodingForm";

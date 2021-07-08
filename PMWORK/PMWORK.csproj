@@ -36,15 +36,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.TreeMap.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.Utils.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.XtraNavBar.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.XtraTreeMap.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -132,6 +137,12 @@
     <Compile Include="MachineryForms\MachineryForm.Designer.cs">
       <DependentUpon>MachineryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MachineryForms\RequestListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineryForms\RequestListForm.Designer.cs">
+      <DependentUpon>RequestListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MachineryForms\RequestRepairForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MachineryForms\MachineryForm.resx">
       <DependentUpon>MachineryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineryForms\RequestListForm.resx">
+      <DependentUpon>RequestListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MachineryForms\RequestRepairForm.resx">
       <DependentUpon>RequestRepairForm.cs</DependentUpon>

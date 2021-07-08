@@ -35,12 +35,17 @@ namespace PMWORK.MachineryForms
             this.radioGroupType = new DevExpress.XtraEditors.RadioGroup();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.searchLookUpEdit2 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbxMachinery = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Coding = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MachineryTitle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -49,17 +54,14 @@ namespace PMWORK.MachineryForms
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dgvRequestList = new DevExpress.XtraGrid.GridControl();
             this.gvRequestList = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.searchLookUpEdit2 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateRegistered.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateRegistered.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupEMPM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxMachinery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequest.Properties)).BeginInit();
@@ -68,8 +70,6 @@ namespace PMWORK.MachineryForms
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequestList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRequestList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -136,7 +136,7 @@ namespace PMWORK.MachineryForms
             // 
             this.radioGroupType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioGroupType.EditValue = 1;
-            this.radioGroupType.Location = new System.Drawing.Point(56, 44);
+            this.radioGroupType.Location = new System.Drawing.Point(393, 156);
             this.radioGroupType.Name = "radioGroupType";
             this.radioGroupType.Parmida_ActivePlusMultiKeys = false;
             this.radioGroupType.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -169,6 +169,99 @@ namespace PMWORK.MachineryForms
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "ثبت";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // searchLookUpEdit2
+            // 
+            this.searchLookUpEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchLookUpEdit2.Location = new System.Drawing.Point(488, 47);
+            this.searchLookUpEdit2.Name = "searchLookUpEdit2";
+            this.searchLookUpEdit2.Parmida_ActivePlusMultiKeys = false;
+            this.searchLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit2.Properties.PopupView = this.gridView2;
+            this.searchLookUpEdit2.Size = new System.Drawing.Size(270, 20);
+            this.searchLookUpEdit2.TabIndex = 2;
+            this.searchLookUpEdit2.EditValueChanged += new System.EventHandler(this.cbxMachinery_EditValueChanged);
+            // 
+            // gridView2
+            // 
+            this.gridView2.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
+            this.gridView2.Appearance.ColumnFilterButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.ColumnFilterButtonActive.Options.UseTextOptions = true;
+            this.gridView2.Appearance.ColumnFilterButtonActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.CustomizationFormHint.Options.UseTextOptions = true;
+            this.gridView2.Appearance.CustomizationFormHint.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.DetailTip.Options.UseTextOptions = true;
+            this.gridView2.Appearance.DetailTip.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.Empty.Options.UseTextOptions = true;
+            this.gridView2.Appearance.Empty.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.EvenRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.FilterCloseButton.Options.UseTextOptions = true;
+            this.gridView2.Appearance.FilterCloseButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.FilterPanel.Options.UseTextOptions = true;
+            this.gridView2.Appearance.FilterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.FixedLine.Options.UseTextOptions = true;
+            this.gridView2.Appearance.FixedLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.FocusedCell.Options.UseTextOptions = true;
+            this.gridView2.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.FocusedRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gridView2.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.GroupButton.Options.UseTextOptions = true;
+            this.gridView2.Appearance.GroupButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.GroupFooter.Options.UseTextOptions = true;
+            this.gridView2.Appearance.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.GroupPanel.Options.UseTextOptions = true;
+            this.gridView2.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.GroupRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView2.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.HideSelectionRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.HideSelectionRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.HorzLine.Options.UseTextOptions = true;
+            this.gridView2.Appearance.HorzLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.OddRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.Preview.Options.UseTextOptions = true;
+            this.gridView2.Appearance.Preview.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView2.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.RowSeparator.Options.UseTextOptions = true;
+            this.gridView2.Appearance.RowSeparator.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.SelectedRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.TopNewRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.TopNewRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.VertLine.Options.UseTextOptions = true;
+            this.gridView2.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.ViewCaption.Options.UseTextOptions = true;
+            this.gridView2.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn3,
+            this.gridColumn4});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "کد دستگاه";
+            this.gridColumn3.FieldName = "Coding.ID";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "نام دستگاه";
+            this.gridColumn4.FieldName = "MachineryTitle";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
             // 
             // cbxMachinery
             // 
@@ -281,10 +374,19 @@ namespace PMWORK.MachineryForms
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "تاریخ";
             // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl7.Location = new System.Drawing.Point(764, 50);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(31, 13);
+            this.labelControl7.TabIndex = 0;
+            this.labelControl7.Text = "شرکت";
+            // 
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(427, 50);
+            this.labelControl4.Location = new System.Drawing.Point(764, 162);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(47, 13);
             this.labelControl4.TabIndex = 0;
@@ -293,7 +395,7 @@ namespace PMWORK.MachineryForms
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(427, 76);
+            this.labelControl3.Location = new System.Drawing.Point(427, 52);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(55, 13);
             this.labelControl3.TabIndex = 0;
@@ -311,14 +413,14 @@ namespace PMWORK.MachineryForms
             // txtRequest
             // 
             this.txtRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRequest.Location = new System.Drawing.Point(56, 75);
+            this.txtRequest.Location = new System.Drawing.Point(56, 48);
             this.txtRequest.Name = "txtRequest";
             this.txtRequest.Parmida_ActivePlusMultiKeys = false;
             this.txtRequest.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtRequest.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtRequest.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtRequest.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequest.Size = new System.Drawing.Size(365, 75);
+            this.txtRequest.Size = new System.Drawing.Size(365, 100);
             this.txtRequest.TabIndex = 6;
             // 
             // txtMachinery
@@ -362,108 +464,6 @@ namespace PMWORK.MachineryForms
             this.gvRequestList.GridControl = this.dgvRequestList;
             this.gvRequestList.Name = "gvRequestList";
             // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(764, 50);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(31, 13);
-            this.labelControl7.TabIndex = 0;
-            this.labelControl7.Text = "شرکت";
-            // 
-            // searchLookUpEdit2
-            // 
-            this.searchLookUpEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchLookUpEdit2.Location = new System.Drawing.Point(488, 47);
-            this.searchLookUpEdit2.Name = "searchLookUpEdit2";
-            this.searchLookUpEdit2.Parmida_ActivePlusMultiKeys = false;
-            this.searchLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit2.Properties.PopupView = this.gridView2;
-            this.searchLookUpEdit2.Size = new System.Drawing.Size(270, 20);
-            this.searchLookUpEdit2.TabIndex = 2;
-            this.searchLookUpEdit2.EditValueChanged += new System.EventHandler(this.cbxMachinery_EditValueChanged);
-            // 
-            // gridView2
-            // 
-            this.gridView2.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
-            this.gridView2.Appearance.ColumnFilterButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.ColumnFilterButtonActive.Options.UseTextOptions = true;
-            this.gridView2.Appearance.ColumnFilterButtonActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.CustomizationFormHint.Options.UseTextOptions = true;
-            this.gridView2.Appearance.CustomizationFormHint.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.DetailTip.Options.UseTextOptions = true;
-            this.gridView2.Appearance.DetailTip.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.Empty.Options.UseTextOptions = true;
-            this.gridView2.Appearance.Empty.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.EvenRow.Options.UseTextOptions = true;
-            this.gridView2.Appearance.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.FilterCloseButton.Options.UseTextOptions = true;
-            this.gridView2.Appearance.FilterCloseButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.FilterPanel.Options.UseTextOptions = true;
-            this.gridView2.Appearance.FilterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.FixedLine.Options.UseTextOptions = true;
-            this.gridView2.Appearance.FixedLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.FocusedCell.Options.UseTextOptions = true;
-            this.gridView2.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.FocusedRow.Options.UseTextOptions = true;
-            this.gridView2.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.FooterPanel.Options.UseTextOptions = true;
-            this.gridView2.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.GroupButton.Options.UseTextOptions = true;
-            this.gridView2.Appearance.GroupButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.GroupFooter.Options.UseTextOptions = true;
-            this.gridView2.Appearance.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.GroupPanel.Options.UseTextOptions = true;
-            this.gridView2.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.GroupRow.Options.UseTextOptions = true;
-            this.gridView2.Appearance.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView2.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.HideSelectionRow.Options.UseTextOptions = true;
-            this.gridView2.Appearance.HideSelectionRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.HorzLine.Options.UseTextOptions = true;
-            this.gridView2.Appearance.HorzLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.OddRow.Options.UseTextOptions = true;
-            this.gridView2.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.Preview.Options.UseTextOptions = true;
-            this.gridView2.Appearance.Preview.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.Row.Options.UseTextOptions = true;
-            this.gridView2.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.RowSeparator.Options.UseTextOptions = true;
-            this.gridView2.Appearance.RowSeparator.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.SelectedRow.Options.UseTextOptions = true;
-            this.gridView2.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.TopNewRow.Options.UseTextOptions = true;
-            this.gridView2.Appearance.TopNewRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.VertLine.Options.UseTextOptions = true;
-            this.gridView2.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.ViewCaption.Options.UseTextOptions = true;
-            this.gridView2.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn3,
-            this.gridColumn4});
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "کد دستگاه";
-            this.gridColumn3.FieldName = "Coding.ID";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "نام دستگاه";
-            this.gridColumn4.FieldName = "MachineryTitle";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
-            // 
             // RequestRepairForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,6 +481,8 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.dateRegistered.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupEMPM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxMachinery.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequest.Properties)).EndInit();
@@ -489,8 +491,6 @@ namespace PMWORK.MachineryForms
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequestList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRequestList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
         }

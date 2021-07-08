@@ -29,7 +29,18 @@ namespace PMWORK
         }
 
 
+        private void ShowDialogForms(object obj)
+        {
 
+
+            Form frm = (Form)obj;
+            //frm.MdiParent = this;
+            //frm.Dock = DockStyle.Fill;
+            //frm.ControlBox = false;
+            //frm.WindowState = FormWindowState.Maximized;
+            frm.ShowDialog();
+
+        }
 
         private void itmRequestRepair_Click(object sender, EventArgs e)
         {
@@ -43,12 +54,12 @@ namespace PMWORK
 
         private void btnGroups_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowForms(new GroupForm());
+            ShowDialogForms(new GroupForm());
         }
 
         private void btnSubGroups_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowForms(new SubGroupForm());
+            ShowDialogForms(new SubGroupForm());
         }
 
         private void btnCode_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -58,12 +69,12 @@ namespace PMWORK
 
         private void btnUnit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowForms(new UnitForm());
+            ShowDialogForms(new UnitForm());
         }
 
         private void btnCompany_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowForms(new CompaniesForm());
+            ShowDialogForms(new CompaniesForm());
 
         }
     }

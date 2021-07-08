@@ -31,6 +31,9 @@ namespace PMWORK
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
+            this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.backstageViewTabItem1 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.btnCompany = new DevExpress.XtraBars.BarButtonItem();
             this.btnGroups = new DevExpress.XtraBars.BarButtonItem();
             this.btnSubGroups = new DevExpress.XtraBars.BarButtonItem();
@@ -42,6 +45,8 @@ namespace PMWORK
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
+            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -49,15 +54,16 @@ namespace PMWORK
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.officeNavigationBar1 = new DevExpress.XtraBars.Navigation.OfficeNavigationBar();
-            this.navigationBarItem1 = new DevExpress.XtraBars.Navigation.NavigationBarItem();
-            this.navigationBarItem2 = new DevExpress.XtraBars.Navigation.NavigationBarItem();
+            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
+            this.backstageViewControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.ApplicationButtonDropDownControl = this.backstageViewControl1;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -71,16 +77,46 @@ namespace PMWORK
             this.btnElectrical,
             this.barButtonItem8,
             this.barButtonItem9,
-            this.barButtonItem10});
+            this.barButtonItem10,
+            this.skinPaletteRibbonGalleryBarItem1,
+            this.skinRibbonGalleryBarItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 5;
+            this.ribbonControl1.MaxItemId = 7;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2,
-            this.ribbonPage3});
+            this.ribbonPage3,
+            this.ribbonPage4});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl1.Size = new System.Drawing.Size(1021, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(1021, 146);
+            // 
+            // backstageViewControl1
+            // 
+            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl1);
+            this.backstageViewControl1.Items.Add(this.backstageViewTabItem1);
+            this.backstageViewControl1.Location = new System.Drawing.Point(71, 214);
+            this.backstageViewControl1.Name = "backstageViewControl1";
+            this.backstageViewControl1.OwnerControl = this.ribbonControl1;
+            this.backstageViewControl1.SelectedTab = this.backstageViewTabItem1;
+            this.backstageViewControl1.SelectedTabIndex = 0;
+            this.backstageViewControl1.Size = new System.Drawing.Size(668, 354);
+            this.backstageViewControl1.TabIndex = 2;
+            // 
+            // backstageViewClientControl1
+            // 
+            this.backstageViewClientControl1.Location = new System.Drawing.Point(1, 65);
+            this.backstageViewClientControl1.Name = "backstageViewClientControl1";
+            this.backstageViewClientControl1.Size = new System.Drawing.Size(481, 288);
+            this.backstageViewClientControl1.TabIndex = 1;
+            // 
+            // backstageViewTabItem1
+            // 
+            this.backstageViewTabItem1.Caption = "کاربران سیستم";
+            this.backstageViewTabItem1.ContentControl = this.backstageViewClientControl1;
+            this.backstageViewTabItem1.ImageOptions.ItemNormal.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("backstageViewTabItem1.ImageOptions.ItemNormal.SvgImage")));
+            this.backstageViewTabItem1.Name = "backstageViewTabItem1";
+            this.backstageViewTabItem1.Selected = true;
             // 
             // btnCompany
             // 
@@ -188,6 +224,22 @@ namespace PMWORK
             this.barButtonItem10.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // skinPaletteRibbonGalleryBarItem1
+            // 
+            this.skinPaletteRibbonGalleryBarItem1.Caption = "skinPaletteRibbonGalleryBarItem1";
+            // 
+            // 
+            // 
+            this.skinPaletteRibbonGalleryBarItem1.Gallery.ShowItemText = true;
+            this.skinPaletteRibbonGalleryBarItem1.Id = 5;
+            this.skinPaletteRibbonGalleryBarItem1.Name = "skinPaletteRibbonGalleryBarItem1";
+            // 
+            // skinRibbonGalleryBarItem1
+            // 
+            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
+            this.skinRibbonGalleryBarItem1.Id = 6;
+            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Options.UseTextOptions = true;
@@ -245,27 +297,19 @@ namespace PMWORK
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
-            // officeNavigationBar1
+            // ribbonPage4
             // 
-            this.officeNavigationBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.officeNavigationBar1.Items.AddRange(new DevExpress.XtraBars.Navigation.NavigationBarItem[] {
-            this.navigationBarItem1,
-            this.navigationBarItem2});
-            this.officeNavigationBar1.Location = new System.Drawing.Point(0, 578);
-            this.officeNavigationBar1.Name = "officeNavigationBar1";
-            this.officeNavigationBar1.Size = new System.Drawing.Size(1021, 42);
-            this.officeNavigationBar1.TabIndex = 2;
-            this.officeNavigationBar1.Text = "officeNavigationBar1";
+            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup5});
+            this.ribbonPage4.Name = "ribbonPage4";
+            this.ribbonPage4.Text = "تنظیمات";
             // 
-            // navigationBarItem1
+            // ribbonPageGroup5
             // 
-            this.navigationBarItem1.Name = "navigationBarItem1";
-            this.navigationBarItem1.Text = "‫‫کارگاه برق";
-            // 
-            // navigationBarItem2
-            // 
-            this.navigationBarItem2.Name = "navigationBarItem2";
-            this.navigationBarItem2.Text = "‫‫کارگاه مکانیک";
+            this.ribbonPageGroup5.ItemLinks.Add(this.skinPaletteRibbonGalleryBarItem1);
+            this.ribbonPageGroup5.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
             // MainForm
             // 
@@ -273,7 +317,7 @@ namespace PMWORK
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1021, 620);
-            this.Controls.Add(this.officeNavigationBar1);
+            this.Controls.Add(this.backstageViewControl1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "MainForm";
@@ -282,7 +326,8 @@ namespace PMWORK
             this.Text = "اتوماسیون نت";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).EndInit();
+            this.backstageViewControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,8 +353,12 @@ namespace PMWORK
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
-        private DevExpress.XtraBars.Navigation.OfficeNavigationBar officeNavigationBar1;
-        private DevExpress.XtraBars.Navigation.NavigationBarItem navigationBarItem1;
-        private DevExpress.XtraBars.Navigation.NavigationBarItem navigationBarItem2;
+        private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageViewControl1;
+        private DevExpress.XtraBars.Ribbon.BackstageViewClientControl backstageViewClientControl1;
+        private DevExpress.XtraBars.Ribbon.BackstageViewTabItem backstageViewTabItem1;
+        private DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem skinPaletteRibbonGalleryBarItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
     }
 }

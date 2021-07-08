@@ -88,13 +88,13 @@ namespace PMWORK.CodingForms
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(685, 161);
+            this.panelControl1.Size = new System.Drawing.Size(604, 161);
             this.panelControl1.TabIndex = 0;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(432, 126);
+            this.btnClose.Location = new System.Drawing.Point(351, 126);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 10;
@@ -104,7 +104,7 @@ namespace PMWORK.CodingForms
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(513, 126);
+            this.btnSave.Location = new System.Drawing.Point(432, 126);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 9;
@@ -114,7 +114,7 @@ namespace PMWORK.CodingForms
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(594, 25);
+            this.labelControl3.Location = new System.Drawing.Point(513, 25);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(31, 13);
             this.labelControl3.TabIndex = 0;
@@ -123,7 +123,7 @@ namespace PMWORK.CodingForms
             // cbxCompany
             // 
             this.cbxCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxCompany.Location = new System.Drawing.Point(399, 22);
+            this.cbxCompany.Location = new System.Drawing.Point(318, 22);
             this.cbxCompany.Name = "cbxCompany";
             this.cbxCompany.Parmida_ActivePlusMultiKeys = false;
             this.cbxCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -143,7 +143,7 @@ namespace PMWORK.CodingForms
             // txtDescription
             // 
             this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescription.Location = new System.Drawing.Point(96, 100);
+            this.txtDescription.Location = new System.Drawing.Point(15, 100);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Parmida_ActivePlusMultiKeys = false;
             this.txtDescription.Size = new System.Drawing.Size(492, 20);
@@ -152,7 +152,7 @@ namespace PMWORK.CodingForms
             // txtGroupTitle
             // 
             this.txtGroupTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGroupTitle.Location = new System.Drawing.Point(399, 74);
+            this.txtGroupTitle.Location = new System.Drawing.Point(318, 74);
             this.txtGroupTitle.Name = "txtGroupTitle";
             this.txtGroupTitle.Parmida_ActivePlusMultiKeys = false;
             this.txtGroupTitle.Size = new System.Drawing.Size(189, 20);
@@ -161,7 +161,7 @@ namespace PMWORK.CodingForms
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(594, 103);
+            this.labelControl4.Location = new System.Drawing.Point(513, 103);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(40, 13);
             this.labelControl4.TabIndex = 7;
@@ -170,7 +170,7 @@ namespace PMWORK.CodingForms
             // txtCompanyIndex
             // 
             this.txtCompanyIndex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCompanyIndex.Location = new System.Drawing.Point(338, 22);
+            this.txtCompanyIndex.Location = new System.Drawing.Point(257, 22);
             this.txtCompanyIndex.Name = "txtCompanyIndex";
             this.txtCompanyIndex.Parmida_ActivePlusMultiKeys = false;
             this.txtCompanyIndex.Properties.DisplayFormat.FormatString = "00";
@@ -182,7 +182,7 @@ namespace PMWORK.CodingForms
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(594, 77);
+            this.labelControl2.Location = new System.Drawing.Point(513, 77);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(49, 13);
             this.labelControl2.TabIndex = 5;
@@ -191,7 +191,7 @@ namespace PMWORK.CodingForms
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(594, 51);
+            this.labelControl1.Location = new System.Drawing.Point(513, 51);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(64, 13);
             this.labelControl1.TabIndex = 3;
@@ -205,7 +205,7 @@ namespace PMWORK.CodingForms
             0,
             0,
             0});
-            this.numGroup.Location = new System.Drawing.Point(530, 48);
+            this.numGroup.Location = new System.Drawing.Point(449, 48);
             this.numGroup.Name = "numGroup";
             this.numGroup.Parmida_ActivePlusMultiKeys = false;
             this.numGroup.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -226,7 +226,7 @@ namespace PMWORK.CodingForms
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 161);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(685, 289);
+            this.panelControl2.Size = new System.Drawing.Size(604, 365);
             this.panelControl2.TabIndex = 1;
             // 
             // dgvGroupList
@@ -237,7 +237,7 @@ namespace PMWORK.CodingForms
             this.dgvGroupList.Name = "dgvGroupList";
             this.dgvGroupList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSelectRow});
-            this.dgvGroupList.Size = new System.Drawing.Size(681, 285);
+            this.dgvGroupList.Size = new System.Drawing.Size(600, 361);
             this.dgvGroupList.TabIndex = 0;
             this.dgvGroupList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvGroupList});
@@ -307,6 +307,7 @@ namespace PMWORK.CodingForms
             this.gvGroupList.GridControl = this.dgvGroupList;
             this.gvGroupList.Name = "gvGroupList";
             this.gvGroupList.OptionsBehavior.ReadOnly = true;
+            this.gvGroupList.OptionsView.ShowGroupPanel = false;
             // 
             // SelectRow
             // 
@@ -314,7 +315,7 @@ namespace PMWORK.CodingForms
             this.SelectRow.Name = "SelectRow";
             this.SelectRow.Visible = true;
             this.SelectRow.VisibleIndex = 0;
-            this.SelectRow.Width = 29;
+            this.SelectRow.Width = 32;
             // 
             // btnSelectRow
             // 
@@ -337,7 +338,7 @@ namespace PMWORK.CodingForms
             this.ID.Name = "ID";
             this.ID.Visible = true;
             this.ID.VisibleIndex = 1;
-            this.ID.Width = 97;
+            this.ID.Width = 66;
             // 
             // GroupIndex
             // 
@@ -346,7 +347,7 @@ namespace PMWORK.CodingForms
             this.GroupIndex.Name = "GroupIndex";
             this.GroupIndex.Visible = true;
             this.GroupIndex.VisibleIndex = 2;
-            this.GroupIndex.Width = 128;
+            this.GroupIndex.Width = 88;
             // 
             // GroupTitle
             // 
@@ -355,7 +356,7 @@ namespace PMWORK.CodingForms
             this.GroupTitle.Name = "GroupTitle";
             this.GroupTitle.Visible = true;
             this.GroupTitle.VisibleIndex = 3;
-            this.GroupTitle.Width = 177;
+            this.GroupTitle.Width = 165;
             // 
             // Description
             // 
@@ -364,17 +365,19 @@ namespace PMWORK.CodingForms
             this.Description.Name = "Description";
             this.Description.Visible = true;
             this.Description.VisibleIndex = 4;
-            this.Description.Width = 232;
+            this.Description.Width = 231;
             // 
             // GroupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 450);
+            this.ClientSize = new System.Drawing.Size(604, 526);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "GroupForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "گروه اصلی";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

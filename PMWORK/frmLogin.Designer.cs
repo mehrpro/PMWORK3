@@ -51,7 +51,7 @@ namespace PMWORK
             // lblUserName
             // 
             this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUserName.Location = new System.Drawing.Point(420, 29);
+            this.lblUserName.Location = new System.Drawing.Point(434, 29);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(46, 13);
@@ -61,7 +61,7 @@ namespace PMWORK
             // lblPassword
             // 
             this.lblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPassword.Location = new System.Drawing.Point(420, 55);
+            this.lblPassword.Location = new System.Drawing.Point(434, 55);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(32, 13);
@@ -71,7 +71,7 @@ namespace PMWORK
             // btnLogin
             // 
             this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogin.Location = new System.Drawing.Point(333, 80);
+            this.btnLogin.Location = new System.Drawing.Point(347, 80);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(80, 25);
@@ -82,7 +82,7 @@ namespace PMWORK
             // btnSetting
             // 
             this.btnSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSetting.Location = new System.Drawing.Point(245, 80);
+            this.btnSetting.Location = new System.Drawing.Point(259, 80);
             this.btnSetting.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(80, 25);
@@ -94,7 +94,7 @@ namespace PMWORK
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(157, 80);
+            this.btnClose.Location = new System.Drawing.Point(171, 80);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(80, 25);
@@ -105,7 +105,7 @@ namespace PMWORK
             // textEdit1
             // 
             this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit1.Location = new System.Drawing.Point(157, 26);
+            this.textEdit1.Location = new System.Drawing.Point(171, 26);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Parmida_ActivePlusMultiKeys = false;
             this.textEdit1.Properties.Appearance.Options.UseTextOptions = true;
@@ -116,7 +116,7 @@ namespace PMWORK
             // textEdit2
             // 
             this.textEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit2.Location = new System.Drawing.Point(157, 52);
+            this.textEdit2.Location = new System.Drawing.Point(171, 52);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Parmida_ActivePlusMultiKeys = false;
             this.textEdit2.Properties.Appearance.Options.UseTextOptions = true;
@@ -143,7 +143,7 @@ namespace PMWORK
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(478, 140);
+            this.ClientSize = new System.Drawing.Size(492, 144);
             this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.textEdit2);
             this.Controls.Add(this.textEdit1);
