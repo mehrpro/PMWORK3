@@ -49,7 +49,11 @@ namespace PMWORK
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.officeNavigationBar1 = new DevExpress.XtraBars.Navigation.OfficeNavigationBar();
+            this.navigationBarItem1 = new DevExpress.XtraBars.Navigation.NavigationBarItem();
+            this.navigationBarItem2 = new DevExpress.XtraBars.Navigation.NavigationBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -241,12 +245,35 @@ namespace PMWORK
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
+            // officeNavigationBar1
+            // 
+            this.officeNavigationBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.officeNavigationBar1.Items.AddRange(new DevExpress.XtraBars.Navigation.NavigationBarItem[] {
+            this.navigationBarItem1,
+            this.navigationBarItem2});
+            this.officeNavigationBar1.Location = new System.Drawing.Point(0, 578);
+            this.officeNavigationBar1.Name = "officeNavigationBar1";
+            this.officeNavigationBar1.Size = new System.Drawing.Size(1021, 42);
+            this.officeNavigationBar1.TabIndex = 2;
+            this.officeNavigationBar1.Text = "officeNavigationBar1";
+            // 
+            // navigationBarItem1
+            // 
+            this.navigationBarItem1.Name = "navigationBarItem1";
+            this.navigationBarItem1.Text = "‫‫کارگاه برق";
+            // 
+            // navigationBarItem2
+            // 
+            this.navigationBarItem2.Name = "navigationBarItem2";
+            this.navigationBarItem2.Text = "‫‫کارگاه مکانیک";
+            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1021, 620);
+            this.Controls.Add(this.officeNavigationBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "MainForm";
@@ -255,6 +282,7 @@ namespace PMWORK
             this.Text = "اتوماسیون نت";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +308,8 @@ namespace PMWORK
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.Navigation.OfficeNavigationBar officeNavigationBar1;
+        private DevExpress.XtraBars.Navigation.NavigationBarItem navigationBarItem1;
+        private DevExpress.XtraBars.Navigation.NavigationBarItem navigationBarItem2;
     }
 }
