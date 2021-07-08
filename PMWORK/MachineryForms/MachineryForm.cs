@@ -19,10 +19,9 @@ namespace PMWORK.MachineryForms
         public MachineryForm()
         {
             InitializeComponent();
-            db = new AppDbContext();
+            db = PublicClass.db;
             cbxCompany.Properties.DisplayMember = "Title";
             cbxCompany.Properties.ValueMember = "ID";
-
             cbxCompany.Properties.DataSource = db.Companies.Select(x => new ComboBoxBaseClass()
             {
                 ID = x.ID,
@@ -125,13 +124,21 @@ namespace PMWORK.MachineryForms
             }
 
             db.SaveChanges();
-            txtDescription.Text = txtTitle.Text = null;
+            ClearForm();
             UpdateCodingList(SelectedCompany.ID);
         }
 
         private void btnClose_Click(object sender, System.EventArgs e)
         {
-            Close();
+            if (btnClose.Text == "انصراف")
+            {
+                ClearForm();
+            }
+            else
+            {
+                Close();
+
+            }
         }
 
         private void ClearForm()
@@ -154,6 +161,7 @@ namespace PMWORK.MachineryForms
                 txtDescription.EditValue = SelectedRow.Description;
                 chkActive.EditValue = SelectedRow.IsActive;
                 chkDelete.EditValue = SelectedRow.IsDelete;
+                
                 cbxCompany.ReadOnly= cbxCoding.ReadOnly = true;
                 btnAdd.Tag = true ;
                 btnAdd.Text = "ذخیره" ;

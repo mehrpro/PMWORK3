@@ -13,7 +13,7 @@ namespace PMWORK.CodingForms
         public CompaniesForm()
         {
             InitializeComponent();
-            db = new AppDbContext();
+            db = PublicClass.db;
             UpdateList();
         }
 

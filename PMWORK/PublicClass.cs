@@ -8,8 +8,9 @@ namespace PMWORK
 {
     public class PublicClass
     {
-        public static int UserID { get; set; } 
+        public static int UserID { get; set; }
         public static int CompanyID { get; set; }
+        public static AppDbContext db { get; set;}
         
 
     }

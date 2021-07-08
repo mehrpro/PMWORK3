@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
+using PMWORK.Entities;
 
 namespace PMWORK.MachineryForms
 {
@@ -18,7 +19,7 @@ namespace PMWORK.MachineryForms
         public RequestRepairForm()
         {
             InitializeComponent();
-            db = new AppDbContext();
+            db = PublicClass.db;
             dateRegistered.DateTime = DateTime.Now;
             cbxMachinery.Properties.DisplayMember = "MachineryTitle";
             cbxMachinery.Properties.ValueMember = "ID";
@@ -44,6 +45,29 @@ namespace PMWORK.MachineryForms
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (true)
+            {
+
+            }
+            else
+            {
+                var obj = new RequestRepair()
+                {
+                    IsActive = true,
+                    IsDelete = false,
+                    MachineryID_FK =Convert.ToInt32(cbxMachinery.EditValue),
+                    UserID_FK = PublicClass.UserID,
+                    Registered = DateTime.Now,
+                    PublicTypeID_FK =Convert.ToInt32(radioGroupType.EditValue),
+                    
+
+                };
+
+            }
         }
     }
 }

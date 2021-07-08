@@ -23,7 +23,7 @@ namespace PMWORK.CodingForms
         public SubGroupForm()
         {
             InitializeComponent();
-            db = new AppDbContext();
+            db = PublicClass.db;
             cbxCompany.Properties.DisplayMember = "Title";
             cbxCompany.Properties.ValueMember = "ID";
 

@@ -29,13 +29,16 @@ namespace PMWORK.MachineryForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MachineryForm));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MachineryForm));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.chkActive = new DevExpress.XtraEditors.CheckEdit();
+            this.chkDelete = new DevExpress.XtraEditors.CheckEdit();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.txtDescription = new DevExpress.XtraEditors.TextEdit();
@@ -53,15 +56,16 @@ namespace PMWORK.MachineryForms
             this.gvMachineryList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.SelectRow = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Coding = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MachineryTitle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Description = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.chkActive = new DevExpress.XtraEditors.CheckEdit();
-            this.chkDelete = new DevExpress.XtraEditors.CheckEdit();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkActive.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkDelete.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxCompany.Properties)).BeginInit();
@@ -73,10 +77,6 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.dgvMachineryList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMachineryList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkActive.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkDelete.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -97,6 +97,39 @@ namespace PMWORK.MachineryForms
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(800, 144);
             this.panelControl1.TabIndex = 0;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl1.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
+            this.groupControl1.Controls.Add(this.chkActive);
+            this.groupControl1.Controls.Add(this.chkDelete);
+            this.groupControl1.Location = new System.Drawing.Point(105, 22);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(139, 98);
+            this.groupControl1.TabIndex = 8;
+            this.groupControl1.Text = "ویرایش";
+            // 
+            // chkActive
+            // 
+            this.chkActive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkActive.Location = new System.Drawing.Point(69, 34);
+            this.chkActive.Name = "chkActive";
+            this.chkActive.Parmida_ActivePlusMultiKeys = false;
+            this.chkActive.Properties.Caption = "فعال";
+            this.chkActive.Size = new System.Drawing.Size(57, 19);
+            this.chkActive.TabIndex = 7;
+            // 
+            // chkDelete
+            // 
+            this.chkDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkDelete.Location = new System.Drawing.Point(67, 59);
+            this.chkDelete.Name = "chkDelete";
+            this.chkDelete.Parmida_ActivePlusMultiKeys = false;
+            this.chkDelete.Properties.Caption = "حذف";
+            this.chkDelete.Size = new System.Drawing.Size(59, 19);
+            this.chkDelete.TabIndex = 7;
+            this.chkDelete.CheckedChanged += new System.EventHandler(this.chkDelete_CheckedChanged);
             // 
             // btnClose
             // 
@@ -334,10 +367,19 @@ namespace PMWORK.MachineryForms
             this.btnSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSelect.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSelect_ButtonClick);
             // 
+            // ID
+            // 
+            this.ID.Caption = "شناسه";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = true;
+            this.ID.VisibleIndex = 1;
+            this.ID.Width = 97;
+            // 
             // Coding
             // 
             this.Coding.Caption = "کد دستگاه";
-            this.Coding.FieldName = "Coding.ID";
+            this.Coding.FieldName = "Coding.Code";
             this.Coding.Name = "Coding";
             this.Coding.Visible = true;
             this.Coding.VisibleIndex = 2;
@@ -361,48 +403,6 @@ namespace PMWORK.MachineryForms
             this.Description.VisibleIndex = 4;
             this.Description.Width = 219;
             // 
-            // chkActive
-            // 
-            this.chkActive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkActive.Location = new System.Drawing.Point(69, 34);
-            this.chkActive.Name = "chkActive";
-            this.chkActive.Parmida_ActivePlusMultiKeys = false;
-            this.chkActive.Properties.Caption = "فعال";
-            this.chkActive.Size = new System.Drawing.Size(57, 19);
-            this.chkActive.TabIndex = 7;
-            // 
-            // chkDelete
-            // 
-            this.chkDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkDelete.Location = new System.Drawing.Point(67, 59);
-            this.chkDelete.Name = "chkDelete";
-            this.chkDelete.Parmida_ActivePlusMultiKeys = false;
-            this.chkDelete.Properties.Caption = "حذف";
-            this.chkDelete.Size = new System.Drawing.Size(59, 19);
-            this.chkDelete.TabIndex = 7;
-            this.chkDelete.CheckedChanged += new System.EventHandler(this.chkDelete_CheckedChanged);
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl1.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
-            this.groupControl1.Controls.Add(this.chkActive);
-            this.groupControl1.Controls.Add(this.chkDelete);
-            this.groupControl1.Location = new System.Drawing.Point(105, 22);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(139, 98);
-            this.groupControl1.TabIndex = 8;
-            this.groupControl1.Text = "ویرایش";
-            // 
-            // ID
-            // 
-            this.ID.Caption = "شناسه";
-            this.ID.FieldName = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = true;
-            this.ID.VisibleIndex = 1;
-            this.ID.Width = 97;
-            // 
             // MachineryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,6 +416,10 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkActive.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkDelete.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxCompany.Properties)).EndInit();
@@ -427,10 +431,6 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.dgvMachineryList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMachineryList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkActive.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkDelete.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

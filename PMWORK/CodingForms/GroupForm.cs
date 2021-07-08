@@ -21,7 +21,7 @@ namespace PMWORK.CodingForms
         public GroupForm()
         {
             InitializeComponent();
-            db = new AppDbContext();
+            db = PublicClass.db;
             cbxCompany.Properties.DisplayMember = "Title";
             cbxCompany.Properties.ValueMember = "ID";
             cbxCompany.Properties.DataSource = db.Companies
@@ -33,10 +33,8 @@ namespace PMWORK.CodingForms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (btnClose.Text == "انصراف")
-            {
-                ClearControlers();
-            }
+            if (btnClose.Text == "انصراف")            
+                ClearControlers();            
             else
                 Close();
         }
@@ -70,9 +68,6 @@ namespace PMWORK.CodingForms
             db.SaveChanges();
             UpdateList(_selectCompany.ID);
             ClearControlers();
-
-
-
         }
 
         private void cbxCompany_EditValueChanged(object sender, EventArgs e)

@@ -25,7 +25,7 @@ namespace PMWORK.CodingForms
         public CodingForm()
         {
             InitializeComponent();
-            db = new AppDbContext();
+            db = PublicClass.db;
             cbxCompany.Properties.DisplayMember = "Title";
             cbxCompany.Properties.ValueMember = "ID";
             cbxGroup.Properties.DisplayMember = "Title";
