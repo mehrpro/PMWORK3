@@ -29,14 +29,14 @@ namespace PMWORK.MachineryForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestListForm));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.btnElectricalList = new DevExpress.XtraNavBar.NavBarItem();
             this.btnMecanicalList = new DevExpress.XtraNavBar.NavBarItem();
-            this.btn = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.btnPipeLine = new DevExpress.XtraNavBar.NavBarItem();
+            this.btnBuilding = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.dgvRequestList = new DevExpress.XtraGrid.GridControl();
@@ -66,13 +66,12 @@ namespace PMWORK.MachineryForms
             this.navBarControl1.ActiveGroup = this.navBarGroup1;
             this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.navBarGroup1,
-            this.navBarGroup2});
+            this.navBarGroup1});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.btnElectricalList,
             this.btnMecanicalList,
-            this.btn,
-            this.navBarItem4,
+            this.btnPipeLine,
+            this.btnBuilding,
             this.navBarItem5,
             this.navBarItem6});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
@@ -87,41 +86,39 @@ namespace PMWORK.MachineryForms
             // 
             this.navBarGroup1.Caption = "دستور کار";
             this.navBarGroup1.Expanded = true;
+            this.navBarGroup1.ImageOptions.SmallImage = global::PMWORK.Properties.Resources.icons8_task_30;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnElectricalList),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnMecanicalList),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.btn),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btnPipeLine),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btnBuilding)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // btnElectricalList
             // 
             this.btnElectricalList.Caption = "کارگاه برق";
+            this.btnElectricalList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnElectricalList.ImageOptions.LargeImage")));
+            this.btnElectricalList.ImageOptions.SmallImage = global::PMWORK.Properties.Resources.icons8_electrical_16;
             this.btnElectricalList.Name = "btnElectricalList";
             // 
             // btnMecanicalList
             // 
             this.btnMecanicalList.Caption = "کارگاه مکانیک";
+            this.btnMecanicalList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMecanicalList.ImageOptions.LargeImage")));
+            this.btnMecanicalList.ImageOptions.SmallImage = global::PMWORK.Properties.Resources.icons8_settings_16;
             this.btnMecanicalList.Name = "btnMecanicalList";
             // 
-            // btn
+            // btnPipeLine
             // 
-            this.btn.Caption = "کارگاه تاسیسات";
-            this.btn.Name = "btn";
+            this.btnPipeLine.Caption = "کارگاه تاسیسات";
+            this.btnPipeLine.ImageOptions.SmallImage = global::PMWORK.Properties.Resources.icons8_piping_16;
+            this.btnPipeLine.Name = "btnPipeLine";
             // 
-            // navBarItem4
+            // btnBuilding
             // 
-            this.navBarItem4.Caption = "ساخت و تجهیز";
-            this.navBarItem4.Name = "navBarItem4";
-            // 
-            // navBarGroup2
-            // 
-            this.navBarGroup2.Caption = "یادآوری";
-            this.navBarGroup2.Expanded = true;
-            this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6)});
-            this.navBarGroup2.Name = "navBarGroup2";
+            this.btnBuilding.Caption = "ساخت و تجهیز";
+            this.btnBuilding.ImageOptions.SmallImage = global::PMWORK.Properties.Resources.icons8_maintenance_16;
+            this.btnBuilding.Name = "btnBuilding";
             // 
             // navBarItem5
             // 
@@ -176,9 +173,8 @@ namespace PMWORK.MachineryForms
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
         private DevExpress.XtraNavBar.NavBarItem btnElectricalList;
         private DevExpress.XtraNavBar.NavBarItem btnMecanicalList;
-        private DevExpress.XtraNavBar.NavBarItem btn;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem4;
-        private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
+        private DevExpress.XtraNavBar.NavBarItem btnPipeLine;
+        private DevExpress.XtraNavBar.NavBarItem btnBuilding;
         private DevExpress.XtraNavBar.NavBarItem navBarItem5;
         private DevExpress.XtraNavBar.NavBarItem navBarItem6;
     }

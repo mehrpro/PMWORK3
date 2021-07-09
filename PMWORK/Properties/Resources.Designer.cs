@@ -83,6 +83,16 @@ namespace PMWORK.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_electrical_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-electrical-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_electrical_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-electrical-30", resourceCulture);
@@ -113,9 +123,29 @@ namespace PMWORK.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_maintenance_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-maintenance-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_maintenance_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-maintenance-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_piping_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-piping-16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +186,16 @@ namespace PMWORK.Properties {
         internal static System.Drawing.Bitmap icons8_separated_lists_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-separated-lists-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_settings_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-settings-16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
