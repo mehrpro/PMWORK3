@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace PMWORK.MachineryForms
 {
@@ -31,10 +32,10 @@ namespace PMWORK.MachineryForms
         }
 
 
-        void UpdateCodingList(int cid)
+         private async Task UpdateCodingList(int cid)
         {
-            UpdateCbxCoding(cid);
-            var qryMachineryList = db.Machineries.Where(x=>x.CompanyID == cid && x.IsActive && !x.IsDelete).ToList();
+           await  UpdateCbxCoding(cid);
+            var qryMachineryList = await db.Machineries.Where(x=>x.CompanyID == cid && x.IsActive && !x.IsDelete).ToListAsync();
             foreach (var item in qryMachineryList)
             {
                 var resultFind = CodingListForComboBox.SingleOrDefault(x => x.ID == item.CodeID_FK);
@@ -48,11 +49,11 @@ namespace PMWORK.MachineryForms
         }
 
 
-      public  void UpdateCbxCoding(int cid)
+      public async  Task UpdateCbxCoding(int cid)
         {
             cbxCoding.Properties.DisplayMember = "Cod";
             cbxCoding.Properties.ValueMember = "ID";
-            var qry = db.Codings.Include(a => a.Group).Include(a => a.SubGroup).Where(x=>x.CompanyID_FK == cid).ToList();
+            var qry = await db.Codings.Include(a => a.Group).Include(a => a.SubGroup).Where(x=>x.CompanyID_FK == cid).ToListAsync();
             CodingListForComboBox = new List<ComboBoxCoding>();
             foreach (var x in qry)
             {
@@ -67,12 +68,12 @@ namespace PMWORK.MachineryForms
         }
 
 
-        internal void MachineryList()
+        private async Task UpdateApplicant(int companyId)
         {
-            dgvMachineryList.DataSource = db.Machineries.ToList();
+            cbxApplicantList.Properties.DataSource = await db.Applicants.Where(x => x.CompanyID_FK == companyId).ToListAsync();
         }
 
-        private void cbxCompany_EditValueChanged(object sender, System.EventArgs e)
+        private async void cbxCompany_EditValueChanged(object sender, System.EventArgs e)
         {
             SelectedCompany = (ComboBoxBaseClass)cbxCompany.GetSelectedDataRow();
             if (SelectedCompany == null)
@@ -82,7 +83,8 @@ namespace PMWORK.MachineryForms
                 dgvMachineryList.DataSource = null;
                 return;
             }
-            UpdateCodingList(SelectedCompany.ID);
+            await UpdateApplicant(SelectedCompany.ID);
+           await UpdateCodingList(SelectedCompany.ID);
             
         }
 
@@ -98,13 +100,14 @@ namespace PMWORK.MachineryForms
 
         }
 
-        private void btnAdd_Click(object sender, System.EventArgs e)
+        private async void btnAdd_Click(object sender, System.EventArgs e)
         {
             if (Convert.ToBoolean(btnAdd.Tag))
             {
                 var selected = db.Machineries.SingleOrDefault(x => x.ID == SelectedRow.ID);
                 selected.IsActive = Convert.ToBoolean(chkActive.CheckState);
                 selected.IsDelete = Convert.ToBoolean(chkDelete.CheckState);
+                selected.ApplicantID_FK =Convert.ToInt32(cbxApplicantList.EditValue);
                 selected.Description = txtDescription.Text.Trim();
             }
             else
@@ -116,16 +119,17 @@ namespace PMWORK.MachineryForms
                     MachineryTitle = SelectedCoding.Title,
                     CodeID_FK = SelectedCoding.ID,
                     Description = txtDescription.Text.Trim(),
-                    CompanyID = SelectedCompany.ID
+                    CompanyID = SelectedCompany.ID,
+                    ApplicantID_FK = Convert.ToInt32(cbxApplicantList.EditValue)
 
                 };
 
                 db.Machineries.Add(newObj);
             }
 
-            db.SaveChanges();
+            db.SaveChangesAsync();
             ClearForm();
-            UpdateCodingList(SelectedCompany.ID);
+            await UpdateCodingList(SelectedCompany.ID);
         }
 
         private void btnClose_Click(object sender, System.EventArgs e)
