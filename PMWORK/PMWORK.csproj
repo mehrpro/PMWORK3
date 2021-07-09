@@ -72,6 +72,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
+    <Compile Include="CodingForms\ApplicantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodingForms\ApplicantForm.Designer.cs">
+      <DependentUpon>ApplicantForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CodingForms\CodingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,37 +162,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106220806334_DBCreate1.cs" />
-    <Compile Include="Migrations\202106220806334_DBCreate1.designer.cs">
-      <DependentUpon>202106220806334_DBCreate1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107040435570_UpdateMachinery.cs" />
-    <Compile Include="Migrations\202107040435570_UpdateMachinery.designer.cs">
-      <DependentUpon>202107040435570_UpdateMachinery.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107050522343_UpdateRequestRepair.cs" />
-    <Compile Include="Migrations\202107050522343_UpdateRequestRepair.designer.cs">
-      <DependentUpon>202107050522343_UpdateRequestRepair.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107051701482_UpdateReq.cs" />
-    <Compile Include="Migrations\202107051701482_UpdateReq.designer.cs">
-      <DependentUpon>202107051701482_UpdateReq.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107051821399_RemoveTypeofWork.cs" />
-    <Compile Include="Migrations\202107051821399_RemoveTypeofWork.designer.cs">
-      <DependentUpon>202107051821399_RemoveTypeofWork.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107051848354_D2.cs" />
-    <Compile Include="Migrations\202107051848354_D2.designer.cs">
-      <DependentUpon>202107051848354_D2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107090643371_UpdateRequestRepair1.cs" />
-    <Compile Include="Migrations\202107090643371_UpdateRequestRepair1.designer.cs">
-      <DependentUpon>202107090643371_UpdateRequestRepair1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107090803346_UpdateApplicant.cs" />
-    <Compile Include="Migrations\202107090803346_UpdateApplicant.designer.cs">
-      <DependentUpon>202107090803346_UpdateApplicant.cs</DependentUpon>
+    <Compile Include="Migrations\202107091234455_CreateDB.cs" />
+    <Compile Include="Migrations\202107091234455_CreateDB.designer.cs">
+      <DependentUpon>202107091234455_CreateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -204,6 +182,9 @@
     <Compile Include="Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CodingForms\ApplicantForm.resx">
+      <DependentUpon>ApplicantForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CodingForms\CodingForm.resx">
       <DependentUpon>CodingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,29 +217,8 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106220806334_DBCreate1.resx">
-      <DependentUpon>202106220806334_DBCreate1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107040435570_UpdateMachinery.resx">
-      <DependentUpon>202107040435570_UpdateMachinery.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107050522343_UpdateRequestRepair.resx">
-      <DependentUpon>202107050522343_UpdateRequestRepair.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107051701482_UpdateReq.resx">
-      <DependentUpon>202107051701482_UpdateReq.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107051821399_RemoveTypeofWork.resx">
-      <DependentUpon>202107051821399_RemoveTypeofWork.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107051848354_D2.resx">
-      <DependentUpon>202107051848354_D2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107090643371_UpdateRequestRepair1.resx">
-      <DependentUpon>202107090643371_UpdateRequestRepair1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107090803346_UpdateApplicant.resx">
-      <DependentUpon>202107090803346_UpdateApplicant.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107091234455_CreateDB.resx">
+      <DependentUpon>202107091234455_CreateDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

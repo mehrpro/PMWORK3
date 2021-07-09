@@ -9,7 +9,7 @@ namespace PMWORK
 
         public AppDbContext() : base("Conn")
         {
-            // Database.SetInitializer(new PMDBInitializer());
+            Database.SetInitializer(new PMDBInitializer());
         }
 
         protected override void OnModelCreating(DbModelBuilder builder)
@@ -87,6 +87,8 @@ namespace PMWORK
             builder.Entity<Applicant>().Property(x => x.ID)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
             builder.Entity<Applicant>().Property(x => x.ApplicantTitle).IsRequired().HasMaxLength(150);
+            builder.Entity<Applicant>().Property(x => x.CompanyID_FK).IsRequired();
+
             builder.Entity<Applicant>().Property(x => x.Description).HasMaxLength(250);
             builder.Entity<Applicant>()
                 .HasMany(x => x.RequestRepairs)
@@ -171,6 +173,7 @@ namespace PMWORK
             builder.Entity<Machinery>().Property(x => x.IsDelete).IsRequired();
             builder.Entity<Machinery>().Property(x => x.CompanyID).IsRequired();
             builder.Entity<Machinery>().Property(x => x.CodeID_FK).IsRequired();
+            builder.Entity<Machinery>().Property(x => x.ApplicantID_FK).IsRequired();
             builder.Entity<Machinery>().Property(x => x.MachineryTitle).HasMaxLength(150).IsRequired();
             builder.Entity<Machinery>().Property(x => x.Description).HasMaxLength(250);
             builder.Entity<Machinery>()
