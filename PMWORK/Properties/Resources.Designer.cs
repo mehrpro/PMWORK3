@@ -173,6 +173,16 @@ namespace PMWORK.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_task_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-task-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_unit_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-unit-30", resourceCulture);

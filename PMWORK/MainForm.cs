@@ -11,6 +11,8 @@ namespace PMWORK
         public MainForm()
         {
             InitializeComponent();
+            ShowForms(new RequestListForm());
+
         }
         private void ShowForms(object obj)
         {
@@ -70,22 +72,27 @@ namespace PMWORK
             frm.ShowDialog();
         }
 
-        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnMecanical_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frm = new RequestRepairForm(2);
             frm.ShowDialog();
         }
 
-        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnPiping_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frm = new RequestRepairForm(3);
             frm.ShowDialog();
         }
 
-        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnBuilding_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new RequestRepairForm(4);         
+            var frm = new RequestRepairForm(4);
             frm.ShowDialog();
+        }
+
+        private void btnRequestList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForms(new RequestListForm());
         }
     }
 }

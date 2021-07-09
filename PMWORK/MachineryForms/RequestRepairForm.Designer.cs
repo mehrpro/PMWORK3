@@ -125,7 +125,7 @@ namespace PMWORK.MachineryForms
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(18, 267);
+            this.btnClose.Location = new System.Drawing.Point(18, 265);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 3;
@@ -377,7 +377,7 @@ namespace PMWORK.MachineryForms
             this.txtRequestTitle.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtRequestTitle.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtRequestTitle.Properties.ReadOnly = true;
-            this.txtRequestTitle.Size = new System.Drawing.Size(228, 20);
+            this.txtRequestTitle.Size = new System.Drawing.Size(248, 20);
             this.txtRequestTitle.TabIndex = 6;
             // 
             // gridColumn3
@@ -418,6 +418,7 @@ namespace PMWORK.MachineryForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 304);
             this.Controls.Add(this.panelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RequestRepairForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "درخواست تعمیرات";
