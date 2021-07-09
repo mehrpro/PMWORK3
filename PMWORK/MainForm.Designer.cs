@@ -57,6 +57,7 @@ namespace PMWORK
             this.SettingRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.btnApplicantForm = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,9 +80,10 @@ namespace PMWORK
             this.skinPaletteRibbonGalleryBarItem1,
             this.skinRibbonGalleryBarItem1,
             this.barStaticItem1,
-            this.btnRequestList});
+            this.btnRequestList,
+            this.btnApplicantForm});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 9;
+            this.ribbonControl1.MaxItemId = 10;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.InfrasturctureRibbonPage,
@@ -259,6 +261,7 @@ namespace PMWORK
             this.ribbonPageGroup4.ItemLinks.Add(this.btnSubGroups);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnCode);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnUnit);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnApplicantForm);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.ShowCaptionButton = false;
             this.ribbonPageGroup4.Text = "کدگزاری";
@@ -322,6 +325,15 @@ namespace PMWORK
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(750, 31);
             // 
+            // btnApplicantForm
+            // 
+            this.btnApplicantForm.Caption = "واحدهای ادواری";
+            this.btnApplicantForm.Id = 9;
+            this.btnApplicantForm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnApplicantForm.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnApplicantForm.Name = "btnApplicantForm";
+            this.btnApplicantForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnApplicantForm_ItemClick);
+            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -371,5 +383,6 @@ namespace PMWORK
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.BarButtonItem btnRequestList;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem btnApplicantForm;
     }
 }

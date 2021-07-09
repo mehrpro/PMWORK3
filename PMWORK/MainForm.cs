@@ -31,6 +31,7 @@ namespace PMWORK
         private void ShowDialogForms(object obj)
         {
             Form frm = (Form)obj;
+            frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
         }
 
@@ -93,6 +94,11 @@ namespace PMWORK
         private void btnRequestList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ShowForms(new RequestListForm());
+        }
+
+        private void btnApplicantForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowDialogForms(new ApplicantForm());
         }
     }
 }
