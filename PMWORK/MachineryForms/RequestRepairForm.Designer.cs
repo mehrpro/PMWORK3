@@ -89,14 +89,14 @@ namespace PMWORK.MachineryForms
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(577, 266);
+            this.panelControl1.Size = new System.Drawing.Size(385, 299);
             this.panelControl1.TabIndex = 0;
             // 
             // dateRegistered
             // 
             this.dateRegistered.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateRegistered.EditValue = null;
-            this.dateRegistered.Location = new System.Drawing.Point(397, 21);
+            this.dateRegistered.Location = new System.Drawing.Point(205, 21);
             this.dateRegistered.Name = "dateRegistered";
             this.dateRegistered.Parmida_ActivePlusMultiKeys = false;
             this.dateRegistered.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -118,7 +118,7 @@ namespace PMWORK.MachineryForms
             // radioGroupEMPM
             // 
             this.radioGroupEMPM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioGroupEMPM.Location = new System.Drawing.Point(14, 99);
+            this.radioGroupEMPM.Location = new System.Drawing.Point(18, 125);
             this.radioGroupEMPM.Name = "radioGroupEMPM";
             this.radioGroupEMPM.Parmida_ActivePlusMultiKeys = false;
             this.radioGroupEMPM.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -126,14 +126,14 @@ namespace PMWORK.MachineryForms
             this.radioGroupEMPM.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "تعمیر اضطراری EM"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "تعمیر پیشگیرانه PM")});
-            this.radioGroupEMPM.Size = new System.Drawing.Size(494, 25);
+            this.radioGroupEMPM.Size = new System.Drawing.Size(298, 25);
             this.radioGroupEMPM.TabIndex = 10;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(15, 224);
+            this.btnClose.Location = new System.Drawing.Point(18, 250);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(80, 30);
             this.btnClose.TabIndex = 14;
@@ -144,7 +144,7 @@ namespace PMWORK.MachineryForms
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(101, 224);
+            this.btnSave.Location = new System.Drawing.Point(104, 250);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 30);
             this.btnSave.TabIndex = 13;
@@ -154,13 +154,13 @@ namespace PMWORK.MachineryForms
             // cbxApplicant
             // 
             this.cbxApplicant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxApplicant.Location = new System.Drawing.Point(14, 47);
+            this.cbxApplicant.Location = new System.Drawing.Point(18, 73);
             this.cbxApplicant.Name = "cbxApplicant";
             this.cbxApplicant.Parmida_ActivePlusMultiKeys = false;
             this.cbxApplicant.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxApplicant.Properties.PopupView = this.gridView1;
-            this.cbxApplicant.Size = new System.Drawing.Size(244, 20);
+            this.cbxApplicant.Size = new System.Drawing.Size(298, 20);
             this.cbxApplicant.TabIndex = 5;
             this.cbxApplicant.EditValueChanged += new System.EventHandler(this.cbxApplicant_EditValueChanged);
             // 
@@ -247,13 +247,13 @@ namespace PMWORK.MachineryForms
             // cbxCompany
             // 
             this.cbxCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxCompany.Location = new System.Drawing.Point(291, 47);
+            this.cbxCompany.Location = new System.Drawing.Point(18, 47);
             this.cbxCompany.Name = "cbxCompany";
             this.cbxCompany.Parmida_ActivePlusMultiKeys = false;
             this.cbxCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxCompany.Properties.PopupView = this.gridView2;
-            this.cbxCompany.Size = new System.Drawing.Size(217, 20);
+            this.cbxCompany.Size = new System.Drawing.Size(298, 20);
             this.cbxCompany.TabIndex = 3;
             this.cbxCompany.EditValueChanged += new System.EventHandler(this.cbxCompany_EditValueChanged);
             // 
@@ -321,7 +321,7 @@ namespace PMWORK.MachineryForms
             // cbxMachinery
             // 
             this.cbxMachinery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxMachinery.Location = new System.Drawing.Point(397, 73);
+            this.cbxMachinery.Location = new System.Drawing.Point(205, 99);
             this.cbxMachinery.Name = "cbxMachinery";
             this.cbxMachinery.Parmida_ActivePlusMultiKeys = false;
             this.cbxMachinery.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -414,7 +414,7 @@ namespace PMWORK.MachineryForms
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(264, 50);
+            this.labelControl2.Location = new System.Drawing.Point(322, 76);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(21, 13);
             this.labelControl2.TabIndex = 4;
@@ -423,7 +423,7 @@ namespace PMWORK.MachineryForms
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(514, 103);
+            this.labelControl5.Location = new System.Drawing.Point(322, 129);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(42, 13);
             this.labelControl5.TabIndex = 9;
@@ -432,7 +432,7 @@ namespace PMWORK.MachineryForms
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(514, 50);
+            this.labelControl7.Location = new System.Drawing.Point(322, 50);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(31, 13);
             this.labelControl7.TabIndex = 2;
@@ -441,7 +441,7 @@ namespace PMWORK.MachineryForms
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(513, 132);
+            this.labelControl3.Location = new System.Drawing.Point(321, 158);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(55, 13);
             this.labelControl3.TabIndex = 11;
@@ -450,7 +450,7 @@ namespace PMWORK.MachineryForms
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(514, 76);
+            this.labelControl1.Location = new System.Drawing.Point(322, 102);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(34, 13);
             this.labelControl1.TabIndex = 6;
@@ -459,21 +459,21 @@ namespace PMWORK.MachineryForms
             // txtRequest
             // 
             this.txtRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRequest.Location = new System.Drawing.Point(14, 130);
+            this.txtRequest.Location = new System.Drawing.Point(18, 156);
             this.txtRequest.Name = "txtRequest";
             this.txtRequest.Parmida_ActivePlusMultiKeys = false;
             this.txtRequest.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtRequest.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtRequest.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtRequest.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequest.Size = new System.Drawing.Size(494, 88);
+            this.txtRequest.Size = new System.Drawing.Size(298, 88);
             this.txtRequest.TabIndex = 12;
             // 
             // txtRequestTitle
             // 
             this.txtRequestTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRequestTitle.EditValue = "درخواست تعمیرات";
-            this.txtRequestTitle.Location = new System.Drawing.Point(14, 21);
+            this.txtRequestTitle.Location = new System.Drawing.Point(18, 21);
             this.txtRequestTitle.Name = "txtRequestTitle";
             this.txtRequestTitle.Parmida_ActivePlusMultiKeys = false;
             this.txtRequestTitle.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -485,13 +485,13 @@ namespace PMWORK.MachineryForms
             this.txtRequestTitle.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtRequestTitle.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtRequestTitle.Properties.ReadOnly = true;
-            this.txtRequestTitle.Size = new System.Drawing.Size(377, 20);
+            this.txtRequestTitle.Size = new System.Drawing.Size(181, 20);
             this.txtRequestTitle.TabIndex = 1;
             // 
             // txtMachinery
             // 
             this.txtMachinery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMachinery.Location = new System.Drawing.Point(14, 73);
+            this.txtMachinery.Location = new System.Drawing.Point(18, 99);
             this.txtMachinery.Name = "txtMachinery";
             this.txtMachinery.Parmida_ActivePlusMultiKeys = false;
             this.txtMachinery.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -501,14 +501,14 @@ namespace PMWORK.MachineryForms
             this.txtMachinery.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtMachinery.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtMachinery.Properties.ReadOnly = true;
-            this.txtMachinery.Size = new System.Drawing.Size(377, 20);
+            this.txtMachinery.Size = new System.Drawing.Size(181, 20);
             this.txtMachinery.TabIndex = 8;
             // 
             // RequestRepairForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 266);
+            this.ClientSize = new System.Drawing.Size(385, 299);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RequestRepairForm";

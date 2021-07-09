@@ -19,6 +19,7 @@ namespace PMWORK.MachineryForms
         private readonly int _typeofRequest;
         private ComboBoxBaseClass _selectCompany;
         private Applicant _selectApplicant;
+        private Machinery _selectedMachinery;
 
         public RequestRepairForm(int typeofRequest)
         {
@@ -118,14 +119,14 @@ namespace PMWORK.MachineryForms
 
         private async void cbxMachinery_EditValueChanged_1(object sender, EventArgs e)
         {
-            var SelectedMachinery = (Machinery)cbxMachinery.GetSelectedDataRow();
-            if (SelectedMachinery == null)
+             _selectedMachinery = (Machinery)cbxMachinery.GetSelectedDataRow();
+            if (_selectedMachinery == null)
             {
                 txtMachinery.Text = "";
-                cbxApplicant.Properties.DataSource = null;
+                //cbxApplicant.Properties.DataSource = null;
                 return;
             }
-            txtMachinery.Text = SelectedMachinery.MachineryTitle;
+            txtMachinery.Text = _selectedMachinery.MachineryTitle;
             //await UpdateApplicant(SelectedMachinery.ID);
         }
 
