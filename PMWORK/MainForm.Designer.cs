@@ -89,13 +89,13 @@ namespace PMWORK
             this.ribbonPage3,
             this.ribbonPage4});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl1.Size = new System.Drawing.Size(1021, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(750, 143);
             // 
             // backstageViewControl1
             // 
             this.backstageViewControl1.Controls.Add(this.backstageViewClientControl1);
             this.backstageViewControl1.Items.Add(this.backstageViewTabItem1);
-            this.backstageViewControl1.Location = new System.Drawing.Point(71, 214);
+            this.backstageViewControl1.Location = new System.Drawing.Point(32, 169);
             this.backstageViewControl1.Name = "backstageViewControl1";
             this.backstageViewControl1.OwnerControl = this.ribbonControl1;
             this.backstageViewControl1.SelectedTab = this.backstageViewTabItem1;
@@ -105,9 +105,9 @@ namespace PMWORK
             // 
             // backstageViewClientControl1
             // 
-            this.backstageViewClientControl1.Location = new System.Drawing.Point(1, 65);
+            this.backstageViewClientControl1.Location = new System.Drawing.Point(1, 63);
             this.backstageViewClientControl1.Name = "backstageViewClientControl1";
-            this.backstageViewClientControl1.Size = new System.Drawing.Size(481, 288);
+            this.backstageViewClientControl1.Size = new System.Drawing.Size(493, 290);
             this.backstageViewClientControl1.TabIndex = 1;
             // 
             // backstageViewTabItem1
@@ -196,6 +196,7 @@ namespace PMWORK
             this.btnElectrical.Name = "btnElectrical";
             this.btnElectrical.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnElectrical.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnElectrical_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -205,6 +206,7 @@ namespace PMWORK
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
             // barButtonItem9
             // 
@@ -214,6 +216,7 @@ namespace PMWORK
             this.barButtonItem9.Name = "barButtonItem9";
             this.barButtonItem9.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
             // 
             // barButtonItem10
             // 
@@ -223,6 +226,7 @@ namespace PMWORK
             this.barButtonItem10.Name = "barButtonItem10";
             this.barButtonItem10.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
             // 
             // skinPaletteRibbonGalleryBarItem1
             // 
@@ -316,7 +320,7 @@ namespace PMWORK
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 620);
+            this.ClientSize = new System.Drawing.Size(750, 620);
             this.Controls.Add(this.backstageViewControl1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;

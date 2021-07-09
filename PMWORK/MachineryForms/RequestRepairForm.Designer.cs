@@ -32,74 +32,63 @@ namespace PMWORK.MachineryForms
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dateRegistered = new DevExpress.XtraEditors.DateEdit();
             this.radioGroupEMPM = new DevExpress.XtraEditors.RadioGroup();
-            this.radioGroupType = new DevExpress.XtraEditors.RadioGroup();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.searchLookUpEdit2 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbxMachinery = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Coding = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MachineryTitle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtRequest = new DevExpress.XtraEditors.MemoEdit();
             this.txtMachinery = new DevExpress.XtraEditors.TextEdit();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.dgvRequestList = new DevExpress.XtraGrid.GridControl();
-            this.gvRequestList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.txtRequestTitle = new DevExpress.XtraEditors.TextEdit();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Coding = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MachineryTitle = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateRegistered.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateRegistered.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupEMPM.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxMachinery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequest.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMachinery.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRequestList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvRequestList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRequestTitle.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.dateRegistered);
             this.panelControl1.Controls.Add(this.radioGroupEMPM);
-            this.panelControl1.Controls.Add(this.radioGroupType);
             this.panelControl1.Controls.Add(this.btnClose);
             this.panelControl1.Controls.Add(this.btnSave);
             this.panelControl1.Controls.Add(this.searchLookUpEdit2);
             this.panelControl1.Controls.Add(this.cbxMachinery);
             this.panelControl1.Controls.Add(this.labelControl5);
-            this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.labelControl7);
-            this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.txtRequest);
+            this.panelControl1.Controls.Add(this.txtRequestTitle);
             this.panelControl1.Controls.Add(this.txtMachinery);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(823, 199);
+            this.panelControl1.Size = new System.Drawing.Size(448, 304);
             this.panelControl1.TabIndex = 0;
             // 
             // dateRegistered
             // 
             this.dateRegistered.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateRegistered.EditValue = null;
-            this.dateRegistered.Location = new System.Drawing.Point(627, 21);
+            this.dateRegistered.Location = new System.Drawing.Point(272, 21);
             this.dateRegistered.Name = "dateRegistered";
             this.dateRegistered.Parmida_ActivePlusMultiKeys = false;
             this.dateRegistered.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -115,13 +104,14 @@ namespace PMWORK.MachineryForms
             this.dateRegistered.Properties.Parmida_CheckDateOnLeave = false;
             this.dateRegistered.Properties.Parmida_CheckEmptyFillDateOnEnter = false;
             this.dateRegistered.Properties.ReadOnly = true;
-            this.dateRegistered.Size = new System.Drawing.Size(131, 20);
+            this.dateRegistered.Size = new System.Drawing.Size(111, 20);
             this.dateRegistered.TabIndex = 5;
+            this.dateRegistered.EditValueChanged += new System.EventHandler(this.dateRegistered_EditValueChanged);
             // 
             // radioGroupEMPM
             // 
             this.radioGroupEMPM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioGroupEMPM.Location = new System.Drawing.Point(488, 125);
+            this.radioGroupEMPM.Location = new System.Drawing.Point(18, 99);
             this.radioGroupEMPM.Name = "radioGroupEMPM";
             this.radioGroupEMPM.Parmida_ActivePlusMultiKeys = false;
             this.radioGroupEMPM.Properties.Appearance.BackColor = System.Drawing.Color.White;
@@ -129,31 +119,13 @@ namespace PMWORK.MachineryForms
             this.radioGroupEMPM.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "تعمیر اضطراری EM"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "تعمیر پیشگیرانه PM")});
-            this.radioGroupEMPM.Size = new System.Drawing.Size(270, 25);
+            this.radioGroupEMPM.Size = new System.Drawing.Size(365, 25);
             this.radioGroupEMPM.TabIndex = 4;
-            // 
-            // radioGroupType
-            // 
-            this.radioGroupType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioGroupType.EditValue = 1;
-            this.radioGroupType.Location = new System.Drawing.Point(393, 156);
-            this.radioGroupType.Name = "radioGroupType";
-            this.radioGroupType.Parmida_ActivePlusMultiKeys = false;
-            this.radioGroupType.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.radioGroupType.Properties.Appearance.Options.UseBackColor = true;
-            this.radioGroupType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "برقی"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(2, "مکانیکی"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(3, "تاسیسات"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(4, "تجهیز"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(5, "ساخت")});
-            this.radioGroupType.Size = new System.Drawing.Size(365, 25);
-            this.radioGroupType.TabIndex = 4;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(56, 156);
+            this.btnClose.Location = new System.Drawing.Point(18, 267);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 3;
@@ -163,7 +135,7 @@ namespace PMWORK.MachineryForms
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(137, 155);
+            this.btnSave.Location = new System.Drawing.Point(99, 266);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 3;
@@ -173,13 +145,13 @@ namespace PMWORK.MachineryForms
             // searchLookUpEdit2
             // 
             this.searchLookUpEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchLookUpEdit2.Location = new System.Drawing.Point(488, 47);
+            this.searchLookUpEdit2.Location = new System.Drawing.Point(18, 47);
             this.searchLookUpEdit2.Name = "searchLookUpEdit2";
             this.searchLookUpEdit2.Parmida_ActivePlusMultiKeys = false;
             this.searchLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.searchLookUpEdit2.Properties.PopupView = this.gridView2;
-            this.searchLookUpEdit2.Size = new System.Drawing.Size(270, 20);
+            this.searchLookUpEdit2.Size = new System.Drawing.Size(365, 20);
             this.searchLookUpEdit2.TabIndex = 2;
             this.searchLookUpEdit2.EditValueChanged += new System.EventHandler(this.cbxMachinery_EditValueChanged);
             // 
@@ -247,32 +219,16 @@ namespace PMWORK.MachineryForms
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "کد دستگاه";
-            this.gridColumn3.FieldName = "Coding.ID";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "نام دستگاه";
-            this.gridColumn4.FieldName = "MachineryTitle";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
-            // 
             // cbxMachinery
             // 
             this.cbxMachinery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxMachinery.Location = new System.Drawing.Point(488, 73);
+            this.cbxMachinery.Location = new System.Drawing.Point(272, 73);
             this.cbxMachinery.Name = "cbxMachinery";
             this.cbxMachinery.Parmida_ActivePlusMultiKeys = false;
             this.cbxMachinery.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxMachinery.Properties.PopupView = this.searchLookUpEdit1View;
-            this.cbxMachinery.Size = new System.Drawing.Size(270, 20);
+            this.cbxMachinery.Size = new System.Drawing.Size(111, 20);
             this.cbxMachinery.TabIndex = 2;
             this.cbxMachinery.EditValueChanged += new System.EventHandler(this.cbxMachinery_EditValueChanged);
             // 
@@ -340,6 +296,106 @@ namespace PMWORK.MachineryForms
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // labelControl5
+            // 
+            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl5.Location = new System.Drawing.Point(389, 103);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(42, 13);
+            this.labelControl5.TabIndex = 0;
+            this.labelControl5.Text = "نوع اقدام";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl7.Location = new System.Drawing.Point(389, 50);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(31, 13);
+            this.labelControl7.TabIndex = 0;
+            this.labelControl7.Text = "شرکت";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Location = new System.Drawing.Point(389, 163);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(55, 13);
+            this.labelControl3.TabIndex = 0;
+            this.labelControl3.Text = "شرح خرابی";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Location = new System.Drawing.Point(389, 76);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(34, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "دستگاه";
+            // 
+            // txtRequest
+            // 
+            this.txtRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRequest.Location = new System.Drawing.Point(18, 130);
+            this.txtRequest.Name = "txtRequest";
+            this.txtRequest.Parmida_ActivePlusMultiKeys = false;
+            this.txtRequest.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequest.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequest.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequest.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequest.Size = new System.Drawing.Size(365, 129);
+            this.txtRequest.TabIndex = 6;
+            // 
+            // txtMachinery
+            // 
+            this.txtMachinery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMachinery.Location = new System.Drawing.Point(18, 73);
+            this.txtMachinery.Name = "txtMachinery";
+            this.txtMachinery.Parmida_ActivePlusMultiKeys = false;
+            this.txtMachinery.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtMachinery.Properties.Appearance.Options.UseBackColor = true;
+            this.txtMachinery.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtMachinery.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtMachinery.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtMachinery.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtMachinery.Properties.ReadOnly = true;
+            this.txtMachinery.Size = new System.Drawing.Size(248, 20);
+            this.txtMachinery.TabIndex = 6;
+            // 
+            // txtRequestTitle
+            // 
+            this.txtRequestTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRequestTitle.EditValue = "درخواست تعمیرات";
+            this.txtRequestTitle.Location = new System.Drawing.Point(18, 21);
+            this.txtRequestTitle.Name = "txtRequestTitle";
+            this.txtRequestTitle.Parmida_ActivePlusMultiKeys = false;
+            this.txtRequestTitle.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtRequestTitle.Properties.Appearance.ForeColor = System.Drawing.Color.DarkRed;
+            this.txtRequestTitle.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRequestTitle.Properties.Appearance.Options.UseForeColor = true;
+            this.txtRequestTitle.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequestTitle.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequestTitle.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequestTitle.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequestTitle.Properties.ReadOnly = true;
+            this.txtRequestTitle.Size = new System.Drawing.Size(228, 20);
+            this.txtRequestTitle.TabIndex = 6;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "کد دستگاه";
+            this.gridColumn3.FieldName = "Coding.ID";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "نام دستگاه";
+            this.gridColumn4.FieldName = "MachineryTitle";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            // 
             // Coding
             // 
             this.Coding.Caption = "کد دستگاه";
@@ -356,141 +412,28 @@ namespace PMWORK.MachineryForms
             this.MachineryTitle.Visible = true;
             this.MachineryTitle.VisibleIndex = 1;
             // 
-            // labelControl5
-            // 
-            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(764, 129);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(42, 13);
-            this.labelControl5.TabIndex = 0;
-            this.labelControl5.Text = "نوع اقدام";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(764, 24);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(21, 13);
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "تاریخ";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(764, 50);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(31, 13);
-            this.labelControl7.TabIndex = 0;
-            this.labelControl7.Text = "شرکت";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(764, 162);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(47, 13);
-            this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "نوع خرابی";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(427, 52);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(55, 13);
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "شرح خرابی";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(764, 76);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(34, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "دستگاه";
-            // 
-            // txtRequest
-            // 
-            this.txtRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRequest.Location = new System.Drawing.Point(56, 48);
-            this.txtRequest.Name = "txtRequest";
-            this.txtRequest.Parmida_ActivePlusMultiKeys = false;
-            this.txtRequest.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequest.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequest.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequest.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequest.Size = new System.Drawing.Size(365, 100);
-            this.txtRequest.TabIndex = 6;
-            // 
-            // txtMachinery
-            // 
-            this.txtMachinery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMachinery.Location = new System.Drawing.Point(488, 99);
-            this.txtMachinery.Name = "txtMachinery";
-            this.txtMachinery.Parmida_ActivePlusMultiKeys = false;
-            this.txtMachinery.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtMachinery.Properties.Appearance.Options.UseBackColor = true;
-            this.txtMachinery.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtMachinery.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtMachinery.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtMachinery.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtMachinery.Properties.ReadOnly = true;
-            this.txtMachinery.Size = new System.Drawing.Size(270, 20);
-            this.txtMachinery.TabIndex = 6;
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.dgvRequestList);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 199);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(823, 250);
-            this.panelControl2.TabIndex = 1;
-            // 
-            // dgvRequestList
-            // 
-            this.dgvRequestList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRequestList.Location = new System.Drawing.Point(2, 2);
-            this.dgvRequestList.MainView = this.gvRequestList;
-            this.dgvRequestList.Name = "dgvRequestList";
-            this.dgvRequestList.Size = new System.Drawing.Size(819, 246);
-            this.dgvRequestList.TabIndex = 0;
-            this.dgvRequestList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvRequestList});
-            // 
-            // gvRequestList
-            // 
-            this.gvRequestList.GridControl = this.dgvRequestList;
-            this.gvRequestList.Name = "gvRequestList";
-            // 
             // RequestRepairForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 449);
-            this.Controls.Add(this.panelControl2);
+            this.ClientSize = new System.Drawing.Size(448, 304);
             this.Controls.Add(this.panelControl1);
             this.Name = "RequestRepairForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "درخواست تعمیر";
+            this.Text = "درخواست تعمیرات";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateRegistered.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateRegistered.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupEMPM.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroupType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxMachinery.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequest.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMachinery.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRequestList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvRequestList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRequestTitle.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -499,15 +442,9 @@ namespace PMWORK.MachineryForms
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SearchLookUpEdit cbxMachinery;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraGrid.GridControl dgvRequestList;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvRequestList;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.RadioGroup radioGroupType;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.RadioGroup radioGroupEMPM;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.SimpleButton btnClose;
@@ -522,5 +459,6 @@ namespace PMWORK.MachineryForms
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit txtRequestTitle;
     }
 }

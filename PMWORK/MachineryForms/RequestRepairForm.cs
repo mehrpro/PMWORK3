@@ -15,15 +15,18 @@ namespace PMWORK.MachineryForms
 {
     public partial class RequestRepairForm : XtraForm
     {
-        private AppDbContext db;        
-        public RequestRepairForm()
+        private AppDbContext db;
+        private int _TypeofRequest;
+        public RequestRepairForm(int TypeofRequest)
         {
             InitializeComponent();
             db = PublicClass.db;
+            _TypeofRequest = TypeofRequest;
             dateRegistered.DateTime = DateTime.Now;
             cbxMachinery.Properties.DisplayMember = "Coding.Code";
             cbxMachinery.Properties.ValueMember = "ID";
-
+            var str = db.PublicTypes.Find(TypeofRequest).Title.ToString();
+            txtRequestTitle.Text += " " + str;
             UpdateMachinery();
             ClearForm();
 
@@ -33,7 +36,6 @@ namespace PMWORK.MachineryForms
         {
             dateRegistered.DateTime = DateTime.Now;
             radioGroupEMPM.SelectedIndex = 0;
-            radioGroupType.SelectedIndex = 0;
             txtRequest.Text = "";
 
         }
@@ -75,7 +77,7 @@ namespace PMWORK.MachineryForms
                     MachineryID_FK = Convert.ToInt32(cbxMachinery.EditValue),
                     UserID_FK = PublicClass.UserID,
                     Registered = DateTime.Now,
-                    PublicTypeID_FK = Convert.ToInt32(radioGroupType.EditValue),
+                    PublicTypeID_FK = _TypeofRequest,
                     EM = Convert.ToBoolean(radioGroupEMPM.EditValue),
                     RequestDataTime = DateTime.Now,
                     RequestTitle = txtRequest.Text.Trim(),
@@ -96,6 +98,16 @@ namespace PMWORK.MachineryForms
                 return;
             }
             txtMachinery.Text = SelectedMachinery.MachineryTitle;
+
+        }
+
+        private void dateRegistered_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl2_Click(object sender, EventArgs e)
+        {
 
         }
     }
