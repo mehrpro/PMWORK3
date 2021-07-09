@@ -143,6 +143,7 @@
     <Compile Include="MachineryForms\RequestListForm.Designer.cs">
       <DependentUpon>RequestListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MachineryForms\RequestListViewModel.cs" />
     <Compile Include="MachineryForms\RequestRepairForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +179,10 @@
     <Compile Include="Migrations\202107051848354_D2.cs" />
     <Compile Include="Migrations\202107051848354_D2.designer.cs">
       <DependentUpon>202107051848354_D2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107090643371_UpdateRequestRepair1.cs" />
+    <Compile Include="Migrations\202107090643371_UpdateRequestRepair1.designer.cs">
+      <DependentUpon>202107090643371_UpdateRequestRepair1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -244,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107051848354_D2.resx">
       <DependentUpon>202107051848354_D2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107090643371_UpdateRequestRepair1.resx">
+      <DependentUpon>202107090643371_UpdateRequestRepair1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

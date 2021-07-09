@@ -94,6 +94,10 @@ namespace PMWORK
                 .HasForeignKey(x => x.ApplicantID_FK)
                 .WillCascadeOnDelete(false);
 
+
+
+
+
             builder.Entity<Company>().HasKey(x => x.ID);
             builder.Entity<Company>().Property(x => x.ID)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
@@ -117,10 +121,17 @@ namespace PMWORK
                 .HasForeignKey(x => x.CompanyID_FK)
                 .WillCascadeOnDelete(false);
             builder.Entity<Company>()
-    .HasMany<Applicant>(x => x.Applicants)
-    .WithRequired(x => x.Company)
-    .HasForeignKey(x => x.CompanyID_FK)
-    .WillCascadeOnDelete(false);
+                 .HasMany<Applicant>(x => x.Applicants)
+                 .WithRequired(x => x.Company)
+                 .HasForeignKey(x => x.CompanyID_FK)
+                 .WillCascadeOnDelete(false);
+            builder.Entity<Company>()
+                 .HasMany<RequestRepair>(x => x.RequestRepairs)
+                 .WithRequired(x => x.Company)
+                 .HasForeignKey(x => x.CompanyID_FK)
+                 .WillCascadeOnDelete(false);
+
+
 
             builder.Entity<ConsumablePart>().HasKey(x => x.ID);
             builder.Entity<ConsumablePart>().Property(x => x.ID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
@@ -169,13 +180,14 @@ namespace PMWORK
             builder.Entity<RequestRepair>().HasKey(x => x.ID);
             builder.Entity<RequestRepair>().Property(x => x.ID).IsRequired()
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            builder.Entity<RequestRepair>().Property(x => x.Registered).IsRequired().HasColumnType("datetime");
             builder.Entity<RequestRepair>().Property(x => x.IsActive).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.IsDelete).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.EM).IsRequired();
+            builder.Entity<RequestRepair>().Property(x => x.IsClose).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.PublicTypeID_FK).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.MachineryID_FK).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.UserID_FK).IsRequired();
+            builder.Entity<RequestRepair>().Property(x => x.CompanyID_FK).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.RequestDataTime).IsRequired().HasColumnType("datetime");
             builder.Entity<RequestRepair>().Property(x => x.ApplicantID_FK).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.RequestTitle).HasMaxLength(500).IsRequired();

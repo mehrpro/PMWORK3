@@ -23,14 +23,37 @@ namespace PMWORK.MachineryForms
             db = PublicClass.db;
             _TypeofRequest = TypeofRequest;
             dateRegistered.DateTime = DateTime.Now;
+
+
             cbxMachinery.Properties.DisplayMember = "Coding.Code";
             cbxMachinery.Properties.ValueMember = "ID";
+
+            cbxCompany.Properties.DisplayMember = "Title";
+            cbxCompany.Properties.ValueMember = "ID";
+
+            cbxApplicant.Properties.DisplayMember = "ApplicantTitle";
+            cbxApplicant.Properties.ValueMember = "ID";
+
+
             var str = db.PublicTypes.Find(TypeofRequest).Title.ToString();
             txtRequestTitle.Text += " " + str;
-            UpdateMachinery();
             ClearForm();
+            Task task = UpdateCompany();
 
         }
+
+        private async Task UpdateApplicant(int companyId)
+        {
+            cbxApplicant.Properties.DataSource = await db.Applicants.Where(x => x.CompanyID_FK == companyId).ToListAsync();
+
+        }
+
+        private async Task UpdateCompany()
+        {
+             cbxCompany.Properties.DataSource = await db.Companies.Select(x => new ComboBoxBaseClass() { ID = x.ID, Title = x.CompanyTiltle, Tag = x.Description }).ToListAsync();
+            //return true;
+        }
+
 
         private void ClearForm()
         {
@@ -39,73 +62,68 @@ namespace PMWORK.MachineryForms
             txtRequest.Text = "";
 
         }
-        private void UpdateMachinery()
+        private async Task UpdateMachinery(int CompanyID_FK)
         {
-            cbxMachinery.Properties.DataSource = db.Machineries
+            cbxMachinery.Properties.DataSource =await db.Machineries
                 .Include(c=> c.Coding)
-                .Where(x=>x.CompanyID == PublicClass.CompanyID)
-                .ToList();
+                .Where(x=>x.CompanyID == CompanyID_FK)
+                .ToListAsync();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (btnClose.Text == "انصراف")
-            {
-
-
-            }
-            else
-            {
-                Close();
-            }
-
-        
+           Close();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
-            if (false)
-            {
 
-            }
-            else
-            {
                 var obj = new RequestRepair()
                 {
-                    IsActive = true,
-                    IsDelete = false,
+                    IsActive = true,                                       
                     MachineryID_FK = Convert.ToInt32(cbxMachinery.EditValue),
+                    CompanyID_FK = Convert.ToInt32(cbxCompany.EditValue),
+                    ApplicantID_FK = Convert.ToInt32(cbxApplicant.EditValue),
                     UserID_FK = PublicClass.UserID,
-                    Registered = DateTime.Now,
                     PublicTypeID_FK = _TypeofRequest,
                     EM = Convert.ToBoolean(radioGroupEMPM.EditValue),
                     RequestDataTime = DateTime.Now,
-                    RequestTitle = txtRequest.Text.Trim(),
-                    
-                    
-
+                    RequestTitle = txtRequest.Text.Trim()                    
                 };
+            db.RequestRepairs.Add(obj);
+            await db.SaveChangesAsync();
+            Close();
 
-            }
+            
         }
 
-        private void cbxMachinery_EditValueChanged(object sender, EventArgs e)
+
+
+        private async void cbxCompany_EditValueChanged(object sender, EventArgs e)
+        {
+            var SelectCompany = (ComboBoxBaseClass)cbxCompany.GetSelectedDataRow();
+            if (SelectCompany == null)
+            {
+                txtMachinery.Text = "";
+                cbxApplicant.Properties.DataSource = null;
+                return;
+            }
+            // txtMachinery.Text = SelectCompany.MachineryTitle;
+            await UpdateApplicant(SelectCompany.ID);
+            await UpdateMachinery(SelectCompany.ID);
+        }
+
+        private async void cbxMachinery_EditValueChanged_1(object sender, EventArgs e)
         {
             var SelectedMachinery = (Machinery)cbxMachinery.GetSelectedDataRow();
             if (SelectedMachinery == null)
             {
                 txtMachinery.Text = "";
+                cbxApplicant.Properties.DataSource = null;
                 return;
             }
             txtMachinery.Text = SelectedMachinery.MachineryTitle;
-
+            await UpdateApplicant(SelectedMachinery.ID);
         }
-
-        private void dateRegistered_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
- 
     }
 }

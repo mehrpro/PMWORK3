@@ -29,38 +29,44 @@ namespace PMWORK.MachineryForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestRepairForm));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dateRegistered = new DevExpress.XtraEditors.DateEdit();
             this.radioGroupEMPM = new DevExpress.XtraEditors.RadioGroup();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.searchLookUpEdit2 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.cbxApplicant = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ApplicantTitle = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Description = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbxCompany = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cbxMachinery = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Coding = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MachineryTitle = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtRequest = new DevExpress.XtraEditors.MemoEdit();
-            this.txtMachinery = new DevExpress.XtraEditors.TextEdit();
             this.txtRequestTitle = new DevExpress.XtraEditors.TextEdit();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Coding = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MachineryTitle = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtMachinery = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateRegistered.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateRegistered.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupEMPM.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxApplicant.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxMachinery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequest.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMachinery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequestTitle.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMachinery.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -69,8 +75,10 @@ namespace PMWORK.MachineryForms
             this.panelControl1.Controls.Add(this.radioGroupEMPM);
             this.panelControl1.Controls.Add(this.btnClose);
             this.panelControl1.Controls.Add(this.btnSave);
-            this.panelControl1.Controls.Add(this.searchLookUpEdit2);
+            this.panelControl1.Controls.Add(this.cbxApplicant);
+            this.panelControl1.Controls.Add(this.cbxCompany);
             this.panelControl1.Controls.Add(this.cbxMachinery);
+            this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.labelControl7);
             this.panelControl1.Controls.Add(this.labelControl3);
@@ -81,14 +89,14 @@ namespace PMWORK.MachineryForms
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(448, 304);
+            this.panelControl1.Size = new System.Drawing.Size(577, 276);
             this.panelControl1.TabIndex = 0;
             // 
             // dateRegistered
             // 
             this.dateRegistered.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateRegistered.EditValue = null;
-            this.dateRegistered.Location = new System.Drawing.Point(272, 21);
+            this.dateRegistered.Location = new System.Drawing.Point(397, 21);
             this.dateRegistered.Name = "dateRegistered";
             this.dateRegistered.Parmida_ActivePlusMultiKeys = false;
             this.dateRegistered.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -105,55 +113,147 @@ namespace PMWORK.MachineryForms
             this.dateRegistered.Properties.Parmida_CheckEmptyFillDateOnEnter = false;
             this.dateRegistered.Properties.ReadOnly = true;
             this.dateRegistered.Size = new System.Drawing.Size(111, 20);
-            this.dateRegistered.TabIndex = 5;
-            this.dateRegistered.EditValueChanged += new System.EventHandler(this.dateRegistered_EditValueChanged);
+            this.dateRegistered.TabIndex = 0;
             // 
             // radioGroupEMPM
             // 
             this.radioGroupEMPM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioGroupEMPM.Location = new System.Drawing.Point(18, 99);
+            this.radioGroupEMPM.Location = new System.Drawing.Point(14, 99);
             this.radioGroupEMPM.Name = "radioGroupEMPM";
             this.radioGroupEMPM.Parmida_ActivePlusMultiKeys = false;
             this.radioGroupEMPM.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.radioGroupEMPM.Properties.Appearance.Options.UseBackColor = true;
             this.radioGroupEMPM.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "تعمیر اضطراری EM"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "تعمیر پیشگیرانه PM")});
-            this.radioGroupEMPM.Size = new System.Drawing.Size(365, 25);
-            this.radioGroupEMPM.TabIndex = 4;
+            this.radioGroupEMPM.Size = new System.Drawing.Size(494, 25);
+            this.radioGroupEMPM.TabIndex = 10;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(18, 265);
+            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
+            this.btnClose.Location = new System.Drawing.Point(15, 224);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 3;
+            this.btnClose.Size = new System.Drawing.Size(75, 42);
+            this.btnClose.TabIndex = 14;
             this.btnClose.Text = "بستن";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(99, 266);
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
+            this.btnSave.Location = new System.Drawing.Point(96, 224);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.Size = new System.Drawing.Size(78, 42);
+            this.btnSave.TabIndex = 13;
             this.btnSave.Text = "ثبت";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // searchLookUpEdit2
+            // cbxApplicant
             // 
-            this.searchLookUpEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchLookUpEdit2.Location = new System.Drawing.Point(18, 47);
-            this.searchLookUpEdit2.Name = "searchLookUpEdit2";
-            this.searchLookUpEdit2.Parmida_ActivePlusMultiKeys = false;
-            this.searchLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbxApplicant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxApplicant.Location = new System.Drawing.Point(14, 47);
+            this.cbxApplicant.Name = "cbxApplicant";
+            this.cbxApplicant.Parmida_ActivePlusMultiKeys = false;
+            this.cbxApplicant.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit2.Properties.PopupView = this.gridView2;
-            this.searchLookUpEdit2.Size = new System.Drawing.Size(365, 20);
-            this.searchLookUpEdit2.TabIndex = 2;
-            this.searchLookUpEdit2.EditValueChanged += new System.EventHandler(this.cbxMachinery_EditValueChanged);
+            this.cbxApplicant.Properties.PopupView = this.gridView1;
+            this.cbxApplicant.Size = new System.Drawing.Size(244, 20);
+            this.cbxApplicant.TabIndex = 5;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
+            this.gridView1.Appearance.ColumnFilterButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.ColumnFilterButtonActive.Options.UseTextOptions = true;
+            this.gridView1.Appearance.ColumnFilterButtonActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.CustomizationFormHint.Options.UseTextOptions = true;
+            this.gridView1.Appearance.CustomizationFormHint.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.DetailTip.Options.UseTextOptions = true;
+            this.gridView1.Appearance.DetailTip.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.Empty.Options.UseTextOptions = true;
+            this.gridView1.Appearance.Empty.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.EvenRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.FilterCloseButton.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FilterCloseButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.FilterPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FilterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.FixedLine.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FixedLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.FocusedCell.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.FocusedRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.GroupButton.Options.UseTextOptions = true;
+            this.gridView1.Appearance.GroupButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.GroupFooter.Options.UseTextOptions = true;
+            this.gridView1.Appearance.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.GroupPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.GroupRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.HideSelectionRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HideSelectionRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.HorzLine.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HorzLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.OddRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.Preview.Options.UseTextOptions = true;
+            this.gridView1.Appearance.Preview.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView1.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.RowSeparator.Options.UseTextOptions = true;
+            this.gridView1.Appearance.RowSeparator.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.SelectedRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.TopNewRow.Options.UseTextOptions = true;
+            this.gridView1.Appearance.TopNewRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.VertLine.Options.UseTextOptions = true;
+            this.gridView1.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.ViewCaption.Options.UseTextOptions = true;
+            this.gridView1.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ApplicantTitle,
+            this.Description});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // ApplicantTitle
+            // 
+            this.ApplicantTitle.Caption = "واحد";
+            this.ApplicantTitle.FieldName = "ApplicantTitle";
+            this.ApplicantTitle.Name = "ApplicantTitle";
+            this.ApplicantTitle.Visible = true;
+            this.ApplicantTitle.VisibleIndex = 0;
+            // 
+            // Description
+            // 
+            this.Description.Caption = "توضیحات";
+            this.Description.FieldName = "Description";
+            this.Description.Name = "Description";
+            this.Description.Visible = true;
+            this.Description.VisibleIndex = 1;
+            // 
+            // cbxCompany
+            // 
+            this.cbxCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxCompany.Location = new System.Drawing.Point(291, 47);
+            this.cbxCompany.Name = "cbxCompany";
+            this.cbxCompany.Parmida_ActivePlusMultiKeys = false;
+            this.cbxCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxCompany.Properties.PopupView = this.gridView2;
+            this.cbxCompany.Size = new System.Drawing.Size(217, 20);
+            this.cbxCompany.TabIndex = 3;
+            this.cbxCompany.EditValueChanged += new System.EventHandler(this.cbxCompany_EditValueChanged);
             // 
             // gridView2
             // 
@@ -211,9 +311,6 @@ namespace PMWORK.MachineryForms
             this.gridView2.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView2.Appearance.ViewCaption.Options.UseTextOptions = true;
             this.gridView2.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn3,
-            this.gridColumn4});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -222,15 +319,15 @@ namespace PMWORK.MachineryForms
             // cbxMachinery
             // 
             this.cbxMachinery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxMachinery.Location = new System.Drawing.Point(272, 73);
+            this.cbxMachinery.Location = new System.Drawing.Point(397, 73);
             this.cbxMachinery.Name = "cbxMachinery";
             this.cbxMachinery.Parmida_ActivePlusMultiKeys = false;
             this.cbxMachinery.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxMachinery.Properties.PopupView = this.searchLookUpEdit1View;
             this.cbxMachinery.Size = new System.Drawing.Size(111, 20);
-            this.cbxMachinery.TabIndex = 2;
-            this.cbxMachinery.EditValueChanged += new System.EventHandler(this.cbxMachinery_EditValueChanged);
+            this.cbxMachinery.TabIndex = 7;
+            this.cbxMachinery.EditValueChanged += new System.EventHandler(this.cbxMachinery_EditValueChanged_1);
             // 
             // searchLookUpEdit1View
             // 
@@ -296,106 +393,6 @@ namespace PMWORK.MachineryForms
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // labelControl5
-            // 
-            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(389, 103);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(42, 13);
-            this.labelControl5.TabIndex = 0;
-            this.labelControl5.Text = "نوع اقدام";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(389, 50);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(31, 13);
-            this.labelControl7.TabIndex = 0;
-            this.labelControl7.Text = "شرکت";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(389, 163);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(55, 13);
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "شرح خرابی";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(389, 76);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(34, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "دستگاه";
-            // 
-            // txtRequest
-            // 
-            this.txtRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRequest.Location = new System.Drawing.Point(18, 130);
-            this.txtRequest.Name = "txtRequest";
-            this.txtRequest.Parmida_ActivePlusMultiKeys = false;
-            this.txtRequest.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequest.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequest.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequest.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequest.Size = new System.Drawing.Size(365, 129);
-            this.txtRequest.TabIndex = 6;
-            // 
-            // txtMachinery
-            // 
-            this.txtMachinery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMachinery.Location = new System.Drawing.Point(18, 73);
-            this.txtMachinery.Name = "txtMachinery";
-            this.txtMachinery.Parmida_ActivePlusMultiKeys = false;
-            this.txtMachinery.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtMachinery.Properties.Appearance.Options.UseBackColor = true;
-            this.txtMachinery.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtMachinery.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtMachinery.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtMachinery.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtMachinery.Properties.ReadOnly = true;
-            this.txtMachinery.Size = new System.Drawing.Size(248, 20);
-            this.txtMachinery.TabIndex = 6;
-            // 
-            // txtRequestTitle
-            // 
-            this.txtRequestTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRequestTitle.EditValue = "درخواست تعمیرات";
-            this.txtRequestTitle.Location = new System.Drawing.Point(18, 21);
-            this.txtRequestTitle.Name = "txtRequestTitle";
-            this.txtRequestTitle.Parmida_ActivePlusMultiKeys = false;
-            this.txtRequestTitle.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtRequestTitle.Properties.Appearance.ForeColor = System.Drawing.Color.DarkRed;
-            this.txtRequestTitle.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRequestTitle.Properties.Appearance.Options.UseForeColor = true;
-            this.txtRequestTitle.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequestTitle.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequestTitle.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequestTitle.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtRequestTitle.Properties.ReadOnly = true;
-            this.txtRequestTitle.Size = new System.Drawing.Size(248, 20);
-            this.txtRequestTitle.TabIndex = 6;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "کد دستگاه";
-            this.gridColumn3.FieldName = "Coding.ID";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "نام دستگاه";
-            this.gridColumn4.FieldName = "MachineryTitle";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
-            // 
             // Coding
             // 
             this.Coding.Caption = "کد دستگاه";
@@ -412,15 +409,109 @@ namespace PMWORK.MachineryForms
             this.MachineryTitle.Visible = true;
             this.MachineryTitle.VisibleIndex = 1;
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Location = new System.Drawing.Point(264, 50);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(21, 13);
+            this.labelControl2.TabIndex = 4;
+            this.labelControl2.Text = "واحد";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl5.Location = new System.Drawing.Point(514, 103);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(42, 13);
+            this.labelControl5.TabIndex = 9;
+            this.labelControl5.Text = "نوع اقدام";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl7.Location = new System.Drawing.Point(514, 50);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(31, 13);
+            this.labelControl7.TabIndex = 2;
+            this.labelControl7.Text = "شرکت";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Location = new System.Drawing.Point(513, 132);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(55, 13);
+            this.labelControl3.TabIndex = 11;
+            this.labelControl3.Text = "شرح خرابی";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Location = new System.Drawing.Point(514, 76);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(34, 13);
+            this.labelControl1.TabIndex = 6;
+            this.labelControl1.Text = "دستگاه";
+            // 
+            // txtRequest
+            // 
+            this.txtRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRequest.Location = new System.Drawing.Point(14, 130);
+            this.txtRequest.Name = "txtRequest";
+            this.txtRequest.Parmida_ActivePlusMultiKeys = false;
+            this.txtRequest.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequest.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequest.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequest.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequest.Size = new System.Drawing.Size(494, 88);
+            this.txtRequest.TabIndex = 12;
+            // 
+            // txtRequestTitle
+            // 
+            this.txtRequestTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRequestTitle.EditValue = "درخواست تعمیرات";
+            this.txtRequestTitle.Location = new System.Drawing.Point(14, 21);
+            this.txtRequestTitle.Name = "txtRequestTitle";
+            this.txtRequestTitle.Parmida_ActivePlusMultiKeys = false;
+            this.txtRequestTitle.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtRequestTitle.Properties.Appearance.ForeColor = System.Drawing.Color.DarkRed;
+            this.txtRequestTitle.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRequestTitle.Properties.Appearance.Options.UseForeColor = true;
+            this.txtRequestTitle.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequestTitle.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequestTitle.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequestTitle.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtRequestTitle.Properties.ReadOnly = true;
+            this.txtRequestTitle.Size = new System.Drawing.Size(377, 20);
+            this.txtRequestTitle.TabIndex = 1;
+            // 
+            // txtMachinery
+            // 
+            this.txtMachinery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMachinery.Location = new System.Drawing.Point(14, 73);
+            this.txtMachinery.Name = "txtMachinery";
+            this.txtMachinery.Parmida_ActivePlusMultiKeys = false;
+            this.txtMachinery.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtMachinery.Properties.Appearance.Options.UseBackColor = true;
+            this.txtMachinery.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtMachinery.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtMachinery.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtMachinery.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtMachinery.Properties.ReadOnly = true;
+            this.txtMachinery.Size = new System.Drawing.Size(377, 20);
+            this.txtMachinery.TabIndex = 8;
+            // 
             // RequestRepairForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 304);
+            this.ClientSize = new System.Drawing.Size(577, 276);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RequestRepairForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "درخواست تعمیرات";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -428,13 +519,15 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.dateRegistered.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateRegistered.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupEMPM.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxApplicant.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxMachinery.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequest.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMachinery.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequestTitle.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMachinery.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -455,11 +548,14 @@ namespace PMWORK.MachineryForms
         private DevExpress.XtraGrid.Columns.GridColumn Coding;
         private DevExpress.XtraGrid.Columns.GridColumn MachineryTitle;
         private DevExpress.XtraEditors.TextEdit txtMachinery;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit2;
+        private DevExpress.XtraEditors.SearchLookUpEdit cbxCompany;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txtRequestTitle;
+        private DevExpress.XtraEditors.SearchLookUpEdit cbxApplicant;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraGrid.Columns.GridColumn ApplicantTitle;
+        private DevExpress.XtraGrid.Columns.GridColumn Description;
     }
 }
