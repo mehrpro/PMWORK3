@@ -9,7 +9,7 @@ namespace PMWORK
 
         public AppDbContext() : base("Conn")
         {
-            Database.SetInitializer(new PMDBInitializer());
+            //Database.SetInitializer(new PMDBInitializer());
         }
 
         protected override void OnModelCreating(DbModelBuilder builder)

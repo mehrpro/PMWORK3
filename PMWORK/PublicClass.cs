@@ -11,7 +11,8 @@ namespace PMWORK
         public static int UserID { get; set; }
         public static int CompanyID { get; set; }
         public static AppDbContext db { get; set;}
-        
+        public static string ErrorValidation = @"مقادیر الزامی فرم را وارد کنید";
+
 
     }
 }

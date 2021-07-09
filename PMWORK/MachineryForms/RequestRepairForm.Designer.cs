@@ -162,6 +162,7 @@ namespace PMWORK.MachineryForms
             this.cbxApplicant.Properties.PopupView = this.gridView1;
             this.cbxApplicant.Size = new System.Drawing.Size(244, 20);
             this.cbxApplicant.TabIndex = 5;
+            this.cbxApplicant.EditValueChanged += new System.EventHandler(this.cbxApplicant_EditValueChanged);
             // 
             // gridView1
             // 
