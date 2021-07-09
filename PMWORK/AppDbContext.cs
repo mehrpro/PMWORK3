@@ -93,7 +93,11 @@ namespace PMWORK
                 .WithRequired(x => x.Applicant)
                 .HasForeignKey(x => x.ApplicantID_FK)
                 .WillCascadeOnDelete(false);
-
+            builder.Entity<Applicant>()
+    .HasMany(x => x.Machineries)
+    .WithRequired(x => x.Applicant)
+    .HasForeignKey(x => x.ApplicantID_FK)
+    .WillCascadeOnDelete(false);
 
 
 

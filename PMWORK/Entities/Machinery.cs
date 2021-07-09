@@ -19,6 +19,9 @@ namespace PMWORK.Entities
         public int CompanyID { get; set; }
         public long CodeID_FK { get; set; }
         public Coding Coding { get; set; }
+        public int ApplicantID_FK { get; set; }
+        public Applicant Applicant { get; set; }
+
         public string MachineryTitle { get; set; }
         public string Description { get; set; }
 

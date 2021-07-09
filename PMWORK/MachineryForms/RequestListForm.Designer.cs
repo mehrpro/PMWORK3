@@ -48,21 +48,23 @@ namespace PMWORK.MachineryForms
             this.gvRequestList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RequsetDateTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.MachineryCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.EM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ReqTitle = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Applicant = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.SelectView = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEditRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.Applicant = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequestList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRequestList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditRow)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -125,18 +127,21 @@ namespace PMWORK.MachineryForms
             this.btnMecanicalList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMecanicalList.ImageOptions.LargeImage")));
             this.btnMecanicalList.ImageOptions.SmallImage = global::PMWORK.Properties.Resources.icons8_settings_16;
             this.btnMecanicalList.Name = "btnMecanicalList";
+            this.btnMecanicalList.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnMecanicalList_LinkClicked);
             // 
             // btnPipeLine
             // 
             this.btnPipeLine.Caption = "کارگاه تاسیسات";
             this.btnPipeLine.ImageOptions.SmallImage = global::PMWORK.Properties.Resources.icons8_piping_16;
             this.btnPipeLine.Name = "btnPipeLine";
+            this.btnPipeLine.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnPipeLine_LinkClicked);
             // 
             // btnBuilding
             // 
             this.btnBuilding.Caption = "ساخت و تجهیز";
             this.btnBuilding.ImageOptions.SmallImage = global::PMWORK.Properties.Resources.icons8_maintenance_16;
             this.btnBuilding.Name = "btnBuilding";
+            this.btnBuilding.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnBuilding_LinkClicked);
             // 
             // navBarItem5
             // 
@@ -156,7 +161,8 @@ namespace PMWORK.MachineryForms
             this.dgvRequestList.Name = "dgvRequestList";
             this.dgvRequestList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEditRow,
-            this.repositoryItemDateEdit1});
+            this.repositoryItemDateEdit1,
+            this.repositoryItemMemoExEdit1});
             this.dgvRequestList.Size = new System.Drawing.Size(637, 456);
             this.dgvRequestList.TabIndex = 0;
             this.dgvRequestList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -220,14 +226,15 @@ namespace PMWORK.MachineryForms
             this.gvRequestList.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gvRequestList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ID,
+            this.Applicant,
             this.RequsetDateTime,
             this.MachineryCode,
             this.EM,
             this.ReqTitle,
-            this.Applicant,
             this.SelectView});
             this.gvRequestList.GridControl = this.dgvRequestList;
             this.gvRequestList.Name = "gvRequestList";
+            this.gvRequestList.OptionsBehavior.ReadOnly = true;
             // 
             // ID
             // 
@@ -236,7 +243,7 @@ namespace PMWORK.MachineryForms
             this.ID.Name = "ID";
             this.ID.Visible = true;
             this.ID.VisibleIndex = 0;
-            this.ID.Width = 61;
+            this.ID.Width = 44;
             // 
             // RequsetDateTime
             // 
@@ -245,58 +252,8 @@ namespace PMWORK.MachineryForms
             this.RequsetDateTime.FieldName = "RequestDataTime";
             this.RequsetDateTime.Name = "RequsetDateTime";
             this.RequsetDateTime.Visible = true;
-            this.RequsetDateTime.VisibleIndex = 1;
-            this.RequsetDateTime.Width = 87;
-            // 
-            // MachineryCode
-            // 
-            this.MachineryCode.Caption = "کد دستگاه";
-            this.MachineryCode.Name = "MachineryCode";
-            this.MachineryCode.Visible = true;
-            this.MachineryCode.VisibleIndex = 2;
-            this.MachineryCode.Width = 92;
-            // 
-            // EM
-            // 
-            this.EM.Caption = "اضطراری";
-            this.EM.Name = "EM";
-            this.EM.Visible = true;
-            this.EM.VisibleIndex = 3;
-            this.EM.Width = 92;
-            // 
-            // ReqTitle
-            // 
-            this.ReqTitle.Caption = "شرح درخواست";
-            this.ReqTitle.Name = "ReqTitle";
-            this.ReqTitle.Visible = true;
-            this.ReqTitle.VisibleIndex = 4;
-            this.ReqTitle.Width = 92;
-            // 
-            // Applicant
-            // 
-            this.Applicant.Caption = "درخواست کننده";
-            this.Applicant.Name = "Applicant";
-            this.Applicant.Visible = true;
-            this.Applicant.VisibleIndex = 5;
-            this.Applicant.Width = 92;
-            // 
-            // SelectView
-            // 
-            this.SelectView.Caption = "جزئیات";
-            this.SelectView.ColumnEdit = this.btnEditRow;
-            this.SelectView.Name = "SelectView";
-            this.SelectView.Visible = true;
-            this.SelectView.VisibleIndex = 6;
-            this.SelectView.Width = 103;
-            // 
-            // btnEditRow
-            // 
-            this.btnEditRow.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.btnEditRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnEditRow.Name = "btnEditRow";
-            this.btnEditRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.RequsetDateTime.VisibleIndex = 2;
+            this.RequsetDateTime.Width = 63;
             // 
             // repositoryItemDateEdit1
             // 
@@ -308,6 +265,72 @@ namespace PMWORK.MachineryForms
             this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             this.repositoryItemDateEdit1.Parmida_CheckDateOnLeave = false;
             this.repositoryItemDateEdit1.Parmida_CheckEmptyFillDateOnEnter = false;
+            // 
+            // MachineryCode
+            // 
+            this.MachineryCode.Caption = "کد دستگاه";
+            this.MachineryCode.FieldName = "Machinery.Coding.Code";
+            this.MachineryCode.Name = "MachineryCode";
+            this.MachineryCode.Visible = true;
+            this.MachineryCode.VisibleIndex = 3;
+            this.MachineryCode.Width = 80;
+            // 
+            // EM
+            // 
+            this.EM.Caption = "اضطراری";
+            this.EM.FieldName = "EM";
+            this.EM.Name = "EM";
+            this.EM.Visible = true;
+            this.EM.VisibleIndex = 4;
+            this.EM.Width = 67;
+            // 
+            // ReqTitle
+            // 
+            this.ReqTitle.Caption = "شرح درخواست";
+            this.ReqTitle.ColumnEdit = this.repositoryItemMemoExEdit1;
+            this.ReqTitle.FieldName = "RequestTitle";
+            this.ReqTitle.Name = "ReqTitle";
+            this.ReqTitle.Visible = true;
+            this.ReqTitle.VisibleIndex = 5;
+            this.ReqTitle.Width = 174;
+            // 
+            // repositoryItemMemoExEdit1
+            // 
+            this.repositoryItemMemoExEdit1.AutoHeight = false;
+            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
+            // 
+            // SelectView
+            // 
+            this.SelectView.Caption = "جزئیات";
+            this.SelectView.ColumnEdit = this.btnEditRow;
+            this.SelectView.Name = "SelectView";
+            this.SelectView.Visible = true;
+            this.SelectView.VisibleIndex = 6;
+            this.SelectView.Width = 78;
+            // 
+            // btnEditRow
+            // 
+            this.btnEditRow.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            serializableAppearanceObject1.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject2.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject3.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject4.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.btnEditRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnEditRow.Name = "btnEditRow";
+            this.btnEditRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // Applicant
+            // 
+            this.Applicant.Caption = "واحد درخواست کننده";
+            this.Applicant.FieldName = "Applicant.ApplicantTitle";
+            this.Applicant.Name = "Applicant";
+            this.Applicant.Visible = true;
+            this.Applicant.VisibleIndex = 1;
+            this.Applicant.Width = 113;
             // 
             // RequestListForm
             // 
@@ -323,9 +346,10 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequestList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvRequestList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditRow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,8 +373,9 @@ namespace PMWORK.MachineryForms
         private DevExpress.XtraGrid.Columns.GridColumn MachineryCode;
         private DevExpress.XtraGrid.Columns.GridColumn EM;
         private DevExpress.XtraGrid.Columns.GridColumn ReqTitle;
-        private DevExpress.XtraGrid.Columns.GridColumn Applicant;
         private DevExpress.XtraGrid.Columns.GridColumn SelectView;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEditRow;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn Applicant;
     }
 }

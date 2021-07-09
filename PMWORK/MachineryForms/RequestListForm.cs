@@ -22,13 +22,31 @@ namespace PMWORK.MachineryForms
 
         private async void UpdateRequestList(int id)
         {
-            var qry = await PublicClass.db.RequestRepairs.Include(a => a.Machinery.Coding).Where(x => x.PublicTypeID_FK == id).ToListAsync();
+            var qry = await PublicClass.db.RequestRepairs.Include(a => a.Machinery.Coding).Include(s=>s.Applicant).Where(x => x.PublicTypeID_FK == id).ToListAsync();
             dgvRequestList.DataSource = qry;
         }
 
         private  void btnElectricalList_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
              UpdateRequestList(1);
+        }
+
+        private void btnMecanicalList_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            UpdateRequestList(2);
+
+        }
+
+        private void btnPipeLine_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            UpdateRequestList(3);
+
+        }
+
+        private void btnBuilding_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            UpdateRequestList(4);
+
         }
     }
 }

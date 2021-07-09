@@ -89,7 +89,7 @@ namespace PMWORK.MachineryForms
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(577, 276);
+            this.panelControl1.Size = new System.Drawing.Size(577, 266);
             this.panelControl1.TabIndex = 0;
             // 
             // dateRegistered
@@ -122,9 +122,10 @@ namespace PMWORK.MachineryForms
             this.radioGroupEMPM.Name = "radioGroupEMPM";
             this.radioGroupEMPM.Parmida_ActivePlusMultiKeys = false;
             this.radioGroupEMPM.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.radioGroupEMPM.Properties.Appearance.Options.UseBackColor = true;
             this.radioGroupEMPM.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "تعمیر اضطراری EM"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "تعمیر پیشگیرانه PM")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "تعمیر اضطراری EM"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "تعمیر پیشگیرانه PM")});
             this.radioGroupEMPM.Size = new System.Drawing.Size(494, 25);
             this.radioGroupEMPM.TabIndex = 10;
             // 
@@ -134,7 +135,7 @@ namespace PMWORK.MachineryForms
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
             this.btnClose.Location = new System.Drawing.Point(15, 224);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 42);
+            this.btnClose.Size = new System.Drawing.Size(80, 30);
             this.btnClose.TabIndex = 14;
             this.btnClose.Text = "بستن";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -143,9 +144,9 @@ namespace PMWORK.MachineryForms
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(96, 224);
+            this.btnSave.Location = new System.Drawing.Point(101, 224);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(78, 42);
+            this.btnSave.Size = new System.Drawing.Size(80, 30);
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "ثبت";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -506,7 +507,7 @@ namespace PMWORK.MachineryForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 276);
+            this.ClientSize = new System.Drawing.Size(577, 266);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RequestRepairForm";

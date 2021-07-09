@@ -36,15 +36,12 @@ namespace PMWORK.MachineryForms
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.chkActive = new DevExpress.XtraEditors.CheckEdit();
             this.chkDelete = new DevExpress.XtraEditors.CheckEdit();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.txtDescription = new DevExpress.XtraEditors.TextEdit();
             this.txtTitle = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cbxCompany = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -60,13 +57,14 @@ namespace PMWORK.MachineryForms
             this.Coding = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MachineryTitle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Description = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbxApplicantList = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txtDescription = new DevExpress.XtraEditors.MemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkActive.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDelete.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -77,43 +75,36 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.dgvMachineryList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMachineryList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxApplicantList.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.groupControl1);
+            this.panelControl1.Controls.Add(this.chkDelete);
+            this.panelControl1.Controls.Add(this.chkActive);
             this.panelControl1.Controls.Add(this.btnClose);
             this.panelControl1.Controls.Add(this.btnAdd);
-            this.panelControl1.Controls.Add(this.txtDescription);
             this.panelControl1.Controls.Add(this.txtTitle);
             this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.cbxApplicantList);
             this.panelControl1.Controls.Add(this.cbxCompany);
             this.panelControl1.Controls.Add(this.cbxCoding);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Controls.Add(this.txtDescription);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelControl1.Location = new System.Drawing.Point(467, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(800, 144);
+            this.panelControl1.Size = new System.Drawing.Size(333, 450);
             this.panelControl1.TabIndex = 0;
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl1.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
-            this.groupControl1.Controls.Add(this.chkActive);
-            this.groupControl1.Controls.Add(this.chkDelete);
-            this.groupControl1.Location = new System.Drawing.Point(105, 22);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(139, 98);
-            this.groupControl1.TabIndex = 8;
-            this.groupControl1.Text = "ویرایش";
             // 
             // chkActive
             // 
             this.chkActive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkActive.Location = new System.Drawing.Point(69, 34);
+            this.chkActive.Location = new System.Drawing.Point(161, 217);
             this.chkActive.Name = "chkActive";
             this.chkActive.Parmida_ActivePlusMultiKeys = false;
             this.chkActive.Properties.Caption = "فعال";
@@ -123,7 +114,7 @@ namespace PMWORK.MachineryForms
             // chkDelete
             // 
             this.chkDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkDelete.Location = new System.Drawing.Point(67, 59);
+            this.chkDelete.Location = new System.Drawing.Point(159, 242);
             this.chkDelete.Name = "chkDelete";
             this.chkDelete.Parmida_ActivePlusMultiKeys = false;
             this.chkDelete.Properties.Caption = "حذف";
@@ -134,9 +125,10 @@ namespace PMWORK.MachineryForms
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(265, 97);
+            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
+            this.btnClose.Location = new System.Drawing.Point(18, 277);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(80, 30);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "بستن";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -144,54 +136,37 @@ namespace PMWORK.MachineryForms
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Location = new System.Drawing.Point(346, 97);
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(104, 277);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(80, 30);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "افزودن";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtDescription
-            // 
-            this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescription.Location = new System.Drawing.Point(265, 71);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Parmida_ActivePlusMultiKeys = false;
-            this.txtDescription.Size = new System.Drawing.Size(419, 20);
-            this.txtDescription.TabIndex = 3;
-            // 
             // txtTitle
             // 
             this.txtTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTitle.Location = new System.Drawing.Point(265, 45);
+            this.txtTitle.Location = new System.Drawing.Point(18, 120);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Parmida_ActivePlusMultiKeys = false;
             this.txtTitle.Properties.ReadOnly = true;
-            this.txtTitle.Size = new System.Drawing.Size(224, 20);
+            this.txtTitle.Size = new System.Drawing.Size(200, 20);
             this.txtTitle.TabIndex = 3;
             // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(690, 74);
+            this.labelControl3.Location = new System.Drawing.Point(224, 149);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(40, 13);
             this.labelControl3.TabIndex = 2;
             this.labelControl3.Text = "توضیحات";
             // 
-            // labelControl2
-            // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(495, 48);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(50, 13);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "نام دستگاه";
-            // 
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(690, 22);
+            this.labelControl5.Location = new System.Drawing.Point(224, 45);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(97, 13);
             this.labelControl5.TabIndex = 0;
@@ -200,7 +175,7 @@ namespace PMWORK.MachineryForms
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(690, 48);
+            this.labelControl1.Location = new System.Drawing.Point(224, 97);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 13);
             this.labelControl1.TabIndex = 0;
@@ -209,7 +184,7 @@ namespace PMWORK.MachineryForms
             // cbxCompany
             // 
             this.cbxCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxCompany.Location = new System.Drawing.Point(265, 19);
+            this.cbxCompany.Location = new System.Drawing.Point(18, 42);
             this.cbxCompany.Name = "cbxCompany";
             this.cbxCompany.Parmida_ActivePlusMultiKeys = false;
             this.cbxCompany.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -220,7 +195,7 @@ namespace PMWORK.MachineryForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxCompany.Properties.NullText = "";
             this.cbxCompany.Properties.PopupView = this.gridView1;
-            this.cbxCompany.Size = new System.Drawing.Size(419, 20);
+            this.cbxCompany.Size = new System.Drawing.Size(200, 20);
             this.cbxCompany.TabIndex = 3;
             this.cbxCompany.EditValueChanged += new System.EventHandler(this.cbxCompany_EditValueChanged);
             // 
@@ -234,7 +209,7 @@ namespace PMWORK.MachineryForms
             // cbxCoding
             // 
             this.cbxCoding.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxCoding.Location = new System.Drawing.Point(562, 45);
+            this.cbxCoding.Location = new System.Drawing.Point(18, 94);
             this.cbxCoding.Name = "cbxCoding";
             this.cbxCoding.Parmida_ActivePlusMultiKeys = false;
             this.cbxCoding.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -245,7 +220,7 @@ namespace PMWORK.MachineryForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxCoding.Properties.NullText = "";
             this.cbxCoding.Properties.PopupView = this.searchLookUpEdit1View;
-            this.cbxCoding.Size = new System.Drawing.Size(122, 20);
+            this.cbxCoding.Size = new System.Drawing.Size(200, 20);
             this.cbxCoding.TabIndex = 3;
             this.cbxCoding.EditValueChanged += new System.EventHandler(this.cbxCoding_EditValueChanged);
             // 
@@ -260,9 +235,9 @@ namespace PMWORK.MachineryForms
             // 
             this.panelControl2.Controls.Add(this.dgvMachineryList);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 144);
+            this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(800, 306);
+            this.panelControl2.Size = new System.Drawing.Size(467, 450);
             this.panelControl2.TabIndex = 1;
             // 
             // dgvMachineryList
@@ -273,7 +248,7 @@ namespace PMWORK.MachineryForms
             this.dgvMachineryList.Name = "dgvMachineryList";
             this.dgvMachineryList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSelect});
-            this.dgvMachineryList.Size = new System.Drawing.Size(796, 302);
+            this.dgvMachineryList.Size = new System.Drawing.Size(463, 446);
             this.dgvMachineryList.TabIndex = 0;
             this.dgvMachineryList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMachineryList});
@@ -403,6 +378,53 @@ namespace PMWORK.MachineryForms
             this.Description.VisibleIndex = 4;
             this.Description.Width = 219;
             // 
+            // cbxApplicantList
+            // 
+            this.cbxApplicantList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxApplicantList.Location = new System.Drawing.Point(18, 68);
+            this.cbxApplicantList.Name = "cbxApplicantList";
+            this.cbxApplicantList.Parmida_ActivePlusMultiKeys = false;
+            this.cbxApplicantList.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxApplicantList.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxApplicantList.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxApplicantList.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxApplicantList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxApplicantList.Properties.NullText = "";
+            this.cbxApplicantList.Properties.PopupView = this.gridView2;
+            this.cbxApplicantList.Size = new System.Drawing.Size(200, 20);
+            this.cbxApplicantList.TabIndex = 3;
+            this.cbxApplicantList.EditValueChanged += new System.EventHandler(this.cbxCompany_EditValueChanged);
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl4.Location = new System.Drawing.Point(224, 71);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(21, 13);
+            this.labelControl4.TabIndex = 0;
+            this.labelControl4.Text = "واحد";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescription.Location = new System.Drawing.Point(18, 146);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Parmida_ActivePlusMultiKeys = false;
+            this.txtDescription.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtDescription.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtDescription.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtDescription.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.txtDescription.Size = new System.Drawing.Size(200, 65);
+            this.txtDescription.TabIndex = 3;
+            // 
             // MachineryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,11 +438,8 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chkActive.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkDelete.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -431,6 +450,9 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.dgvMachineryList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvMachineryList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxApplicantList.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -438,10 +460,8 @@ namespace PMWORK.MachineryForms
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.TextEdit txtDescription;
         private DevExpress.XtraEditors.TextEdit txtTitle;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SearchLookUpEdit cbxCoding;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
@@ -458,9 +478,12 @@ namespace PMWORK.MachineryForms
         private DevExpress.XtraGrid.Columns.GridColumn Coding;
         private DevExpress.XtraGrid.Columns.GridColumn MachineryTitle;
         private DevExpress.XtraGrid.Columns.GridColumn Description;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.CheckEdit chkActive;
         private DevExpress.XtraEditors.CheckEdit chkDelete;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.SearchLookUpEdit cbxApplicantList;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.MemoEdit txtDescription;
     }
 }

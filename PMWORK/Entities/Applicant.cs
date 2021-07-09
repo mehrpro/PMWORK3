@@ -13,6 +13,7 @@ namespace PMWORK.Entities
         public Applicant()
         {
             RequestRepairs = new HashSet<RequestRepair>();
+            Machineries = new HashSet<Machinery>();
 
         }
 
@@ -24,6 +25,7 @@ namespace PMWORK.Entities
 
 
         public virtual ICollection<RequestRepair> RequestRepairs { get; set; }
+        public virtual ICollection<Machinery> Machineries { get; set; }
 
 
 
