@@ -25,10 +25,10 @@ namespace PMWORK.MachineryForms
 
 
 
-        private async void UpdateRequestList(int id)
+        private  void UpdateRequestList(int id)
         {              
            
-            dgvRequestList.DataSource = await _request.GetActiveRequestRepair(id);
+            dgvRequestList.DataSource =  _request.GetActiveRequestRepair(id);
         }
 
         private  void btnElectricalList_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

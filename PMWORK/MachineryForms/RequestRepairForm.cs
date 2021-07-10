@@ -5,12 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using PMWORK.Entities;
+using PMWORK.Repository;
 
 namespace PMWORK.MachineryForms
 {
     public partial class RequestRepairForm : XtraForm
     {
         private AppDbContext _db;
+        private IRequestRepairRepository requestRepairRepository; 
         private readonly int _typeofRequest;
         private ComboBoxBaseClass _selectCompany;
         private Applicant _selectApplicant;

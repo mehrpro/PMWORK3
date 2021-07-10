@@ -10,7 +10,8 @@ namespace PMWORK.Repository
 {
    public interface IRequestRepairRepository :IDisposable
     {
-        Task<List<RequestRepair>> GetActiveRequestRepair(int type);
+        List<RequestRepair> GetActiveRequestRepair(int type);
+        Task<bool> UpdateRequestRepair(RequestRepair model);
     }
 
     public class RequestRepairRepository : IRequestRepairRepository
@@ -25,20 +26,35 @@ namespace PMWORK.Repository
             context.Dispose();
         }
 
-        public async Task<List<RequestRepair>> GetActiveRequestRepair(int type)
+        public  List<RequestRepair> GetActiveRequestRepair(int type)
         {
-            using (var db = new AppDbContext())
-            {
-                var qry = await context.RequestRepairs
-        .Include(a => a.Machinery.Coding)
-        .Include(s => s.Applicant)
-        .Where(x => x.PublicTypeID_FK == type)
-        .ToListAsync();
+            var qry = new List<RequestRepair>();
+             using (var db = new AppDbContext())
+             {
+               qry =  context.RequestRepairs
+               .Include(a => a.Machinery.Coding)
+               .Include(s => s.Applicant)
+               .Where(x => x.PublicTypeID_FK == type)
+               .ToList();
+             }
+            return qry;
+        }
 
+        public async Task<bool> UpdateRequestRepair(RequestRepair model)
+        {
+            try
+            {
+                //context.Entry(model).State = EntityState.Detached;
+                context.Entry(model).State = EntityState.Modified;
+                await context.SaveChangesAsync();
+                return true;
 
             }
-
-            return qry;
+            catch 
+            {
+                return false;
+                
+            }
         }
     }
 }
