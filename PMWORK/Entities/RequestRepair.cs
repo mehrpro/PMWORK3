@@ -23,7 +23,6 @@ namespace PMWORK.Entities
         public bool IsDelete { get; set; }
         public bool IsClose { get; set; }
         public bool EM { get; set; }
-
         public int CompanyID_FK { get; set; }
         public Company Company { get; set; }
         public int MachineryID_FK { get; set; }

@@ -1,13 +1,8 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.Entity;
 using PMWORK.Entities;
 
@@ -20,6 +15,21 @@ namespace PMWORK.MachineryForms
         private ComboBoxBaseClass _selectCompany;
         private Applicant _selectApplicant;
         private Machinery _selectedMachinery;
+        private RequestRepair _requestRepairEdit;
+        private bool _editor;
+
+        public RequestRepair RequestRepairEdit
+        {
+            get { return _requestRepairEdit ;}
+            set { _requestRepairEdit = value ;}
+        }
+        public bool Editor 
+        { 
+            get { return _editor; } 
+            set { _editor = value; }
+        }
+
+
 
         public RequestRepairForm(int typeofRequest)
         {
@@ -27,7 +37,6 @@ namespace PMWORK.MachineryForms
             _db = new AppDbContext();
             _typeofRequest = typeofRequest;
             dateRegistered.DateTime = DateTime.Now;
-
 
             cbxMachinery.Properties.DisplayMember = "Coding.Code";
             cbxMachinery.Properties.ValueMember = "ID";
@@ -38,24 +47,21 @@ namespace PMWORK.MachineryForms
             cbxApplicant.Properties.DisplayMember = "ApplicantTitle";
             cbxApplicant.Properties.ValueMember = "ID";
 
-
             var str = _db.PublicTypes.Find(typeofRequest).Title;
             txtRequestTitle.Text += @" " + str;
             ClearForm();
-            Task task = UpdateCompany();
+             UpdateCompany();
 
         }
 
-        private async Task UpdateApplicant(int companyId)
+        private void UpdateApplicant(int companyId)
         {
-            cbxApplicant.Properties.DataSource = await _db.Applicants.Where(x => x.CompanyID_FK == companyId).ToListAsync();
-
+            cbxApplicant.Properties.DataSource =  _db.Applicants.Where(x => x.CompanyID_FK == companyId).ToList();
         }
 
-        private async Task UpdateCompany()
+        private void UpdateCompany()
         {
-            cbxCompany.Properties.DataSource = await _db.Companies.Select(x => new ComboBoxBaseClass() { ID = x.ID, Title = x.CompanyTiltle, Tag = x.Description }).ToListAsync();
-            //return true;
+            cbxCompany.Properties.DataSource =  _db.Companies.Select(x => new ComboBoxBaseClass() { ID = x.ID, Title = x.CompanyTiltle, Tag = x.Description }).ToList();
         }
 
 
@@ -66,12 +72,12 @@ namespace PMWORK.MachineryForms
             txtRequest.Text = "";
 
         }
-        private async Task UpdateMachinery(int applicantIdFk)
+        private void UpdateMachinery(int applicantIdFk)
         {
-            cbxMachinery.Properties.DataSource = await _db.Machineries
+            cbxMachinery.Properties.DataSource =  _db.Machineries
                 .Include(c => c.Coding)
                 .Where(x => x.ApplicantID_FK == applicantIdFk)
-                .ToListAsync();
+                .ToList();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -79,31 +85,41 @@ namespace PMWORK.MachineryForms
             Close();
         }
 
-        private async void btnSave_Click(object sender, EventArgs e)
+        private  void btnSave_Click(object sender, EventArgs e)
         {
-
-            var obj = new RequestRepair()
+            if (btnSave.Text == "ذخیره")
             {
-                IsActive = true,
-                MachineryID_FK = Convert.ToInt32(cbxMachinery.EditValue),
-                CompanyID_FK = Convert.ToInt32(cbxCompany.EditValue),
-                ApplicantID_FK = Convert.ToInt32(cbxApplicant.EditValue),
-                UserID_FK = PublicClass.UserID,
-                PublicTypeID_FK = _typeofRequest,
-                EM = Convert.ToBoolean(radioGroupEMPM.EditValue),
-                RequestDataTime = DateTime.Now,
-                RequestTitle = txtRequest.Text.Trim()
-            };
-            _db.RequestRepairs.Add(obj);
-            await _db.SaveChangesAsync();
+                var select =  _db.RequestRepairs.Find(_requestRepairEdit.ID);
+                select.MachineryID_FK = Convert.ToInt32(cbxMachinery.EditValue);
+                select.CompanyID_FK = Convert.ToInt32(cbxCompany.EditValue);
+                select.ApplicantID_FK = Convert.ToInt32(cbxApplicant.EditValue);
+                select.EM = Convert.ToBoolean(radioGroupEMPM.EditValue);
+                select.RequestTitle = txtRequest.Text.Trim();
+
+            }
+            else
+            {
+                var obj = new RequestRepair()
+                {
+                    IsActive = true,
+                    MachineryID_FK = Convert.ToInt32(cbxMachinery.EditValue),
+                    CompanyID_FK = Convert.ToInt32(cbxCompany.EditValue),
+                    ApplicantID_FK = Convert.ToInt32(cbxApplicant.EditValue),
+                    UserID_FK = PublicClass.UserID,
+                    PublicTypeID_FK = _typeofRequest,
+                    EM = Convert.ToBoolean(radioGroupEMPM.EditValue),
+                    RequestDataTime = DateTime.Now,
+                    RequestTitle = txtRequest.Text.Trim()
+                };
+                _db.RequestRepairs.Add(obj);
+            }
+            _db.SaveChanges();
             Close();
-
-
         }
 
 
 
-        private async void cbxCompany_EditValueChanged(object sender, EventArgs e)
+        private  void cbxCompany_EditValueChanged(object sender, EventArgs e)
         {
             _selectCompany = (ComboBoxBaseClass)cbxCompany.GetSelectedDataRow();
             if (_selectCompany == null)
@@ -112,25 +128,21 @@ namespace PMWORK.MachineryForms
                 cbxApplicant.Properties.DataSource = null;
                 return;
             }
-            // txtMachinery.Text = SelectCompany.MachineryTitle;
-            await UpdateApplicant(_selectCompany.ID);
-
+             UpdateApplicant(_selectCompany.ID);
         }
 
-        private async void cbxMachinery_EditValueChanged_1(object sender, EventArgs e)
+        private  void cbxMachinery_EditValueChanged_1(object sender, EventArgs e)
         {
              _selectedMachinery = (Machinery)cbxMachinery.GetSelectedDataRow();
             if (_selectedMachinery == null)
             {
                 txtMachinery.Text = "";
-                //cbxApplicant.Properties.DataSource = null;
                 return;
             }
             txtMachinery.Text = _selectedMachinery.MachineryTitle;
-            //await UpdateApplicant(SelectedMachinery.ID);
         }
 
-        private async void cbxApplicant_EditValueChanged(object sender, EventArgs e)
+        private  void cbxApplicant_EditValueChanged(object sender, EventArgs e)
         {
             _selectApplicant = (Applicant)cbxApplicant.GetSelectedDataRow();
             if (_selectApplicant == null)
@@ -138,7 +150,23 @@ namespace PMWORK.MachineryForms
                 cbxMachinery.EditValue = null;
                 return;
             }
-            await UpdateMachinery(_selectApplicant.ID);
+             UpdateMachinery(_selectApplicant.ID);
+        }
+
+        private void RequestRepairForm_Load(object sender, EventArgs e)
+        {
+            if (_editor)
+            {
+                dateRegistered.DateTime = _requestRepairEdit.RequestDataTime;               
+                cbxCompany.EditValue = _requestRepairEdit.CompanyID_FK;
+                UpdateApplicant(_requestRepairEdit.CompanyID_FK);
+                cbxApplicant.EditValue = _requestRepairEdit.ApplicantID_FK;
+                UpdateMachinery(_requestRepairEdit.ApplicantID_FK);
+                cbxMachinery.EditValue = _requestRepairEdit.MachineryID_FK;
+                txtRequest.EditValue = _requestRepairEdit.RequestTitle;
+                radioGroupEMPM.EditValue = _requestRepairEdit.EM;
+                btnSave.Text = "ذخیره";
+            }
         }
     }
 }

@@ -398,7 +398,7 @@ namespace PMWORK.MachineryForms
             // Coding
             // 
             this.Coding.Caption = "کد دستگاه";
-            this.Coding.FieldName = "Coding.ID";
+            this.Coding.FieldName = "Coding.Code";
             this.Coding.Name = "Coding";
             this.Coding.Visible = true;
             this.Coding.VisibleIndex = 0;
@@ -515,6 +515,7 @@ namespace PMWORK.MachineryForms
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "درخواست تعمیرات";
+            this.Load += new System.EventHandler(this.RequestRepairForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
