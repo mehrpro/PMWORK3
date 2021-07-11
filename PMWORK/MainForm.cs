@@ -3,13 +3,17 @@ using PMWORK.CodingForms;
 using PMWORK.MachineryForms;
 using System;
 using System.Windows.Forms;
+using StructureMap;
 
 namespace PMWORK
 {
     public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public MainForm()
+        private Container _container;
+
+        public MainForm(Container container)
         {
+            _container = container;
             InitializeComponent();
             ShowForms(new RequestListForm());
 
@@ -26,6 +30,7 @@ namespace PMWORK
             frm.Dock = DockStyle.Fill;
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
+
             frm.Show();
         }
         private void ShowDialogForms(object obj)
@@ -93,7 +98,15 @@ namespace PMWORK
 
         private void btnRequestList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowForms(new RequestListForm());
+            //ShowForms(new RequestListForm());
+
+            foreach (var x in MdiChildren) x.Close();
+            var frm = _container.GetInstance<RequestListForm>();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
 
         private void btnApplicantForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

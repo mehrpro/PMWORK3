@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PMWORK.Repository
 {
-   public interface IRequestRepairRepository :IDisposable
+    public interface IRequestRepairRepository
     {
         List<RequestRepair> GetActiveRequestRepair(int type);
         Task<bool> UpdateRequestRepair(RequestRepair model);
@@ -16,27 +16,22 @@ namespace PMWORK.Repository
 
     public class RequestRepairRepository : IRequestRepairRepository
     {
-        private AppDbContext context;
-        public RequestRepairRepository()
+        private AppDbContext _context;
+        public RequestRepairRepository(AppDbContext context)
         {
-            context = new AppDbContext();
+            _context = context;
         }
-        public void Dispose()
-        {
-            context.Dispose();
-        }
-
-        public  List<RequestRepair> GetActiveRequestRepair(int type)
+        public List<RequestRepair> GetActiveRequestRepair(int type)
         {
             var qry = new List<RequestRepair>();
-             using (var db = new AppDbContext())
-             {
-               qry =  context.RequestRepairs
-               .Include(a => a.Machinery.Coding)
-               .Include(s => s.Applicant)
-               .Where(x => x.PublicTypeID_FK == type)
-               .ToList();
-             }
+            using (var context = new AppDbContext())
+            {
+                qry = _context.RequestRepairs
+                .Include(a => a.Machinery.Coding)
+                .Include(s => s.Applicant)
+                .Where(x => x.PublicTypeID_FK == type)
+                .ToList();
+            }
             return qry;
         }
 
@@ -45,15 +40,15 @@ namespace PMWORK.Repository
             try
             {
                 //context.Entry(model).State = EntityState.Detached;
-                context.Entry(model).State = EntityState.Modified;
-                await context.SaveChangesAsync();
+                _context.Entry(model).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
                 return true;
 
             }
-            catch 
+            catch
             {
                 return false;
-                
+
             }
         }
     }

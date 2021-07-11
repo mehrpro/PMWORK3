@@ -38,9 +38,9 @@ namespace PMWORK
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl1.Location = new System.Drawing.Point(322, 444);
+            this.labelControl1.Location = new System.Drawing.Point(175, 282);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(102, 13);
             this.labelControl1.TabIndex = 6;
@@ -48,10 +48,10 @@ namespace PMWORK
             // 
             // progressBarControl1
             // 
-            this.progressBarControl1.Location = new System.Drawing.Point(23, 383);
+            this.progressBarControl1.Location = new System.Drawing.Point(12, 257);
             this.progressBarControl1.Name = "progressBarControl1";
             this.progressBarControl1.Parmida_ActivePlusMultiKeys = false;
-            this.progressBarControl1.Size = new System.Drawing.Size(389, 33);
+            this.progressBarControl1.Size = new System.Drawing.Size(264, 13);
             this.progressBarControl1.TabIndex = 9;
             // 
             // pictureEdit1
@@ -65,14 +65,14 @@ namespace PMWORK
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Size = new System.Drawing.Size(436, 469);
+            this.pictureEdit1.Size = new System.Drawing.Size(289, 307);
             this.pictureEdit1.TabIndex = 8;
             // 
             // Splash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 469);
+            this.ClientSize = new System.Drawing.Size(289, 307);
             this.Controls.Add(this.progressBarControl1);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.pictureEdit1);

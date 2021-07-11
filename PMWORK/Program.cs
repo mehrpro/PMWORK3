@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StructureMap;
 
 namespace PMWORK
 {
@@ -20,7 +21,17 @@ namespace PMWORK
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin2());
+            var container = new Container(new TypeRegistery());
+            var frm = container.GetInstance<frmLogin2>();
+            Application.Run(frm);
+            if (frm.DialogResult == DialogResult.OK)
+            {
+
+                var frmMain = container.GetInstance<MainForm>();
+                frmMain.ShowDialog();
+            }
+            else
+                Environment.Exit(0);
         }
     }
 }

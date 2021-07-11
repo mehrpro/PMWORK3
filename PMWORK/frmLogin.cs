@@ -15,14 +15,14 @@ namespace PMWORK
 {
     public partial class frmLogin2 : XtraForm
     {
-        private AppDbContext db;
+        //private AppDbContext db;
         public frmLogin2()
         {
             InitializeComponent();
             //////
             PublicClass.UserID = 1;
-            db = new AppDbContext();
-            PublicClass.db = this.db;
+            //db = new AppDbContext();
+            //PublicClass.db = this.db;
             // Open a Splash Screen
             SplashScreenManager.ShowForm(this, typeof(Splash), true, true, false);
 
@@ -44,7 +44,8 @@ namespace PMWORK
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var frm = new MainForm().ShowDialog();
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
