@@ -23,7 +23,7 @@ namespace PMWORK.CodingForms
         public ApplicantForm()
         {
             InitializeComponent();
-            db = PublicClass.db;
+            db = new AppDbContext();
 
 
             cbxCompany.Properties.DisplayMember = "Title";

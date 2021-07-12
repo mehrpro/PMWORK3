@@ -28,6 +28,7 @@ namespace PMWORK
             {
 
                 var frmMain = container.GetInstance<MainForm>();
+                frmMain.Container = container;
                 frmMain.ShowDialog();
             }
             else

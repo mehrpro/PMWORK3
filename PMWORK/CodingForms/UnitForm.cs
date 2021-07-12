@@ -12,7 +12,7 @@ namespace PMWORK.CodingForms
         public UnitForm()
         {
             InitializeComponent();
-            db = PublicClass.db;
+            db = new AppDbContext();
             UpdateList();
         }
 

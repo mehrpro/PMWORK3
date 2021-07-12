@@ -1,36 +1,31 @@
-﻿using DevExpress.XtraEditors;
-using PMWORK.CodingForms;
+﻿using PMWORK.CodingForms;
 using PMWORK.MachineryForms;
-using System;
 using System.Windows.Forms;
+using DevExpress.XtraBars.Ribbon;
 using StructureMap;
 
 namespace PMWORK
 {
-    public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class MainForm : RibbonForm
     {
         private Container _container;
-
-        public MainForm(Container container)
+        public Container Container { get; set; }
+        public MainForm()
         {
-            _container = container;
+
             InitializeComponent();
-            ShowForms(new RequestListForm());
+            _container = Container;
+            //ShowForms(new RequestListForm());
 
         }
         private void ShowForms(object obj)
         {
-            foreach (Form x in this.MdiChildren)
-            {
-                x.Close();
-            }
-
+            foreach (Form x in this.MdiChildren) x.Close();
             Form frm = (Form)obj;
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
-
             frm.Show();
         }
         private void ShowDialogForms(object obj)
@@ -74,34 +69,57 @@ namespace PMWORK
 
         private void btnElectrical_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new RequestRepairForm(1);
-            frm.ShowDialog();
+            foreach (var x in MdiChildren) x.Close();
+            var frm = _container.GetInstance<RequestRepairForm>();
+            frm.TypeOfRequest = 1;
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
 
         private void btnMecanical_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new RequestRepairForm(2);
-            frm.ShowDialog();
+            foreach (var x in MdiChildren) x.Close();
+            var frm = _container.GetInstance<RequestRepairForm>();
+            frm.TypeOfRequest = 2;
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
 
         private void btnPiping_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new RequestRepairForm(3);
-            frm.ShowDialog();
+            foreach (var x in MdiChildren) x.Close();
+            var frm = _container.GetInstance<RequestRepairForm>();
+            frm.TypeOfRequest = 3;
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
 
         private void btnBuilding_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new RequestRepairForm(4);
-            frm.ShowDialog();
+            foreach (var x in MdiChildren) x.Close();
+            var frm = _container.GetInstance<RequestRepairForm>();
+            frm.TypeOfRequest = 4;
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
 
         private void btnRequestList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //ShowForms(new RequestListForm());
-
             foreach (var x in MdiChildren) x.Close();
             var frm = _container.GetInstance<RequestListForm>();
+            frm.Container = _container;
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.ControlBox = false;

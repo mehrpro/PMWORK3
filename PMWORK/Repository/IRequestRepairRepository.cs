@@ -10,8 +10,62 @@ namespace PMWORK.Repository
 {
     public interface IRequestRepairRepository
     {
+        /// <summary>
+        /// لیست درخواست تعمیرات فعال بر اساس نوع تعمیر
+        /// </summary>
+        /// <param name="type">شناسه نوع تعمیر</param>
+        /// <returns></returns>
         List<RequestRepair> GetActiveRequestRepair(int type);
-        Task<bool> UpdateRequestRepair(RequestRepair model);
+
+        /// <summary>
+        /// عنوان نوع تعمیرات برای نمایش در کادر فرم درخواست تعمیر
+        /// </summary>
+        /// <param name="typeofReq">شناسه</param>
+        /// <returns></returns>
+        string GetStringTypeOfRequest(int typeofReq);
+        /// <summary>
+        /// لیست واحد ها براساس شناسه هر شرکت
+        /// </summary>
+        /// <param name="companyId">شناسه شرکت</param>
+        /// <returns></returns>
+        List<Applicant> GetAllApplicantsByCompanyId(int companyId);
+        /// <summary>
+        /// لیست شرکت ها و گروه ها
+        /// </summary>
+        /// <returns></returns>
+        List<ComboBoxBaseClass> GetAllCompanies();
+        /// <summary>
+        /// لیست ماشین آلات 
+        /// </summary>
+        /// <param name="applicantId"></param>
+        /// <returns></returns>
+        List<Machinery> GetMachineriesByApplicantId(int applicantId);
+
+
+        /// <summary>
+        /// جستجو درخواست تعمیرات براساس شناسه
+        /// </summary>
+        /// <param name="Id">شناسه</param>
+        /// <returns></returns>
+        RequestRepair FindRequestRepairById(long Id);
+
+
+        /// <summary>
+        /// درخواست تعمیر جدید
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        bool AddNewRequestRepair(RequestRepair model);
+
+
+
+        /// <summary>
+        /// ویرایش و بروزرسانی درخواست تعمیرات
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        bool UpdateRequestRepair(RequestRepair model);
+
     }
 
     public class RequestRepairRepository : IRequestRepairRepository
@@ -23,32 +77,67 @@ namespace PMWORK.Repository
         }
         public List<RequestRepair> GetActiveRequestRepair(int type)
         {
-            var qry = new List<RequestRepair>();
-            using (var context = new AppDbContext())
-            {
-                qry = _context.RequestRepairs
+            return _context.RequestRepairs
                 .Include(a => a.Machinery.Coding)
                 .Include(s => s.Applicant)
                 .Where(x => x.PublicTypeID_FK == type)
                 .ToList();
-            }
-            return qry;
         }
 
-        public async Task<bool> UpdateRequestRepair(RequestRepair model)
+
+        public string GetStringTypeOfRequest(int typeofReq)
+        {
+            return _context.PublicTypes.Find(typeofReq)?.Title;
+        }
+        public List<Applicant> GetAllApplicantsByCompanyId(int companyId)
+        {
+            return _context.Applicants.Where(x => x.CompanyID_FK == companyId).ToList();
+        }
+        public List<ComboBoxBaseClass> GetAllCompanies()
+        {
+            return _context.Companies.Select(x => new ComboBoxBaseClass() { ID = x.ID, Title = x.CompanyTiltle, Tag = x.Description }).ToList();
+        }
+        public List<Machinery> GetMachineriesByApplicantId(int applicantId)
+        {
+            return _context.Machineries
+                .Include(c => c.Coding)
+                .Where(x => x.ApplicantID_FK == applicantId)
+                .ToList();
+        }
+
+        public RequestRepair FindRequestRepairById(long Id)
+        {
+            return _context.RequestRepairs.Find(Id);
+        }
+
+        public bool AddNewRequestRepair(RequestRepair model)
         {
             try
             {
-                //context.Entry(model).State = EntityState.Detached;
-                _context.Entry(model).State = EntityState.Modified;
-                await _context.SaveChangesAsync();
-                return true;
-
+                _context.RequestRepairs.Add(model);
+                var result = _context.SaveChanges();
+                return Convert.ToBoolean(result);
             }
-            catch
+            catch (Exception e)
             {
-                return false;
+                Console.WriteLine(e);
+                throw;
+            }
 
+        }
+
+        bool IRequestRepairRepository.UpdateRequestRepair(RequestRepair model)
+        {
+            try
+            {
+                _context.Entry(model).State = EntityState.Modified;
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
             }
         }
     }

@@ -14,7 +14,7 @@ namespace PMWORK.CodingForms
         public GroupForm()
         {
             InitializeComponent();
-            db = PublicClass.db;
+            db = new AppDbContext();
             cbxCompany.Properties.DisplayMember = "Title";
             cbxCompany.Properties.ValueMember = "ID";
             cbxCompany.Properties.DataSource = db.Companies
@@ -26,8 +26,8 @@ namespace PMWORK.CodingForms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (btnClose.Text == "انصراف")            
-                ClearControlers();            
+            if (btnClose.Text == "انصراف")
+                ClearControlers();
             else
                 Close();
         }
@@ -85,7 +85,7 @@ namespace PMWORK.CodingForms
         private void LastGroupIndex()
         {
             int last = 0;
-            var qry = db.Groups.AsNoTracking().Where(x=>x.CompanyID_FK == _selectCompany.ID).Select(x => x.GroupIndex).ToList();
+            var qry = db.Groups.AsNoTracking().Where(x => x.CompanyID_FK == _selectCompany.ID).Select(x => x.GroupIndex).ToList();
             if (qry.Count() > 0) last = qry.Max();
             numGroup.EditValue = last + 1;
         }

@@ -11,17 +11,8 @@ namespace PMWORK
     {
         public static int UserID { get; set; }
         public static int CompanyID { get; set; }
-        public static AppDbContext db { get; set;}
         public static string ErrorValidation = @"مقادیر الزامی فرم را وارد کنید";
-
-
-        public static void ReloadEntity<TEntity>(
-         this DbContext context,
-         TEntity entity)
-         where TEntity : class
-        {
-            context.Entry(entity).Reload();
-        }
+        public static string ErrorSave = @"خطا در ثبت اطلاعات!";
 
 
     }
