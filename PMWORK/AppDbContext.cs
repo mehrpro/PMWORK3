@@ -237,10 +237,10 @@ namespace PMWORK
 
             builder.Entity<WorkOrder>().HasKey(x => x.ID);
             builder.Entity<WorkOrder>().Property(s => s.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            builder.Entity<WorkOrder>().Property(s => s.IsActive).IsRequired();
             builder.Entity<WorkOrder>().Property(d => d.IsDelete).IsRequired();
             builder.Entity<WorkOrder>().Property(r => r.RequestID_FK).IsRequired();
             builder.Entity<WorkOrder>().Property(x => x.StartWorking).IsRequired().HasColumnType("datetime");
+            builder.Entity<WorkOrder>().Property(x => x.EndWorking).IsRequired().HasColumnType("datetime");
             builder.Entity<WorkOrder>().Property(x => x.OtherErrorDescription).HasMaxLength(250);
             builder.Entity<WorkOrder>().Property(x => x.ReportRepair).HasMaxLength(700).IsRequired();
             builder.Entity<WorkOrder>().Property(p => p.PersonHoursDescription).HasMaxLength(250);

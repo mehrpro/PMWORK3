@@ -59,6 +59,16 @@ namespace PMWORK.Repository
 
 
 
+
+        /// <summary>
+        /// حذف درخواست تعمیر
+        /// </summary>
+        /// <param name="requestId"></param>
+        /// <returns></returns>
+        bool RemoveRequestRepair(long requestId);
+
+
+
         /// <summary>
         /// ویرایش و بروزرسانی درخواست تعمیرات
         /// </summary>
@@ -80,7 +90,7 @@ namespace PMWORK.Repository
             return _context.RequestRepairs
                 .Include(a => a.Machinery.Coding)
                 .Include(s => s.Applicant)
-                .Where(x => x.PublicTypeID_FK == type)
+                .Where(x => x.PublicTypeID_FK == type && x.IsActive && !x.IsDelete)
                 .ToList();
         }
 
@@ -138,6 +148,23 @@ namespace PMWORK.Repository
             {
                 Console.WriteLine(e);
                 throw;
+            }
+        }
+
+        public bool RemoveRequestRepair(long requestId)
+        {
+            var find = _context.RequestRepairs.Find(requestId);
+            try
+            {
+                find.IsActive = false;
+                find.IsDelete = true;
+                find.IsClose = true;
+                _context.SaveChanges();
+                return true;
+            }
+            catch 
+            {
+                return false;
             }
         }
     }

@@ -9,18 +9,17 @@ namespace PMWORK.Entities
     public class WorkOrder
     {
         public long ID { get; set; }
-        public bool IsActive { get; set; }
         public bool IsDelete { get; set; }
         public long RequestID_FK { get; set; }
         public RequestRepair RequestRepair { get; set; }
-        public bool Electrical { get; set; }
-        public bool Mecanical { get; set; }
-        public bool Piping { get; set; }
-        public bool Creating { get; set; }
-        public bool Equip { get; set; }
+
+        public int RepairManID_FK { get; set; }
+        public RepairMan RepairMan { get; set; }
+
         public bool RepairOutside { get; set; }
         public int? RepairOutSideReportID_FK { get; set; }
         public DateTime StartWorking { get; set; }
+        public DateTime EndWorking { get; set; }
         public bool Cause_Exhaustion { get; set; }
         public bool Cause_OperatorNegligence { get; set; }
         public bool Cause_QualityofSpareParts { get; set; }

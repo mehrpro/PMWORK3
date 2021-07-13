@@ -9,14 +9,14 @@ namespace PMWORK
     public partial class MainForm : RibbonForm
     {
         private Container _container;
-        public Container Container { get; set; }
+        public  Container Container {
+            get { return _container; }
+            set { _container = value ; }
+        }
         public MainForm()
         {
-
             InitializeComponent();
-            _container = Container;
-            //ShowForms(new RequestListForm());
-
+            //_container = Container;
         }
         private void ShowForms(object obj)
         {
@@ -69,53 +69,37 @@ namespace PMWORK
 
         private void btnElectrical_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var x in MdiChildren) x.Close();
             var frm = _container.GetInstance<RequestRepairForm>();
             frm.TypeOfRequest = 1;
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            frm.StartPosition = FormStartPosition.CenterScreen;           
+            frm.ShowDialog();
         }
 
         private void btnMecanical_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var x in MdiChildren) x.Close();
             var frm = _container.GetInstance<RequestRepairForm>();
             frm.TypeOfRequest = 2;
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
 
         private void btnPiping_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var x in MdiChildren) x.Close();
             var frm = _container.GetInstance<RequestRepairForm>();
             frm.TypeOfRequest = 3;
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
 
         private void btnBuilding_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (var x in MdiChildren) x.Close();
             var frm = _container.GetInstance<RequestRepairForm>();
             frm.TypeOfRequest = 4;
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.ControlBox = false;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
 
-        private void btnRequestList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnRequestListHandel()
         {
             foreach (var x in MdiChildren) x.Close();
             var frm = _container.GetInstance<RequestListForm>();
@@ -126,10 +110,19 @@ namespace PMWORK
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+        private void btnRequestList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            btnRequestListHandel();
+        }
 
         private void btnApplicantForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ShowDialogForms(new ApplicantForm());
+        }
+
+        private void MainForm_Load(object sender, System.EventArgs e)
+        {
+            btnRequestListHandel();
         }
     }
 }

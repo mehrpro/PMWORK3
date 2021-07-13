@@ -272,17 +272,19 @@ namespace PMWORK.MachineryForms
             this.Applicant.Name = "Applicant";
             this.Applicant.Visible = true;
             this.Applicant.VisibleIndex = 1;
-            this.Applicant.Width = 88;
+            this.Applicant.Width = 109;
             // 
             // RequsetDateTime
             // 
             this.RequsetDateTime.Caption = "تاریخ";
             this.RequsetDateTime.ColumnEdit = this.repositoryItemDateEdit1;
             this.RequsetDateTime.FieldName = "RequestDataTime";
+            this.RequsetDateTime.MaxWidth = 65;
+            this.RequsetDateTime.MinWidth = 65;
             this.RequsetDateTime.Name = "RequsetDateTime";
             this.RequsetDateTime.Visible = true;
             this.RequsetDateTime.VisibleIndex = 2;
-            this.RequsetDateTime.Width = 49;
+            this.RequsetDateTime.Width = 65;
             // 
             // repositoryItemDateEdit1
             // 
@@ -299,19 +301,23 @@ namespace PMWORK.MachineryForms
             // 
             this.MachineryCode.Caption = "کد دستگاه";
             this.MachineryCode.FieldName = "Machinery.Coding.Code";
+            this.MachineryCode.MaxWidth = 60;
+            this.MachineryCode.MinWidth = 60;
             this.MachineryCode.Name = "MachineryCode";
             this.MachineryCode.Visible = true;
             this.MachineryCode.VisibleIndex = 3;
-            this.MachineryCode.Width = 62;
+            this.MachineryCode.Width = 60;
             // 
             // EM
             // 
             this.EM.Caption = "اضطراری";
             this.EM.FieldName = "EM";
+            this.EM.MaxWidth = 65;
+            this.EM.MinWidth = 65;
             this.EM.Name = "EM";
             this.EM.Visible = true;
             this.EM.VisibleIndex = 4;
-            this.EM.Width = 52;
+            this.EM.Width = 65;
             // 
             // ReqTitle
             // 
@@ -320,7 +326,7 @@ namespace PMWORK.MachineryForms
             this.ReqTitle.Name = "ReqTitle";
             this.ReqTitle.Visible = true;
             this.ReqTitle.VisibleIndex = 5;
-            this.ReqTitle.Width = 247;
+            this.ReqTitle.Width = 223;
             // 
             // ColumnEdit
             // 
@@ -368,6 +374,7 @@ namespace PMWORK.MachineryForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDeleteRow.Name = "btnDeleteRow";
             this.btnDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDeleteRow_ButtonClick);
             // 
             // ColumnReport
             // 
@@ -391,6 +398,7 @@ namespace PMWORK.MachineryForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnReportRepair.Name = "btnReportRepair";
             this.btnReportRepair.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnReportRepair.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnReportRepair_ButtonClick);
             // 
             // repositoryItemMemoExEdit1
             // 
@@ -408,6 +416,7 @@ namespace PMWORK.MachineryForms
             this.Name = "RequestListForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "پیشخوان";
+            this.Load += new System.EventHandler(this.RequestListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();

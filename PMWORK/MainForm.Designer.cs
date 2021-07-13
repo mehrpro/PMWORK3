@@ -46,6 +46,7 @@ namespace PMWORK
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.btnRequestList = new DevExpress.XtraBars.BarButtonItem();
+            this.btnApplicantForm = new DevExpress.XtraBars.BarButtonItem();
             this.InfrasturctureRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -57,7 +58,6 @@ namespace PMWORK
             this.SettingRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.btnApplicantForm = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -236,6 +236,15 @@ namespace PMWORK
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnRequestList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRequestList_ItemClick);
             // 
+            // btnApplicantForm
+            // 
+            this.btnApplicantForm.Caption = "واحدهای ادواری";
+            this.btnApplicantForm.Id = 9;
+            this.btnApplicantForm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnApplicantForm.ImageOptions.Image")));
+            this.btnApplicantForm.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnApplicantForm.ImageOptions.LargeImage")));
+            this.btnApplicantForm.Name = "btnApplicantForm";
+            this.btnApplicantForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnApplicantForm_ItemClick);
+            // 
             // InfrasturctureRibbonPage
             // 
             this.InfrasturctureRibbonPage.Appearance.Options.UseTextOptions = true;
@@ -325,15 +334,6 @@ namespace PMWORK
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(750, 31);
             // 
-            // btnApplicantForm
-            // 
-            this.btnApplicantForm.Caption = "واحدهای ادواری";
-            this.btnApplicantForm.Id = 9;
-            this.btnApplicantForm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnApplicantForm.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btnApplicantForm.Name = "btnApplicantForm";
-            this.btnApplicantForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnApplicantForm_ItemClick);
-            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -349,6 +349,7 @@ namespace PMWORK
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "اتوماسیون نت";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

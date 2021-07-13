@@ -20,18 +20,12 @@ namespace PMWORK.MachineryForms
             get { return _requestRepairEdit; }
             set => _requestRepairEdit = value;
         }
-        public bool Editor
-        {
-            get { return _editor; }
-            set => _editor = value;
-        }
-        public int TypeOfRequest { get; set; }
+        public bool Editor { get { return _editor; } set => _editor = value; }
+        public int TypeOfRequest { get { return _typeofRequest; } set { _typeofRequest = value; } }
         public RequestRepairForm(IRequestRepairRepository request)
         {
 
             InitializeComponent();
-            _typeofRequest = TypeOfRequest;
-            //dateRegistered.DateTime = DateTime.Now;
             _request = request;
             cbxMachinery.Properties.DisplayMember = "Coding.Code";
             cbxMachinery.Properties.ValueMember = "ID";
@@ -42,9 +36,7 @@ namespace PMWORK.MachineryForms
             cbxApplicant.Properties.DisplayMember = "ApplicantTitle";
             cbxApplicant.Properties.ValueMember = "ID";
 
-            txtRequestTitle.Text += @" " + _request.GetStringTypeOfRequest(_typeofRequest);
-            ClearForm();
-            UpdateCompany();
+
 
         }
         private void UpdateApplicant(int companyId)
@@ -99,7 +91,7 @@ namespace PMWORK.MachineryForms
                 model.EM = Convert.ToBoolean(radioGroupEMPM.EditValue);
                 model.RequestTitle = txtRequest.Text.Trim();
                 var result = _request.AddNewRequestRepair(model);
-                if (result)
+                if (!result)
                     XtraMessageBox.Show(PublicClass.ErrorSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     Close();
@@ -139,6 +131,9 @@ namespace PMWORK.MachineryForms
         }
         private void RequestRepairForm_Load(object sender, EventArgs e)
         {
+            txtRequestTitle.Text += @" " + _request.GetStringTypeOfRequest(_typeofRequest);
+            ClearForm();
+            UpdateCompany();
             if (_editor)
             {
                 dateRegistered.DateTime = _requestRepairEdit.RequestDataTime;
