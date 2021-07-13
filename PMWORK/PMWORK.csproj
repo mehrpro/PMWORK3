@@ -179,6 +179,10 @@
     <Compile Include="Migrations\202107091234455_CreateDB.designer.cs">
       <DependentUpon>202107091234455_CreateDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107131054052_CreateRepairMan.cs" />
+    <Compile Include="Migrations\202107131054052_CreateRepairMan.designer.cs">
+      <DependentUpon>202107131054052_CreateRepairMan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -238,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107091234455_CreateDB.resx">
       <DependentUpon>202107091234455_CreateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107131054052_CreateRepairMan.resx">
+      <DependentUpon>202107131054052_CreateRepairMan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

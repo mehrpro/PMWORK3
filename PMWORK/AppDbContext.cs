@@ -239,6 +239,7 @@ namespace PMWORK
             builder.Entity<WorkOrder>().Property(s => s.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             builder.Entity<WorkOrder>().Property(d => d.IsDelete).IsRequired();
             builder.Entity<WorkOrder>().Property(r => r.RequestID_FK).IsRequired();
+            builder.Entity<WorkOrder>().Property(r => r.RepairManID_FK).IsRequired();
             builder.Entity<WorkOrder>().Property(x => x.StartWorking).IsRequired().HasColumnType("datetime");
             builder.Entity<WorkOrder>().Property(x => x.EndWorking).IsRequired().HasColumnType("datetime");
             builder.Entity<WorkOrder>().Property(x => x.OtherErrorDescription).HasMaxLength(250);
@@ -257,6 +258,18 @@ namespace PMWORK
                 .HasMany<RequestRepair>(x => x.RequestRepairs)
                 .WithRequired(x => x.PublicType)
                 .HasForeignKey(x => x.PublicTypeID_FK)
+                .WillCascadeOnDelete(false);
+
+
+
+            builder.Entity<RepairMan>().HasKey(x => x.ID);
+            builder.Entity<RepairMan>().Property(x => x.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<RepairMan>().Property(x => x.IsActive).IsRequired();
+            builder.Entity<RepairMan>().Property(x => x.Repairman_FullName).IsRequired().HasMaxLength(250);
+            builder.Entity<RepairMan>()
+                .HasMany<WorkOrder>(x => x.WorkOrders)
+                .WithRequired(x => x.RepairMan)
+                .HasForeignKey(x => x.RepairManID_FK)
                 .WillCascadeOnDelete(false);
 
 
@@ -279,6 +292,7 @@ namespace PMWORK
         public virtual DbSet<MenuItem> MenuItems { get; set; }
         public virtual DbSet<Cleam> Cleams { get; set; }
         public virtual DbSet<PublicType> PublicTypes { get; set; }
+        public virtual DbSet<RepairMan> RepairMens { get; set; }
 
 
     }

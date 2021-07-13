@@ -22,8 +22,9 @@ namespace PMWORK.MachineryForms
             this.request = request;
         }
 
+        private void WorkOrder_Load(object sender, EventArgs e)
+        {
 
-
-        
+        }
     }
 }
