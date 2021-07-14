@@ -58,6 +58,8 @@ namespace PMWORK
             this.SettingRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRequestListForRepair = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,9 +83,11 @@ namespace PMWORK
             this.skinRibbonGalleryBarItem1,
             this.barStaticItem1,
             this.btnRequestList,
-            this.btnApplicantForm});
+            this.btnApplicantForm,
+            this.barButtonItem1,
+            this.btnRequestListForRepair});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 10;
+            this.ribbonControl1.MaxItemId = 12;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.InfrasturctureRibbonPage,
@@ -228,7 +232,7 @@ namespace PMWORK
             // 
             // btnRequestList
             // 
-            this.btnRequestList.Caption = "پیشخوان";
+            this.btnRequestList.Caption = "کارتابل";
             this.btnRequestList.Id = 8;
             this.btnRequestList.ImageOptions.Image = global::PMWORK.Properties.Resources.icons8_task_30;
             this.btnRequestList.Name = "btnRequestList";
@@ -296,6 +300,7 @@ namespace PMWORK
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.btnRequestList);
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.ShowCaptionButton = false;
             this.ribbonPageGroup6.Text = "مدیریت درخواست ها";
@@ -309,6 +314,7 @@ namespace PMWORK
             // 
             // ribbonPageGroup3
             // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnRequestListForRepair);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
@@ -333,6 +339,21 @@ namespace PMWORK
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(750, 31);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 10;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnRequestListForRepair
+            // 
+            this.btnRequestListForRepair.Caption = "لیست درخواست ها";
+            this.btnRequestListForRepair.Id = 11;
+            this.btnRequestListForRepair.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btnRequestListForRepair.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnRequestListForRepair.Name = "btnRequestListForRepair";
+            this.btnRequestListForRepair.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRequestListForRepair_ItemClick);
             // 
             // MainForm
             // 
@@ -385,5 +406,7 @@ namespace PMWORK
         private DevExpress.XtraBars.BarButtonItem btnRequestList;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btnApplicantForm;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnRequestListForRepair;
     }
 }

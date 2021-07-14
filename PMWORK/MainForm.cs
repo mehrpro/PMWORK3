@@ -124,5 +124,17 @@ namespace PMWORK
         {
             btnRequestListHandel();
         }
+
+        private void btnRequestListForRepair_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (var x in MdiChildren) x.Close();
+            var frm = _container.GetInstance<RequestListForm3>();
+            frm.Container = _container;
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
     }
 }

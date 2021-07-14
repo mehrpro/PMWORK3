@@ -12,19 +12,15 @@ using System.Windows.Forms;
 
 namespace PMWORK.MachineryForms
 {
-    public partial class WorkOrder : XtraForm
+    public partial class WorkOrderForm : XtraForm
     {
         private readonly IRequestRepairRepository request;
 
-        public WorkOrder(IRequestRepairRepository request)
+        public WorkOrderForm(IRequestRepairRepository request)
         {
             InitializeComponent();
             this.request = request;
         }
 
-        private void WorkOrder_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
