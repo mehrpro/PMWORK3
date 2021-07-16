@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using PMWORK.Entities;
 using PMWORK.Repository;
 
 namespace PMWORK.CodingForms
@@ -23,9 +24,43 @@ namespace PMWORK.CodingForms
             InitializeComponent();
         }
 
-        private void labelControl2_Click(object sender, EventArgs e)
+        public void UpdateRepairManList()
         {
+            dgvRepaiemanList.DataSource = _codingRepository.GetAllRepairMan();
+        }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (dxValidationProvider.Validate())
+            {
+                var newobj = new RepairMan()
+                {
+                    IsActive = Convert.ToBoolean(chkActive.CheckState),
+                    RepairMan_Status = txtJob.Text.Trim(),
+                    Repairman_FullName = txtFullName.Text.Trim()
+                };
+                var result = _codingRepository.AddRepairMan(newobj);
+                if (result)
+                {
+                    XtraMessageBox.Show(PublicClass.SuccessSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UpdateRepairManList();
+
+                }
+                else
+                {
+                    XtraMessageBox.Show(PublicClass.ErrorSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                XtraMessageBox.Show(PublicClass.ErrorValidation, Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

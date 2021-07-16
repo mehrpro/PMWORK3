@@ -10,7 +10,7 @@ namespace PMWORK.Repository
     public interface ICodingRepository
     {
         List<UnitOfMeasurement> GetAllUnits();
-
+        List<RepairMan> GetAllRepairMan();
 
 
         /// <summary>
@@ -34,6 +34,11 @@ namespace PMWORK.Repository
         public List<UnitOfMeasurement> GetAllUnits()
         {
             return _context.UnitOfMeasurements.AsNoTracking().ToList();
+        }
+
+        public List<RepairMan> GetAllRepairMan()
+        {
+            return _context.RepairMens.AsNoTracking().ToList();
         }
 
         public bool AddRepairMan(RepairMan model)
