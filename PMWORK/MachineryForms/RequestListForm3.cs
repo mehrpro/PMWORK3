@@ -86,9 +86,7 @@ namespace PMWORK.MachineryForms
 
             var repairFrom = _container.GetInstance<WorkOrderForm>();
             repairFrom.StartPosition = FormStartPosition.CenterScreen;
-            repairFrom.Editor = true;
-            repairFrom.RequestRepairEdit = selectedRow;
-            repairFrom.TypeOfRequest = selectedRow.PublicTypeID_FK;
+            repairFrom.RequestReapqirModel = selectedRow;
             repairFrom.ShowDialog();
             UpdateRequestList(selectedRow.PublicTypeID_FK);
         }

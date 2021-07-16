@@ -88,7 +88,6 @@ namespace PMWORK
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
             builder.Entity<Applicant>().Property(x => x.ApplicantTitle).IsRequired().HasMaxLength(150);
             builder.Entity<Applicant>().Property(x => x.CompanyID_FK).IsRequired();
-
             builder.Entity<Applicant>().Property(x => x.Description).HasMaxLength(250);
             builder.Entity<Applicant>()
                 .HasMany(x => x.RequestRepairs)
@@ -266,6 +265,7 @@ namespace PMWORK
             builder.Entity<RepairMan>().Property(x => x.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             builder.Entity<RepairMan>().Property(x => x.IsActive).IsRequired();
             builder.Entity<RepairMan>().Property(x => x.Repairman_FullName).IsRequired().HasMaxLength(250);
+            builder.Entity<RepairMan>().Property(x => x.RepairMan_Status).IsRequired().HasMaxLength(250);
             builder.Entity<RepairMan>()
                 .HasMany<WorkOrder>(x => x.WorkOrders)
                 .WithRequired(x => x.RepairMan)

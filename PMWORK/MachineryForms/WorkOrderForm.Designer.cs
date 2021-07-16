@@ -30,6 +30,16 @@ namespace PMWORK.MachineryForms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkOrderForm));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.txtRequestNumber = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -56,10 +66,12 @@ namespace PMWORK.MachineryForms
             this.gvYadaki = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.numYadaki = new DevExpress.XtraEditors.SpinEdit();
+            this.numConsumablePart = new DevExpress.XtraEditors.SpinEdit();
             this.cbxUnit = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txtYadaki = new DevExpress.XtraEditors.TextEdit();
+            this.IDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UnitColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtConsumablePartName = new DevExpress.XtraEditors.TextEdit();
             this.btnAddYadaki = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
@@ -98,8 +110,20 @@ namespace PMWORK.MachineryForms
             this.dgvRepairMan = new DevExpress.XtraGrid.GridControl();
             this.gvRepairMan = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.cbxRepairMan = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnRemoveUnit = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.NameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnRemoveRepairMan = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnAddRepairMan = new DevExpress.XtraEditors.SimpleButton();
+            this.cbxRepairMan = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequestNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateStart.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateStart.Properties)).BeginInit();
@@ -127,10 +151,10 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.gvYadaki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numYadaki.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numConsumablePart.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxUnit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYadaki.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtConsumablePartName.Properties)).BeginInit();
             this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -165,7 +189,10 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.gvRepairMan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRemoveUnit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRemoveRepairMan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxRepairMan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtRequestNumber
@@ -214,10 +241,18 @@ namespace PMWORK.MachineryForms
             this.dateStart.Parmida_ActivePlusMultiKeys = false;
             this.dateStart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateStart.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
             this.dateStart.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateStart.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dateStart.Properties.DisplayFormat.FormatString = "g";
+            this.dateStart.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateStart.Properties.EditFormat.FormatString = "g";
+            this.dateStart.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateStart.Properties.Mask.EditMask = "g";
             this.dateStart.Properties.Parmida_CheckDateOnLeave = false;
             this.dateStart.Properties.Parmida_CheckEmptyFillDateOnEnter = false;
+            this.dateStart.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateStart.Size = new System.Drawing.Size(136, 20);
             this.dateStart.TabIndex = 2;
             // 
@@ -230,12 +265,21 @@ namespace PMWORK.MachineryForms
             this.dateFinish.Parmida_ActivePlusMultiKeys = false;
             this.dateFinish.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateFinish.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
             this.dateFinish.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateFinish.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dateFinish.Properties.DisplayFormat.FormatString = "g";
+            this.dateFinish.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateFinish.Properties.EditFormat.FormatString = "g";
+            this.dateFinish.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dateFinish.Properties.Mask.EditMask = "g";
             this.dateFinish.Properties.Parmida_CheckDateOnLeave = false;
             this.dateFinish.Properties.Parmida_CheckEmptyFillDateOnEnter = false;
+            this.dateFinish.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateFinish.Size = new System.Drawing.Size(136, 20);
             this.dateFinish.TabIndex = 3;
+            this.dateFinish.EditValueChanged += new System.EventHandler(this.dateFinish_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -271,22 +315,24 @@ namespace PMWORK.MachineryForms
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.Location = new System.Drawing.Point(98, 415);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 30);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "ثبت";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
             this.btnClose.Location = new System.Drawing.Point(12, 415);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(80, 30);
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "بستن";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // chkOtherError
             // 
@@ -418,6 +464,8 @@ namespace PMWORK.MachineryForms
             this.dgvYadaki.Location = new System.Drawing.Point(2, 2);
             this.dgvYadaki.MainView = this.gvYadaki;
             this.dgvYadaki.Name = "dgvYadaki";
+            this.dgvYadaki.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnRemoveUnit});
             this.dgvYadaki.Size = new System.Drawing.Size(633, 310);
             this.dgvYadaki.TabIndex = 8;
             this.dgvYadaki.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -425,6 +473,66 @@ namespace PMWORK.MachineryForms
             // 
             // gvYadaki
             // 
+            this.gvYadaki.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.ColumnFilterButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.ColumnFilterButtonActive.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.ColumnFilterButtonActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.CustomizationFormHint.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.CustomizationFormHint.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.DetailTip.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.DetailTip.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.Empty.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.Empty.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.EvenRow.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.FilterCloseButton.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.FilterCloseButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.FilterPanel.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.FilterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.FixedLine.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.FixedLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.FocusedCell.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.FocusedRow.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.GroupButton.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.GroupButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.GroupFooter.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.GroupPanel.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.GroupRow.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.HideSelectionRow.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.HideSelectionRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.HorzLine.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.HorzLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.OddRow.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.Preview.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.Preview.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.Row.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.RowSeparator.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.RowSeparator.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.SelectedRow.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.TopNewRow.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.TopNewRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.VertLine.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Appearance.ViewCaption.Options.UseTextOptions = true;
+            this.gvYadaki.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvYadaki.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5});
             this.gvYadaki.GridControl = this.dgvYadaki;
             this.gvYadaki.Name = "gvYadaki";
             this.gvYadaki.OptionsView.ShowGroupPanel = false;
@@ -432,9 +540,9 @@ namespace PMWORK.MachineryForms
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.labelControl7);
-            this.panelControl2.Controls.Add(this.numYadaki);
+            this.panelControl2.Controls.Add(this.numConsumablePart);
             this.panelControl2.Controls.Add(this.cbxUnit);
-            this.panelControl2.Controls.Add(this.txtYadaki);
+            this.panelControl2.Controls.Add(this.txtConsumablePartName);
             this.panelControl2.Controls.Add(this.btnAddYadaki);
             this.panelControl2.Controls.Add(this.labelControl17);
             this.panelControl2.Controls.Add(this.labelControl18);
@@ -453,27 +561,27 @@ namespace PMWORK.MachineryForms
             this.labelControl7.TabIndex = 2;
             this.labelControl7.Text = "عنوان قطعه";
             // 
-            // numYadaki
+            // numConsumablePart
             // 
-            this.numYadaki.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numYadaki.EditValue = new decimal(new int[] {
+            this.numConsumablePart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.numConsumablePart.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.numYadaki.Location = new System.Drawing.Point(221, 15);
-            this.numYadaki.Name = "numYadaki";
-            this.numYadaki.Parmida_ActivePlusMultiKeys = false;
-            this.numYadaki.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.numYadaki.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.numYadaki.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.numYadaki.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.numYadaki.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.numConsumablePart.Location = new System.Drawing.Point(221, 15);
+            this.numConsumablePart.Name = "numConsumablePart";
+            this.numConsumablePart.Parmida_ActivePlusMultiKeys = false;
+            this.numConsumablePart.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.numConsumablePart.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.numConsumablePart.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.numConsumablePart.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.numConsumablePart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.numYadaki.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.numYadaki.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.numYadaki.Size = new System.Drawing.Size(95, 20);
-            this.numYadaki.TabIndex = 3;
+            this.numConsumablePart.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.numConsumablePart.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.numConsumablePart.Size = new System.Drawing.Size(95, 20);
+            this.numConsumablePart.TabIndex = 3;
             // 
             // cbxUnit
             // 
@@ -491,27 +599,99 @@ namespace PMWORK.MachineryForms
             this.cbxUnit.Properties.PopupView = this.searchLookUpEdit1View;
             this.cbxUnit.Size = new System.Drawing.Size(139, 20);
             this.cbxUnit.TabIndex = 3;
+            this.cbxUnit.EditValueChanged += new System.EventHandler(this.cbxUnit_EditValueChanged);
             // 
             // searchLookUpEdit1View
             // 
+            this.searchLookUpEdit1View.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.ColumnFilterButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.ColumnFilterButtonActive.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.ColumnFilterButtonActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.CustomizationFormHint.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.CustomizationFormHint.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.DetailTip.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.DetailTip.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.Empty.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.Empty.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.EvenRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.FilterCloseButton.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.FilterCloseButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.FilterPanel.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.FilterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.FixedLine.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.FixedLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.FocusedCell.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.FocusedRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.GroupButton.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.GroupButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.GroupFooter.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.GroupPanel.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.GroupRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.HideSelectionRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.HideSelectionRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.HorzLine.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.HorzLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.OddRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.Preview.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.Preview.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.Row.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.RowSeparator.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.RowSeparator.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.SelectedRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.TopNewRow.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.TopNewRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.VertLine.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Appearance.ViewCaption.Options.UseTextOptions = true;
+            this.searchLookUpEdit1View.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.IDColumn,
+            this.UnitColumn});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // txtYadaki
+            // IDColumn
             // 
-            this.txtYadaki.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtYadaki.Location = new System.Drawing.Point(351, 15);
-            this.txtYadaki.Name = "txtYadaki";
-            this.txtYadaki.Parmida_ActivePlusMultiKeys = false;
-            this.txtYadaki.Size = new System.Drawing.Size(210, 20);
-            this.txtYadaki.TabIndex = 3;
+            this.IDColumn.Caption = "ID";
+            this.IDColumn.FieldName = "ID";
+            this.IDColumn.Name = "IDColumn";
+            // 
+            // UnitColumn
+            // 
+            this.UnitColumn.Caption = "واحد";
+            this.UnitColumn.FieldName = "Unit";
+            this.UnitColumn.Name = "UnitColumn";
+            this.UnitColumn.Visible = true;
+            this.UnitColumn.VisibleIndex = 0;
+            // 
+            // txtConsumablePartName
+            // 
+            this.txtConsumablePartName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtConsumablePartName.Location = new System.Drawing.Point(351, 15);
+            this.txtConsumablePartName.Name = "txtConsumablePartName";
+            this.txtConsumablePartName.Parmida_ActivePlusMultiKeys = false;
+            this.txtConsumablePartName.Size = new System.Drawing.Size(210, 20);
+            this.txtConsumablePartName.TabIndex = 3;
             // 
             // btnAddYadaki
             // 
             this.btnAddYadaki.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddYadaki.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnAddYadaki.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddYadaki.ImageOptions.Image")));
             this.btnAddYadaki.Location = new System.Drawing.Point(14, 14);
             this.btnAddYadaki.Name = "btnAddYadaki";
             this.btnAddYadaki.Size = new System.Drawing.Size(24, 23);
@@ -905,6 +1085,8 @@ namespace PMWORK.MachineryForms
             this.dgvRepairMan.Location = new System.Drawing.Point(2, 2);
             this.dgvRepairMan.MainView = this.gvRepairMan;
             this.dgvRepairMan.Name = "dgvRepairMan";
+            this.dgvRepairMan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnRemoveRepairMan});
             this.dgvRepairMan.Size = new System.Drawing.Size(633, 310);
             this.dgvRepairMan.TabIndex = 9;
             this.dgvRepairMan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -912,40 +1094,78 @@ namespace PMWORK.MachineryForms
             // 
             // gvRepairMan
             // 
+            this.gvRepairMan.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.ColumnFilterButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.ColumnFilterButtonActive.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.ColumnFilterButtonActive.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.CustomizationFormHint.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.CustomizationFormHint.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.DetailTip.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.DetailTip.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.Empty.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.Empty.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.EvenRow.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.FilterCloseButton.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.FilterCloseButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.FilterPanel.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.FilterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.FixedLine.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.FixedLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.FocusedCell.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.FocusedCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.FocusedRow.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.FocusedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.GroupButton.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.GroupButton.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.GroupFooter.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.GroupFooter.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.GroupPanel.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.GroupPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.GroupRow.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.GroupRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.HideSelectionRow.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.HideSelectionRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.HorzLine.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.HorzLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.OddRow.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.Preview.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.Preview.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.Row.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.RowSeparator.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.RowSeparator.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.SelectedRow.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.SelectedRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.TopNewRow.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.TopNewRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.VertLine.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Appearance.ViewCaption.Options.UseTextOptions = true;
+            this.gvRepairMan.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvRepairMan.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.NameColumn,
+            this.gridColumn7,
+            this.gridColumn6});
             this.gvRepairMan.GridControl = this.dgvRepairMan;
             this.gvRepairMan.Name = "gvRepairMan";
             this.gvRepairMan.OptionsView.ShowGroupPanel = false;
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.cbxRepairMan);
+            this.panelControl1.Controls.Add(this.btnAddRepairMan);
             this.panelControl1.Controls.Add(this.labelControl8);
+            this.panelControl1.Controls.Add(this.cbxRepairMan);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(2, 20);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(637, 50);
             this.panelControl1.TabIndex = 10;
-            // 
-            // cbxRepairMan
-            // 
-            this.cbxRepairMan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxRepairMan.EditValue = "";
-            this.cbxRepairMan.Location = new System.Drawing.Point(398, 15);
-            this.cbxRepairMan.Name = "cbxRepairMan";
-            this.cbxRepairMan.Parmida_ActivePlusMultiKeys = false;
-            this.cbxRepairMan.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.cbxRepairMan.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.cbxRepairMan.Properties.AppearanceDropDown.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.cbxRepairMan.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.cbxRepairMan.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.cbxRepairMan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxRepairMan.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null)});
-            this.cbxRepairMan.Size = new System.Drawing.Size(186, 20);
-            this.cbxRepairMan.TabIndex = 3;
             // 
             // labelControl8
             // 
@@ -955,6 +1175,128 @@ namespace PMWORK.MachineryForms
             this.labelControl8.Size = new System.Drawing.Size(37, 13);
             this.labelControl8.TabIndex = 2;
             this.labelControl8.Text = "تعمیرکار";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.ColumnEdit = this.btnRemoveUnit;
+            this.gridColumn1.MaxWidth = 32;
+            this.gridColumn1.MinWidth = 32;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 32;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "شناسه";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 66;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "نام قطعه";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 318;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "تعداد";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 81;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "واحد";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 118;
+            // 
+            // btnRemoveUnit
+            // 
+            this.btnRemoveUnit.AutoHeight = false;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            this.btnRemoveUnit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnRemoveUnit.Name = "btnRemoveUnit";
+            this.btnRemoveUnit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.Caption = "نام تعمیرکار";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.Visible = true;
+            this.NameColumn.VisibleIndex = 1;
+            this.NameColumn.Width = 318;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "سمت";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 2;
+            this.gridColumn7.Width = 265;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.ColumnEdit = this.btnRemoveRepairMan;
+            this.gridColumn6.MaxWidth = 32;
+            this.gridColumn6.MinWidth = 32;
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 0;
+            this.gridColumn6.Width = 32;
+            // 
+            // btnRemoveRepairMan
+            // 
+            this.btnRemoveRepairMan.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.btnRemoveRepairMan.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnRemoveRepairMan.Name = "btnRemoveRepairMan";
+            this.btnRemoveRepairMan.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // btnAddRepairMan
+            // 
+            this.btnAddRepairMan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddRepairMan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnAddRepairMan.Location = new System.Drawing.Point(296, 14);
+            this.btnAddRepairMan.Name = "btnAddRepairMan";
+            this.btnAddRepairMan.Size = new System.Drawing.Size(24, 23);
+            this.btnAddRepairMan.TabIndex = 8;
+            this.btnAddRepairMan.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // cbxRepairMan
+            // 
+            this.cbxRepairMan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxRepairMan.EditValue = "";
+            this.cbxRepairMan.Location = new System.Drawing.Point(326, 15);
+            this.cbxRepairMan.Name = "cbxRepairMan";
+            this.cbxRepairMan.Parmida_ActivePlusMultiKeys = false;
+            this.cbxRepairMan.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxRepairMan.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxRepairMan.Properties.AppearanceDropDown.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxRepairMan.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxRepairMan.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxRepairMan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxRepairMan.Properties.NullText = "";
+            this.cbxRepairMan.Properties.PopupView = this.gridView1;
+            this.cbxRepairMan.Size = new System.Drawing.Size(258, 20);
+            this.cbxRepairMan.TabIndex = 3;
+            // 
+            // gridView1
+            // 
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // WorkOrderForm
             // 
@@ -968,6 +1310,7 @@ namespace PMWORK.MachineryForms
             this.Name = "WorkOrderForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "گزارش تعمیر";
+            this.Load += new System.EventHandler(this.WorkOrderForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtRequestNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateStart.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateStart.Properties)).EndInit();
@@ -997,10 +1340,10 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numYadaki.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numConsumablePart.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxUnit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYadaki.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtConsumablePartName.Properties)).EndInit();
             this.xtraTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -1040,7 +1383,10 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRemoveUnit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRemoveRepairMan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxRepairMan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1070,10 +1416,10 @@ namespace PMWORK.MachineryForms
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.TextEdit txtYadaki;
+        private DevExpress.XtraEditors.TextEdit txtConsumablePartName;
         private DevExpress.XtraEditors.SearchLookUpEdit cbxUnit;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraEditors.SpinEdit numYadaki;
+        private DevExpress.XtraEditors.SpinEdit numConsumablePart;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
         private DevExpress.XtraEditors.SpinEdit numPersonHoursTime;
         private DevExpress.XtraEditors.SpinEdit numProductionPlanningTime;
@@ -1114,7 +1460,21 @@ namespace PMWORK.MachineryForms
         private DevExpress.XtraGrid.GridControl dgvRepairMan;
         private DevExpress.XtraGrid.Views.Grid.GridView gvRepairMan;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit cbxRepairMan;
         private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraGrid.Columns.GridColumn IDColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn UnitColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnRemoveUnit;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn NameColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnRemoveRepairMan;
+        private DevExpress.XtraEditors.SimpleButton btnAddRepairMan;
+        private DevExpress.XtraEditors.SearchLookUpEdit cbxRepairMan;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

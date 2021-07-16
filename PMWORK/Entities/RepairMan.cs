@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMWORK.Entities
 {
-   public class RepairMan
+    public class RepairMan
     {
 
         public RepairMan()
@@ -16,7 +16,8 @@ namespace PMWORK.Entities
 
         public int ID { get; set; }
         public string Repairman_FullName { get; set; }
-        public bool  IsActive { get; set; }
+        public string RepairMan_Status { get; set; }
+        public bool IsActive { get; set; }
 
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
 
