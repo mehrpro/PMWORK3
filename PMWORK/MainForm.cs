@@ -136,5 +136,17 @@ namespace PMWORK
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void btnRepairManForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (var x in MdiChildren) x.Close();
+            var frm = _container.GetInstance<RepairManForm>();
+            //frm.Container = _container;
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
     }
 }

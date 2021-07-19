@@ -197,6 +197,10 @@
     <Compile Include="Migrations\202107131054052_CreateRepairMan.designer.cs">
       <DependentUpon>202107131054052_CreateRepairMan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107190918390_updateRepairMan.cs" />
+    <Compile Include="Migrations\202107190918390_updateRepairMan.designer.cs">
+      <DependentUpon>202107190918390_updateRepairMan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -266,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107131054052_CreateRepairMan.resx">
       <DependentUpon>202107131054052_CreateRepairMan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107190918390_updateRepairMan.resx">
+      <DependentUpon>202107190918390_updateRepairMan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

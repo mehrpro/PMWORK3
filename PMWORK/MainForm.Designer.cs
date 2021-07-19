@@ -47,6 +47,8 @@ namespace PMWORK
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.btnRequestList = new DevExpress.XtraBars.BarButtonItem();
             this.btnApplicantForm = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRepairManForm = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRequestListForRepair = new DevExpress.XtraBars.BarButtonItem();
             this.InfrasturctureRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -58,8 +60,6 @@ namespace PMWORK
             this.SettingRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRequestListForRepair = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +84,7 @@ namespace PMWORK
             this.barStaticItem1,
             this.btnRequestList,
             this.btnApplicantForm,
-            this.barButtonItem1,
+            this.btnRepairManForm,
             this.btnRequestListForRepair});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 12;
@@ -249,6 +249,24 @@ namespace PMWORK
             this.btnApplicantForm.Name = "btnApplicantForm";
             this.btnApplicantForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnApplicantForm_ItemClick);
             // 
+            // btnRepairManForm
+            // 
+            this.btnRepairManForm.Caption = "تعمیرکاران";
+            this.btnRepairManForm.Id = 10;
+            this.btnRepairManForm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnRepairManForm.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnRepairManForm.Name = "btnRepairManForm";
+            this.btnRepairManForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRepairManForm_ItemClick);
+            // 
+            // btnRequestListForRepair
+            // 
+            this.btnRequestListForRepair.Caption = "لیست درخواست ها";
+            this.btnRequestListForRepair.Id = 11;
+            this.btnRequestListForRepair.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRequestListForRepair.ImageOptions.Image")));
+            this.btnRequestListForRepair.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRequestListForRepair.ImageOptions.LargeImage")));
+            this.btnRequestListForRepair.Name = "btnRequestListForRepair";
+            this.btnRequestListForRepair.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRequestListForRepair_ItemClick);
+            // 
             // InfrasturctureRibbonPage
             // 
             this.InfrasturctureRibbonPage.Appearance.Options.UseTextOptions = true;
@@ -300,7 +318,7 @@ namespace PMWORK
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.btnRequestList);
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnRepairManForm);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.ShowCaptionButton = false;
             this.ribbonPageGroup6.Text = "مدیریت درخواست ها";
@@ -339,21 +357,6 @@ namespace PMWORK
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(750, 31);
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 10;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // btnRequestListForRepair
-            // 
-            this.btnRequestListForRepair.Caption = "لیست درخواست ها";
-            this.btnRequestListForRepair.Id = 11;
-            this.btnRequestListForRepair.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnRequestListForRepair.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.btnRequestListForRepair.Name = "btnRequestListForRepair";
-            this.btnRequestListForRepair.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRequestListForRepair_ItemClick);
             // 
             // MainForm
             // 
@@ -406,7 +409,7 @@ namespace PMWORK
         private DevExpress.XtraBars.BarButtonItem btnRequestList;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btnApplicantForm;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnRepairManForm;
         private DevExpress.XtraBars.BarButtonItem btnRequestListForRepair;
     }
 }
