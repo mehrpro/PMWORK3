@@ -17,9 +17,21 @@ namespace PMWORK.MachineryForms
     {
         private readonly IRequestRepairRepository request;
         private ICodingRepository _codingRepository;
-        private RequestRepair requestReapqir;
+        private RequestRepair _requestReapqir;
+        private List<RepairMan> _repairmanTemp;
+        private RepairMan _selectedRepairMan;
 
-        public RequestRepair RequestReapqirModel { get => requestReapqir; set => requestReapqir = value; }
+        public List<RepairMan> RepairManTemp
+        {
+            get { return _repairmanTemp; }
+            set
+            {
+                if (value == null) new List<RepairMan>();
+                value = _repairmanTemp;
+            }
+        }
+
+        public RequestRepair RequestReapqirModel { get => _requestReapqir; set => _requestReapqir = value; }
 
         public WorkOrderForm(IRequestRepairRepository request, ICodingRepository codingRepository)
         {
@@ -46,8 +58,8 @@ namespace PMWORK.MachineryForms
 
         private void WorkOrderForm_Load(object sender, EventArgs e)
         {
-            txtRequestNumber.EditValue = requestReapqir.ID;
-            dateFinish.EditValue = dateStart.EditValue = requestReapqir.RequestDataTime;
+            txtRequestNumber.EditValue = _requestReapqir.ID;
+            dateFinish.EditValue = dateStart.EditValue = _requestReapqir.RequestDataTime;
             // timEnd.EditValue = timStart.EditValue = requestReapqir.RequestDataTime.TimeOfDay;
 
 
@@ -79,7 +91,12 @@ namespace PMWORK.MachineryForms
 
         private void btnAddRepairMan_Click(object sender, EventArgs e)
         {
-
+            _selectedRepairMan = (RepairMan)cbxRepairMan.GetSelectedDataRow();
+            if (_selectedRepairMan == null)
+            {
+                return;
+            }
+            _repairmanTemp.Add(_selectedRepairMan);
         }
     }
 }
