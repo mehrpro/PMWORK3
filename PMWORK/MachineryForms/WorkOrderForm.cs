@@ -26,11 +26,23 @@ namespace PMWORK.MachineryForms
             InitializeComponent();
             this.request = request;
             _codingRepository = codingRepository;
+
             cbxUnit.Properties.DisplayMember = "Unit";
             cbxUnit.Properties.ValueMember = "ID";
             cbxUnit.Properties.DataSource = _codingRepository.GetAllUnits();
+            cbxUnit.EditValue = 1;
+
+
+            cbxRepairMan.Properties.DisplayMember = "Repairman_FullName";
+            cbxRepairMan.Properties.ValueMember = "ID";
+            cbxRepairMan.Properties.DataSource = _codingRepository.GetAllRepairMan();
+            cbxRepairMan.EditValue = 1;
+
+
 
         }
+
+
 
         private void WorkOrderForm_Load(object sender, EventArgs e)
         {
@@ -64,12 +76,8 @@ namespace PMWORK.MachineryForms
             };
         }
 
-        private void cbxUnit_EditValueChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void btnAddRepairMan_Click(object sender, EventArgs e)
         {
 
         }

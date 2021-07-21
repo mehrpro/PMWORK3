@@ -50,11 +50,11 @@ namespace PMWORK.CodingForms
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dgvRepaiemanList = new DevExpress.XtraGrid.GridControl();
             this.gvRepairManList = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.SelectColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnSelectedRepairMan = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.IDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FullNameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RepairMan_StatusColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SelectColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSelectedRepairMan = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -261,6 +261,35 @@ namespace PMWORK.CodingForms
             this.gvRepairManList.Name = "gvRepairManList";
             this.gvRepairManList.OptionsView.ShowGroupPanel = false;
             // 
+            // IDColumn
+            // 
+            this.IDColumn.Caption = "شناسه";
+            this.IDColumn.FieldName = "ID";
+            this.IDColumn.MaxWidth = 80;
+            this.IDColumn.MinWidth = 80;
+            this.IDColumn.Name = "IDColumn";
+            this.IDColumn.Visible = true;
+            this.IDColumn.VisibleIndex = 1;
+            this.IDColumn.Width = 80;
+            // 
+            // FullNameColumn
+            // 
+            this.FullNameColumn.Caption = "نام تعمیرکار";
+            this.FullNameColumn.FieldName = "Repairman_FullName";
+            this.FullNameColumn.Name = "FullNameColumn";
+            this.FullNameColumn.Visible = true;
+            this.FullNameColumn.VisibleIndex = 2;
+            this.FullNameColumn.Width = 292;
+            // 
+            // RepairMan_StatusColumn
+            // 
+            this.RepairMan_StatusColumn.Caption = "شغل";
+            this.RepairMan_StatusColumn.FieldName = "RepairMan_Status";
+            this.RepairMan_StatusColumn.Name = "RepairMan_StatusColumn";
+            this.RepairMan_StatusColumn.Visible = true;
+            this.RepairMan_StatusColumn.VisibleIndex = 3;
+            this.RepairMan_StatusColumn.Width = 376;
+            // 
             // SelectColumn
             // 
             this.SelectColumn.ColumnEdit = this.btnSelectedRepairMan;
@@ -284,35 +313,6 @@ namespace PMWORK.CodingForms
             this.btnSelectedRepairMan.Name = "btnSelectedRepairMan";
             this.btnSelectedRepairMan.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSelectedRepairMan.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSelectedRepairMan_ButtonClick);
-            // 
-            // IDColumn
-            // 
-            this.IDColumn.Caption = "شناسه";
-            this.IDColumn.FieldName = "ID";
-            this.IDColumn.MaxWidth = 80;
-            this.IDColumn.MinWidth = 80;
-            this.IDColumn.Name = "IDColumn";
-            this.IDColumn.Visible = true;
-            this.IDColumn.VisibleIndex = 1;
-            this.IDColumn.Width = 80;
-            // 
-            // FullNameColumn
-            // 
-            this.FullNameColumn.Caption = "نام تعمیرکار";
-            this.FullNameColumn.FieldName = "RepairMan_FullName";
-            this.FullNameColumn.Name = "FullNameColumn";
-            this.FullNameColumn.Visible = true;
-            this.FullNameColumn.VisibleIndex = 2;
-            this.FullNameColumn.Width = 292;
-            // 
-            // RepairMan_StatusColumn
-            // 
-            this.RepairMan_StatusColumn.Caption = "شغل";
-            this.RepairMan_StatusColumn.FieldName = "RepairMan_Status";
-            this.RepairMan_StatusColumn.Name = "RepairMan_StatusColumn";
-            this.RepairMan_StatusColumn.Visible = true;
-            this.RepairMan_StatusColumn.VisibleIndex = 3;
-            this.RepairMan_StatusColumn.Width = 376;
             // 
             // RepairManForm
             // 
