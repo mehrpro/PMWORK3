@@ -20,16 +20,13 @@ namespace PMWORK.MachineryForms
         private RequestRepair _requestReapqir;
 
         private List<RepairMan> _repairmanTemp;
-
-
+        private List<ConsumViewModel> _consumTemp;
+        private List<ConsumablePart> _consumablePartsTemp;
 
         private RepairMan _selectedRepairMan;
+        private ConsumViewModel _selectedConsum;
 
-        public List<RepairMan> RepairManTemp
-        {
-            get => _repairmanTemp;
-            set => _repairmanTemp = value;
-        }
+
 
         public RequestRepair RequestReapqirModel { get => _requestReapqir; set => _requestReapqir = value; }
 
@@ -49,6 +46,10 @@ namespace PMWORK.MachineryForms
             cbxRepairMan.Properties.DataSource = _codingRepository.GetAllRepairMan();
 
             _repairmanTemp = new List<RepairMan>();
+            _consumablePartsTemp = new List<ConsumablePart>();
+            _consumTemp = new List<ConsumViewModel>();
+
+
 
 
 
@@ -119,7 +120,84 @@ namespace PMWORK.MachineryForms
 
         private void btnConsumablePartAdd_Click(object sender, EventArgs e)
         {
+            if (dxValidationProviderAddRepairMan.Validate(txtConsumablePartName)
+            && dxValidationProviderAddRepairMan.Validate(numConsumablePart)
+            && dxValidationProviderAddRepairMan.Validate(cbxUnit))
+            {
+                var obj = new ConsumViewModel()
+                {
 
+                    ConsumablePartTitel = txtConsumablePartName.Text.Trim(),
+                    Number = Convert.ToInt32(numConsumablePart.EditValue),
+                    UnitID_FK = Convert.ToInt32(cbxUnit.EditValue),
+                    RequestID_FK = Convert.ToInt64(txtRequestNumber.Text),
+                    UnitOfMeasurement = cbxUnit.Text,
+
+                };
+                _consumTemp.Add(obj);
+                dgvYadaki.DataSource = _consumTemp;
+                txtConsumablePartName.ResetText();
+                numConsumablePart.EditValue = 0;
+                cbxUnit.EditValue = null;
+                dgvYadaki.RefreshDataSource();
+                //gvYadaki.RefreshData();
+            }
+            else
+            {
+                XtraMessageBox.Show(PublicClass.ErrorValidation, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSelectConsum_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (gvYadaki.GetFocusedRowCellValue("ID") == null) return;
+            _selectedConsum = (ConsumViewModel)gvYadaki.GetFocusedRow();
+
+            txtConsumablePartName.Text = _selectedConsum.ConsumablePartTitel;
+            numConsumablePart.EditValue = _selectedConsum.Number;
+            cbxUnit.EditValue = _selectedConsum.UnitID_FK;
+            btnSaveConsum.Enabled = btnCancelConsum.Enabled = true;
+            btnConsumablePartAdd.Enabled = false;
+
+        }
+
+        private void btnSaveConsum_Click(object sender, EventArgs e)
+        {
+            _selectedConsum.ConsumablePartTitel = txtConsumablePartName.Text;
+            _selectedConsum.Number = Convert.ToInt32(numConsumablePart.EditValue);
+            _selectedConsum.UnitID_FK = Convert.ToInt32(cbxUnit.EditValue);
+            _selectedConsum.UnitOfMeasurement = cbxUnit.Text;
+            _selectedConsum = null;
+            txtConsumablePartName.ResetText();
+            numConsumablePart.EditValue = 0;
+            cbxUnit.EditValue = null;
+            btnSaveConsum.Enabled = btnCancelConsum.Enabled = false;
+            btnConsumablePartAdd.Enabled = true;
+            dgvYadaki.RefreshDataSource();
+            gvYadaki.RefreshData();
+
+        }
+
+        private void cbxRepairMan_EditValueChanged(object sender, EventArgs e)
+        {
+            _selectedRepairMan = (RepairMan)cbxRepairMan.GetSelectedDataRow();
+            if (_selectedRepairMan == null)
+            {
+                return;
+            }
+        }
+
+
+        private void btnCancelConsum_Click(object sender, EventArgs e)
+        {
+            _selectedConsum = null;
+            txtConsumablePartName.ResetText();
+            numConsumablePart.EditValue = 0;
+            cbxUnit.EditValue = null;
+            btnSaveConsum.Enabled = btnCancelConsum.Enabled = false;
+            btnConsumablePartAdd.Enabled = true;
+            dgvYadaki.RefreshDataSource();
+            gvYadaki.RefreshData();
         }
     }
 }

@@ -152,6 +152,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>frmLogin.resx</DependentUpon>
     </Compile>
+    <Compile Include="MachineryForms\ConsumViewModel.cs" />
     <Compile Include="MachineryForms\MachineryForm.cs">
       <SubType>Form</SubType>
     </Compile>
