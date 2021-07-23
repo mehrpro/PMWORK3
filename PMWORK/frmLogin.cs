@@ -21,22 +21,22 @@ namespace PMWORK
             InitializeComponent();
             //////
             PublicClass.UserID = 1;
-            //db = new AppDbContext();
-            //PublicClass.db = this.db;
-            // Open a Splash Screen
-            SplashScreenManager.ShowForm(this, typeof(Splash), true, true, false);
+            ////db = new AppDbContext();
+            ////PublicClass.db = this.db;
+            //// Open a Splash Screen
+            //SplashScreenManager.ShowForm(this, typeof(Splash), true, true, false);
 
-            // The splash screen will be opened in a separate thread. To interact with it, use the SendCommand method.
+            //// The splash screen will be opened in a separate thread. To interact with it, use the SendCommand method.
 
-            for (int i = 1; i <= 100; i++)
-            {
-                SplashScreenManager.Default.SendCommand(Splash.SplashScreenCommand.SetProgress, i);
-                //To process commands, override the SplashScreen.ProcessCommand method.
-                Thread.Sleep(25);
-            }
+            //for (int i = 1; i <= 100; i++)
+            //{
+            //    SplashScreenManager.Default.SendCommand(Splash.SplashScreenCommand.SetProgress, i);
+            //    //To process commands, override the SplashScreen.ProcessCommand method.
+            //    Thread.Sleep(25);
+            //}
 
-            // Close the Splash Screen.
-            SplashScreenManager.CloseForm(false);
+            //// Close the Splash Screen.
+            //SplashScreenManager.CloseForm(false);
         }
 
 

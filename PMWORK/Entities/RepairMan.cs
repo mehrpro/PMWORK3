@@ -11,7 +11,7 @@ namespace PMWORK.Entities
 
         public RepairMan()
         {
-            WorkOrders = new HashSet<WorkOrder>();
+            RepairManListeds = new HashSet<RepairManListed>();
         }
 
         public int ID { get; set; }
@@ -19,7 +19,7 @@ namespace PMWORK.Entities
         public string RepairMan_Status { get; set; }
         public bool IsActive { get; set; }
 
-        public virtual ICollection<WorkOrder> WorkOrders { get; set; }
+        public virtual ICollection<RepairManListed> RepairManListeds { get; set; }
 
     }
 }

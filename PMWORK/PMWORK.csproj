@@ -137,6 +137,7 @@
     <Compile Include="Entities\PMDBInitializer.cs" />
     <Compile Include="Entities\PublicType.cs" />
     <Compile Include="Entities\RepairMan.cs" />
+    <Compile Include="Entities\RepairManListed.cs" />
     <Compile Include="Entities\RequestRepair.cs" />
     <Compile Include="Entities\SubGroup.cs" />
     <Compile Include="Entities\UnitOfMeasurement.cs" />
@@ -190,17 +191,13 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107091234455_CreateDB.cs" />
-    <Compile Include="Migrations\202107091234455_CreateDB.designer.cs">
-      <DependentUpon>202107091234455_CreateDB.cs</DependentUpon>
+    <Compile Include="Migrations\202107230707186_DBCreate.cs" />
+    <Compile Include="Migrations\202107230707186_DBCreate.designer.cs">
+      <DependentUpon>202107230707186_DBCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107131054052_CreateRepairMan.cs" />
-    <Compile Include="Migrations\202107131054052_CreateRepairMan.designer.cs">
-      <DependentUpon>202107131054052_CreateRepairMan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107190918390_updateRepairMan.cs" />
-    <Compile Include="Migrations\202107190918390_updateRepairMan.designer.cs">
-      <DependentUpon>202107190918390_updateRepairMan.cs</DependentUpon>
+    <Compile Include="Migrations\202107230735069_db2.cs" />
+    <Compile Include="Migrations\202107230735069_db2.designer.cs">
+      <DependentUpon>202107230735069_db2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -266,14 +263,11 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107091234455_CreateDB.resx">
-      <DependentUpon>202107091234455_CreateDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107230707186_DBCreate.resx">
+      <DependentUpon>202107230707186_DBCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107131054052_CreateRepairMan.resx">
-      <DependentUpon>202107131054052_CreateRepairMan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107190918390_updateRepairMan.resx">
-      <DependentUpon>202107190918390_updateRepairMan.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107230735069_db2.resx">
+      <DependentUpon>202107230735069_db2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

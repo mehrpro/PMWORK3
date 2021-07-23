@@ -3,19 +3,14 @@ using PMWORK.Entities;
 using PMWORK.Repository;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PMWORK.MachineryForms
 {
     public partial class WorkOrderForm : XtraForm
     {
-        private readonly IRequestRepairRepository request;
+        private readonly IRequestRepairRepository _requestRepairRepository;
         private ICodingRepository _codingRepository;
         private RequestRepair _requestReapqir;
 
@@ -33,7 +28,7 @@ namespace PMWORK.MachineryForms
         public WorkOrderForm(IRequestRepairRepository request, ICodingRepository codingRepository)
         {
             InitializeComponent();
-            this.request = request;
+            _requestRepairRepository = request;
             _codingRepository = codingRepository;
 
             cbxUnit.Properties.DisplayMember = "Unit";
@@ -60,6 +55,7 @@ namespace PMWORK.MachineryForms
         private void WorkOrderForm_Load(object sender, EventArgs e)
         {
             txtRequestNumber.EditValue = _requestReapqir.ID;
+            dateFinish.Properties.MinValue = dateStart.Properties.MinValue = _requestReapqir.RequestDataTime;
             dateFinish.EditValue = dateStart.EditValue = _requestReapqir.RequestDataTime;
         }
 
@@ -72,22 +68,56 @@ namespace PMWORK.MachineryForms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var newWork = new WorkOrder()
+            if (dxSave.Validate())
             {
-                RequestID_FK = Convert.ToInt64(txtRequestNumber.EditValue),
-                StartWorking = dateStart.DateTime.Date
+                var newWork = new WorkOrder();
+                newWork.RequestID_FK = _requestReapqir.ID;
+                newWork.StartWorking = dateStart.DateTime;
+                newWork.EndWorking = dateFinish.DateTime;
+                newWork.Cause_Exhaustion = Convert.ToBoolean(chkCause_Exhaustion.CheckState);
+                newWork.Cause_OperatorNegligence = Convert.ToBoolean(chkCause_OperatorNegligence.CheckState);
+                newWork.Cause_QualityofSpareParts = Convert.ToBoolean(chkCause_QualityofSpareParts.CheckState);
+                newWork.DateTimeClosing = DateTime.Now;
+                newWork.IsDelete = false;
+                newWork.RepairOutside = false;
+                newWork.PersonHours = Convert.ToBoolean(chkPersonHours.CheckState);
+                newWork.PersonHoursTime = Convert.ToInt16(numPersonHoursTime.EditValue);
+                newWork.PersonHoursDescription = txtPersonHoursDescription.Text.Trim();
+                newWork.NoSpareParts = Convert.ToBoolean(chkNoSpareParts.CheckState);
+                newWork.NoSparePartsTime = Convert.ToInt16(numNoSparePartsTime.EditValue);
+                newWork.NoSparePartsDescription = txtNoSparePartsDescription.Text.Trim();
+                newWork.ProductionPlanning = Convert.ToBoolean(chkPersonHours.CheckState);
+                newWork.ProductionPlanningTime = Convert.ToInt16(numPersonHoursTime.EditValue);
+                newWork.ProductionPlanningDescription = txtPersonHoursDescription.Text.Trim();
+                newWork.Other = Convert.ToBoolean(chkOther.CheckState);
+                newWork.OtherTime = Convert.ToInt16(numOtherTime.EditValue);
+                newWork.OtherDescription = txtOtherDescription.Text.Trim();
+                newWork.RepairOutSideReportID_FK = null;
+                newWork.CloseRequest = true;
+                newWork.StopTotalMin = Convert.ToInt32(numStopTotalMin.EditValue);
+                newWork.WorkingTotalMin = Convert.ToInt32(numWorkingTotalMin.EditValue);
+                newWork.OtherError = Convert.ToBoolean(chkOtherError.CheckState);
+                newWork.OtherErrorDescription = txtOtherDescription.Text.Trim();
+                newWork.ReportRepair = txtReportRepair.Text.Trim();
 
-            };
+                var result = _requestRepairRepository.AddNewRepairRequest(newWork, _repairmanTemp, _consumablePartsTemp);
+                if (result)
+                    XtraMessageBox.Show(PublicClass.SuccessSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    XtraMessageBox.Show(PublicClass.ErrorSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else            
+                XtraMessageBox.Show(PublicClass.ErrorValidation, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void UpdateRepairManList()
         {
-            dgvRepairMan.DataSource = _repairmanTemp.ToList();
+            dgvRepairMan.DataSource = _repairmanTemp;
         }
 
         private void btnAddRepairMan_Click(object sender, EventArgs e)
         {
-            if (dxValidationProviderAddRepairMan.Validate(cbxRepairMan))
+            if (dxRepairMan.Validate(cbxRepairMan))
             {
                 if (_repairmanTemp.Any(x => x.ID == _selectedRepairMan.ID))
                 {
@@ -120,9 +150,9 @@ namespace PMWORK.MachineryForms
 
         private void btnConsumablePartAdd_Click(object sender, EventArgs e)
         {
-            if (dxValidationProviderAddRepairMan.Validate(txtConsumablePartName)
-            && dxValidationProviderAddRepairMan.Validate(numConsumablePart)
-            && dxValidationProviderAddRepairMan.Validate(cbxUnit))
+            if (dxRepairMan.Validate(txtConsumablePartName)
+            && dxRepairMan.Validate(numConsumablePart)
+            && dxRepairMan.Validate(cbxUnit))
             {
                 var obj = new ConsumViewModel()
                 {
@@ -198,6 +228,11 @@ namespace PMWORK.MachineryForms
             btnConsumablePartAdd.Enabled = true;
             dgvYadaki.RefreshDataSource();
             gvYadaki.RefreshData();
+        }
+
+        private void dateFinish_EditValueChanged(object sender, EventArgs e)
+        {
+            numStopTotalMin.EditValue = numWorkingTotalMin.EditValue = dateFinish.DateTime.Subtract(dateStart.DateTime).TotalMinutes;
         }
     }
 }

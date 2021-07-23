@@ -235,10 +235,12 @@ namespace PMWORK
 
 
             builder.Entity<WorkOrder>().HasKey(x => x.ID);
-            builder.Entity<WorkOrder>().Property(s => s.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<WorkOrder>().Property(s => s.ID).IsRequired()
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             builder.Entity<WorkOrder>().Property(d => d.IsDelete).IsRequired();
+            builder.Entity<WorkOrder>().Property(d => d.WorkingTotalMin).IsRequired();
+            builder.Entity<WorkOrder>().Property(d => d.StopTotalMin).IsRequired();
             builder.Entity<WorkOrder>().Property(r => r.RequestID_FK).IsRequired();
-            builder.Entity<WorkOrder>().Property(r => r.RepairManID_FK).IsRequired();
             builder.Entity<WorkOrder>().Property(x => x.StartWorking).IsRequired().HasColumnType("datetime");
             builder.Entity<WorkOrder>().Property(x => x.EndWorking).IsRequired().HasColumnType("datetime");
             builder.Entity<WorkOrder>().Property(x => x.OtherErrorDescription).HasMaxLength(250);
@@ -247,14 +249,19 @@ namespace PMWORK
             builder.Entity<WorkOrder>().Property(p => p.NoSparePartsDescription).HasMaxLength(250);
             builder.Entity<WorkOrder>().Property(p => p.OtherDescription).HasMaxLength(250);
             builder.Entity<WorkOrder>().Property(p => p.ProductionPlanningDescription).HasMaxLength(250);
-
+            builder.Entity<WorkOrder>()
+                .HasMany(x => x.RepairManListeds)
+                .WithRequired(x => x.WorkOrder)
+                .HasForeignKey(x => x.WorkOrderIdFk)
+                .WillCascadeOnDelete(false);
 
             builder.Entity<PublicType>().HasKey(x => x.ID);
-            builder.Entity<PublicType>().Property(x => x.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<PublicType>().Property(x => x.ID).IsRequired()
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             builder.Entity<PublicType>().Property(x => x.Title).IsRequired();
             builder.Entity<PublicType>().Property(x => x.Group).IsRequired();
             builder.Entity<PublicType>()
-                .HasMany<RequestRepair>(x => x.RequestRepairs)
+                .HasMany(x => x.RequestRepairs)
                 .WithRequired(x => x.PublicType)
                 .HasForeignKey(x => x.PublicTypeID_FK)
                 .WillCascadeOnDelete(false);
@@ -267,10 +274,18 @@ namespace PMWORK
             builder.Entity<RepairMan>().Property(x => x.Repairman_FullName).IsRequired().HasMaxLength(250);
             builder.Entity<RepairMan>().Property(x => x.RepairMan_Status).IsRequired().HasMaxLength(250);
             builder.Entity<RepairMan>()
-                .HasMany<WorkOrder>(x => x.WorkOrders)
+                .HasMany(x => x.RepairManListeds)
                 .WithRequired(x => x.RepairMan)
-                .HasForeignKey(x => x.RepairManID_FK)
+                .HasForeignKey(x => x.RepairManIdFk)
                 .WillCascadeOnDelete(false);
+
+
+            builder.Entity<RepairManListed>().HasKey(x => x.ID);
+            builder.Entity<RepairManListed>().Property(x => x.ID).IsRequired()
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<RepairManListed>().Property(x => x.IsDelete).IsRequired();
+            builder.Entity<RepairManListed>().Property(x => x.RepairManIdFk).IsRequired();
+            builder.Entity<RepairManListed>().Property(x => x.WorkOrderIdFk).IsRequired();
 
 
         }
@@ -293,6 +308,7 @@ namespace PMWORK
         public virtual DbSet<Cleam> Cleams { get; set; }
         public virtual DbSet<PublicType> PublicTypes { get; set; }
         public virtual DbSet<RepairMan> RepairMens { get; set; }
+        public virtual DbSet<RepairManListed> RepairManListeds { get; set; }
 
 
     }

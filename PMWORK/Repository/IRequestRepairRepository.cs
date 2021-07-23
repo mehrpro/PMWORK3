@@ -48,7 +48,7 @@ namespace PMWORK.Repository
         /// <param name="Id">شناسه</param>
         /// <returns></returns>
         RequestRepair FindRequestRepairById(long Id);
-        
+
 
 
 
@@ -61,7 +61,14 @@ namespace PMWORK.Repository
         /// <param name="model"></param>
         /// <returns></returns>
         bool AddNewRequestRepair(RequestRepair model);
-
+        /// <summary>
+        /// ثبت گزارش تعمیر
+        /// </summary>
+        /// <param name="requestRepair">گزارش تعمیر</param>
+        /// <param name="repairManListed">لیست سرویس کار</param>
+        /// <param name="consumablePart">قطعات یدکی مصرفی</param>
+        /// <returns></returns>
+        bool AddNewRepairRequest(WorkOrder workOrder, List<RepairMan> repairMan, List<ConsumablePart> consumablePart);
 
 
 
@@ -167,9 +174,46 @@ namespace PMWORK.Repository
                 _context.SaveChanges();
                 return true;
             }
-            catch 
+            catch
             {
                 return false;
+            }
+        }
+
+        public bool AddNewRepairRequest(WorkOrder workOrder, List<RepairMan> repairMan, List<ConsumablePart> consumablePart)
+        {
+            using (var trans = _context.Database.BeginTransaction())
+            {
+                try
+                {
+                    _context.WorkOrders.Add(workOrder);
+                    _context.SaveChanges();
+                    if (repairMan.Count() > 0)
+                    {
+                        var newRepairManListed = new List<RepairManListed>();
+                        foreach (var item in repairMan)
+                        {
+                            newRepairManListed.Add(new RepairManListed()
+                            {
+                                IsDelete = false,
+                                RepairManIdFk = item.ID,
+                                WorkOrderIdFk = workOrder.ID,
+                            });
+                        }
+                        _context.RepairManListeds.AddRange(newRepairManListed);
+                    }
+                    if (consumablePart.Count() > 0)
+                        _context.ConsumableParts.AddRange(consumablePart);
+                    _context.SaveChanges();
+                    trans.Commit();
+                    return true;
+                }
+                catch
+                {
+                    trans.Rollback();
+                    return false;
+                }
+
             }
         }
     }

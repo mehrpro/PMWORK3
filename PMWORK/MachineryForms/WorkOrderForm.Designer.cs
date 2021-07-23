@@ -30,26 +30,27 @@ namespace PMWORK.MachineryForms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkOrderForm));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkOrderForm));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.txtRequestNumber = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -69,6 +70,10 @@ namespace PMWORK.MachineryForms
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.numStopTotalMin = new DevExpress.XtraEditors.SpinEdit();
+            this.numWorkingTotalMin = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
@@ -140,7 +145,9 @@ namespace PMWORK.MachineryForms
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ComboBoxFullNameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ComboBoxJobColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dxValidationProviderAddRepairMan = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.dxRepairMan = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.dxSave = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.btnRepairOut = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequestNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateStart.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateStart.Properties)).BeginInit();
@@ -159,6 +166,8 @@ namespace PMWORK.MachineryForms
             this.groupControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numStopTotalMin.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numWorkingTotalMin.Properties)).BeginInit();
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
@@ -211,7 +220,8 @@ namespace PMWORK.MachineryForms
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbxRepairMan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderAddRepairMan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxRepairMan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxSave)).BeginInit();
             this.SuspendLayout();
             // 
             // txtRequestNumber
@@ -236,7 +246,7 @@ namespace PMWORK.MachineryForms
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(545, 88);
+            this.labelControl3.Location = new System.Drawing.Point(339, 62);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(47, 13);
             this.labelControl3.TabIndex = 0;
@@ -245,7 +255,7 @@ namespace PMWORK.MachineryForms
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(545, 114);
+            this.labelControl4.Location = new System.Drawing.Point(545, 126);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(53, 13);
             this.labelControl4.TabIndex = 0;
@@ -263,7 +273,7 @@ namespace PMWORK.MachineryForms
             this.dateStart.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
             this.dateStart.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateStart.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dateStart.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
             this.dateStart.Properties.DisplayFormat.FormatString = "g";
             this.dateStart.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateStart.Properties.EditFormat.FormatString = "g";
@@ -279,7 +289,7 @@ namespace PMWORK.MachineryForms
             // 
             this.dateFinish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateFinish.EditValue = null;
-            this.dateFinish.Location = new System.Drawing.Point(403, 85);
+            this.dateFinish.Location = new System.Drawing.Point(197, 59);
             this.dateFinish.Name = "dateFinish";
             this.dateFinish.Parmida_ActivePlusMultiKeys = false;
             this.dateFinish.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -287,7 +297,7 @@ namespace PMWORK.MachineryForms
             this.dateFinish.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
             this.dateFinish.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateFinish.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dateFinish.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
             this.dateFinish.Properties.DisplayFormat.FormatString = "g";
             this.dateFinish.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateFinish.Properties.EditFormat.FormatString = "g";
@@ -298,6 +308,7 @@ namespace PMWORK.MachineryForms
             this.dateFinish.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateFinish.Size = new System.Drawing.Size(136, 20);
             this.dateFinish.TabIndex = 3;
+            this.dateFinish.EditValueChanged += new System.EventHandler(this.dateFinish_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -318,13 +329,17 @@ namespace PMWORK.MachineryForms
             this.txtReportRepair.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtReportRepair.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtReportRepair.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtReportRepair.Size = new System.Drawing.Size(637, 194);
+            this.txtReportRepair.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.txtReportRepair.Size = new System.Drawing.Size(637, 180);
             this.txtReportRepair.TabIndex = 1;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxSave.SetValidationRule(this.txtReportRepair, conditionValidationRule1);
             // 
             // txtOtherError
             // 
             this.txtOtherError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOtherError.Location = new System.Drawing.Point(56, 135);
+            this.txtOtherError.Location = new System.Drawing.Point(56, 148);
             this.txtOtherError.Name = "txtOtherError";
             this.txtOtherError.Parmida_ActivePlusMultiKeys = false;
             this.txtOtherError.Size = new System.Drawing.Size(427, 20);
@@ -355,7 +370,7 @@ namespace PMWORK.MachineryForms
             // chkOtherError
             // 
             this.chkOtherError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkOtherError.Location = new System.Drawing.Point(489, 136);
+            this.chkOtherError.Location = new System.Drawing.Point(489, 149);
             this.chkOtherError.Name = "chkOtherError";
             this.chkOtherError.Parmida_ActivePlusMultiKeys = false;
             this.chkOtherError.Properties.Caption = "سایر";
@@ -365,7 +380,7 @@ namespace PMWORK.MachineryForms
             // chkCause_QualityofSpareParts
             // 
             this.chkCause_QualityofSpareParts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkCause_QualityofSpareParts.Location = new System.Drawing.Point(106, 111);
+            this.chkCause_QualityofSpareParts.Location = new System.Drawing.Point(106, 124);
             this.chkCause_QualityofSpareParts.Name = "chkCause_QualityofSpareParts";
             this.chkCause_QualityofSpareParts.Parmida_ActivePlusMultiKeys = false;
             this.chkCause_QualityofSpareParts.Properties.Caption = "کیفیت قطعات یدکی";
@@ -375,7 +390,7 @@ namespace PMWORK.MachineryForms
             // chkCause_OperatorNegligence
             // 
             this.chkCause_OperatorNegligence.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkCause_OperatorNegligence.Location = new System.Drawing.Point(300, 110);
+            this.chkCause_OperatorNegligence.Location = new System.Drawing.Point(300, 123);
             this.chkCause_OperatorNegligence.Name = "chkCause_OperatorNegligence";
             this.chkCause_OperatorNegligence.Parmida_ActivePlusMultiKeys = false;
             this.chkCause_OperatorNegligence.Properties.Caption = "سهل انگاری اپراتور";
@@ -385,7 +400,7 @@ namespace PMWORK.MachineryForms
             // chkCause_Exhaustion
             // 
             this.chkCause_Exhaustion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkCause_Exhaustion.Location = new System.Drawing.Point(450, 111);
+            this.chkCause_Exhaustion.Location = new System.Drawing.Point(450, 124);
             this.chkCause_Exhaustion.Name = "chkCause_Exhaustion";
             this.chkCause_Exhaustion.Parmida_ActivePlusMultiKeys = false;
             this.chkCause_Exhaustion.Properties.Caption = "فرسودگی";
@@ -394,11 +409,10 @@ namespace PMWORK.MachineryForms
             // 
             // tabMaster
             // 
-            this.tabMaster.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabMaster.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabMaster.AppearancePage.Header.Options.UseTextOptions = true;
-            this.tabMaster.AppearancePage.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.tabMaster.Location = new System.Drawing.Point(0, 0);
             this.tabMaster.Name = "tabMaster";
             this.tabMaster.SelectedTabPage = this.xtraTabPage2;
@@ -422,14 +436,16 @@ namespace PMWORK.MachineryForms
             // 
             this.groupControl5.Controls.Add(this.txtReportRepair);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl5.Location = new System.Drawing.Point(0, 170);
+            this.groupControl5.Location = new System.Drawing.Point(0, 184);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(641, 216);
+            this.groupControl5.Size = new System.Drawing.Size(641, 202);
             this.groupControl5.TabIndex = 13;
             this.groupControl5.Text = "شرح کار";
             // 
             // groupControl4
             // 
+            this.groupControl4.Controls.Add(this.numStopTotalMin);
+            this.groupControl4.Controls.Add(this.numWorkingTotalMin);
             this.groupControl4.Controls.Add(this.labelControl1);
             this.groupControl4.Controls.Add(this.dateStart);
             this.groupControl4.Controls.Add(this.dateFinish);
@@ -440,14 +456,68 @@ namespace PMWORK.MachineryForms
             this.groupControl4.Controls.Add(this.chkCause_Exhaustion);
             this.groupControl4.Controls.Add(this.chkCause_QualityofSpareParts);
             this.groupControl4.Controls.Add(this.txtRequestNumber);
+            this.groupControl4.Controls.Add(this.labelControl20);
+            this.groupControl4.Controls.Add(this.labelControl19);
             this.groupControl4.Controls.Add(this.labelControl2);
             this.groupControl4.Controls.Add(this.chkCause_OperatorNegligence);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(641, 170);
+            this.groupControl4.Size = new System.Drawing.Size(641, 184);
             this.groupControl4.TabIndex = 12;
             this.groupControl4.Text = "علت خرابی";
+            // 
+            // numStopTotalMin
+            // 
+            this.numStopTotalMin.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.numStopTotalMin.Location = new System.Drawing.Point(197, 85);
+            this.numStopTotalMin.Name = "numStopTotalMin";
+            this.numStopTotalMin.Parmida_ActivePlusMultiKeys = false;
+            this.numStopTotalMin.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.numStopTotalMin.Properties.IsFloatValue = false;
+            this.numStopTotalMin.Properties.Mask.EditMask = "N00";
+            this.numStopTotalMin.Size = new System.Drawing.Size(136, 20);
+            this.numStopTotalMin.TabIndex = 12;
+            // 
+            // numWorkingTotalMin
+            // 
+            this.numWorkingTotalMin.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.numWorkingTotalMin.Location = new System.Drawing.Point(403, 85);
+            this.numWorkingTotalMin.Name = "numWorkingTotalMin";
+            this.numWorkingTotalMin.Parmida_ActivePlusMultiKeys = false;
+            this.numWorkingTotalMin.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.numWorkingTotalMin.Properties.IsFloatValue = false;
+            this.numWorkingTotalMin.Properties.Mask.EditMask = "N00";
+            this.numWorkingTotalMin.Size = new System.Drawing.Size(136, 20);
+            this.numWorkingTotalMin.TabIndex = 12;
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl20.Location = new System.Drawing.Point(339, 88);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(47, 13);
+            this.labelControl20.TabIndex = 0;
+            this.labelControl20.Text = "مدت توقف";
+            // 
+            // labelControl19
+            // 
+            this.labelControl19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl19.Location = new System.Drawing.Point(545, 88);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(72, 13);
+            this.labelControl19.TabIndex = 0;
+            this.labelControl19.Text = "مدت زمان تعمیر";
             // 
             // xtraTabPage1
             // 
@@ -570,13 +640,13 @@ namespace PMWORK.MachineryForms
             // btnRemoveUnit
             // 
             this.btnRemoveUnit.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
-            serializableAppearanceObject13.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject14.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject15.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject16.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            serializableAppearanceObject1.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject2.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject3.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject4.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.btnRemoveUnit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnRemoveUnit.Name = "btnRemoveUnit";
             this.btnRemoveUnit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -626,13 +696,13 @@ namespace PMWORK.MachineryForms
             // btnSelectConsum
             // 
             this.btnSelectConsum.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
-            serializableAppearanceObject17.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject18.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject19.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject20.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            serializableAppearanceObject5.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject6.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject7.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject8.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.btnSelectConsum.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSelectConsum.Name = "btnSelectConsum";
             this.btnSelectConsum.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSelectConsum.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSelectConsum_ButtonClick);
@@ -684,10 +754,10 @@ namespace PMWORK.MachineryForms
             this.numConsumablePart.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.numConsumablePart.Size = new System.Drawing.Size(79, 20);
             this.numConsumablePart.TabIndex = 3;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule5.ErrorText = "This value is not valid";
-            conditionValidationRule5.Value1 = 0;
-            this.dxValidationProviderAddRepairMan.SetValidationRule(this.numConsumablePart, conditionValidationRule5);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.Value1 = 0;
+            this.dxRepairMan.SetValidationRule(this.numConsumablePart, conditionValidationRule2);
             // 
             // cbxUnit
             // 
@@ -705,9 +775,9 @@ namespace PMWORK.MachineryForms
             this.cbxUnit.Properties.PopupView = this.searchLookUpEdit1View;
             this.cbxUnit.Size = new System.Drawing.Size(139, 20);
             this.cbxUnit.TabIndex = 3;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxValidationProviderAddRepairMan.SetValidationRule(this.cbxUnit, conditionValidationRule1);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dxRepairMan.SetValidationRule(this.cbxUnit, conditionValidationRule3);
             // 
             // searchLookUpEdit1View
             // 
@@ -795,9 +865,9 @@ namespace PMWORK.MachineryForms
             this.txtConsumablePartName.Parmida_ActivePlusMultiKeys = false;
             this.txtConsumablePartName.Size = new System.Drawing.Size(266, 20);
             this.txtConsumablePartName.TabIndex = 3;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxValidationProviderAddRepairMan.SetValidationRule(this.txtConsumablePartName, conditionValidationRule2);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dxRepairMan.SetValidationRule(this.txtConsumablePartName, conditionValidationRule4);
             // 
             // btnCancelConsum
             // 
@@ -1324,13 +1394,13 @@ namespace PMWORK.MachineryForms
             // btnRemoveRepairMan
             // 
             this.btnRemoveRepairMan.AutoHeight = false;
-            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
-            serializableAppearanceObject21.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject22.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject23.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject24.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            serializableAppearanceObject9.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject10.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject11.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject12.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.btnRemoveRepairMan.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnRemoveRepairMan.Name = "btnRemoveRepairMan";
             this.btnRemoveRepairMan.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnRemoveRepairMan.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnRemoveRepairMan_ButtonClick);
@@ -1383,9 +1453,9 @@ namespace PMWORK.MachineryForms
             this.cbxRepairMan.Properties.PopupView = this.gridView1;
             this.cbxRepairMan.Size = new System.Drawing.Size(204, 20);
             this.cbxRepairMan.TabIndex = 3;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "این مقدار معتبر نیست";
-            this.dxValidationProviderAddRepairMan.SetValidationRule(this.cbxRepairMan, conditionValidationRule3);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "این مقدار معتبر نیست";
+            this.dxRepairMan.SetValidationRule(this.cbxRepairMan, conditionValidationRule5);
             this.cbxRepairMan.EditValueChanged += new System.EventHandler(this.cbxRepairMan_EditValueChanged);
             // 
             // gridView1
@@ -1415,6 +1485,17 @@ namespace PMWORK.MachineryForms
             this.ComboBoxJobColumn.Visible = true;
             this.ComboBoxJobColumn.VisibleIndex = 1;
             // 
+            // btnRepairOut
+            // 
+            this.btnRepairOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRepairOut.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnRepairOut.Location = new System.Drawing.Point(184, 415);
+            this.btnRepairOut.Name = "btnRepairOut";
+            this.btnRepairOut.Size = new System.Drawing.Size(137, 30);
+            this.btnRepairOut.TabIndex = 7;
+            this.btnRepairOut.Text = "تعمیر خارج شرکت";
+            this.btnRepairOut.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // WorkOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1422,6 +1503,7 @@ namespace PMWORK.MachineryForms
             this.ClientSize = new System.Drawing.Size(647, 449);
             this.Controls.Add(this.tabMaster);
             this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnRepairOut);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "WorkOrderForm";
@@ -1447,6 +1529,8 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numStopTotalMin.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numWorkingTotalMin.Properties)).EndInit();
             this.xtraTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
@@ -1505,7 +1589,8 @@ namespace PMWORK.MachineryForms
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbxRepairMan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderAddRepairMan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxRepairMan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxSave)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1597,10 +1682,16 @@ namespace PMWORK.MachineryForms
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn ComboBoxFullNameColumn;
         private DevExpress.XtraGrid.Columns.GridColumn ComboBoxJobColumn;
-        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProviderAddRepairMan;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxRepairMan;
         private DevExpress.XtraGrid.Columns.GridColumn SelectConsumColumn;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSelectConsum;
         private DevExpress.XtraEditors.SimpleButton btnCancelConsum;
         private DevExpress.XtraEditors.SimpleButton btnSaveConsum;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxSave;
+        private DevExpress.XtraEditors.LabelControl labelControl19;
+        private DevExpress.XtraEditors.SpinEdit numWorkingTotalMin;
+        private DevExpress.XtraEditors.SpinEdit numStopTotalMin;
+        private DevExpress.XtraEditors.LabelControl labelControl20;
+        private DevExpress.XtraEditors.SimpleButton btnRepairOut;
     }
 }

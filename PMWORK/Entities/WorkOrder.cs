@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 
 namespace PMWORK.Entities
@@ -8,22 +9,31 @@ namespace PMWORK.Entities
     /// </summary>
     public class WorkOrder
     {
+        public WorkOrder()
+        {
+            RepairManListeds = new HashSet<RepairManListed>();
+        }
+
         public long ID { get; set; }
         public bool IsDelete { get; set; }
+
         public long RequestID_FK { get; set; }
         public RequestRepair RequestRepair { get; set; }
 
-        public int RepairManID_FK { get; set; }
-        public RepairMan RepairMan { get; set; }
+
+
+        public int WorkingTotalMin { get; set; }
+        public int StopTotalMin { get; set; }
 
         public bool RepairOutside { get; set; }
         public int? RepairOutSideReportID_FK { get; set; }
+
         public DateTime StartWorking { get; set; }
         public DateTime EndWorking { get; set; }
         public bool Cause_Exhaustion { get; set; }
         public bool Cause_OperatorNegligence { get; set; }
         public bool Cause_QualityofSpareParts { get; set; }
-        public bool Cause_RepairmanError { get; set; }
+
         public bool OtherError { get; set; }
         public string OtherErrorDescription { get; set; }
         public string ReportRepair { get; set; }
@@ -42,11 +52,6 @@ namespace PMWORK.Entities
         public bool CloseRequest { get; set; }
         public DateTime DateTimeClosing { get; set; }
 
-
-
-
-
-
-
+        public virtual ICollection<RepairManListed> RepairManListeds { get; set; }
     }
 }
