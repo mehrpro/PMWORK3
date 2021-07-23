@@ -97,7 +97,7 @@ namespace PMWORK.Repository
         /// <param name="repairManListed">لیست سرویس کار</param>
         /// <param name="consumablePart">قطعات یدکی مصرفی</param>
         /// <returns></returns>
-        bool AddNewRepairRequest(WorkOrder workOrder, List<RepairMan> repairMan, List<ConsumViewModel> consumViewModels);
+        bool AddNewWorkOrder(WorkOrder workOrder, List<RepairMan> repairMan, List<ConsumViewModel> consumViewModels);
 
 
 
@@ -116,6 +116,14 @@ namespace PMWORK.Repository
         /// <param name="model"></param>
         /// <returns></returns>
         bool UpdateRequestRepair(RequestRepair model);
+        /// <summary>
+        /// ویرایش گزارش کار 
+        /// </summary>
+        /// <param name="workOrder">گزارش تعمیر</param>
+        /// <param name="repairMan">تعمیرکاران</param>
+        /// <param name="consumViewModels">قطعات یدکی مصرفی</param>
+        /// <returns></returns>
+        bool UpdateWorkOrder(WorkOrder workOrder, List<RepairMan> repairMan, List<ConsumViewModel> consumViewModels);
 
     }
 
@@ -218,7 +226,7 @@ namespace PMWORK.Repository
             }
         }
 
-        public bool AddNewRepairRequest(WorkOrder workOrder, List<RepairMan> repairMan, List<ConsumViewModel> consumViewModels)
+        public bool AddNewWorkOrder(WorkOrder workOrder, List<RepairMan> repairMan, List<ConsumViewModel> consumViewModels)
         {
             using (var trans = _context.Database.BeginTransaction())
             {
@@ -303,6 +311,61 @@ namespace PMWORK.Repository
                 });
             }
             return list;
+        }
+
+        public bool UpdateWorkOrder(WorkOrder workOrder, List<RepairMan> repairMan, List<ConsumViewModel> consumViewModels)
+        {
+            using (var trans = _context.Database.BeginTransaction())
+            {
+                try
+                {
+                    _context.Entry(workOrder).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    if (repairMan.Any())
+                    {
+                        var qry = _context.RepairManListeds.Where(x => x.WorkOrderIdFk == workOrder.ID);
+
+                        foreach (var item in repairMan)
+                        {
+                            var find = qry.Any(x => x.RepairManIdFk == item.ID);
+                            if (!find)
+                            {
+                                _context.RepairManListeds.Add(new RepairManListed()
+                                {
+                                    IsDelete = false,
+                                    RepairManIdFk = item.ID,
+                                    WorkOrderIdFk = workOrder.ID,
+                                });
+                            }
+                        }
+
+                    }
+                    if (consumViewModels.Any())
+                    {
+                        var newConsum = new List<ConsumablePart>();
+                        foreach (var item in consumViewModels)
+                        {
+                            newConsum.Add(new ConsumablePart()
+                            {
+                                ConsumablePartTitel = item.ConsumablePartTitel,
+                                Number = item.Number,
+                                RequestID_FK = item.RequestID_FK,
+                                UnitID_FK = item.UnitID_FK
+                            });
+                        }
+                        _context.ConsumableParts.AddRange(newConsum);
+                    }
+                    _context.SaveChanges();
+                    trans.Commit();
+                    return true;
+                }
+                catch
+                {
+                    trans.Rollback();
+                    return false;
+                }
+
+            }
         }
     }
 }

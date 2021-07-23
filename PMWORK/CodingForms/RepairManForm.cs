@@ -22,6 +22,7 @@ namespace PMWORK.CodingForms
         {
             _codingRepository = codingRepository;
             InitializeComponent();
+            UpdateRepairManList();
         }
 
         public void UpdateRepairManList()

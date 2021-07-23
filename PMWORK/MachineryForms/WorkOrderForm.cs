@@ -128,15 +128,31 @@ namespace PMWORK.MachineryForms
                 newWork.OtherError = Convert.ToBoolean(chkOtherError.CheckState);
                 newWork.OtherErrorDescription = txtOtherDescription.Text.Trim();
                 newWork.ReportRepair = txtReportRepair.Text.Trim();
-
-                var result = _requestRepairRepository.AddNewRepairRequest(newWork, _repairmanTemp, _consumTemp);
-                if (result)
+                if (_editable)
                 {
-                    XtraMessageBox.Show(PublicClass.SuccessSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    newWork.ID = _workOrderID.ID;
+                    var result = _requestRepairRepository.AddNewWorkOrder(newWork, _repairmanTemp, _consumTemp);
+                    if (result)
+                    {
+                        XtraMessageBox.Show(PublicClass.SuccessSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                    else
+                        XtraMessageBox.Show(PublicClass.ErrorSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
-                    XtraMessageBox.Show(PublicClass.ErrorSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                    var result = _requestRepairRepository.AddNewWorkOrder(newWork, _repairmanTemp, _consumTemp);
+                    if (result)
+                    {
+                        XtraMessageBox.Show(PublicClass.SuccessSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                    else
+                        XtraMessageBox.Show(PublicClass.ErrorSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
             }
             else
                 XtraMessageBox.Show(PublicClass.ErrorValidation, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -265,6 +281,77 @@ namespace PMWORK.MachineryForms
         private void dateFinish_EditValueChanged(object sender, EventArgs e)
         {
             numStopTotalMin.EditValue = numWorkingTotalMin.EditValue = dateFinish.DateTime.Subtract(dateStart.DateTime).TotalMinutes;
+        }
+
+        private void chkPersonHours_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!chkPersonHours.Checked)
+            {
+                txtPersonHoursDescription.ResetText();
+                numPersonHoursTime.EditValue = 0;
+                txtPersonHoursDescription.Enabled = numPersonHoursTime.Enabled = false;
+            }
+            else
+            {
+                txtPersonHoursDescription.Enabled = numPersonHoursTime.Enabled = true;
+            }
+        }
+
+        private void chkProductionPlanning_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!chkProductionPlanning.Checked)
+            {
+                txtProductionPlanningDescription.ResetText();
+                numProductionPlanningTime.EditValue = 0;
+                txtProductionPlanningDescription.Enabled = numProductionPlanningTime.Enabled = false;
+            }
+            else
+            {
+                txtProductionPlanningDescription.Enabled = numProductionPlanningTime.Enabled = true;
+            }
+        }
+
+        private void chkNoSpareParts_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!chkNoSpareParts.Checked)
+            {
+                txtNoSparePartsDescription.ResetText();
+                numNoSparePartsTime.EditValue = 0;
+                txtNoSparePartsDescription.Enabled = numNoSparePartsTime.Enabled = false;
+            }
+            else
+            {
+                txtNoSparePartsDescription.Enabled = numNoSparePartsTime.Enabled = true;
+
+            }
+        }
+
+        private void chkOther_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!chkOther.Checked)
+            {
+                txtOtherDescription.ResetText();
+                numOtherTime.EditValue = 0;
+                txtOtherDescription.Enabled = numOtherTime.Enabled = false;
+            }
+            else
+            {
+                txtOtherDescription.Enabled = numOtherTime.Enabled = true;
+
+            }
+        }
+
+        private void chkOtherError_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!chkOtherError.Checked)
+            {
+                txtOtherError.ResetText();
+                txtOtherError.Enabled = false;
+            }
+            else
+            {
+                txtOtherError.Enabled = true;
+            }
         }
     }
 }

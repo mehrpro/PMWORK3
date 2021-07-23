@@ -49,6 +49,7 @@ namespace PMWORK
             this.btnApplicantForm = new DevExpress.XtraBars.BarButtonItem();
             this.btnRepairManForm = new DevExpress.XtraBars.BarButtonItem();
             this.btnRequestListForRepair = new DevExpress.XtraBars.BarButtonItem();
+            this.btnClosedRequestRepair = new DevExpress.XtraBars.BarButtonItem();
             this.InfrasturctureRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -60,7 +61,6 @@ namespace PMWORK
             this.SettingRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.btnClosedRequestRepair = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,8 +106,7 @@ namespace PMWORK
             this.btnCompany.Id = 1;
             this.btnCompany.ImageOptions.Image = global::PMWORK.Properties.Resources.icons8_factory_30;
             this.btnCompany.Name = "btnCompany";
-            this.btnCompany.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnCompany.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.btnCompany.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCompany_ItemClick);
             // 
             // btnGroups
@@ -116,8 +115,7 @@ namespace PMWORK
             this.btnGroups.Id = 2;
             this.btnGroups.ImageOptions.Image = global::PMWORK.Properties.Resources.icons8_list_30;
             this.btnGroups.Name = "btnGroups";
-            this.btnGroups.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnGroups.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.btnGroups.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGroups_ItemClick);
             // 
             // btnSubGroups
@@ -126,8 +124,6 @@ namespace PMWORK
             this.btnSubGroups.Id = 3;
             this.btnSubGroups.ImageOptions.Image = global::PMWORK.Properties.Resources.icons8_separated_lists_30;
             this.btnSubGroups.Name = "btnSubGroups";
-            this.btnSubGroups.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnSubGroups.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSubGroups_ItemClick);
             // 
             // btnCode
@@ -147,8 +143,6 @@ namespace PMWORK
             this.btnUnit.Id = 5;
             this.btnUnit.ImageOptions.Image = global::PMWORK.Properties.Resources.icons8_unit_30;
             this.btnUnit.Name = "btnUnit";
-            this.btnUnit.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnUnit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUnit_ItemClick);
             // 
             // btnMachinery
@@ -249,6 +243,7 @@ namespace PMWORK
             this.btnApplicantForm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnApplicantForm.ImageOptions.Image")));
             this.btnApplicantForm.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnApplicantForm.ImageOptions.LargeImage")));
             this.btnApplicantForm.Name = "btnApplicantForm";
+            this.btnApplicantForm.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.btnApplicantForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnApplicantForm_ItemClick);
             // 
             // btnRepairManForm
@@ -258,6 +253,7 @@ namespace PMWORK
             this.btnRepairManForm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRepairManForm.ImageOptions.Image")));
             this.btnRepairManForm.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRepairManForm.ImageOptions.LargeImage")));
             this.btnRepairManForm.Name = "btnRepairManForm";
+            this.btnRepairManForm.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
             this.btnRepairManForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRepairManForm_ItemClick);
             // 
             // btnRequestListForRepair
@@ -268,6 +264,14 @@ namespace PMWORK
             this.btnRequestListForRepair.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRequestListForRepair.ImageOptions.LargeImage")));
             this.btnRequestListForRepair.Name = "btnRequestListForRepair";
             this.btnRequestListForRepair.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRequestListForRepair_ItemClick);
+            // 
+            // btnClosedRequestRepair
+            // 
+            this.btnClosedRequestRepair.Caption = "درخواست های بسته شده";
+            this.btnClosedRequestRepair.Id = 12;
+            this.btnClosedRequestRepair.ImageOptions.Image = global::PMWORK.Properties.Resources.icons8_list_30;
+            this.btnClosedRequestRepair.Name = "btnClosedRequestRepair";
+            this.btnClosedRequestRepair.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClosedRequestRepair_ItemClick);
             // 
             // InfrasturctureRibbonPage
             // 
@@ -292,12 +296,13 @@ namespace PMWORK
             this.ribbonPageGroup4.ItemLinks.Add(this.btnCompany);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnGroups);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnSubGroups);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnCode);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnUnit);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnApplicantForm);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnRepairManForm);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnCode);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.ShowCaptionButton = false;
-            this.ribbonPageGroup4.Text = "کدگزاری";
+            this.ribbonPageGroup4.Text = "کدینگ موجودیت";
             // 
             // MaintanaceRibbonPage
             // 
@@ -320,7 +325,6 @@ namespace PMWORK
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.btnRequestList);
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnRepairManForm);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.ShowCaptionButton = false;
             this.ribbonPageGroup6.Text = "مدیریت درخواست ها";
@@ -337,7 +341,7 @@ namespace PMWORK
             this.ribbonPageGroup3.ItemLinks.Add(this.btnRequestListForRepair);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnClosedRequestRepair);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "گزارش تعمیر";
             // 
             // SettingRibbonPage
             // 
@@ -360,16 +364,6 @@ namespace PMWORK
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(750, 31);
-            // 
-            // btnClosedRequestRepair
-            // 
-            this.btnClosedRequestRepair.Caption = "درخواست های بسته شده";
-            this.btnClosedRequestRepair.Id = 12;
-            this.btnClosedRequestRepair.ImageOptions.Image = global::PMWORK.Properties.Resources.icons8_list_30;
-            this.btnClosedRequestRepair.Name = "btnClosedRequestRepair";
-            this.btnClosedRequestRepair.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnClosedRequestRepair.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClosedRequestRepair_ItemClick);
             // 
             // MainForm
             // 

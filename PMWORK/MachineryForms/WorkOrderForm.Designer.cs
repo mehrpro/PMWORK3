@@ -240,7 +240,7 @@ namespace PMWORK.MachineryForms
             this.labelControl2.Location = new System.Drawing.Point(545, 62);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(56, 13);
-            this.labelControl2.TabIndex = 0;
+            this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "شروع تعمیر";
             // 
             // labelControl3
@@ -249,7 +249,7 @@ namespace PMWORK.MachineryForms
             this.labelControl3.Location = new System.Drawing.Point(339, 62);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(47, 13);
-            this.labelControl3.TabIndex = 0;
+            this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "پایان تعمیر";
             // 
             // labelControl4
@@ -258,7 +258,7 @@ namespace PMWORK.MachineryForms
             this.labelControl4.Location = new System.Drawing.Point(545, 126);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(53, 13);
-            this.labelControl4.TabIndex = 0;
+            this.labelControl4.TabIndex = 10;
             this.labelControl4.Text = "علت خرابی";
             // 
             // dateStart
@@ -283,7 +283,7 @@ namespace PMWORK.MachineryForms
             this.dateStart.Properties.Parmida_CheckEmptyFillDateOnEnter = false;
             this.dateStart.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateStart.Size = new System.Drawing.Size(136, 20);
-            this.dateStart.TabIndex = 2;
+            this.dateStart.TabIndex = 3;
             // 
             // dateFinish
             // 
@@ -307,7 +307,7 @@ namespace PMWORK.MachineryForms
             this.dateFinish.Properties.Parmida_CheckEmptyFillDateOnEnter = false;
             this.dateFinish.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateFinish.Size = new System.Drawing.Size(136, 20);
-            this.dateFinish.TabIndex = 3;
+            this.dateFinish.TabIndex = 5;
             this.dateFinish.EditValueChanged += new System.EventHandler(this.dateFinish_EditValueChanged);
             // 
             // labelControl1
@@ -331,7 +331,7 @@ namespace PMWORK.MachineryForms
             this.txtReportRepair.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtReportRepair.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txtReportRepair.Size = new System.Drawing.Size(637, 180);
-            this.txtReportRepair.TabIndex = 1;
+            this.txtReportRepair.TabIndex = 0;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "This value is not valid";
             this.dxSave.SetValidationRule(this.txtReportRepair, conditionValidationRule1);
@@ -339,11 +339,12 @@ namespace PMWORK.MachineryForms
             // txtOtherError
             // 
             this.txtOtherError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOtherError.Enabled = false;
             this.txtOtherError.Location = new System.Drawing.Point(56, 148);
             this.txtOtherError.Name = "txtOtherError";
             this.txtOtherError.Parmida_ActivePlusMultiKeys = false;
             this.txtOtherError.Size = new System.Drawing.Size(427, 20);
-            this.txtOtherError.TabIndex = 1;
+            this.txtOtherError.TabIndex = 15;
             // 
             // btnSave
             // 
@@ -352,7 +353,7 @@ namespace PMWORK.MachineryForms
             this.btnSave.Location = new System.Drawing.Point(98, 415);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 30);
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 1;
             this.btnSave.Text = "ثبت";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -363,7 +364,7 @@ namespace PMWORK.MachineryForms
             this.btnClose.Location = new System.Drawing.Point(12, 415);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(80, 30);
-            this.btnClose.TabIndex = 7;
+            this.btnClose.TabIndex = 2;
             this.btnClose.Text = "بستن";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -375,7 +376,8 @@ namespace PMWORK.MachineryForms
             this.chkOtherError.Parmida_ActivePlusMultiKeys = false;
             this.chkOtherError.Properties.Caption = "سایر";
             this.chkOtherError.Size = new System.Drawing.Size(50, 19);
-            this.chkOtherError.TabIndex = 8;
+            this.chkOtherError.TabIndex = 14;
+            this.chkOtherError.CheckedChanged += new System.EventHandler(this.chkOtherError_CheckedChanged);
             // 
             // chkCause_QualityofSpareParts
             // 
@@ -385,7 +387,7 @@ namespace PMWORK.MachineryForms
             this.chkCause_QualityofSpareParts.Parmida_ActivePlusMultiKeys = false;
             this.chkCause_QualityofSpareParts.Properties.Caption = "کیفیت قطعات یدکی";
             this.chkCause_QualityofSpareParts.Size = new System.Drawing.Size(123, 19);
-            this.chkCause_QualityofSpareParts.TabIndex = 9;
+            this.chkCause_QualityofSpareParts.TabIndex = 13;
             // 
             // chkCause_OperatorNegligence
             // 
@@ -395,7 +397,7 @@ namespace PMWORK.MachineryForms
             this.chkCause_OperatorNegligence.Parmida_ActivePlusMultiKeys = false;
             this.chkCause_OperatorNegligence.Properties.Caption = "سهل انگاری اپراتور";
             this.chkCause_OperatorNegligence.Size = new System.Drawing.Size(109, 19);
-            this.chkCause_OperatorNegligence.TabIndex = 10;
+            this.chkCause_OperatorNegligence.TabIndex = 12;
             // 
             // chkCause_Exhaustion
             // 
@@ -413,11 +415,12 @@ namespace PMWORK.MachineryForms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabMaster.AppearancePage.Header.Options.UseTextOptions = true;
+            this.tabMaster.AppearancePage.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.tabMaster.Location = new System.Drawing.Point(0, 0);
             this.tabMaster.Name = "tabMaster";
             this.tabMaster.SelectedTabPage = this.xtraTabPage2;
             this.tabMaster.Size = new System.Drawing.Size(647, 414);
-            this.tabMaster.TabIndex = 12;
+            this.tabMaster.TabIndex = 3;
             this.tabMaster.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage2,
             this.xtraTabPage1,
@@ -439,7 +442,7 @@ namespace PMWORK.MachineryForms
             this.groupControl5.Location = new System.Drawing.Point(0, 184);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.Size = new System.Drawing.Size(641, 202);
-            this.groupControl5.TabIndex = 13;
+            this.groupControl5.TabIndex = 0;
             this.groupControl5.Text = "شرح کار";
             // 
             // groupControl4
@@ -464,7 +467,7 @@ namespace PMWORK.MachineryForms
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(641, 184);
-            this.groupControl4.TabIndex = 12;
+            this.groupControl4.TabIndex = 0;
             this.groupControl4.Text = "علت خرابی";
             // 
             // numStopTotalMin
@@ -482,7 +485,7 @@ namespace PMWORK.MachineryForms
             this.numStopTotalMin.Properties.IsFloatValue = false;
             this.numStopTotalMin.Properties.Mask.EditMask = "N00";
             this.numStopTotalMin.Size = new System.Drawing.Size(136, 20);
-            this.numStopTotalMin.TabIndex = 12;
+            this.numStopTotalMin.TabIndex = 9;
             // 
             // numWorkingTotalMin
             // 
@@ -499,7 +502,7 @@ namespace PMWORK.MachineryForms
             this.numWorkingTotalMin.Properties.IsFloatValue = false;
             this.numWorkingTotalMin.Properties.Mask.EditMask = "N00";
             this.numWorkingTotalMin.Size = new System.Drawing.Size(136, 20);
-            this.numWorkingTotalMin.TabIndex = 12;
+            this.numWorkingTotalMin.TabIndex = 7;
             // 
             // labelControl20
             // 
@@ -507,7 +510,7 @@ namespace PMWORK.MachineryForms
             this.labelControl20.Location = new System.Drawing.Point(339, 88);
             this.labelControl20.Name = "labelControl20";
             this.labelControl20.Size = new System.Drawing.Size(47, 13);
-            this.labelControl20.TabIndex = 0;
+            this.labelControl20.TabIndex = 8;
             this.labelControl20.Text = "مدت توقف";
             // 
             // labelControl19
@@ -516,7 +519,7 @@ namespace PMWORK.MachineryForms
             this.labelControl19.Location = new System.Drawing.Point(545, 88);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(72, 13);
-            this.labelControl19.TabIndex = 0;
+            this.labelControl19.TabIndex = 6;
             this.labelControl19.Text = "مدت زمان تعمیر";
             // 
             // xtraTabPage1
@@ -534,7 +537,7 @@ namespace PMWORK.MachineryForms
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(641, 386);
-            this.groupControl3.TabIndex = 11;
+            this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "لوازم و قطعات مصرفی";
             // 
             // panelControl3
@@ -556,7 +559,7 @@ namespace PMWORK.MachineryForms
             this.btnRemoveUnit,
             this.btnSelectConsum});
             this.dgvYadaki.Size = new System.Drawing.Size(633, 283);
-            this.dgvYadaki.TabIndex = 8;
+            this.dgvYadaki.TabIndex = 0;
             this.dgvYadaki.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvYadaki});
             // 
@@ -727,10 +730,10 @@ namespace PMWORK.MachineryForms
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(570, 19);
+            this.labelControl7.Location = new System.Drawing.Point(570, 18);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(54, 13);
-            this.labelControl7.TabIndex = 2;
+            this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "عنوان قطعه";
             // 
             // numConsumablePart
@@ -772,9 +775,10 @@ namespace PMWORK.MachineryForms
             this.cbxUnit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxUnit.Properties.NullText = "";
+            this.cbxUnit.Properties.PopupFormSize = new System.Drawing.Size(150, 0);
             this.cbxUnit.Properties.PopupView = this.searchLookUpEdit1View;
             this.cbxUnit.Size = new System.Drawing.Size(139, 20);
-            this.cbxUnit.TabIndex = 3;
+            this.cbxUnit.TabIndex = 5;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "This value is not valid";
             this.dxRepairMan.SetValidationRule(this.cbxUnit, conditionValidationRule3);
@@ -864,7 +868,7 @@ namespace PMWORK.MachineryForms
             this.txtConsumablePartName.Name = "txtConsumablePartName";
             this.txtConsumablePartName.Parmida_ActivePlusMultiKeys = false;
             this.txtConsumablePartName.Size = new System.Drawing.Size(266, 20);
-            this.txtConsumablePartName.TabIndex = 3;
+            this.txtConsumablePartName.TabIndex = 1;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule4.ErrorText = "This value is not valid";
             this.dxRepairMan.SetValidationRule(this.txtConsumablePartName, conditionValidationRule4);
@@ -877,7 +881,7 @@ namespace PMWORK.MachineryForms
             this.btnCancelConsum.Location = new System.Drawing.Point(14, 41);
             this.btnCancelConsum.Name = "btnCancelConsum";
             this.btnCancelConsum.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelConsum.TabIndex = 7;
+            this.btnCancelConsum.TabIndex = 8;
             this.btnCancelConsum.Text = "انصراف";
             this.btnCancelConsum.Click += new System.EventHandler(this.btnCancelConsum_Click);
             // 
@@ -900,14 +904,14 @@ namespace PMWORK.MachineryForms
             this.btnConsumablePartAdd.Location = new System.Drawing.Point(176, 41);
             this.btnConsumablePartAdd.Name = "btnConsumablePartAdd";
             this.btnConsumablePartAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnConsumablePartAdd.TabIndex = 7;
+            this.btnConsumablePartAdd.TabIndex = 6;
             this.btnConsumablePartAdd.Text = "افزودن";
             this.btnConsumablePartAdd.Click += new System.EventHandler(this.btnConsumablePartAdd_Click);
             // 
             // labelControl17
             // 
             this.labelControl17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl17.Location = new System.Drawing.Point(269, 19);
+            this.labelControl17.Location = new System.Drawing.Point(269, 18);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(23, 13);
             this.labelControl17.TabIndex = 2;
@@ -916,10 +920,10 @@ namespace PMWORK.MachineryForms
             // labelControl18
             // 
             this.labelControl18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl18.Location = new System.Drawing.Point(157, 19);
+            this.labelControl18.Location = new System.Drawing.Point(157, 18);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(21, 13);
-            this.labelControl18.TabIndex = 2;
+            this.labelControl18.TabIndex = 4;
             this.labelControl18.Text = "واحد";
             // 
             // xtraTabPage3
@@ -936,7 +940,7 @@ namespace PMWORK.MachineryForms
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(641, 386);
-            this.groupControl1.TabIndex = 27;
+            this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "علت تاخیر انجام کار";
             // 
             // panelControl4
@@ -962,7 +966,7 @@ namespace PMWORK.MachineryForms
             this.panelControl9.Location = new System.Drawing.Point(2, 272);
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Size = new System.Drawing.Size(633, 90);
-            this.panelControl9.TabIndex = 30;
+            this.panelControl9.TabIndex = 0;
             // 
             // chkOther
             // 
@@ -972,7 +976,8 @@ namespace PMWORK.MachineryForms
             this.chkOther.Parmida_ActivePlusMultiKeys = false;
             this.chkOther.Properties.Caption = "سایر";
             this.chkOther.Size = new System.Drawing.Size(89, 19);
-            this.chkOther.TabIndex = 25;
+            this.chkOther.TabIndex = 0;
+            this.chkOther.CheckedChanged += new System.EventHandler(this.chkOther_CheckedChanged);
             // 
             // labelControl16
             // 
@@ -980,7 +985,7 @@ namespace PMWORK.MachineryForms
             this.labelControl16.Location = new System.Drawing.Point(493, 59);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(26, 13);
-            this.labelControl16.TabIndex = 11;
+            this.labelControl16.TabIndex = 4;
             this.labelControl16.Text = "دقیقه";
             // 
             // numOtherTime
@@ -991,6 +996,7 @@ namespace PMWORK.MachineryForms
             0,
             0,
             0});
+            this.numOtherTime.Enabled = false;
             this.numOtherTime.Location = new System.Drawing.Point(525, 56);
             this.numOtherTime.Name = "numOtherTime";
             this.numOtherTime.Parmida_ActivePlusMultiKeys = false;
@@ -1003,7 +1009,7 @@ namespace PMWORK.MachineryForms
             this.numOtherTime.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.numOtherTime.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.numOtherTime.Size = new System.Drawing.Size(59, 20);
-            this.numOtherTime.TabIndex = 19;
+            this.numOtherTime.TabIndex = 3;
             // 
             // labelControl12
             // 
@@ -1011,17 +1017,18 @@ namespace PMWORK.MachineryForms
             this.labelControl12.Location = new System.Drawing.Point(590, 57);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(36, 13);
-            this.labelControl12.TabIndex = 13;
+            this.labelControl12.TabIndex = 2;
             this.labelControl12.Text = " به مدت";
             // 
             // txtOtherDescription
             // 
             this.txtOtherDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOtherDescription.Enabled = false;
             this.txtOtherDescription.Location = new System.Drawing.Point(15, 30);
             this.txtOtherDescription.Name = "txtOtherDescription";
             this.txtOtherDescription.Parmida_ActivePlusMultiKeys = false;
             this.txtOtherDescription.Size = new System.Drawing.Size(569, 20);
-            this.txtOtherDescription.TabIndex = 15;
+            this.txtOtherDescription.TabIndex = 1;
             // 
             // panelControl8
             // 
@@ -1034,7 +1041,7 @@ namespace PMWORK.MachineryForms
             this.panelControl8.Location = new System.Drawing.Point(2, 182);
             this.panelControl8.Name = "panelControl8";
             this.panelControl8.Size = new System.Drawing.Size(633, 90);
-            this.panelControl8.TabIndex = 29;
+            this.panelControl8.TabIndex = 1;
             // 
             // chkNoSpareParts
             // 
@@ -1044,7 +1051,8 @@ namespace PMWORK.MachineryForms
             this.chkNoSpareParts.Parmida_ActivePlusMultiKeys = false;
             this.chkNoSpareParts.Properties.Caption = "نبود قطعه یدکی";
             this.chkNoSpareParts.Size = new System.Drawing.Size(109, 19);
-            this.chkNoSpareParts.TabIndex = 24;
+            this.chkNoSpareParts.TabIndex = 0;
+            this.chkNoSpareParts.CheckedChanged += new System.EventHandler(this.chkNoSpareParts_CheckedChanged);
             // 
             // labelControl15
             // 
@@ -1052,7 +1060,7 @@ namespace PMWORK.MachineryForms
             this.labelControl15.Location = new System.Drawing.Point(493, 60);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(26, 13);
-            this.labelControl15.TabIndex = 9;
+            this.labelControl15.TabIndex = 4;
             this.labelControl15.Text = "دقیقه";
             // 
             // labelControl11
@@ -1061,7 +1069,7 @@ namespace PMWORK.MachineryForms
             this.labelControl11.Location = new System.Drawing.Point(590, 59);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(36, 13);
-            this.labelControl11.TabIndex = 12;
+            this.labelControl11.TabIndex = 1;
             this.labelControl11.Text = " به مدت";
             // 
             // numNoSparePartsTime
@@ -1072,6 +1080,7 @@ namespace PMWORK.MachineryForms
             0,
             0,
             0});
+            this.numNoSparePartsTime.Enabled = false;
             this.numNoSparePartsTime.Location = new System.Drawing.Point(525, 57);
             this.numNoSparePartsTime.Name = "numNoSparePartsTime";
             this.numNoSparePartsTime.Parmida_ActivePlusMultiKeys = false;
@@ -1084,16 +1093,17 @@ namespace PMWORK.MachineryForms
             this.numNoSparePartsTime.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.numNoSparePartsTime.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.numNoSparePartsTime.Size = new System.Drawing.Size(59, 20);
-            this.numNoSparePartsTime.TabIndex = 20;
+            this.numNoSparePartsTime.TabIndex = 3;
             // 
             // txtNoSparePartsDescription
             // 
             this.txtNoSparePartsDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNoSparePartsDescription.Enabled = false;
             this.txtNoSparePartsDescription.Location = new System.Drawing.Point(15, 31);
             this.txtNoSparePartsDescription.Name = "txtNoSparePartsDescription";
             this.txtNoSparePartsDescription.Parmida_ActivePlusMultiKeys = false;
             this.txtNoSparePartsDescription.Size = new System.Drawing.Size(569, 20);
-            this.txtNoSparePartsDescription.TabIndex = 17;
+            this.txtNoSparePartsDescription.TabIndex = 2;
             // 
             // panelControl7
             // 
@@ -1107,7 +1117,7 @@ namespace PMWORK.MachineryForms
             this.panelControl7.Location = new System.Drawing.Point(2, 92);
             this.panelControl7.Name = "panelControl7";
             this.panelControl7.Size = new System.Drawing.Size(633, 90);
-            this.panelControl7.TabIndex = 28;
+            this.panelControl7.TabIndex = 2;
             // 
             // chkProductionPlanning
             // 
@@ -1117,7 +1127,8 @@ namespace PMWORK.MachineryForms
             this.chkProductionPlanning.Parmida_ActivePlusMultiKeys = false;
             this.chkProductionPlanning.Properties.Caption = "برنامه ریزی تولید";
             this.chkProductionPlanning.Size = new System.Drawing.Size(109, 19);
-            this.chkProductionPlanning.TabIndex = 23;
+            this.chkProductionPlanning.TabIndex = 0;
+            this.chkProductionPlanning.CheckedChanged += new System.EventHandler(this.chkProductionPlanning_CheckedChanged);
             // 
             // labelControl9
             // 
@@ -1125,17 +1136,18 @@ namespace PMWORK.MachineryForms
             this.labelControl9.Location = new System.Drawing.Point(590, 60);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(36, 13);
-            this.labelControl9.TabIndex = 8;
+            this.labelControl9.TabIndex = 3;
             this.labelControl9.Text = " به مدت";
             // 
             // txtProductionPlanningDescription
             // 
             this.txtProductionPlanningDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProductionPlanningDescription.Enabled = false;
             this.txtProductionPlanningDescription.Location = new System.Drawing.Point(15, 31);
             this.txtProductionPlanningDescription.Name = "txtProductionPlanningDescription";
             this.txtProductionPlanningDescription.Parmida_ActivePlusMultiKeys = false;
             this.txtProductionPlanningDescription.Size = new System.Drawing.Size(569, 20);
-            this.txtProductionPlanningDescription.TabIndex = 16;
+            this.txtProductionPlanningDescription.TabIndex = 2;
             // 
             // labelControl14
             // 
@@ -1143,7 +1155,7 @@ namespace PMWORK.MachineryForms
             this.labelControl14.Location = new System.Drawing.Point(493, 60);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(26, 13);
-            this.labelControl14.TabIndex = 7;
+            this.labelControl14.TabIndex = 5;
             this.labelControl14.Text = "دقیقه";
             // 
             // labelControl6
@@ -1152,7 +1164,7 @@ namespace PMWORK.MachineryForms
             this.labelControl6.Location = new System.Drawing.Point(590, 34);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(26, 13);
-            this.labelControl6.TabIndex = 14;
+            this.labelControl6.TabIndex = 1;
             this.labelControl6.Text = " شرح";
             // 
             // numProductionPlanningTime
@@ -1163,6 +1175,7 @@ namespace PMWORK.MachineryForms
             0,
             0,
             0});
+            this.numProductionPlanningTime.Enabled = false;
             this.numProductionPlanningTime.Location = new System.Drawing.Point(525, 57);
             this.numProductionPlanningTime.Name = "numProductionPlanningTime";
             this.numProductionPlanningTime.Parmida_ActivePlusMultiKeys = false;
@@ -1175,7 +1188,7 @@ namespace PMWORK.MachineryForms
             this.numProductionPlanningTime.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.numProductionPlanningTime.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.numProductionPlanningTime.Size = new System.Drawing.Size(59, 20);
-            this.numProductionPlanningTime.TabIndex = 21;
+            this.numProductionPlanningTime.TabIndex = 4;
             // 
             // panelControl6
             // 
@@ -1189,7 +1202,7 @@ namespace PMWORK.MachineryForms
             this.panelControl6.Location = new System.Drawing.Point(2, 2);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(633, 90);
-            this.panelControl6.TabIndex = 27;
+            this.panelControl6.TabIndex = 3;
             // 
             // chkPersonHours
             // 
@@ -1199,16 +1212,18 @@ namespace PMWORK.MachineryForms
             this.chkPersonHours.Parmida_ActivePlusMultiKeys = false;
             this.chkPersonHours.Properties.Caption = "کمبود نیرو";
             this.chkPersonHours.Size = new System.Drawing.Size(89, 19);
-            this.chkPersonHours.TabIndex = 26;
+            this.chkPersonHours.TabIndex = 0;
+            this.chkPersonHours.CheckedChanged += new System.EventHandler(this.chkPersonHours_CheckedChanged);
             // 
             // txtPersonHoursDescription
             // 
             this.txtPersonHoursDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPersonHoursDescription.Enabled = false;
             this.txtPersonHoursDescription.Location = new System.Drawing.Point(15, 30);
             this.txtPersonHoursDescription.Name = "txtPersonHoursDescription";
             this.txtPersonHoursDescription.Parmida_ActivePlusMultiKeys = false;
             this.txtPersonHoursDescription.Size = new System.Drawing.Size(569, 20);
-            this.txtPersonHoursDescription.TabIndex = 18;
+            this.txtPersonHoursDescription.TabIndex = 2;
             // 
             // labelControl10
             // 
@@ -1216,7 +1231,7 @@ namespace PMWORK.MachineryForms
             this.labelControl10.Location = new System.Drawing.Point(590, 59);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(36, 13);
-            this.labelControl10.TabIndex = 14;
+            this.labelControl10.TabIndex = 3;
             this.labelControl10.Text = " به مدت";
             // 
             // numPersonHoursTime
@@ -1227,6 +1242,7 @@ namespace PMWORK.MachineryForms
             0,
             0,
             0});
+            this.numPersonHoursTime.Enabled = false;
             this.numPersonHoursTime.Location = new System.Drawing.Point(525, 56);
             this.numPersonHoursTime.Name = "numPersonHoursTime";
             this.numPersonHoursTime.Parmida_ActivePlusMultiKeys = false;
@@ -1239,7 +1255,7 @@ namespace PMWORK.MachineryForms
             this.numPersonHoursTime.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.numPersonHoursTime.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.numPersonHoursTime.Size = new System.Drawing.Size(59, 20);
-            this.numPersonHoursTime.TabIndex = 22;
+            this.numPersonHoursTime.TabIndex = 4;
             // 
             // labelControl5
             // 
@@ -1247,7 +1263,7 @@ namespace PMWORK.MachineryForms
             this.labelControl5.Location = new System.Drawing.Point(590, 33);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(26, 13);
-            this.labelControl5.TabIndex = 14;
+            this.labelControl5.TabIndex = 1;
             this.labelControl5.Text = " شرح";
             // 
             // labelControl13
@@ -1256,7 +1272,7 @@ namespace PMWORK.MachineryForms
             this.labelControl13.Location = new System.Drawing.Point(493, 59);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(26, 13);
-            this.labelControl13.TabIndex = 6;
+            this.labelControl13.TabIndex = 5;
             this.labelControl13.Text = "دقیقه";
             // 
             // xtraTabPage4
@@ -1274,7 +1290,7 @@ namespace PMWORK.MachineryForms
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(641, 386);
-            this.groupControl2.TabIndex = 12;
+            this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "اسامی تیم اجرائی";
             // 
             // panelControl5
@@ -1284,7 +1300,7 @@ namespace PMWORK.MachineryForms
             this.panelControl5.Location = new System.Drawing.Point(2, 70);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(637, 314);
-            this.panelControl5.TabIndex = 11;
+            this.panelControl5.TabIndex = 1;
             // 
             // dgvRepairMan
             // 
@@ -1295,7 +1311,7 @@ namespace PMWORK.MachineryForms
             this.dgvRepairMan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnRemoveRepairMan});
             this.dgvRepairMan.Size = new System.Drawing.Size(633, 310);
-            this.dgvRepairMan.TabIndex = 9;
+            this.dgvRepairMan.TabIndex = 0;
             this.dgvRepairMan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvRepairMan});
             // 
@@ -1414,7 +1430,7 @@ namespace PMWORK.MachineryForms
             this.panelControl1.Location = new System.Drawing.Point(2, 20);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(637, 50);
-            this.panelControl1.TabIndex = 10;
+            this.panelControl1.TabIndex = 0;
             // 
             // btnAddRepairMan
             // 
@@ -1423,7 +1439,7 @@ namespace PMWORK.MachineryForms
             this.btnAddRepairMan.Location = new System.Drawing.Point(350, 14);
             this.btnAddRepairMan.Name = "btnAddRepairMan";
             this.btnAddRepairMan.Size = new System.Drawing.Size(24, 23);
-            this.btnAddRepairMan.TabIndex = 8;
+            this.btnAddRepairMan.TabIndex = 2;
             this.btnAddRepairMan.Click += new System.EventHandler(this.btnAddRepairMan_Click);
             // 
             // labelControl8
@@ -1432,7 +1448,7 @@ namespace PMWORK.MachineryForms
             this.labelControl8.Location = new System.Drawing.Point(590, 19);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(37, 13);
-            this.labelControl8.TabIndex = 2;
+            this.labelControl8.TabIndex = 0;
             this.labelControl8.Text = "تعمیرکار";
             // 
             // cbxRepairMan
@@ -1452,7 +1468,7 @@ namespace PMWORK.MachineryForms
             this.cbxRepairMan.Properties.NullText = "";
             this.cbxRepairMan.Properties.PopupView = this.gridView1;
             this.cbxRepairMan.Size = new System.Drawing.Size(204, 20);
-            this.cbxRepairMan.TabIndex = 3;
+            this.cbxRepairMan.TabIndex = 1;
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "این مقدار معتبر نیست";
             this.dxRepairMan.SetValidationRule(this.cbxRepairMan, conditionValidationRule5);
@@ -1488,7 +1504,8 @@ namespace PMWORK.MachineryForms
             // btnRepairOut
             // 
             this.btnRepairOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRepairOut.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnRepairOut.Enabled = false;
+            this.btnRepairOut.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRepairOut.ImageOptions.Image")));
             this.btnRepairOut.Location = new System.Drawing.Point(184, 415);
             this.btnRepairOut.Name = "btnRepairOut";
             this.btnRepairOut.Size = new System.Drawing.Size(137, 30);

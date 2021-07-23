@@ -38,7 +38,7 @@ namespace PMWORK.Repository
 
         public List<RepairMan> GetAllRepairMan()
         {
-            return _context.RepairMens.ToList();
+            return _context.RepairMens.Where(x => x.IsActive).ToList();
         }
 
         public bool AddRepairMan(RepairMan model)
