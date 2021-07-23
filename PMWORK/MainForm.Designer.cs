@@ -60,6 +60,7 @@ namespace PMWORK
             this.SettingRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.btnClosedRequestRepair = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,9 +86,10 @@ namespace PMWORK
             this.btnRequestList,
             this.btnApplicantForm,
             this.btnRepairManForm,
-            this.btnRequestListForRepair});
+            this.btnRequestListForRepair,
+            this.btnClosedRequestRepair});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 12;
+            this.ribbonControl1.MaxItemId = 13;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.InfrasturctureRibbonPage,
@@ -253,14 +255,14 @@ namespace PMWORK
             // 
             this.btnRepairManForm.Caption = "تعمیرکاران";
             this.btnRepairManForm.Id = 10;
-            this.btnRepairManForm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnRepairManForm.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnRepairManForm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRepairManForm.ImageOptions.Image")));
+            this.btnRepairManForm.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRepairManForm.ImageOptions.LargeImage")));
             this.btnRepairManForm.Name = "btnRepairManForm";
             this.btnRepairManForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRepairManForm_ItemClick);
             // 
             // btnRequestListForRepair
             // 
-            this.btnRequestListForRepair.Caption = "لیست درخواست ها";
+            this.btnRequestListForRepair.Caption = "درخواست های فعال";
             this.btnRequestListForRepair.Id = 11;
             this.btnRequestListForRepair.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRequestListForRepair.ImageOptions.Image")));
             this.btnRequestListForRepair.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRequestListForRepair.ImageOptions.LargeImage")));
@@ -333,6 +335,7 @@ namespace PMWORK
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnRequestListForRepair);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnClosedRequestRepair);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
@@ -357,6 +360,16 @@ namespace PMWORK
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(750, 31);
+            // 
+            // btnClosedRequestRepair
+            // 
+            this.btnClosedRequestRepair.Caption = "درخواست های بسته شده";
+            this.btnClosedRequestRepair.Id = 12;
+            this.btnClosedRequestRepair.ImageOptions.Image = global::PMWORK.Properties.Resources.icons8_list_30;
+            this.btnClosedRequestRepair.Name = "btnClosedRequestRepair";
+            this.btnClosedRequestRepair.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnClosedRequestRepair.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClosedRequestRepair_ItemClick);
             // 
             // MainForm
             // 
@@ -411,5 +424,6 @@ namespace PMWORK
         private DevExpress.XtraBars.BarButtonItem btnApplicantForm;
         private DevExpress.XtraBars.BarButtonItem btnRepairManForm;
         private DevExpress.XtraBars.BarButtonItem btnRequestListForRepair;
+        private DevExpress.XtraBars.BarButtonItem btnClosedRequestRepair;
     }
 }

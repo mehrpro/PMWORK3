@@ -13,18 +13,19 @@ namespace PMWORK.MachineryForms
         private readonly IRequestRepairRepository _requestRepairRepository;
         private ICodingRepository _codingRepository;
         private RequestRepair _requestReapqir;
-
+        private bool _editable;
+        private WorkOrder _workOrderID;
         private List<RepairMan> _repairmanTemp;
         private List<ConsumViewModel> _consumTemp;
-        private List<ConsumablePart> _consumablePartsTemp;
+        //private List<ConsumablePart> _consumablePartsTemp;
 
         private RepairMan _selectedRepairMan;
         private ConsumViewModel _selectedConsum;
 
 
 
+        public bool Editable { get => _editable; set => _editable = value; }
         public RequestRepair RequestReapqirModel { get => _requestReapqir; set => _requestReapqir = value; }
-
         public WorkOrderForm(IRequestRepairRepository request, ICodingRepository codingRepository)
         {
             InitializeComponent();
@@ -41,31 +42,59 @@ namespace PMWORK.MachineryForms
             cbxRepairMan.Properties.DataSource = _codingRepository.GetAllRepairMan();
 
             _repairmanTemp = new List<RepairMan>();
-            _consumablePartsTemp = new List<ConsumablePart>();
+            // _consumablePartsTemp = new List<ConsumablePart>();
             _consumTemp = new List<ConsumViewModel>();
-
-
-
-
-
         }
 
+        void SetWorkOrder()
+        {
+            _workOrderID = _requestRepairRepository.FindWorkOrderByRequestId(_requestReapqir.ID);
+            _repairmanTemp = _requestRepairRepository.GetRepairManByWorkOrderID(_workOrderID.ID);
+            _consumTemp = _requestRepairRepository.GetConsumViewModelsByRequestId(_requestReapqir.ID);
+            dgvYadaki.DataSource = _consumTemp;
+            UpdateRepairManList();
+            dateStart.DateTime = _workOrderID.StartWorking;
+            dateFinish.DateTime = _workOrderID.EndWorking;
+            //_requestReapqir.ID = _workOrderID.RequestID_FK;
+            dateStart.DateTime = _workOrderID.StartWorking;
+            dateFinish.DateTime = _workOrderID.EndWorking;
+            chkCause_Exhaustion.Checked = _workOrderID.Cause_Exhaustion;
+            chkCause_OperatorNegligence.Checked = _workOrderID.Cause_OperatorNegligence;
+            chkCause_QualityofSpareParts.Checked = _workOrderID.Cause_QualityofSpareParts;
+            chkPersonHours.Checked = _workOrderID.PersonHours;
+            numPersonHoursTime.EditValue = _workOrderID.PersonHoursTime;
+            txtPersonHoursDescription.Text = _workOrderID.PersonHoursDescription;
+            chkNoSpareParts.Checked = _workOrderID.NoSpareParts;
+            numNoSparePartsTime.EditValue = _workOrderID.NoSparePartsTime;
+            txtNoSparePartsDescription.Text = _workOrderID.NoSparePartsDescription;
+            chkProductionPlanning.Checked = _workOrderID.ProductionPlanning;
+            numProductionPlanningTime.EditValue = _workOrderID.ProductionPlanningTime;
+            txtProductionPlanningDescription.Text = _workOrderID.ProductionPlanningDescription;
+            chkOther.Checked = _workOrderID.Other;
+            numOtherTime.EditValue = _workOrderID.OtherTime;
+            txtOtherDescription.Text = _workOrderID.OtherDescription;
+            numStopTotalMin.EditValue = _workOrderID.StopTotalMin;
+            numWorkingTotalMin.EditValue = _workOrderID.WorkingTotalMin;
+            chkOtherError.Checked = _workOrderID.OtherError;
+            txtOtherDescription.Text = _workOrderID.OtherErrorDescription;
+            txtReportRepair.Text = _workOrderID.ReportRepair;
 
+        }
 
         private void WorkOrderForm_Load(object sender, EventArgs e)
         {
             txtRequestNumber.EditValue = _requestReapqir.ID;
             dateFinish.Properties.MinValue = dateStart.Properties.MinValue = _requestReapqir.RequestDataTime;
             dateFinish.EditValue = dateStart.EditValue = _requestReapqir.RequestDataTime;
+            if (_editable)
+            {
+                SetWorkOrder();
+            }
         }
-
-
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (dxSave.Validate())
@@ -86,9 +115,9 @@ namespace PMWORK.MachineryForms
                 newWork.NoSpareParts = Convert.ToBoolean(chkNoSpareParts.CheckState);
                 newWork.NoSparePartsTime = Convert.ToInt16(numNoSparePartsTime.EditValue);
                 newWork.NoSparePartsDescription = txtNoSparePartsDescription.Text.Trim();
-                newWork.ProductionPlanning = Convert.ToBoolean(chkPersonHours.CheckState);
-                newWork.ProductionPlanningTime = Convert.ToInt16(numPersonHoursTime.EditValue);
-                newWork.ProductionPlanningDescription = txtPersonHoursDescription.Text.Trim();
+                newWork.ProductionPlanning = Convert.ToBoolean(chkProductionPlanning.CheckState);
+                newWork.ProductionPlanningTime = Convert.ToInt16(numProductionPlanningTime.EditValue);
+                newWork.ProductionPlanningDescription = txtProductionPlanningDescription.Text.Trim();
                 newWork.Other = Convert.ToBoolean(chkOther.CheckState);
                 newWork.OtherTime = Convert.ToInt16(numOtherTime.EditValue);
                 newWork.OtherDescription = txtOtherDescription.Text.Trim();
@@ -100,13 +129,16 @@ namespace PMWORK.MachineryForms
                 newWork.OtherErrorDescription = txtOtherDescription.Text.Trim();
                 newWork.ReportRepair = txtReportRepair.Text.Trim();
 
-                var result = _requestRepairRepository.AddNewRepairRequest(newWork, _repairmanTemp, _consumablePartsTemp);
+                var result = _requestRepairRepository.AddNewRepairRequest(newWork, _repairmanTemp, _consumTemp);
                 if (result)
+                {
                     XtraMessageBox.Show(PublicClass.SuccessSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
                 else
                     XtraMessageBox.Show(PublicClass.ErrorSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else            
+            else
                 XtraMessageBox.Show(PublicClass.ErrorValidation, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 

@@ -172,6 +172,12 @@
     <Compile Include="MachineryForms\RequestListForm3.Designer.cs">
       <DependentUpon>RequestListForm3.cs</DependentUpon>
     </Compile>
+    <Compile Include="MachineryForms\RequestListForm33.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineryForms\RequestListForm33.Designer.cs">
+      <DependentUpon>RequestListForm33.cs</DependentUpon>
+    </Compile>
     <Compile Include="MachineryForms\RequestListViewModel.cs" />
     <Compile Include="MachineryForms\RequestRepairForm.cs">
       <SubType>Form</SubType>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MachineryForms\RequestListForm3.resx">
       <DependentUpon>RequestListForm3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineryForms\RequestListForm33.resx">
+      <DependentUpon>RequestListForm33.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MachineryForms\RequestRepairForm.resx">
       <DependentUpon>RequestRepairForm.cs</DependentUpon>

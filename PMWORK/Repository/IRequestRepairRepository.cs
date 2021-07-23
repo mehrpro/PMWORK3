@@ -5,6 +5,7 @@ using System.Linq;
 using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
+using PMWORK.MachineryForms;
 
 namespace PMWORK.Repository
 {
@@ -17,6 +18,12 @@ namespace PMWORK.Repository
         /// <returns></returns>
         List<RequestRepair> GetActiveRequestRepair(int type);
 
+        /// <summary>
+        /// لیست درخواست های بسته شده بر اساس نوع تعمیر
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        List<RequestRepair> GetClosedRequestRepair(int type);
         /// <summary>
         /// عنوان نوع تعمیرات برای نمایش در کادر فرم درخواست تعمیر
         /// </summary>
@@ -40,6 +47,21 @@ namespace PMWORK.Repository
         /// <param name="applicantId"></param>
         /// <returns></returns>
         List<Machinery> GetMachineriesByApplicantId(int applicantId);
+        /// <summary>
+        /// لیست تعمیرکاران براساس شناسه گزارش تعمیر
+        /// </summary>
+        /// <param name="workOrderID">شناسه گزارش تعمیر</param>
+        /// <returns></returns>
+        List<RepairMan> GetRepairManByWorkOrderID(long workOrderID);
+        /// <summary>
+        /// لیست قطعات یدکی براساس شناسه تعمیر
+        /// </summary>
+        /// <param name="requestId"></param>
+        /// <returns></returns>
+        List<ConsumViewModel> GetConsumViewModelsByRequestId(long requestId);
+
+
+
 
 
         /// <summary>
@@ -48,6 +70,13 @@ namespace PMWORK.Repository
         /// <param name="Id">شناسه</param>
         /// <returns></returns>
         RequestRepair FindRequestRepairById(long Id);
+        /// <summary>
+        /// گزارش تعمیر براساس شناسه تعمیر
+        /// </summary>
+        /// <param name="Id">شناسه تعمیر</param>
+        /// <returns></returns>
+        WorkOrder FindWorkOrderByRequestId(long Id);
+
 
 
 
@@ -68,7 +97,7 @@ namespace PMWORK.Repository
         /// <param name="repairManListed">لیست سرویس کار</param>
         /// <param name="consumablePart">قطعات یدکی مصرفی</param>
         /// <returns></returns>
-        bool AddNewRepairRequest(WorkOrder workOrder, List<RepairMan> repairMan, List<ConsumablePart> consumablePart);
+        bool AddNewRepairRequest(WorkOrder workOrder, List<RepairMan> repairMan, List<ConsumViewModel> consumViewModels);
 
 
 
@@ -102,7 +131,16 @@ namespace PMWORK.Repository
             return _context.RequestRepairs
                 .Include(a => a.Machinery.Coding)
                 .Include(s => s.Applicant)
-                .Where(x => x.PublicTypeID_FK == type && x.IsActive && !x.IsDelete)
+                .Where(x => x.PublicTypeID_FK == type && x.IsActive)
+                .ToList();
+        }
+
+        public List<RequestRepair> GetClosedRequestRepair(int type)
+        {
+            return _context.RequestRepairs
+                .Include(a => a.Machinery.Coding)
+                .Include(s => s.Applicant)
+                .Where(x => x.PublicTypeID_FK == type && x.IsClose)
                 .ToList();
         }
 
@@ -180,7 +218,7 @@ namespace PMWORK.Repository
             }
         }
 
-        public bool AddNewRepairRequest(WorkOrder workOrder, List<RepairMan> repairMan, List<ConsumablePart> consumablePart)
+        public bool AddNewRepairRequest(WorkOrder workOrder, List<RepairMan> repairMan, List<ConsumViewModel> consumViewModels)
         {
             using (var trans = _context.Database.BeginTransaction())
             {
@@ -188,7 +226,10 @@ namespace PMWORK.Repository
                 {
                     _context.WorkOrders.Add(workOrder);
                     _context.SaveChanges();
-                    if (repairMan.Count() > 0)
+                    var req = _context.RequestRepairs.Find(workOrder.RequestID_FK);
+                    req.IsClose = true;
+                    req.IsActive = false;
+                    if (repairMan.Any())
                     {
                         var newRepairManListed = new List<RepairManListed>();
                         foreach (var item in repairMan)
@@ -202,8 +243,21 @@ namespace PMWORK.Repository
                         }
                         _context.RepairManListeds.AddRange(newRepairManListed);
                     }
-                    if (consumablePart.Count() > 0)
-                        _context.ConsumableParts.AddRange(consumablePart);
+                    if (consumViewModels.Any())
+                    {
+                        var newConsum = new List<ConsumablePart>();
+                        foreach (var item in consumViewModels)
+                        {
+                            newConsum.Add(new ConsumablePart()
+                            {
+                                ConsumablePartTitel = item.ConsumablePartTitel,
+                                Number = item.Number,
+                                RequestID_FK = item.RequestID_FK,
+                                UnitID_FK = item.UnitID_FK
+                            });
+                        }
+                        _context.ConsumableParts.AddRange(newConsum);
+                    }
                     _context.SaveChanges();
                     trans.Commit();
                     return true;
@@ -215,6 +269,40 @@ namespace PMWORK.Repository
                 }
 
             }
+        }
+
+        public List<RepairMan> GetRepairManByWorkOrderID(long workOrderID)
+        {
+            var list = new List<RepairMan>();
+            foreach (var item in _context.RepairManListeds.Where(x => x.WorkOrderIdFk == workOrderID))
+            {
+                list.Add(item: _context.RepairMens.Find(item.RepairManIdFk));
+            }
+            return list;
+        }
+
+        public WorkOrder FindWorkOrderByRequestId(long Id)
+        {
+            return _context.WorkOrders.FirstOrDefault(x => x.RequestID_FK == Id && !x.IsDelete);
+        }
+
+        public List<ConsumViewModel> GetConsumViewModelsByRequestId(long requestId)
+        {
+            var list = new List<ConsumViewModel>();
+            var qry = _context.ConsumableParts.Include(x => x.UnitOfMeasurement).Where(x => x.RequestID_FK == requestId);
+            foreach (var item in qry)
+            {
+                list.Add(new ConsumViewModel()
+                {
+                    ID = item.ID,
+                    ConsumablePartTitel = item.ConsumablePartTitel,
+                    Number = item.Number,
+                    RequestID_FK = item.RequestID_FK,
+                    UnitID_FK = item.UnitID_FK,
+                    UnitOfMeasurement = item.UnitOfMeasurement.Unit,
+                });
+            }
+            return list;
         }
     }
 }
