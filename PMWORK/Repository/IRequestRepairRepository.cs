@@ -282,7 +282,7 @@ namespace PMWORK.Repository
         public List<RepairMan> GetRepairManByWorkOrderID(long workOrderID)
         {
             var list = new List<RepairMan>();
-            foreach (var item in _context.RepairManListeds.Where(x => x.WorkOrderIdFk == workOrderID))
+            foreach (var item in _context.RepairManListeds.Where(x => x.WorkOrderIdFk == workOrderID && !x.IsDelete))
             {
                 list.Add(item: _context.RepairMens.Find(item.RepairManIdFk));
             }
@@ -319,13 +319,28 @@ namespace PMWORK.Repository
             {
                 try
                 {
+                    //                    var local = _ctx.Set<WorkshopReport>()
+                    //    .Local
+                    //    .FirstOrDefault(f => f.Id == updated.Id);
+                    //if (local != null)
+                    //{
+                    //    _ctx.Entry(local).State = EntityState.Detached;
+                    //}
+                    //_ctx.Entry(updated).State = System.Data.Entity.EntityState.Modified;
+                    //return true;
+
+                    var local = _context.Set<WorkOrder>().Local.FirstOrDefault(x => x.ID == workOrder.ID);
+                    if (local != null)
+                    {
+                        _context.Entry(local).State = EntityState.Detached;
+                    }
                     _context.Entry(workOrder).State = EntityState.Modified;
                     _context.SaveChanges();
                     if (repairMan.Any())
                     {
                         var qry = _context.RepairManListeds.Where(x => x.WorkOrderIdFk == workOrder.ID);
-                        foreach (var item in qry)                        
-                               item.IsDelete = true;                        
+                        foreach (var item in qry)
+                            item.IsDelete = true;
                         foreach (var item in repairMan)
                         {
                             var find = qry.SingleOrDefault(x => x.RepairManIdFk == item.ID);
@@ -338,11 +353,19 @@ namespace PMWORK.Repository
                                     WorkOrderIdFk = workOrder.ID,
                                 });
                             }
-                            else                            
-                                find.IsDelete = false;                            
+                            else
+                                find.IsDelete = false;
                         }
                         _context.SaveChanges();
 
+                    }
+                    else
+                    {
+                        var qry = _context.RepairManListeds.Where(x=>x.WorkOrderIdFk == workOrder.ID);
+                        foreach (var item in qry)
+                        {
+                            item.IsDelete = true;
+                        }
                     }
                     if (consumViewModels.Any())
                     {
@@ -365,15 +388,16 @@ namespace PMWORK.Repository
                     }
                     else
                     {
-                        var qry = _context.ConsumableParts.Where(x => x.RequestID_FK == workOrder.RequestID_FK);                    
-                            _context.ConsumableParts.RemoveRange(qry);                        
+                        var qry = _context.ConsumableParts.Where(x => x.RequestID_FK == workOrder.RequestID_FK);
+                        _context.ConsumableParts.RemoveRange(qry);
                     }
                     _context.SaveChanges();
                     trans.Commit();
                     return true;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    var str = ex.Message;
                     trans.Rollback();
                     return false;
                 }

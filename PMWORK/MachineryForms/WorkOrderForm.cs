@@ -131,7 +131,7 @@ namespace PMWORK.MachineryForms
                 if (_editable)
                 {
                     newWork.ID = _workOrderID.ID;
-                    var result = _requestRepairRepository.AddNewWorkOrder(newWork, _repairmanTemp, _consumTemp);
+                    var result = _requestRepairRepository.UpdateWorkOrder(newWork, _repairmanTemp, _consumTemp);
                     if (result)
                     {
                         XtraMessageBox.Show(PublicClass.SuccessSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -161,6 +161,7 @@ namespace PMWORK.MachineryForms
         private void UpdateRepairManList()
         {
             dgvRepairMan.DataSource = _repairmanTemp;
+            gvRepairMan.RefreshData();
         }
 
         private void btnAddRepairMan_Click(object sender, EventArgs e)
