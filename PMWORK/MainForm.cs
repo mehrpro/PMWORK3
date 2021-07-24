@@ -12,12 +12,12 @@ namespace PMWORK
         public Container Container
         {
             get { return _container; }
-            set { _container = value; }
+            set { _container =value; }
         }
         public MainForm()
         {
             InitializeComponent();
-            //_container = Container;
+            // _container = Container;
         }
         private void ShowForms(object obj)
         {

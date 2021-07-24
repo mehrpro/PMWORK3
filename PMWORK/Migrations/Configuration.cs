@@ -1,5 +1,6 @@
 ﻿namespace PMWORK.Migrations
 {
+    using PMWORK.Entities;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -14,6 +15,7 @@
 
         protected override void Seed(PMWORK.AppDbContext context)
         {
+            //  Database.SetInitializer(new PMDBInitializer());
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method

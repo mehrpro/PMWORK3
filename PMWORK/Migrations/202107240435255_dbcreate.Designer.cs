@@ -7,13 +7,13 @@ namespace PMWORK.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class DBCreate : IMigrationMetadata
+    public sealed partial class dbcreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DBCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(dbcreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107230707186_DBCreate"; }
+            get { return "202107240435255_dbcreate"; }
         }
         
         string IMigrationMetadata.Source
