@@ -341,12 +341,14 @@ namespace PMWORK.Repository
                             else                            
                                 find.IsDelete = false;                            
                         }
+                        _context.SaveChanges();
 
                     }
                     if (consumViewModels.Any())
                     {
                         var qry = _context.ConsumableParts.Where(x => x.RequestID_FK == workOrder.RequestID_FK);
                         _context.ConsumableParts.RemoveRange(qry);
+                        _context.SaveChanges();
 
                         var newConsum = new List<ConsumablePart>();
                         foreach (var item in consumViewModels)
