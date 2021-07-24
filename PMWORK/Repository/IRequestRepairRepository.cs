@@ -324,11 +324,12 @@ namespace PMWORK.Repository
                     if (repairMan.Any())
                     {
                         var qry = _context.RepairManListeds.Where(x => x.WorkOrderIdFk == workOrder.ID);
-
+                        foreach (var item in qry)                        
+                               item.IsDelete = true;                        
                         foreach (var item in repairMan)
                         {
-                            var find = qry.Any(x => x.RepairManIdFk == item.ID);
-                            if (!find)
+                            var find = qry.SingleOrDefault(x => x.RepairManIdFk == item.ID);
+                            if (find == null)
                             {
                                 _context.RepairManListeds.Add(new RepairManListed()
                                 {
@@ -337,11 +338,16 @@ namespace PMWORK.Repository
                                     WorkOrderIdFk = workOrder.ID,
                                 });
                             }
+                            else                            
+                                find.IsDelete = false;                            
                         }
 
                     }
                     if (consumViewModels.Any())
                     {
+                        var qry = _context.ConsumableParts.Where(x => x.RequestID_FK == workOrder.RequestID_FK);
+                        _context.ConsumableParts.RemoveRange(qry);
+
                         var newConsum = new List<ConsumablePart>();
                         foreach (var item in consumViewModels)
                         {
@@ -354,6 +360,11 @@ namespace PMWORK.Repository
                             });
                         }
                         _context.ConsumableParts.AddRange(newConsum);
+                    }
+                    else
+                    {
+                        var qry = _context.ConsumableParts.Where(x => x.RequestID_FK == workOrder.RequestID_FK);                    
+                            _context.ConsumableParts.RemoveRange(qry);                        
                     }
                     _context.SaveChanges();
                     trans.Commit();
