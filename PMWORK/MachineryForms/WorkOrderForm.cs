@@ -354,5 +354,10 @@ namespace PMWORK.MachineryForms
                 txtOtherError.Enabled = true;
             }
         }
+
+        private void btnRepairOut_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

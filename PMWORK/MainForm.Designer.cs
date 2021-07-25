@@ -30,7 +30,7 @@ namespace PMWORK
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.ribMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnCompany = new DevExpress.XtraBars.BarButtonItem();
             this.btnGroups = new DevExpress.XtraBars.BarButtonItem();
             this.btnSubGroups = new DevExpress.XtraBars.BarButtonItem();
@@ -50,25 +50,25 @@ namespace PMWORK
             this.btnRepairManForm = new DevExpress.XtraBars.BarButtonItem();
             this.btnRequestListForRepair = new DevExpress.XtraBars.BarButtonItem();
             this.btnClosedRequestRepair = new DevExpress.XtraBars.BarButtonItem();
-            this.InfrasturctureRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribPageInfrasturcture = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.MaintanaceRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribPageMaintanace = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ReportsRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribPageReports = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.SettingRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribPageSetting = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribMain)).BeginInit();
             this.SuspendLayout();
             // 
-            // ribbonControl1
+            // ribMain
             // 
-            this.ribbonControl1.ExpandCollapseItem.Id = 0;
-            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl1.ExpandCollapseItem,
+            this.ribMain.ExpandCollapseItem.Id = 0;
+            this.ribMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribMain.ExpandCollapseItem,
             this.btnCompany,
             this.btnGroups,
             this.btnSubGroups,
@@ -88,17 +88,17 @@ namespace PMWORK
             this.btnRepairManForm,
             this.btnRequestListForRepair,
             this.btnClosedRequestRepair});
-            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 13;
-            this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.InfrasturctureRibbonPage,
-            this.MaintanaceRibbonPage,
-            this.ReportsRibbonPage,
-            this.SettingRibbonPage});
-            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl1.Size = new System.Drawing.Size(750, 143);
-            this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
+            this.ribMain.Location = new System.Drawing.Point(0, 0);
+            this.ribMain.MaxItemId = 13;
+            this.ribMain.Name = "ribMain";
+            this.ribMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribPageInfrasturcture,
+            this.ribPageMaintanace,
+            this.ribPageReports,
+            this.ribPageSetting});
+            this.ribMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
+            this.ribMain.Size = new System.Drawing.Size(750, 143);
+            this.ribMain.StatusBar = this.ribbonStatusBar1;
             // 
             // btnCompany
             // 
@@ -271,17 +271,19 @@ namespace PMWORK
             this.btnClosedRequestRepair.Id = 12;
             this.btnClosedRequestRepair.ImageOptions.Image = global::PMWORK.Properties.Resources.icons8_list_30;
             this.btnClosedRequestRepair.Name = "btnClosedRequestRepair";
+            this.btnClosedRequestRepair.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnClosedRequestRepair.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClosedRequestRepair_ItemClick);
             // 
-            // InfrasturctureRibbonPage
+            // ribPageInfrasturcture
             // 
-            this.InfrasturctureRibbonPage.Appearance.Options.UseTextOptions = true;
-            this.InfrasturctureRibbonPage.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.Yes;
-            this.InfrasturctureRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribPageInfrasturcture.Appearance.Options.UseTextOptions = true;
+            this.ribPageInfrasturcture.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.Yes;
+            this.ribPageInfrasturcture.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup4});
-            this.InfrasturctureRibbonPage.Name = "InfrasturctureRibbonPage";
-            this.InfrasturctureRibbonPage.Text = "دارایی فیزیکی";
+            this.ribPageInfrasturcture.Name = "ribPageInfrasturcture";
+            this.ribPageInfrasturcture.Text = "دارایی فیزیکی";
             // 
             // ribbonPageGroup1
             // 
@@ -304,13 +306,13 @@ namespace PMWORK
             this.ribbonPageGroup4.ShowCaptionButton = false;
             this.ribbonPageGroup4.Text = "کدینگ موجودیت";
             // 
-            // MaintanaceRibbonPage
+            // ribPageMaintanace
             // 
-            this.MaintanaceRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribPageMaintanace.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2,
             this.ribbonPageGroup6});
-            this.MaintanaceRibbonPage.Name = "MaintanaceRibbonPage";
-            this.MaintanaceRibbonPage.Text = "نگهداری تعمیرات";
+            this.ribPageMaintanace.Name = "ribPageMaintanace";
+            this.ribPageMaintanace.Text = "نگهداری تعمیرات";
             // 
             // ribbonPageGroup2
             // 
@@ -329,12 +331,12 @@ namespace PMWORK
             this.ribbonPageGroup6.ShowCaptionButton = false;
             this.ribbonPageGroup6.Text = "مدیریت درخواست ها";
             // 
-            // ReportsRibbonPage
+            // ribPageReports
             // 
-            this.ReportsRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribPageReports.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3});
-            this.ReportsRibbonPage.Name = "ReportsRibbonPage";
-            this.ReportsRibbonPage.Text = "گزارشات";
+            this.ribPageReports.Name = "ribPageReports";
+            this.ribPageReports.Text = "گزارشات";
             // 
             // ribbonPageGroup3
             // 
@@ -343,12 +345,12 @@ namespace PMWORK
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "گزارش تعمیر";
             // 
-            // SettingRibbonPage
+            // ribPageSetting
             // 
-            this.SettingRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribPageSetting.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup5});
-            this.SettingRibbonPage.Name = "SettingRibbonPage";
-            this.SettingRibbonPage.Text = "تنظیمات";
+            this.ribPageSetting.Name = "ribPageSetting";
+            this.ribPageSetting.Text = "تنظیمات";
             // 
             // ribbonPageGroup5
             // 
@@ -362,7 +364,7 @@ namespace PMWORK
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 500);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
+            this.ribbonStatusBar1.Ribbon = this.ribMain;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(750, 31);
             // 
             // MainForm
@@ -372,24 +374,24 @@ namespace PMWORK
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 531);
             this.Controls.Add(this.ribbonStatusBar1);
-            this.Controls.Add(this.ribbonControl1);
+            this.Controls.Add(this.ribMain);
             this.IsMdiContainer = true;
             this.Name = "MainForm";
-            this.Ribbon = this.ribbonControl1;
+            this.Ribbon = this.ribMain;
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "اتوماسیون نت";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage InfrasturctureRibbonPage;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribMain;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribPageInfrasturcture;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnCompany;
         private DevExpress.XtraBars.BarButtonItem btnGroups;
@@ -398,9 +400,9 @@ namespace PMWORK
         private DevExpress.XtraBars.BarButtonItem btnUnit;
         private DevExpress.XtraBars.BarButtonItem btnMachinery;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.Ribbon.RibbonPage MaintanaceRibbonPage;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribPageMaintanace;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ReportsRibbonPage;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribPageReports;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem btnElectrical;
@@ -408,7 +410,7 @@ namespace PMWORK
         private DevExpress.XtraBars.BarButtonItem btnPiping;
         private DevExpress.XtraBars.BarButtonItem btnBuilding;
         private DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem skinPaletteRibbonGalleryBarItem1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage SettingRibbonPage;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribPageSetting;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;

@@ -415,7 +415,6 @@ namespace PMWORK.MachineryForms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabMaster.AppearancePage.Header.Options.UseTextOptions = true;
-            this.tabMaster.AppearancePage.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.tabMaster.Location = new System.Drawing.Point(0, 0);
             this.tabMaster.Name = "tabMaster";
             this.tabMaster.SelectedTabPage = this.xtraTabPage2;
@@ -1511,7 +1510,7 @@ namespace PMWORK.MachineryForms
             this.btnRepairOut.Size = new System.Drawing.Size(137, 30);
             this.btnRepairOut.TabIndex = 7;
             this.btnRepairOut.Text = "تعمیر خارج شرکت";
-            this.btnRepairOut.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnRepairOut.Click += new System.EventHandler(this.btnRepairOut_Click);
             // 
             // WorkOrderForm
             // 

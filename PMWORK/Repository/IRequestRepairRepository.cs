@@ -319,16 +319,7 @@ namespace PMWORK.Repository
             {
                 try
                 {
-                    //                    var local = _ctx.Set<WorkshopReport>()
-                    //    .Local
-                    //    .FirstOrDefault(f => f.Id == updated.Id);
-                    //if (local != null)
-                    //{
-                    //    _ctx.Entry(local).State = EntityState.Detached;
-                    //}
-                    //_ctx.Entry(updated).State = System.Data.Entity.EntityState.Modified;
-                    //return true;
-
+                   
                     var local = _context.Set<WorkOrder>().Local.FirstOrDefault(x => x.ID == workOrder.ID);
                     if (local != null)
                     {
