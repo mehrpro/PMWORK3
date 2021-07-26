@@ -18,9 +18,7 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
-            IList<ApplicationUser> defaultUsers = new List<ApplicationUser>();
-            defaultUsers.Add(new ApplicationUser() { UserId = 1, Enabled = true, UserName = "admin", UserPassword = "admin" }); ;
-            context.ApplicationUsers.AddRange(defaultUsers);
+
 
             IList<Company> defaultCompany = new List<Company>();
             defaultCompany.Add(new Company() { ID = 1, CompanyTiltle = "کیمیای زنجان گستران", CompnayIndex = 1, Description = "کیمیای زنجان گستران" });
@@ -121,7 +119,9 @@
             machineries.Add(new Machinery() { ID = 6, IsActive = true, IsDelete = false, CompanyID = 2, CodeID_FK = 6, ApplicantID_FK = 6, MachineryTitle = "نوار نقاله" });
             context.Machineries.AddRange(machineries);
 
-
+            IList<ApplicationUser> defaultUsers = new List<ApplicationUser>();
+            defaultUsers.Add(new ApplicationUser() { UserId = 1, Enabled = true, UserName = "admin", UserPassword = "admin", FullName = "مدیرسیستم", CompanyID_FK = 1 }); ;
+            context.ApplicationUsers.AddRange(defaultUsers);
 
         }
     }

@@ -21,6 +21,7 @@ namespace PMWORK
             builder.Entity<ApplicationUser>().Property(x => x.UserId).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             builder.Entity<ApplicationUser>().Property(x => x.UserName).IsRequired().HasMaxLength(20);
             builder.Entity<ApplicationUser>().Property(x => x.UserPassword).IsRequired().HasMaxLength(100);
+            builder.Entity<ApplicationUser>().Property(x => x.FullName).IsRequired().HasMaxLength(200);
             builder.Entity<ApplicationUser>()
                 .HasMany(x => x.RequestRepairs)
                 .WithRequired(x => x.ApplicationUser)
@@ -138,6 +139,11 @@ namespace PMWORK
                  .WithRequired(x => x.Company)
                  .HasForeignKey(x => x.CompanyID_FK)
                  .WillCascadeOnDelete(false);
+            builder.Entity<Company>()
+                  .HasMany<ApplicationUser>(x => x.ApplicationUsers)
+                  .WithRequired(x => x.Company)
+                  .HasForeignKey(x => x.CompanyID_FK)
+                  .WillCascadeOnDelete(false);
 
 
 

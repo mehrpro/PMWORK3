@@ -7,13 +7,13 @@ namespace PMWORK.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class UpdateCleam : IMigrationMetadata
+    public sealed partial class DBCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateCleam));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DBCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107261102225_UpdateCleam"; }
+            get { return "202107261504552_DBCreate"; }
         }
         
         string IMigrationMetadata.Source

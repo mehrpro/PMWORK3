@@ -79,6 +79,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\UsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UsersForm.Designer.cs">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppDbContext.cs" />
     <Compile Include="CodingForms\ApplicantForm.cs">
       <SubType>Form</SubType>
@@ -197,13 +203,13 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107240435255_dbcreate.cs" />
-    <Compile Include="Migrations\202107240435255_dbcreate.designer.cs">
-      <DependentUpon>202107240435255_dbcreate.cs</DependentUpon>
+    <Compile Include="Migrations\202107261504552_DBCreate.cs" />
+    <Compile Include="Migrations\202107261504552_DBCreate.designer.cs">
+      <DependentUpon>202107261504552_DBCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107261102225_UpdateCleam.cs" />
-    <Compile Include="Migrations\202107261102225_UpdateCleam.designer.cs">
-      <DependentUpon>202107261102225_UpdateCleam.cs</DependentUpon>
+    <Compile Include="Migrations\202107261512477_DBCreate8.cs" />
+    <Compile Include="Migrations\202107261512477_DBCreate8.designer.cs">
+      <DependentUpon>202107261512477_DBCreate8.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -225,6 +231,9 @@
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
     <Compile Include="TypeRegistery.cs" />
+    <EmbeddedResource Include="Admin\UsersForm.resx">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CodingForms\ApplicantForm.resx">
       <DependentUpon>ApplicantForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,11 +281,11 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107240435255_dbcreate.resx">
-      <DependentUpon>202107240435255_dbcreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107261504552_DBCreate.resx">
+      <DependentUpon>202107261504552_DBCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107261102225_UpdateCleam.resx">
-      <DependentUpon>202107261102225_UpdateCleam.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107261512477_DBCreate8.resx">
+      <DependentUpon>202107261512477_DBCreate8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
