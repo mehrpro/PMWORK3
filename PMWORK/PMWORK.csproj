@@ -201,6 +201,10 @@
     <Compile Include="Migrations\202107240435255_dbcreate.designer.cs">
       <DependentUpon>202107240435255_dbcreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107261102225_UpdateCleam.cs" />
+    <Compile Include="Migrations\202107261102225_UpdateCleam.designer.cs">
+      <DependentUpon>202107261102225_UpdateCleam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -270,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107240435255_dbcreate.resx">
       <DependentUpon>202107240435255_dbcreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107261102225_UpdateCleam.resx">
+      <DependentUpon>202107261102225_UpdateCleam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

@@ -55,12 +55,15 @@ namespace PMWORK
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribPageMaintanace = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribPageReports = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribPageSetting = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.ribPageManage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnUsers = new DevExpress.XtraBars.BarButtonItem();
+            this.btnClame = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,16 +90,20 @@ namespace PMWORK
             this.btnApplicantForm,
             this.btnRepairManForm,
             this.btnRequestListForRepair,
-            this.btnClosedRequestRepair});
+            this.btnClosedRequestRepair,
+            this.btnUsers,
+            this.btnClame,
+            this.barButtonItem3,
+            this.barButtonItem4});
             this.ribMain.Location = new System.Drawing.Point(0, 0);
-            this.ribMain.MaxItemId = 13;
+            this.ribMain.MaxItemId = 17;
             this.ribMain.Name = "ribMain";
             this.ribMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribPageInfrasturcture,
             this.ribPageMaintanace,
             this.ribPageReports,
-            this.ribPageSetting});
-            this.ribMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
+            this.ribPageManage});
+            this.ribMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
             this.ribMain.Size = new System.Drawing.Size(750, 143);
             this.ribMain.StatusBar = this.ribbonStatusBar1;
             // 
@@ -309,13 +316,13 @@ namespace PMWORK
             // ribPageMaintanace
             // 
             this.ribPageMaintanace.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup2});
             this.ribPageMaintanace.Name = "ribPageMaintanace";
             this.ribPageMaintanace.Text = "نگهداری تعمیرات";
             // 
             // ribbonPageGroup2
             // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnRequestList);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnElectrical);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnMecanical);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnPiping);
@@ -323,13 +330,6 @@ namespace PMWORK
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
             this.ribbonPageGroup2.Text = "تعمیرگاه";
-            // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnRequestList);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.ShowCaptionButton = false;
-            this.ribbonPageGroup6.Text = "مدیریت درخواست ها";
             // 
             // ribPageReports
             // 
@@ -343,21 +343,8 @@ namespace PMWORK
             this.ribbonPageGroup3.ItemLinks.Add(this.btnRequestListForRepair);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnClosedRequestRepair);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.ShowCaptionButton = false;
             this.ribbonPageGroup3.Text = "گزارش تعمیر";
-            // 
-            // ribPageSetting
-            // 
-            this.ribPageSetting.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5});
-            this.ribPageSetting.Name = "ribPageSetting";
-            this.ribPageSetting.Text = "تنظیمات";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.skinPaletteRibbonGalleryBarItem1);
-            this.ribbonPageGroup5.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
             // ribbonStatusBar1
             // 
@@ -367,9 +354,51 @@ namespace PMWORK
             this.ribbonStatusBar1.Ribbon = this.ribMain;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(750, 31);
             // 
+            // ribPageManage
+            // 
+            this.ribPageManage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup8});
+            this.ribPageManage.Name = "ribPageManage";
+            this.ribPageManage.Text = "مدیر نرم افزار";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnUsers);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnClame);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.ShowCaptionButton = false;
+            this.ribbonPageGroup8.Text = "مدیریت کاربران";
+            // 
+            // btnUsers
+            // 
+            this.btnUsers.Caption = "کاربران سیستم";
+            this.btnUsers.Id = 13;
+            this.btnUsers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnUsers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnUsers.Name = "btnUsers";
+            // 
+            // btnClame
+            // 
+            this.btnClame.Caption = "مجوز دسترسی";
+            this.btnClame.Id = 14;
+            this.btnClame.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btnClame.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnClame.Name = "btnClame";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "barButtonItem3";
+            this.barButtonItem3.Id = 15;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Id = 16;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
             // MainForm
             // 
-            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
+            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 531);
@@ -410,16 +439,19 @@ namespace PMWORK
         private DevExpress.XtraBars.BarButtonItem btnPiping;
         private DevExpress.XtraBars.BarButtonItem btnBuilding;
         private DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem skinPaletteRibbonGalleryBarItem1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribPageSetting;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.BarButtonItem btnRequestList;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btnApplicantForm;
         private DevExpress.XtraBars.BarButtonItem btnRepairManForm;
         private DevExpress.XtraBars.BarButtonItem btnRequestListForRepair;
         private DevExpress.XtraBars.BarButtonItem btnClosedRequestRepair;
+        private DevExpress.XtraBars.BarButtonItem btnUsers;
+        private DevExpress.XtraBars.BarButtonItem btnClame;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribPageManage;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
     }
 }
