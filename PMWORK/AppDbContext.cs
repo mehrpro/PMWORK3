@@ -44,6 +44,11 @@ namespace PMWORK
                 .WithRequired(x => x.MenuGroup)
                 .HasForeignKey(x => x.GroupID_FK)
                 .WillCascadeOnDelete(false);
+            builder.Entity<MenuGroup>()
+                .HasMany(x => x.Cleams)
+                .WithRequired(x => x.MenuGroup)
+                .HasForeignKey(x => x.GroupID_FK)
+                .WillCascadeOnDelete(false);
 
 
 
@@ -61,10 +66,8 @@ namespace PMWORK
             builder.Entity<Cleam>().Property(x => x.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             builder.Entity<Cleam>().Property(x => x.UserID_FK).IsRequired();
             builder.Entity<Cleam>().Property(x => x.MenuItemID_FK).IsRequired();
-
-
-
-
+            builder.Entity<Cleam>().Property(x => x.GroupID_FK).IsRequired();
+            builder.Entity<Cleam>().Property(x => x.IsDelete).IsRequired();
 
 
             builder.Entity<Coding>().HasKey(x => x.ID);
