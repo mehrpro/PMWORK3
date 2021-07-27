@@ -153,7 +153,7 @@ namespace PMWORK.MachineryForms
             }
             else
             {
-                XtraMessageBox.Show(PublicClass.ErrorValidation, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PublicClass.ErrorValidationMessage(Text);
             }
 
         }

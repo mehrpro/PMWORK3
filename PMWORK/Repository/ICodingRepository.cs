@@ -19,6 +19,7 @@ namespace PMWORK.Repository
         /// <param name="model"></param>
         /// <returns></returns>
         bool AddRepairMan(RepairMan model);
+        bool AddUsers(ApplicationUser user);
     }
 
 
@@ -73,6 +74,21 @@ namespace PMWORK.Repository
                     return false;
                 }
 
+            }
+        }
+
+        public bool AddUsers(ApplicationUser user)
+        {
+            try
+            {
+                _context.ApplicationUsers.Add(user);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                //throw;
             }
         }
     }

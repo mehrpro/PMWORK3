@@ -134,28 +134,29 @@ namespace PMWORK.MachineryForms
                     var result = _requestRepairRepository.UpdateWorkOrder(newWork, _repairmanTemp, _consumTemp);
                     if (result)
                     {
-                        XtraMessageBox.Show(PublicClass.SuccessSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       PublicClass.SuccessMessage( Text);
                         Close();
                     }
                     else
-                        XtraMessageBox.Show(PublicClass.ErrorSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        PublicClass.ErrorSave(Text);
                 }
                 else
                 {
                     var result = _requestRepairRepository.AddNewWorkOrder(newWork, _repairmanTemp, _consumTemp);
                     if (result)
                     {
-                        XtraMessageBox.Show(PublicClass.SuccessSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        PublicClass.SuccessMessage(Text);
+
                         Close();
                     }
                     else
-                        XtraMessageBox.Show(PublicClass.ErrorSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        PublicClass.ErrorSave( Text);
                 }
 
 
             }
             else
-                XtraMessageBox.Show(PublicClass.ErrorValidation, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PublicClass.ErrorValidationMessage( Text);
         }
 
         private void UpdateRepairManList()
@@ -181,7 +182,7 @@ namespace PMWORK.MachineryForms
             }
             else
             {
-                XtraMessageBox.Show(PublicClass.ErrorValidation, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PublicClass.ErrorValidationMessage(Text);
             }
         }
 
@@ -223,7 +224,7 @@ namespace PMWORK.MachineryForms
             }
             else
             {
-                XtraMessageBox.Show(PublicClass.ErrorValidation, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PublicClass.ErrorValidationMessage(Text);
             }
         }
 

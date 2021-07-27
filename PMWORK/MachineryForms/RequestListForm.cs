@@ -69,14 +69,14 @@ namespace PMWORK.MachineryForms
         {
             if (gvRequestList.GetFocusedRowCellValue("ID") == null) return;
             var selectedRow = (RequestRepair)gvRequestList.GetFocusedRow();
-            var dialogResult = XtraMessageBox.Show(PublicClass.DeleteMessage, "حذف درخواست تعمیرات", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            var dialogResult = XtraMessageBox.Show(@"آیا از حذف این مورد مطمئن هستید ؟", "حذف درخواست تعمیرات", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
                 var result = _request.RemoveRequestRepair(selectedRow.ID);
                 if (result)                
-                    XtraMessageBox.Show(PublicClass.SuccessSave, "حذف درخواست تعمیرات", MessageBoxButtons.OK, MessageBoxIcon.Information);                
-                else                
-                    XtraMessageBox.Show(PublicClass.ErrorSave, "حذف درخواست تعمیرات", MessageBoxButtons.OK, MessageBoxIcon.Error);                
+                   PublicClass.SuccessMessage(Text);                
+                else
+                    PublicClass.ErrorSave(Text);
             }
             UpdateRequestList(selectedRow.PublicTypeID_FK);
         }

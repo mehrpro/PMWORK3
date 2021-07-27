@@ -61,13 +61,12 @@ namespace PMWORK.CodingForms
                     var result = _codingRepository.AddRepairMan(SelectedRow);
                     if (result)
                     {
-                        XtraMessageBox.Show(PublicClass.SuccessSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        PublicClass.SuccessMessage(Text);                        
                         UpdateRepairManList();
-
                     }
                     else
                     {
-                        XtraMessageBox.Show(PublicClass.ErrorSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        PublicClass.ErrorSave(Text);
                     }
                 }
                 else
@@ -81,20 +80,20 @@ namespace PMWORK.CodingForms
                     var result = _codingRepository.AddRepairMan(newobj);
                     if (result)
                     {
-                        XtraMessageBox.Show(PublicClass.SuccessSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        PublicClass.SuccessMessage(Text);
                         UpdateRepairManList();
 
                     }
                     else
                     {
-                        XtraMessageBox.Show(PublicClass.ErrorSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        PublicClass.ErrorSave(Text);
                     }
                 }
                 ClearControlers();
             }
             else
             {
-                XtraMessageBox.Show(PublicClass.ErrorValidation, Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                PublicClass.ErrorValidationMessage(Text);
             }
         }
 

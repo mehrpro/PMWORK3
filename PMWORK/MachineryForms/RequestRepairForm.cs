@@ -74,7 +74,7 @@ namespace PMWORK.MachineryForms
                 select.RequestTitle = txtRequest.Text.Trim();
                 var result = _request.UpdateRequestRepair(select);
                 if (!result)
-                    XtraMessageBox.Show(PublicClass.ErrorSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   PublicClass.ErrorSave(Text);
                 else
                     Close();
             }
@@ -92,7 +92,7 @@ namespace PMWORK.MachineryForms
                 model.RequestTitle = txtRequest.Text.Trim();
                 var result = _request.AddNewRequestRepair(model);
                 if (!result)
-                    XtraMessageBox.Show(PublicClass.ErrorSave, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    PublicClass.ErrorSave(Text);
                 else
                     Close();
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -12,14 +13,22 @@ namespace PMWORK
         public static int UserID { get; set; }
         public static int CompanyID { get; set; }
 
-        public static string ErrorValidation = @"مقادیر الزامی فرم را وارد کنید";
-        
-        public static string ErrorSave = @"خطا در ثبت اطلاعات!";
-        
-        public static string DeleteMessage = @"آیا از حذف این مورد مطمئن هستید ؟";
-        
-        public static string SuccessSave = @"عملیات با موفقیت انجام شد";
-
+        public static void SuccessMessage(string title)
+        {
+            XtraMessageBox.Show(@"عملیات با موفقیت انجام شد", title, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+        }
+        public static void ErrorValidationMessage(string title)
+        {
+            XtraMessageBox.Show(@"مقادیر الزامی فرم را وارد کنید", title, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+        }
+        public static void DeleteMessage(string title)
+        {
+            XtraMessageBox.Show(@"آیا از حذف این مورد مطمئن هستید ؟", title, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Stop);
+        }
+        public static void ErrorSave(string title)
+        {
+            XtraMessageBox.Show(@"خطا در ثبت اطلاعات!", title, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+        }
 
     }
 }

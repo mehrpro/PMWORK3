@@ -48,11 +48,15 @@ namespace PMWORK.Admin
                     Enabled = true,
                     UserPassword = txtPassword.Text.Trim(),                    
                 };
-
+                var result = _codingRepository.AddUsers(newobj);
+                if (result)
+                {
+                 PublicClass.SuccessMessage( Text);
+                }
             }
             else
             {
-                XtraMessageBox.Show(PublicClass.ErrorValidation, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PublicClass.ErrorValidationMessage( Text);
             }
         }
 
