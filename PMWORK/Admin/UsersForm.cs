@@ -18,6 +18,7 @@ namespace PMWORK.Admin
         private readonly IRequestRepairRepository _repairRepository;
         private readonly ICodingRepository _codingRepository;
         private ComboBoxBaseClass selectedCompany;
+        private ApplicationUser Selected;
 
         public UsersForm(IRequestRepairRepository repairRepository,ICodingRepository codingRepository)
         {
@@ -31,10 +32,22 @@ namespace PMWORK.Admin
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            if (btnClose.Text == "انصراف")
+            {
+                ClearForm();
+
+            }else
             Close();
         }
 
-    
+            private void ClearForm()
+        {
+            btnClose.Text = "بستن";
+            txtFullname.ResetText();
+            txtPassword.ResetText();
+            txtUsername.ResetText();
+            cbxCompany.EditValue = 0;
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -66,6 +79,19 @@ namespace PMWORK.Admin
             if (selectedCompany == null) return;
             
             
+        }
+
+        private void btnSelectedRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (gvUsersList.GetFocusedRowCellValue("ID") != null)
+            {
+                 Selected = (ApplicationUser)gvUsersList.GetFocusedRow();
+                txtFullname.Text = Selected.FullName;
+                txtUsername.Text = Selected.UserName;
+                txtPassword.Text = Selected.UserPassword;
+                cbxCompany.EditValue = Selected.CompanyID_FK;
+                btnClose.Text = "انصراف";
+            }
         }
     }
 }
