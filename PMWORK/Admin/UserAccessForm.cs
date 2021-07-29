@@ -43,16 +43,23 @@ namespace PMWORK.Admin
             var selected = Convert.ToInt32(radioGroupRibbonPage.EditValue);
             if (selected > 0)
             {
-                foreach (var item in _codingRepository.GetMenuItemsByGroupId(selected))                
-                    chkListPageGroup.Items.Add(new DevExpress.XtraEditors.Controls.CheckedListBoxItem(item.ItemID, item.Description));
-                
 
-                chkListPageGroup.Items.ToList();
-
-                foreach (var item in _codingRepository.GetCleamsListByUserId(SelectedUser.UserId))
+                var access = _codingRepository.GetCleamsListByUserId(SelectedUser.UserId);
+                chkListPageGroup.Items.Clear();
+                foreach (var item in _codingRepository.GetMenuItemsByGroupId(selected))
                 {
-                    chkListPageGroup.Items.ToList();
+
+                    var bo = access.Any(x => x.MenuItemID_FK == item.ItemID && !x.IsDelete);
+                    if (bo)
+                    {
+                        chkListPageGroup.Items.Add(new DevExpress.XtraEditors.Controls.CheckedListBoxItem(item.ItemID, item.Description, CheckState.Checked));
+                    }
+                    else
+                        chkListPageGroup.Items.Add(new DevExpress.XtraEditors.Controls.CheckedListBoxItem(item.ItemID, item.Description, CheckState.Unchecked));
                 }
+
+                var list = chkListPageGroup.Items.ToList();
+
             }
 
         }
