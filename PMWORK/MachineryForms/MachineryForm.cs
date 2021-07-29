@@ -35,7 +35,7 @@ namespace PMWORK.MachineryForms
             cbxCompany.Properties.DataSource = _db.Companies.Select(x => new ComboBoxBaseClass()
             {
                 ID = x.ID,
-                Title = x.CompanyTiltle,
+                Title = x.CompanyTitle,
                 Tag = x.CompnayIndex.ToString()
             }).ToList();
         }

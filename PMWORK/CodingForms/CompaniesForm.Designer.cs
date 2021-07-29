@@ -51,7 +51,7 @@ namespace PMWORK.CodingForms
             this.btnSelectRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CompnayIndex = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CompanyTiltle = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CompanyTitle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Description = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -263,7 +263,7 @@ namespace PMWORK.CodingForms
             this.SelectedRow,
             this.ID,
             this.CompnayIndex,
-            this.CompanyTiltle,
+            this.CompanyTitle,
             this.Description});
             this.gvCompany.GridControl = this.dgvCompany;
             this.gvCompany.Name = "gvCompany";
@@ -311,14 +311,14 @@ namespace PMWORK.CodingForms
             this.CompnayIndex.VisibleIndex = 2;
             this.CompnayIndex.Width = 67;
             // 
-            // CompanyTiltle
+            // CompanyTitle
             // 
-            this.CompanyTiltle.Caption = "نام شرکت یا گروه";
-            this.CompanyTiltle.FieldName = "CompanyTiltle";
-            this.CompanyTiltle.Name = "CompanyTiltle";
-            this.CompanyTiltle.Visible = true;
-            this.CompanyTiltle.VisibleIndex = 3;
-            this.CompanyTiltle.Width = 168;
+            this.CompanyTitle.Caption = "نام شرکت یا گروه";
+            this.CompanyTitle.FieldName = "CompanyTitle";
+            this.CompanyTitle.Name = "CompanyTitle";
+            this.CompanyTitle.Visible = true;
+            this.CompanyTitle.VisibleIndex = 3;
+            this.CompanyTitle.Width = 168;
             // 
             // Description
             // 
@@ -374,7 +374,7 @@ namespace PMWORK.CodingForms
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSelectRow;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraGrid.Columns.GridColumn CompnayIndex;
-        private DevExpress.XtraGrid.Columns.GridColumn CompanyTiltle;
+        private DevExpress.XtraGrid.Columns.GridColumn CompanyTitle;
         private DevExpress.XtraGrid.Columns.GridColumn Description;
     }
 }

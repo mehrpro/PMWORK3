@@ -21,9 +21,9 @@
 
 
             IList<Company> defaultCompany = new List<Company>();
-            defaultCompany.Add(new Company() { ID = 1, CompanyTiltle = "کیمیای زنجان گستران", CompnayIndex = 1, Description = "کیمیای زنجان گستران" });
-            defaultCompany.Add(new Company() { ID = 2, CompanyTiltle = "سرب و روی ایرانیان", CompnayIndex = 2, Description = "کیمیای زنجان گستران" });
-            defaultCompany.Add(new Company() { ID = 3, CompanyTiltle = "ذوبگران رنگین فلز", CompnayIndex = 3, Description = "کیمیای زنجان گستران" });
+            defaultCompany.Add(new Company() { ID = 1, CompanyTitle = "کیمیای زنجان گستران", CompnayIndex = 1, Description = "کیمیای زنجان گستران" });
+            defaultCompany.Add(new Company() { ID = 2, CompanyTitle = "سرب و روی ایرانیان", CompnayIndex = 2, Description = "کیمیای زنجان گستران" });
+            defaultCompany.Add(new Company() { ID = 3, CompanyTitle = "ذوبگران رنگین فلز", CompnayIndex = 3, Description = "کیمیای زنجان گستران" });
             context.Companies.AddRange(defaultCompany);
 
             IList<Group> defaultGroup = new List<Group>();
@@ -123,6 +123,34 @@
             defaultUsers.Add(new ApplicationUser() { UserId = 1, Enabled = true, UserName = "admin", UserPassword = "admin", FullName = "مدیرسیستم", CompanyID_FK = 1 }); ;
             context.ApplicationUsers.AddRange(defaultUsers);
 
+
+            IList<MenuGroup> menuGroup = new List<MenuGroup>();
+            menuGroup.Add(new MenuGroup() { GroupID = 1, MenuGroupTitle = "ribPageInfrasturcture", Description = "دارایی فیزیکی" });
+            menuGroup.Add(new MenuGroup() { GroupID = 2, MenuGroupTitle = "ribPageMaintanace", Description = "نگهداری تعمیرات" });
+            menuGroup.Add(new MenuGroup() { GroupID = 3, MenuGroupTitle = "ribPageReports", Description = "گزارشات" });
+            menuGroup.Add(new MenuGroup() { GroupID = 4, MenuGroupTitle = "ribPageManage", Description = "مدیریت نرم افزار" });
+            context.MenuGroups.AddRange(menuGroup);
+
+
+
+
+            IList<MenuItem> menuItems = new List<MenuItem>();
+            menuItems.Add(new MenuItem() { ItemID = 1, GroupID_FK = 1, ItemTitel = "PGMachinery", Description = "ماشین آلات" });
+            menuItems.Add(new MenuItem() { ItemID = 2, GroupID_FK = 1, ItemTitel = "PGCoding", Description = "کدینگ موجودیت" });
+            menuItems.Add(new MenuItem() { ItemID = 3, GroupID_FK = 2, ItemTitel = "PGRequestReapir", Description = "تعمیرگاه" });
+            menuItems.Add(new MenuItem() { ItemID = 4, GroupID_FK = 3, ItemTitel = "PGReportRepair", Description = "گزارش تعمیر" });
+            menuItems.Add(new MenuItem() { ItemID = 5, GroupID_FK = 4, ItemTitel = "PGUsers", Description = "مدیریت کاربران" });
+            context.MenuItems.AddRange(menuItems);
+
+
+
+            IList<Cleam> cleams = new List<Cleam>();
+            cleams.Add(new Cleam() { ID = 1, GroupID_FK = 1, IsDelete = false, UserID_FK = 1, MenuItemID_FK = 1 });
+            cleams.Add(new Cleam() { ID = 2, GroupID_FK = 1, IsDelete = false, UserID_FK = 1, MenuItemID_FK = 2 });
+            cleams.Add(new Cleam() { ID = 3, GroupID_FK = 2, IsDelete = false, UserID_FK = 1, MenuItemID_FK = 3 });
+            cleams.Add(new Cleam() { ID = 4, GroupID_FK = 3, IsDelete = false, UserID_FK = 1, MenuItemID_FK = 4 });
+            cleams.Add(new Cleam() { ID = 5, GroupID_FK = 4, IsDelete = false, UserID_FK = 1, MenuItemID_FK = 5 });
+            context.Cleams.AddRange(cleams);
         }
     }
 }

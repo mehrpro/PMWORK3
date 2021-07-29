@@ -50,20 +50,20 @@ namespace PMWORK
             this.btnRepairManForm = new DevExpress.XtraBars.BarButtonItem();
             this.btnRequestListForRepair = new DevExpress.XtraBars.BarButtonItem();
             this.btnClosedRequestRepair = new DevExpress.XtraBars.BarButtonItem();
-            this.ribPageInfrasturcture = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribPageMaintanace = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribPageReports = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.ribPageManage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnUsers = new DevExpress.XtraBars.BarButtonItem();
             this.btnClame = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribPageInfrasturcture = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.PGMachinery = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.PGCoding = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribPageMaintanace = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.PGRequestReapir = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribPageReports = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.PGReportRepair = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribPageManage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.PGUsers = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -282,108 +282,23 @@ namespace PMWORK
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnClosedRequestRepair.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClosedRequestRepair_ItemClick);
             // 
-            // ribPageInfrasturcture
-            // 
-            this.ribPageInfrasturcture.Appearance.Options.UseTextOptions = true;
-            this.ribPageInfrasturcture.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.Yes;
-            this.ribPageInfrasturcture.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup4});
-            this.ribPageInfrasturcture.Name = "ribPageInfrasturcture";
-            this.ribPageInfrasturcture.Text = "دارایی فیزیکی";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnMachinery);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.ShowCaptionButton = false;
-            this.ribbonPageGroup1.Text = "دارایی فیزیکی";
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnCompany);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnGroups);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnSubGroups);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnUnit);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnApplicantForm);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnRepairManForm);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnCode);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.ShowCaptionButton = false;
-            this.ribbonPageGroup4.Text = "کدینگ موجودیت";
-            // 
-            // ribPageMaintanace
-            // 
-            this.ribPageMaintanace.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
-            this.ribPageMaintanace.Name = "ribPageMaintanace";
-            this.ribPageMaintanace.Text = "نگهداری تعمیرات";
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnRequestList);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnElectrical);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnMecanical);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnPiping);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnBuilding);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.ShowCaptionButton = false;
-            this.ribbonPageGroup2.Text = "تعمیرگاه";
-            // 
-            // ribPageReports
-            // 
-            this.ribPageReports.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
-            this.ribPageReports.Name = "ribPageReports";
-            this.ribPageReports.Text = "گزارشات";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnRequestListForRepair);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnClosedRequestRepair);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.ShowCaptionButton = false;
-            this.ribbonPageGroup3.Text = "گزارش تعمیر";
-            // 
-            // ribbonStatusBar1
-            // 
-            this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 500);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.ribMain;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(750, 31);
-            // 
-            // ribPageManage
-            // 
-            this.ribPageManage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup8});
-            this.ribPageManage.Name = "ribPageManage";
-            this.ribPageManage.Text = "مدیر نرم افزار";
-            // 
-            // ribbonPageGroup8
-            // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnUsers);
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnClame);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.ShowCaptionButton = false;
-            this.ribbonPageGroup8.Text = "مدیریت کاربران";
-            // 
             // btnUsers
             // 
             this.btnUsers.Caption = "کاربران سیستم";
             this.btnUsers.Id = 13;
-            this.btnUsers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnUsers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnUsers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUsers.ImageOptions.Image")));
+            this.btnUsers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUsers.ImageOptions.LargeImage")));
             this.btnUsers.Name = "btnUsers";
+            this.btnUsers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUsers_ItemClick);
             // 
             // btnClame
             // 
             this.btnClame.Caption = "مجوز دسترسی";
             this.btnClame.Id = 14;
-            this.btnClame.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnClame.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnClame.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClame.ImageOptions.Image")));
+            this.btnClame.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClame.ImageOptions.LargeImage")));
             this.btnClame.Name = "btnClame";
+            this.btnClame.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClame_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -395,6 +310,93 @@ namespace PMWORK
             // 
             this.barButtonItem4.Id = 16;
             this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // ribPageInfrasturcture
+            // 
+            this.ribPageInfrasturcture.Appearance.Options.UseTextOptions = true;
+            this.ribPageInfrasturcture.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.Yes;
+            this.ribPageInfrasturcture.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.PGMachinery,
+            this.PGCoding});
+            this.ribPageInfrasturcture.Name = "ribPageInfrasturcture";
+            this.ribPageInfrasturcture.Text = "دارایی فیزیکی";
+            // 
+            // PGMachinery
+            // 
+            this.PGMachinery.ItemLinks.Add(this.btnMachinery);
+            this.PGMachinery.ItemLinks.Add(this.barButtonItem6);
+            this.PGMachinery.Name = "PGMachinery";
+            this.PGMachinery.ShowCaptionButton = false;
+            this.PGMachinery.Text = "دارایی فیزیکی";
+            // 
+            // PGCoding
+            // 
+            this.PGCoding.ItemLinks.Add(this.btnCompany);
+            this.PGCoding.ItemLinks.Add(this.btnGroups);
+            this.PGCoding.ItemLinks.Add(this.btnSubGroups);
+            this.PGCoding.ItemLinks.Add(this.btnUnit);
+            this.PGCoding.ItemLinks.Add(this.btnApplicantForm);
+            this.PGCoding.ItemLinks.Add(this.btnRepairManForm);
+            this.PGCoding.ItemLinks.Add(this.btnCode);
+            this.PGCoding.Name = "PGCoding";
+            this.PGCoding.ShowCaptionButton = false;
+            this.PGCoding.Text = "کدینگ موجودیت";
+            // 
+            // ribPageMaintanace
+            // 
+            this.ribPageMaintanace.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.PGRequestReapir});
+            this.ribPageMaintanace.Name = "ribPageMaintanace";
+            this.ribPageMaintanace.Text = "نگهداری تعمیرات";
+            // 
+            // PGRequestReapir
+            // 
+            this.PGRequestReapir.ItemLinks.Add(this.btnRequestList);
+            this.PGRequestReapir.ItemLinks.Add(this.btnElectrical);
+            this.PGRequestReapir.ItemLinks.Add(this.btnMecanical);
+            this.PGRequestReapir.ItemLinks.Add(this.btnPiping);
+            this.PGRequestReapir.ItemLinks.Add(this.btnBuilding);
+            this.PGRequestReapir.Name = "PGRequestReapir";
+            this.PGRequestReapir.ShowCaptionButton = false;
+            this.PGRequestReapir.Text = "تعمیرگاه";
+            // 
+            // ribPageReports
+            // 
+            this.ribPageReports.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.PGReportRepair});
+            this.ribPageReports.Name = "ribPageReports";
+            this.ribPageReports.Text = "گزارشات";
+            // 
+            // PGReportRepair
+            // 
+            this.PGReportRepair.ItemLinks.Add(this.btnRequestListForRepair);
+            this.PGReportRepair.ItemLinks.Add(this.btnClosedRequestRepair);
+            this.PGReportRepair.Name = "PGReportRepair";
+            this.PGReportRepair.ShowCaptionButton = false;
+            this.PGReportRepair.Text = "گزارش تعمیر";
+            // 
+            // ribPageManage
+            // 
+            this.ribPageManage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.PGUsers});
+            this.ribPageManage.Name = "ribPageManage";
+            this.ribPageManage.Text = "مدیر نرم افزار";
+            // 
+            // PGUsers
+            // 
+            this.PGUsers.ItemLinks.Add(this.btnUsers);
+            this.PGUsers.ItemLinks.Add(this.btnClame);
+            this.PGUsers.Name = "PGUsers";
+            this.PGUsers.ShowCaptionButton = false;
+            this.PGUsers.Text = "مدیریت کاربران";
+            // 
+            // ribbonStatusBar1
+            // 
+            this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 500);
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.ribMain;
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(750, 31);
             // 
             // MainForm
             // 
@@ -421,18 +423,18 @@ namespace PMWORK
         #endregion
         private DevExpress.XtraBars.Ribbon.RibbonControl ribMain;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribPageInfrasturcture;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGMachinery;
         private DevExpress.XtraBars.BarButtonItem btnCompany;
         private DevExpress.XtraBars.BarButtonItem btnGroups;
         private DevExpress.XtraBars.BarButtonItem btnSubGroups;
         private DevExpress.XtraBars.BarButtonItem btnCode;
         private DevExpress.XtraBars.BarButtonItem btnUnit;
         private DevExpress.XtraBars.BarButtonItem btnMachinery;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGCoding;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribPageMaintanace;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGRequestReapir;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribPageReports;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGReportRepair;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem btnElectrical;
         private DevExpress.XtraBars.BarButtonItem btnMecanical;
@@ -452,6 +454,6 @@ namespace PMWORK
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribPageManage;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGUsers;
     }
 }

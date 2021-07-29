@@ -39,14 +39,14 @@ namespace PMWORK.CodingForms
             if (btnClose.Text == "انصراف")
             {
                 var select = db.Companies.Find(Row.ID);
-                select.CompanyTiltle = txtCompanyTitle.Text.Trim();
+                select.CompanyTitle = txtCompanyTitle.Text.Trim();
                 select.Description = txtDescription.Text.Trim();
             }
             else
             {
                 var obj = new Company();
                 obj.CompnayIndex = Convert.ToByte(numCompanyIndex.EditValue);
-                obj.CompanyTiltle = txtCompanyTitle.EditValue.ToString().Trim();
+                obj.CompanyTitle = txtCompanyTitle.EditValue.ToString().Trim();
                 obj.Description = txtDescription.Text.ToString().Trim();
                 db.Companies.Add(obj);
             }
@@ -81,7 +81,7 @@ namespace PMWORK.CodingForms
                 var row = gvCompany.GetFocusedRow();
                 Row = (Company)row;
                 numCompanyIndex.EditValue = Row.CompnayIndex;
-                txtCompanyTitle.EditValue = Row.CompanyTiltle;
+                txtCompanyTitle.EditValue = Row.CompanyTitle;
                 txtDescription.EditValue = Row.Description;
                 btnClose.Text = "انصراف";
             }

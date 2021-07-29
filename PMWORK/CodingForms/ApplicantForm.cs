@@ -32,7 +32,7 @@ namespace PMWORK.CodingForms
             cbxCompany.Properties.DataSource = db.Companies.Select(x => new ComboBoxBaseClass()
             {
                 ID = x.ID,
-                Title = x.CompanyTiltle,
+                Title = x.CompanyTitle,
                 Tag = x.Description
             }).ToList();
 

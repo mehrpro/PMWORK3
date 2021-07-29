@@ -14,6 +14,7 @@ namespace PMWORK.Entities
 
         public int GroupID { get; set; }
         public string MenuGroupTitle { get; set; }
+        public string Description { get; set; }
 
 
 

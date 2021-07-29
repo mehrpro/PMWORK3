@@ -163,7 +163,7 @@ namespace PMWORK.Repository
         }
         public List<ComboBoxBaseClass> GetAllCompanies()
         {
-            return _context.Companies.Select(x => new ComboBoxBaseClass() { ID = x.ID, Title = x.CompanyTiltle, Tag = x.Description }).ToList();
+            return _context.Companies.Select(x => new ComboBoxBaseClass() { ID = x.ID, Title = x.CompanyTitle, Tag = x.Description }).ToList();
         }
         public List<Machinery> GetMachineriesByApplicantId(int applicantId)
         {

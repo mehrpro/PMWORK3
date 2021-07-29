@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class dbs : DbMigration
+    public partial class DBCreate : DbMigration
     {
         public override void Up()
         {
@@ -26,7 +26,7 @@
                     {
                         ID = c.Int(nullable: false, identity: true),
                         CompnayIndex = c.Byte(nullable: false),
-                        CompanyTiltle = c.String(nullable: false, maxLength: 150),
+                        CompanyTitle = c.String(nullable: false, maxLength: 150),
                         Description = c.String(maxLength: 250),
                     })
                 .PrimaryKey(t => t.ID);
@@ -274,6 +274,7 @@
                     {
                         GroupID = c.Int(nullable: false, identity: true),
                         MenuGroupTitle = c.String(nullable: false, maxLength: 100),
+                        Description = c.String(nullable: false, maxLength: 250),
                     })
                 .PrimaryKey(t => t.GroupID);
             
@@ -284,6 +285,7 @@
                         ItemID = c.Int(nullable: false, identity: true),
                         GroupID_FK = c.Int(nullable: false),
                         ItemTitel = c.String(nullable: false, maxLength: 150),
+                        Description = c.String(nullable: false, maxLength: 250),
                     })
                 .PrimaryKey(t => t.ItemID)
                 .ForeignKey("dbo.MenuGroups", t => t.GroupID_FK)

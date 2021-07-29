@@ -10,17 +10,21 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PMWORK.Repository;
 
 namespace PMWORK
 {
     public partial class frmLogin2 : XtraForm
     {
+        private readonly ICodingRepository _codingRepository;
+
         //private AppDbContext db;
-        public frmLogin2()
+        public frmLogin2(ICodingRepository codingRepository)
         {
             InitializeComponent();
             //////
             PublicClass.UserID = 1;
+            _codingRepository = codingRepository;
             ////db = new AppDbContext();
             ////PublicClass.db = this.db;
             //// Open a Splash Screen
@@ -44,8 +48,27 @@ namespace PMWORK
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
-            Close();
+            if (dx.Validate())
+            {
+                var result = _codingRepository.LoginUser(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+                if (result)
+                {
+                    // XtraMessageBox.Show("کاربر گرامی", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+                else
+                {
+                    XtraMessageBox.Show("نام کاربری یا گذرواژه اشتباه است ", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                PublicClass.ErrorValidationMessage(Text);
+            }
+
+
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMWORK.Entities
 {
-   public class Cleam
+    public class Cleam
     {
         public int ID { get; set; }
 

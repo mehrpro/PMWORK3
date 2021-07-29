@@ -16,9 +16,9 @@ namespace PMWORK.Entities
             context.ApplicationUsers.AddRange(defaultUsers);
 
             IList<Company> defaultCompany = new List<Company>();
-            defaultCompany.Add(new Company() { ID = 1, CompanyTiltle = "کیمیای زنجان گستران", CompnayIndex = 1, Description = "کیمیای زنجان گستران" });
-            defaultCompany.Add(new Company() { ID = 2, CompanyTiltle = "سرب و روی ایرانیان", CompnayIndex = 2, Description = "کیمیای زنجان گستران" });
-            defaultCompany.Add(new Company() { ID = 3, CompanyTiltle = "ذوبگران رنگین فلز", CompnayIndex = 3, Description = "کیمیای زنجان گستران" });
+            defaultCompany.Add(new Company() { ID = 1, CompanyTitle = "کیمیای زنجان گستران", CompnayIndex = 1, Description = "کیمیای زنجان گستران" });
+            defaultCompany.Add(new Company() { ID = 2, CompanyTitle = "سرب و روی ایرانیان", CompnayIndex = 2, Description = "کیمیای زنجان گستران" });
+            defaultCompany.Add(new Company() { ID = 3, CompanyTitle = "ذوبگران رنگین فلز", CompnayIndex = 3, Description = "کیمیای زنجان گستران" });
             context.Companies.AddRange(defaultCompany);
 
             IList<Group> defaultGroup = new List<Group>();

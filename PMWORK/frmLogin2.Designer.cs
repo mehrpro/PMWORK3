@@ -61,6 +61,16 @@ namespace PMWORK {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Point similar to {X=321,Y=17}.
+        /// </summary>
+        internal static System.Drawing.Point dx_TrayLocation {
+            get {
+                object obj = ResourceManager.GetObject("dx.TrayLocation", resourceCulture);
+                return ((System.Drawing.Point)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Point similar to {X=188,Y=17}.
         /// </summary>
         internal static System.Drawing.Point formAssistant1_TrayLocation {

@@ -40,6 +40,7 @@ namespace PMWORK
             builder.Entity<MenuGroup>().HasKey(x => x.GroupID);
             builder.Entity<MenuGroup>().Property(x => x.GroupID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             builder.Entity<MenuGroup>().Property(x => x.MenuGroupTitle).IsRequired().HasMaxLength(100);
+            builder.Entity<MenuGroup>().Property(x => x.Description).IsRequired().HasMaxLength(250);
             builder.Entity<MenuGroup>()
                 .HasMany(x => x.MenuItems)
                 .WithRequired(x => x.MenuGroup)
@@ -57,6 +58,7 @@ namespace PMWORK
             builder.Entity<MenuItem>().Property(x => x.ItemID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             builder.Entity<MenuItem>().Property(x => x.GroupID_FK).IsRequired();
             builder.Entity<MenuItem>().Property(x => x.ItemTitel).HasMaxLength(150).IsRequired();
+            builder.Entity<MenuItem>().Property(x => x.Description).IsRequired().HasMaxLength(250);
             builder.Entity<MenuItem>()
                 .HasMany(x => x.Cleams)
                 .WithRequired(x => x.MenuItem)
@@ -112,7 +114,7 @@ namespace PMWORK
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .IsRequired();
             builder.Entity<Company>().Property(x => x.CompnayIndex).IsRequired();
-            builder.Entity<Company>().Property(x => x.CompanyTiltle).IsRequired().HasMaxLength(150);
+            builder.Entity<Company>().Property(x => x.CompanyTitle).IsRequired().HasMaxLength(150);
             builder.Entity<Company>().Property(x => x.Description).HasMaxLength(250);
             builder.Entity<Company>()
                 .HasMany(x => x.Groups)

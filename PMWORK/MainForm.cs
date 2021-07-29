@@ -3,20 +3,40 @@ using PMWORK.MachineryForms;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Ribbon;
 using StructureMap;
+using PMWORK.Admin;
+using System.Collections.Generic;
+using PMWORK.Entities;
+using PMWORK.Repository;
 
 namespace PMWORK
 {
     public partial class MainForm : RibbonForm
     {
         private Container _container;
+        private readonly ICodingRepository _codingRepository;
+
         public Container Container
         {
             get { return _container; }
-            set { _container =value; }
+            set { _container = value; }
         }
-        public MainForm()
+
+        private void UpdateMainMenu()
+        {
+            List<Cleam> access = new List<Cleam>();
+            access = _codingRepository.GetCleams(PublicClass.UserID);
+            foreach (var menuGroup in access)
+            {
+                this.ribMain.Pages.GetPageByName(menuGroup.MenuGroup.MenuGroupTitle).Visible = !menuGroup.IsDelete;
+
+            }
+        }
+
+        public MainForm(ICodingRepository codingRepository)
         {
             InitializeComponent();
+            _codingRepository = codingRepository;
+            UpdateMainMenu();
             // _container = Container;
         }
         private void ShowForms(object obj)
@@ -160,6 +180,21 @@ namespace PMWORK
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
+        }
+
+        private void btnUsers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = _container.GetInstance<UsersForm>();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+
+        }
+
+        private void btnClame_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = _container.GetInstance<UserAccessForm>();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
     }
 }

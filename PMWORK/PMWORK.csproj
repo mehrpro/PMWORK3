@@ -79,6 +79,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\UserAccessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UserAccessForm.Designer.cs">
+      <DependentUpon>UserAccessForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\UsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,9 +209,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107270945075_dbs.cs" />
-    <Compile Include="Migrations\202107270945075_dbs.designer.cs">
-      <DependentUpon>202107270945075_dbs.cs</DependentUpon>
+    <Compile Include="Migrations\202107290720002_DBCreate.cs" />
+    <Compile Include="Migrations\202107290720002_DBCreate.designer.cs">
+      <DependentUpon>202107290720002_DBCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -227,6 +233,9 @@
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
     <Compile Include="TypeRegistery.cs" />
+    <EmbeddedResource Include="Admin\UserAccessForm.resx">
+      <DependentUpon>UserAccessForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\UsersForm.resx">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,8 +286,8 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107270945075_dbs.resx">
-      <DependentUpon>202107270945075_dbs.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107290720002_DBCreate.resx">
+      <DependentUpon>202107290720002_DBCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

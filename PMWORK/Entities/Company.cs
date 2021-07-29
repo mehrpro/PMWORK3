@@ -22,7 +22,7 @@ namespace PMWORK.Entities
 
         public int ID { get; set; }
         public byte CompnayIndex { get; set; }
-        public string CompanyTiltle { get; set; }
+        public string CompanyTitle { get; set; }
         public string Description { get; set; }
 
 
