@@ -24,27 +24,18 @@ namespace PMWORK
 
         private void UpdateMainMenu()
         {
-            //List<Cleam> access = new List<Cleam>();
             var access = _codingRepository.GetCleams(PublicClass.UserID);
             foreach (var menuGroup in access)
             {
-
                 var page = this.ribMain.Pages.GetPageByName(menuGroup.MenuGroup.MenuGroupTitle).Groups.GetGroupByName(menuGroup.MenuItem.ItemTitel);
                 page.Visible = !menuGroup.IsDelete;
-
             }
-
-
-
             foreach (var ribbonPage in ribMain.Pages.ToList())
             {
                 var groupArray = ribbonPage.Groups.Select(x => x.Visible).ToArray();
                 var vis = false;
                 foreach (var b in groupArray)
-                {
                     vis = vis || b;
-                }
-
                 ribbonPage.Visible = vis;
             }
         }
