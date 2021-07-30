@@ -25,6 +25,7 @@ namespace PMWORK
             //////
             PublicClass.UserID = 1;
             _codingRepository = codingRepository;
+            txtPassword.Text = txtUserName.Text = "admin";
             ////db = new AppDbContext();
             ////PublicClass.db = this.db;
             //// Open a Splash Screen
