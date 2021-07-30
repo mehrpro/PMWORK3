@@ -44,56 +44,35 @@ namespace PMWORK.Admin
             tl.EndUpdate();
         }
 
-        private void CreateTreeList(TreeList tl, int userId)
+        private void CreateTreeList(int userId)
         {
-            tl.BeginUnboundLoad();
-            tl.ClearNodes();
+            treeListAccess.BeginUnboundLoad();
+            treeListAccess.ClearNodes();
             TreeListNode treeListNodeParent = null;
             var cleamList = _codingRepository.GetCleams(userId);
 
             foreach (var item in _codingRepository.GetMenuGroups())
             {
-                var app = tl.AppendNode(new object[] { item.Description }, treeListNodeParent, CheckState.Unchecked, NodeCheckBoxStyle.Check, item.GroupID);
+                var app = treeListAccess.AppendNode(new object[] { item.Description },
+                    treeListNodeParent, CheckState.Unchecked, NodeCheckBoxStyle.Check, item.GroupID);
                 foreach (var menuItem in _codingRepository.GetMenuItemsByGroupId(item.GroupID))
                 {
-                    var child = tl.AppendNode(new object[] { menuItem.Description }, app.Id, menuItem.ItemID);
-                    child.Checked = cleamList.Any(x => x.MenuItemID_FK == menuItem.ItemID);
+                    var child = treeListAccess.AppendNode(new object[] { menuItem.Description }, app.Id, menuItem.ItemID);
+                    child.Checked = !cleamList.Single(x => x.MenuItemID_FK == menuItem.ItemID).IsDelete;
                 }
             }
-            tl.EndUnboundLoad();
-            tl.ExpandAll();
+            treeListAccess.EndUnboundLoad();
+            treeListAccess.ExpandAll();
 
 
-        }
-
-        private void CreateTreeList(TreeList tl)
-        {
-            tl.BeginUnboundLoad();
-            TreeListNode treeListNodeParent = null;
-
-
-            foreach (var item in _codingRepository.GetMenuGroups())
-            {
-                var app = tl.AppendNode(new object[] { item.Description }, treeListNodeParent, CheckState.Unchecked, NodeCheckBoxStyle.Check, item.GroupID);
-                foreach (var menuItem in _codingRepository.GetMenuItemsByGroupId(item.GroupID))
-                {
-                    tl.AppendNode(new object[] { menuItem.Description }, app.Id, menuItem.ItemID);
-                }
-            }
-            tl.EndUnboundLoad();
-            tl.ExpandAll();
-            tl.Enabled = false;
         }
 
 
         private void cbxUserList_EditValueChanged(object sender, EventArgs e)
         {
             SelectedUser = (ApplicationUser)cbxUserList.GetSelectedDataRow();
-            if (SelectedUser == null)
-            {
-                return;
-            }
-            CreateTreeList(treeListAccess, SelectedUser.UserId);
+            if (SelectedUser == null) return;
+            CreateTreeList(SelectedUser.UserId);
 
         }
 
@@ -104,18 +83,30 @@ namespace PMWORK.Admin
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //var accessList = treeListAccess.Selection;
             var newList = new List<Cleam>();
-            var li = treeListAccess.Nodes.ToList();
-            foreach (var item in li)
+            foreach (var groupItem in treeListAccess.Nodes.ToList())
             {
-                var sel = item.Nodes.ToList();
-                var selTag = item.Tag;
-                foreach (var subItem in sel)
+                foreach (var subItem in groupItem.Nodes.ToList())
                 {
-                    var sub = subItem.Tag;
+                    var item = new Cleam();
+                    item.UserID_FK = Convert.ToInt32(cbxUserList.EditValue);
+                    item.GroupID_FK = Convert.ToInt32(groupItem.Tag);
+                    item.MenuItemID_FK = Convert.ToInt32(subItem.Tag);
+                    item.IsDelete = !Convert.ToBoolean(subItem.CheckState);
+                    newList.Add(item);
                 }
             }
+            var result = _codingRepository.CleamUser(newList);
+            if (result)
+            {
+                PublicClass.SuccessMessage(Text);
+                CreateTreeList(SelectedUser.UserId);
+            }
+            else
+            {
+                PublicClass.ErrorSave(Text);
+            }
+
         }
     }
 }

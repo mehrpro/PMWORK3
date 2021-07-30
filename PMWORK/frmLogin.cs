@@ -23,7 +23,7 @@ namespace PMWORK
         {
             InitializeComponent();
             //////
-            PublicClass.UserID = 1;
+
             _codingRepository = codingRepository;
             txtPassword.Text = txtUserName.Text = "admin";
             ////db = new AppDbContext();

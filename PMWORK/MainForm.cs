@@ -5,6 +5,7 @@ using DevExpress.XtraBars.Ribbon;
 using StructureMap;
 using PMWORK.Admin;
 using System.Collections.Generic;
+using System.Linq;
 using PMWORK.Entities;
 using PMWORK.Repository;
 
@@ -23,12 +24,28 @@ namespace PMWORK
 
         private void UpdateMainMenu()
         {
-            List<Cleam> access = new List<Cleam>();
-            access = _codingRepository.GetCleams(PublicClass.UserID);
+            //List<Cleam> access = new List<Cleam>();
+            var access = _codingRepository.GetCleams(PublicClass.UserID);
             foreach (var menuGroup in access)
             {
-                this.ribMain.Pages.GetPageByName(menuGroup.MenuGroup.MenuGroupTitle).Visible = !menuGroup.IsDelete;
 
+                var page = this.ribMain.Pages.GetPageByName(menuGroup.MenuGroup.MenuGroupTitle).Groups.GetGroupByName(menuGroup.MenuItem.ItemTitel);
+                page.Visible = !menuGroup.IsDelete;
+
+            }
+
+
+
+            foreach (var ribbonPage in ribMain.Pages.ToList())
+            {
+                var groupArray = ribbonPage.Groups.Select(x => x.Visible).ToArray();
+                var vis = false;
+                foreach (var b in groupArray)
+                {
+                    vis = vis || b;
+                }
+
+                ribbonPage.Visible = vis;
             }
         }
 

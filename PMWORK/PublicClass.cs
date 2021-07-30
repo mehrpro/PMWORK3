@@ -11,7 +11,8 @@ namespace PMWORK
     public static class PublicClass
     {
         public static int UserID { get; set; }
-        public static int CompanyID { get; set; }
+
+        //public static int CompanyID { get; set; }
 
         public static void SuccessMessage(string title)
         {

@@ -61,6 +61,12 @@ namespace PMWORK.Repository
         /// <param name="user"></param>
         /// <returns></returns>
         bool AddUsers(ApplicationUser user);
+        /// <summary>
+        /// ویرایش و افزودن سطح دسترسی
+        /// </summary>
+        /// <param name="cleams">لیست مجوزها</param>
+        /// <returns></returns>
+        bool CleamUser(List<Cleam> cleams);
 
 
 
@@ -179,7 +185,11 @@ namespace PMWORK.Repository
             var qryUser = _context.ApplicationUsers.SingleOrDefault(x => x.UserName == username);
             if (qryUser == null) return false;
             if (qryUser.UserPassword == password)
+            {
+                PublicClass.UserID = qryUser.UserId;
                 return true;
+            }
+
             else
                 return false;
 
@@ -189,7 +199,7 @@ namespace PMWORK.Repository
 
         public List<Cleam> GetCleams(int UserId)
         {
-            return _context.Cleams.Include(x => x.MenuGroup).Include(x => x.MenuItem).Where(x => x.UserID_FK == UserId && !x.IsDelete).ToList();
+            return _context.Cleams.Include(x => x.MenuGroup).Include(x => x.MenuItem).Where(x => x.UserID_FK == UserId).ToList();
         }
 
         public List<MenuGroup> GetMenuGroups()
@@ -202,6 +212,39 @@ namespace PMWORK.Repository
             return _context.MenuItems.Where(x => x.GroupID_FK == menuGroup).ToList();
         }
 
+        public bool CleamUser(List<Cleam> cleams)
+        {
+            try
+            {
+                var userid = cleams[0].UserID_FK;
+                foreach (var item in cleams)
+                {
+                    var find = _context.Cleams.SingleOrDefault(x => x.MenuItemID_FK == item.MenuItemID_FK && x.UserID_FK == userid);
+                    if (find == null)
+                    {
+                        _context.Cleams.Add(new Cleam()
+                        {
+                            UserID_FK = userid,
+                            GroupID_FK = item.GroupID_FK,
+                            MenuItemID_FK = item.MenuItemID_FK,
+                            IsDelete = item.IsDelete,
+                        });
+                    }
+                    else
+                    {
+                        find.IsDelete = item.IsDelete;
+                    }
+                }
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
 
     }
 }
+
