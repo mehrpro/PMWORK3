@@ -30,7 +30,7 @@ namespace PMWORK.Admin
             cbxUserList.Properties.DataSource = _codingRepository.GetAllUsers();
             // UpdateRadioGroup();
             CreateColumnsTreeList(treeListAccess);
-            CreateTreeList(treeListAccess);
+            //CreateTreeList(treeListAccess);
 
         }
 
@@ -44,66 +44,47 @@ namespace PMWORK.Admin
             tl.EndUpdate();
         }
 
+        private void CreateTreeList(TreeList tl, int userId)
+        {
+            tl.BeginUnboundLoad();
+            tl.ClearNodes();
+            TreeListNode treeListNodeParent = null;
+            var cleamList = _codingRepository.GetCleams(userId);
+
+            foreach (var item in _codingRepository.GetMenuGroups())
+            {
+                var app = tl.AppendNode(new object[] { item.Description }, treeListNodeParent, CheckState.Unchecked, NodeCheckBoxStyle.Check, item.GroupID);
+                foreach (var menuItem in _codingRepository.GetMenuItemsByGroupId(item.GroupID))
+                {
+                    var child = tl.AppendNode(new object[] { menuItem.Description }, app.Id, menuItem.ItemID);
+                    child.Checked = cleamList.Any(x => x.MenuItemID_FK == menuItem.ItemID);
+                }
+            }
+            tl.EndUnboundLoad();
+            tl.ExpandAll();
+
+
+        }
 
         private void CreateTreeList(TreeList tl)
         {
             tl.BeginUnboundLoad();
             TreeListNode treeListNodeParent = null;
-            TreeListNode codingNode = tl.AppendNode(
-                new object[] { "دارایی فیزیکی" }, treeListNodeParent, CheckState.Unchecked, NodeCheckBoxStyle.Check, true);
-            tl.AppendNode(new object[] { "ماشین آلات" }, codingNode);
-            tl.AppendNode(new object[] { "کدینگ موجودیت" }, codingNode);
-            TreeListNode MaintanceNode = tl.AppendNode(new object[] { "نگهداری و تعمیرات" }, treeListNodeParent, CheckState.Unchecked, NodeCheckBoxStyle.Check, true);
-            tl.AppendNode(new object[] { "درخواست تعمیرات" }, MaintanceNode);
+
+
+            foreach (var item in _codingRepository.GetMenuGroups())
+            {
+                var app = tl.AppendNode(new object[] { item.Description }, treeListNodeParent, CheckState.Unchecked, NodeCheckBoxStyle.Check, item.GroupID);
+                foreach (var menuItem in _codingRepository.GetMenuItemsByGroupId(item.GroupID))
+                {
+                    tl.AppendNode(new object[] { menuItem.Description }, app.Id, menuItem.ItemID);
+                }
+            }
             tl.EndUnboundLoad();
+            tl.ExpandAll();
+            tl.Enabled = false;
         }
 
-
-        //this.treeListAccess.AppendNode(new object[] {
-        //"دارای فیزیکی"}, -1, 0, 0, -1, System.Windows.Forms.CheckState.Unchecked, 
-        //DevExpress.XtraTreeList.NodeCheckBoxStyle.Check, true);
-        //this.treeListAccess.AppendNode(new object[] {            "ماشین آلات"}, 0);
-        //this.treeListAccess.AppendNode(new object[] { "کدینگ موجودیت" }, 0);
-
-        //this.treeListAccess.AppendNode(new object[] { "نگهداری و تعمیرات" }, -1, 0, 0, -1,
-        //    System.Windows.Forms.CheckState.Unchecked, DevExpress.XtraTreeList.NodeCheckBoxStyle.Check, null);
-        //this.treeListAccess.AppendNode(new object[] { "تعمیرگاه" }, 3);
-
-        //this.treeListAccess.AppendNode(new object[] { "گزارشات" }, -1, 0, 0, -1,
-        //    System.Windows.Forms.CheckState.Unchecked, DevExpress.XtraTreeList.NodeCheckBoxStyle.Check, null);
-        //this.treeListAccess.AppendNode(new object[] {
-        //            "گزارش تعمیرات"}, 5);
-        //this.treeListAccess.AppendNode(new object[] {
-        //            "مدیریت نرم افزار"}, -1, 0, 0, -1, System.Windows.Forms.CheckState.Unchecked,
-        //DevExpress.XtraTreeList.NodeCheckBoxStyle.Check, null);
-        //this.treeListAccess.AppendNode(new object[] {
-        //            "مدیریت کاربران"}, 7);
-
-        //private void radioGroupRibbonPage_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    var selected = Convert.ToInt32(radioGroupRibbonPage.EditValue);
-        //    if (selected > 0)
-        //    {
-
-        //        var access = _codingRepository.GetCleamsListByUserId(SelectedUser.UserId);
-        //        chkListPageGroup.Items.Clear();
-        //        foreach (var item in _codingRepository.GetMenuItemsByGroupId(selected))
-        //        {
-
-        //            var bo = access.Any(x => x.MenuItemID_FK == item.ItemID && !x.IsDelete);
-        //            if (bo)
-        //            {
-        //                chkListPageGroup.Items.Add(new DevExpress.XtraEditors.Controls.CheckedListBoxItem(item.ItemID, item.Description, CheckState.Checked));
-        //            }
-        //            else
-        //                chkListPageGroup.Items.Add(new DevExpress.XtraEditors.Controls.CheckedListBoxItem(item.ItemID, item.Description, CheckState.Unchecked));
-        //        }
-
-        //        //var list = chkListPageGroup.Items.ToList();
-
-        //    }
-
-        //}
 
         private void cbxUserList_EditValueChanged(object sender, EventArgs e)
         {
@@ -112,9 +93,29 @@ namespace PMWORK.Admin
             {
                 return;
             }
+            CreateTreeList(treeListAccess, SelectedUser.UserId);
 
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //var accessList = treeListAccess.Selection;
+            var newList = new List<Cleam>();
+            var li = treeListAccess.Nodes.ToList();
+            foreach (var item in li)
+            {
+                var sel = item.Nodes.ToList();
+                var selTag = item.Tag;
+                foreach (var subItem in sel)
+                {
+                    var sub = subItem.Tag;
+                }
+            }
+        }
     }
 }

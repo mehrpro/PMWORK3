@@ -42,12 +42,7 @@ namespace PMWORK.Repository
         /// <param name="menuGroup"></param>
         /// <returns></returns>
         List<MenuItem> GetMenuItemsByGroupId(int menuGroup);
-        /// <summary>
-        /// لیست مجوز های کاربر
-        /// </summary>
-        /// <param name="userid"></param>
-        /// <returns></returns>
-        List<Cleam> GetCleamsListByUserId(int userid);
+
 
 
 
@@ -207,9 +202,6 @@ namespace PMWORK.Repository
             return _context.MenuItems.Where(x => x.GroupID_FK == menuGroup).ToList();
         }
 
-        public List<Cleam> GetCleamsListByUserId(int userid)
-        {
-            return _context.Cleams.Where(x => x.UserID_FK == userid).ToList();
-        }
+
     }
 }

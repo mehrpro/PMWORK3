@@ -71,6 +71,7 @@ namespace PMWORK.Admin
             this.btnClose.Size = new System.Drawing.Size(80, 30);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "بستن";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
@@ -81,6 +82,7 @@ namespace PMWORK.Admin
             this.btnSave.Size = new System.Drawing.Size(80, 30);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "ذخیره";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cbxUserList
             // 
