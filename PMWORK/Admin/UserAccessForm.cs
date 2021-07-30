@@ -58,7 +58,15 @@ namespace PMWORK.Admin
                 foreach (var menuItem in _codingRepository.GetMenuItemsByGroupId(item.GroupID))
                 {
                     var child = treeListAccess.AppendNode(new object[] { menuItem.Description }, app.Id, menuItem.ItemID);
-                    child.Checked = !cleamList.Single(x => x.MenuItemID_FK == menuItem.ItemID).IsDelete;
+                    if (cleamList.Count() > 0)
+                    {
+                        var isdelete = cleamList.SingleOrDefault(x => x.MenuItemID_FK == menuItem.ItemID).IsDelete;
+                        child.Checked = isdelete == null ? false : !isdelete;
+                    }
+                    else
+                    {
+                        child.Checked = false;
+                    }
                 }
             }
             treeListAccess.EndUnboundLoad();

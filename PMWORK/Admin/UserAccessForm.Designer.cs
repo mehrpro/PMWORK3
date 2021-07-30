@@ -59,14 +59,14 @@ namespace PMWORK.Admin
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(483, 96);
+            this.panelControl1.Size = new System.Drawing.Size(387, 96);
             this.panelControl1.TabIndex = 0;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(195, 53);
+            this.btnClose.Location = new System.Drawing.Point(17, 46);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(80, 30);
             this.btnClose.TabIndex = 2;
@@ -77,7 +77,7 @@ namespace PMWORK.Admin
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(281, 53);
+            this.btnSave.Location = new System.Drawing.Point(103, 46);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 30);
             this.btnSave.TabIndex = 2;
@@ -87,13 +87,13 @@ namespace PMWORK.Admin
             // cbxUserList
             // 
             this.cbxUserList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxUserList.Location = new System.Drawing.Point(195, 27);
+            this.cbxUserList.Location = new System.Drawing.Point(17, 20);
             this.cbxUserList.Name = "cbxUserList";
             this.cbxUserList.Parmida_ActivePlusMultiKeys = false;
             this.cbxUserList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxUserList.Properties.PopupView = this.searchLookUpEdit1View;
-            this.cbxUserList.Size = new System.Drawing.Size(239, 20);
+            this.cbxUserList.Size = new System.Drawing.Size(326, 20);
             this.cbxUserList.TabIndex = 1;
             this.cbxUserList.EditValueChanged += new System.EventHandler(this.cbxUserList_EditValueChanged);
             // 
@@ -135,7 +135,7 @@ namespace PMWORK.Admin
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(440, 30);
+            this.labelControl1.Location = new System.Drawing.Point(349, 23);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(20, 13);
             this.labelControl1.TabIndex = 0;
@@ -147,7 +147,7 @@ namespace PMWORK.Admin
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 96);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(483, 423);
+            this.panelControl2.Size = new System.Drawing.Size(387, 283);
             this.panelControl2.TabIndex = 1;
             // 
             // treeListAccess
@@ -157,16 +157,17 @@ namespace PMWORK.Admin
             this.treeListAccess.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeListAccess.Location = new System.Drawing.Point(2, 2);
             this.treeListAccess.Name = "treeListAccess";
-            this.treeListAccess.Size = new System.Drawing.Size(479, 419);
+            this.treeListAccess.Size = new System.Drawing.Size(383, 279);
             this.treeListAccess.TabIndex = 2;
             // 
             // UserAccessForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 519);
+            this.ClientSize = new System.Drawing.Size(387, 379);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "UserAccessForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "دسترسی کاربران";

@@ -186,6 +186,7 @@ namespace PMWORK.Repository
             if (qryUser == null) return false;
             if (qryUser.UserPassword == password)
             {
+                PublicClass.FullNameTask = qryUser.FullName;
                 PublicClass.UserID = qryUser.UserId;
                 return true;
             }

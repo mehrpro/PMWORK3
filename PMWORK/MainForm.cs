@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PMWORK.Entities;
 using PMWORK.Repository;
+using System;
 
 namespace PMWORK
 {
@@ -45,6 +46,8 @@ namespace PMWORK
             InitializeComponent();
             _codingRepository = codingRepository;
             UpdateMainMenu();
+            lblFullNameTaskBar.Caption = PublicClass.FullNameTask;
+            barEditItem1.EditValue =
             // _container = Container;
         }
         private void ShowForms(object obj)
