@@ -14,6 +14,7 @@ namespace PMWORK.Entities
         {
             RequestRepairs = new HashSet<RequestRepair>();
             Codings = new HashSet<Coding>();
+            Cleams = new HashSet<Cleam>();
         }
         public int UserId { get; set; }
         public string UserName { get; set; }
@@ -26,5 +27,6 @@ namespace PMWORK.Entities
 
         public virtual ICollection<RequestRepair> RequestRepairs { get; set; }
         public virtual ICollection<Coding> Codings { get; set; }
+        public virtual ICollection<Cleam> Cleams { get; set; }
     }
 }

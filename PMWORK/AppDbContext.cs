@@ -32,6 +32,11 @@ namespace PMWORK
                 .WithRequired(x => x.ApplicationUser)
                 .HasForeignKey(x => x.UserID_FK)
                 .WillCascadeOnDelete(false);
+            builder.Entity<ApplicationUser>()
+    .HasMany(x => x.Cleams)
+    .WithRequired(x => x.ApplicationUser)
+    .HasForeignKey(x => x.UserID_FK)
+    .WillCascadeOnDelete(false);
 
 
 
@@ -66,7 +71,8 @@ namespace PMWORK
                 .WillCascadeOnDelete(false);
 
             builder.Entity<Cleam>().HasKey(x => x.ID);
-            builder.Entity<Cleam>().Property(x => x.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<Cleam>().Property(x => x.ID).IsRequired()
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             builder.Entity<Cleam>().Property(x => x.UserID_FK).IsRequired();
             builder.Entity<Cleam>().Property(x => x.MenuItemID_FK).IsRequired();
             builder.Entity<Cleam>().Property(x => x.GroupID_FK).IsRequired();
@@ -149,6 +155,7 @@ namespace PMWORK
 
 
 
+
             builder.Entity<ConsumablePart>().HasKey(x => x.ID);
             builder.Entity<ConsumablePart>().Property(x => x.ID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
             builder.Entity<ConsumablePart>().Property(x => x.ConsumablePartTitel).HasMaxLength(250).IsRequired();
@@ -191,6 +198,16 @@ namespace PMWORK
                 .WithRequired(x => x.Machinery)
                 .HasForeignKey(x => x.MachineryID_FK)
                 .WillCascadeOnDelete(false);
+            builder.Entity<Machinery>()
+    .HasMany(x => x.SpareParts)
+    .WithRequired(x => x.Machinery)
+    .HasForeignKey(x => x.MachineryID_FK)
+    .WillCascadeOnDelete(false);
+            builder.Entity<Machinery>()
+    .HasMany(x => x.ServicePeriodes)
+    .WithRequired(x => x.Machinery)
+    .HasForeignKey(x => x.MachineryID_FK)
+    .WillCascadeOnDelete(false);
 
 
 
@@ -243,6 +260,16 @@ namespace PMWORK
                 .WithRequired(x => x.UnitOfMeasurement)
                 .HasForeignKey(x => x.UnitID_FK)
                 .WillCascadeOnDelete(false);
+            builder.Entity<UnitOfMeasurement>()
+    .HasMany(x => x.ServicePeriodes)
+    .WithRequired(x => x.UnitOfMeasurement)
+    .HasForeignKey(x => x.UnitID_FK)
+    .WillCascadeOnDelete(false);
+            builder.Entity<UnitOfMeasurement>()
+    .HasMany(x => x.SpareParts)
+    .WithRequired(x => x.UnitOfMeasurement)
+    .HasForeignKey(x => x.UnitID_FK)
+    .WillCascadeOnDelete(false);
 
 
             builder.Entity<WorkOrder>().HasKey(x => x.ID);
@@ -299,6 +326,40 @@ namespace PMWORK
             builder.Entity<RepairManListed>().Property(x => x.WorkOrderIdFk).IsRequired();
 
 
+            builder.Entity<SparePart>().HasKey(x => x.ID);
+            builder.Entity<SparePart>().Property(x => x.ID).IsRequired()
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<SparePart>().Property(x => x.MachineryID_FK).IsRequired();
+            builder.Entity<SparePart>().Property(x => x.Minimal).IsRequired();
+            builder.Entity<SparePart>().Property(x => x.Number).IsRequired();
+            builder.Entity<SparePart>().Property(x => x.SparePartNumber).HasMaxLength(150);
+            builder.Entity<SparePart>().Property(x => x.SparePartTitle).IsRequired().HasMaxLength(250);
+            builder.Entity<SparePart>().Property(x => x.UnitID_FK).IsRequired();
+            builder.Entity<SparePart>().Property(x => x.Description).HasMaxLength(250);
+
+
+            builder.Entity<ServicePeriode>().HasKey(x => x.ID);
+            builder.Entity<ServicePeriode>().Property(x => x.ID).IsRequired()
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<ServicePeriode>().Property(x => x.MachineryID_FK).IsRequired();
+            builder.Entity<ServicePeriode>().Property(x => x.Periode).IsRequired();
+            builder.Entity<ServicePeriode>().Property(x => x.ServiceTitle).IsRequired().HasMaxLength(250);
+            builder.Entity<ServicePeriode>().Property(x => x.UnitID_FK).IsRequired();
+            builder.Entity<ServicePeriode>().Property(x => x.Description).HasMaxLength(250);
+
+
+            builder.Entity<IdentityMachinery>().HasKey(x => x.ID);
+            builder.Entity<IdentityMachinery>().Property(x => x.ID).IsRequired()
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<IdentityMachinery>().Property(x => x.dateTimeImport).IsRequired().HasColumnType("datetime");
+            builder.Entity<IdentityMachinery>().Property(x => x.dateTimeStart).IsRequired().HasColumnType("datetime");
+            builder.Entity<IdentityMachinery>().Property(x => x.MachinerID_FK).IsRequired();
+            builder.Entity<IdentityMachinery>().Property(x => x.TypeDevice).HasMaxLength(250);
+            builder.Entity<IdentityMachinery>().Property(x => x.Location).HasMaxLength(150);
+
+
+
+
         }
 
 
@@ -320,6 +381,9 @@ namespace PMWORK
         public virtual DbSet<PublicType> PublicTypes { get; set; }
         public virtual DbSet<RepairMan> RepairMens { get; set; }
         public virtual DbSet<RepairManListed> RepairManListeds { get; set; }
+        public virtual DbSet<SparePart> SpareParts { get; set; }
+        public virtual DbSet<ServicePeriode> ServicePeriodes { get; set; }
+        public virtual DbSet<IdentityMachinery> IdentityMachineries { get; set; }
 
 
     }

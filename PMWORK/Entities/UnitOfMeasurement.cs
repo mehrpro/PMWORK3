@@ -15,6 +15,8 @@ namespace PMWORK.Entities
         public UnitOfMeasurement()
         {
             ConsumableParts = new HashSet<ConsumablePart>();
+            ServicePeriodes = new HashSet<ServicePeriode>();
+            SpareParts = new HashSet<SparePart>();
         }
 
 
@@ -24,5 +26,7 @@ namespace PMWORK.Entities
 
 
         public virtual ICollection<ConsumablePart> ConsumableParts { get; set; }
+        public virtual ICollection<ServicePeriode> ServicePeriodes { get; set; }
+        public virtual ICollection<SparePart> SpareParts { get; set; }
     }
 }

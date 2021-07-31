@@ -158,6 +158,7 @@
     <Compile Include="Entities\RepairMan.cs" />
     <Compile Include="Entities\RepairManListed.cs" />
     <Compile Include="Entities\RequestRepair.cs" />
+    <Compile Include="Entities\ServicePeriode.cs" />
     <Compile Include="Entities\SparePart.cs" />
     <Compile Include="Entities\SubGroup.cs" />
     <Compile Include="Entities\UnitOfMeasurement.cs" />
