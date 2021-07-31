@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class DBCreate : DbMigration
+    public partial class DBCreate2 : DbMigration
     {
         public override void Up()
         {
@@ -45,6 +45,47 @@
                 .PrimaryKey(t => t.UserId)
                 .ForeignKey("dbo.Companies", t => t.CompanyID_FK)
                 .Index(t => t.CompanyID_FK);
+            
+            CreateTable(
+                "dbo.Cleams",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        UserID_FK = c.Int(nullable: false),
+                        GroupID_FK = c.Int(nullable: false),
+                        MenuItemID_FK = c.Int(nullable: false),
+                        IsDelete = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.MenuGroups", t => t.GroupID_FK)
+                .ForeignKey("dbo.MenuItems", t => t.MenuItemID_FK)
+                .ForeignKey("dbo.ApplicationUsers", t => t.UserID_FK)
+                .Index(t => t.UserID_FK)
+                .Index(t => t.GroupID_FK)
+                .Index(t => t.MenuItemID_FK);
+            
+            CreateTable(
+                "dbo.MenuGroups",
+                c => new
+                    {
+                        GroupID = c.Int(nullable: false, identity: true),
+                        MenuGroupTitle = c.String(nullable: false, maxLength: 100),
+                        Description = c.String(nullable: false, maxLength: 250),
+                    })
+                .PrimaryKey(t => t.GroupID);
+            
+            CreateTable(
+                "dbo.MenuItems",
+                c => new
+                    {
+                        ItemID = c.Int(nullable: false, identity: true),
+                        GroupID_FK = c.Int(nullable: false),
+                        ItemTitel = c.String(nullable: false, maxLength: 150),
+                        Description = c.String(nullable: false, maxLength: 250),
+                    })
+                .PrimaryKey(t => t.ItemID)
+                .ForeignKey("dbo.MenuGroups", t => t.GroupID_FK)
+                .Index(t => t.GroupID_FK);
             
             CreateTable(
                 "dbo.Codings",
@@ -176,6 +217,42 @@
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
+                "dbo.ServicePeriodes",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        MachineryID_FK = c.Int(nullable: false),
+                        ServiceTitle = c.String(nullable: false, maxLength: 250),
+                        Periode = c.Int(nullable: false),
+                        UnitID_FK = c.Int(nullable: false),
+                        Description = c.String(maxLength: 250),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.UnitOfMeasurements", t => t.UnitID_FK)
+                .ForeignKey("dbo.Machineries", t => t.MachineryID_FK)
+                .Index(t => t.MachineryID_FK)
+                .Index(t => t.UnitID_FK);
+            
+            CreateTable(
+                "dbo.SpareParts",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        MachineryID_FK = c.Int(nullable: false),
+                        SparePartTitle = c.String(nullable: false, maxLength: 250),
+                        SparePartNumber = c.String(maxLength: 150),
+                        Number = c.Int(nullable: false),
+                        Minimal = c.Int(nullable: false),
+                        UnitID_FK = c.Int(nullable: false),
+                        Description = c.String(maxLength: 250),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.UnitOfMeasurements", t => t.UnitID_FK)
+                .ForeignKey("dbo.Machineries", t => t.MachineryID_FK)
+                .Index(t => t.MachineryID_FK)
+                .Index(t => t.UnitID_FK);
+            
+            CreateTable(
                 "dbo.PublicTypes",
                 c => new
                     {
@@ -250,55 +327,29 @@
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
-                "dbo.Cleams",
+                "dbo.IdentityMachineries",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        UserID_FK = c.Int(nullable: false),
-                        GroupID_FK = c.Int(nullable: false),
-                        MenuItemID_FK = c.Int(nullable: false),
-                        IsDelete = c.Boolean(nullable: false),
-                        ApplicationUser_UserId = c.Int(),
+                        MachinerID_FK = c.Int(nullable: false),
+                        TypeDevice = c.String(maxLength: 250),
+                        dateTimeImport = c.DateTime(nullable: false),
+                        dateTimeStart = c.DateTime(nullable: false),
+                        Location = c.String(maxLength: 150),
+                        Length = c.String(),
+                        Width = c.String(),
+                        Height = c.String(),
+                        Machinery_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.ApplicationUsers", t => t.ApplicationUser_UserId)
-                .ForeignKey("dbo.MenuGroups", t => t.GroupID_FK)
-                .ForeignKey("dbo.MenuItems", t => t.MenuItemID_FK)
-                .Index(t => t.GroupID_FK)
-                .Index(t => t.MenuItemID_FK)
-                .Index(t => t.ApplicationUser_UserId);
-            
-            CreateTable(
-                "dbo.MenuGroups",
-                c => new
-                    {
-                        GroupID = c.Int(nullable: false, identity: true),
-                        MenuGroupTitle = c.String(nullable: false, maxLength: 100),
-                        Description = c.String(nullable: false, maxLength: 250),
-                    })
-                .PrimaryKey(t => t.GroupID);
-            
-            CreateTable(
-                "dbo.MenuItems",
-                c => new
-                    {
-                        ItemID = c.Int(nullable: false, identity: true),
-                        GroupID_FK = c.Int(nullable: false),
-                        ItemTitel = c.String(nullable: false, maxLength: 150),
-                        Description = c.String(nullable: false, maxLength: 250),
-                    })
-                .PrimaryKey(t => t.ItemID)
-                .ForeignKey("dbo.MenuGroups", t => t.GroupID_FK)
-                .Index(t => t.GroupID_FK);
+                .ForeignKey("dbo.Machineries", t => t.Machinery_ID)
+                .Index(t => t.Machinery_ID);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.MenuItems", "GroupID_FK", "dbo.MenuGroups");
-            DropForeignKey("dbo.Cleams", "MenuItemID_FK", "dbo.MenuItems");
-            DropForeignKey("dbo.Cleams", "GroupID_FK", "dbo.MenuGroups");
-            DropForeignKey("dbo.Cleams", "ApplicationUser_UserId", "dbo.ApplicationUsers");
+            DropForeignKey("dbo.IdentityMachineries", "Machinery_ID", "dbo.Machineries");
             DropForeignKey("dbo.RequestRepairs", "ApplicantID_FK", "dbo.Applicants");
             DropForeignKey("dbo.Machineries", "ApplicantID_FK", "dbo.Applicants");
             DropForeignKey("dbo.SubGroups", "CompanyID_FK", "dbo.Companies");
@@ -309,24 +360,33 @@
             DropForeignKey("dbo.RequestRepairs", "UserID_FK", "dbo.ApplicationUsers");
             DropForeignKey("dbo.Codings", "UserID_FK", "dbo.ApplicationUsers");
             DropForeignKey("dbo.Machineries", "CodeID_FK", "dbo.Codings");
+            DropForeignKey("dbo.SpareParts", "MachineryID_FK", "dbo.Machineries");
+            DropForeignKey("dbo.ServicePeriodes", "MachineryID_FK", "dbo.Machineries");
             DropForeignKey("dbo.RequestRepairs", "MachineryID_FK", "dbo.Machineries");
             DropForeignKey("dbo.WorkOrders", "RequestID_FK", "dbo.RequestRepairs");
             DropForeignKey("dbo.RepairManListeds", "WorkOrderIdFk", "dbo.WorkOrders");
             DropForeignKey("dbo.RepairManListeds", "RepairManIdFk", "dbo.RepairMen");
             DropForeignKey("dbo.RequestRepairs", "PublicTypeID_FK", "dbo.PublicTypes");
             DropForeignKey("dbo.ConsumableParts", "RequestID_FK", "dbo.RequestRepairs");
+            DropForeignKey("dbo.SpareParts", "UnitID_FK", "dbo.UnitOfMeasurements");
+            DropForeignKey("dbo.ServicePeriodes", "UnitID_FK", "dbo.UnitOfMeasurements");
             DropForeignKey("dbo.ConsumableParts", "UnitID_FK", "dbo.UnitOfMeasurements");
             DropForeignKey("dbo.SubGroups", "GroupID_FK", "dbo.Groups");
             DropForeignKey("dbo.Codings", "SubGroupID_FK", "dbo.SubGroups");
             DropForeignKey("dbo.Codings", "GroupID_FK", "dbo.Groups");
+            DropForeignKey("dbo.Cleams", "UserID_FK", "dbo.ApplicationUsers");
+            DropForeignKey("dbo.MenuItems", "GroupID_FK", "dbo.MenuGroups");
+            DropForeignKey("dbo.Cleams", "MenuItemID_FK", "dbo.MenuItems");
+            DropForeignKey("dbo.Cleams", "GroupID_FK", "dbo.MenuGroups");
             DropForeignKey("dbo.Applicants", "CompanyID_FK", "dbo.Companies");
-            DropIndex("dbo.MenuItems", new[] { "GroupID_FK" });
-            DropIndex("dbo.Cleams", new[] { "ApplicationUser_UserId" });
-            DropIndex("dbo.Cleams", new[] { "MenuItemID_FK" });
-            DropIndex("dbo.Cleams", new[] { "GroupID_FK" });
+            DropIndex("dbo.IdentityMachineries", new[] { "Machinery_ID" });
             DropIndex("dbo.RepairManListeds", new[] { "WorkOrderIdFk" });
             DropIndex("dbo.RepairManListeds", new[] { "RepairManIdFk" });
             DropIndex("dbo.WorkOrders", new[] { "RequestID_FK" });
+            DropIndex("dbo.SpareParts", new[] { "UnitID_FK" });
+            DropIndex("dbo.SpareParts", new[] { "MachineryID_FK" });
+            DropIndex("dbo.ServicePeriodes", new[] { "UnitID_FK" });
+            DropIndex("dbo.ServicePeriodes", new[] { "MachineryID_FK" });
             DropIndex("dbo.ConsumableParts", new[] { "UnitID_FK" });
             DropIndex("dbo.ConsumableParts", new[] { "RequestID_FK" });
             DropIndex("dbo.RequestRepairs", new[] { "ApplicantID_FK" });
@@ -343,15 +403,19 @@
             DropIndex("dbo.Codings", new[] { "SubGroupID_FK" });
             DropIndex("dbo.Codings", new[] { "GroupID_FK" });
             DropIndex("dbo.Codings", new[] { "CompanyID_FK" });
+            DropIndex("dbo.MenuItems", new[] { "GroupID_FK" });
+            DropIndex("dbo.Cleams", new[] { "MenuItemID_FK" });
+            DropIndex("dbo.Cleams", new[] { "GroupID_FK" });
+            DropIndex("dbo.Cleams", new[] { "UserID_FK" });
             DropIndex("dbo.ApplicationUsers", new[] { "CompanyID_FK" });
             DropIndex("dbo.Applicants", new[] { "CompanyID_FK" });
-            DropTable("dbo.MenuItems");
-            DropTable("dbo.MenuGroups");
-            DropTable("dbo.Cleams");
+            DropTable("dbo.IdentityMachineries");
             DropTable("dbo.RepairMen");
             DropTable("dbo.RepairManListeds");
             DropTable("dbo.WorkOrders");
             DropTable("dbo.PublicTypes");
+            DropTable("dbo.SpareParts");
+            DropTable("dbo.ServicePeriodes");
             DropTable("dbo.UnitOfMeasurements");
             DropTable("dbo.ConsumableParts");
             DropTable("dbo.RequestRepairs");
@@ -359,6 +423,9 @@
             DropTable("dbo.SubGroups");
             DropTable("dbo.Groups");
             DropTable("dbo.Codings");
+            DropTable("dbo.MenuItems");
+            DropTable("dbo.MenuGroups");
+            DropTable("dbo.Cleams");
             DropTable("dbo.ApplicationUsers");
             DropTable("dbo.Companies");
             DropTable("dbo.Applicants");
