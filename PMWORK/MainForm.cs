@@ -207,5 +207,15 @@ namespace PMWORK
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.ShowDialog();
         }
+
+        private void btnIdentityDevice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForms(new IdentityDeviceForm());
+        }
+
+        private void btnServicePeriode_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForms(new PMWORK.PMForms.ServicePerideForm());
+        }
     }
 }
