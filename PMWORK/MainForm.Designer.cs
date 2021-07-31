@@ -37,7 +37,7 @@ namespace PMWORK
             this.btnCode = new DevExpress.XtraBars.BarButtonItem();
             this.btnUnit = new DevExpress.XtraBars.BarButtonItem();
             this.btnMachinery = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnIdentityDevice = new DevExpress.XtraBars.BarButtonItem();
             this.btnElectrical = new DevExpress.XtraBars.BarButtonItem();
             this.btnMecanical = new DevExpress.XtraBars.BarButtonItem();
             this.btnPiping = new DevExpress.XtraBars.BarButtonItem();
@@ -55,7 +55,8 @@ namespace PMWORK
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.lblFullNameTaskBar = new DevExpress.XtraBars.BarStaticItem();
-            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.lblDatetimeTaskBar = new DevExpress.XtraBars.BarStaticItem();
+            this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.ribPageInfrasturcture = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PGMachinery = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PGCoding = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -65,15 +66,18 @@ namespace PMWORK
             this.PGReportRepair = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribPageManage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PGUsers = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.lblDatetimeTaskBar = new DevExpress.XtraBars.BarStaticItem();
-            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.PGDataBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnNewDataBase = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBackupDB = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRestoreDB = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribMain
@@ -87,7 +91,7 @@ namespace PMWORK
             this.btnCode,
             this.btnUnit,
             this.btnMachinery,
-            this.barButtonItem6,
+            this.btnIdentityDevice,
             this.btnElectrical,
             this.btnMecanical,
             this.btnPiping,
@@ -106,9 +110,12 @@ namespace PMWORK
             this.barButtonItem4,
             this.lblFullNameTaskBar,
             this.lblDatetimeTaskBar,
-            this.barEditItem1});
+            this.btnNewDataBase,
+            this.btnBackupDB,
+            this.btnRestoreDB,
+            this.barButtonItem7});
             this.ribMain.Location = new System.Drawing.Point(0, 0);
-            this.ribMain.MaxItemId = 21;
+            this.ribMain.MaxItemId = 25;
             this.ribMain.Name = "ribMain";
             this.ribMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribPageInfrasturcture,
@@ -177,13 +184,13 @@ namespace PMWORK
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnMachinery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMachinery_ItemClick);
             // 
-            // barButtonItem6
+            // btnIdentityDevice
             // 
-            this.barButtonItem6.Caption = "شناسنامه دستگاه";
-            this.barButtonItem6.Id = 7;
-            this.barButtonItem6.ImageOptions.Image = global::PMWORK.Properties.Resources.icons8_document_30;
-            this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnIdentityDevice.Caption = "شناسنامه دستگاه";
+            this.btnIdentityDevice.Id = 7;
+            this.btnIdentityDevice.ImageOptions.Image = global::PMWORK.Properties.Resources.icons8_document_30;
+            this.btnIdentityDevice.Name = "btnIdentityDevice";
+            this.btnIdentityDevice.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // btnElectrical
@@ -332,16 +339,23 @@ namespace PMWORK
             this.lblFullNameTaskBar.Id = 17;
             this.lblFullNameTaskBar.Name = "lblFullNameTaskBar";
             // 
-            // repositoryItemDateEdit1
+            // lblDatetimeTaskBar
             // 
-            this.repositoryItemDateEdit1.AutoHeight = false;
-            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lblDatetimeTaskBar.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.lblDatetimeTaskBar.Caption = "تاریخ امروز";
+            this.lblDatetimeTaskBar.Id = 19;
+            this.lblDatetimeTaskBar.Name = "lblDatetimeTaskBar";
+            // 
+            // repositoryItemDateEdit2
+            // 
+            this.repositoryItemDateEdit2.AutoHeight = false;
+            this.repositoryItemDateEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemDateEdit2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
-            this.repositoryItemDateEdit1.Parmida_CheckDateOnLeave = false;
-            this.repositoryItemDateEdit1.Parmida_CheckEmptyFillDateOnEnter = false;
+            this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
+            this.repositoryItemDateEdit2.Parmida_CheckDateOnLeave = false;
+            this.repositoryItemDateEdit2.Parmida_CheckEmptyFillDateOnEnter = false;
             // 
             // ribPageInfrasturcture
             // 
@@ -356,7 +370,7 @@ namespace PMWORK
             // PGMachinery
             // 
             this.PGMachinery.ItemLinks.Add(this.btnMachinery);
-            this.PGMachinery.ItemLinks.Add(this.barButtonItem6);
+            this.PGMachinery.ItemLinks.Add(this.btnIdentityDevice);
             this.PGMachinery.Name = "PGMachinery";
             this.PGMachinery.ShowCaptionButton = false;
             this.PGMachinery.Text = "دارایی فیزیکی";
@@ -410,7 +424,8 @@ namespace PMWORK
             // ribPageManage
             // 
             this.ribPageManage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.PGUsers});
+            this.PGUsers,
+            this.PGDataBase});
             this.ribPageManage.Name = "ribPageManage";
             this.ribPageManage.Text = "مدیر نرم افزار";
             // 
@@ -422,42 +437,68 @@ namespace PMWORK
             this.PGUsers.ShowCaptionButton = false;
             this.PGUsers.Text = "مدیریت کاربران";
             // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            this.repositoryItemDateEdit1.Parmida_CheckDateOnLeave = false;
+            this.repositoryItemDateEdit1.Parmida_CheckEmptyFillDateOnEnter = false;
+            // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
             this.ribbonStatusBar1.ItemLinks.Add(this.lblFullNameTaskBar);
             this.ribbonStatusBar1.ItemLinks.Add(this.lblDatetimeTaskBar);
-            this.ribbonStatusBar1.ItemLinks.Add(this.barEditItem1);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 500);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribMain;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(750, 31);
             // 
-            // lblDatetimeTaskBar
+            // PGDataBase
             // 
-            this.lblDatetimeTaskBar.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.lblDatetimeTaskBar.Caption = "تاریخ امروز";
-            this.lblDatetimeTaskBar.Id = 19;
-            this.lblDatetimeTaskBar.Name = "lblDatetimeTaskBar";
+            this.PGDataBase.ItemLinks.Add(this.btnNewDataBase);
+            this.PGDataBase.ItemLinks.Add(this.btnBackupDB);
+            this.PGDataBase.ItemLinks.Add(this.btnRestoreDB);
+            this.PGDataBase.Name = "PGDataBase";
+            this.PGDataBase.ShowCaptionButton = false;
+            this.PGDataBase.Text = "بانک اطلاعاتی";
             // 
-            // barEditItem1
+            // btnNewDataBase
             // 
-            this.barEditItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barEditItem1.Edit = this.repositoryItemDateEdit2;
-            this.barEditItem1.Enabled = false;
-            this.barEditItem1.Id = 20;
-            this.barEditItem1.Name = "barEditItem1";
+            this.btnNewDataBase.Caption = "New DB";
+            this.btnNewDataBase.Id = 21;
+            this.btnNewDataBase.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnNewDataBase.Name = "btnNewDataBase";
+            this.btnNewDataBase.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // repositoryItemDateEdit2
+            // btnBackupDB
             // 
-            this.repositoryItemDateEdit2.AutoHeight = false;
-            this.repositoryItemDateEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
-            this.repositoryItemDateEdit2.Parmida_CheckDateOnLeave = false;
-            this.repositoryItemDateEdit2.Parmida_CheckEmptyFillDateOnEnter = false;
+            this.btnBackupDB.Caption = "Backup DB";
+            this.btnBackupDB.Id = 22;
+            this.btnBackupDB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btnBackupDB.Name = "btnBackupDB";
+            this.btnBackupDB.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // btnRestoreDB
+            // 
+            this.btnRestoreDB.Caption = "Restore DB";
+            this.btnRestoreDB.Id = 23;
+            this.btnRestoreDB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.btnRestoreDB.Name = "btnRestoreDB";
+            this.btnRestoreDB.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "barButtonItem7";
+            this.barButtonItem7.Id = 24;
+            this.barButtonItem7.Name = "barButtonItem7";
             // 
             // MainForm
             // 
@@ -476,10 +517,10 @@ namespace PMWORK
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -500,7 +541,7 @@ namespace PMWORK
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGRequestReapir;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribPageReports;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGReportRepair;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem btnIdentityDevice;
         private DevExpress.XtraBars.BarButtonItem btnElectrical;
         private DevExpress.XtraBars.BarButtonItem btnMecanical;
         private DevExpress.XtraBars.BarButtonItem btnPiping;
@@ -523,7 +564,11 @@ namespace PMWORK
         private DevExpress.XtraBars.BarStaticItem lblFullNameTaskBar;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraBars.BarStaticItem lblDatetimeTaskBar;
-        private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
+        private DevExpress.XtraBars.BarButtonItem btnNewDataBase;
+        private DevExpress.XtraBars.BarButtonItem btnBackupDB;
+        private DevExpress.XtraBars.BarButtonItem btnRestoreDB;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGDataBase;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
     }
 }

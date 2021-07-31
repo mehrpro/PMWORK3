@@ -31,5 +31,14 @@ namespace PMWORK
             XtraMessageBox.Show(@"خطا در ثبت اطلاعات!", title, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
         }
 
+        public static string TodayPersian()
+        {
+            var today = DateTime.Now;
+            System.Globalization.PersianCalendar pc = new System.Globalization.PersianCalendar();
+            return $"{pc.GetYear(today)}/{pc.GetMonth(today)}/{pc.GetDayOfMonth(today)}";
+        }
+
+        
+
     }
 }

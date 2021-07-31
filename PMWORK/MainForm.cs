@@ -47,7 +47,7 @@ namespace PMWORK
             _codingRepository = codingRepository;
             UpdateMainMenu();
             lblFullNameTaskBar.Caption = PublicClass.FullNameTask;
-            barEditItem1.EditValue =
+            lblDatetimeTaskBar.Caption = PublicClass.TodayPersian();
             // _container = Container;
         }
         private void ShowForms(object obj)
