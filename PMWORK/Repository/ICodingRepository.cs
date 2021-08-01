@@ -69,12 +69,20 @@ namespace PMWORK.Repository
         /// <param name="groupId">شناسه گروه اصلی</param>
         /// <returns></returns>
         List<SubGroup> GetSubGroupsByGroupId(int groupId);
+
+        /// <summary>
+        /// لیست واحد ها براساس شناسه شرکت
+        /// </summary>
+        /// <param name="companyId">شناسه شرکت</param>
+        /// <returns></returns>
+        List<Applicant> GetApplicantsByCompanyId(int companyId);
         /// <summary>
         /// لیست ماشین آلات براساس شناسه شرکت
         /// </summary>
         /// <param name="companyId">شناسه شرکت</param>
         /// <returns></returns>
-        List<Coding> GetMachineryListById(int companyId);
+        List<Machinery> GetMachineriesListByCompanyId(int companyId);
+
 
 
 
@@ -305,9 +313,16 @@ namespace PMWORK.Repository
             return _context.SubGroups.Where(x => x.GroupID_FK == groupId).ToList();
         }
 
-        public List<Coding> GetMachineryListById(int companyId)
+
+
+        public List<Applicant> GetApplicantsByCompanyId(int companyId)
         {
-            return _context.Codings.Where(x => x.CompanyID_FK == companyId).ToList();
+            return _context.Applicants.Where(x => x.CompanyID_FK == companyId).ToList();
+        }
+
+        public List<Machinery> GetMachineriesListByCompanyId(int companyId)
+        {
+            return _context.Machineries.Where(x => x.CompanyID == companyId).ToList();
         }
     }
 }

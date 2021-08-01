@@ -44,8 +44,12 @@ namespace PMWORK.MachineryForms
         private async Task UpdateCodingList(int cid, int aid)
         {
             await UpdateCbxCoding(cid);
-            var qryMasterMachineryList = await _db.Machineries.Include(a => a.Applicant).Include(x=>x.Coding).ToListAsync();
-            var qryMachineryList = qryMasterMachineryList.Where(x => x.CompanyID == cid && x.IsActive && !x.IsDelete && x.ApplicantID_FK == aid).ToList();
+            var qryMasterMachineryList = await _db.Machineries
+                .Include(a => a.Applicant)
+                .Include(x=>x.Coding)
+                .ToListAsync();
+            var qryMachineryList = qryMasterMachineryList
+                .Where(x => x.CompanyID == cid && x.IsActive && !x.IsDelete && x.ApplicantID_FK == aid).ToList();
             foreach (var item in qryMasterMachineryList)
             {
                 var result = _codingListForComboBox.SingleOrDefault(x => x.Cod == item.Coding.Code);
