@@ -24,9 +24,16 @@ namespace PMWORK.CodingForms
             _codingRepository = codingRepository;
             cbxCompany.Properties.DisplayMember = "Title";
             cbxCompany.Properties.ValueMember = "ID";
-
+            cbxCompany.Properties.DataSource = _codingRepository.GetAllCompanies().Select(x => new ComboBoxBaseClass
+            {
+                ID = x.ID,
+                Title = x.CompanyTitle,
+                Tag = x.Description
+            }).ToList(); ;
             cbxApplicantList.Properties.DisplayMember = "Title";
             cbxApplicantList.Properties.ValueMember = "ID";
+
+
 
 
 
@@ -40,7 +47,7 @@ namespace PMWORK.CodingForms
                 cbxApplicantList.Properties.DataSource = null;
                 return;
             }
-            cbxApplicantList.Properties.DataSource = 
+            cbxApplicantList.Properties.DataSource =
                 _codingRepository.GetApplicantsByCompanyId(_selectedCompany.ID)
             .Select(x => new ComboBoxBaseClass
             {
@@ -58,7 +65,7 @@ namespace PMWORK.CodingForms
             {
                 return;
             }
-            cbx
+            dgvMachineryList.DataSource = _codingRepository.GetMachineriesListByApplicantId(_selectedApplicant.ID);
         }
     }
 }

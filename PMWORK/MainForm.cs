@@ -210,7 +210,12 @@ namespace PMWORK
 
         private void btnIdentityDevice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowForms(new IdentityDeviceForm());
+            var frm = _container.GetInstance<IdentityDeviceForm>();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
 
         private void btnServicePeriode_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

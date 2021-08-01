@@ -81,7 +81,7 @@ namespace PMWORK.Repository
         /// </summary>
         /// <param name="companyId">شناسه شرکت</param>
         /// <returns></returns>
-        List<Machinery> GetMachineriesListByCompanyId(int companyId);
+        List<Machinery> GetMachineriesListByApplicantId(int companyId);
 
 
 
@@ -320,9 +320,9 @@ namespace PMWORK.Repository
             return _context.Applicants.Where(x => x.CompanyID_FK == companyId).ToList();
         }
 
-        public List<Machinery> GetMachineriesListByCompanyId(int companyId)
+        public List<Machinery> GetMachineriesListByApplicantId(int applicantId)
         {
-            return _context.Machineries.Where(x => x.CompanyID == companyId).ToList();
+            return _context.Machineries.Where(x => x.CompanyID == applicantId).ToList();
         }
     }
 }
