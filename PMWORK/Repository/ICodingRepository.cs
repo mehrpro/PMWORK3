@@ -42,6 +42,40 @@ namespace PMWORK.Repository
         /// <param name="menuGroup"></param>
         /// <returns></returns>
         List<MenuItem> GetMenuItemsByGroupId(int menuGroup);
+        /// <summary>
+        /// لیست شرکت ها
+        /// </summary>
+        /// <returns></returns>
+        List<Company> GetAllCompanies();
+        /// <summary>
+        /// لیست گروه های اصلی
+        /// </summary>
+        /// <returns></returns>
+        List<Group> GetAllGroups();
+        /// <summary>
+        /// لیست گروه های اصلی براساس شناسه شرکت
+        /// </summary>
+        /// <param name="companyId">شناسه شرکت</param>
+        /// <returns></returns>
+        List<Group> GetGroupsByCompanyId(int companyId);
+        /// <summary>
+        /// لیست گروه های فرعی
+        /// </summary>
+        /// <returns></returns>
+        List<SubGroup> GetAllSubGroup();
+        /// <summary>
+        /// لیست گروه های فرعی براساس شناسه گروه اصلی
+        /// </summary>
+        /// <param name="groupId">شناسه گروه اصلی</param>
+        /// <returns></returns>
+        List<SubGroup> GetSubGroupsByGroupId(int groupId);
+        /// <summary>
+        /// لیست ماشین آلات براساس شناسه شرکت
+        /// </summary>
+        /// <param name="companyId">شناسه شرکت</param>
+        /// <returns></returns>
+        List<Coding> GetMachineryListById(int companyId);
+
 
 
 
@@ -246,6 +280,35 @@ namespace PMWORK.Repository
 
         }
 
+        public List<Company> GetAllCompanies()
+        {
+            return _context.Companies.ToList();
+        }
+
+        public List<Group> GetAllGroups()
+        {
+            return _context.Groups.ToList();
+        }
+
+        public List<Group> GetGroupsByCompanyId(int companyId)
+        {
+            return _context.Groups.Where(x => x.CompanyID_FK == companyId).ToList();
+        }
+
+        public List<SubGroup> GetAllSubGroup()
+        {
+            return _context.SubGroups.ToList();
+        }
+
+        public List<SubGroup> GetSubGroupsByGroupId(int groupId)
+        {
+            return _context.SubGroups.Where(x => x.GroupID_FK == groupId).ToList();
+        }
+
+        public List<Coding> GetMachineryListById(int companyId)
+        {
+            return _context.Codings.Where(x => x.CompanyID_FK == companyId).ToList();
+        }
     }
 }
 

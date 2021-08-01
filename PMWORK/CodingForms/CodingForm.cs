@@ -166,7 +166,7 @@ namespace PMWORK.CodingForms
             {
                 return;
             }
-            cbxSubGroupList(_selectCompany.ID, _selectGroup.ID);
+           // cbxSubGroupList(_selectCompany.ID, _selectGroup.ID);
             ///
             CodeList();
         }
