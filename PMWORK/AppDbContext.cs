@@ -111,6 +111,11 @@ namespace PMWORK
                  .WithRequired(x => x.Applicant)
                   .HasForeignKey(x => x.ApplicantID_FK)
                   .WillCascadeOnDelete(false);
+            builder.Entity<Applicant>()
+     .HasMany(x => x.IdentityMachineries)
+     .WithRequired(x => x.Applicant)
+      .HasForeignKey(x => x.ApplicantID_FK)
+      .WillCascadeOnDelete(false);
 
 
 
@@ -357,7 +362,7 @@ namespace PMWORK
             builder.Entity<IdentityMachinery>().Property(x => x.dateTimeStart).IsRequired().HasColumnType("datetime");
             builder.Entity<IdentityMachinery>().Property(x => x.MachinerID_FK).IsRequired();
             builder.Entity<IdentityMachinery>().Property(x => x.TypeDevice).HasMaxLength(250);
-            builder.Entity<IdentityMachinery>().Property(x => x.Location).HasMaxLength(150);
+            builder.Entity<IdentityMachinery>().Property(x => x.ApplicantID_FK).IsRequired();
 
 
 

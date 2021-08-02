@@ -83,7 +83,11 @@ namespace PMWORK.CodingForms
                 return;
             }
             var selected = (Entities.Machinery)gvMachineryList.GetFocusedRow();
-
+            var frm = _container.GetInstance<IdentityMachineryForm>();
+            frm.Code = selected.Coding.Code.ToString();
+            frm.MachineryID = selected.ID;
+            frm.MachineryName = selected.MachineryTitle;
+            frm.Show();
 
         }
 

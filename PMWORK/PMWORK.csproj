@@ -231,6 +231,12 @@
       <DependentUpon>202108021306513_UpdateSpare1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PMForms\IdentityMachineryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PMForms\IdentityMachineryForm.Designer.cs">
+      <DependentUpon>IdentityMachineryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PMForms\ServicePerideForm.cs">
       <SubType>Form</SubType>
     </Compile>

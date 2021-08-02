@@ -14,10 +14,12 @@ namespace PMWORK.Entities
         public string TypeDevice { get; set; }
         public DateTime dateTimeImport { get; set; }
         public DateTime dateTimeStart { get; set; }
-        public string Location { get; set; }
+        public int ApplicantID_FK { get; set; }
+        public Applicant Applicant { get; set; }
         public string Length { get; set; }
         public string Width { get; set; }
         public string Height { get; set; }
+
 
 
 
