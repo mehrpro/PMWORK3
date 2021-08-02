@@ -542,6 +542,7 @@ namespace PMWORK.PMForms
             this.Controls.Add(this.panelControl1);
             this.Name = "ServicePerideForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "سرویس دوره ای";
             this.Load += new System.EventHandler(this.ServicePerideForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

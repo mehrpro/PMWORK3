@@ -82,6 +82,12 @@ namespace PMWORK.Repository
         /// <param name="companyId">شناسه شرکت</param>
         /// <returns></returns>
         List<Machinery> GetMachineriesListByApplicantId(int companyId);
+        /// <summary>
+        /// لیست سرویس دوره ای براساس شناسه ماشین
+        /// </summary>
+        /// <param name="MachineryID"></param>
+        /// <returns></returns>
+        List<ServicePeriode> GetServicePeriodesByMachineriId(int MachineryID);
 
 
 
@@ -361,6 +367,11 @@ namespace PMWORK.Repository
                     return false;
                 }
             }
+        }
+
+        public List<ServicePeriode> GetServicePeriodesByMachineriId(int MachineryID)
+        {
+            return _context.ServicePeriodes.Include(x => x.UnitOfMeasurement).Where(x => x.MachineryID_FK == MachineryID).ToList();
         }
     }
 }

@@ -40,6 +40,7 @@ namespace PMWORK.PMForms
             txtMachineryID.EditValue = machineryID;
             txtMachineryName.EditValue = machineryName;
             txtCode.EditValue = code;
+            UpdateServicePeriodeList();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -62,6 +63,12 @@ namespace PMWORK.PMForms
             numPeriode.EditValue = 0;
             cbxUnit.EditValue = null;
             SelectedRow = null;
+            btnClose.Text = PublicClass.CloseStr;
+        }
+
+        private void UpdateServicePeriodeList()
+        {
+            dgvServiceList.DataSource = _codingRepository.GetServicePeriodesByMachineriId(machineryID);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -116,6 +123,7 @@ namespace PMWORK.PMForms
             {
                 PublicClass.ErrorValidationMessage(Text);
             }
+            UpdateServicePeriodeList();
         }
 
         private void btnSelectRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
