@@ -45,6 +45,11 @@ namespace PMWORK.CodingForms
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -64,6 +69,8 @@ namespace PMWORK.CodingForms
             this.btnSpareParts = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.IdentityColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnIdentity = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.ElectricalColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnElectrical = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbxApplicantList.Properties)).BeginInit();
@@ -77,6 +84,7 @@ namespace PMWORK.CodingForms
             ((System.ComponentModel.ISupportInitialize)(this.btnServices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSpareParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnIdentity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnElectrical)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -177,7 +185,8 @@ namespace PMWORK.CodingForms
             this.dgvMachineryList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnIdentity,
             this.btnSpareParts,
-            this.btnServices});
+            this.btnServices,
+            this.btnElectrical});
             this.dgvMachineryList.Size = new System.Drawing.Size(903, 479);
             this.dgvMachineryList.TabIndex = 0;
             this.dgvMachineryList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -245,7 +254,8 @@ namespace PMWORK.CodingForms
             this.CodingColumn,
             this.ServiceColumn,
             this.SparePartColumn,
-            this.IdentityColumn});
+            this.IdentityColumn,
+            this.ElectricalColumn});
             this.gvMachineryList.GridControl = this.dgvMachineryList;
             this.gvMachineryList.Name = "gvMachineryList";
             this.gvMachineryList.OptionsFind.AlwaysVisible = true;
@@ -254,12 +264,12 @@ namespace PMWORK.CodingForms
             // 
             this.IdColumn.Caption = "شناسه";
             this.IdColumn.FieldName = "ID";
-            this.IdColumn.MaxWidth = 80;
-            this.IdColumn.MinWidth = 80;
+            this.IdColumn.MaxWidth = 70;
+            this.IdColumn.MinWidth = 70;
             this.IdColumn.Name = "IdColumn";
             this.IdColumn.Visible = true;
             this.IdColumn.VisibleIndex = 0;
-            this.IdColumn.Width = 80;
+            this.IdColumn.Width = 70;
             // 
             // MachineryTitleColumn
             // 
@@ -268,7 +278,7 @@ namespace PMWORK.CodingForms
             this.MachineryTitleColumn.Name = "MachineryTitleColumn";
             this.MachineryTitleColumn.Visible = true;
             this.MachineryTitleColumn.VisibleIndex = 2;
-            this.MachineryTitleColumn.Width = 397;
+            this.MachineryTitleColumn.Width = 495;
             // 
             // CodingColumn
             // 
@@ -310,12 +320,11 @@ namespace PMWORK.CodingForms
             // 
             this.SparePartColumn.Caption = "قطعات یدکی";
             this.SparePartColumn.ColumnEdit = this.btnSpareParts;
-            this.SparePartColumn.MaxWidth = 90;
-            this.SparePartColumn.MinWidth = 90;
+            this.SparePartColumn.MaxWidth = 75;
+            this.SparePartColumn.MinWidth = 75;
             this.SparePartColumn.Name = "SparePartColumn";
             this.SparePartColumn.Visible = true;
             this.SparePartColumn.VisibleIndex = 5;
-            this.SparePartColumn.Width = 90;
             // 
             // btnSpareParts
             // 
@@ -335,12 +344,11 @@ namespace PMWORK.CodingForms
             // 
             this.IdentityColumn.Caption = "شناسنامه";
             this.IdentityColumn.ColumnEdit = this.btnIdentity;
-            this.IdentityColumn.MaxWidth = 90;
-            this.IdentityColumn.MinWidth = 90;
+            this.IdentityColumn.MaxWidth = 75;
+            this.IdentityColumn.MinWidth = 75;
             this.IdentityColumn.Name = "IdentityColumn";
             this.IdentityColumn.Visible = true;
             this.IdentityColumn.VisibleIndex = 3;
-            this.IdentityColumn.Width = 90;
             // 
             // btnIdentity
             // 
@@ -355,6 +363,26 @@ namespace PMWORK.CodingForms
             this.btnIdentity.Name = "btnIdentity";
             this.btnIdentity.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnIdentity.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnIdentity_ButtonClick);
+            // 
+            // ElectricalColumn
+            // 
+            this.ElectricalColumn.Caption = "توان مصرفی";
+            this.ElectricalColumn.ColumnEdit = this.btnElectrical;
+            this.ElectricalColumn.MaxWidth = 90;
+            this.ElectricalColumn.MinWidth = 90;
+            this.ElectricalColumn.Name = "ElectricalColumn";
+            this.ElectricalColumn.Visible = true;
+            this.ElectricalColumn.VisibleIndex = 6;
+            this.ElectricalColumn.Width = 90;
+            // 
+            // btnElectrical
+            // 
+            this.btnElectrical.AutoHeight = false;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            this.btnElectrical.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnElectrical.Name = "btnElectrical";
+            this.btnElectrical.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // IdentityDeviceForm
             // 
@@ -380,6 +408,7 @@ namespace PMWORK.CodingForms
             ((System.ComponentModel.ISupportInitialize)(this.btnServices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSpareParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnIdentity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnElectrical)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -405,5 +434,7 @@ namespace PMWORK.CodingForms
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.SearchLookUpEdit cbxCompany;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Columns.GridColumn ElectricalColumn;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnElectrical;
     }
 }

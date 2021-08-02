@@ -19,6 +19,9 @@ namespace PMWORK.Entities
         public string Length { get; set; }
         public string Width { get; set; }
         public string Height { get; set; }
+        public string Wight { get; set; }
+        public string Wather { get; set; }
+        public Oil MyProperty { get; set; }
 
 
 
