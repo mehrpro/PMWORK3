@@ -322,7 +322,7 @@ namespace PMWORK.Repository
 
         public List<Machinery> GetMachineriesListByApplicantId(int applicantId)
         {
-            return _context.Machineries.Where(x => x.CompanyID == applicantId).ToList();
+            return _context.Machineries.Include(x => x.Coding).Where(x => x.ApplicantID_FK == applicantId).ToList();
         }
     }
 }

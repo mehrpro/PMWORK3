@@ -1,7 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PMWORK.Repository;
+using PMWORK.PMForms;
+using StructureMap;
 
 namespace PMWORK.CodingForms
 {
@@ -17,6 +19,12 @@ namespace PMWORK.CodingForms
         private readonly ICodingRepository _codingRepository;
         private ComboBoxBaseClass _selectedCompany;
         private ComboBoxBaseClass _selectedApplicant;
+        private Container _container;
+        public Container Container
+        {
+            get { return _container; }
+            set { _container = value; }
+        }
 
         public IdentityDeviceForm(ICodingRepository codingRepository)
         {
@@ -44,9 +52,12 @@ namespace PMWORK.CodingForms
             _selectedCompany = (ComboBoxBaseClass)cbxCompany.GetSelectedDataRow();
             if (_selectedCompany == null)
             {
+                dgvMachineryList.DataSource = null;
+
                 cbxApplicantList.Properties.DataSource = null;
                 return;
             }
+            dgvMachineryList.DataSource = null;
             cbxApplicantList.Properties.DataSource =
                 _codingRepository.GetApplicantsByCompanyId(_selectedCompany.ID)
             .Select(x => new ComboBoxBaseClass
@@ -66,6 +77,39 @@ namespace PMWORK.CodingForms
                 return;
             }
             dgvMachineryList.DataSource = _codingRepository.GetMachineriesListByApplicantId(_selectedApplicant.ID);
+        }
+
+        private void btnIdentity_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (gvMachineryList.GetFocusedRowCellValue("ID") == null)
+            {
+                return;
+            }
+            var selected = (Entities.Machinery)gvMachineryList.GetFocusedRow();
+
+
+        }
+
+        private void btnServices_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (gvMachineryList.GetFocusedRowCellValue("ID") == null)
+            {
+                return;
+            }
+            var selected = (Entities.Machinery)gvMachineryList.GetFocusedRow();
+
+            var frm = _container.GetInstance<ServicePerideForm>();
+            frm.Show();
+        }
+
+        private void btnSpareParts_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (gvMachineryList.GetFocusedRowCellValue("ID") == null)
+            {
+                return;
+            }
+            var selected = (Entities.Machinery)gvMachineryList.GetFocusedRow();
+
         }
     }
 }

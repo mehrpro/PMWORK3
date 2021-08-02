@@ -304,6 +304,7 @@ namespace PMWORK.CodingForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnServices.Name = "btnServices";
             this.btnServices.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnServices.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnServices_ButtonClick);
             // 
             // SparePartColumn
             // 
@@ -328,6 +329,7 @@ namespace PMWORK.CodingForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSpareParts.Name = "btnSpareParts";
             this.btnSpareParts.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnSpareParts.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSpareParts_ButtonClick);
             // 
             // IdentityColumn
             // 
@@ -352,6 +354,7 @@ namespace PMWORK.CodingForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnIdentity.Name = "btnIdentity";
             this.btnIdentity.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnIdentity.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnIdentity_ButtonClick);
             // 
             // IdentityDeviceForm
             // 
