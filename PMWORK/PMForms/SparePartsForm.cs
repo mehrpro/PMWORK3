@@ -44,13 +44,15 @@ namespace PMWORK.PMForms
             cbxUnit.EditValue = null;
             SelectedRow = null;
             chkStatus.Checked = true;
+            btnClose.Text = PublicClass.CloseStr;
+            UpdateSparePartList();
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             if (btnClose.Text == PublicClass.CancelStr)
             {
-                btnClose.Text = PublicClass.CloseStr;
                 ClearForm();
             }
             else
@@ -59,13 +61,36 @@ namespace PMWORK.PMForms
             }
         }
 
+        private void UpdateSparePartList()
+        {
+            dgvSparePartList.DataSource = _codingRepository.GetSparePartByMachineriId(machineryID);
+
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (dx.Validate())
             {
                 if (btnClose.Text == PublicClass.CancelStr)
                 {
+                    
+                    SelectedRow.Description = txtDescription.Text.Trim();
+                    SelectedRow.IsActive = chkStatus.Checked;
+                    SelectedRow.MachineryID_FK = machineryID;
+                    SelectedRow.Minimal = Convert.ToInt32(numMinimal.EditValue);
+                    SelectedRow.SparePartNumber = txtSpartNumber.Text.Trim();
+                    SelectedRow.SparePartTitle = txtSpareTitle.Text.Trim();
+                    SelectedRow.UnitID_FK = Convert.ToInt32(cbxUnit.EditValue);
 
+                    var result = _codingRepository.AddSparePart(SelectedRow);
+                    if (result)
+                    {
+                        PublicClass.SuccessMessage(Text);
+                        ClearForm();
+                    }
+                    else
+                    {
+                        PublicClass.ErrorSave(Text);
+                    }
                 }
                 else
                 {
@@ -77,10 +102,36 @@ namespace PMWORK.PMForms
                     obj.SparePartNumber = txtSpartNumber.Text.Trim();
                     obj.SparePartTitle = txtSpareTitle.Text.Trim();
                     obj.UnitID_FK = Convert.ToInt32(cbxUnit.EditValue);
-                    
-                    var result = _codingRepository.add
+
+                    var result = _codingRepository.AddSparePart(obj);
+                    if (result)
+                    {
+                        PublicClass.SuccessMessage(Text);
+                        ClearForm();
+                    }
+                    else
+                    {
+                        PublicClass.ErrorSave(Text);
+                    }
                 }
+                //UpdateSparePartList();
             }
+            else
+            {
+                PublicClass.ErrorValidationMessage(Text);
+            }
+        }
+
+        private void btnSelectRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (gvSparePartList.GetFocusedRowCellValue("ID") == null) return;
+            SelectedRow = (SparePart)gvSparePartList.GetFocusedRow();
+             txtDescription.Text = SelectedRow.Description;
+             chkStatus.Checked = SelectedRow.IsActive ;            
+            numMinimal.EditValue = SelectedRow.Minimal;
+            txtSpartNumber.Text = SelectedRow.SparePartNumber;
+           txtSpareTitle.Text = SelectedRow.SparePartTitle;
+           cbxUnit.EditValue = SelectedRow.UnitID_FK ;
         }
     }
 }
