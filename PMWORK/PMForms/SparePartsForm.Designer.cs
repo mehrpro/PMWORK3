@@ -29,7 +29,12 @@ namespace PMWORK.PMForms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SparePartsForm));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -71,6 +76,7 @@ namespace PMWORK.PMForms
             this.StatusColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SpareDesColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
+            this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkStatus.Properties)).BeginInit();
@@ -89,6 +95,7 @@ namespace PMWORK.PMForms
             ((System.ComponentModel.ISupportInitialize)(this.gvSparePartList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelectRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -138,6 +145,7 @@ namespace PMWORK.PMForms
             this.btnSave.Size = new System.Drawing.Size(80, 30);
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "ذخیره";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -162,6 +170,9 @@ namespace PMWORK.PMForms
             this.cbxUnit.Properties.PopupView = this.searchLookUpEdit1View;
             this.cbxUnit.Size = new System.Drawing.Size(124, 20);
             this.cbxUnit.TabIndex = 16;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxUnit, conditionValidationRule1);
             // 
             // searchLookUpEdit1View
             // 
@@ -236,6 +247,10 @@ namespace PMWORK.PMForms
             this.txtDescription.Parmida_ActivePlusMultiKeys = false;
             this.txtDescription.Size = new System.Drawing.Size(362, 20);
             this.txtDescription.TabIndex = 3;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Less;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.Value1 = "10";
+            this.dx.SetValidationRule(this.txtDescription, conditionValidationRule2);
             // 
             // txtSpartNumber
             // 
@@ -254,6 +269,9 @@ namespace PMWORK.PMForms
             this.txtSpareTitle.Parmida_ActivePlusMultiKeys = false;
             this.txtSpareTitle.Size = new System.Drawing.Size(362, 20);
             this.txtSpareTitle.TabIndex = 3;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtSpareTitle, conditionValidationRule3);
             // 
             // labelControl4
             // 
@@ -339,6 +357,10 @@ namespace PMWORK.PMForms
             this.numMinimal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.numMinimal.Size = new System.Drawing.Size(124, 20);
             this.numMinimal.TabIndex = 15;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            conditionValidationRule4.Value1 = "0";
+            this.dx.SetValidationRule(this.numMinimal, conditionValidationRule4);
             // 
             // panelControl2
             // 
@@ -560,6 +582,7 @@ namespace PMWORK.PMForms
             ((System.ComponentModel.ISupportInitialize)(this.gvSparePartList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelectRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -602,5 +625,6 @@ namespace PMWORK.PMForms
         private DevExpress.XtraGrid.Columns.GridColumn StatusColumn;
         private DevExpress.XtraGrid.Columns.GridColumn SpareDesColumn;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dx;
     }
 }

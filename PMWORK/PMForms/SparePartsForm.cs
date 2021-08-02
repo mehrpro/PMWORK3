@@ -51,11 +51,35 @@ namespace PMWORK.PMForms
             if (btnClose.Text == PublicClass.CancelStr)
             {
                 btnClose.Text = PublicClass.CloseStr;
-
+                ClearForm();
             }
             else
             {
                 Close();
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (dx.Validate())
+            {
+                if (btnClose.Text == PublicClass.CancelStr)
+                {
+
+                }
+                else
+                {
+                    var obj = new SparePart();
+                    obj.Description = txtDescription.Text.Trim();
+                    obj.IsActive = chkStatus.Checked;
+                    obj.MachineryID_FK = machineryID;
+                    obj.Minimal = Convert.ToInt32(numMinimal.EditValue);
+                    obj.SparePartNumber = txtSpartNumber.Text.Trim();
+                    obj.SparePartTitle = txtSpareTitle.Text.Trim();
+                    obj.UnitID_FK = Convert.ToInt32(cbxUnit.EditValue);
+                    
+                    var result = _codingRepository.add
+                }
             }
         }
     }
