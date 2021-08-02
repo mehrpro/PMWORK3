@@ -29,17 +29,25 @@ namespace PMWORK.PMForms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServicePerideForm));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.chkStatus = new DevExpress.XtraEditors.CheckEdit();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.cbxUnit = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.UnitNameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UnitDesColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.txtMachineryName = new DevExpress.XtraEditors.TextEdit();
             this.txtMachineryID = new DevExpress.XtraEditors.TextEdit();
@@ -64,11 +72,12 @@ namespace PMWORK.PMForms
             this.UnitColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.StatusColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DescriptionColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.chkStatus = new DevExpress.XtraEditors.CheckEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
+            this.btnSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxUnit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
@@ -82,9 +91,9 @@ namespace PMWORK.PMForms
             ((System.ComponentModel.ISupportInitialize)(this.dgvServiceList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvServiceList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelectRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -112,6 +121,16 @@ namespace PMWORK.PMForms
             this.panelControl1.Size = new System.Drawing.Size(800, 147);
             this.panelControl1.TabIndex = 1;
             // 
+            // chkStatus
+            // 
+            this.chkStatus.Location = new System.Drawing.Point(690, 103);
+            this.chkStatus.Name = "chkStatus";
+            this.chkStatus.Parmida_ActivePlusMultiKeys = false;
+            this.chkStatus.Properties.Caption = "فعال";
+            this.chkStatus.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.chkStatus.Size = new System.Drawing.Size(50, 19);
+            this.chkStatus.TabIndex = 19;
+            // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -121,6 +140,7 @@ namespace PMWORK.PMForms
             this.btnSave.Size = new System.Drawing.Size(80, 30);
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "ذخیره";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -131,6 +151,7 @@ namespace PMWORK.PMForms
             this.btnClose.Size = new System.Drawing.Size(80, 30);
             this.btnClose.TabIndex = 17;
             this.btnClose.Text = "بستن";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // cbxUnit
             // 
@@ -140,16 +161,40 @@ namespace PMWORK.PMForms
             this.cbxUnit.Parmida_ActivePlusMultiKeys = false;
             this.cbxUnit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxUnit.Properties.PopupFormSize = new System.Drawing.Size(150, 0);
             this.cbxUnit.Properties.PopupView = this.searchLookUpEdit1View;
             this.cbxUnit.Size = new System.Drawing.Size(124, 20);
             this.cbxUnit.TabIndex = 16;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.Value1 = "0";
+            this.dx.SetValidationRule(this.cbxUnit, conditionValidationRule1);
             // 
             // searchLookUpEdit1View
             // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.UnitNameColumn,
+            this.UnitDesColumn});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // UnitNameColumn
+            // 
+            this.UnitNameColumn.Caption = "واحد";
+            this.UnitNameColumn.FieldName = "Unit";
+            this.UnitNameColumn.Name = "UnitNameColumn";
+            this.UnitNameColumn.Visible = true;
+            this.UnitNameColumn.VisibleIndex = 0;
+            // 
+            // UnitDesColumn
+            // 
+            this.UnitDesColumn.Caption = "توضیحات";
+            this.UnitDesColumn.FieldName = "Description";
+            this.UnitDesColumn.Name = "UnitDesColumn";
+            this.UnitDesColumn.Visible = true;
+            this.UnitDesColumn.VisibleIndex = 1;
             // 
             // txtCode
             // 
@@ -180,6 +225,9 @@ namespace PMWORK.PMForms
             this.txtMachineryID.Properties.ReadOnly = true;
             this.txtMachineryID.Size = new System.Drawing.Size(184, 20);
             this.txtMachineryID.TabIndex = 3;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtMachineryID, conditionValidationRule2);
             // 
             // labelControl6
             // 
@@ -207,6 +255,9 @@ namespace PMWORK.PMForms
             this.txtServiceTitle.Parmida_ActivePlusMultiKeys = false;
             this.txtServiceTitle.Size = new System.Drawing.Size(362, 20);
             this.txtServiceTitle.TabIndex = 3;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtServiceTitle, conditionValidationRule3);
             // 
             // labelControl4
             // 
@@ -283,6 +334,10 @@ namespace PMWORK.PMForms
             this.numPeriode.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.numPeriode.Size = new System.Drawing.Size(124, 20);
             this.numPeriode.TabIndex = 15;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            conditionValidationRule4.Value1 = "0";
+            this.dx.SetValidationRule(this.numPeriode, conditionValidationRule4);
             // 
             // panelControl2
             // 
@@ -388,15 +443,16 @@ namespace PMWORK.PMForms
             // btnSelectRow
             // 
             this.btnSelectRow.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
-            serializableAppearanceObject17.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject18.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject19.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            serializableAppearanceObject20.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            serializableAppearanceObject1.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject2.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject3.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject4.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.btnSelectRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSelectRow.Name = "btnSelectRow";
             this.btnSelectRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnSelectRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSelectRow_ButtonClick);
             // 
             // IDColumn
             // 
@@ -463,29 +519,19 @@ namespace PMWORK.PMForms
             this.DescriptionColumn.VisibleIndex = 6;
             this.DescriptionColumn.Width = 70;
             // 
-            // btnSelect
-            // 
-            this.btnSelect.AutoHeight = false;
-            this.btnSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.btnSelect.Name = "btnSelect";
-            // 
-            // chkStatus
-            // 
-            this.chkStatus.Location = new System.Drawing.Point(690, 103);
-            this.chkStatus.Name = "chkStatus";
-            this.chkStatus.Parmida_ActivePlusMultiKeys = false;
-            this.chkStatus.Properties.Caption = "فعال";
-            this.chkStatus.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.chkStatus.Size = new System.Drawing.Size(50, 19);
-            this.chkStatus.TabIndex = 19;
-            // 
             // repositoryItemMemoExEdit1
             // 
             this.repositoryItemMemoExEdit1.AutoHeight = false;
             this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.AutoHeight = false;
+            this.btnSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.btnSelect.Name = "btnSelect";
             // 
             // ServicePerideForm
             // 
@@ -501,6 +547,7 @@ namespace PMWORK.PMForms
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxUnit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
@@ -514,9 +561,9 @@ namespace PMWORK.PMForms
             ((System.ComponentModel.ISupportInitialize)(this.dgvServiceList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvServiceList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelectRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -554,5 +601,8 @@ namespace PMWORK.PMForms
         private DevExpress.XtraGrid.Columns.GridColumn DescriptionColumn;
         private DevExpress.XtraEditors.CheckEdit chkStatus;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn UnitNameColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn UnitDesColumn;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dx;
     }
 }

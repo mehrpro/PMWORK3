@@ -214,12 +214,7 @@ namespace PMWORK.Repository
             catch (Exception)
             {
                 return false;
-                throw;
             }
-
-
-
-
         }
 
         public bool LoginUser(string username, string password)
@@ -232,12 +227,8 @@ namespace PMWORK.Repository
                 PublicClass.UserID = qryUser.UserId;
                 return true;
             }
-
             else
                 return false;
-
-
-
         }
 
         public List<Cleam> GetCleams(int UserId)

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class DBCreate2 : DbMigration
+    public partial class dbcreator : DbMigration
     {
         public override void Up()
         {
@@ -226,6 +226,8 @@
                         Periode = c.Int(nullable: false),
                         UnitID_FK = c.Int(nullable: false),
                         Description = c.String(maxLength: 250),
+                        IsActive = c.Boolean(nullable: false),
+                        Registred = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.UnitOfMeasurements", t => t.UnitID_FK)
