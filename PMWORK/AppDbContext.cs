@@ -336,6 +336,7 @@ namespace PMWORK
             builder.Entity<SparePart>().Property(x => x.SparePartTitle).IsRequired().HasMaxLength(250);
             builder.Entity<SparePart>().Property(x => x.UnitID_FK).IsRequired();
             builder.Entity<SparePart>().Property(x => x.Description).HasMaxLength(250);
+            builder.Entity<SparePart>().Property(x => x.IsActive).IsRequired();
 
 
             builder.Entity<ServicePeriode>().HasKey(x => x.ID);

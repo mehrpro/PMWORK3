@@ -18,5 +18,6 @@ namespace PMWORK.Entities
         public int UnitID_FK { get; set; }
         public UnitOfMeasurement UnitOfMeasurement { get; set; }
         public string Description { get; set; }
+        public bool IsActive { get; set; }
     }
 }
