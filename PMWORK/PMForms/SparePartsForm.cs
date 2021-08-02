@@ -34,5 +34,29 @@ namespace PMWORK.PMForms
             cbxUnit.Properties.ValueMember = "ID";
             cbxUnit.Properties.DataSource = _codingRepository.GetAllUnits();
         }
+
+        private void ClearForm()
+        {
+            txtDescription.ResetText();
+            txtSpareTitle.ResetText();
+            txtSpartNumber.ResetText();
+            numMinimal.EditValue = 0;
+            cbxUnit.EditValue = null;
+            SelectedRow = null;
+            chkStatus.Checked = true;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            if (btnClose.Text == PublicClass.CancelStr)
+            {
+                btnClose.Text = PublicClass.CloseStr;
+
+            }
+            else
+            {
+                Close();
+            }
+        }
     }
 }
