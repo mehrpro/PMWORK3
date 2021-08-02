@@ -222,6 +222,18 @@
     <Compile Include="Migrations\202107311437024_DBCreate2.designer.cs">
       <DependentUpon>202107311437024_DBCreate2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108020636511_UpdateServicePeriode.cs" />
+    <Compile Include="Migrations\202108020636511_UpdateServicePeriode.designer.cs">
+      <DependentUpon>202108020636511_UpdateServicePeriode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108020654116_UpdateServicePeriode2.cs" />
+    <Compile Include="Migrations\202108020654116_UpdateServicePeriode2.designer.cs">
+      <DependentUpon>202108020654116_UpdateServicePeriode2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108020713048_UpdateServicePeriode3.cs" />
+    <Compile Include="Migrations\202108020713048_UpdateServicePeriode3.designer.cs">
+      <DependentUpon>202108020713048_UpdateServicePeriode3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PMForms\ServicePerideForm.cs">
       <SubType>Form</SubType>
@@ -306,6 +318,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107311437024_DBCreate2.resx">
       <DependentUpon>202107311437024_DBCreate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108020636511_UpdateServicePeriode.resx">
+      <DependentUpon>202108020636511_UpdateServicePeriode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108020654116_UpdateServicePeriode2.resx">
+      <DependentUpon>202108020654116_UpdateServicePeriode2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108020713048_UpdateServicePeriode3.resx">
+      <DependentUpon>202108020713048_UpdateServicePeriode3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMForms\ServicePerideForm.resx">
       <DependentUpon>ServicePerideForm.cs</DependentUpon>

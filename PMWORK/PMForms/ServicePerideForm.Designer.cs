@@ -30,94 +30,219 @@ namespace PMWORK.PMForms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServicePerideForm));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
+            this.cbxUnit = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.txtCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtMachineryName = new DevExpress.XtraEditors.TextEdit();
+            this.txtMachineryID = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.txtDescription = new DevExpress.XtraEditors.TextEdit();
+            this.txtServiceTitle = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.numPeriode = new DevExpress.XtraEditors.SpinEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dgvServiceList = new DevExpress.XtraGrid.GridControl();
             this.gvServiceList = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.SpinEdit();
-            this.cbxUnit = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.SelectColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSelectRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.IDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ServiceTitleColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PeriodeColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UnitColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.StatusColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SelectColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnSelectRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.DescriptionColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.chkStatus = new DevExpress.XtraEditors.CheckEdit();
+            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxUnit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMachineryName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMachineryID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServiceTitle.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPeriode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServiceList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvServiceList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxUnit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelectRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkStatus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.chkStatus);
             this.panelControl1.Controls.Add(this.btnSave);
             this.panelControl1.Controls.Add(this.btnClose);
             this.panelControl1.Controls.Add(this.cbxUnit);
-            this.panelControl1.Controls.Add(this.textEdit5);
-            this.panelControl1.Controls.Add(this.textEdit4);
-            this.panelControl1.Controls.Add(this.textEdit3);
+            this.panelControl1.Controls.Add(this.txtCode);
+            this.panelControl1.Controls.Add(this.txtMachineryName);
+            this.panelControl1.Controls.Add(this.txtMachineryID);
             this.panelControl1.Controls.Add(this.labelControl6);
-            this.panelControl1.Controls.Add(this.textEdit1);
+            this.panelControl1.Controls.Add(this.txtDescription);
+            this.panelControl1.Controls.Add(this.txtServiceTitle);
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.labelControl7);
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.textEdit2);
+            this.panelControl1.Controls.Add(this.numPeriode);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(800, 149);
+            this.panelControl1.Size = new System.Drawing.Size(800, 147);
             this.panelControl1.TabIndex = 1;
             // 
-            // textEdit1
+            // btnSave
             // 
-            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit1.Location = new System.Drawing.Point(58, 25);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Parmida_ActivePlusMultiKeys = false;
-            this.textEdit1.Size = new System.Drawing.Size(362, 20);
-            this.textEdit1.TabIndex = 3;
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
+            this.btnSave.Location = new System.Drawing.Point(144, 103);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(80, 30);
+            this.btnSave.TabIndex = 18;
+            this.btnSave.Text = "ذخیره";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
+            this.btnClose.Location = new System.Drawing.Point(58, 103);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(80, 30);
+            this.btnClose.TabIndex = 17;
+            this.btnClose.Text = "بستن";
+            // 
+            // cbxUnit
+            // 
+            this.cbxUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxUnit.Location = new System.Drawing.Point(58, 51);
+            this.cbxUnit.Name = "cbxUnit";
+            this.cbxUnit.Parmida_ActivePlusMultiKeys = false;
+            this.cbxUnit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxUnit.Properties.PopupView = this.searchLookUpEdit1View;
+            this.cbxUnit.Size = new System.Drawing.Size(124, 20);
+            this.cbxUnit.TabIndex = 16;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // txtCode
+            // 
+            this.txtCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCode.Location = new System.Drawing.Point(524, 77);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Parmida_ActivePlusMultiKeys = false;
+            this.txtCode.Properties.ReadOnly = true;
+            this.txtCode.Size = new System.Drawing.Size(184, 20);
+            this.txtCode.TabIndex = 3;
+            // 
+            // txtMachineryName
+            // 
+            this.txtMachineryName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMachineryName.Location = new System.Drawing.Point(524, 51);
+            this.txtMachineryName.Name = "txtMachineryName";
+            this.txtMachineryName.Parmida_ActivePlusMultiKeys = false;
+            this.txtMachineryName.Properties.ReadOnly = true;
+            this.txtMachineryName.Size = new System.Drawing.Size(184, 20);
+            this.txtMachineryName.TabIndex = 3;
+            // 
+            // txtMachineryID
+            // 
+            this.txtMachineryID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMachineryID.Location = new System.Drawing.Point(524, 25);
+            this.txtMachineryID.Name = "txtMachineryID";
+            this.txtMachineryID.Parmida_ActivePlusMultiKeys = false;
+            this.txtMachineryID.Properties.ReadOnly = true;
+            this.txtMachineryID.Size = new System.Drawing.Size(184, 20);
+            this.txtMachineryID.TabIndex = 3;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl6.Location = new System.Drawing.Point(714, 80);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(48, 13);
+            this.labelControl6.TabIndex = 11;
+            this.labelControl6.Text = "کد دستگاه";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescription.Location = new System.Drawing.Point(58, 77);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Parmida_ActivePlusMultiKeys = false;
+            this.txtDescription.Size = new System.Drawing.Size(362, 20);
+            this.txtDescription.TabIndex = 3;
+            // 
+            // txtServiceTitle
+            // 
+            this.txtServiceTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtServiceTitle.Location = new System.Drawing.Point(58, 25);
+            this.txtServiceTitle.Name = "txtServiceTitle";
+            this.txtServiceTitle.Parmida_ActivePlusMultiKeys = false;
+            this.txtServiceTitle.Size = new System.Drawing.Size(362, 20);
+            this.txtServiceTitle.TabIndex = 3;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl4.Location = new System.Drawing.Point(714, 54);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(50, 13);
+            this.labelControl4.TabIndex = 11;
+            this.labelControl4.Text = "نام دستگاه";
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(426, 80);
+            this.labelControl1.Location = new System.Drawing.Point(188, 54);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(60, 13);
             this.labelControl1.TabIndex = 13;
             this.labelControl1.Text = "واحد سنجش";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Location = new System.Drawing.Point(714, 28);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(35, 13);
+            this.labelControl2.TabIndex = 11;
+            this.labelControl2.Text = "شناسه";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl7.Location = new System.Drawing.Point(426, 80);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(40, 13);
+            this.labelControl7.TabIndex = 11;
+            this.labelControl7.Text = "توضیحات";
             // 
             // labelControl5
             // 
@@ -137,13 +262,35 @@ namespace PMWORK.PMForms
             this.labelControl3.TabIndex = 11;
             this.labelControl3.Text = "عنوان سرویس";
             // 
+            // numPeriode
+            // 
+            this.numPeriode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.numPeriode.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.numPeriode.Location = new System.Drawing.Point(296, 51);
+            this.numPeriode.Name = "numPeriode";
+            this.numPeriode.Parmida_ActivePlusMultiKeys = false;
+            this.numPeriode.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.numPeriode.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.numPeriode.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.numPeriode.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.numPeriode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.numPeriode.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.numPeriode.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.numPeriode.Size = new System.Drawing.Size(124, 20);
+            this.numPeriode.TabIndex = 15;
+            // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.dgvServiceList);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 149);
+            this.panelControl2.Location = new System.Drawing.Point(0, 147);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(800, 301);
+            this.panelControl2.Size = new System.Drawing.Size(800, 303);
             this.panelControl2.TabIndex = 2;
             // 
             // dgvServiceList
@@ -154,8 +301,9 @@ namespace PMWORK.PMForms
             this.dgvServiceList.Name = "dgvServiceList";
             this.dgvServiceList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSelect,
-            this.btnSelectRow});
-            this.dgvServiceList.Size = new System.Drawing.Size(796, 297);
+            this.btnSelectRow,
+            this.repositoryItemMemoExEdit1});
+            this.dgvServiceList.Size = new System.Drawing.Size(796, 299);
             this.dgvServiceList.TabIndex = 0;
             this.dgvServiceList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvServiceList});
@@ -222,129 +370,33 @@ namespace PMWORK.PMForms
             this.ServiceTitleColumn,
             this.PeriodeColumn,
             this.UnitColumn,
-            this.StatusColumn});
+            this.StatusColumn,
+            this.DescriptionColumn});
             this.gvServiceList.GridControl = this.dgvServiceList;
             this.gvServiceList.Name = "gvServiceList";
             // 
-            // btnSelect
+            // SelectColumn
             // 
-            this.btnSelect.AutoHeight = false;
-            this.btnSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.btnSelect.Name = "btnSelect";
+            this.SelectColumn.ColumnEdit = this.btnSelectRow;
+            this.SelectColumn.MaxWidth = 30;
+            this.SelectColumn.MinWidth = 30;
+            this.SelectColumn.Name = "SelectColumn";
+            this.SelectColumn.Visible = true;
+            this.SelectColumn.VisibleIndex = 0;
+            this.SelectColumn.Width = 30;
             // 
-            // textEdit2
+            // btnSelectRow
             // 
-            this.textEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit2.Location = new System.Drawing.Point(296, 51);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Parmida_ActivePlusMultiKeys = false;
-            this.textEdit2.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.textEdit2.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.textEdit2.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.textEdit2.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.textEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.textEdit2.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.textEdit2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.textEdit2.Size = new System.Drawing.Size(124, 20);
-            this.textEdit2.TabIndex = 15;
-            // 
-            // cbxUnit
-            // 
-            this.cbxUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxUnit.Location = new System.Drawing.Point(296, 77);
-            this.cbxUnit.Name = "cbxUnit";
-            this.cbxUnit.Parmida_ActivePlusMultiKeys = false;
-            this.cbxUnit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxUnit.Properties.PopupView = this.searchLookUpEdit1View;
-            this.cbxUnit.Size = new System.Drawing.Size(124, 20);
-            this.cbxUnit.TabIndex = 16;
-            // 
-            // searchLookUpEdit1View
-            // 
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(714, 28);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(35, 13);
-            this.labelControl2.TabIndex = 11;
-            this.labelControl2.Text = "شناسه";
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit3.Location = new System.Drawing.Point(524, 25);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Parmida_ActivePlusMultiKeys = false;
-            this.textEdit3.Properties.ReadOnly = true;
-            this.textEdit3.Size = new System.Drawing.Size(184, 20);
-            this.textEdit3.TabIndex = 3;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(714, 54);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(50, 13);
-            this.labelControl4.TabIndex = 11;
-            this.labelControl4.Text = "نام دستگاه";
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit4.Location = new System.Drawing.Point(524, 51);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Parmida_ActivePlusMultiKeys = false;
-            this.textEdit4.Properties.ReadOnly = true;
-            this.textEdit4.Size = new System.Drawing.Size(184, 20);
-            this.textEdit4.TabIndex = 3;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Location = new System.Drawing.Point(714, 80);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(48, 13);
-            this.labelControl6.TabIndex = 11;
-            this.labelControl6.Text = "کد دستگاه";
-            // 
-            // textEdit5
-            // 
-            this.textEdit5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit5.Location = new System.Drawing.Point(524, 77);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Parmida_ActivePlusMultiKeys = false;
-            this.textEdit5.Properties.ReadOnly = true;
-            this.textEdit5.Size = new System.Drawing.Size(184, 20);
-            this.textEdit5.TabIndex = 3;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(58, 103);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(80, 30);
-            this.btnClose.TabIndex = 17;
-            this.btnClose.Text = "بستن";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(144, 103);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(80, 30);
-            this.btnSave.TabIndex = 18;
-            this.btnSave.Text = "ذخیره";
+            this.btnSelectRow.AutoHeight = false;
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            serializableAppearanceObject17.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject18.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject19.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject20.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.btnSelectRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnSelectRow.Name = "btnSelectRow";
+            this.btnSelectRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // IDColumn
             // 
@@ -360,14 +412,16 @@ namespace PMWORK.PMForms
             // ServiceTitleColumn
             // 
             this.ServiceTitleColumn.Caption = "عنوان سرویس";
+            this.ServiceTitleColumn.FieldName = "ServiceTitle";
             this.ServiceTitleColumn.Name = "ServiceTitleColumn";
             this.ServiceTitleColumn.Visible = true;
             this.ServiceTitleColumn.VisibleIndex = 2;
-            this.ServiceTitleColumn.Width = 387;
+            this.ServiceTitleColumn.Width = 349;
             // 
             // PeriodeColumn
             // 
             this.PeriodeColumn.Caption = "دوره";
+            this.PeriodeColumn.FieldName = "Periode";
             this.PeriodeColumn.MaxWidth = 120;
             this.PeriodeColumn.MinWidth = 120;
             this.PeriodeColumn.Name = "PeriodeColumn";
@@ -378,6 +432,7 @@ namespace PMWORK.PMForms
             // UnitColumn
             // 
             this.UnitColumn.Caption = "واحد";
+            this.UnitColumn.FieldName = "UnitOfMeasurement.Unit";
             this.UnitColumn.MaxWidth = 80;
             this.UnitColumn.MinWidth = 80;
             this.UnitColumn.Name = "UnitColumn";
@@ -388,6 +443,7 @@ namespace PMWORK.PMForms
             // StatusColumn
             // 
             this.StatusColumn.Caption = "وضعیت";
+            this.StatusColumn.FieldName = "IsActive";
             this.StatusColumn.MaxWidth = 50;
             this.StatusColumn.MinWidth = 50;
             this.StatusColumn.Name = "StatusColumn";
@@ -395,24 +451,41 @@ namespace PMWORK.PMForms
             this.StatusColumn.VisibleIndex = 5;
             this.StatusColumn.Width = 50;
             // 
-            // SelectColumn
+            // DescriptionColumn
             // 
-            this.SelectColumn.ColumnEdit = this.btnSelectRow;
-            this.SelectColumn.MaxWidth = 30;
-            this.SelectColumn.MinWidth = 30;
-            this.SelectColumn.Name = "SelectColumn";
-            this.SelectColumn.Visible = true;
-            this.SelectColumn.VisibleIndex = 0;
-            this.SelectColumn.Width = 30;
+            this.DescriptionColumn.Caption = "توضیحات";
+            this.DescriptionColumn.ColumnEdit = this.repositoryItemMemoExEdit1;
+            this.DescriptionColumn.FieldName = "Description";
+            this.DescriptionColumn.MaxWidth = 70;
+            this.DescriptionColumn.MinWidth = 70;
+            this.DescriptionColumn.Name = "DescriptionColumn";
+            this.DescriptionColumn.Visible = true;
+            this.DescriptionColumn.VisibleIndex = 6;
+            this.DescriptionColumn.Width = 70;
             // 
-            // btnSelectRow
+            // btnSelect
             // 
-            this.btnSelectRow.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.btnSelectRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnSelectRow.Name = "btnSelectRow";
-            this.btnSelectRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnSelect.AutoHeight = false;
+            this.btnSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.btnSelect.Name = "btnSelect";
+            // 
+            // chkStatus
+            // 
+            this.chkStatus.Location = new System.Drawing.Point(690, 103);
+            this.chkStatus.Name = "chkStatus";
+            this.chkStatus.Parmida_ActivePlusMultiKeys = false;
+            this.chkStatus.Properties.Caption = "فعال";
+            this.chkStatus.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.chkStatus.Size = new System.Drawing.Size(50, 19);
+            this.chkStatus.TabIndex = 19;
+            // 
+            // repositoryItemMemoExEdit1
+            // 
+            this.repositoryItemMemoExEdit1.AutoHeight = false;
+            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
             // 
             // ServicePerideForm
             // 
@@ -424,22 +497,26 @@ namespace PMWORK.PMForms
             this.Name = "ServicePerideForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "سرویس دوره ای";
+            this.Load += new System.EventHandler(this.ServicePerideForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxUnit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMachineryName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMachineryID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServiceTitle.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPeriode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvServiceList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvServiceList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxUnit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelectRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSelect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkStatus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -447,7 +524,7 @@ namespace PMWORK.PMForms
         #endregion
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtServiceTitle;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -456,12 +533,12 @@ namespace PMWORK.PMForms
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnSelect;
         private DevExpress.XtraEditors.SearchLookUpEdit cbxUnit;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraEditors.SpinEdit textEdit2;
+        private DevExpress.XtraEditors.SpinEdit numPeriode;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnClose;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit txtCode;
+        private DevExpress.XtraEditors.TextEdit txtMachineryName;
+        private DevExpress.XtraEditors.TextEdit txtMachineryID;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -472,5 +549,10 @@ namespace PMWORK.PMForms
         private DevExpress.XtraGrid.Columns.GridColumn PeriodeColumn;
         private DevExpress.XtraGrid.Columns.GridColumn UnitColumn;
         private DevExpress.XtraGrid.Columns.GridColumn StatusColumn;
+        private DevExpress.XtraEditors.TextEdit txtDescription;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraGrid.Columns.GridColumn DescriptionColumn;
+        private DevExpress.XtraEditors.CheckEdit chkStatus;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
     }
 }

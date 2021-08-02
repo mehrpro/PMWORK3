@@ -346,6 +346,8 @@ namespace PMWORK
             builder.Entity<ServicePeriode>().Property(x => x.ServiceTitle).IsRequired().HasMaxLength(250);
             builder.Entity<ServicePeriode>().Property(x => x.UnitID_FK).IsRequired();
             builder.Entity<ServicePeriode>().Property(x => x.Description).HasMaxLength(250);
+            builder.Entity<ServicePeriode>().Property(x => x.IsActive).IsRequired();
+            builder.Entity<ServicePeriode>().Property(x => x.Registred).IsRequired().HasColumnType("datetime");
 
 
             builder.Entity<IdentityMachinery>().HasKey(x => x.ID);
