@@ -34,7 +34,6 @@ namespace PMWORK.PMForms
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -67,10 +66,10 @@ namespace PMWORK.PMForms
             this.dgvSparePartList = new DevExpress.XtraGrid.GridControl();
             this.gvSparePartList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.SelectColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSelectRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.IDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SpareNameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SparePartColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnSelectRow = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.MinimalColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UnitColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.StatusColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -245,12 +244,9 @@ namespace PMWORK.PMForms
             this.txtDescription.Location = new System.Drawing.Point(30, 100);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Parmida_ActivePlusMultiKeys = false;
+            this.txtDescription.Properties.MaxLength = 250;
             this.txtDescription.Size = new System.Drawing.Size(362, 20);
             this.txtDescription.TabIndex = 3;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Less;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            conditionValidationRule2.Value1 = "10";
-            this.dx.SetValidationRule(this.txtDescription, conditionValidationRule2);
             // 
             // txtSpartNumber
             // 
@@ -269,9 +265,9 @@ namespace PMWORK.PMForms
             this.txtSpareTitle.Parmida_ActivePlusMultiKeys = false;
             this.txtSpareTitle.Size = new System.Drawing.Size(362, 20);
             this.txtSpareTitle.TabIndex = 3;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.txtSpareTitle, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtSpareTitle, conditionValidationRule2);
             // 
             // labelControl4
             // 
@@ -357,10 +353,10 @@ namespace PMWORK.PMForms
             this.numMinimal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.numMinimal.Size = new System.Drawing.Size(124, 20);
             this.numMinimal.TabIndex = 15;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            conditionValidationRule4.Value1 = "0";
-            this.dx.SetValidationRule(this.numMinimal, conditionValidationRule4);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            conditionValidationRule3.Value1 = "0";
+            this.dx.SetValidationRule(this.numMinimal, conditionValidationRule3);
             // 
             // panelControl2
             // 
@@ -463,6 +459,20 @@ namespace PMWORK.PMForms
             this.SelectColumn.VisibleIndex = 0;
             this.SelectColumn.Width = 30;
             // 
+            // btnSelectRow
+            // 
+            this.btnSelectRow.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            serializableAppearanceObject1.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject2.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject3.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject4.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.btnSelectRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnSelectRow.Name = "btnSelectRow";
+            this.btnSelectRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnSelectRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSelectRow_ButtonClick);
+            // 
             // IDColumn
             // 
             this.IDColumn.Caption = "شناسه";
@@ -492,16 +502,6 @@ namespace PMWORK.PMForms
             this.SparePartColumn.VisibleIndex = 3;
             this.SparePartColumn.Width = 385;
             // 
-            // btnSelectRow
-            // 
-            this.btnSelectRow.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.btnSelectRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnSelectRow.Name = "btnSelectRow";
-            this.btnSelectRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnSelectRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSelectRow_ButtonClick);
-            // 
             // MinimalColumn
             // 
             this.MinimalColumn.Caption = "حداقل موجودی";
@@ -516,7 +516,7 @@ namespace PMWORK.PMForms
             // UnitColumn
             // 
             this.UnitColumn.Caption = "واحد";
-            this.UnitColumn.FieldName = "Unit";
+            this.UnitColumn.FieldName = "UnitOfMeasurement.Unit";
             this.UnitColumn.MaxWidth = 80;
             this.UnitColumn.MinWidth = 80;
             this.UnitColumn.Name = "UnitColumn";
@@ -563,7 +563,9 @@ namespace PMWORK.PMForms
             this.Controls.Add(this.panelControl1);
             this.Name = "SparePartsForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "قطعات یدکی";
+            this.Load += new System.EventHandler(this.SparePartsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

@@ -331,7 +331,6 @@ namespace PMWORK
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             builder.Entity<SparePart>().Property(x => x.MachineryID_FK).IsRequired();
             builder.Entity<SparePart>().Property(x => x.Minimal).IsRequired();
-            builder.Entity<SparePart>().Property(x => x.Number).IsRequired();
             builder.Entity<SparePart>().Property(x => x.SparePartNumber).HasMaxLength(150);
             builder.Entity<SparePart>().Property(x => x.SparePartTitle).IsRequired().HasMaxLength(250);
             builder.Entity<SparePart>().Property(x => x.UnitID_FK).IsRequired();

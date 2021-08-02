@@ -114,7 +114,6 @@ namespace PMWORK.PMForms
                         PublicClass.ErrorSave(Text);
                     }
                 }
-                //UpdateSparePartList();
             }
             else
             {
@@ -126,12 +125,21 @@ namespace PMWORK.PMForms
         {
             if (gvSparePartList.GetFocusedRowCellValue("ID") == null) return;
             SelectedRow = (SparePart)gvSparePartList.GetFocusedRow();
-             txtDescription.Text = SelectedRow.Description;
-             chkStatus.Checked = SelectedRow.IsActive ;            
+            txtDescription.Text = SelectedRow.Description;
+            chkStatus.Checked = SelectedRow.IsActive ;            
             numMinimal.EditValue = SelectedRow.Minimal;
             txtSpartNumber.Text = SelectedRow.SparePartNumber;
-           txtSpareTitle.Text = SelectedRow.SparePartTitle;
-           cbxUnit.EditValue = SelectedRow.UnitID_FK ;
+            txtSpareTitle.Text = SelectedRow.SparePartTitle;
+            cbxUnit.EditValue = SelectedRow.UnitID_FK ;
+            btnClose.Text = PublicClass.CancelStr;
+        }
+
+        private void SparePartsForm_Load(object sender, EventArgs e)
+        {
+            txtMachineryID.EditValue = machineryID;
+            txtMachineryName.EditValue = machineryName;
+            txtCode.EditValue = code;
+            UpdateSparePartList();
         }
     }
 }

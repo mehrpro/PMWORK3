@@ -226,6 +226,10 @@
     <Compile Include="Migrations\202108021138131_updateSparePart.designer.cs">
       <DependentUpon>202108021138131_updateSparePart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108021306513_UpdateSpare1.cs" />
+    <Compile Include="Migrations\202108021306513_UpdateSpare1.designer.cs">
+      <DependentUpon>202108021306513_UpdateSpare1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PMForms\ServicePerideForm.cs">
       <SubType>Form</SubType>
@@ -319,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108021138131_updateSparePart.resx">
       <DependentUpon>202108021138131_updateSparePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108021306513_UpdateSpare1.resx">
+      <DependentUpon>202108021306513_UpdateSpare1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMForms\ServicePerideForm.resx">
       <DependentUpon>ServicePerideForm.cs</DependentUpon>
