@@ -100,9 +100,20 @@ namespace PMWORK.Repository
         /// <summary>
         /// افزودن کاربر سیستم 
         /// </summary>
-        /// <param name="user"></param>
+        /// <param name="user">مدل</param>
         /// <returns></returns>
         bool AddUsers(ApplicationUser user);
+        /// <summary>
+        /// ویرایش و افزودن سرویس دوره ای
+        /// </summary>
+        /// <param name="servicePeriode">مدل</param>
+        /// <returns></returns>
+        bool AddServicePeriode(ServicePeriode servicePeriode);
+
+
+
+
+
         /// <summary>
         /// ویرایش و افزودن سطح دسترسی
         /// </summary>
@@ -314,6 +325,42 @@ namespace PMWORK.Repository
         public List<Machinery> GetMachineriesListByApplicantId(int applicantId)
         {
             return _context.Machineries.Include(x => x.Coding).Where(x => x.ApplicantID_FK == applicantId).ToList();
+        }
+
+        public bool AddServicePeriode(ServicePeriode servicePeriode)
+        {
+            if (servicePeriode.ID > 0)
+            {
+                try
+                {
+                    var local = _context.Set<ServicePeriode>().Local.FirstOrDefault(x => x.ID == servicePeriode.ID);
+                    if (local != null)
+                    {
+                        _context.Entry(local).State = EntityState.Detached;
+                    }
+                    _context.Entry(servicePeriode).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch 
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    _context.ServicePeriodes.Add(servicePeriode);
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch 
+                {
+                    return false;
+                }
+            }
         }
     }
 }

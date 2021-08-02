@@ -30,8 +30,8 @@ namespace PMWORK.PMForms
         {
             InitializeComponent();
             _codingRepository = codingRepository;
-            cbxUnit.Properties.DisplayMember = "ID";
-            cbxUnit.Properties.ValueMember = "Unit";
+            cbxUnit.Properties.DisplayMember = "Unit";
+            cbxUnit.Properties.ValueMember = "ID";
             cbxUnit.Properties.DataSource = _codingRepository.GetAllUnits();
         }
 
@@ -70,11 +70,27 @@ namespace PMWORK.PMForms
             {
                 if (btnClose.Text == PublicClass.CancelStr)
                 {
-
+                    SelectedRow.Description = txtDescription.Text.Trim();
+                    SelectedRow.IsActive = chkStatus.Checked;
+                    SelectedRow.MachineryID_FK = machineryID;
+                    SelectedRow.Registred = DateTime.Now;
+                    SelectedRow.Periode = Convert.ToInt32(numPeriode.EditValue);
+                    SelectedRow.ServiceTitle = txtServiceTitle.Text.Trim();
+                    SelectedRow.UnitID_FK = Convert.ToInt32(cbxUnit.EditValue);
+                    var result = _codingRepository.AddServicePeriode(SelectedRow);
+                    if (result)
+                    {
+                        PublicClass.SuccessMessage(Text);
+                        ClearForm();
+                    }
+                    else
+                    {
+                        PublicClass.ErrorSave(Text);
+                    }
                 }
                 else
                 {
-                    var obj = new Entities.ServicePeriode();
+                    var obj = new ServicePeriode();
                     obj.Description = txtDescription.Text.Trim();
                     obj.IsActive = chkStatus.Checked;
                     obj.MachineryID_FK = machineryID;
@@ -82,6 +98,17 @@ namespace PMWORK.PMForms
                     obj.Periode = Convert.ToInt32(numPeriode.EditValue);
                     obj.ServiceTitle = txtServiceTitle.Text.Trim();
                     obj.UnitID_FK = Convert.ToInt32(cbxUnit.EditValue);
+
+                    var result = _codingRepository.AddServicePeriode(obj);
+                    if (result)
+                    {
+                        PublicClass.SuccessMessage(Text);
+                        ClearForm();
+                    }
+                    else
+                    {
+                        PublicClass.ErrorSave(Text);
+                    }
                     
                 }
             }
