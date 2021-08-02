@@ -32,19 +32,16 @@ namespace PMWORK.CodingForms
             _codingRepository = codingRepository;
             cbxCompany.Properties.DisplayMember = "Title";
             cbxCompany.Properties.ValueMember = "ID";
-            cbxCompany.Properties.DataSource = _codingRepository.GetAllCompanies().Select(x => new ComboBoxBaseClass
+            cbxCompany.Properties.DataSource = _codingRepository.GetAllCompanies()
+            .Select(x => new ComboBoxBaseClass
             {
                 ID = x.ID,
                 Title = x.CompanyTitle,
                 Tag = x.Description
-            }).ToList(); ;
+            })
+            .ToList(); ;
             cbxApplicantList.Properties.DisplayMember = "Title";
             cbxApplicantList.Properties.ValueMember = "ID";
-
-
-
-
-
         }
 
         private void cbxCompany_EditValueChanged(object sender, EventArgs e)

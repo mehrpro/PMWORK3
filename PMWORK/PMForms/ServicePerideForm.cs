@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using PMWORK.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,12 @@ namespace PMWORK.PMForms
 {
     public partial class ServicePerideForm : XtraForm
     {
-        public ServicePerideForm()
+        private readonly ICodingRepository _codingRepository;
+
+        public ServicePerideForm(Repository.ICodingRepository codingRepository)
         {
             InitializeComponent();
+            _codingRepository = codingRepository;
         }
     }
 }
