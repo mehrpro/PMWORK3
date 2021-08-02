@@ -88,6 +88,12 @@ namespace PMWORK.Repository
         /// <param name="MachineryID"></param>
         /// <returns></returns>
         List<ServicePeriode> GetServicePeriodesByMachineriId(int MachineryID);
+        /// <summary>
+        /// لیست قطعات یدکی براسا شناسه ماشین
+        /// </summary>
+        /// <param name="MachineryID"></param>
+        /// <returns></returns>
+        List<SparePart> GetSparePartByMachineriId(int MachineryID);
 
 
 
@@ -115,6 +121,12 @@ namespace PMWORK.Repository
         /// <param name="servicePeriode">مدل</param>
         /// <returns></returns>
         bool AddServicePeriode(ServicePeriode servicePeriode);
+        /// <summary>
+        /// ویرایش و افزودن قطعه یدکی
+        /// </summary>
+        /// <param name="sparePart">مدل</param>
+        /// <returns></returns>
+        bool AddSparePart(SparePart sparePart);
 
 
 
@@ -372,6 +384,47 @@ namespace PMWORK.Repository
         public List<ServicePeriode> GetServicePeriodesByMachineriId(int MachineryID)
         {
             return _context.ServicePeriodes.Include(x => x.UnitOfMeasurement).Where(x => x.MachineryID_FK == MachineryID).ToList();
+        }
+
+        public bool AddSparePart(SparePart sparePart)
+        {
+            if (sparePart.ID > 0)
+            {
+                try
+                {
+                    var local = _context.Set<ServicePeriode>().Local.FirstOrDefault(x => x.ID == sparePart.ID);
+                    if (local != null)
+                    {
+                        _context.Entry(local).State = EntityState.Detached;
+                    }
+                    _context.Entry(sparePart).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    _context.SpareParts.Add(sparePart);
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public List<SparePart> GetSparePartByMachineriId(int MachineryID)
+        {
+            return _context.SpareParts.Include(x => x.UnitOfMeasurement).Where(x => x.MachineryID_FK == MachineryID).ToList();
         }
     }
 }
