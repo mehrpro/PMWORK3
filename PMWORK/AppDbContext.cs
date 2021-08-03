@@ -213,6 +213,11 @@ namespace PMWORK
     .WithRequired(x => x.Machinery)
     .HasForeignKey(x => x.MachineryID_FK)
     .WillCascadeOnDelete(false);
+            builder.Entity<Machinery>()
+.HasMany(x => x.PowerElectricalMachineries)
+.WithRequired(x => x.Machinery)
+.HasForeignKey(x => x.MachineryID_FK)
+.WillCascadeOnDelete(false);
 
 
 
@@ -364,10 +369,18 @@ namespace PMWORK
             builder.Entity<IdentityMachinery>().Property(x => x.TypeDevice).HasMaxLength(250);
             builder.Entity<IdentityMachinery>().Property(x => x.ApplicantID_FK).IsRequired();
 
+            builder.Entity<PowerElectricalMachinery>().HasKey(x => x.ID);
+            builder.Entity<PowerElectricalMachinery>().Property(x => x.ID).IsRequired()
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<PowerElectricalMachinery>().Property(x => x.MachineryID_FK).IsRequired();
+            builder.Entity<PowerElectricalMachinery>().Property(x => x.Manifactor).HasMaxLength(250);
+            builder.Entity<PowerElectricalMachinery>().Property(x => x.Title).HasMaxLength(250);
+            builder.Entity<PowerElectricalMachinery>().Property(x => x.KW).HasMaxLength(10);
+            builder.Entity<PowerElectricalMachinery>().Property(x => x.Voltag).HasMaxLength(10);
+            builder.Entity<PowerElectricalMachinery>().Property(x => x.Amper).HasMaxLength(10);
+            
 
-
-
-        }
+    }
 
 
 

@@ -154,6 +154,7 @@
     <Compile Include="Entities\MenuGroup.cs" />
     <Compile Include="Entities\MenuItem.cs" />
     <Compile Include="Entities\PMDBInitializer.cs" />
+    <Compile Include="Entities\PowerElectricalMachinery.cs" />
     <Compile Include="Entities\PublicType.cs" />
     <Compile Include="Entities\RepairMan.cs" />
     <Compile Include="Entities\RepairManListed.cs" />

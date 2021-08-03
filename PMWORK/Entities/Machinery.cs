@@ -13,6 +13,7 @@ namespace PMWORK.Entities
             RequestRepairs = new HashSet<RequestRepair>();
             ServicePeriodes = new HashSet<ServicePeriode>();
             SpareParts = new HashSet<SparePart>();
+            PowerElectricalMachineries = new HashSet<PowerElectricalMachinery>();
         }
 
         public int ID { get; set; }
@@ -32,6 +33,8 @@ namespace PMWORK.Entities
         public virtual ICollection<RequestRepair> RequestRepairs { get; set; }
         public virtual ICollection<ServicePeriode> ServicePeriodes { get; set; }
         public virtual ICollection<SparePart> SpareParts { get; set; }
+        public virtual ICollection<PowerElectricalMachinery> PowerElectricalMachineries { get; set; }
+
 
 
     }
