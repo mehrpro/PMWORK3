@@ -103,11 +103,11 @@
 
             IList<Coding> codings = new List<Coding>();
             codings.Add(new Coding() { ID = 1, UserID_FK = 1, Code = 1101001, CompanyID_FK = 1, GroupID_FK = 1, SubGroupID_FK = 1, CodeIndex = 1, CodeTitle = "سنگ شکن فکی" });
-            codings.Add(new Coding() { ID = 2, UserID_FK = 1, Code = 1101002, CompanyID_FK = 1, GroupID_FK = 1, SubGroupID_FK = 1, CodeIndex = 1, CodeTitle = "سنگ شکن مخروطی" });
-            codings.Add(new Coding() { ID = 3, UserID_FK = 1, Code = 1101003, CompanyID_FK = 1, GroupID_FK = 1, SubGroupID_FK = 1, CodeIndex = 1, CodeTitle = "نوار نقاله" });
+            codings.Add(new Coding() { ID = 2, UserID_FK = 1, Code = 1101002, CompanyID_FK = 1, GroupID_FK = 1, SubGroupID_FK = 1, CodeIndex = 2, CodeTitle = "سنگ شکن مخروطی" });
+            codings.Add(new Coding() { ID = 3, UserID_FK = 1, Code = 1101003, CompanyID_FK = 1, GroupID_FK = 1, SubGroupID_FK = 1, CodeIndex = 3, CodeTitle = "نوار نقاله" });
             codings.Add(new Coding() { ID = 4, UserID_FK = 1, Code = 2101001, CompanyID_FK = 2, GroupID_FK = 1, SubGroupID_FK = 1, CodeIndex = 1, CodeTitle = "سنگ شکن فکی" });
-            codings.Add(new Coding() { ID = 5, UserID_FK = 1, Code = 2101002, CompanyID_FK = 2, GroupID_FK = 1, SubGroupID_FK = 1, CodeIndex = 1, CodeTitle = "سنگ شکن مخروطی" });
-            codings.Add(new Coding() { ID = 6, UserID_FK = 1, Code = 2101003, CompanyID_FK = 2, GroupID_FK = 1, SubGroupID_FK = 1, CodeIndex = 1, CodeTitle = "نوار نقاله" });
+            codings.Add(new Coding() { ID = 5, UserID_FK = 1, Code = 2101002, CompanyID_FK = 2, GroupID_FK = 1, SubGroupID_FK = 1, CodeIndex = 2, CodeTitle = "سنگ شکن مخروطی" });
+            codings.Add(new Coding() { ID = 6, UserID_FK = 1, Code = 2101003, CompanyID_FK = 2, GroupID_FK = 1, SubGroupID_FK = 1, CodeIndex = 3, CodeTitle = "نوار نقاله" });
             context.Codings.AddRange(codings);
 
             IList<Machinery> machineries = new List<Machinery>();

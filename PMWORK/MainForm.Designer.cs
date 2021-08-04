@@ -270,7 +270,7 @@ namespace PMWORK
             // 
             // btnApplicantForm
             // 
-            this.btnApplicantForm.Caption = "واحدهای ادواری";
+            this.btnApplicantForm.Caption = "موقعیت مکانی";
             this.btnApplicantForm.Id = 9;
             this.btnApplicantForm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnApplicantForm.ImageOptions.Image")));
             this.btnApplicantForm.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnApplicantForm.ImageOptions.LargeImage")));
@@ -493,6 +493,7 @@ namespace PMWORK
             this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             this.repositoryItemDateEdit1.Parmida_CheckDateOnLeave = false;
             this.repositoryItemDateEdit1.Parmida_CheckEmptyFillDateOnEnter = false;
+            this.repositoryItemDateEdit1.ParmidaCalendarType = DevExpress.XtraEditors.CalendarType.GregorianCalendar;
             // 
             // repositoryItemDateEdit2
             // 
@@ -504,6 +505,7 @@ namespace PMWORK
             this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
             this.repositoryItemDateEdit2.Parmida_CheckDateOnLeave = false;
             this.repositoryItemDateEdit2.Parmida_CheckEmptyFillDateOnEnter = false;
+            this.repositoryItemDateEdit2.ParmidaCalendarType = DevExpress.XtraEditors.CalendarType.GregorianCalendar;
             // 
             // ribbonStatusBar1
             // 

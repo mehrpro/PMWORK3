@@ -84,7 +84,7 @@ namespace PMWORK.CodingForms
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
             this.btnClose.Location = new System.Drawing.Point(19, 104);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(80, 30);
@@ -95,7 +95,7 @@ namespace PMWORK.CodingForms
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.Location = new System.Drawing.Point(105, 104);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 30);
@@ -314,7 +314,7 @@ namespace PMWORK.CodingForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ApplicantForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "واحدهای ادواری";
+            this.Text = "واحد ها و موقعیت های مکانی";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

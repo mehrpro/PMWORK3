@@ -222,7 +222,7 @@ namespace PMWORK
 
         private void btnServicePeriode_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           // ShowForms(new PMWORK.PMForms.ServicePerideForm());
+            // ShowForms(new PMWORK.PMForms.ServicePerideForm());
         }
     }
 }

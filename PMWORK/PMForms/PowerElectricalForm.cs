@@ -60,7 +60,7 @@ namespace PMWORK.PMForms
                     if (result)
                     {
                         PublicClass.SuccessMessage(Text);
-
+                        ClearForm();
                     }
                     else
                         PublicClass.ErrorSave(Text);
@@ -80,7 +80,7 @@ namespace PMWORK.PMForms
                     if (result)
                     {
                         PublicClass.SuccessMessage(Text);
-
+                        ClearForm();
                     }
                     else
                         PublicClass.ErrorSave(Text);
@@ -93,16 +93,45 @@ namespace PMWORK.PMForms
             }
         }
 
+
+        void ClearForm()
+        {
+            txtAmper.ResetText();
+            txtKW.ResetText();
+            txtTitle.ResetText();
+            txtManiFactory.ResetText();
+            txtKW.ResetText();
+            txtVoltag.ResetText();
+            numRPM.EditValue = 0;
+            SelectedRow = null;
+            txtTitle.Focus();
+            UpdatePowerList();
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             if (btnClose.Text == PublicClass.CancelStr)
             {
-
+                ClearForm();
             }
             else
             {
                 Close();
             }
+        }
+
+        private void btnSelected_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (gvPowerList.GetFocusedRowCellValue("ID") == null) return;
+            SelectedRow = (PowerElectricalMachinery)gvPowerList.GetFocusedRow();
+            SelectedRow.Amper = txtAmper.Text;
+            SelectedRow.Voltag = txtVoltag.Text.Trim();
+            SelectedRow.RPM = Convert.ToInt32(numRPM.EditValue);
+            SelectedRow.IsDelete = false;
+            SelectedRow.KW = txtKW.Text.Trim();
+            SelectedRow.MachineryID_FK = machineryID;
+            SelectedRow.Title = txtTitle.Text.Trim();
+            SelectedRow.Manifactor = txtManiFactory.Text.Trim();
         }
     }
 }
