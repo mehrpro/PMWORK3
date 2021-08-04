@@ -219,18 +219,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108020759410_dbcreator.cs" />
-    <Compile Include="Migrations\202108020759410_dbcreator.designer.cs">
-      <DependentUpon>202108020759410_dbcreator.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108021138131_updateSparePart.cs" />
-    <Compile Include="Migrations\202108021138131_updateSparePart.designer.cs">
-      <DependentUpon>202108021138131_updateSparePart.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108021306513_UpdateSpare1.cs" />
-    <Compile Include="Migrations\202108021306513_UpdateSpare1.designer.cs">
-      <DependentUpon>202108021306513_UpdateSpare1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PMForms\IdentityMachineryForm.cs">
       <SubType>Form</SubType>
@@ -330,15 +318,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108020759410_dbcreator.resx">
-      <DependentUpon>202108020759410_dbcreator.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108021138131_updateSparePart.resx">
-      <DependentUpon>202108021138131_updateSparePart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108021306513_UpdateSpare1.resx">
-      <DependentUpon>202108021306513_UpdateSpare1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMForms\PowerElectricalForm.resx">
       <DependentUpon>PowerElectricalForm.cs</DependentUpon>

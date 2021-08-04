@@ -94,6 +94,12 @@ namespace PMWORK.Repository
         /// <param name="MachineryID"></param>
         /// <returns></returns>
         List<SparePart> GetSparePartByMachineriId(int MachineryID);
+        /// <summary>
+        /// لیست توان مصرفی ماشین بر اساس شناسه دستگاه
+        /// </summary>
+        /// <param name="machineryId"></param>
+        /// <returns></returns>
+        List<PowerElectricalMachinery> GetPowerListByMachineryId(int machineryId);
 
 
 
@@ -127,6 +133,12 @@ namespace PMWORK.Repository
         /// <param name="sparePart">مدل</param>
         /// <returns></returns>
         bool AddSparePart(SparePart sparePart);
+        /// <summary>
+        /// افزودن و ویرایش توان مصرفی دستگاه
+        /// </summary>
+        /// <param name="powerElectrical"></param>
+        /// <returns></returns>
+        bool AddPowerElectrical(PowerElectricalMachinery powerElectrical);
 
 
 
@@ -172,6 +184,11 @@ namespace PMWORK.Repository
         public List<RepairMan> GetAllRepairMan()
         {
             return _context.RepairMens.Where(x => x.IsActive).ToList();
+        }
+
+        public List<PowerElectricalMachinery> GetPowerListByMachineryId(int machineryId)
+        {
+            return _context.PowerElectricalMachineries.Where(x => x.MachineryID_FK == machineryId).ToList();
         }
 
         public bool AddRepairMan(RepairMan model)
@@ -275,6 +292,43 @@ namespace PMWORK.Repository
             return _context.MenuItems.Where(x => x.GroupID_FK == menuGroup).ToList();
         }
 
+        public bool AddPowerElectrical(PowerElectricalMachinery powerElectrical)
+        {
+            if (powerElectrical.ID > 0)
+            {
+                try
+                {
+                    var local = _context.Set<ServicePeriode>().Local.FirstOrDefault(x => x.ID == powerElectrical.ID);
+                    if (local != null)
+                    {
+                        _context.Entry(local).State = EntityState.Detached;
+                    }
+                    _context.Entry(powerElectrical).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    _context.PowerElectricalMachineries.Add(powerElectrical);
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+
+        }
+
         public bool CleamUser(List<Cleam> cleams)
         {
             try
@@ -360,7 +414,7 @@ namespace PMWORK.Repository
                     _context.SaveChanges();
                     return true;
                 }
-                catch 
+                catch
                 {
                     return false;
                 }
@@ -374,7 +428,7 @@ namespace PMWORK.Repository
                     _context.SaveChanges();
                     return true;
                 }
-                catch 
+                catch
                 {
                     return false;
                 }
