@@ -14,6 +14,8 @@ namespace PMWORK.Entities
             ServicePeriodes = new HashSet<ServicePeriode>();
             SpareParts = new HashSet<SparePart>();
             PowerElectricalMachineries = new HashSet<PowerElectricalMachinery>();
+            IdentityMachineries = new HashSet<IdentityMachinery>();
+
         }
 
         public int ID { get; set; }
@@ -34,6 +36,7 @@ namespace PMWORK.Entities
         public virtual ICollection<ServicePeriode> ServicePeriodes { get; set; }
         public virtual ICollection<SparePart> SpareParts { get; set; }
         public virtual ICollection<PowerElectricalMachinery> PowerElectricalMachineries { get; set; }
+        public virtual ICollection<IdentityMachinery> IdentityMachineries { get; set; }
 
 
 

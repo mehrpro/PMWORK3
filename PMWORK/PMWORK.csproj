@@ -238,6 +238,12 @@
     <Compile Include="PMForms\IdentityMachineryForm.Designer.cs">
       <DependentUpon>IdentityMachineryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PMForms\PowerElectricalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PMForms\PowerElectricalForm.Designer.cs">
+      <DependentUpon>PowerElectricalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PMForms\ServicePerideForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108021306513_UpdateSpare1.resx">
       <DependentUpon>202108021306513_UpdateSpare1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMForms\PowerElectricalForm.resx">
+      <DependentUpon>PowerElectricalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMForms\ServicePerideForm.resx">
       <DependentUpon>ServicePerideForm.cs</DependentUpon>

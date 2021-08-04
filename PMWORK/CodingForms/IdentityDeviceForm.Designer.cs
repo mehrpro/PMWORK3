@@ -387,6 +387,7 @@ namespace PMWORK.CodingForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnElectrical.Name = "btnElectrical";
             this.btnElectrical.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnElectrical.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnElectrical_ButtonClick);
             // 
             // IdentityDeviceForm
             // 

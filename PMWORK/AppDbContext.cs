@@ -218,6 +218,11 @@ namespace PMWORK
 .WithRequired(x => x.Machinery)
 .HasForeignKey(x => x.MachineryID_FK)
 .WillCascadeOnDelete(false);
+            builder.Entity<Machinery>()
+.HasMany(x => x.IdentityMachineries)
+.WithRequired(x => x.Machinery)
+.HasForeignKey(x => x.MachinerID_FK)
+.WillCascadeOnDelete(false);
 
 
 
@@ -369,6 +374,9 @@ namespace PMWORK
             builder.Entity<IdentityMachinery>().Property(x => x.TypeDevice).HasMaxLength(250);
             builder.Entity<IdentityMachinery>().Property(x => x.ApplicantID_FK).IsRequired();
 
+
+
+
             builder.Entity<PowerElectricalMachinery>().HasKey(x => x.ID);
             builder.Entity<PowerElectricalMachinery>().Property(x => x.ID).IsRequired()
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
@@ -378,9 +386,10 @@ namespace PMWORK
             builder.Entity<PowerElectricalMachinery>().Property(x => x.KW).HasMaxLength(10);
             builder.Entity<PowerElectricalMachinery>().Property(x => x.Voltag).HasMaxLength(10);
             builder.Entity<PowerElectricalMachinery>().Property(x => x.Amper).HasMaxLength(10);
-            
+            builder.Entity<PowerElectricalMachinery>().Property(x => x.IsDelete).IsRequired();
 
-    }
+
+        }
 
 
 
@@ -404,6 +413,7 @@ namespace PMWORK
         public virtual DbSet<SparePart> SpareParts { get; set; }
         public virtual DbSet<ServicePeriode> ServicePeriodes { get; set; }
         public virtual DbSet<IdentityMachinery> IdentityMachineries { get; set; }
+        public virtual DbSet<PowerElectricalMachinery> PowerElectricalMachineries { get; set; }
 
 
     }

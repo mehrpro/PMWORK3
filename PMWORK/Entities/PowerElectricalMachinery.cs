@@ -17,5 +17,7 @@ namespace PMWORK.Entities
         public int RPM { get; set; }
         public string Voltag { get; set; }
         public string Amper { get; set; }
+        public bool IsDelete { get; set; }
+
     }
 }

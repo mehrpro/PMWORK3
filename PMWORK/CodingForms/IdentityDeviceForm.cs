@@ -121,5 +121,21 @@ namespace PMWORK.CodingForms
             frm.Show();
 
         }
+
+        private void btnElectrical_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (gvMachineryList.GetFocusedRowCellValue("ID") == null)
+                {
+                return;
+                }
+            var selected = (Entities.Machinery)gvMachineryList.GetFocusedRow();
+
+            var frm = _container.GetInstance<PowerElectricalForm>();
+            frm.Code = selected.Coding.Code.ToString();
+            frm.MachineryID = selected.ID;
+            frm.MachineryName = selected.MachineryTitle;
+            frm.Show();
+
+            }
     }
 }
