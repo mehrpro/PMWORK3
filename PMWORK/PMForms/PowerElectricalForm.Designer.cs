@@ -36,6 +36,11 @@ namespace PMWORK.PMForms
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
@@ -70,6 +75,8 @@ namespace PMWORK.PMForms
             this.VColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RPMColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.IsDeleteColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
@@ -87,6 +94,7 @@ namespace PMWORK.PMForms
             ((System.ComponentModel.ISupportInitialize)(this.gvPowerList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelected)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -339,7 +347,8 @@ namespace PMWORK.PMForms
             this.dgvPowerList.MainView = this.gvPowerList;
             this.dgvPowerList.Name = "dgvPowerList";
             this.dgvPowerList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnSelected});
+            this.btnSelected,
+            this.btnDelete});
             this.dgvPowerList.Size = new System.Drawing.Size(761, 295);
             this.dgvPowerList.TabIndex = 0;
             this.dgvPowerList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -409,7 +418,8 @@ namespace PMWORK.PMForms
             this.KWColumn,
             this.AColumn,
             this.VColumn,
-            this.RPMColumn});
+            this.RPMColumn,
+            this.IsDeleteColumn});
             this.gvPowerList.GridControl = this.dgvPowerList;
             this.gvPowerList.Name = "gvPowerList";
             // 
@@ -454,7 +464,7 @@ namespace PMWORK.PMForms
             // ManifactorColumn
             // 
             this.ManifactorColumn.Caption = "سازنده";
-            this.ManifactorColumn.FieldName = "ManiFactor";
+            this.ManifactorColumn.FieldName = "Manifactor";
             this.ManifactorColumn.Name = "ManifactorColumn";
             this.ManifactorColumn.Visible = true;
             this.ManifactorColumn.VisibleIndex = 2;
@@ -503,6 +513,26 @@ namespace PMWORK.PMForms
             this.RPMColumn.VisibleIndex = 6;
             this.RPMColumn.Width = 60;
             // 
+            // IsDeleteColumn
+            // 
+            this.IsDeleteColumn.ColumnEdit = this.btnDelete;
+            this.IsDeleteColumn.MaxWidth = 30;
+            this.IsDeleteColumn.MinWidth = 30;
+            this.IsDeleteColumn.Name = "IsDeleteColumn";
+            this.IsDeleteColumn.Visible = true;
+            this.IsDeleteColumn.VisibleIndex = 7;
+            this.IsDeleteColumn.Width = 30;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete_ButtonClick);
+            // 
             // PowerElectricalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -532,6 +562,7 @@ namespace PMWORK.PMForms
             ((System.ComponentModel.ISupportInitialize)(this.gvPowerList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelected)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             this.ResumeLayout(false);
 
             }
@@ -571,5 +602,7 @@ namespace PMWORK.PMForms
         private DevExpress.XtraGrid.Columns.GridColumn VColumn;
         private DevExpress.XtraGrid.Columns.GridColumn RPMColumn;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dx;
-    }
+        private DevExpress.XtraGrid.Columns.GridColumn IsDeleteColumn;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnDelete;
+        }
     }

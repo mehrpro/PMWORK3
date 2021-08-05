@@ -38,6 +38,9 @@ namespace PMWORK.PMForms
 
         private void PowerElectricalForm_Load(object sender, EventArgs e)
         {
+            txtMachineryID.EditValue = machineryID;
+            txtMachineryName.EditValue = machineryName;
+            txtCode.EditValue = code;
             UpdatePowerList();
         }
 
@@ -105,6 +108,7 @@ namespace PMWORK.PMForms
             numRPM.EditValue = 0;
             SelectedRow = null;
             txtTitle.Focus();
+            btnClose.Text = PublicClass.CloseStr;
             UpdatePowerList();
         }
 
@@ -124,14 +128,29 @@ namespace PMWORK.PMForms
         {
             if (gvPowerList.GetFocusedRowCellValue("ID") == null) return;
             SelectedRow = (PowerElectricalMachinery)gvPowerList.GetFocusedRow();
-            SelectedRow.Amper = txtAmper.Text;
-            SelectedRow.Voltag = txtVoltag.Text.Trim();
-            SelectedRow.RPM = Convert.ToInt32(numRPM.EditValue);
-            SelectedRow.IsDelete = false;
-            SelectedRow.KW = txtKW.Text.Trim();
-            SelectedRow.MachineryID_FK = machineryID;
-            SelectedRow.Title = txtTitle.Text.Trim();
-            SelectedRow.Manifactor = txtManiFactory.Text.Trim();
+            txtAmper.Text = SelectedRow.Amper ;
+            txtVoltag.Text = SelectedRow.Voltag ;
+            numRPM.EditValue = SelectedRow.RPM ;
+            txtKW.Text = SelectedRow.KW ;
+            txtTitle.Text = SelectedRow.Title ;
+            txtManiFactory.Text = SelectedRow.Manifactor ;
+            btnClose.Text = PublicClass.CancelStr;
         }
-    }
+
+        private void btnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+            {
+            if (gvPowerList.GetFocusedRowCellValue("ID") == null) return;
+            var selectedDelte = (PowerElectricalMachinery)gvPowerList.GetFocusedRow();
+            var dialogResult = XtraMessageBox.Show("از حذف این ردیف مطمئن هستید؟", "حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+                {
+                _codingRepository.DeletePowerElectrical(selectedDelte.ID);
+                UpdatePowerList();
+                }
+            else
+                {
+                return;
+                }
+            }
+        }
 }

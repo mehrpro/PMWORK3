@@ -142,6 +142,15 @@ namespace PMWORK.Repository
 
 
 
+        /// <summary>
+        /// حذف رکورد توان مصرفی
+        /// </summary>
+        /// <param name="PowerElectricalID"></param>
+        /// <returns></returns>
+        bool DeletePowerElectrical(int PowerElectricalID);
+
+
+
 
 
         /// <summary>
@@ -188,7 +197,7 @@ namespace PMWORK.Repository
 
         public List<PowerElectricalMachinery> GetPowerListByMachineryId(int machineryId)
         {
-            return _context.PowerElectricalMachineries.Where(x => x.MachineryID_FK == machineryId).ToList();
+            return _context.PowerElectricalMachineries.Where(x => x.MachineryID_FK == machineryId && !x.IsDelete).ToList();
         }
 
         public bool AddRepairMan(RepairMan model)
@@ -480,6 +489,26 @@ namespace PMWORK.Repository
         {
             return _context.SpareParts.Include(x => x.UnitOfMeasurement).Where(x => x.MachineryID_FK == MachineryID).ToList();
         }
-    }
+
+        public bool DeletePowerElectrical(int PowerElectricalID)
+            {
+            try
+                {
+                var local = _context.Set<PowerElectricalMachinery>().Local.FirstOrDefault(x => x.ID == PowerElectricalID);
+                if (local != null)
+                    {
+                    _context.Entry(local).State = EntityState.Detached;
+                    }
+                local.IsDelete = true;
+                _context.Entry(local).State = EntityState.Modified;
+                _context.SaveChanges();
+                return true;
+                }
+            catch
+                {
+                return false;
+                }
+            }
+        }
 }
 
