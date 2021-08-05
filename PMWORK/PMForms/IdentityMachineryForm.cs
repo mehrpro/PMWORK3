@@ -28,5 +28,15 @@ namespace PMWORK.PMForms
             InitializeComponent();
             _codingRepository = codingRepository;
         }
-    }
+
+        private void IdentityMachineryForm_Load(object sender, EventArgs e)
+            {
+
+            }
+
+        private void panelControl2_Paint(object sender, PaintEventArgs e)
+            {
+
+            }
+        }
 }

@@ -326,6 +326,9 @@
     <EmbeddedResource Include="Migrations\202108041752050_DBCreate.resx">
       <DependentUpon>202108041752050_DBCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PMForms\IdentityMachineryForm.resx">
+      <DependentUpon>IdentityMachineryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PMForms\PowerElectricalForm.resx">
       <DependentUpon>PowerElectricalForm.cs</DependentUpon>
     </EmbeddedResource>
