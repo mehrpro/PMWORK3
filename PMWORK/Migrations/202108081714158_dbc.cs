@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class DBCreate : DbMigration
+    public partial class dbc : DbMigration
     {
         public override void Up()
         {
@@ -171,10 +171,10 @@
                         dateTimeImport = c.DateTime(nullable: false),
                         dateTimeStart = c.DateTime(nullable: false),
                         ApplicantID_FK = c.Int(nullable: false),
-                        Length = c.String(),
-                        Width = c.String(),
-                        Height = c.String(),
-                        Wight = c.String(),
+                        Length = c.Int(nullable: false),
+                        Width = c.Int(nullable: false),
+                        Height = c.Int(nullable: false),
+                        Wight = c.Int(nullable: false),
                         Wather = c.String(),
                         oil = c.String(),
                     })

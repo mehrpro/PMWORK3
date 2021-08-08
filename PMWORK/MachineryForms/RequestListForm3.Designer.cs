@@ -263,7 +263,7 @@ namespace PMWORK.MachineryForms
             this.ID.Name = "ID";
             this.ID.Visible = true;
             this.ID.VisibleIndex = 0;
-            this.ID.Width = 46;
+            this.ID.Width = 36;
             // 
             // Applicant
             // 
@@ -272,7 +272,7 @@ namespace PMWORK.MachineryForms
             this.Applicant.Name = "Applicant";
             this.Applicant.Visible = true;
             this.Applicant.VisibleIndex = 1;
-            this.Applicant.Width = 109;
+            this.Applicant.Width = 88;
             // 
             // RequsetDateTime
             // 
@@ -326,17 +326,18 @@ namespace PMWORK.MachineryForms
             this.ReqTitle.Name = "ReqTitle";
             this.ReqTitle.Visible = true;
             this.ReqTitle.VisibleIndex = 5;
-            this.ReqTitle.Width = 223;
+            this.ReqTitle.Width = 115;
             // 
             // ColumnEdit
             // 
+            this.ColumnEdit.Caption = "ویرایش";
             this.ColumnEdit.ColumnEdit = this.btnEditRow;
-            this.ColumnEdit.MaxWidth = 25;
-            this.ColumnEdit.MinWidth = 25;
+            this.ColumnEdit.MaxWidth = 50;
+            this.ColumnEdit.MinWidth = 50;
             this.ColumnEdit.Name = "ColumnEdit";
             this.ColumnEdit.Visible = true;
             this.ColumnEdit.VisibleIndex = 6;
-            this.ColumnEdit.Width = 25;
+            this.ColumnEdit.Width = 50;
             // 
             // btnEditRow
             // 
@@ -354,13 +355,14 @@ namespace PMWORK.MachineryForms
             // 
             // ColumnDelete
             // 
+            this.ColumnDelete.Caption = "حذف";
             this.ColumnDelete.ColumnEdit = this.btnDeleteRow;
-            this.ColumnDelete.MaxWidth = 25;
-            this.ColumnDelete.MinWidth = 25;
+            this.ColumnDelete.MaxWidth = 50;
+            this.ColumnDelete.MinWidth = 50;
             this.ColumnDelete.Name = "ColumnDelete";
             this.ColumnDelete.Visible = true;
             this.ColumnDelete.VisibleIndex = 7;
-            this.ColumnDelete.Width = 25;
+            this.ColumnDelete.Width = 50;
             // 
             // btnDeleteRow
             // 
@@ -378,13 +380,14 @@ namespace PMWORK.MachineryForms
             // 
             // ColumnReport
             // 
+            this.ColumnReport.Caption = "ثبت گزارش";
             this.ColumnReport.ColumnEdit = this.btnReportRepair;
-            this.ColumnReport.MaxWidth = 25;
-            this.ColumnReport.MinWidth = 25;
+            this.ColumnReport.MaxWidth = 70;
+            this.ColumnReport.MinWidth = 70;
             this.ColumnReport.Name = "ColumnReport";
             this.ColumnReport.Visible = true;
             this.ColumnReport.VisibleIndex = 8;
-            this.ColumnReport.Width = 25;
+            this.ColumnReport.Width = 70;
             // 
             // btnReportRepair
             // 

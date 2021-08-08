@@ -219,9 +219,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108041752050_DBCreate.cs" />
-    <Compile Include="Migrations\202108041752050_DBCreate.designer.cs">
-      <DependentUpon>202108041752050_DBCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202108081714158_dbc.cs" />
+    <Compile Include="Migrations\202108081714158_dbc.designer.cs">
+      <DependentUpon>202108081714158_dbc.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PMForms\IdentityMachineryForm.cs">
@@ -323,8 +323,8 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108041752050_DBCreate.resx">
-      <DependentUpon>202108041752050_DBCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108081714158_dbc.resx">
+      <DependentUpon>202108081714158_dbc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMForms\IdentityMachineryForm.resx">
       <DependentUpon>IdentityMachineryForm.cs</DependentUpon>

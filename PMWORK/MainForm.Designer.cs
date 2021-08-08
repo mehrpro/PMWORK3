@@ -401,13 +401,12 @@ namespace PMWORK
             this.PGMachinery,
             this.PGCoding});
             this.ribPageInfrasturcture.Name = "ribPageInfrasturcture";
-            this.ribPageInfrasturcture.Text = "دارایی فیزیکی";
+            this.ribPageInfrasturcture.Text = "مدیریت دارایی سازمانی";
             // 
             // PGMachinery
             // 
             this.PGMachinery.ItemLinks.Add(this.btnMachinery);
             this.PGMachinery.ItemLinks.Add(this.btnIdentityDevice);
-            this.PGMachinery.ItemLinks.Add(this.btnServicePeriode);
             this.PGMachinery.Name = "PGMachinery";
             this.PGMachinery.ShowCaptionButton = false;
             this.PGMachinery.Text = "دارایی فیزیکی";
@@ -430,7 +429,7 @@ namespace PMWORK
             this.ribPageMaintanace.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.PGRequestReapir});
             this.ribPageMaintanace.Name = "ribPageMaintanace";
-            this.ribPageMaintanace.Text = "نگهداری تعمیرات";
+            this.ribPageMaintanace.Text = "مدیریت کار";
             // 
             // PGRequestReapir
             // 
@@ -490,10 +489,10 @@ namespace PMWORK
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.FirstDayOfWeek = System.DayOfWeek.Saturday;
             this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             this.repositoryItemDateEdit1.Parmida_CheckDateOnLeave = false;
             this.repositoryItemDateEdit1.Parmida_CheckEmptyFillDateOnEnter = false;
-            this.repositoryItemDateEdit1.ParmidaCalendarType = DevExpress.XtraEditors.CalendarType.GregorianCalendar;
             // 
             // repositoryItemDateEdit2
             // 
@@ -502,10 +501,10 @@ namespace PMWORK
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit2.FirstDayOfWeek = System.DayOfWeek.Saturday;
             this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
             this.repositoryItemDateEdit2.Parmida_CheckDateOnLeave = false;
             this.repositoryItemDateEdit2.Parmida_CheckEmptyFillDateOnEnter = false;
-            this.repositoryItemDateEdit2.ParmidaCalendarType = DevExpress.XtraEditors.CalendarType.GregorianCalendar;
             // 
             // ribbonStatusBar1
             // 

@@ -293,10 +293,10 @@ namespace PMWORK.MachineryForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.FirstDayOfWeek = System.DayOfWeek.Saturday;
             this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             this.repositoryItemDateEdit1.Parmida_CheckDateOnLeave = false;
             this.repositoryItemDateEdit1.Parmida_CheckEmptyFillDateOnEnter = false;
-            this.repositoryItemDateEdit1.ParmidaCalendarType = DevExpress.XtraEditors.CalendarType.GregorianCalendar;
             // 
             // MachineryCode
             // 
@@ -331,13 +331,14 @@ namespace PMWORK.MachineryForms
             // 
             // ColumnEdit
             // 
+            this.ColumnEdit.Caption = "ویرایش";
             this.ColumnEdit.ColumnEdit = this.btnEditRow;
-            this.ColumnEdit.MaxWidth = 25;
-            this.ColumnEdit.MinWidth = 25;
+            this.ColumnEdit.MaxWidth = 50;
+            this.ColumnEdit.MinWidth = 50;
             this.ColumnEdit.Name = "ColumnEdit";
             this.ColumnEdit.Visible = true;
             this.ColumnEdit.VisibleIndex = 6;
-            this.ColumnEdit.Width = 25;
+            this.ColumnEdit.Width = 50;
             // 
             // btnEditRow
             // 
