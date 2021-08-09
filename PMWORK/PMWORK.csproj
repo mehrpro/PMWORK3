@@ -121,10 +121,10 @@
     <Compile Include="CodingForms\GroupForm.Designer.cs">
       <DependentUpon>GroupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CodingForms\IdentityDeviceForm.cs">
+    <Compile Include="PMForms\IdentityDeviceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CodingForms\IdentityDeviceForm.Designer.cs">
+    <Compile Include="PMForms\IdentityDeviceForm.Designer.cs">
       <DependentUpon>IdentityDeviceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CodingForms\RepairManForm.cs">
@@ -296,7 +296,7 @@
     <EmbeddedResource Include="CodingForms\GroupForm.resx">
       <DependentUpon>GroupForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CodingForms\IdentityDeviceForm.resx">
+    <EmbeddedResource Include="PMForms\IdentityDeviceForm.resx">
       <DependentUpon>IdentityDeviceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CodingForms\RepairManForm.resx">
