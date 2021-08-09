@@ -66,6 +66,11 @@ namespace PMWORK.PMForms
             this.DetailsColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnDetails = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.RequesterColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.row5 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.row6 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.row7 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.category2 = new DevExpress.XtraVerticalGrid.Rows.CategoryRow();
+            this.row8 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -176,7 +181,8 @@ namespace PMWORK.PMForms
             this.vGridControl1.Name = "vGridControl1";
             this.vGridControl1.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
             this.category,
-            this.category1});
+            this.category1,
+            this.category2});
             this.vGridControl1.Size = new System.Drawing.Size(311, 248);
             this.vGridControl1.TabIndex = 0;
             // 
@@ -383,6 +389,36 @@ namespace PMWORK.PMForms
             this.RequesterColumn.VisibleIndex = 2;
             this.RequesterColumn.Width = 120;
             // 
+            // row5
+            // 
+            this.row5.Name = "row5";
+            this.row5.Properties.Caption = "درخواست تعمیر";
+            // 
+            // row6
+            // 
+            this.row6.Name = "row6";
+            this.row6.Properties.Caption = "درخواست ساخت وتجهیز";
+            // 
+            // row7
+            // 
+            this.row7.Name = "row7";
+            this.row7.Properties.Caption = "درخواست های مانده";
+            // 
+            // category2
+            // 
+            this.category2.ChildRows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
+            this.row8,
+            this.row5,
+            this.row7,
+            this.row6});
+            this.category2.Name = "category2";
+            this.category2.Properties.Caption = "درخواست ها";
+            // 
+            // row8
+            // 
+            this.row8.Name = "row8";
+            this.row8.Properties.Caption = "کل درخواست ها";
+            // 
             // ReportWorkOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,5 +472,10 @@ namespace PMWORK.PMForms
         private DevExpress.XtraVerticalGrid.Rows.EditorRow row2;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow row3;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow row4;
+        private DevExpress.XtraVerticalGrid.Rows.CategoryRow category2;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow row8;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow row5;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow row7;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow row6;
         }
     }
