@@ -82,13 +82,9 @@ namespace PMWORK.CodingForms
                 _selectApplicant.Description = txtDescription.Text.Trim();
                 var result = _codingRepository.AddEditApplicant(_selectApplicant);
                 if (result)
-                {
                     PublicClass.SuccessMessage(Text);
-                }
                 else
-                {
                     PublicClass.ErrorSave(Text);
-                }
 
             }
             else
@@ -101,13 +97,9 @@ namespace PMWORK.CodingForms
                 };
                 var result = _codingRepository.AddEditApplicant(obj);
                 if (result)
-                {
                     PublicClass.SuccessMessage(Text);
-                }
                 else
-                {
                     PublicClass.ErrorSave(Text);
-                }
 
             }
             UpdateApplicantList(_selectedCompany.ID);

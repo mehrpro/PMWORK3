@@ -1,32 +1,33 @@
 ﻿using PMWORK.Entities;
 using System;
-using System.Data;
 using System.Linq;
+using PMWORK.Repository;
 
 namespace PMWORK.CodingForms
 {
     public partial class CompaniesForm : DevExpress.XtraEditors.XtraForm
     {
-        private AppDbContext db;
-        private Company Row { get; set; }
+        private readonly ICodingRepository _codingRepository;
+        private Company SelectRow { get; set; }
 
-        public CompaniesForm()
+        public CompaniesForm(ICodingRepository codingRepository)
         {
+            _codingRepository = codingRepository;
             InitializeComponent();
-            db = new AppDbContext();
+
             UpdateList();
         }
 
-        public void UpdateList()
+        private void UpdateList()
         {
-            dgvCompany.DataSource = db.Companies.AsNoTracking().ToList();
+            dgvCompany.DataSource = _codingRepository.GetAllCompanies();
             LastGroupIndex();
         }
 
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (btnClose.Text == "انصراف")
+            if (btnClose.Text == PublicClass.CancelStr)
             {
                 ClearControlers();
             }
@@ -36,21 +37,29 @@ namespace PMWORK.CodingForms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (btnClose.Text == "انصراف")
+            if (btnClose.Text == PublicClass.CancelStr)
             {
-                var select = db.Companies.Find(Row.ID);
-                select.CompanyTitle = txtCompanyTitle.Text.Trim();
-                select.Description = txtDescription.Text.Trim();
+
+                SelectRow.CompanyTitle = txtCompanyTitle.Text.Trim();
+                SelectRow.Description = txtDescription.Text.Trim();
+                var result = _codingRepository.AddEditCompnay(SelectRow);
+                if (result)
+                    PublicClass.SuccessMessage(Text);
+                else
+                    PublicClass.ErrorSave(Text);
             }
             else
             {
                 var obj = new Company();
                 obj.CompnayIndex = Convert.ToByte(numCompanyIndex.EditValue);
                 obj.CompanyTitle = txtCompanyTitle.EditValue.ToString().Trim();
-                obj.Description = txtDescription.Text.ToString().Trim();
-                db.Companies.Add(obj);
+                obj.Description = txtDescription.Text.Trim();
+                var result = _codingRepository.AddEditCompnay(obj);
+                if (result)
+                    PublicClass.SuccessMessage(Text);
+                else
+                    PublicClass.ErrorSave(Text);
             }
-            db.SaveChanges();
             UpdateList();
             ClearControlers();
 
@@ -61,30 +70,27 @@ namespace PMWORK.CodingForms
             txtDescription.ResetText();
             txtCompanyTitle.ResetText();
             LastGroupIndex();
-            Row = null;
-            btnClose.Text = "بستن";
+            SelectRow = null;
+            btnClose.Text = PublicClass.CloseStr;
         }
 
 
         private void LastGroupIndex()
         {
             int last = 0;
-            var qry = db.Companies.AsNoTracking().Select(x => x.CompnayIndex).ToArray();
-            if (qry != null) last = qry.Max();
+            var qry = _codingRepository.GetAllCompanies();
+            if (qry.Any()) last = _codingRepository.GetAllCompanies().Select(x => x.CompnayIndex).ToArray().Max();
             numCompanyIndex.EditValue = last + 1;
         }
 
         private void btnSelectRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (gvCompany.GetFocusedRowCellValue("ID") != null)
-            {
-                var row = gvCompany.GetFocusedRow();
-                Row = (Company)row;
-                numCompanyIndex.EditValue = Row.CompnayIndex;
-                txtCompanyTitle.EditValue = Row.CompanyTitle;
-                txtDescription.EditValue = Row.Description;
-                btnClose.Text = "انصراف";
-            }
+            if (gvCompany.GetFocusedRowCellValue("ID") == null) return;
+            SelectRow = (Company)gvCompany.GetFocusedRow();
+            numCompanyIndex.EditValue = SelectRow.CompnayIndex;
+            txtCompanyTitle.EditValue = SelectRow.CompanyTitle;
+            txtDescription.EditValue = SelectRow.Description;
+            btnClose.Text = PublicClass.CancelStr;
         }
     }
 }

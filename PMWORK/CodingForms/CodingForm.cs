@@ -86,19 +86,16 @@ namespace PMWORK.CodingForms
                 lastNumber++;
                 return lastNumber.ToString("000");
             }
-            else
-            {
-                int firstNumber = 1;
-                return firstNumber.ToString("000");
-            }
+            int firstNumber = 1;
+            return firstNumber.ToString("000");
 
         }
 
         private void CodeBox()
         {
             var lastNumber = "";
-            string companyStr, groupStr, subgroupStr;
-            companyStr = groupStr = subgroupStr = "";
+            string groupStr, subgroupStr;
+            var companyStr = groupStr = subgroupStr = "";
             if (_selectCompany != null)
                 if (Convert.ToInt32(_selectCompany.ID) > 0)
                     companyStr = Convert.ToInt32(_selectCompany.Tag).ToString();
@@ -174,7 +171,8 @@ namespace PMWORK.CodingForms
             txtCodeTitle.ResetText();
             txtDescription.ResetText();
             SelectRow = null;
-            cbxCompany.ReadOnly = cbxGroup.ReadOnly = cbxSubGroup.ReadOnly = false;
+            if (!PublicClass.LimitedCompany) cbxCompany.ReadOnly = false;
+            cbxGroup.ReadOnly = cbxSubGroup.ReadOnly = false;
 
 
         }

@@ -40,12 +40,12 @@ namespace PMWORK.MachineryForms
             }).ToList();
 
             if (PublicClass.LimitedCompany)
-                {
+            {
                 cbxCompany.EditValue = PublicClass.CompanyID;
                 cbxCompany.ReadOnly = true;
-                }
-
             }
+
+        }
 
 
         private async Task UpdateCodingList(int cid, int aid)
@@ -53,7 +53,7 @@ namespace PMWORK.MachineryForms
             await UpdateCbxCoding(cid);
             var qryMasterMachineryList = await _db.Machineries
                 .Include(a => a.Applicant)
-                .Include(x=>x.Coding)
+                .Include(x => x.Coding)
                 .ToListAsync();
             var qryMachineryList = qryMasterMachineryList
                 .Where(x => x.CompanyID == cid && x.IsActive && !x.IsDelete && x.ApplicantID_FK == aid).ToList();
@@ -192,7 +192,7 @@ namespace PMWORK.MachineryForms
             cbxCoding.EditValue = null;
             // _selectedCoding = null;
             btnAdd.Text = "افزودن";
-            btnClose.Text = "بستن";
+            btnClose.Text = PublicClass.CloseStr;
 
         }
 
@@ -210,7 +210,7 @@ namespace PMWORK.MachineryForms
                 cbxCompany.ReadOnly = cbxCoding.ReadOnly = true;
                 btnAdd.Tag = true;
                 btnAdd.Text = @"ذخیره";
-                btnClose.Text = "انصراف";
+                btnClose.Text = PublicClass.CancelStr;
             }
         }
 

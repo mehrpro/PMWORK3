@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PMWORK.Entities;
 using PMWORK.Repository;
@@ -16,7 +8,7 @@ namespace PMWORK.CodingForms
     public partial class RepairManForm : XtraForm
     {
         private readonly ICodingRepository _codingRepository;
-        private RepairMan SelectedRow;
+        private RepairMan _selectedRow;
 
         public RepairManForm(ICodingRepository codingRepository)
         {
@@ -25,14 +17,14 @@ namespace PMWORK.CodingForms
             UpdateRepairManList();
         }
 
-        public void UpdateRepairManList()
+        private void UpdateRepairManList()
         {
             dgvRepaiemanList.DataSource = _codingRepository.GetAllRepairMan();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (btnClose.Text == "انصراف")
+            if (btnClose.Text == PublicClass.CancelStr)
                 ClearControlers();
             else
                 Close();
@@ -43,52 +35,41 @@ namespace PMWORK.CodingForms
             txtFullName.ResetText();
             txtJob.ResetText();
             UpdateRepairManList();
-            SelectedRow = null;
+            _selectedRow = null;
             chkActive.Checked = false;
-            btnClose.Text = "بستن";
+            btnClose.Text = PublicClass.CloseStr;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (dxValidationProvider.Validate())
             {
-                if (btnClose.Text == "انصراف")
+                if (btnClose.Text == PublicClass.CancelStr)
                 {
-                    SelectedRow.Repairman_FullName = txtFullName.Text;
-                    SelectedRow.RepairMan_Status = txtJob.Text.Trim();
-                    SelectedRow.IsActive = Convert.ToBoolean(chkActive.CheckState);
-
-                    var result = _codingRepository.AddRepairMan(SelectedRow);
+                    _selectedRow.Repairman_FullName = txtFullName.Text;
+                    _selectedRow.RepairMan_Status = txtJob.Text.Trim();
+                    _selectedRow.IsActive = Convert.ToBoolean(chkActive.CheckState);
+                    var result = _codingRepository.AddRepairMan(_selectedRow);
                     if (result)
-                    {
-                        PublicClass.SuccessMessage(Text);                        
-                        UpdateRepairManList();
-                    }
+                        PublicClass.SuccessMessage(Text);
                     else
-                    {
                         PublicClass.ErrorSave(Text);
-                    }
                 }
                 else
                 {
-                    var newobj = new RepairMan()
+                    var model = new RepairMan()
                     {
                         IsActive = Convert.ToBoolean(chkActive.CheckState),
                         RepairMan_Status = txtJob.Text.Trim(),
                         Repairman_FullName = txtFullName.Text.Trim()
                     };
-                    var result = _codingRepository.AddRepairMan(newobj);
+                    var result = _codingRepository.AddRepairMan(model);
                     if (result)
-                    {
                         PublicClass.SuccessMessage(Text);
-                        UpdateRepairManList();
-
-                    }
                     else
-                    {
                         PublicClass.ErrorSave(Text);
-                    }
                 }
+                UpdateRepairManList();
                 ClearControlers();
             }
             else
@@ -99,17 +80,13 @@ namespace PMWORK.CodingForms
 
         private void btnSelectedRepairMan_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (gvRepairManList.GetFocusedRowCellValue("ID") != null)
-            {
-                var row = gvRepairManList.GetFocusedRow();
-                SelectedRow = (RepairMan)row;
-                txtFullName.Text = SelectedRow.Repairman_FullName;
-                txtJob.Text = SelectedRow.RepairMan_Status;
-                chkActive.EditValue = SelectedRow.IsActive;
-
-                ////btnSave.Text = "ذخی"
-                btnClose.Text = "انصراف";
-            }
+            if (gvRepairManList.GetFocusedRowCellValue("ID") == null) return;
+            var row = gvRepairManList.GetFocusedRow();
+            _selectedRow = (RepairMan)row;
+            txtFullName.Text = _selectedRow.Repairman_FullName;
+            txtJob.Text = _selectedRow.RepairMan_Status;
+            chkActive.EditValue = _selectedRow.IsActive;
+            btnClose.Text = PublicClass.CancelStr;
         }
     }
 }

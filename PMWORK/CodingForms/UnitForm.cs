@@ -1,29 +1,30 @@
 ﻿using PMWORK.Entities;
+using PMWORK.Repository;
 using System;
-using System.Linq;
 
 namespace PMWORK.CodingForms
 {
     public partial class UnitForm : DevExpress.XtraEditors.XtraForm
     {
-        private AppDbContext db;
+        private readonly ICodingRepository _codingRepository;
+
         private UnitOfMeasurement Row { get; set; }
 
-        public UnitForm()
+        public UnitForm(ICodingRepository codingRepository)
         {
+            _codingRepository = codingRepository;
             InitializeComponent();
-            db = new AppDbContext();
             UpdateList();
         }
 
-        public void UpdateList()
+        private void UpdateList()
         {
-            dgvUnit.DataSource = db.UnitOfMeasurements.ToList();
+            dgvUnit.DataSource = _codingRepository.GetAllUnits();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (btnClose.Text == "انصراف")
+            if (btnClose.Text == PublicClass.CancelStr)
             {
                 ClearControlers();
             }
@@ -33,11 +34,16 @@ namespace PMWORK.CodingForms
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (btnClose.Text == "انصراف")
+            if (btnClose.Text == PublicClass.CancelStr)
             {
-                var select = db.UnitOfMeasurements.Find(Row.ID);
-                select.Unit = txtUnitTitle.Text.Trim();
-                select.Description = txtDescription.Text.Trim();
+
+                Row.Unit = txtUnitTitle.Text.Trim();
+                Row.Description = txtDescription.Text.Trim();
+                var result = _codingRepository.AddEditUnit(Row);
+                if (result)
+                    PublicClass.SuccessMessage(Text);
+                else
+                    PublicClass.ErrorSave(Text);
             }
             else
             {
@@ -46,9 +52,13 @@ namespace PMWORK.CodingForms
                     Unit = txtUnitTitle.Text.Trim(),
                     Description = txtDescription.Text.Trim()
                 };
-                db.UnitOfMeasurements.Add(obj);
+                var result = _codingRepository.AddEditUnit(obj);
+                if (result)
+                    PublicClass.SuccessMessage(Text);
+                else
+                    PublicClass.ErrorSave(Text);
             }
-            db.SaveChanges();
+
             UpdateList();
             ClearControlers();
 
@@ -56,22 +66,18 @@ namespace PMWORK.CodingForms
 
         private void btnSelect_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (gvUnit.GetFocusedRowCellValue("ID") != null)
-            {
-                var row = gvUnit.GetFocusedRow();
-                Row = (UnitOfMeasurement)row;
-                txtUnitTitle.EditValue = Row.Unit;
-                txtDescription.EditValue = Row.Description;
-                btnClose.Text = "انصراف";
-            }
+            if (gvUnit.GetFocusedRowCellValue("ID") == null) return;
+            Row = (UnitOfMeasurement)gvUnit.GetFocusedRow();
+            txtUnitTitle.EditValue = Row.Unit;
+            txtDescription.EditValue = Row.Description;
+            btnClose.Text = PublicClass.CancelStr;
         }
         private void ClearControlers()
         {
             txtDescription.ResetText();
             txtUnitTitle.ResetText();
             Row = null;
-
-            btnClose.Text = "بستن";
+            btnClose.Text = PublicClass.CloseStr;
         }
     }
 }

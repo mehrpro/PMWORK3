@@ -79,12 +79,20 @@ namespace PMWORK
 
         private void btnGroups_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowDialogForms(new GroupForm());
+            //ShowDialogForms(new GroupForm());
+            var frm = _container.GetInstance<GroupForm>();
+            frm.FormBorderStyle = FormBorderStyle.FixedSingle;
+            frm.MaximizeBox = frm.MinimizeBox = false;
+            frm.ShowDialog();
         }
 
         private void btnSubGroups_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowDialogForms(new SubGroupForm());
+
+            var frm = _container.GetInstance<SubGroupForm>();
+            frm.FormBorderStyle = FormBorderStyle.FixedSingle;
+            frm.MaximizeBox = frm.MinimizeBox = false;
+            frm.ShowDialog();
         }
 
         private void btnCode_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -99,12 +107,18 @@ namespace PMWORK
 
         private void btnUnit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowDialogForms(new UnitForm());
+            var frm = _container.GetInstance<UnitForm>();
+            frm.FormBorderStyle = FormBorderStyle.FixedSingle;
+            frm.MaximizeBox = frm.MinimizeBox = false;
+            frm.ShowDialog();
         }
 
         private void btnCompany_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowDialogForms(new CompaniesForm());
+            var frm = _container.GetInstance<CompaniesForm>();
+            frm.FormBorderStyle = FormBorderStyle.FixedSingle;
+            frm.MaximizeBox = frm.MinimizeBox = false;
+            frm.ShowDialog();
 
         }
 

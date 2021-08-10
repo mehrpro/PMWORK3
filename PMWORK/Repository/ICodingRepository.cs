@@ -111,10 +111,23 @@ namespace PMWORK.Repository
 
 
 
-
-
-
-
+        /// <summary>
+        /// افزودن یا ویرایش گروه فرعی
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        bool AddEditSubGroup(SubGroup model);
+        /// <summary>
+        /// افزودن یا ویرایش گروه اصلی
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        bool AddEditGroup(Group model);
+        /// <summary>
+        /// افزودن یا ویرایش موقعیت مکانی
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         bool AddEditApplicant(Applicant model);
         /// <summary>
         /// افزودن و ویرایش تعمیرکار
@@ -152,7 +165,18 @@ namespace PMWORK.Repository
         /// <param name="model"></param>
         /// <returns></returns>
         bool AddEditCoding(Coding model);
-
+        /// <summary>
+        /// افزودن یا ویرایش شرکت ها
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        bool AddEditCompnay(Company model);
+        /// <summary>
+        /// افزودن یا ویرایش واحد سنجش
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        bool AddEditUnit(UnitOfMeasurement model);
 
         /// <summary>
         /// حذف رکورد توان مصرفی
@@ -237,13 +261,85 @@ namespace PMWORK.Repository
 
         }
 
+        public bool AddEditSubGroup(SubGroup model)
+        {
+            if (model.ID > 0)
+            {
+                try
+                {
+                    var local = _context.Set<SubGroup>().Local.FirstOrDefault(x => x.ID == model.ID);
+                    if (local != null)
+                    {
+                        _context.Entry(local).State = EntityState.Detached;
+                    }
+                    _context.Entry(model).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    _context.SubGroups.Add(model);
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool AddEditGroup(Group model)
+        {
+            if (model.ID > 0)
+            {
+                try
+                {
+                    var local = _context.Set<Group>().Local.FirstOrDefault(x => x.ID == model.ID);
+                    if (local != null)
+                    {
+                        _context.Entry(local).State = EntityState.Detached;
+                    }
+                    _context.Entry(model).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    _context.Groups.Add(model);
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
         public bool AddEditApplicant(Applicant model)
         {
             if (model.ID > 0)
             {
                 try
                 {
-                    var local = _context.Set<ServicePeriode>().Local.FirstOrDefault(x => x.ID == model.ID);
+                    var local = _context.Set<Applicant>().Local.FirstOrDefault(x => x.ID == model.ID);
                     if (local != null)
                     {
                         _context.Entry(local).State = EntityState.Detached;
@@ -383,7 +479,7 @@ namespace PMWORK.Repository
             {
                 try
                 {
-                    var local = _context.Set<ServicePeriode>().Local.FirstOrDefault(x => x.ID == powerElectrical.ID);
+                    var local = _context.Set<PowerElectricalMachinery>().Local.FirstOrDefault(x => x.ID == powerElectrical.ID);
                     if (local != null)
                     {
                         _context.Entry(local).State = EntityState.Detached;
@@ -420,7 +516,7 @@ namespace PMWORK.Repository
             {
                 try
                 {
-                    var local = _context.Set<ServicePeriode>().Local.FirstOrDefault(x => x.ID == model.ID);
+                    var local = _context.Set<Coding>().Local.FirstOrDefault(x => x.ID == model.ID);
                     if (local != null)
                     {
                         _context.Entry(local).State = EntityState.Detached;
@@ -440,6 +536,78 @@ namespace PMWORK.Repository
                 try
                 {
                     _context.Codings.Add(model);
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool AddEditCompnay(Company model)
+        {
+            if (model.ID > 0)
+            {
+                try
+                {
+                    var local = _context.Set<Company>().Local.FirstOrDefault(x => x.ID == model.ID);
+                    if (local != null)
+                    {
+                        _context.Entry(local).State = EntityState.Detached;
+                    }
+                    _context.Entry(model).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    _context.Companies.Add(model);
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool AddEditUnit(UnitOfMeasurement model)
+        {
+            if (model.ID > 0)
+            {
+                try
+                {
+                    var local = _context.Set<UnitOfMeasurement>().Local.FirstOrDefault(x => x.ID == model.ID);
+                    if (local != null)
+                    {
+                        _context.Entry(local).State = EntityState.Detached;
+                    }
+                    _context.Entry(model).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    _context.UnitOfMeasurements.Add(model);
                     _context.SaveChanges();
                     return true;
                 }
@@ -567,7 +735,7 @@ namespace PMWORK.Repository
             {
                 try
                 {
-                    var local = _context.Set<ServicePeriode>().Local.FirstOrDefault(x => x.ID == sparePart.ID);
+                    var local = _context.Set<SparePart>().Local.FirstOrDefault(x => x.ID == sparePart.ID);
                     if (local != null)
                     {
                         _context.Entry(local).State = EntityState.Detached;
