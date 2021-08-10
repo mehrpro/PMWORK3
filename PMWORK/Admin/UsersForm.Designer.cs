@@ -41,9 +41,12 @@ namespace PMWORK.Admin
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cbxEditor = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.chkLimetedCompany = new DevExpress.XtraEditors.CheckEdit();
             this.chkEnabled = new DevExpress.XtraEditors.CheckEdit();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtFullname = new DevExpress.XtraEditors.TextEdit();
@@ -63,14 +66,13 @@ namespace PMWORK.Admin
             this.EnableColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FullNameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CompanyColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.chkLimetedCompany = new DevExpress.XtraEditors.CheckEdit();
-            this.cbxEditor = new DevExpress.XtraEditors.ComboBoxEdit();
             this.LimetedCompanyColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.EditorColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxEditor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkLimetedCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEnabled.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFullname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
@@ -83,8 +85,6 @@ namespace PMWORK.Admin
             ((System.ComponentModel.ISupportInitialize)(this.gvUsersList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelectedRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkLimetedCompany.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxEditor.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -108,6 +108,36 @@ namespace PMWORK.Admin
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(773, 138);
             this.panelControl1.TabIndex = 0;
+            // 
+            // cbxEditor
+            // 
+            this.cbxEditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxEditor.Location = new System.Drawing.Point(557, 71);
+            this.cbxEditor.Name = "cbxEditor";
+            this.cbxEditor.Parmida_ActivePlusMultiKeys = false;
+            this.cbxEditor.Properties.AllowDropDownWhenReadOnly = DevExpress.Utils.DefaultBoolean.True;
+            this.cbxEditor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxEditor.Properties.Items.AddRange(new object[] {
+            "Admin",
+            "Creator",
+            "Editor",
+            "Reader"});
+            this.cbxEditor.Properties.Sorted = true;
+            this.cbxEditor.Size = new System.Drawing.Size(152, 20);
+            this.cbxEditor.TabIndex = 11;
+            // 
+            // chkLimetedCompany
+            // 
+            this.chkLimetedCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkLimetedCompany.EditValue = true;
+            this.chkLimetedCompany.Location = new System.Drawing.Point(424, 72);
+            this.chkLimetedCompany.Name = "chkLimetedCompany";
+            this.chkLimetedCompany.Parmida_ActivePlusMultiKeys = false;
+            this.chkLimetedCompany.Properties.Caption = "محدود به شرکت";
+            this.chkLimetedCompany.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.chkLimetedCompany.Size = new System.Drawing.Size(106, 19);
+            this.chkLimetedCompany.TabIndex = 4;
             // 
             // chkEnabled
             // 
@@ -142,6 +172,15 @@ namespace PMWORK.Admin
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "ذخیره";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl5.Location = new System.Drawing.Point(715, 75);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(48, 13);
+            this.labelControl5.TabIndex = 7;
+            this.labelControl5.Text = "نوع کاربری";
             // 
             // labelControl4
             // 
@@ -408,43 +447,6 @@ namespace PMWORK.Admin
             this.CompanyColumn.VisibleIndex = 4;
             this.CompanyColumn.Width = 182;
             // 
-            // labelControl5
-            // 
-            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(715, 75);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(48, 13);
-            this.labelControl5.TabIndex = 7;
-            this.labelControl5.Text = "نوع کاربری";
-            // 
-            // chkLimetedCompany
-            // 
-            this.chkLimetedCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkLimetedCompany.EditValue = true;
-            this.chkLimetedCompany.Location = new System.Drawing.Point(424, 72);
-            this.chkLimetedCompany.Name = "chkLimetedCompany";
-            this.chkLimetedCompany.Parmida_ActivePlusMultiKeys = false;
-            this.chkLimetedCompany.Properties.Caption = "محدود به شرکت";
-            this.chkLimetedCompany.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.chkLimetedCompany.Size = new System.Drawing.Size(106, 19);
-            this.chkLimetedCompany.TabIndex = 4;
-            // 
-            // cbxEditor
-            // 
-            this.cbxEditor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxEditor.Location = new System.Drawing.Point(557, 71);
-            this.cbxEditor.Name = "cbxEditor";
-            this.cbxEditor.Parmida_ActivePlusMultiKeys = false;
-            this.cbxEditor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxEditor.Properties.Items.AddRange(new object[] {
-            "Admin",
-            "Creator",
-            "Editor",
-            "Reader"});
-            this.cbxEditor.Size = new System.Drawing.Size(152, 20);
-            this.cbxEditor.TabIndex = 11;
-            // 
             // LimetedCompanyColumn
             // 
             this.LimetedCompanyColumn.Caption = "محدود";
@@ -480,6 +482,8 @@ namespace PMWORK.Admin
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxEditor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkLimetedCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkEnabled.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFullname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
@@ -492,8 +496,6 @@ namespace PMWORK.Admin
             ((System.ComponentModel.ISupportInitialize)(this.gvUsersList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSelectedRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkLimetedCompany.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxEditor.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

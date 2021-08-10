@@ -282,6 +282,7 @@ namespace PMWORK.Repository
                 PublicClass.UserID = qryUser.UserId;
                 PublicClass.Editor = qryUser.Editor;
                 PublicClass.LimitedCompany = qryUser.LimetedCompany;
+                PublicClass.CompanyID = qryUser.CompanyID_FK;
                 return true;
             }
             else

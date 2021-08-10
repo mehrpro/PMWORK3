@@ -139,7 +139,7 @@ namespace PMWORK.Repository
             return _context.RequestRepairs
                 .Include(a => a.Machinery.Coding)
                 .Include(s => s.Applicant)
-                .Where(x => x.PublicTypeID_FK == type && x.IsActive)
+                .Where(x => x.PublicTypeID_FK == type && x.IsActive && x.CompanyID_FK == PublicClass.CompanyID)
                 .ToList();
         }
 
@@ -148,7 +148,7 @@ namespace PMWORK.Repository
             return _context.RequestRepairs
                 .Include(a => a.Machinery.Coding)
                 .Include(s => s.Applicant)
-                .Where(x => x.PublicTypeID_FK == type && x.IsClose)
+                .Where(x => x.PublicTypeID_FK == type && x.IsClose && x.CompanyID_FK == PublicClass.CompanyID)
                 .ToList();
         }
 

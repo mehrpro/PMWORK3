@@ -162,5 +162,14 @@ namespace PMWORK.CodingForms
             frm.MaximizeBox = frm.MinimizeBox = false;
             frm.ShowDialog();
         }
-    }
+
+        private void IdentityDeviceForm_Load(object sender, EventArgs e)
+            {
+            if (PublicClass.LimitedCompany)
+                {
+                cbxCompany.EditValue = PublicClass.CompanyID;
+                cbxCompany.Enabled = false;
+                }
+            }
+        }
 }

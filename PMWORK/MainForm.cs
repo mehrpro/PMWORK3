@@ -48,8 +48,12 @@ namespace PMWORK
             UpdateMainMenu();
             lblFullNameTaskBar.Caption = PublicClass.FullNameTask;
             lblDatetimeTaskBar.Caption = PublicClass.TodayPersian();
+
+            btnRepairManForm.Enabled= btnUnit.Enabled =
+            btnCompany.Enabled = !PublicClass.LimitedCompany;
+                
             // _container = Container;
-        }
+            }
         private void ShowForms(object obj)
         {
             foreach (Form x in this.MdiChildren) x.Close();

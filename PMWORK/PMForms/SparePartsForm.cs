@@ -140,6 +140,7 @@ namespace PMWORK.PMForms
             txtMachineryName.EditValue = machineryName;
             txtCode.EditValue = code;
             UpdateSparePartList();
+            
         }
     }
 }

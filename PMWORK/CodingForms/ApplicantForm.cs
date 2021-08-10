@@ -36,6 +36,12 @@ namespace PMWORK.CodingForms
                 Tag = x.Description
             }).ToList();
 
+            if (PublicClass.LimitedCompany)
+                {
+                cbxCompany.EditValue = PublicClass.CompanyID;
+                cbxCompany.Enabled = false;
+                }
+
 
         }
 

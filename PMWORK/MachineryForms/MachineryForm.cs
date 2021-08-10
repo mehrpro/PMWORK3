@@ -38,7 +38,14 @@ namespace PMWORK.MachineryForms
                 Title = x.CompanyTitle,
                 Tag = x.CompnayIndex.ToString()
             }).ToList();
-        }
+
+            if (PublicClass.LimitedCompany)
+                {
+                cbxCompany.EditValue = PublicClass.CompanyID;
+                cbxCompany.ReadOnly = true;
+                }
+
+            }
 
 
         private async Task UpdateCodingList(int cid, int aid)

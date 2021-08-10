@@ -35,7 +35,12 @@ namespace PMWORK.CodingForms
             cbxCompany.Properties.DataSource = db.Companies
                 .Select(s => new ComboBoxBaseClass()
                 { ID = s.ID, Title = s.CompanyTitle, Tag = s.CompnayIndex.ToString() }).ToList();
-        }
+            if (PublicClass.LimitedCompany)
+                {
+                cbxCompany.EditValue = PublicClass.CompanyID;
+                cbxCompany.ReadOnly = true;
+                }
+            }
 
         public void cbxGroupList(int id)
         {

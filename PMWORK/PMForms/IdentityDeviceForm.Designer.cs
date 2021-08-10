@@ -434,6 +434,7 @@ namespace PMWORK.CodingForms
             this.Name = "IdentityDeviceForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "فهرست تجهیزات و ماشین آلات";
+            this.Load += new System.EventHandler(this.IdentityDeviceForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
