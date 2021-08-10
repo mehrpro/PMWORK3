@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class dbc : DbMigration
+    public partial class dbcrate : DbMigration
     {
         public override void Up()
         {
@@ -39,6 +39,8 @@
                         UserName = c.String(nullable: false, maxLength: 20),
                         UserPassword = c.String(nullable: false, maxLength: 100),
                         FullName = c.String(nullable: false, maxLength: 200),
+                        Editor = c.String(nullable: false, maxLength: 10),
+                        LimetedCompany = c.Boolean(nullable: false),
                         Enabled = c.Boolean(nullable: false),
                         CompanyID_FK = c.Int(nullable: false),
                     })

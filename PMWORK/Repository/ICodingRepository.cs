@@ -275,11 +275,13 @@ namespace PMWORK.Repository
         public bool LoginUser(string username, string password)
         {
             var qryUser = _context.ApplicationUsers.SingleOrDefault(x => x.UserName == username);
-            if (qryUser == null) return false;
+            if (qryUser == null || !qryUser.Enabled) return false;
             if (qryUser.UserPassword == password)
             {
                 PublicClass.FullNameTask = qryUser.FullName;
                 PublicClass.UserID = qryUser.UserId;
+                PublicClass.Editor = qryUser.Editor;
+                PublicClass.LimitedCompany = qryUser.LimetedCompany;
                 return true;
             }
             else

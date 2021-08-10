@@ -41,6 +41,8 @@ namespace PMWORK.Admin
             txtPassword.ResetText();
             txtUsername.ResetText();
             cbxCompany.EditValue = 0;
+            cbxEditor.SelectedIndex = -1;
+
             Selected = null;
             UpdateUserList();
         }

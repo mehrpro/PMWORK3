@@ -120,7 +120,7 @@
             context.Machineries.AddRange(machineries);
 
             IList<ApplicationUser> defaultUsers = new List<ApplicationUser>();
-            defaultUsers.Add(new ApplicationUser() { UserId = 1, Enabled = true, UserName = "admin", UserPassword = "admin", FullName = "مدیرسیستم", CompanyID_FK = 1 }); ;
+            defaultUsers.Add(new ApplicationUser() { UserId = 1, Enabled = true, UserName = "admin", UserPassword = "admin", FullName = "مدیرسیستم", CompanyID_FK = 1 ,Editor = "Admin" ,LimetedCompany = false}); ;
             context.ApplicationUsers.AddRange(defaultUsers);
 
 

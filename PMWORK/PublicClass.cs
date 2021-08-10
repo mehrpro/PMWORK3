@@ -11,6 +11,9 @@ namespace PMWORK
     public static class PublicClass
     {
         public static int UserID { get; set; }
+        public static bool  LimitedCompany { get; set; }
+        public static string Editor { get; set; }
+
         public static string CancelStr { get => "انصراف"; }
         public static string CloseStr { get => "بستن"; }
 
