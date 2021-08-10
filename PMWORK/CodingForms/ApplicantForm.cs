@@ -1,53 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PMWORK.Entities;
+using PMWORK.Repository;
 
 namespace PMWORK.CodingForms
 {
     public partial class ApplicantForm : XtraForm
     {
+        private readonly ICodingRepository _codingRepository;
 
-        private AppDbContext db;
-        private Applicant selectApplicant;
-        private ComboBoxBaseClass SelectedCompany;
 
-        public ApplicantForm()
+        private Applicant _selectApplicant;
+        private ComboBoxBaseClass _selectedCompany;
+
+        public ApplicantForm(ICodingRepository codingRepository)
         {
+            _codingRepository = codingRepository;
             InitializeComponent();
-            db = new AppDbContext();
-
-
             cbxCompany.Properties.DisplayMember = "Title";
             cbxCompany.Properties.ValueMember = "ID";
 
-            cbxCompany.Properties.DataSource = db.Companies.Select(x => new ComboBoxBaseClass()
+            cbxCompany.Properties.DataSource = _codingRepository.GetAllCompanies().Select(x => new ComboBoxBaseClass()
             {
                 ID = x.ID,
                 Title = x.CompanyTitle,
                 Tag = x.Description
             }).ToList();
-
-            if (PublicClass.LimitedCompany)
-                {
-                cbxCompany.EditValue = PublicClass.CompanyID;
-                cbxCompany.Enabled = false;
-                }
-
-
         }
 
-        private async Task UpdateApplicantList(int companyId)
+        private void UpdateApplicantList(int companyId)
         {
-            dgvApplicantList.DataSource = await db.Applicants.Where(x => x.CompanyID_FK == companyId).ToListAsync();
+            dgvApplicantList.DataSource = _codingRepository.GetApplicantsByCompanyId(companyId);
 
         }
 
@@ -55,21 +39,22 @@ namespace PMWORK.CodingForms
         private void ClearForm()
         {
             cbxCompany.ReadOnly = false;
+            _selectApplicant = null;
             txtApplicantTitle.Text = txtDescription.Text = null;
-            btnClose.Text = "بستن";
+            btnClose.Text = PublicClass.CloseStr;
 
         }
 
-        private async void cbxCompany_EditValueChanged(object sender, EventArgs e)
+        private void cbxCompany_EditValueChanged(object sender, EventArgs e)
         {
-            SelectedCompany = (ComboBoxBaseClass)cbxCompany.GetSelectedDataRow();
-            if (SelectedCompany == null)
+            _selectedCompany = (ComboBoxBaseClass)cbxCompany.GetSelectedDataRow();
+            if (_selectedCompany == null)
             {
                 dgvApplicantList.DataSource = null;
                 return;
             }
 
-            await UpdateApplicantList(SelectedCompany.ID);
+            UpdateApplicantList(_selectedCompany.ID);
 
         }
 
@@ -77,22 +62,33 @@ namespace PMWORK.CodingForms
         {
             if (gvApplicantList.GetFocusedRowCellValue("ID") != null)
             {
-                selectApplicant = (Applicant)gvApplicantList.GetFocusedRow();
-                txtApplicantTitle.Text = selectApplicant.ApplicantTitle;
-                txtDescription.Text = selectApplicant.Description;
+                _selectApplicant = (Applicant)gvApplicantList.GetFocusedRow();
+                txtApplicantTitle.Text = _selectApplicant.ApplicantTitle;
+                txtDescription.Text = _selectApplicant.Description;
+
                 cbxCompany.ReadOnly = true;
-                btnClose.Text = "انصراف";
+
+
+                btnClose.Text = PublicClass.CancelStr;
 
             }
         }
 
-        private async void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            if (btnClose.Text == "انصراف")
+            if (btnClose.Text == PublicClass.CancelStr)
             {
-                var select = db.Applicants.Find(selectApplicant.ID);
-                select.ApplicantTitle = txtApplicantTitle.Text.Trim();
-                select.Description = txtDescription.Text.Trim();
+                _selectApplicant.ApplicantTitle = txtApplicantTitle.Text.Trim();
+                _selectApplicant.Description = txtDescription.Text.Trim();
+                var result = _codingRepository.AddEditApplicant(_selectApplicant);
+                if (result)
+                {
+                    PublicClass.SuccessMessage(Text);
+                }
+                else
+                {
+                    PublicClass.ErrorSave(Text);
+                }
 
             }
             else
@@ -103,17 +99,24 @@ namespace PMWORK.CodingForms
                     Description = txtDescription.Text.Trim(),
                     CompanyID_FK = Convert.ToInt32(cbxCompany.EditValue)
                 };
-                db.Applicants.Add(obj);
-            }
+                var result = _codingRepository.AddEditApplicant(obj);
+                if (result)
+                {
+                    PublicClass.SuccessMessage(Text);
+                }
+                else
+                {
+                    PublicClass.ErrorSave(Text);
+                }
 
-            await db.SaveChangesAsync();
-            await UpdateApplicantList(SelectedCompany.ID);
+            }
+            UpdateApplicantList(_selectedCompany.ID);
             ClearForm();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (btnClose.Text == "انصراف")
+            if (btnClose.Text == PublicClass.CancelStr)
             {
                 ClearForm();
             }

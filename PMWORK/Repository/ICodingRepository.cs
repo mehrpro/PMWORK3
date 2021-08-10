@@ -100,6 +100,14 @@ namespace PMWORK.Repository
         /// <param name="machineryId"></param>
         /// <returns></returns>
         List<PowerElectricalMachinery> GetPowerListByMachineryId(int machineryId);
+        /// <summary>
+        /// لیست کدینگ 
+        /// </summary>
+        /// <param name="cid">شناسه شرکت</param>
+        /// <param name="gid">شناسه گروه</param>
+        /// <param name="sid">شناسه زیرگروه</param>
+        /// <returns></returns>
+        List<Coding> GetCodingsBy(int cid = 0, int gid = 0, int sid = 0);
 
 
 
@@ -107,8 +115,7 @@ namespace PMWORK.Repository
 
 
 
-
-
+        bool AddEditApplicant(Applicant model);
         /// <summary>
         /// افزودن و ویرایش تعمیرکار
         /// </summary>
@@ -139,7 +146,12 @@ namespace PMWORK.Repository
         /// <param name="powerElectrical"></param>
         /// <returns></returns>
         bool AddPowerElectrical(PowerElectricalMachinery powerElectrical);
-
+        /// <summary>
+        /// افزودن ویا ویرایش کدینگ
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        bool AddEditCoding(Coding model);
 
 
         /// <summary>
@@ -198,6 +210,67 @@ namespace PMWORK.Repository
         public List<PowerElectricalMachinery> GetPowerListByMachineryId(int machineryId)
         {
             return _context.PowerElectricalMachineries.Where(x => x.MachineryID_FK == machineryId && !x.IsDelete).ToList();
+        }
+
+        public List<Coding> GetCodingsBy(int cid = 0, int gid = 0, int sid = 0)
+        {
+            if (cid > 0 && gid > 0 && sid > 0)
+            {
+                return _context.Codings.Where(a =>
+                    a.CompanyID_FK == cid &&
+                    a.GroupID_FK == gid &&
+                    a.SubGroupID_FK == sid).ToList();
+
+            }
+            if (cid > 0 && gid > 0 && sid < 1)
+            {
+                return _context.Codings.Where(a =>
+                   a.CompanyID_FK == cid &&
+                   a.GroupID_FK == gid).ToList();
+            }
+            if (cid > 0 && gid < 1 && sid < 1)
+            {
+                return _context.Codings.Where(a =>
+                   a.CompanyID_FK == cid).ToList();
+            }
+            return _context.Codings.ToList();
+
+        }
+
+        public bool AddEditApplicant(Applicant model)
+        {
+            if (model.ID > 0)
+            {
+                try
+                {
+                    var local = _context.Set<ServicePeriode>().Local.FirstOrDefault(x => x.ID == model.ID);
+                    if (local != null)
+                    {
+                        _context.Entry(local).State = EntityState.Detached;
+                    }
+                    _context.Entry(model).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    _context.Applicants.Add(model);
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
         }
 
         public bool AddRepairMan(RepairMan model)
@@ -339,6 +412,42 @@ namespace PMWORK.Repository
                 }
             }
 
+        }
+
+        public bool AddEditCoding(Coding model)
+        {
+            if (model.ID > 0)
+            {
+                try
+                {
+                    var local = _context.Set<ServicePeriode>().Local.FirstOrDefault(x => x.ID == model.ID);
+                    if (local != null)
+                    {
+                        _context.Entry(local).State = EntityState.Detached;
+                    }
+                    _context.Entry(model).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    _context.Codings.Add(model);
+                    _context.SaveChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
         }
 
         public bool CleamUser(List<Cleam> cleams)
@@ -494,24 +603,24 @@ namespace PMWORK.Repository
         }
 
         public bool DeletePowerElectrical(int PowerElectricalID)
-            {
+        {
             try
-                {
+            {
                 var local = _context.Set<PowerElectricalMachinery>().Local.FirstOrDefault(x => x.ID == PowerElectricalID);
                 if (local != null)
-                    {
+                {
                     _context.Entry(local).State = EntityState.Detached;
-                    }
+                }
                 local.IsDelete = true;
                 _context.Entry(local).State = EntityState.Modified;
                 _context.SaveChanges();
                 return true;
-                }
+            }
             catch
-                {
+            {
                 return false;
-                }
             }
         }
+    }
 }
 

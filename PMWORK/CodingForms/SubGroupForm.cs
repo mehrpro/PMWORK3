@@ -35,14 +35,14 @@ namespace PMWORK.CodingForms
                 { ID = s.ID, Title = s.CompanyTitle, Tag = s.CompnayIndex.ToString() }).ToList();
 
             if (PublicClass.LimitedCompany)
-                {
+            {
                 cbxCompany.EditValue = PublicClass.CompanyID;
                 cbxCompany.ReadOnly = true;
-                }
-
             }
 
-        public void cbxGroupList(int id)
+        }
+
+        private void cbxGroupList(int id)
         {
             cbxGroup.Properties.DataSource = db.Groups.Where(g => g.CompanyID_FK == id)
                 .Select(s => new ComboBoxBaseClass()

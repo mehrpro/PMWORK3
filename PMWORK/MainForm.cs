@@ -49,11 +49,11 @@ namespace PMWORK
             lblFullNameTaskBar.Caption = PublicClass.FullNameTask;
             lblDatetimeTaskBar.Caption = PublicClass.TodayPersian();
 
-            btnRepairManForm.Enabled= btnUnit.Enabled =
+            btnRepairManForm.Enabled = btnUnit.Enabled =
             btnCompany.Enabled = !PublicClass.LimitedCompany;
-                
+
             // _container = Container;
-            }
+        }
         private void ShowForms(object obj)
         {
             foreach (Form x in this.MdiChildren) x.Close();
@@ -89,7 +89,12 @@ namespace PMWORK
 
         private void btnCode_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowForms(new CodingForm());
+            var frm = _container.GetInstance<CodingForm>();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
 
         private void btnUnit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -153,7 +158,10 @@ namespace PMWORK
 
         private void btnApplicantForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowDialogForms(new ApplicantForm());
+            var frm = _container.GetInstance<ApplicantForm>();
+            frm.FormBorderStyle = FormBorderStyle.FixedSingle;
+            frm.MaximizeBox = frm.MinimizeBox = false;
+            frm.ShowDialog();
         }
 
         private void MainForm_Load(object sender, System.EventArgs e)
