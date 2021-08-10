@@ -27,6 +27,11 @@ namespace PMWORK.CodingForms
                 Title = x.CompanyTitle,
                 Tag = x.Description
             }).ToList();
+
+
+            if (!PublicClass.LimitedCompany) return;
+            cbxCompany.EditValue = PublicClass.CompanyID;
+            cbxCompany.ReadOnly = true;
         }
 
         private void UpdateApplicantList(int companyId)
@@ -38,7 +43,7 @@ namespace PMWORK.CodingForms
 
         private void ClearForm()
         {
-            cbxCompany.ReadOnly = false;
+            if (!PublicClass.LimitedCompany) cbxCompany.ReadOnly = false;
             _selectApplicant = null;
             txtApplicantTitle.Text = txtDescription.Text = null;
             btnClose.Text = PublicClass.CloseStr;

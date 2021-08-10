@@ -9,6 +9,7 @@ namespace PMWORK.MachineryForms
     public partial class RequestRepairForm : XtraForm
     {
         private readonly IRequestRepairRepository _request;
+        private readonly ICodingRepository _codingRepository;
         private int _typeofRequest;
         private ComboBoxBaseClass _selectCompany;
         private Applicant _selectApplicant;
@@ -22,11 +23,12 @@ namespace PMWORK.MachineryForms
         }
         public bool Editor { get { return _editor; } set => _editor = value; }
         public int TypeOfRequest { get { return _typeofRequest; } set { _typeofRequest = value; } }
-        public RequestRepairForm(IRequestRepairRepository request)
+        public RequestRepairForm(IRequestRepairRepository request, ICodingRepository codingRepository)
         {
 
             InitializeComponent();
             _request = request;
+            _codingRepository = codingRepository;
             cbxMachinery.Properties.DisplayMember = "Coding.Code";
             cbxMachinery.Properties.ValueMember = "ID";
 
@@ -36,12 +38,16 @@ namespace PMWORK.MachineryForms
             cbxApplicant.Properties.DisplayMember = "ApplicantTitle";
             cbxApplicant.Properties.ValueMember = "ID";
 
+            if (!PublicClass.LimitedCompany) return;
+            cbxCompany.EditValue = PublicClass.CompanyID;
+            cbxCompany.ReadOnly = true;
+
 
 
         }
         private void UpdateApplicant(int companyId)
         {
-            cbxApplicant.Properties.DataSource = _request.GetAllApplicantsByCompanyId(companyId);
+            cbxApplicant.Properties.DataSource = 2 _request.GetAllApplicantsByCompanyId(companyId);
         }
         private void UpdateCompany()
         {
@@ -74,7 +80,7 @@ namespace PMWORK.MachineryForms
                 select.RequestTitle = txtRequest.Text.Trim();
                 var result = _request.UpdateRequestRepair(select);
                 if (!result)
-                   PublicClass.ErrorSave(Text);
+                    PublicClass.ErrorSave(Text);
                 else
                     Close();
             }
@@ -134,18 +140,16 @@ namespace PMWORK.MachineryForms
             txtRequestTitle.Text += @" " + _request.GetStringTypeOfRequest(_typeofRequest);
             ClearForm();
             UpdateCompany();
-            if (_editor)
-            {
-                dateRegistered.DateTime = _requestRepairEdit.RequestDataTime;
-                cbxCompany.EditValue = _requestRepairEdit.CompanyID_FK;
-                UpdateApplicant(_requestRepairEdit.CompanyID_FK);
-                cbxApplicant.EditValue = _requestRepairEdit.ApplicantID_FK;
-                UpdateMachinery(_requestRepairEdit.ApplicantID_FK);
-                cbxMachinery.EditValue = _requestRepairEdit.MachineryID_FK;
-                txtRequest.EditValue = _requestRepairEdit.RequestTitle;
-                radioGroupEMPM.EditValue = _requestRepairEdit.EM;
-                btnSave.Text = "ذخیره";
-            }
+            if (!_editor) return;
+            dateRegistered.DateTime = _requestRepairEdit.RequestDataTime;
+            cbxCompany.EditValue = _requestRepairEdit.CompanyID_FK;
+            UpdateApplicant(_requestRepairEdit.CompanyID_FK);
+            cbxApplicant.EditValue = _requestRepairEdit.ApplicantID_FK;
+            UpdateMachinery(_requestRepairEdit.ApplicantID_FK);
+            cbxMachinery.EditValue = _requestRepairEdit.MachineryID_FK;
+            txtRequest.EditValue = _requestRepairEdit.RequestTitle;
+            radioGroupEMPM.EditValue = _requestRepairEdit.EM;
+            btnSave.Text = "ذخیره";
         }
     }
 }
