@@ -87,6 +87,8 @@ namespace PMWORK.CodingForms
             frm.Code = selected.Coding.Code.ToString();
             frm.MachineryID = selected.ID;
             frm.MachineryName = selected.MachineryTitle;
+            frm.FormBorderStyle = FormBorderStyle.FixedSingle;
+            frm.MaximizeBox = frm.MinimizeBox = false;
             frm.ShowDialog();
 
         }
@@ -103,6 +105,8 @@ namespace PMWORK.CodingForms
             frm.Code = selected.Coding.Code.ToString();
             frm.MachineryID = selected.ID;
             frm.MachineryName = selected.MachineryTitle;
+            frm.FormBorderStyle = FormBorderStyle.FixedSingle;
+            frm.MaximizeBox = frm.MinimizeBox = false;
             frm.ShowDialog();
         }
 
@@ -118,6 +122,8 @@ namespace PMWORK.CodingForms
             frm.Code = selected.Coding.Code.ToString();
             frm.MachineryID = selected.ID;
             frm.MachineryName = selected.MachineryTitle;
+            frm.FormBorderStyle = FormBorderStyle.FixedSingle;
+            frm.MaximizeBox = frm.MinimizeBox = false;
             frm.ShowDialog();
 
         }
@@ -134,6 +140,8 @@ namespace PMWORK.CodingForms
             frm.Code = selected.Coding.Code.ToString();
             frm.MachineryID = selected.ID;
             frm.MachineryName = selected.MachineryTitle;
+            frm.FormBorderStyle = FormBorderStyle.FixedSingle;
+            frm.MaximizeBox = frm.MinimizeBox = false;
             frm.ShowDialog();
 
         }

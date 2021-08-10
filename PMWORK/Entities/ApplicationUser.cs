@@ -21,6 +21,9 @@ namespace PMWORK.Entities
         public string UserPassword { get; set; }
         public string FullName { get; set; }
 
+        public string Editor { get; set; }
+        public bool LimetedCompany { get; set; }
+
         public bool Enabled { get; set; }
         public int CompanyID_FK { get; set; }
         public Company Company { get; set; }

@@ -22,6 +22,8 @@ namespace PMWORK
             builder.Entity<ApplicationUser>().Property(x => x.UserName).IsRequired().HasMaxLength(20);
             builder.Entity<ApplicationUser>().Property(x => x.UserPassword).IsRequired().HasMaxLength(100);
             builder.Entity<ApplicationUser>().Property(x => x.FullName).IsRequired().HasMaxLength(200);
+            builder.Entity<ApplicationUser>().Property(x => x.LimetedCompany).IsRequired();
+            builder.Entity<ApplicationUser>().Property(x => x.Editor).IsRequired().HasMaxLength(10);
             builder.Entity<ApplicationUser>()
                 .HasMany(x => x.RequestRepairs)
                 .WithRequired(x => x.ApplicationUser)

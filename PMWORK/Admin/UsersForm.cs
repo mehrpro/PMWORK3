@@ -56,6 +56,8 @@ namespace PMWORK.Admin
                     Selected.UserName = txtUsername.Text.Trim();
                     Selected.CompanyID_FK = selectedCompany.ID;
                     Selected.Enabled = Convert.ToBoolean(chkEnabled.CheckState);
+                    Selected.LimetedCompany = Convert.ToBoolean(chkLimetedCompany.CheckState);
+                    Selected.Editor = cbxEditor.EditValue.ToString();
                     var result = _codingRepository.UpdateUsers(Selected);
                     if (result)
                     {
@@ -74,6 +76,8 @@ namespace PMWORK.Admin
                         FullName = txtFullname.Text.Trim(),
                         Enabled = true,
                         UserPassword = txtPassword.Text.Trim(),
+                        Editor = cbxEditor.EditValue.ToString(),
+                        LimetedCompany = chkLimetedCompany.Checked
                     };
                     var result = _codingRepository.AddUsers(newobj);
                     if (result)
@@ -115,6 +119,8 @@ namespace PMWORK.Admin
                 txtPassword.Text = Selected.UserPassword;
                 cbxCompany.EditValue = Selected.CompanyID_FK;
                 chkEnabled.Checked = Selected.Enabled;
+                chkLimetedCompany.Checked = Selected.LimetedCompany;
+                cbxEditor.EditValue = Selected.Editor;
                 btnClose.Text = "انصراف";
             }
         }

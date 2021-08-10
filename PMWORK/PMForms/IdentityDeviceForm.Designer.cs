@@ -104,13 +104,13 @@ namespace PMWORK.CodingForms
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(907, 63);
+            this.panelControl1.Size = new System.Drawing.Size(917, 63);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(609, 24);
+            this.labelControl4.Location = new System.Drawing.Point(619, 24);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(21, 13);
             this.labelControl4.TabIndex = 4;
@@ -119,7 +119,7 @@ namespace PMWORK.CodingForms
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(856, 24);
+            this.labelControl5.Location = new System.Drawing.Point(866, 24);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(31, 13);
             this.labelControl5.TabIndex = 5;
@@ -128,7 +128,7 @@ namespace PMWORK.CodingForms
             // cbxApplicantList
             // 
             this.cbxApplicantList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxApplicantList.Location = new System.Drawing.Point(403, 21);
+            this.cbxApplicantList.Location = new System.Drawing.Point(413, 21);
             this.cbxApplicantList.Name = "cbxApplicantList";
             this.cbxApplicantList.Parmida_ActivePlusMultiKeys = false;
             this.cbxApplicantList.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -153,7 +153,7 @@ namespace PMWORK.CodingForms
             // cbxCompany
             // 
             this.cbxCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxCompany.Location = new System.Drawing.Point(650, 21);
+            this.cbxCompany.Location = new System.Drawing.Point(660, 21);
             this.cbxCompany.Name = "cbxCompany";
             this.cbxCompany.Parmida_ActivePlusMultiKeys = false;
             this.cbxCompany.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -181,7 +181,7 @@ namespace PMWORK.CodingForms
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 63);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(907, 483);
+            this.panelControl2.Size = new System.Drawing.Size(917, 298);
             this.panelControl2.TabIndex = 1;
             // 
             // dgvMachineryList
@@ -196,7 +196,7 @@ namespace PMWORK.CodingForms
             this.btnServices,
             this.btnElectrical,
             this.btnRecodOrders});
-            this.dgvMachineryList.Size = new System.Drawing.Size(903, 479);
+            this.dgvMachineryList.Size = new System.Drawing.Size(913, 294);
             this.dgvMachineryList.TabIndex = 0;
             this.dgvMachineryList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMachineryList});
@@ -428,7 +428,7 @@ namespace PMWORK.CodingForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 546);
+            this.ClientSize = new System.Drawing.Size(917, 361);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "IdentityDeviceForm";
