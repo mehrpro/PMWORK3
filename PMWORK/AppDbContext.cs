@@ -252,6 +252,11 @@ namespace PMWORK
                 .WithRequired(x => x.RequestRepair)
                 .HasForeignKey(x => x.RequestID_FK)
                 .WillCascadeOnDelete(false);
+            builder.Entity<RequestRepair>()
+                .HasMany(x => x.Repairouts)
+                .WithRequired(x => x.RequestRepair)
+                .HasForeignKey(x => x.RequestID_FK)
+                .WillCascadeOnDelete(false);
 
             builder.Entity<SubGroup>().HasKey(x => x.ID);
             builder.Entity<SubGroup>().Property(x => x.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
@@ -391,7 +396,23 @@ namespace PMWORK
             builder.Entity<PowerElectricalMachinery>().Property(x => x.IsDelete).IsRequired();
 
 
-        }
+            builder.Entity<Repairout>().HasKey(x => x.ID);
+            builder.Entity<Repairout>().Property(x => x.ID).IsRequired()
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<Repairout>().Property(x => x.IsClosed).IsRequired();
+            builder.Entity<Repairout>().Property(x => x.IsActive).IsRequired();
+            builder.Entity<Repairout>().Property(x => x.IsDelete).IsRequired();
+            builder.Entity<Repairout>().Property(x => x.Regidtered).IsRequired().HasColumnType("datetime");
+            builder.Entity<Repairout>().Property(x => x.BackendRequest).IsRequired().HasColumnType("datetime");
+            builder.Entity<Repairout>().Property(x => x.CompanyID_FK).IsRequired();
+            builder.Entity<Repairout>().Property(x => x.RequestID_FK).IsRequired();
+            builder.Entity<Repairout>().Property(x => x.RepairOutFullName).IsRequired().HasMaxLength(250);
+            builder.Entity<Repairout>().Property(x => x.RepairReportOut).HasMaxLength(500);
+            builder.Entity<Repairout>().Property(x => x.RequestRepairOut).IsRequired().HasMaxLength(500);
+            
+
+
+            }
 
 
 
@@ -416,7 +437,7 @@ namespace PMWORK
         public virtual DbSet<ServicePeriode> ServicePeriodes { get; set; }
         public virtual DbSet<IdentityMachinery> IdentityMachineries { get; set; }
         public virtual DbSet<PowerElectricalMachinery> PowerElectricalMachineries { get; set; }
+        public virtual DbSet<Repairout> Repairouts  { get; set; }
 
-
-    }
+        }
 }

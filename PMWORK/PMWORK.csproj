@@ -121,6 +121,13 @@
     <Compile Include="CodingForms\GroupForm.Designer.cs">
       <DependentUpon>GroupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Repairout.cs" />
+    <Compile Include="MachineryForms\RepairOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineryForms\RepairOutForm.Designer.cs">
+      <DependentUpon>RepairOutForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202108100805119_dbcrate.cs" />
     <Compile Include="Migrations\202108100805119_dbcrate.designer.cs">
       <DependentUpon>202108100805119_dbcrate.cs</DependentUpon>
@@ -295,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CodingForms\GroupForm.resx">
       <DependentUpon>GroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineryForms\RepairOutForm.resx">
+      <DependentUpon>RepairOutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108100805119_dbcrate.resx">
       <DependentUpon>202108100805119_dbcrate.cs</DependentUpon>

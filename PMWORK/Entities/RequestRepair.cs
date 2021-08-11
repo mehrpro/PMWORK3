@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace PMWORK.Entities
-{
+    {
 
     /// <summary>
     /// درخواست تعمیر
@@ -13,10 +12,11 @@ namespace PMWORK.Entities
 
         public RequestRepair()
         {
-            ConsumableParts = new List<ConsumablePart>();
-            WorkOrders = new List<WorkOrder>();
+            ConsumableParts = new HashSet<ConsumablePart>();
+            WorkOrders = new HashSet<WorkOrder>();
+            Repairouts = new HashSet<Repairout>();
 
-        }
+            }
 
         public long ID { get; set; }
         public bool IsActive { get; set; }
@@ -39,11 +39,12 @@ namespace PMWORK.Entities
 
         public virtual ICollection<ConsumablePart> ConsumableParts { get; set; }
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
+        public virtual ICollection<Repairout> Repairouts { get; set; }
 
 
 
 
 
 
-    }
+        }
 }

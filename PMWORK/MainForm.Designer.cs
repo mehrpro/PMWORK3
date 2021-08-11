@@ -68,13 +68,16 @@ namespace PMWORK
             this.PGRequestReapir = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribPageReports = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PGReportRepair = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribPageManage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PGUsers = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PGDataBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRepairOut = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -116,9 +119,11 @@ namespace PMWORK
             this.btnBackupDB,
             this.btnRestoreDB,
             this.barButtonItem7,
-            this.btnServicePeriode});
+            this.btnServicePeriode,
+            this.barButtonItem1,
+            this.btnRepairOut});
             this.ribMain.Location = new System.Drawing.Point(0, 0);
-            this.ribMain.MaxItemId = 26;
+            this.ribMain.MaxItemId = 28;
             this.ribMain.Name = "ribMain";
             this.ribMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribPageInfrasturcture,
@@ -179,9 +184,10 @@ namespace PMWORK
             // 
             // btnMachinery
             // 
-            this.btnMachinery.Caption = "ماشین آلات";
+            this.btnMachinery.Caption = "دستگاه جدید";
             this.btnMachinery.Id = 6;
-            this.btnMachinery.ImageOptions.Image = global::PMWORK.Properties.Resources.icons8_robot_30;
+            this.btnMachinery.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMachinery.ImageOptions.Image")));
+            this.btnMachinery.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMachinery.ImageOptions.LargeImage")));
             this.btnMachinery.Name = "btnMachinery";
             this.btnMachinery.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
@@ -189,7 +195,7 @@ namespace PMWORK
             // 
             // btnIdentityDevice
             // 
-            this.btnIdentityDevice.Caption = "شناسنامه دستگاه";
+            this.btnIdentityDevice.Caption = "لیست  دستگاه";
             this.btnIdentityDevice.Id = 7;
             this.btnIdentityDevice.ImageOptions.Image = global::PMWORK.Properties.Resources.icons8_document_30;
             this.btnIdentityDevice.Name = "btnIdentityDevice";
@@ -400,7 +406,8 @@ namespace PMWORK
             this.ribPageInfrasturcture.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.Yes;
             this.ribPageInfrasturcture.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.PGMachinery,
-            this.PGCoding});
+            this.PGCoding,
+            this.ribbonPageGroup2});
             this.ribPageInfrasturcture.Name = "ribPageInfrasturcture";
             this.ribPageInfrasturcture.Text = "مدیریت دارایی سازمانی";
             // 
@@ -455,9 +462,15 @@ namespace PMWORK
             // 
             this.PGReportRepair.ItemLinks.Add(this.btnRequestListForRepair);
             this.PGReportRepair.ItemLinks.Add(this.btnClosedRequestRepair);
+            this.PGReportRepair.ItemLinks.Add(this.btnRepairOut);
             this.PGReportRepair.Name = "PGReportRepair";
             this.PGReportRepair.ShowCaptionButton = false;
             this.PGReportRepair.Text = "گزارش تعمیر";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "لیست ماشین آلات";
             // 
             // ribPageManage
             // 
@@ -516,10 +529,25 @@ namespace PMWORK
             this.ribbonStatusBar1.Ribbon = this.ribMain;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(750, 31);
             // 
-            // ribbonPageGroup1
+            // ribbonPageGroup2
             // 
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "لیست ماشین آلات";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 26;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnRepairOut
+            // 
+            this.btnRepairOut.Caption = "تعمیرات خارج ازشرکت";
+            this.btnRepairOut.Id = 27;
+            this.btnRepairOut.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btnRepairOut.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnRepairOut.Name = "btnRepairOut";
             // 
             // MainForm
             // 
@@ -593,5 +621,8 @@ namespace PMWORK
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem btnServicePeriode;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnRepairOut;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         }
 }

@@ -10,7 +10,7 @@ namespace PMWORK.Entities
     {
         public Coding()
         {
-            Machineries = new List<Machinery>();
+            Machineries = new HashSet<Machinery>();
         }
         public long ID { get; set; }
         public int CompanyID_FK { get; set; }

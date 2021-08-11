@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PMWORK.Entities
+    {
+  public  class Repairout
+        {
+        public int ID { get; set; }
+        public int CompanyID_FK { get; set; }
+        public long RequestID_FK { get; set; }
+        public RequestRepair RequestRepair { get; set; }
+
+        public string RequestRepairOut { get; set; }
+
+        public DateTime Regidtered { get; set; }
+
+        public string  RepairOutFullName { get; set; }
+
+        public string RepairReportOut { get; set; }
+        public DateTime BackendRequest { get; set; }
+        public bool IsClosed { get; set; }
+        public bool IsDelete { get; set; }
+        public bool IsActive { get; set; }
+
+
+        }
+    }
