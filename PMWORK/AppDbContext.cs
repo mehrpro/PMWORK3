@@ -235,6 +235,7 @@ namespace PMWORK
             builder.Entity<RequestRepair>().Property(x => x.IsDelete).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.EM).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.IsClose).IsRequired();
+            builder.Entity<RequestRepair>().Property(x => x.IsRepairOut).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.PublicTypeID_FK).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.MachineryID_FK).IsRequired();
             builder.Entity<RequestRepair>().Property(x => x.UserID_FK).IsRequired();
@@ -257,6 +258,9 @@ namespace PMWORK
                 .WithRequired(x => x.RequestRepair)
                 .HasForeignKey(x => x.RequestID_FK)
                 .WillCascadeOnDelete(false);
+
+
+
 
             builder.Entity<SubGroup>().HasKey(x => x.ID);
             builder.Entity<SubGroup>().Property(x => x.ID).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
@@ -283,15 +287,15 @@ namespace PMWORK
                 .HasForeignKey(x => x.UnitID_FK)
                 .WillCascadeOnDelete(false);
             builder.Entity<UnitOfMeasurement>()
-    .HasMany(x => x.ServicePeriodes)
-    .WithRequired(x => x.UnitOfMeasurement)
-    .HasForeignKey(x => x.UnitID_FK)
-    .WillCascadeOnDelete(false);
+                 .HasMany(x => x.ServicePeriodes)
+                 .WithRequired(x => x.UnitOfMeasurement)
+                 .HasForeignKey(x => x.UnitID_FK)
+                 .WillCascadeOnDelete(false);
             builder.Entity<UnitOfMeasurement>()
-    .HasMany(x => x.SpareParts)
-    .WithRequired(x => x.UnitOfMeasurement)
-    .HasForeignKey(x => x.UnitID_FK)
-    .WillCascadeOnDelete(false);
+                 .HasMany(x => x.SpareParts)
+                 .WithRequired(x => x.UnitOfMeasurement)
+                 .HasForeignKey(x => x.UnitID_FK)
+                 .WillCascadeOnDelete(false);
 
 
             builder.Entity<WorkOrder>().HasKey(x => x.ID);
@@ -409,10 +413,10 @@ namespace PMWORK
             builder.Entity<Repairout>().Property(x => x.RepairOutFullName).IsRequired().HasMaxLength(250);
             builder.Entity<Repairout>().Property(x => x.RepairReportOut).HasMaxLength(500);
             builder.Entity<Repairout>().Property(x => x.RequestRepairOut).IsRequired().HasMaxLength(500);
-            
 
 
-            }
+
+        }
 
 
 
@@ -437,7 +441,7 @@ namespace PMWORK
         public virtual DbSet<ServicePeriode> ServicePeriodes { get; set; }
         public virtual DbSet<IdentityMachinery> IdentityMachineries { get; set; }
         public virtual DbSet<PowerElectricalMachinery> PowerElectricalMachineries { get; set; }
-        public virtual DbSet<Repairout> Repairouts  { get; set; }
+        public virtual DbSet<Repairout> Repairouts { get; set; }
 
-        }
+    }
 }

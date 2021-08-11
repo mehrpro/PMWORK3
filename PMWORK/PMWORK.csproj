@@ -128,9 +128,15 @@
     <Compile Include="MachineryForms\RepairOutForm.Designer.cs">
       <DependentUpon>RepairOutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108111007590_newcra.cs" />
-    <Compile Include="Migrations\202108111007590_newcra.designer.cs">
-      <DependentUpon>202108111007590_newcra.cs</DependentUpon>
+    <Compile Include="MachineryForms\RequestListForm333.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineryForms\RequestListForm333.Designer.cs">
+      <DependentUpon>RequestListForm333.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108111544020_UpdateReq.cs" />
+    <Compile Include="Migrations\202108111544020_UpdateReq.designer.cs">
+      <DependentUpon>202108111544020_UpdateReq.cs</DependentUpon>
     </Compile>
     <Compile Include="PMForms\IdentityDeviceForm.cs">
       <SubType>Form</SubType>
@@ -306,8 +312,11 @@
     <EmbeddedResource Include="MachineryForms\RepairOutForm.resx">
       <DependentUpon>RepairOutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108111007590_newcra.resx">
-      <DependentUpon>202108111007590_newcra.cs</DependentUpon>
+    <EmbeddedResource Include="MachineryForms\RequestListForm333.resx">
+      <DependentUpon>RequestListForm333.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108111544020_UpdateReq.resx">
+      <DependentUpon>202108111544020_UpdateReq.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMForms\IdentityDeviceForm.resx">
       <DependentUpon>IdentityDeviceForm.cs</DependentUpon>

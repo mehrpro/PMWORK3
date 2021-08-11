@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace PMWORK.Entities
-    {
+{
 
     /// <summary>
     /// درخواست تعمیر
@@ -16,10 +16,11 @@ namespace PMWORK.Entities
             WorkOrders = new HashSet<WorkOrder>();
             Repairouts = new HashSet<Repairout>();
 
-            }
+        }
 
         public long ID { get; set; }
         public bool IsActive { get; set; }
+        public bool IsRepairOut { get; set; }
         public bool IsDelete { get; set; }
         public bool IsClose { get; set; }
         public bool EM { get; set; }
@@ -46,5 +47,5 @@ namespace PMWORK.Entities
 
 
 
-        }
+    }
 }

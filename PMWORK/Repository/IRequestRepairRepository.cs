@@ -145,7 +145,7 @@ namespace PMWORK.Repository
             return _context.RequestRepairs
                 .Include(a => a.Machinery.Coding)
                 .Include(s => s.Applicant)
-                .Where(x => x.PublicTypeID_FK == type && x.IsActive && x.CompanyID_FK == PublicClass.CompanyID)
+                .Where(x => x.PublicTypeID_FK == type && x.IsActive && x.CompanyID_FK == PublicClass.CompanyID && !x.IsRepairOut)
                 .ToList();
         }
 
@@ -154,7 +154,7 @@ namespace PMWORK.Repository
             return _context.RequestRepairs
                 .Include(a => a.Machinery.Coding)
                 .Include(s => s.Applicant)
-                .Where(x => x.PublicTypeID_FK == type && x.IsClose && x.CompanyID_FK == PublicClass.CompanyID)
+                .Where(x => x.PublicTypeID_FK == type && x.IsClose && x.CompanyID_FK == PublicClass.CompanyID && !x.IsRepairOut)
                 .ToList();
         }
 
@@ -325,7 +325,7 @@ namespace PMWORK.Repository
             {
                 try
                 {
-                   
+
                     var local = _context.Set<WorkOrder>().Local.FirstOrDefault(x => x.ID == workOrder.ID);
                     if (local != null)
                     {
@@ -358,7 +358,7 @@ namespace PMWORK.Repository
                     }
                     else
                     {
-                        var qry = _context.RepairManListeds.Where(x=>x.WorkOrderIdFk == workOrder.ID);
+                        var qry = _context.RepairManListeds.Where(x => x.WorkOrderIdFk == workOrder.ID);
                         foreach (var item in qry)
                         {
                             item.IsDelete = true;
@@ -403,40 +403,46 @@ namespace PMWORK.Repository
         }
 
         public bool AddEditRepairOut(Repairout model)
-            {
+        {
             if (model.ID > 0)
-                {
+            {
                 try
-                    {
+                {
                     var local = _context.Set<Repairout>().Local.FirstOrDefault(x => x.ID == model.ID);
                     if (local != null)
-                        {
+                    {
                         _context.Entry(local).State = EntityState.Detached;
-                        }
+                    }
                     _context.Entry(model).State = EntityState.Modified;
                     _context.SaveChanges();
                     return true;
-                    }
-                catch
-                    {
-                    return false;
-                    }
-
                 }
-            else
-                {
-                try
-                    {
-                    _context.Repairouts.Add(model);                    
-                    _context.SaveChanges();
-                    
-                    return true;
-                    }
                 catch
-                    {
+                {
                     return false;
+                }
+
+            }
+            else
+            {
+                using (var trans = _context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        _context.Repairouts.Add(model);
+                        var re = _context.RequestRepairs.Find(model.RequestID_FK);
+                        re.IsRepairOut = true;
+                        _context.SaveChanges();
+                        trans.Commit();
+                        return true;
+                    }
+                    catch
+                    {
+                        trans.Rollback();
+                        return false;
                     }
                 }
             }
         }
+    }
 }

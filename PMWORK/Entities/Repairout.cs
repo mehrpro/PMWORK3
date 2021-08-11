@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PMWORK.Entities
+{
+    public class Repairout
     {
-  public  class Repairout
-        {
         public int ID { get; set; }
         public int CompanyID_FK { get; set; }
+
         public long RequestID_FK { get; set; }
         public RequestRepair RequestRepair { get; set; }
 
@@ -17,7 +18,7 @@ namespace PMWORK.Entities
 
         public DateTime Regidtered { get; set; }
 
-        public string  RepairOutFullName { get; set; }
+        public string RepairOutFullName { get; set; }
 
         public string RepairReportOut { get; set; }
         public DateTime BackendRequest { get; set; }
@@ -26,5 +27,5 @@ namespace PMWORK.Entities
         public bool IsActive { get; set; }
 
 
-        }
     }
+}
