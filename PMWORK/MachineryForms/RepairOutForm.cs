@@ -29,5 +29,15 @@ namespace PMWORK.MachineryForms
             InitializeComponent();
             _requestRepairRepository = requestRepairRepository;
             }
+
+        private void RepairOutForm_Load(object sender, EventArgs e)
+            {
+            
+            txtMachineryName.EditValue = machineryName;
+            txtCode.EditValue = code;
+            txtRegistred.Text = PublicClass.TodayPersian();
+            txtUser.Text = PublicClass.FullNameTask;
+
+            }
         }
     }

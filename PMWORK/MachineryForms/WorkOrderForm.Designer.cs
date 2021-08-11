@@ -415,6 +415,7 @@ namespace PMWORK.MachineryForms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabMaster.AppearancePage.Header.Options.UseTextOptions = true;
+            this.tabMaster.AppearancePage.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.tabMaster.Location = new System.Drawing.Point(0, 0);
             this.tabMaster.Name = "tabMaster";
             this.tabMaster.SelectedTabPage = this.xtraTabPage2;
@@ -1503,7 +1504,6 @@ namespace PMWORK.MachineryForms
             // btnRepairOut
             // 
             this.btnRepairOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRepairOut.Enabled = false;
             this.btnRepairOut.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRepairOut.ImageOptions.Image")));
             this.btnRepairOut.Location = new System.Drawing.Point(184, 415);
             this.btnRepairOut.Name = "btnRepairOut";

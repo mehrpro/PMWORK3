@@ -45,6 +45,11 @@ namespace PMWORK.MachineryForms
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
@@ -70,6 +75,8 @@ namespace PMWORK.MachineryForms
             this.ColumnReport = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnReportRepair = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
+            this.RepairOutColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnRepairOut = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
@@ -81,6 +88,7 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReportRepair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRepairOut)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -180,7 +188,8 @@ namespace PMWORK.MachineryForms
             this.repositoryItemDateEdit1,
             this.repositoryItemMemoExEdit1,
             this.btnReportRepair,
-            this.btnDeleteRow});
+            this.btnDeleteRow,
+            this.btnRepairOut});
             this.dgvRequestList.Size = new System.Drawing.Size(637, 456);
             this.dgvRequestList.TabIndex = 0;
             this.dgvRequestList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -251,7 +260,8 @@ namespace PMWORK.MachineryForms
             this.ReqTitle,
             this.ColumnEdit,
             this.ColumnDelete,
-            this.ColumnReport});
+            this.ColumnReport,
+            this.RepairOutColumn});
             this.gvRequestList.GridControl = this.dgvRequestList;
             this.gvRequestList.Name = "gvRequestList";
             this.gvRequestList.OptionsBehavior.ReadOnly = true;
@@ -270,8 +280,6 @@ namespace PMWORK.MachineryForms
             this.Applicant.Caption = "واحد درخواست کننده";
             this.Applicant.FieldName = "Applicant.ApplicantTitle";
             this.Applicant.Name = "Applicant";
-            this.Applicant.Visible = true;
-            this.Applicant.VisibleIndex = 1;
             this.Applicant.Width = 88;
             // 
             // RequsetDateTime
@@ -283,7 +291,7 @@ namespace PMWORK.MachineryForms
             this.RequsetDateTime.MinWidth = 65;
             this.RequsetDateTime.Name = "RequsetDateTime";
             this.RequsetDateTime.Visible = true;
-            this.RequsetDateTime.VisibleIndex = 2;
+            this.RequsetDateTime.VisibleIndex = 1;
             this.RequsetDateTime.Width = 65;
             // 
             // repositoryItemDateEdit1
@@ -305,7 +313,7 @@ namespace PMWORK.MachineryForms
             this.MachineryCode.MinWidth = 60;
             this.MachineryCode.Name = "MachineryCode";
             this.MachineryCode.Visible = true;
-            this.MachineryCode.VisibleIndex = 3;
+            this.MachineryCode.VisibleIndex = 2;
             this.MachineryCode.Width = 60;
             // 
             // EM
@@ -315,8 +323,6 @@ namespace PMWORK.MachineryForms
             this.EM.MaxWidth = 65;
             this.EM.MinWidth = 65;
             this.EM.Name = "EM";
-            this.EM.Visible = true;
-            this.EM.VisibleIndex = 4;
             this.EM.Width = 65;
             // 
             // ReqTitle
@@ -325,7 +331,7 @@ namespace PMWORK.MachineryForms
             this.ReqTitle.FieldName = "RequestTitle";
             this.ReqTitle.Name = "ReqTitle";
             this.ReqTitle.Visible = true;
-            this.ReqTitle.VisibleIndex = 5;
+            this.ReqTitle.VisibleIndex = 3;
             this.ReqTitle.Width = 115;
             // 
             // ColumnEdit
@@ -336,7 +342,7 @@ namespace PMWORK.MachineryForms
             this.ColumnEdit.MinWidth = 50;
             this.ColumnEdit.Name = "ColumnEdit";
             this.ColumnEdit.Visible = true;
-            this.ColumnEdit.VisibleIndex = 6;
+            this.ColumnEdit.VisibleIndex = 4;
             this.ColumnEdit.Width = 50;
             // 
             // btnEditRow
@@ -361,7 +367,7 @@ namespace PMWORK.MachineryForms
             this.ColumnDelete.MinWidth = 50;
             this.ColumnDelete.Name = "ColumnDelete";
             this.ColumnDelete.Visible = true;
-            this.ColumnDelete.VisibleIndex = 7;
+            this.ColumnDelete.VisibleIndex = 5;
             this.ColumnDelete.Width = 50;
             // 
             // btnDeleteRow
@@ -386,7 +392,7 @@ namespace PMWORK.MachineryForms
             this.ColumnReport.MinWidth = 70;
             this.ColumnReport.Name = "ColumnReport";
             this.ColumnReport.Visible = true;
-            this.ColumnReport.VisibleIndex = 8;
+            this.ColumnReport.VisibleIndex = 6;
             this.ColumnReport.Width = 70;
             // 
             // btnReportRepair
@@ -410,6 +416,26 @@ namespace PMWORK.MachineryForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
             // 
+            // RepairOutColumn
+            // 
+            this.RepairOutColumn.Caption = "تعمیرخارج شرکت";
+            this.RepairOutColumn.ColumnEdit = this.btnRepairOut;
+            this.RepairOutColumn.MaxWidth = 90;
+            this.RepairOutColumn.MinWidth = 90;
+            this.RepairOutColumn.Name = "RepairOutColumn";
+            this.RepairOutColumn.Visible = true;
+            this.RepairOutColumn.VisibleIndex = 7;
+            this.RepairOutColumn.Width = 90;
+            // 
+            // btnRepairOut
+            // 
+            this.btnRepairOut.AutoHeight = false;
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            this.btnRepairOut.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnRepairOut.Name = "btnRepairOut";
+            this.btnRepairOut.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
             // RequestListForm3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,6 +457,7 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReportRepair)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRepairOut)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -462,5 +489,7 @@ namespace PMWORK.MachineryForms
         private DevExpress.XtraGrid.Columns.GridColumn ColumnReport;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnDeleteRow;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnReportRepair;
-    }
+        private DevExpress.XtraGrid.Columns.GridColumn RepairOutColumn;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnRepairOut;
+        }
 }
