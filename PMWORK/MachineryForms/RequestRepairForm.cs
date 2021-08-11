@@ -38,16 +38,14 @@ namespace PMWORK.MachineryForms
             cbxApplicant.Properties.DisplayMember = "ApplicantTitle";
             cbxApplicant.Properties.ValueMember = "ID";
 
-            if (!PublicClass.LimitedCompany) return;
-            cbxCompany.EditValue = PublicClass.CompanyID;
-            cbxCompany.ReadOnly = true;
+
 
 
 
         }
         private void UpdateApplicant(int companyId)
         {
-            cbxApplicant.Properties.DataSource = 2 _request.GetAllApplicantsByCompanyId(companyId);
+            cbxApplicant.Properties.DataSource = _request.GetAllApplicantsByCompanyId(companyId);
         }
         private void UpdateCompany()
         {
@@ -140,6 +138,9 @@ namespace PMWORK.MachineryForms
             txtRequestTitle.Text += @" " + _request.GetStringTypeOfRequest(_typeofRequest);
             ClearForm();
             UpdateCompany();
+            if (!PublicClass.LimitedCompany) return;
+            cbxCompany.EditValue = PublicClass.CompanyID;
+            cbxCompany.ReadOnly = true;
             if (!_editor) return;
             dateRegistered.DateTime = _requestRepairEdit.RequestDataTime;
             cbxCompany.EditValue = _requestRepairEdit.CompanyID_FK;
