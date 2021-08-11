@@ -90,5 +90,21 @@ namespace PMWORK.MachineryForms
             repairFrom.ShowDialog();
             UpdateRequestList(selectedRow.PublicTypeID_FK);
         }
-    }
+
+        private void btnRepairOut_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+            {
+            if (gvRequestList.GetFocusedRowCellValue("ID") == null) return;
+            var selectedRow = (RequestRepair)gvRequestList.GetFocusedRow();
+
+            var frm = _container.GetInstance<RepairOutForm>();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            //frm.RequestReapqirModel = selectedRow;
+            frm.RequestID = selectedRow.ID ;
+            frm.MachineryName =selectedRow.Machinery.MachineryTitle ;
+            frm.Code = selectedRow.Machinery.Coding.Code.ToString() ;
+            frm.RequestRepairTitle = selectedRow.RequestTitle;
+            frm.ShowDialog();
+            UpdateRequestList(selectedRow.PublicTypeID_FK);
+            }
+        }
 }

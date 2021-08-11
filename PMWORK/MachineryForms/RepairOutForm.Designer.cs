@@ -29,6 +29,9 @@ namespace PMWORK.MachineryForms
         /// </summary>
         private void InitializeComponent()
             {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RepairOutForm));
             this.txtCode = new DevExpress.XtraEditors.TextEdit();
             this.txtMachineryName = new DevExpress.XtraEditors.TextEdit();
@@ -46,6 +49,7 @@ namespace PMWORK.MachineryForms
             this.txtRepairmanOutFullName = new DevExpress.XtraEditors.TextEdit();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
+            this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMachineryName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequestTitle.Properties)).BeginInit();
@@ -53,6 +57,7 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.txtRegistred.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRepairmanOutFullName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCode
@@ -133,6 +138,9 @@ namespace PMWORK.MachineryForms
             this.txtRequest.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtRequest.Size = new System.Drawing.Size(482, 103);
             this.txtRequest.TabIndex = 12;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtRequest, conditionValidationRule1);
             // 
             // labelControl5
             // 
@@ -189,6 +197,9 @@ namespace PMWORK.MachineryForms
             this.txtRepairmanOutFullName.Parmida_ActivePlusMultiKeys = false;
             this.txtRepairmanOutFullName.Size = new System.Drawing.Size(482, 20);
             this.txtRepairmanOutFullName.TabIndex = 12;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtRepairmanOutFullName, conditionValidationRule2);
             // 
             // btnSave
             // 
@@ -199,6 +210,7 @@ namespace PMWORK.MachineryForms
             this.btnSave.Size = new System.Drawing.Size(80, 30);
             this.btnSave.TabIndex = 20;
             this.btnSave.Text = "ذخیره";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -209,6 +221,7 @@ namespace PMWORK.MachineryForms
             this.btnClose.Size = new System.Drawing.Size(80, 30);
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "بستن";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // RepairOutForm
             // 
@@ -242,6 +255,7 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.txtRegistred.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRepairmanOutFullName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,5 +278,6 @@ namespace PMWORK.MachineryForms
         private DevExpress.XtraEditors.MemoEdit txtRequest;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnClose;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dx;
         }
     }

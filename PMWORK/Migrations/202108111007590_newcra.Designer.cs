@@ -7,13 +7,13 @@ namespace PMWORK.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class dbcrate : IMigrationMetadata
+    public sealed partial class newcra : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(dbcrate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(newcra));
         
         string IMigrationMetadata.Id
         {
-            get { return "202108100805119_dbcrate"; }
+            get { return "202108111007590_newcra"; }
         }
         
         string IMigrationMetadata.Source

@@ -98,6 +98,12 @@ namespace PMWORK.Repository
         /// <param name="consumablePart">قطعات یدکی مصرفی</param>
         /// <returns></returns>
         bool AddNewWorkOrder(WorkOrder workOrder, List<RepairMan> repairMan, List<ConsumViewModel> consumViewModels);
+        /// <summary>
+        /// افزودن یا ویرایش تعمیرات خارج از شرکت
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        bool AddEditRepairOut(Repairout model);
 
 
 
@@ -395,5 +401,42 @@ namespace PMWORK.Repository
 
             }
         }
-    }
+
+        public bool AddEditRepairOut(Repairout model)
+            {
+            if (model.ID > 0)
+                {
+                try
+                    {
+                    var local = _context.Set<Repairout>().Local.FirstOrDefault(x => x.ID == model.ID);
+                    if (local != null)
+                        {
+                        _context.Entry(local).State = EntityState.Detached;
+                        }
+                    _context.Entry(model).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    return true;
+                    }
+                catch
+                    {
+                    return false;
+                    }
+
+                }
+            else
+                {
+                try
+                    {
+                    _context.Repairouts.Add(model);                    
+                    _context.SaveChanges();
+                    
+                    return true;
+                    }
+                catch
+                    {
+                    return false;
+                    }
+                }
+            }
+        }
 }

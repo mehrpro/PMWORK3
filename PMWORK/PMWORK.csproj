@@ -128,9 +128,9 @@
     <Compile Include="MachineryForms\RepairOutForm.Designer.cs">
       <DependentUpon>RepairOutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108100805119_dbcrate.cs" />
-    <Compile Include="Migrations\202108100805119_dbcrate.designer.cs">
-      <DependentUpon>202108100805119_dbcrate.cs</DependentUpon>
+    <Compile Include="Migrations\202108111007590_newcra.cs" />
+    <Compile Include="Migrations\202108111007590_newcra.designer.cs">
+      <DependentUpon>202108111007590_newcra.cs</DependentUpon>
     </Compile>
     <Compile Include="PMForms\IdentityDeviceForm.cs">
       <SubType>Form</SubType>
@@ -306,8 +306,8 @@
     <EmbeddedResource Include="MachineryForms\RepairOutForm.resx">
       <DependentUpon>RepairOutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108100805119_dbcrate.resx">
-      <DependentUpon>202108100805119_dbcrate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108111007590_newcra.resx">
+      <DependentUpon>202108111007590_newcra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PMForms\IdentityDeviceForm.resx">
       <DependentUpon>IdentityDeviceForm.cs</DependentUpon>
