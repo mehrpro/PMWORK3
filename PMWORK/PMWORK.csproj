@@ -84,6 +84,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SqlHelper.cs" />
     <Compile Include="Admin\UserAccessForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,12 +290,6 @@
     <Compile Include="RefreshDB.cs" />
     <Compile Include="Repository\ICodingRepository.cs" />
     <Compile Include="Repository\IRequestRepairRepository.cs" />
-    <Compile Include="Admin\SettingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\SettingForm.Designer.cs">
-      <DependentUpon>SettingForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +297,9 @@
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
     <Compile Include="TypeRegistery.cs" />
+    <EmbeddedResource Include="Admin\SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\UserAccessForm.resx">
       <DependentUpon>UserAccessForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -389,9 +393,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Admin\SettingForm.resx">
-      <DependentUpon>SettingForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>

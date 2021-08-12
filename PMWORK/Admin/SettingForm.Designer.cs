@@ -1,5 +1,5 @@
 ﻿
-namespace PMWORK
+namespace PMWORK.Admin
 {
     partial class SettingForm
     {
@@ -29,95 +29,178 @@ namespace PMWORK
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
-            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribDatabase = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnNewDatabase = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRestore = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtDatabase = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txtUser = new DevExpress.XtraEditors.TextEdit();
+            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
+            this.btnTest = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.cbxServer = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbxAuthentication = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDatabase.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxServer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxAuthentication.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // ribbonControl1
+            // labelControl1
             // 
-            this.ribbonControl1.ExpandCollapseItem.Id = 0;
-            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl1.ExpandCollapseItem,
-            this.btnNewDatabase,
-            this.btnRestore,
-            this.barButtonItem1});
-            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 4;
-            this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribDatabase,
-            this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(762, 143);
+            this.labelControl1.Location = new System.Drawing.Point(58, 66);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(32, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Server";
             // 
-            // ribDatabase
+            // labelControl2
             // 
-            this.ribDatabase.Appearance.Options.UseTextOptions = true;
-            this.ribDatabase.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.Yes;
-            this.ribDatabase.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
-            this.ribDatabase.Name = "ribDatabase";
-            this.ribDatabase.Text = "بانک اطلاعاتی";
+            this.labelControl2.Location = new System.Drawing.Point(44, 92);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(46, 13);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "Database";
             // 
-            // ribbonPageGroup1
+            // txtDatabase
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnNewDatabase);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnRestore);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "بانک اطلاعاتی";
+            this.txtDatabase.Location = new System.Drawing.Point(96, 89);
+            this.txtDatabase.Name = "txtDatabase";
+            this.txtDatabase.Parmida_ActivePlusMultiKeys = false;
+            this.txtDatabase.Size = new System.Drawing.Size(271, 20);
+            this.txtDatabase.TabIndex = 3;
             // 
-            // btnNewDatabase
+            // labelControl3
             // 
-            this.btnNewDatabase.Caption = "بانک جدید";
-            this.btnNewDatabase.Id = 1;
-            this.btnNewDatabase.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.btnNewDatabase.Name = "btnNewDatabase";
+            this.labelControl3.Location = new System.Drawing.Point(68, 144);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(22, 13);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "User";
             // 
-            // btnRestore
+            // labelControl4
             // 
-            this.btnRestore.Caption = "بازیابی اطلاعات";
-            this.btnRestore.Id = 2;
-            this.btnRestore.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage1")));
-            this.btnRestore.Name = "btnRestore";
+            this.labelControl4.Location = new System.Drawing.Point(44, 170);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(46, 13);
+            this.labelControl4.TabIndex = 6;
+            this.labelControl4.Text = "Password";
             // 
-            // barButtonItem1
+            // txtUser
             // 
-            this.barButtonItem1.Caption = "پشتیبان گیری";
-            this.barButtonItem1.Id = 3;
-            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage2")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.txtUser.Location = new System.Drawing.Point(96, 141);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Parmida_ActivePlusMultiKeys = false;
+            this.txtUser.Size = new System.Drawing.Size(271, 20);
+            this.txtUser.TabIndex = 5;
             // 
-            // ribbonPage1
+            // txtPassword
             // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "ribbonPage1";
+            this.txtPassword.Location = new System.Drawing.Point(96, 167);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Parmida_ActivePlusMultiKeys = false;
+            this.txtPassword.Size = new System.Drawing.Size(271, 20);
+            this.txtPassword.TabIndex = 7;
             // 
-            // ribbonPageGroup2
+            // btnTest
             // 
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            this.btnTest.Location = new System.Drawing.Point(211, 193);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(75, 23);
+            this.btnTest.TabIndex = 8;
+            this.btnTest.Text = "Test";
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(292, 193);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Save";
+            // 
+            // cbxServer
+            // 
+            this.cbxServer.Location = new System.Drawing.Point(96, 63);
+            this.cbxServer.Name = "cbxServer";
+            this.cbxServer.Parmida_ActivePlusMultiKeys = false;
+            this.cbxServer.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxServer.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxServer.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxServer.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxServer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxServer.Size = new System.Drawing.Size(271, 20);
+            this.cbxServer.TabIndex = 1;
+            // 
+            // cbxAuthentication
+            // 
+            this.cbxAuthentication.EditValue = "Windows Authentication";
+            this.cbxAuthentication.Location = new System.Drawing.Point(96, 115);
+            this.cbxAuthentication.Name = "cbxAuthentication";
+            this.cbxAuthentication.Parmida_ActivePlusMultiKeys = false;
+            this.cbxAuthentication.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxAuthentication.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxAuthentication.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxAuthentication.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxAuthentication.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxAuthentication.Properties.DropDownRows = 3;
+            this.cbxAuthentication.Properties.Items.AddRange(new object[] {
+            "Windows Authentication",
+            "SQL Server Authentication"});
+            this.cbxAuthentication.Size = new System.Drawing.Size(271, 20);
+            this.cbxAuthentication.TabIndex = 1;
+            this.cbxAuthentication.SelectedIndexChanged += new System.EventHandler(this.cbxAuthentication_SelectedIndexChanged);
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(20, 118);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(70, 13);
+            this.labelControl5.TabIndex = 0;
+            this.labelControl5.Text = "Authentication";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(105, 23);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(177, 23);
+            this.labelControl6.TabIndex = 0;
+            this.labelControl6.Text = "Database Connection";
             // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 581);
-            this.Controls.Add(this.ribbonControl1);
+            this.ClientSize = new System.Drawing.Size(387, 233);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnTest);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtDatabase);
+            this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.cbxAuthentication);
+            this.Controls.Add(this.cbxServer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SettingForm";
-            this.Ribbon = this.ribbonControl1;
-            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "تنظیمات نرم افزار";
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            this.Text = "Connection ";
+            this.Load += new System.EventHandler(this.SettingForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtDatabase.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxServer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxAuthentication.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,13 +208,18 @@ namespace PMWORK
 
         #endregion
 
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribDatabase;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.BarButtonItem btnNewDatabase;
-        private DevExpress.XtraBars.BarButtonItem btnRestore;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtDatabase;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit txtUser;
+        private DevExpress.XtraEditors.TextEdit txtPassword;
+        private DevExpress.XtraEditors.SimpleButton btnTest;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
+        private DevExpress.XtraEditors.ComboBoxEdit cbxServer;
+        private DevExpress.XtraEditors.ComboBoxEdit cbxAuthentication;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }
