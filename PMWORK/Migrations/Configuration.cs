@@ -19,12 +19,17 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
-           // if (context.Companies.ToList().Any()) return;   9123412621    
-            
+            // if (context.Companies.ToList().Any()) return;   9123412621    
+
+            //context.Database.ExecuteSqlCommand("DROP TABLE  ViewCompany");
+            context.Database.ExecuteSqlCommand(Properties.Resources.CompanyViewResource);
 
 
 
-            IList<Company> defaultCompany = new List<Company>();
+
+
+
+            IList <Company> defaultCompany = new List<Company>();
             defaultCompany.Add(new Company() { ID = 1, CompanyTitle = "کیمیای زنجان گستران", CompnayIndex = 1, Description = "مجتمع صنعتی معدنی زرین" });
             defaultCompany.Add(new Company() { ID = 2, CompanyTitle = "سرب و روی ایرانیان", CompnayIndex = 2, Description = "مجتمع صنعتی معدنی زرین" });
             defaultCompany.Add(new Company() { ID = 3, CompanyTitle = "ذوبگران رنگین فلز", CompnayIndex = 3, Description = "مجتمع صنعتی معدنی زرین" });

@@ -121,7 +121,7 @@
     <Compile Include="CodingForms\GroupForm.Designer.cs">
       <DependentUpon>GroupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entities\CompanyView.cs" />
+    <Compile Include="Entities\CompanyViewMap.cs" />
     <Compile Include="Entities\Repairout.cs" />
     <Compile Include="MachineryForms\RepairOutForm.cs">
       <SubType>Form</SubType>
@@ -140,10 +140,6 @@
     </Compile>
     <Compile Include="MachineryForms\RequestListForm333.Designer.cs">
       <DependentUpon>RequestListForm333.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108120502222_dbcreate.cs" />
-    <Compile Include="Migrations\202108120502222_dbcreate.designer.cs">
-      <DependentUpon>202108120502222_dbcreate.cs</DependentUpon>
     </Compile>
     <Compile Include="IdentitiyForms\IdentityDeviceForm.cs">
       <SubType>Form</SubType>
@@ -247,13 +243,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108120627149_updateIdentityMachinery.cs" />
-    <Compile Include="Migrations\202108120627149_updateIdentityMachinery.designer.cs">
-      <DependentUpon>202108120627149_updateIdentityMachinery.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108120721467_updateIdentityMachinery2.cs" />
-    <Compile Include="Migrations\202108120721467_updateIdentityMachinery2.designer.cs">
-      <DependentUpon>202108120721467_updateIdentityMachinery2.cs</DependentUpon>
+    <Compile Include="Migrations\202108120929101_DBCREATE.cs" />
+    <Compile Include="Migrations\202108120929101_DBCREATE.designer.cs">
+      <DependentUpon>202108120929101_DBCREATE.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="IdentitiyForms\IdentityMachineryForm.cs">
@@ -332,9 +324,6 @@
     <EmbeddedResource Include="MachineryForms\RequestListForm333.resx">
       <DependentUpon>RequestListForm333.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108120502222_dbcreate.resx">
-      <DependentUpon>202108120502222_dbcreate.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="IdentitiyForms\IdentityDeviceForm.resx">
       <DependentUpon>IdentityDeviceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,11 +377,8 @@
     <EmbeddedResource Include="IdentitiyForms\SparePartsForm.resx">
       <DependentUpon>SparePartsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108120627149_updateIdentityMachinery.resx">
-      <DependentUpon>202108120627149_updateIdentityMachinery.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108120721467_updateIdentityMachinery2.resx">
-      <DependentUpon>202108120721467_updateIdentityMachinery2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108120929101_DBCREATE.resx">
+      <DependentUpon>202108120929101_DBCREATE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

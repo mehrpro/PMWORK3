@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class dbcreate : DbMigration
+    public partial class DBCREATE : DbMigration
     {
         public override void Up()
         {
@@ -172,19 +172,34 @@
                         TypeDevice = c.String(maxLength: 250),
                         dateTimeImport = c.DateTime(nullable: false),
                         dateTimeStart = c.DateTime(nullable: false),
-                        ApplicantID_FK = c.Int(nullable: false),
+                        dateStartWaranty = c.DateTime(nullable: false),
+                        dateEndWaranty = c.DateTime(nullable: false),
+                        Calibration = c.Boolean(nullable: false),
+                        NewDivice = c.Boolean(nullable: false),
                         Length = c.Int(nullable: false),
                         Width = c.Int(nullable: false),
                         Height = c.Int(nullable: false),
                         Wight = c.Int(nullable: false),
-                        Wather = c.String(),
-                        oil = c.String(),
+                        Company = c.String(maxLength: 250),
+                        Countery = c.String(maxLength: 50),
+                        CompanyAddress = c.String(maxLength: 250),
+                        CompanyTel = c.String(maxLength: 15),
+                        CompanyFax = c.String(maxLength: 15),
+                        SupplyName = c.String(maxLength: 250),
+                        SupplyAddress = c.String(maxLength: 250),
+                        SupplyTel = c.String(maxLength: 15),
+                        SupplyFax = c.String(maxLength: 15),
+                        CalibrationCompany = c.String(maxLength: 250),
+                        CalibrationAddress = c.String(maxLength: 250),
+                        CalibrationTel = c.String(maxLength: 15),
+                        CalibrationFax = c.String(maxLength: 15),
+                        Applicant_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.Machineries", t => t.MachinerID_FK)
-                .ForeignKey("dbo.Applicants", t => t.ApplicantID_FK)
+                .ForeignKey("dbo.Applicants", t => t.Applicant_ID)
                 .Index(t => t.MachinerID_FK)
-                .Index(t => t.ApplicantID_FK);
+                .Index(t => t.Applicant_ID);
             
             CreateTable(
                 "dbo.PowerElectricalMachineries",
@@ -401,7 +416,7 @@
         {
             DropForeignKey("dbo.RequestRepairs", "ApplicantID_FK", "dbo.Applicants");
             DropForeignKey("dbo.Machineries", "ApplicantID_FK", "dbo.Applicants");
-            DropForeignKey("dbo.IdentityMachineries", "ApplicantID_FK", "dbo.Applicants");
+            DropForeignKey("dbo.IdentityMachineries", "Applicant_ID", "dbo.Applicants");
             DropForeignKey("dbo.SubGroups", "CompanyID_FK", "dbo.Companies");
             DropForeignKey("dbo.RequestRepairs", "CompanyID_FK", "dbo.Companies");
             DropForeignKey("dbo.Groups", "CompanyID_FK", "dbo.Companies");
@@ -450,7 +465,7 @@
             DropIndex("dbo.RequestRepairs", new[] { "MachineryID_FK" });
             DropIndex("dbo.RequestRepairs", new[] { "CompanyID_FK" });
             DropIndex("dbo.PowerElectricalMachineries", new[] { "MachineryID_FK" });
-            DropIndex("dbo.IdentityMachineries", new[] { "ApplicantID_FK" });
+            DropIndex("dbo.IdentityMachineries", new[] { "Applicant_ID" });
             DropIndex("dbo.IdentityMachineries", new[] { "MachinerID_FK" });
             DropIndex("dbo.Machineries", new[] { "ApplicantID_FK" });
             DropIndex("dbo.Machineries", new[] { "CodeID_FK" });

@@ -7,13 +7,13 @@ namespace PMWORK.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class updateIdentityMachinery : IMigrationMetadata
+    public sealed partial class DBCREATE : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updateIdentityMachinery));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DBCREATE));
         
         string IMigrationMetadata.Id
         {
-            get { return "202108120627149_updateIdentityMachinery"; }
+            get { return "202108120929101_DBCREATE"; }
         }
         
         string IMigrationMetadata.Source
