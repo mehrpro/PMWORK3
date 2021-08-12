@@ -13,7 +13,7 @@ namespace PMWORK.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202108120929101_DBCREATE"; }
+            get { return "202108121001534_DBCREATE"; }
         }
         
         string IMigrationMetadata.Source

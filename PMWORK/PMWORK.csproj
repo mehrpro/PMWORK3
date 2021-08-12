@@ -121,7 +121,6 @@
     <Compile Include="CodingForms\GroupForm.Designer.cs">
       <DependentUpon>GroupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entities\CompanyViewMap.cs" />
     <Compile Include="Entities\Repairout.cs" />
     <Compile Include="MachineryForms\RepairOutForm.cs">
       <SubType>Form</SubType>
@@ -243,9 +242,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108120929101_DBCREATE.cs" />
-    <Compile Include="Migrations\202108120929101_DBCREATE.designer.cs">
-      <DependentUpon>202108120929101_DBCREATE.cs</DependentUpon>
+    <Compile Include="Migrations\202108121001534_DBCREATE.cs" />
+    <Compile Include="Migrations\202108121001534_DBCREATE.designer.cs">
+      <DependentUpon>202108121001534_DBCREATE.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="IdentitiyForms\IdentityMachineryForm.cs">
@@ -377,8 +376,8 @@
     <EmbeddedResource Include="IdentitiyForms\SparePartsForm.resx">
       <DependentUpon>SparePartsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108120929101_DBCREATE.resx">
-      <DependentUpon>202108120929101_DBCREATE.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108121001534_DBCREATE.resx">
+      <DependentUpon>202108121001534_DBCREATE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

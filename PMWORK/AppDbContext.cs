@@ -463,7 +463,6 @@ namespace PMWORK
         public virtual DbSet<PowerElectricalMachinery> PowerElectricalMachineries { get; set; }
         public virtual DbSet<Repairout> Repairouts { get; set; }
 
-        //public DbSet<CompanyView> CompanyViews { get; set; }
 
     }
 }

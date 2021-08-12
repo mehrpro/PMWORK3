@@ -16,16 +16,11 @@
         {
             //Database.SetInitializer(new PMDBInitializer());
             //  This method will be called after migrating to the latest version.
-
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
             // if (context.Companies.ToList().Any()) return;   9123412621    
-
             //context.Database.ExecuteSqlCommand("DROP TABLE  ViewCompany");
-            context.Database.ExecuteSqlCommand(Properties.Resources.CompanyViewResource);
-
-
-
+            //context.Database.ExecuteSqlCommand(Properties.Resources.CompanyViewResource);
 
 
 
