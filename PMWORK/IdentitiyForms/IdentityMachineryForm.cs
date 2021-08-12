@@ -1,18 +1,10 @@
 ﻿using DevExpress.XtraEditors;
-using PMWORK.Entities;
 using PMWORK.Repository;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PMWORK.PMForms
-{
+    {
     public partial class IdentityMachineryForm : XtraForm
     {
         private readonly ICodingRepository _codingRepository;
@@ -35,6 +27,11 @@ namespace PMWORK.PMForms
             }
 
         private void panelControl2_Paint(object sender, PaintEventArgs e)
+            {
+
+            }
+
+        private void panelControl3_Paint(object sender, PaintEventArgs e)
             {
 
             }

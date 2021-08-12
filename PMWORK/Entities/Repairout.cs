@@ -10,6 +10,8 @@ namespace PMWORK.Entities
     {
         public int ID { get; set; }
         public int CompanyID_FK { get; set; }
+        public int UserID_FK { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
 
         public long RequestID_FK { get; set; }
         public RequestRepair RequestRepair { get; set; }

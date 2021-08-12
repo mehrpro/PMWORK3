@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class UpdateReq : DbMigration
+    public partial class dbcreate : DbMigration
     {
         public override void Up()
         {
@@ -314,6 +314,7 @@
                     {
                         ID = c.Int(nullable: false, identity: true),
                         CompanyID_FK = c.Int(nullable: false),
+                        UserID_FK = c.Int(nullable: false),
                         RequestID_FK = c.Long(nullable: false),
                         RequestRepairOut = c.String(nullable: false, maxLength: 500),
                         Regidtered = c.DateTime(nullable: false),
@@ -326,6 +327,8 @@
                     })
                 .PrimaryKey(t => t.ID)
                 .ForeignKey("dbo.RequestRepairs", t => t.RequestID_FK)
+                .ForeignKey("dbo.ApplicationUsers", t => t.UserID_FK)
+                .Index(t => t.UserID_FK)
                 .Index(t => t.RequestID_FK);
             
             CreateTable(
@@ -405,6 +408,7 @@
             DropForeignKey("dbo.Codings", "CompanyID_FK", "dbo.Companies");
             DropForeignKey("dbo.ApplicationUsers", "CompanyID_FK", "dbo.Companies");
             DropForeignKey("dbo.RequestRepairs", "UserID_FK", "dbo.ApplicationUsers");
+            DropForeignKey("dbo.Repairouts", "UserID_FK", "dbo.ApplicationUsers");
             DropForeignKey("dbo.Codings", "UserID_FK", "dbo.ApplicationUsers");
             DropForeignKey("dbo.Machineries", "CodeID_FK", "dbo.Codings");
             DropForeignKey("dbo.SpareParts", "MachineryID_FK", "dbo.Machineries");
@@ -433,6 +437,7 @@
             DropIndex("dbo.RepairManListeds", new[] { "RepairManIdFk" });
             DropIndex("dbo.WorkOrders", new[] { "RequestID_FK" });
             DropIndex("dbo.Repairouts", new[] { "RequestID_FK" });
+            DropIndex("dbo.Repairouts", new[] { "UserID_FK" });
             DropIndex("dbo.SpareParts", new[] { "UnitID_FK" });
             DropIndex("dbo.SpareParts", new[] { "MachineryID_FK" });
             DropIndex("dbo.ServicePeriodes", new[] { "UnitID_FK" });

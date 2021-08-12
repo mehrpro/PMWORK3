@@ -61,9 +61,12 @@ namespace PMWORK
             this.btnRestoreDB = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.btnServicePeriode = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRepairOut = new DevExpress.XtraBars.BarButtonItem();
             this.ribPageInfrasturcture = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PGMachinery = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PGCoding = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribPageMaintanace = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PGRequestReapir = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribPageReports = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -75,9 +78,6 @@ namespace PMWORK
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRepairOut = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -400,6 +400,21 @@ namespace PMWORK
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnServicePeriode.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnServicePeriode_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 26;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnRepairOut
+            // 
+            this.btnRepairOut.Caption = "تعمیرات خارج ازشرکت";
+            this.btnRepairOut.Id = 27;
+            this.btnRepairOut.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRepairOut.ImageOptions.Image")));
+            this.btnRepairOut.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRepairOut.ImageOptions.LargeImage")));
+            this.btnRepairOut.Name = "btnRepairOut";
+            this.btnRepairOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRepairOut_ItemClick);
+            // 
             // ribPageInfrasturcture
             // 
             this.ribPageInfrasturcture.Appearance.Options.UseTextOptions = true;
@@ -431,6 +446,12 @@ namespace PMWORK
             this.PGCoding.Name = "PGCoding";
             this.PGCoding.ShowCaptionButton = false;
             this.PGCoding.Text = "کدینگ موجودیت";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "لیست ماشین آلات";
             // 
             // ribPageMaintanace
             // 
@@ -528,26 +549,6 @@ namespace PMWORK
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribMain;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(750, 31);
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "لیست ماشین آلات";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 26;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // btnRepairOut
-            // 
-            this.btnRepairOut.Caption = "تعمیرات خارج ازشرکت";
-            this.btnRepairOut.Id = 27;
-            this.btnRepairOut.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnRepairOut.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.btnRepairOut.Name = "btnRepairOut";
             // 
             // MainForm
             // 

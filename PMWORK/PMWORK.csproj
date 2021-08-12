@@ -128,20 +128,26 @@
     <Compile Include="MachineryForms\RepairOutForm.Designer.cs">
       <DependentUpon>RepairOutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MachineryForms\RepairOutForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineryForms\RepairOutForm3.Designer.cs">
+      <DependentUpon>RepairOutForm3.cs</DependentUpon>
+    </Compile>
     <Compile Include="MachineryForms\RequestListForm333.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MachineryForms\RequestListForm333.Designer.cs">
       <DependentUpon>RequestListForm333.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108111544020_UpdateReq.cs" />
-    <Compile Include="Migrations\202108111544020_UpdateReq.designer.cs">
-      <DependentUpon>202108111544020_UpdateReq.cs</DependentUpon>
+    <Compile Include="Migrations\202108120502222_dbcreate.cs" />
+    <Compile Include="Migrations\202108120502222_dbcreate.designer.cs">
+      <DependentUpon>202108120502222_dbcreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="PMForms\IdentityDeviceForm.cs">
+    <Compile Include="IdentitiyForms\IdentityDeviceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PMForms\IdentityDeviceForm.Designer.cs">
+    <Compile Include="IdentitiyForms\IdentityDeviceForm.Designer.cs">
       <DependentUpon>IdentityDeviceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CodingForms\RepairManForm.cs">
@@ -175,7 +181,6 @@
     <Compile Include="Entities\Machinery.cs" />
     <Compile Include="Entities\MenuGroup.cs" />
     <Compile Include="Entities\MenuItem.cs" />
-    <Compile Include="Entities\PMDBInitializer.cs" />
     <Compile Include="Entities\PowerElectricalMachinery.cs" />
     <Compile Include="Entities\PublicType.cs" />
     <Compile Include="Entities\RepairMan.cs" />
@@ -242,34 +247,34 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="PMForms\IdentityMachineryForm.cs">
+    <Compile Include="IdentitiyForms\IdentityMachineryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PMForms\IdentityMachineryForm.Designer.cs">
+    <Compile Include="IdentitiyForms\IdentityMachineryForm.Designer.cs">
       <DependentUpon>IdentityMachineryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PMForms\PowerElectricalForm.cs">
+    <Compile Include="IdentitiyForms\PowerElectricalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PMForms\PowerElectricalForm.Designer.cs">
+    <Compile Include="IdentitiyForms\PowerElectricalForm.Designer.cs">
       <DependentUpon>PowerElectricalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PMForms\ReportWorkOrderForm.cs">
+    <Compile Include="IdentitiyForms\ReportWorkOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PMForms\ReportWorkOrderForm.Designer.cs">
+    <Compile Include="IdentitiyForms\ReportWorkOrderForm.Designer.cs">
       <DependentUpon>ReportWorkOrderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PMForms\ServicePerideForm.cs">
+    <Compile Include="IdentitiyForms\ServicePerideForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PMForms\ServicePerideForm.Designer.cs">
+    <Compile Include="IdentitiyForms\ServicePerideForm.Designer.cs">
       <DependentUpon>ServicePerideForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PMForms\SparePartsForm.cs">
+    <Compile Include="IdentitiyForms\SparePartsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PMForms\SparePartsForm.Designer.cs">
+    <Compile Include="IdentitiyForms\SparePartsForm.Designer.cs">
       <DependentUpon>SparePartsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -312,13 +317,16 @@
     <EmbeddedResource Include="MachineryForms\RepairOutForm.resx">
       <DependentUpon>RepairOutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MachineryForms\RepairOutForm3.resx">
+      <DependentUpon>RepairOutForm3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MachineryForms\RequestListForm333.resx">
       <DependentUpon>RequestListForm333.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108111544020_UpdateReq.resx">
-      <DependentUpon>202108111544020_UpdateReq.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108120502222_dbcreate.resx">
+      <DependentUpon>202108120502222_dbcreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PMForms\IdentityDeviceForm.resx">
+    <EmbeddedResource Include="IdentitiyForms\IdentityDeviceForm.resx">
       <DependentUpon>IdentityDeviceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CodingForms\RepairManForm.resx">
@@ -356,19 +364,19 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PMForms\IdentityMachineryForm.resx">
+    <EmbeddedResource Include="IdentitiyForms\IdentityMachineryForm.resx">
       <DependentUpon>IdentityMachineryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PMForms\PowerElectricalForm.resx">
+    <EmbeddedResource Include="IdentitiyForms\PowerElectricalForm.resx">
       <DependentUpon>PowerElectricalForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PMForms\ReportWorkOrderForm.resx">
+    <EmbeddedResource Include="IdentitiyForms\ReportWorkOrderForm.resx">
       <DependentUpon>ReportWorkOrderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PMForms\ServicePerideForm.resx">
+    <EmbeddedResource Include="IdentitiyForms\ServicePerideForm.resx">
       <DependentUpon>ServicePerideForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PMForms\SparePartsForm.resx">
+    <EmbeddedResource Include="IdentitiyForms\SparePartsForm.resx">
       <DependentUpon>SparePartsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -20,29 +20,14 @@ namespace PMWORK.MachineryForms
         public RequestListForm333(IRequestRepairRepository request)
         {
             InitializeComponent();
-            // _container = Container;
             _request = request;
-        }
-        private void UpdateRequestList(int type)
+            UpdateRequestList();
+            }
+        private void UpdateRequestList()
         {
-            dgvRequestList.DataSource = _request.GetClosedRequestRepair(type);
+            dgvRequestList.DataSource = _request.GetRepairouts();
         }
-        private void btnElectricalList_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UpdateRequestList(1);
-        }
-        private void btnMecanicalList_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UpdateRequestList(2);
-        }
-        private void btnPipeLine_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UpdateRequestList(3);
-        }
-        private void btnBuilding_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            UpdateRequestList(4);
-        }
+        
         private void btnEditRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if (gvRequestList.GetFocusedRowCellValue("ID") == null) return;
@@ -52,7 +37,7 @@ namespace PMWORK.MachineryForms
             repairFrom.StartPosition = FormStartPosition.CenterScreen;
             repairFrom.RequestReapqirModel = selectedRow;
             repairFrom.ShowDialog();
-            UpdateRequestList(selectedRow.PublicTypeID_FK);
+            UpdateRequestList();
         }
 
         private void RequestListForm_Load(object sender, System.EventArgs e)
@@ -64,22 +49,29 @@ namespace PMWORK.MachineryForms
         private void btnDeleteRow_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if (gvRequestList.GetFocusedRowCellValue("ID") == null) return;
-            var selectedRow = (RequestRepair)gvRequestList.GetFocusedRow();
+            var selectedRow = (Repairout)gvRequestList.GetFocusedRow();
             var dialogResult = XtraMessageBox.Show(@"آیا از حذف این مورد مطمئن هستید ؟", "حذف درخواست تعمیرات", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
-                var result = _request.RemoveRequestRepair(selectedRow.ID);
+                var result = _request.RemoveRepairOut(selectedRow.ID);
                 if (result)
                     PublicClass.SuccessMessage(Text);
                 else
                     PublicClass.ErrorSave(Text);
             }
-            UpdateRequestList(selectedRow.PublicTypeID_FK);
+            UpdateRequestList();
         }
 
         private void btnReportRepair_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-
+            if (gvRequestList.GetFocusedRowCellValue("ID") == null) return;
+            var selectedRow = (Repairout)gvRequestList.GetFocusedRow();
+            var repairFrom = _container.GetInstance<RepairOutForm3>();
+            repairFrom.Repairout = selectedRow;
+            repairFrom.StartPosition = FormStartPosition.CenterScreen;           
+            repairFrom.ShowDialog();                         
+            UpdateRequestList();                
+            
         }
     }
 }

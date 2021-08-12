@@ -59,6 +59,11 @@ namespace PMWORK.Repository
         /// <param name="requestId"></param>
         /// <returns></returns>
         List<ConsumViewModel> GetConsumViewModelsByRequestId(long requestId);
+        /// <summary>
+        /// لیست تعمیرات خارج از شرکت
+        /// </summary>
+        /// <returns></returns>
+        List<Repairout> GetRepairouts();
 
 
 
@@ -113,6 +118,12 @@ namespace PMWORK.Repository
         /// <param name="requestId"></param>
         /// <returns></returns>
         bool RemoveRequestRepair(long requestId);
+        /// <summary>
+        /// حذف دستورکار تعمیر خارج از شرکت
+        /// </summary>
+        /// <param name="repairoutId"></param>
+        /// <returns></returns>
+        bool RemoveRepairOut(int repairoutId);
 
 
 
@@ -444,5 +455,35 @@ namespace PMWORK.Repository
                 }
             }
         }
-    }
+
+        public bool RemoveRepairOut(int repairoutId)
+            {
+            try
+                {
+                var find = _context.Repairouts.Find(repairoutId);
+                find.IsActive = find.IsClosed = false;
+                find.IsDelete = true;
+                var findReq = _context.RequestRepairs.Find(find.RequestID_FK);
+                findReq.IsRepairOut = false;
+                findReq.IsClose = false;
+                findReq.IsActive = true;
+                _context.SaveChanges();
+                return true;
+                }
+            catch 
+                {
+                return false;
+                }
+            }
+
+        public List<Repairout> GetRepairouts()
+            {
+            return _context.Repairouts
+                .Include(x => x.RequestRepair)
+                .Include(x => x.RequestRepair.Machinery.Coding)
+                .Include(x => x.RequestRepair.Applicant)
+                .Where(x => !x.IsDelete && x.IsActive)
+                .ToList();
+            }
+        }
 }

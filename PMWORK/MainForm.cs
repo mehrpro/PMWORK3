@@ -250,5 +250,17 @@ namespace PMWORK
         {
             // ShowForms(new PMWORK.PMForms.ServicePerideForm());
         }
-    }
+
+        private void btnRepairOut_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+            {
+            foreach (var x in MdiChildren) x.Close();
+            var frm = _container.GetInstance<RequestListForm333>();
+            frm.Container = _container;
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+            }
+        }
 }

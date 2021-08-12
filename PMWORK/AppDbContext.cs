@@ -35,11 +35,15 @@ namespace PMWORK
                 .HasForeignKey(x => x.UserID_FK)
                 .WillCascadeOnDelete(false);
             builder.Entity<ApplicationUser>()
-    .HasMany(x => x.Cleams)
-    .WithRequired(x => x.ApplicationUser)
-    .HasForeignKey(x => x.UserID_FK)
-    .WillCascadeOnDelete(false);
-
+                .HasMany(x => x.Cleams)
+                .WithRequired(x => x.ApplicationUser)
+                .HasForeignKey(x => x.UserID_FK)
+                .WillCascadeOnDelete(false);
+            builder.Entity<ApplicationUser>()
+                .HasMany(x => x.Repairouts)
+                .WithRequired(x => x.ApplicationUser)
+                .HasForeignKey(x => x.UserID_FK)
+                .WillCascadeOnDelete(false);
 
 
 
@@ -410,6 +414,7 @@ namespace PMWORK
             builder.Entity<Repairout>().Property(x => x.BackendRequest).IsRequired().HasColumnType("datetime");
             builder.Entity<Repairout>().Property(x => x.CompanyID_FK).IsRequired();
             builder.Entity<Repairout>().Property(x => x.RequestID_FK).IsRequired();
+            builder.Entity<Repairout>().Property(x => x.UserID_FK).IsRequired();
             builder.Entity<Repairout>().Property(x => x.RepairOutFullName).IsRequired().HasMaxLength(250);
             builder.Entity<Repairout>().Property(x => x.RepairReportOut).HasMaxLength(500);
             builder.Entity<Repairout>().Property(x => x.RequestRepairOut).IsRequired().HasMaxLength(500);

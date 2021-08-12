@@ -64,6 +64,7 @@ namespace PMWORK.MachineryForms
                     RequestRepairOut = txtRequest.Text.Trim(),
                     RepairReportOut = "در انتظار بازگشت",
                     BackendRequest = DateTime.Now,
+                    UserID_FK = PublicClass.UserID,
 
                     };
 
