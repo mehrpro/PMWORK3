@@ -15,6 +15,7 @@ namespace PMWORK
         protected override void OnModelCreating(DbModelBuilder builder)
         {
             base.OnModelCreating(builder);
+             
 
 
             builder.Entity<ApplicationUser>().HasKey(x => x.UserId);
@@ -117,11 +118,7 @@ namespace PMWORK
                  .WithRequired(x => x.Applicant)
                   .HasForeignKey(x => x.ApplicantID_FK)
                   .WillCascadeOnDelete(false);
-            builder.Entity<Applicant>()
-     .HasMany(x => x.IdentityMachineries)
-     .WithRequired(x => x.Applicant)
-      .HasForeignKey(x => x.ApplicantID_FK)
-      .WillCascadeOnDelete(false);
+
 
 
 
@@ -385,9 +382,27 @@ namespace PMWORK
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             builder.Entity<IdentityMachinery>().Property(x => x.dateTimeImport).IsRequired().HasColumnType("datetime");
             builder.Entity<IdentityMachinery>().Property(x => x.dateTimeStart).IsRequired().HasColumnType("datetime");
+            builder.Entity<IdentityMachinery>().Property(x => x.dateStartWaranty).HasColumnType("datetime");
+            builder.Entity<IdentityMachinery>().Property(x => x.dateEndWaranty).HasColumnType("datetime");
+            builder.Entity<IdentityMachinery>().Property(x => x.Calibration).IsRequired();
+            builder.Entity<IdentityMachinery>().Property(x => x.NewDivice).IsRequired();
+
             builder.Entity<IdentityMachinery>().Property(x => x.MachinerID_FK).IsRequired();
             builder.Entity<IdentityMachinery>().Property(x => x.TypeDevice).HasMaxLength(250);
-            builder.Entity<IdentityMachinery>().Property(x => x.ApplicantID_FK).IsRequired();
+            builder.Entity<IdentityMachinery>().Property(x => x.Company).HasMaxLength(250);
+            builder.Entity<IdentityMachinery>().Property(x => x.CompanyAddress).HasMaxLength(250);
+            builder.Entity<IdentityMachinery>().Property(x => x.CompanyFax).HasMaxLength(15);
+            builder.Entity<IdentityMachinery>().Property(x => x.CompanyTel).HasMaxLength(15);
+            builder.Entity<IdentityMachinery>().Property(x => x.CalibrationAddress).HasMaxLength(250);
+            builder.Entity<IdentityMachinery>().Property(x => x.CalibrationCompany).HasMaxLength(250);
+            builder.Entity<IdentityMachinery>().Property(x => x.CalibrationFax).HasMaxLength(15);
+            builder.Entity<IdentityMachinery>().Property(x => x.CalibrationTel).HasMaxLength(15);
+            builder.Entity<IdentityMachinery>().Property(x => x.SupplyAddress).HasMaxLength(250);
+            builder.Entity<IdentityMachinery>().Property(x => x.SupplyName).HasMaxLength(250);
+            builder.Entity<IdentityMachinery>().Property(x => x.SupplyFax).HasMaxLength(15);
+            builder.Entity<IdentityMachinery>().Property(x => x.SupplyTel).HasMaxLength(15);
+            builder.Entity<IdentityMachinery>().Property(x => x.Countery).HasMaxLength(50);
+
 
 
 
@@ -447,6 +462,8 @@ namespace PMWORK
         public virtual DbSet<IdentityMachinery> IdentityMachineries { get; set; }
         public virtual DbSet<PowerElectricalMachinery> PowerElectricalMachineries { get; set; }
         public virtual DbSet<Repairout> Repairouts { get; set; }
+
+        public DbSet<CompanyView> CompanyViews { get; set; }
 
     }
 }

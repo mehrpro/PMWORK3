@@ -22,10 +22,21 @@ namespace PMWORK.Entities
         public int Width { get; set; }
         public int Height { get; set; }
         public int Wight { get; set; }
+        public string Company { get; set; }
+        public string Countery { get; set; }
+        public string CompanyAddress { get; set; }
+        public string CompanyTel { get; set; }
+        public string CompanyFax { get; set; }
+        public string SupplyName { get; set; }
+        public string SupplyAddress { get; set; }
+        public string SupplyTel { get; set; }
+        public string SupplyFax { get; set; }
+        public string CalibrationCompany { get; set; }
+        public string CalibrationAddress { get; set; }
+        public string CalibrationTel { get; set; }
+        public string CalibrationFax { get; set; }
 
 
 
-
-
-    }
+        }
 }
