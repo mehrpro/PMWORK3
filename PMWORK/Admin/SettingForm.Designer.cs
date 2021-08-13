@@ -48,17 +48,26 @@ namespace PMWORK.Admin
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.barMain = new DevExpress.XtraBars.Bar();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.txtDatabase.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxServer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxAuthentication.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(48, 44);
+            this.labelControl1.Location = new System.Drawing.Point(56, 70);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(32, 13);
             this.labelControl1.TabIndex = 0;
@@ -66,7 +75,7 @@ namespace PMWORK.Admin
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(34, 70);
+            this.labelControl2.Location = new System.Drawing.Point(42, 96);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 13);
             this.labelControl2.TabIndex = 2;
@@ -75,7 +84,7 @@ namespace PMWORK.Admin
             // txtDatabase
             // 
             this.txtDatabase.EditValue = "PMWORKDB";
-            this.txtDatabase.Location = new System.Drawing.Point(86, 67);
+            this.txtDatabase.Location = new System.Drawing.Point(94, 93);
             this.txtDatabase.Name = "txtDatabase";
             this.txtDatabase.Parmida_ActivePlusMultiKeys = false;
             this.txtDatabase.Size = new System.Drawing.Size(271, 20);
@@ -86,7 +95,7 @@ namespace PMWORK.Admin
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(58, 122);
+            this.labelControl3.Location = new System.Drawing.Point(66, 148);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(22, 13);
             this.labelControl3.TabIndex = 4;
@@ -94,7 +103,7 @@ namespace PMWORK.Admin
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(34, 148);
+            this.labelControl4.Location = new System.Drawing.Point(42, 174);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(46, 13);
             this.labelControl4.TabIndex = 6;
@@ -103,7 +112,7 @@ namespace PMWORK.Admin
             // txtUser
             // 
             this.txtUser.EditValue = "sa";
-            this.txtUser.Location = new System.Drawing.Point(86, 119);
+            this.txtUser.Location = new System.Drawing.Point(94, 145);
             this.txtUser.Name = "txtUser";
             this.txtUser.Parmida_ActivePlusMultiKeys = false;
             this.txtUser.Size = new System.Drawing.Size(271, 20);
@@ -114,7 +123,7 @@ namespace PMWORK.Admin
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(86, 145);
+            this.txtPassword.Location = new System.Drawing.Point(94, 171);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Parmida_ActivePlusMultiKeys = false;
             this.txtPassword.Properties.PasswordChar = '*';
@@ -123,7 +132,7 @@ namespace PMWORK.Admin
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(201, 171);
+            this.btnTest.Location = new System.Drawing.Point(209, 197);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(75, 23);
             this.btnTest.TabIndex = 8;
@@ -132,7 +141,7 @@ namespace PMWORK.Admin
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(282, 171);
+            this.btnSave.Location = new System.Drawing.Point(290, 197);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 9;
@@ -141,7 +150,7 @@ namespace PMWORK.Admin
             // 
             // cbxServer
             // 
-            this.cbxServer.Location = new System.Drawing.Point(86, 41);
+            this.cbxServer.Location = new System.Drawing.Point(94, 67);
             this.cbxServer.Name = "cbxServer";
             this.cbxServer.Parmida_ActivePlusMultiKeys = false;
             this.cbxServer.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -159,7 +168,7 @@ namespace PMWORK.Admin
             // cbxAuthentication
             // 
             this.cbxAuthentication.EditValue = "SQL Server Authentication";
-            this.cbxAuthentication.Location = new System.Drawing.Point(86, 93);
+            this.cbxAuthentication.Location = new System.Drawing.Point(94, 119);
             this.cbxAuthentication.Name = "cbxAuthentication";
             this.cbxAuthentication.Parmida_ActivePlusMultiKeys = false;
             this.cbxAuthentication.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -181,7 +190,7 @@ namespace PMWORK.Admin
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(10, 96);
+            this.labelControl5.Location = new System.Drawing.Point(18, 122);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(70, 13);
             this.labelControl5.TabIndex = 0;
@@ -191,17 +200,83 @@ namespace PMWORK.Admin
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(86, 12);
+            this.labelControl6.Location = new System.Drawing.Point(94, 38);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(177, 23);
             this.labelControl6.TabIndex = 0;
             this.labelControl6.Text = "Database Connection";
             // 
+            // barMain
+            // 
+            this.barMain.BarName = "Main menu";
+            this.barMain.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Top;
+            this.barMain.DockCol = 0;
+            this.barMain.DockRow = 0;
+            this.barMain.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.barMain.OptionsBar.MultiLine = true;
+            this.barMain.OptionsBar.UseWholeRow = true;
+            this.barMain.Text = "Main menu";
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(382, 24);
+            this.menuStrip.TabIndex = 14;
+            this.menuStrip.Text = "menuStrip";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newDatabaseToolStripMenuItem,
+            this.backupToolStripMenuItem,
+            this.restoreToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // newDatabaseToolStripMenuItem
+            // 
+            this.newDatabaseToolStripMenuItem.Name = "newDatabaseToolStripMenuItem";
+            this.newDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newDatabaseToolStripMenuItem.Text = "New Database";
+            this.newDatabaseToolStripMenuItem.Click += new System.EventHandler(this.newDatabaseToolStripMenuItem_Click);
+            // 
+            // backupToolStripMenuItem
+            // 
+            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backupToolStripMenuItem.Text = "Backup";
+            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
+            // 
+            // restoreToolStripMenuItem
+            // 
+            this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restoreToolStripMenuItem.Text = "Restore";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 209);
+            this.ClientSize = new System.Drawing.Size(382, 236);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.txtPassword);
@@ -215,7 +290,9 @@ namespace PMWORK.Admin
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.cbxAuthentication);
             this.Controls.Add(this.cbxServer);
+            this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "SettingForm";
             this.Text = "Connection ";
             this.Load += new System.EventHandler(this.SettingForm_Load);
@@ -225,6 +302,8 @@ namespace PMWORK.Admin
             ((System.ComponentModel.ISupportInitialize)(this.cbxServer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxAuthentication.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +325,13 @@ namespace PMWORK.Admin
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dx;
+        private DevExpress.XtraBars.Bar barMain;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newDatabaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }

@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.Sql;
 using System.Windows.Forms;
+using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+
+using Microsoft.SqlServer.Management.Common;
+using Microsoft.SqlServer.Management.Smo;
 
 namespace PMWORK.Admin
 {
@@ -26,8 +25,19 @@ namespace PMWORK.Admin
             cbxAuthentication.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
         }
 
+        //private  void cbxServerInstance()
+        //{
+        //    DataTable dt = SqlDataSourceEnumerator.Instance.GetDataSources();
+        //    foreach (DataRow dr in dt.Rows)
+        //    {
+        //        cbxServer.Properties.Items.Add(string.Concat(dr["ServerName"], "\\", dr["InstanceName"]));
+        //    }
+        //}
+
         private void SettingForm_Load(object sender, EventArgs e)
         {
+
+
 
         }
 
@@ -130,9 +140,7 @@ namespace PMWORK.Admin
                     }
                 }
                 else
-                {
                     PublicClass.ErrorValidationMessage(Text);
-                }
 
             }
             else
@@ -158,11 +166,42 @@ namespace PMWORK.Admin
                     }
                 }
                 else
-                {
                     PublicClass.ErrorValidationMessage(Text);
-                }
 
             }
+        }
+
+        private void newDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Server server = new Server(new ServerConnection(cbxServer.Text, txtUser.Text, txtPassword.Text));
+                var backup = new Backup() { Action = BackupActionType.Database, Database = txtDatabase.Text };
+                backup.Devices.AddDevice(@"c:\data\pmworkdb.bak", DeviceType.File);
+                backup.Initialize = false;
+                backup.PercentComplete += DbBackup_PercentComplete;
+                backup.Complete += DbBackup_Complate;
+            }
+            catch (Exception exception)
+            {
+                XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void DbBackup_Complate(object sender, ServerMessageEventArgs e)
+        {
+
+        }
+
+        private void DbBackup_PercentComplete(object sender, PercentCompleteEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

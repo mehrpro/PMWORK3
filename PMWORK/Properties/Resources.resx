@@ -169,10 +169,7 @@
   <data name="icons8-maintenance-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-maintenance-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CompanyViewResource" xml:space="preserve">
-    <value>CREATE VIEW [dbo].[ViewCompany]
-AS
-SELECT        ID AS شناسه, CompnayIndex AS [کد شرکت], CompanyTitle AS شرکت, Description AS توضیحات
-FROM            dbo.Companies</value>
+  <data name="sqlScriptForNewDatabase" xml:space="preserve">
+    <value>252</value>
   </data>
 </root>
