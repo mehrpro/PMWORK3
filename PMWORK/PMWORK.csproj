@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AppSetting.cs" />
+    <Compile Include="Admin\EnCoding.cs" />
     <Compile Include="Admin\SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
