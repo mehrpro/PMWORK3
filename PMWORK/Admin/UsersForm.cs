@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using System;
+using DevExpress.XtraEditors.Controls;
 using PMWORK.Entities;
 using PMWORK.Repository;
 
@@ -20,6 +21,7 @@ namespace PMWORK.Admin
             cbxCompany.Properties.DataSource = _repairRepository.GetAllCompanies();
             cbxCompany.Properties.DisplayMember = "Title";
             cbxCompany.Properties.ValueMember = "ID";
+            cbxEditor.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
             UpdateUserList();
         }
 

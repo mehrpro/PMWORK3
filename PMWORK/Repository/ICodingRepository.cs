@@ -199,7 +199,7 @@ namespace PMWORK.Repository
 
 
 
-        bool LoginUser(string username, string password);
+        bool LoginUser(string username, string password, bool setting);
 
 
 
@@ -441,9 +441,25 @@ namespace PMWORK.Repository
             }
         }
 
-        public bool LoginUser(string username, string password)
+        public bool LoginUser(string username, string password, bool setting = false)
         {
-            var qryUser = _context.ApplicationUsers.SingleOrDefault(x => x.UserName == username);
+            ApplicationUser qryUser;
+            if (setting)
+            {
+                qryUser = _context.ApplicationUsers.SingleOrDefault(x => x.UserName == username && x.Editor == "Admin");
+                if (qryUser == null || !qryUser.Enabled) return false;
+                if (qryUser.UserPassword == password)
+                {
+                    PublicClass.FullNameTask = qryUser.FullName;
+                    PublicClass.UserID = qryUser.UserId;
+                    PublicClass.Editor = qryUser.Editor;
+                    PublicClass.LimitedCompany = qryUser.LimetedCompany;
+                    PublicClass.CompanyID = qryUser.CompanyID_FK;
+                    return true;
+                }
+                return false;
+            }
+            qryUser = _context.ApplicationUsers.SingleOrDefault(x => x.UserName == username);
             if (qryUser == null || !qryUser.Enabled) return false;
             if (qryUser.UserPassword == password)
             {
@@ -454,8 +470,7 @@ namespace PMWORK.Repository
                 PublicClass.CompanyID = qryUser.CompanyID_FK;
                 return true;
             }
-            else
-                return false;
+            return false;
         }
 
         public List<Cleam> GetCleams(int UserId)

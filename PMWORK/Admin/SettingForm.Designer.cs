@@ -29,6 +29,11 @@ namespace PMWORK.Admin
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtDatabase = new DevExpress.XtraEditors.TextEdit();
@@ -42,16 +47,18 @@ namespace PMWORK.Admin
             this.cbxAuthentication = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtDatabase.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxServer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxAuthentication.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(58, 66);
+            this.labelControl1.Location = new System.Drawing.Point(48, 44);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(32, 13);
             this.labelControl1.TabIndex = 0;
@@ -59,7 +66,7 @@ namespace PMWORK.Admin
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(44, 92);
+            this.labelControl2.Location = new System.Drawing.Point(34, 70);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 13);
             this.labelControl2.TabIndex = 2;
@@ -67,15 +74,19 @@ namespace PMWORK.Admin
             // 
             // txtDatabase
             // 
-            this.txtDatabase.Location = new System.Drawing.Point(96, 89);
+            this.txtDatabase.EditValue = "PMWORKDB";
+            this.txtDatabase.Location = new System.Drawing.Point(86, 67);
             this.txtDatabase.Name = "txtDatabase";
             this.txtDatabase.Parmida_ActivePlusMultiKeys = false;
             this.txtDatabase.Size = new System.Drawing.Size(271, 20);
             this.txtDatabase.TabIndex = 3;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtDatabase, conditionValidationRule1);
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(68, 144);
+            this.labelControl3.Location = new System.Drawing.Point(58, 122);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(22, 13);
             this.labelControl3.TabIndex = 4;
@@ -83,7 +94,7 @@ namespace PMWORK.Admin
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(44, 170);
+            this.labelControl4.Location = new System.Drawing.Point(34, 148);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(46, 13);
             this.labelControl4.TabIndex = 6;
@@ -91,23 +102,28 @@ namespace PMWORK.Admin
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(96, 141);
+            this.txtUser.EditValue = "sa";
+            this.txtUser.Location = new System.Drawing.Point(86, 119);
             this.txtUser.Name = "txtUser";
             this.txtUser.Parmida_ActivePlusMultiKeys = false;
             this.txtUser.Size = new System.Drawing.Size(271, 20);
             this.txtUser.TabIndex = 5;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtUser, conditionValidationRule2);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(96, 167);
+            this.txtPassword.Location = new System.Drawing.Point(86, 145);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Parmida_ActivePlusMultiKeys = false;
+            this.txtPassword.Properties.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(271, 20);
             this.txtPassword.TabIndex = 7;
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(211, 193);
+            this.btnTest.Location = new System.Drawing.Point(201, 171);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(75, 23);
             this.btnTest.TabIndex = 8;
@@ -116,15 +132,16 @@ namespace PMWORK.Admin
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(292, 193);
+            this.btnSave.Location = new System.Drawing.Point(282, 171);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cbxServer
             // 
-            this.cbxServer.Location = new System.Drawing.Point(96, 63);
+            this.cbxServer.Location = new System.Drawing.Point(86, 41);
             this.cbxServer.Name = "cbxServer";
             this.cbxServer.Parmida_ActivePlusMultiKeys = false;
             this.cbxServer.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -135,11 +152,14 @@ namespace PMWORK.Admin
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxServer.Size = new System.Drawing.Size(271, 20);
             this.cbxServer.TabIndex = 1;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxServer, conditionValidationRule3);
             // 
             // cbxAuthentication
             // 
-            this.cbxAuthentication.EditValue = "Windows Authentication";
-            this.cbxAuthentication.Location = new System.Drawing.Point(96, 115);
+            this.cbxAuthentication.EditValue = "SQL Server Authentication";
+            this.cbxAuthentication.Location = new System.Drawing.Point(86, 93);
             this.cbxAuthentication.Name = "cbxAuthentication";
             this.cbxAuthentication.Parmida_ActivePlusMultiKeys = false;
             this.cbxAuthentication.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -154,11 +174,14 @@ namespace PMWORK.Admin
             "SQL Server Authentication"});
             this.cbxAuthentication.Size = new System.Drawing.Size(271, 20);
             this.cbxAuthentication.TabIndex = 1;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxAuthentication, conditionValidationRule4);
             this.cbxAuthentication.SelectedIndexChanged += new System.EventHandler(this.cbxAuthentication_SelectedIndexChanged);
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(20, 118);
+            this.labelControl5.Location = new System.Drawing.Point(10, 96);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(70, 13);
             this.labelControl5.TabIndex = 0;
@@ -168,7 +191,7 @@ namespace PMWORK.Admin
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(105, 23);
+            this.labelControl6.Location = new System.Drawing.Point(86, 12);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(177, 23);
             this.labelControl6.TabIndex = 0;
@@ -178,7 +201,7 @@ namespace PMWORK.Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 233);
+            this.ClientSize = new System.Drawing.Size(376, 209);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.txtPassword);
@@ -201,6 +224,7 @@ namespace PMWORK.Admin
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxServer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxAuthentication.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +245,6 @@ namespace PMWORK.Admin
         private DevExpress.XtraEditors.ComboBoxEdit cbxAuthentication;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dx;
     }
 }

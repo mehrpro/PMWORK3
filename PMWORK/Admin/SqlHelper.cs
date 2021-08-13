@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace PMWORK.Admin
 {
@@ -15,7 +16,7 @@ namespace PMWORK.Admin
         {
             get
             {
-                if (cn.State == System.Data.ConnectionState.Closed) cn.Open();
+                if (cn.State == ConnectionState.Closed) cn.Open();
                 return true;
             }
         }
