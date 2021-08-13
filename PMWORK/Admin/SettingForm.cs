@@ -200,7 +200,8 @@ namespace PMWORK.Admin
                     {
                         srv = new Server(new ServerConnection(cbxServer.Text, txtUser.Text, txtPassword.Text));
                     }
-                    srv.BackupDirectory = folder;
+                  //  srv.BackupDirectory = folder;
+                    srv.Properties["BackupDirectory"].Value = folder;
                     var db = default(Database);
                     db = srv.Databases[txtDatabase.Text];
                     //srv.BackupDirectory = @"C:\data";
@@ -220,7 +221,7 @@ namespace PMWORK.Admin
 
                     bk.Devices.Add(bdi);
                     bk.Incremental = false;
-
+                    
                     var backupdate = new DateTime();
                     backupdate = DateTime.Today;
                     bk.ExpirationDate = DateTime.Today.AddDays(25);
