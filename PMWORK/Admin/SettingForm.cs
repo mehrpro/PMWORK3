@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Sql;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.Utils.Internal;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
@@ -17,39 +19,41 @@ namespace PMWORK.Admin
     public partial class SettingForm : XtraForm
     {
 
-        public delegate void delegatecbxServerInstance();
-        public delegatecbxServerInstance serverInstance;
+        private delegate void delegatecbxServerInstance();
+
         public SettingForm()
         {
             InitializeComponent();
             cbxAuthentication.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
             progressBar.Visible = false;
 
+
+
         }
 
         private void cbxServerInstance()
-            {
-
-            progressBar.Visible = true;
-            cbxServer.Properties.Items.Clear();
-            cbxServer.Properties.Items.Add(".");
-            cbxServer.Properties.Items.Add("(local)");
-            cbxServer.Properties.Items.Add(@".\SQLEXPRESS");
-            cbxServer.Properties.Items.Add(@"(LocalDB)\MSSQLLocalDB");
-            cbxServer.Properties.Items.Add(string.Format(@"{0}\SQLEXPRESS", Environment.MachineName));
+        {
+            Invoke(new Action(() => lblStatus.Text = "Searching"));
+            Invoke(new Action(() => cbxServer.Properties.Items.Clear()));
+            var list = new List<string>();
+            list.Add(".");
+            list.Add("(local)");
+            list.Add(@".\SQLEXPRESS");
+            list.Add(@"(LocalDB)\MSSQLLocalDB");
+            list.Add(string.Format(@"{0}\SQLEXPRESS", Environment.MachineName));
             DataTable dt = SqlDataSourceEnumerator.Instance.GetDataSources();
             foreach (DataRow dr in dt.Rows)
-                {
-                cbxServer.Properties.Items.Add(string.Concat(dr["ServerName"], "\\", dr["InstanceName"]));
-                }
-            progressBar.Visible = false;
-            }
+                list.Add(string.Concat(dr["ServerName"], "\\", dr["InstanceName"]));
+            Invoke(new Action(() => cbxServer.Properties.Items.AddRange(list)));
+            Invoke(new Action(() => progressBar.Visible = false));
+            Invoke(new Action(() => lblStatus.Text = "Finish"));
+        }
 
 
         private void SettingForm_Load(object sender, EventArgs e)
         {
 
-            serverInstance = new delegatecbxServerInstance(cbxServerInstance);
+
 
         }
 
@@ -217,7 +221,7 @@ namespace PMWORK.Admin
                         backupdevice.Parent = srv;
                         backupdevice.Name = "backupdevice";
                         backupdevice.BackupDeviceType = BackupDeviceType.Disk;
-                        backupdevice.PhysicalLocation = $"{folder}\\{txtDatabase.Text + "_Full_Backup_" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".bak"}";
+                        backupdevice.PhysicalLocation = $"{folder}\\{txtDatabase.Text + "_FullBackup_" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".bak"}";
                         bk.Devices.AddDevice(backupdevice.PhysicalLocation.ToString(), DeviceType.File);
                         bk.Incremental = false;
                         var backupdate = new DateTime();
@@ -250,17 +254,26 @@ namespace PMWORK.Admin
 
         private void cbxServer_BeforePopup(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cbxServer_Popup(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-           var tread = new Thread(new ThreadStart())
+            progressBar.Visible = true;
+            var cbxServerDelegate = new delegatecbxServerInstance(cbxServerInstance);
+            //var cbxServerDelegate = new Func<bool>(cbxServerInstance);
+            //var callBack = new AsyncCallback(asyncRes =>
+            //{
+            //    bool fibalResult = cbxServerDelegate.EndInvoke(asyncRes);
+            //    //progressBar.Visible = !fibalResult;
+            //});
+            var result = cbxServerDelegate.BeginInvoke(null, null);
+
         }
     }
 }
