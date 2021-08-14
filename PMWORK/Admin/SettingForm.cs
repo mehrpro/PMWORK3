@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.Sql;
 using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
@@ -14,31 +16,40 @@ namespace PMWORK.Admin
 {
     public partial class SettingForm : XtraForm
     {
+
+        public delegate void delegatecbxServerInstance();
+        public delegatecbxServerInstance serverInstance;
         public SettingForm()
         {
             InitializeComponent();
+            cbxAuthentication.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
+            progressBar.Visible = false;
+
+        }
+
+        private void cbxServerInstance()
+            {
+
+            progressBar.Visible = true;
+            cbxServer.Properties.Items.Clear();
             cbxServer.Properties.Items.Add(".");
             cbxServer.Properties.Items.Add("(local)");
             cbxServer.Properties.Items.Add(@".\SQLEXPRESS");
             cbxServer.Properties.Items.Add(@"(LocalDB)\MSSQLLocalDB");
             cbxServer.Properties.Items.Add(string.Format(@"{0}\SQLEXPRESS", Environment.MachineName));
-            cbxServer.SelectedIndex = 3;
-            cbxAuthentication.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
-        }
-
-        private void cbxServerInstance()
-            {
             DataTable dt = SqlDataSourceEnumerator.Instance.GetDataSources();
             foreach (DataRow dr in dt.Rows)
                 {
                 cbxServer.Properties.Items.Add(string.Concat(dr["ServerName"], "\\", dr["InstanceName"]));
                 }
+            progressBar.Visible = false;
             }
+
 
         private void SettingForm_Load(object sender, EventArgs e)
         {
 
-            //cbxServerInstance();
+            serverInstance = new delegatecbxServerInstance(cbxServerInstance);
 
         }
 
@@ -188,7 +199,7 @@ namespace PMWORK.Admin
                 {
                     folder = folderBrowserDialog.SelectedPath;
                     try
-                        {
+                    {
                         var srv = default(Server);
 
                         if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
@@ -197,9 +208,6 @@ namespace PMWORK.Admin
                             srv = new Server(new ServerConnection(cbxServer.Text, txtUser.Text, txtPassword.Text));
                         var db = default(Database);
                         db = srv.Databases[txtDatabase.Text];
-
-                        //int recoverymod;
-                        //recoverymod = (int)db.DatabaseOptions.RecoveryModel;
                         var bk = new Backup();
                         bk.Action = BackupActionType.Database;
                         bk.BackupSetDescription = "Full Backup of " + txtDatabase.Text;
@@ -218,12 +226,11 @@ namespace PMWORK.Admin
                         bk.LogTruncation = BackupTruncateLogType.Truncate;
                         bk.SqlBackup(srv);
                         XtraMessageBox.Show("Full Backup Complate.");
-                        }
-
-                        catch (Exception exception)
-                        {
+                    }
+                    catch (Exception exception)
+                    {
                         XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                    }
                 }
 
             }
@@ -231,14 +238,29 @@ namespace PMWORK.Admin
 
 
 
-        private void DbBackup_PercentComplete(object sender, PercentCompleteEventArgs e)
-        {
-            progressBar.Invoke((MethodInvoker)delegate
-           {
-               progressBar.Position = e.Percent;
-               progressBar.Update();
-           });
+        //private void DbBackup_PercentComplete(object sender, PercentCompleteEventArgs e)
+        //{
+        //    progressBar.Invoke((MethodInvoker)delegate
+        //   {
+        //       progressBar.Position = e.Percent;
+        //       progressBar.Update();
+        //   });
 
+        //}
+
+        private void cbxServer_BeforePopup(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cbxServer_Popup(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+           var tread = new Thread(new ThreadStart())
         }
     }
 }
