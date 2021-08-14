@@ -180,58 +180,56 @@ namespace PMWORK.Admin
         private void backupToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            string folder = string.Empty;
+            var folder = string.Empty;
             using (var folderBrowserDialog = new FolderBrowserDialog())
             {
                 folderBrowserDialog.ShowNewFolderButton = true;
                 if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
                 {
                     folder = folderBrowserDialog.SelectedPath;
-                }
-                try
-                {
-                    var srv = default(Server);
-         
-                    if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")                    
-                        srv = new Server(new ServerConnection(cbxServer.Text));                    
-                    else                    
-                        srv = new Server(new ServerConnection(cbxServer.Text, txtUser.Text, txtPassword.Text));                    
-                    var db = default(Database);
-                    db = srv.Databases[txtDatabase.Text];  
-                    
-                    //int recoverymod;
-                    //recoverymod = (int)db.DatabaseOptions.RecoveryModel;
-                    var bk = new Backup();                    
-                    bk.Action = BackupActionType.Database;
-                    bk.BackupSetDescription = "Full Backup of " + txtDatabase.Text;
-                    bk.BackupSetName = txtDatabase.Text + "_Backup";
-                    bk.Database = txtDatabase.Text;
-                    var backupdevice = new BackupDevice();
-                    backupdevice.Parent = srv;
-                    backupdevice.Name = "backupdevice";
-                    backupdevice.BackupDeviceType = BackupDeviceType.Disk;
-                    backupdevice.PhysicalLocation = $"{folder}\\{txtDatabase.Text + "_Full_Backup_" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".bak"}";
-                    bk.Devices.AddDevice(backupdevice.PhysicalLocation.ToString(), DeviceType.File);
-                    bk.Incremental = false;                    
-                    var backupdate = new DateTime();
-                    backupdate = DateTime.Today;
-                    bk.ExpirationDate = DateTime.Today.AddDays(25);
-                    bk.LogTruncation = BackupTruncateLogType.Truncate;
-                    bk.SqlBackup(srv);
-                    XtraMessageBox.Show("Full Backup Complate.");
-                }
-                catch (Exception exception)
-                {
-                    XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    try
+                        {
+                        var srv = default(Server);
+
+                        if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
+                            srv = new Server(new ServerConnection(cbxServer.Text));
+                        else
+                            srv = new Server(new ServerConnection(cbxServer.Text, txtUser.Text, txtPassword.Text));
+                        var db = default(Database);
+                        db = srv.Databases[txtDatabase.Text];
+
+                        //int recoverymod;
+                        //recoverymod = (int)db.DatabaseOptions.RecoveryModel;
+                        var bk = new Backup();
+                        bk.Action = BackupActionType.Database;
+                        bk.BackupSetDescription = "Full Backup of " + txtDatabase.Text;
+                        bk.BackupSetName = txtDatabase.Text + "_Backup";
+                        bk.Database = txtDatabase.Text;
+                        var backupdevice = new BackupDevice();
+                        backupdevice.Parent = srv;
+                        backupdevice.Name = "backupdevice";
+                        backupdevice.BackupDeviceType = BackupDeviceType.Disk;
+                        backupdevice.PhysicalLocation = $"{folder}\\{txtDatabase.Text + "_Full_Backup_" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".bak"}";
+                        bk.Devices.AddDevice(backupdevice.PhysicalLocation.ToString(), DeviceType.File);
+                        bk.Incremental = false;
+                        var backupdate = new DateTime();
+                        backupdate = DateTime.Today;
+                        bk.ExpirationDate = DateTime.Today.AddDays(25);
+                        bk.LogTruncation = BackupTruncateLogType.Truncate;
+                        bk.SqlBackup(srv);
+                        XtraMessageBox.Show("Full Backup Complate.");
+                        }
+
+                        catch (Exception exception)
+                        {
+                        XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                 }
 
             }
         }
 
-        //private void DbBackup_Complate(object sender, ServerMessageEventArgs e)
-        //{
 
-        //}
 
         private void DbBackup_PercentComplete(object sender, PercentCompleteEventArgs e)
         {
