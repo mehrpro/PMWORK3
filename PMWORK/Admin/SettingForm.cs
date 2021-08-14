@@ -26,19 +26,19 @@ namespace PMWORK.Admin
             cbxAuthentication.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
         }
 
-        //private  void cbxServerInstance()
-        //{
-        //    DataTable dt = SqlDataSourceEnumerator.Instance.GetDataSources();
-        //    foreach (DataRow dr in dt.Rows)
-        //    {
-        //        cbxServer.Properties.Items.Add(string.Concat(dr["ServerName"], "\\", dr["InstanceName"]));
-        //    }
-        //}
+        private void cbxServerInstance()
+            {
+            DataTable dt = SqlDataSourceEnumerator.Instance.GetDataSources();
+            foreach (DataRow dr in dt.Rows)
+                {
+                cbxServer.Properties.Items.Add(string.Concat(dr["ServerName"], "\\", dr["InstanceName"]));
+                }
+            }
 
         private void SettingForm_Load(object sender, EventArgs e)
         {
 
-
+            //cbxServerInstance();
 
         }
 
@@ -192,54 +192,33 @@ namespace PMWORK.Admin
                 {
                     var srv = default(Server);
          
-                    if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
-                    {
-                        srv = new Server(new ServerConnection(cbxServer.Text));
-                    }
-                    else
-                    {
-                        srv = new Server(new ServerConnection(cbxServer.Text, txtUser.Text, txtPassword.Text));
-                    }
-                  //  srv.BackupDirectory = folder;
-                    srv.Properties["BackupDirectory"].Value = folder;
+                    if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")                    
+                        srv = new Server(new ServerConnection(cbxServer.Text));                    
+                    else                    
+                        srv = new Server(new ServerConnection(cbxServer.Text, txtUser.Text, txtPassword.Text));                    
                     var db = default(Database);
-                    db = srv.Databases[txtDatabase.Text];
-                    //srv.BackupDirectory = @"C:\data";
-                    int recoverymod;
-                    recoverymod = (int)db.DatabaseOptions.RecoveryModel;
-
-                    var bk = new Backup();
+                    db = srv.Databases[txtDatabase.Text];  
+                    
+                    //int recoverymod;
+                    //recoverymod = (int)db.DatabaseOptions.RecoveryModel;
+                    var bk = new Backup();                    
                     bk.Action = BackupActionType.Database;
                     bk.BackupSetDescription = "Full Backup of " + txtDatabase.Text;
                     bk.BackupSetName = txtDatabase.Text + "_Backup";
                     bk.Database = txtDatabase.Text;
-
-
-                    var bdi = default(BackupDeviceItem);
-                    bdi = new BackupDeviceItem(txtDatabase.Text + "_Full_Backup_" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".bak",
-                        DeviceType.File);
-
-                    bk.Devices.Add(bdi);
-                    bk.Incremental = false;
-                    
+                    var backupdevice = new BackupDevice();
+                    backupdevice.Parent = srv;
+                    backupdevice.Name = "backupdevice";
+                    backupdevice.BackupDeviceType = BackupDeviceType.Disk;
+                    backupdevice.PhysicalLocation = $"{folder}\\{txtDatabase.Text + "_Full_Backup_" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".bak"}";
+                    bk.Devices.AddDevice(backupdevice.PhysicalLocation.ToString(), DeviceType.File);
+                    bk.Incremental = false;                    
                     var backupdate = new DateTime();
                     backupdate = DateTime.Today;
                     bk.ExpirationDate = DateTime.Today.AddDays(25);
-
                     bk.LogTruncation = BackupTruncateLogType.Truncate;
                     bk.SqlBackup(srv);
-
                     XtraMessageBox.Show("Full Backup Complate.");
-
-                    bk.Devices.Remove(bdi);
-
-
-
-
-
-
-
-
                 }
                 catch (Exception exception)
                 {
