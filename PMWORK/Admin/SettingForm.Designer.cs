@@ -31,18 +31,16 @@ namespace PMWORK.Admin
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtDatabase = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtUser = new DevExpress.XtraEditors.TextEdit();
@@ -65,7 +63,7 @@ namespace PMWORK.Admin
             this.progressBar = new DevExpress.XtraEditors.MarqueeProgressBarControl();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDatabase.Properties)).BeginInit();
+            this.cbxDatabase = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxServer.Properties)).BeginInit();
@@ -75,6 +73,7 @@ namespace PMWORK.Admin
             ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxDatabase.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -87,27 +86,15 @@ namespace PMWORK.Admin
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(49, 83);
+            this.labelControl2.Location = new System.Drawing.Point(49, 162);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 13);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Database";
             // 
-            // txtDatabase
-            // 
-            this.txtDatabase.EditValue = "PMWORKDB";
-            this.txtDatabase.Location = new System.Drawing.Point(101, 80);
-            this.txtDatabase.Name = "txtDatabase";
-            this.txtDatabase.Parmida_ActivePlusMultiKeys = false;
-            this.txtDatabase.Size = new System.Drawing.Size(271, 20);
-            this.txtDatabase.TabIndex = 3;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.txtDatabase, conditionValidationRule1);
-            // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(73, 135);
+            this.labelControl3.Location = new System.Drawing.Point(73, 110);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(22, 13);
             this.labelControl3.TabIndex = 4;
@@ -115,7 +102,7 @@ namespace PMWORK.Admin
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(49, 161);
+            this.labelControl4.Location = new System.Drawing.Point(49, 136);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(46, 13);
             this.labelControl4.TabIndex = 6;
@@ -124,18 +111,18 @@ namespace PMWORK.Admin
             // txtUser
             // 
             this.txtUser.EditValue = "sa";
-            this.txtUser.Location = new System.Drawing.Point(101, 132);
+            this.txtUser.Location = new System.Drawing.Point(101, 107);
             this.txtUser.Name = "txtUser";
             this.txtUser.Parmida_ActivePlusMultiKeys = false;
             this.txtUser.Size = new System.Drawing.Size(271, 20);
             this.txtUser.TabIndex = 5;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.txtUser, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtUser, conditionValidationRule1);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(101, 158);
+            this.txtPassword.Location = new System.Drawing.Point(101, 133);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Parmida_ActivePlusMultiKeys = false;
             this.txtPassword.Properties.PasswordChar = '*';
@@ -144,7 +131,7 @@ namespace PMWORK.Admin
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(216, 184);
+            this.btnTest.Location = new System.Drawing.Point(217, 185);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(75, 23);
             this.btnTest.TabIndex = 8;
@@ -153,7 +140,7 @@ namespace PMWORK.Admin
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(297, 184);
+            this.btnSave.Location = new System.Drawing.Point(298, 185);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 9;
@@ -178,16 +165,16 @@ namespace PMWORK.Admin
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cbxServer.Size = new System.Drawing.Size(243, 20);
             this.cbxServer.TabIndex = 1;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.cbxServer, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxServer, conditionValidationRule2);
             this.cbxServer.Popup += new System.EventHandler(this.cbxServer_Popup);
             this.cbxServer.BeforePopup += new System.EventHandler(this.cbxServer_BeforePopup);
             // 
             // cbxAuthentication
             // 
             this.cbxAuthentication.EditValue = "SQL Server Authentication";
-            this.cbxAuthentication.Location = new System.Drawing.Point(101, 106);
+            this.cbxAuthentication.Location = new System.Drawing.Point(101, 81);
             this.cbxAuthentication.Name = "cbxAuthentication";
             this.cbxAuthentication.Parmida_ActivePlusMultiKeys = false;
             this.cbxAuthentication.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -202,14 +189,14 @@ namespace PMWORK.Admin
             "SQL Server Authentication"});
             this.cbxAuthentication.Size = new System.Drawing.Size(271, 20);
             this.cbxAuthentication.TabIndex = 1;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.cbxAuthentication, conditionValidationRule4);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxAuthentication, conditionValidationRule3);
             this.cbxAuthentication.SelectedIndexChanged += new System.EventHandler(this.cbxAuthentication_SelectedIndexChanged);
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(25, 109);
+            this.labelControl5.Location = new System.Drawing.Point(25, 84);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(70, 13);
             this.labelControl5.TabIndex = 0;
@@ -243,7 +230,7 @@ namespace PMWORK.Admin
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(397, 24);
+            this.menuStrip.Size = new System.Drawing.Size(399, 24);
             this.menuStrip.TabIndex = 14;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -300,7 +287,7 @@ namespace PMWORK.Admin
             this.progressBar.Parmida_ActivePlusMultiKeys = false;
             this.progressBar.Properties.Appearance.BackColor = System.Drawing.Color.Black;
             this.progressBar.Properties.Appearance.ForeColor = System.Drawing.Color.Transparent;
-            this.progressBar.Size = new System.Drawing.Size(393, 5);
+            this.progressBar.Size = new System.Drawing.Size(395, 5);
             this.progressBar.TabIndex = 17;
             // 
             // btnRefresh
@@ -325,21 +312,36 @@ namespace PMWORK.Admin
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.txtPassword);
             this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.txtDatabase);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.txtUser);
             this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.cbxDatabase);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 24);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(397, 233);
+            this.panelControl1.Size = new System.Drawing.Size(399, 226);
             this.panelControl1.TabIndex = 18;
+            // 
+            // cbxDatabase
+            // 
+            this.cbxDatabase.EditValue = "PMWORKDB";
+            this.cbxDatabase.Location = new System.Drawing.Point(101, 159);
+            this.cbxDatabase.Name = "cbxDatabase";
+            this.cbxDatabase.Parmida_ActivePlusMultiKeys = false;
+            this.cbxDatabase.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDatabase.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDatabase.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDatabase.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDatabase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxDatabase.Size = new System.Drawing.Size(271, 20);
+            this.cbxDatabase.TabIndex = 3;
             // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 257);
+            this.ClientSize = new System.Drawing.Size(399, 250);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -347,7 +349,6 @@ namespace PMWORK.Admin
             this.Name = "SettingForm";
             this.Text = "Connection ";
             this.Load += new System.EventHandler(this.SettingForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.txtDatabase.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxServer.Properties)).EndInit();
@@ -359,6 +360,7 @@ namespace PMWORK.Admin
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxDatabase.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,7 +370,6 @@ namespace PMWORK.Admin
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtDatabase;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtUser;
@@ -391,5 +392,6 @@ namespace PMWORK.Admin
         private DevExpress.XtraEditors.MarqueeProgressBarControl progressBar;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.ComboBoxEdit cbxDatabase;
     }
 }

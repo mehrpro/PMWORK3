@@ -30,7 +30,6 @@ namespace PMWORK.Admin
         private void InitializeComponent()
         {
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtDataBase = new DevExpress.XtraEditors.TextEdit();
             this.btnCreate = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -42,13 +41,14 @@ namespace PMWORK.Admin
             this.txtAuthentication = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtUser = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDataBase.Properties)).BeginInit();
+            this.cbxDataBase = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtServer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAuthentication.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxDataBase.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -59,14 +59,6 @@ namespace PMWORK.Admin
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Database";
             // 
-            // txtDataBase
-            // 
-            this.txtDataBase.Location = new System.Drawing.Point(89, 131);
-            this.txtDataBase.Name = "txtDataBase";
-            this.txtDataBase.Parmida_ActivePlusMultiKeys = false;
-            this.txtDataBase.Size = new System.Drawing.Size(235, 20);
-            this.txtDataBase.TabIndex = 1;
-            // 
             // btnCreate
             // 
             this.btnCreate.Location = new System.Drawing.Point(198, 159);
@@ -74,6 +66,7 @@ namespace PMWORK.Admin
             this.btnCreate.Size = new System.Drawing.Size(60, 23);
             this.btnCreate.TabIndex = 2;
             this.btnCreate.Text = "Create";
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnCancel
             // 
@@ -90,13 +83,13 @@ namespace PMWORK.Admin
             this.panelControl1.Controls.Add(this.btnCancel);
             this.panelControl1.Controls.Add(this.btnCreate);
             this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.txtDataBase);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.txtServer);
             this.panelControl1.Controls.Add(this.txtAuthentication);
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.txtUser);
+            this.panelControl1.Controls.Add(this.cbxDataBase);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
@@ -179,6 +172,20 @@ namespace PMWORK.Admin
             this.txtUser.Size = new System.Drawing.Size(235, 20);
             this.txtUser.TabIndex = 13;
             // 
+            // cbxDataBase
+            // 
+            this.cbxDataBase.Location = new System.Drawing.Point(89, 131);
+            this.cbxDataBase.Name = "cbxDataBase";
+            this.cbxDataBase.Parmida_ActivePlusMultiKeys = false;
+            this.cbxDataBase.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDataBase.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDataBase.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDataBase.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDataBase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxDataBase.Size = new System.Drawing.Size(235, 20);
+            this.cbxDataBase.TabIndex = 1;
+            // 
             // NewDatabaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,7 +196,6 @@ namespace PMWORK.Admin
             this.Name = "NewDatabaseForm";
             this.Text = "New Database";
             this.Load += new System.EventHandler(this.NewDatabaseForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.txtDataBase.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -197,6 +203,7 @@ namespace PMWORK.Admin
             ((System.ComponentModel.ISupportInitialize)(this.txtServer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAuthentication.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxDataBase.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,7 +211,6 @@ namespace PMWORK.Admin
         #endregion
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtDataBase;
         private DevExpress.XtraEditors.SimpleButton btnCreate;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.PanelControl panelControl1;
@@ -216,5 +222,6 @@ namespace PMWORK.Admin
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.MarqueeProgressBarControl progressBar;
         private DevExpress.XtraEditors.TextEdit txtServer;
+        private DevExpress.XtraEditors.ComboBoxEdit cbxDataBase;
     }
 }
