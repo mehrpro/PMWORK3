@@ -260,6 +260,12 @@
   <ItemGroup>
     <Compile Include="Admin\AppSetting.cs" />
     <Compile Include="Admin\EnCoding.cs" />
+    <Compile Include="Admin\NewDatabaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\NewDatabaseForm.Designer.cs">
+      <DependentUpon>NewDatabaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -473,6 +479,9 @@
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
     <Compile Include="TypeRegistery.cs" />
+    <EmbeddedResource Include="Admin\NewDatabaseForm.resx">
+      <DependentUpon>NewDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>

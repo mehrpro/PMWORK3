@@ -62,10 +62,9 @@ namespace PMWORK.Admin
             this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.progressBar = new DevExpress.XtraEditors.MarqueeProgressBarControl();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtDatabase.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
@@ -73,13 +72,14 @@ namespace PMWORK.Admin
             ((System.ComponentModel.ISupportInitialize)(this.cbxAuthentication.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
             this.menuStrip.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(56, 70);
+            this.labelControl1.Location = new System.Drawing.Point(63, 57);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(32, 13);
             this.labelControl1.TabIndex = 0;
@@ -87,7 +87,7 @@ namespace PMWORK.Admin
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(42, 96);
+            this.labelControl2.Location = new System.Drawing.Point(49, 83);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 13);
             this.labelControl2.TabIndex = 2;
@@ -96,7 +96,7 @@ namespace PMWORK.Admin
             // txtDatabase
             // 
             this.txtDatabase.EditValue = "PMWORKDB";
-            this.txtDatabase.Location = new System.Drawing.Point(94, 93);
+            this.txtDatabase.Location = new System.Drawing.Point(101, 80);
             this.txtDatabase.Name = "txtDatabase";
             this.txtDatabase.Parmida_ActivePlusMultiKeys = false;
             this.txtDatabase.Size = new System.Drawing.Size(271, 20);
@@ -107,7 +107,7 @@ namespace PMWORK.Admin
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(66, 148);
+            this.labelControl3.Location = new System.Drawing.Point(73, 135);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(22, 13);
             this.labelControl3.TabIndex = 4;
@@ -115,7 +115,7 @@ namespace PMWORK.Admin
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(42, 174);
+            this.labelControl4.Location = new System.Drawing.Point(49, 161);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(46, 13);
             this.labelControl4.TabIndex = 6;
@@ -124,7 +124,7 @@ namespace PMWORK.Admin
             // txtUser
             // 
             this.txtUser.EditValue = "sa";
-            this.txtUser.Location = new System.Drawing.Point(94, 145);
+            this.txtUser.Location = new System.Drawing.Point(101, 132);
             this.txtUser.Name = "txtUser";
             this.txtUser.Parmida_ActivePlusMultiKeys = false;
             this.txtUser.Size = new System.Drawing.Size(271, 20);
@@ -135,7 +135,7 @@ namespace PMWORK.Admin
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(94, 171);
+            this.txtPassword.Location = new System.Drawing.Point(101, 158);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Parmida_ActivePlusMultiKeys = false;
             this.txtPassword.Properties.PasswordChar = '*';
@@ -144,7 +144,7 @@ namespace PMWORK.Admin
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(209, 197);
+            this.btnTest.Location = new System.Drawing.Point(216, 184);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(75, 23);
             this.btnTest.TabIndex = 8;
@@ -153,7 +153,7 @@ namespace PMWORK.Admin
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(290, 197);
+            this.btnSave.Location = new System.Drawing.Point(297, 184);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 9;
@@ -162,7 +162,7 @@ namespace PMWORK.Admin
             // 
             // cbxServer
             // 
-            this.cbxServer.Location = new System.Drawing.Point(94, 67);
+            this.cbxServer.Location = new System.Drawing.Point(101, 54);
             this.cbxServer.Name = "cbxServer";
             this.cbxServer.Parmida_ActivePlusMultiKeys = false;
             this.cbxServer.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -170,9 +170,13 @@ namespace PMWORK.Admin
             this.cbxServer.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.cbxServer.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            serializableAppearanceObject1.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject2.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject3.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            serializableAppearanceObject4.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.cbxServer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.cbxServer.Size = new System.Drawing.Size(271, 22);
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cbxServer.Size = new System.Drawing.Size(243, 20);
             this.cbxServer.TabIndex = 1;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "This value is not valid";
@@ -183,7 +187,7 @@ namespace PMWORK.Admin
             // cbxAuthentication
             // 
             this.cbxAuthentication.EditValue = "SQL Server Authentication";
-            this.cbxAuthentication.Location = new System.Drawing.Point(94, 119);
+            this.cbxAuthentication.Location = new System.Drawing.Point(101, 106);
             this.cbxAuthentication.Name = "cbxAuthentication";
             this.cbxAuthentication.Parmida_ActivePlusMultiKeys = false;
             this.cbxAuthentication.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -205,7 +209,7 @@ namespace PMWORK.Admin
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(18, 122);
+            this.labelControl5.Location = new System.Drawing.Point(25, 109);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(70, 13);
             this.labelControl5.TabIndex = 0;
@@ -215,7 +219,7 @@ namespace PMWORK.Admin
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(94, 38);
+            this.labelControl6.Location = new System.Drawing.Point(101, 25);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(177, 23);
             this.labelControl6.TabIndex = 0;
@@ -239,7 +243,7 @@ namespace PMWORK.Admin
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(468, 24);
+            this.menuStrip.Size = new System.Drawing.Size(397, 24);
             this.menuStrip.TabIndex = 14;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -287,65 +291,56 @@ namespace PMWORK.Admin
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 228);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(468, 22);
-            this.statusStrip1.TabIndex = 16;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(52, 17);
-            this.lblStatus.Text = "lblStatus";
-            // 
             // progressBar
             // 
             this.progressBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.progressBar.Location = new System.Drawing.Point(0, 24);
+            this.progressBar.EditValue = 0;
+            this.progressBar.Location = new System.Drawing.Point(2, 2);
             this.progressBar.Name = "progressBar";
             this.progressBar.Parmida_ActivePlusMultiKeys = false;
             this.progressBar.Properties.Appearance.BackColor = System.Drawing.Color.Black;
             this.progressBar.Properties.Appearance.ForeColor = System.Drawing.Color.Transparent;
-            this.progressBar.Properties.MarqueeAnimationSpeed = 150;
-            this.progressBar.Properties.ProgressAnimationMode = DevExpress.Utils.Drawing.ProgressAnimationMode.PingPong;
-            this.progressBar.Size = new System.Drawing.Size(468, 5);
+            this.progressBar.Size = new System.Drawing.Size(393, 5);
             this.progressBar.TabIndex = 17;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(371, 66);
+            this.btnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.ImageOptions.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(347, 52);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.Size = new System.Drawing.Size(25, 23);
             this.btnRefresh.TabIndex = 8;
-            this.btnRefresh.Text = "Refresh";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.labelControl6);
+            this.panelControl1.Controls.Add(this.progressBar);
+            this.panelControl1.Controls.Add(this.cbxServer);
+            this.panelControl1.Controls.Add(this.btnSave);
+            this.panelControl1.Controls.Add(this.cbxAuthentication);
+            this.panelControl1.Controls.Add(this.btnRefresh);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.btnTest);
+            this.panelControl1.Controls.Add(this.labelControl5);
+            this.panelControl1.Controls.Add(this.txtPassword);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.txtDatabase);
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.txtUser);
+            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(0, 24);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(397, 233);
+            this.panelControl1.TabIndex = 18;
             // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 250);
-            this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnTest);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtDatabase);
-            this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.cbxAuthentication);
-            this.Controls.Add(this.cbxServer);
+            this.ClientSize = new System.Drawing.Size(397, 257);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip;
@@ -360,9 +355,10 @@ namespace PMWORK.Admin
             ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,9 +388,8 @@ namespace PMWORK.Admin
         private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private DevExpress.XtraEditors.MarqueeProgressBarControl progressBar;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }

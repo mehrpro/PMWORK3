@@ -19,7 +19,7 @@ namespace PMWORK.Admin
     public partial class SettingForm : XtraForm
     {
 
-        private delegate void delegatecbxServerInstance();
+        private delegate void DelegateMaster();
 
         public SettingForm()
         {
@@ -33,7 +33,7 @@ namespace PMWORK.Admin
 
         private void cbxServerInstance()
         {
-            Invoke(new Action(() => lblStatus.Text = "Searching"));
+            //Invoke(new Action(() => lblStatus.Text = "Searching"));
             Invoke(new Action(() => cbxServer.Properties.Items.Clear()));
             var list = new List<string>();
             list.Add(".");
@@ -46,7 +46,7 @@ namespace PMWORK.Admin
                 list.Add(string.Concat(dr["ServerName"], "\\", dr["InstanceName"]));
             Invoke(new Action(() => cbxServer.Properties.Items.AddRange(list)));
             Invoke(new Action(() => progressBar.Visible = false));
-            Invoke(new Action(() => lblStatus.Text = "Finish"));
+            //Invoke(new Action(() => lblStatus.Text = "Finish"));
         }
 
 
@@ -57,7 +57,7 @@ namespace PMWORK.Admin
 
         }
 
-        private void btnTest_Click(object sender, EventArgs e)
+        private bool TestConnection()
         {
             string connectionString;
             if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
@@ -73,17 +73,21 @@ namespace PMWORK.Admin
                         if (helper.IsConnection)
                         {
                             XtraMessageBox.Show(@"اتصال موفقیت آمیز بود", "Message", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
+                                MessageBoxIcon.Information);                            
                         }
+                        return true;
                     }
                     catch (Exception exception)
                     {
                         XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
                     }
+                    
                 }
                 else
                 {
                     PublicClass.ErrorValidationMessage(Text);
+                    return false;
                 }
 
             }
@@ -100,21 +104,27 @@ namespace PMWORK.Admin
                         if (helper.IsConnection)
                         {
                             XtraMessageBox.Show(@"اتصال موفقیت آمیز بود", "Message", MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
+                                MessageBoxIcon.Information);                           
                         }
+                        return true;
                     }
                     catch (Exception exception)
                     {
                         XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
                     }
                 }
                 else
                 {
                     PublicClass.ErrorValidationMessage(Text);
+                    return false;
                 }
 
             }
-
+        }
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            var result = TestConnection();
         }
 
         private void cbxAuthentication_SelectedIndexChanged(object sender, EventArgs e)
@@ -189,19 +199,63 @@ namespace PMWORK.Admin
 
         private void newDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var result = TestConnection();
+            if (result)
+            {
+                var frm = new NewDatabaseForm();
+                frm.ServerName = cbxAuthentication.Text.Trim();
+                frm.AuthenticationMode = cbxAuthentication.Text;
+                if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
+                {
+                    frm.UserName = frm.Password = string.Empty;
+                }
+                else
+                {
+                    frm.UserName = txtUser.Text;
+                    frm.Password = txtPassword.Text;
+                }
+                frm.ShowDialog();
+            }
+       
 
         }
 
         private void backupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            var folder = string.Empty;
-            using (var folderBrowserDialog = new FolderBrowserDialog())
-            {
+            var folderBrowserDialog = new FolderBrowserDialog();
+            
                 folderBrowserDialog.ShowNewFolderButton = true;
                 if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
                 {
-                    folder = folderBrowserDialog.SelectedPath;
+                    var folder2 = folderBrowserDialog.SelectedPath;
+                    var delegateBackup = new Func<string,bool>(BackupToFile);
+                var callBack = new AsyncCallback(asyncRes =>
+                {
+                    var resultFinal = delegateBackup.EndInvoke(asyncRes);
+                    if (resultFinal)
+                    {
+                        XtraMessageBox.Show("Full Backup Complate.");
+
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Error", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                });
+                    delegateBackup.BeginInvoke(folder2, callBack, null);
+                }
+
+            
+
+        }
+
+
+
+        private bool BackupToFile(string folder)
+        {
+            Invoke(new Action(() => progressBar.Visible = true));
+ 
                     try
                     {
                         var srv = default(Server);
@@ -229,28 +283,18 @@ namespace PMWORK.Admin
                         bk.ExpirationDate = DateTime.Today.AddDays(25);
                         bk.LogTruncation = BackupTruncateLogType.Truncate;
                         bk.SqlBackup(srv);
-                        XtraMessageBox.Show("Full Backup Complate.");
+                Invoke(new Action(() => progressBar.Visible = false));
+                return true;
+                     
                     }
                     catch (Exception exception)
                     {
-                        XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
+                Invoke(new Action(() => progressBar.Visible = false));
+                return false;
             }
+       
+            
         }
-
-
-
-        //private void DbBackup_PercentComplete(object sender, PercentCompleteEventArgs e)
-        //{
-        //    progressBar.Invoke((MethodInvoker)delegate
-        //   {
-        //       progressBar.Position = e.Percent;
-        //       progressBar.Update();
-        //   });
-
-        //}
 
         private void cbxServer_BeforePopup(object sender, EventArgs e)
         {
@@ -265,7 +309,7 @@ namespace PMWORK.Admin
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             progressBar.Visible = true;
-            var cbxServerDelegate = new delegatecbxServerInstance(cbxServerInstance);
+            var cbxServerDelegate = new DelegateMaster(cbxServerInstance);
             //var cbxServerDelegate = new Func<bool>(cbxServerInstance);
             //var callBack = new AsyncCallback(asyncRes =>
             //{
