@@ -48,6 +48,8 @@ namespace PMWORK.Admin
         private void TestConnection()
         {
             var connectionstr = new ConnectionStrViewModel();
+            var startJob = new Func<ConnectionStrViewModel, List<string>>(_setDatabase.GetDatabaseListByServerName);
+
             if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
             {
                 if (dx.Validate(cbxServer) &&  dx.Validate(cbxAuthentication))
@@ -58,11 +60,25 @@ namespace PMWORK.Admin
                     connectionstr.UserID = connectionstr.Password = "";
                     try
                     {
+                        progressBar.Visible = true;
+                        btnConnecting.Enabled = false;
                         SqlHelper helper = new SqlHelper(connectionString);
                         if (helper.IsConnection)
                         {
-                            Invoke(new Action(() => cbxDatabase.Properties.Items.AddRange(_setDatabase.GetDatabaseListByServerName(connectionstr))));
-                            Invoke(new Action(() => btnSave.Enabled = cbxDatabase.Enabled = true));
+                            //Invoke(new Action(() => cbxDatabase.Properties.Items.AddRange(_setDatabase.GetDatabaseListByServerName(connectionstr))));
+                            //Invoke(new Action(() => btnSave.Enabled = cbxDatabase.Enabled = true));
+                          
+                            var callBack = new AsyncCallback(asyncRes =>
+                            {
+                                var list = startJob.EndInvoke(asyncRes);
+                                Invoke(new Action(() => cbxDatabase.Properties.Items.AddRange(list)));
+                                Invoke(new Action(() => btnSave.Enabled = cbxDatabase.Enabled = true));
+                                Invoke(new Action(() => progressBar.Visible = false));
+                                Invoke(new Action(() => btnConnecting.Enabled = true));
+                            });
+                            var result =  startJob.BeginInvoke(connectionstr, callBack, null);
+
+
                         }
                     }
                     catch (Exception exception)
@@ -76,7 +92,7 @@ namespace PMWORK.Admin
             }
             else
             {
-                if (dx.Validate())
+                if (dx.Validate(cbxServer) && dx.Validate(cbxAuthentication) && dx.Validate(txtUser) && dx.Validate(txtPassword))
                 {
                     connectionString =
                         $"Data Source = {cbxServer.Text};" +
@@ -109,8 +125,7 @@ namespace PMWORK.Admin
         }
         private void btnTest_Click(object sender, EventArgs e)
         {
-            var startJob = new DelegateMaster(TestConnection);
-            startJob.BeginInvoke(null, null);
+            TestConnection();
         }
 
         private void cbxAuthentication_SelectedIndexChanged(object sender, EventArgs e)
