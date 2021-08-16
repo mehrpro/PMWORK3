@@ -3,13 +3,20 @@ using System;
 using System.Windows.Forms;
 using PMWORK.Admin;
 using PMWORK.Repository;
+using StructureMap;
 
 namespace PMWORK
 {
     public partial class frmLogin2 : XtraForm
     {
+        private Container _container;
         private readonly ICodingRepository _codingRepository;
 
+        public Container Container
+        {
+            get { return _container; }
+            set { _container = value; }
+        }
         //private AppDbContext db;
         public frmLogin2(ICodingRepository codingRepository)
         {
@@ -53,25 +60,25 @@ namespace PMWORK
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            if (dx.Validate())
-            {
-                var result = _codingRepository.LoginUser(txtUserName.Text.Trim(), txtPassword.Text.Trim(), true);
-                if (result)
-                {
-                    this.Hide();
-                    var frm = new SettingForm();
+            //if (dx.Validate())
+            //{
+            //    var result = _codingRepository.LoginUser(txtUserName.Text.Trim(), txtPassword.Text.Trim(), true);
+            //    if (result)
+            //    {
+                    this.Hide();                    
+                    var frm = _container.GetInstance<SettingForm>();
                     frm.ShowDialog();
                     this.Show();
-                }
-                else
-                {
-                    XtraMessageBox.Show("نام کاربری یا گذرواژه اشتباه است ", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                PublicClass.ErrorValidationMessage(Text);
-            }
+            //    }
+            //    else
+            //    {
+            //        XtraMessageBox.Show("نام کاربری یا گذرواژه اشتباه است ", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
+            //else
+            //{
+            //    PublicClass.ErrorValidationMessage(Text);
+            //}
 
 
         }

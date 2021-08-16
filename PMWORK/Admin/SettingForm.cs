@@ -8,6 +8,7 @@ using DevExpress.XtraEditors.Controls;
 
 using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
+using PMWORK.Repository;
 
 namespace PMWORK.Admin
 {
@@ -18,33 +19,22 @@ namespace PMWORK.Admin
 
         private string connectionString;
 
-        public SettingForm()
+        private ISetDatabase _setDatabase;
+
+        public SettingForm(ISetDatabase setDatabase)
         {
             InitializeComponent();
             cbxAuthentication.Properties.TextEditStyle = TextEditStyles.DisableTextEditor;
             progressBar.Visible = false;
-
-
-
+            _setDatabase = setDatabase;
         }
 
         private void cbxServerInstance()
-        {
-            //Invoke(new Action(() => lblStatus.Text = "Searching"));
+        {          
             Invoke(new Action(() => cbxServer.Properties.Items.Clear()));
-            var list = new List<string>();
-            list.Add(".");
-            list.Add("(local)");
-            list.Add(@".\SQLEXPRESS");
-            list.Add(@"(LocalDB)\MSSQLLocalDB");
-            list.Add(string.Format(@"{0}\SQLEXPRESS", Environment.MachineName));
-            DataTable dt = SqlDataSourceEnumerator.Instance.GetDataSources();
-            foreach (DataRow dr in dt.Rows)
-                list.Add(string.Concat(dr["ServerName"], "\\", dr["InstanceName"]));
+            var list = _setDatabase.GetServerInstance();
             Invoke(new Action(() => cbxServer.Properties.Items.AddRange(list)));
             Invoke(new Action(() => progressBar.Visible = false));
-
-            //Invoke(new Action(() => lblStatus.Text = "Finish"));
         }
 
 
@@ -55,70 +45,72 @@ namespace PMWORK.Admin
 
         }
 
-        private bool TestConnection()
+        private void TestConnection()
         {
-
+            var connectionstr = new ConnectionStrViewModel();
             if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
             {
-                if (dx.Validate(cbxServer))
+                if (dx.Validate(cbxServer) &&  dx.Validate(cbxAuthentication))
                 {
+                    connectionString =$"Data Source= {cbxServer.Text} ; Initial Catalog = {cbxDatabase.Text} ; Integrated Security = SSPI;";
+                    connectionstr.WindowsAuthentication = true;
+                    connectionstr.ServerName = cbxServer.Text;
+                    connectionstr.UserID = connectionstr.Password = "";
                     try
                     {
-                        var srv = new Server(cbxServer.Text);
-                        cbxDatabase.Properties.Items.Clear();
-                        foreach (Database database in srv.Databases)
+                        SqlHelper helper = new SqlHelper(connectionString);
+                        if (helper.IsConnection)
                         {
-                            cbxDatabase.Properties.Items.Add(database.Name);
+                            Invoke(new Action(() => cbxDatabase.Properties.Items.AddRange(_setDatabase.GetDatabaseListByServerName(connectionstr))));
+                            Invoke(new Action(() => btnSave.Enabled = cbxDatabase.Enabled = true));
                         }
-                        return true;
                     }
                     catch (Exception exception)
                     {
                         XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
                     }
-
                 }
                 else
-                {
                     PublicClass.ErrorValidationMessage(Text);
-                    return false;
-                }
 
             }
             else
             {
-                https://docs.microsoft.com/en-us/sql/relational-databases/server-management-objects-smo/create-program/connecting-to-an-instance-of-sql-server?view=sql-server-ver15
                 if (dx.Validate())
                 {
                     connectionString =
-                        $"Data Source = {cbxServer.Text};User ID={txtUser.Text};Password={txtPassword.Text};";
+                        $"Data Source = {cbxServer.Text};" +
+                        $"Initial Catalog={cbxDatabase.Text};" +
+                        $"User ID={txtUser.Text};" +
+                        $"Password={txtPassword.Text};";
+                    connectionstr.WindowsAuthentication = false;
+                    connectionstr.ServerName = cbxServer.Text;
+                    connectionstr.UserID = txtUser.Text;
+                    connectionstr.Password = txtPassword.Text;
                     try
                     {
-                        var srv = new Server(connectionString);
-                        foreach (Database database in srv.Databases)
+                        SqlHelper helper = new SqlHelper(connectionString);
                         {
-                            cbxDatabase.Properties.Items.Add(database.Name);
+                            Invoke(new Action(() => cbxDatabase.Properties.Items.AddRange(_setDatabase.GetDatabaseListByServerName(connectionstr))));
+                            Invoke(new Action(() => btnSave.Enabled = cbxDatabase.Enabled = true));
                         }
-                        return true;
                     }
                     catch (Exception exception)
                     {
                         XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
                     }
                 }
                 else
-                {
                     PublicClass.ErrorValidationMessage(Text);
-                    return false;
-                }
 
-            }
+            }        
+             //https://docs.microsoft.com/en-us/sql/relational-databases/server-management-objects-smo/create-program/connecting-to-an-instance-of-sql-server?view=sql-server-ver15
+                            
         }
         private void btnTest_Click(object sender, EventArgs e)
         {
-            TestConnection();
+            var startJob = new DelegateMaster(TestConnection);
+            startJob.BeginInvoke(null, null);
         }
 
         private void cbxAuthentication_SelectedIndexChanged(object sender, EventArgs e)
@@ -191,24 +183,24 @@ namespace PMWORK.Admin
 
         private void newDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var result = TestConnection();
-            if (result)
-            {
-                var frm = new NewDatabaseForm();
-                frm.ServerName = cbxServer.Text.Trim();
-                frm.AuthenticationMode = cbxAuthentication.Text;
-                frm.ConnectionString = connectionString;
-                if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
-                {
-                    frm.UserName = frm.Password = string.Empty;
-                }
-                else
-                {
-                    frm.UserName = txtUser.Text;
-                    frm.Password = txtPassword.Text;
-                }
-                frm.ShowDialog();
-            }
+            //var result = TestConnection();
+            //if (result)
+            //{
+            //    var frm = new NewDatabaseForm();
+            //    frm.ServerName = cbxServer.Text.Trim();
+            //    frm.AuthenticationMode = cbxAuthentication.Text;
+            //    frm.ConnectionString = connectionString;
+            //    if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
+            //    {
+            //        frm.UserName = frm.Password = string.Empty;
+            //    }
+            //    else
+            //    {
+            //        frm.UserName = txtUser.Text;
+            //        frm.Password = txtPassword.Text;
+            //    }
+            //    frm.ShowDialog();
+            //}
 
 
         }
@@ -308,6 +300,9 @@ namespace PMWORK.Admin
         {
             progressBar.Visible = true;
             var cbxServerDelegate = new DelegateMaster(cbxServerInstance);
+
+
+
             //var cbxServerDelegate = new Func<bool>(cbxServerInstance);
             //var callBack = new AsyncCallback(asyncRes =>
             //{

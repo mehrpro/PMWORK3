@@ -470,8 +470,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicClass.cs" />
     <Compile Include="RefreshDB.cs" />
+    <Compile Include="Repository\ConnectionStrViewModel.cs" />
     <Compile Include="Repository\ICodingRepository.cs" />
     <Compile Include="Repository\IRequestRepairRepository.cs" />
+    <Compile Include="Repository\ISetDatabase.cs" />
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>

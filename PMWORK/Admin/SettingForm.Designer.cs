@@ -30,22 +30,22 @@ namespace PMWORK.Admin
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtUser = new DevExpress.XtraEditors.TextEdit();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
-            this.btnTest = new DevExpress.XtraEditors.SimpleButton();
+            this.btnConnecting = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.cbxServer = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbxAuthentication = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -86,7 +86,7 @@ namespace PMWORK.Admin
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(49, 162);
+            this.labelControl2.Location = new System.Drawing.Point(49, 191);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 13);
             this.labelControl2.TabIndex = 2;
@@ -116,9 +116,9 @@ namespace PMWORK.Admin
             this.txtUser.Parmida_ActivePlusMultiKeys = false;
             this.txtUser.Size = new System.Drawing.Size(271, 20);
             this.txtUser.TabIndex = 5;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.txtUser, conditionValidationRule1);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtUser, conditionValidationRule3);
             // 
             // txtPassword
             // 
@@ -129,18 +129,19 @@ namespace PMWORK.Admin
             this.txtPassword.Size = new System.Drawing.Size(271, 20);
             this.txtPassword.TabIndex = 7;
             // 
-            // btnTest
+            // btnConnecting
             // 
-            this.btnTest.Location = new System.Drawing.Point(217, 185);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(75, 23);
-            this.btnTest.TabIndex = 8;
-            this.btnTest.Text = "Test";
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            this.btnConnecting.Location = new System.Drawing.Point(298, 159);
+            this.btnConnecting.Name = "btnConnecting";
+            this.btnConnecting.Size = new System.Drawing.Size(74, 23);
+            this.btnConnecting.TabIndex = 8;
+            this.btnConnecting.Text = "Connect";
+            this.btnConnecting.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(298, 185);
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(298, 214);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 9;
@@ -165,9 +166,9 @@ namespace PMWORK.Admin
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cbxServer.Size = new System.Drawing.Size(243, 20);
             this.cbxServer.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.cbxServer, conditionValidationRule2);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxServer, conditionValidationRule4);
             this.cbxServer.Popup += new System.EventHandler(this.cbxServer_Popup);
             this.cbxServer.BeforePopup += new System.EventHandler(this.cbxServer_BeforePopup);
             // 
@@ -189,9 +190,9 @@ namespace PMWORK.Admin
             "SQL Server Authentication"});
             this.cbxAuthentication.Size = new System.Drawing.Size(271, 20);
             this.cbxAuthentication.TabIndex = 1;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.cbxAuthentication, conditionValidationRule3);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxAuthentication, conditionValidationRule1);
             this.cbxAuthentication.SelectedIndexChanged += new System.EventHandler(this.cbxAuthentication_SelectedIndexChanged);
             // 
             // labelControl5
@@ -247,21 +248,21 @@ namespace PMWORK.Admin
             // newDatabaseToolStripMenuItem
             // 
             this.newDatabaseToolStripMenuItem.Name = "newDatabaseToolStripMenuItem";
-            this.newDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newDatabaseToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.newDatabaseToolStripMenuItem.Text = "New Database";
             this.newDatabaseToolStripMenuItem.Click += new System.EventHandler(this.newDatabaseToolStripMenuItem_Click);
             // 
             // backupToolStripMenuItem
             // 
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.backupToolStripMenuItem.Text = "Backup";
             this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
             // 
             // restoreToolStripMenuItem
             // 
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.restoreToolStripMenuItem.Text = "Restore";
             // 
             // helpToolStripMenuItem
@@ -308,7 +309,7 @@ namespace PMWORK.Admin
             this.panelControl1.Controls.Add(this.cbxAuthentication);
             this.panelControl1.Controls.Add(this.btnRefresh);
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.btnTest);
+            this.panelControl1.Controls.Add(this.btnConnecting);
             this.panelControl1.Controls.Add(this.labelControl5);
             this.panelControl1.Controls.Add(this.txtPassword);
             this.panelControl1.Controls.Add(this.labelControl2);
@@ -319,13 +320,14 @@ namespace PMWORK.Admin
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 24);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(399, 226);
+            this.panelControl1.Size = new System.Drawing.Size(399, 249);
             this.panelControl1.TabIndex = 18;
             // 
             // cbxDatabase
             // 
             this.cbxDatabase.EditValue = "PMWORKDB";
-            this.cbxDatabase.Location = new System.Drawing.Point(101, 159);
+            this.cbxDatabase.Enabled = false;
+            this.cbxDatabase.Location = new System.Drawing.Point(101, 188);
             this.cbxDatabase.Name = "cbxDatabase";
             this.cbxDatabase.Parmida_ActivePlusMultiKeys = false;
             this.cbxDatabase.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -334,6 +336,7 @@ namespace PMWORK.Admin
             this.cbxDatabase.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.cbxDatabase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxDatabase.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbxDatabase.Size = new System.Drawing.Size(271, 20);
             this.cbxDatabase.TabIndex = 3;
             // 
@@ -341,12 +344,13 @@ namespace PMWORK.Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 250);
+            this.ClientSize = new System.Drawing.Size(399, 273);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "SettingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connection ";
             this.Load += new System.EventHandler(this.SettingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
@@ -374,7 +378,7 @@ namespace PMWORK.Admin
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtUser;
         private DevExpress.XtraEditors.TextEdit txtPassword;
-        private DevExpress.XtraEditors.SimpleButton btnTest;
+        private DevExpress.XtraEditors.SimpleButton btnConnecting;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.ComboBoxEdit cbxServer;
         private DevExpress.XtraEditors.ComboBoxEdit cbxAuthentication;

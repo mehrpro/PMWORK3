@@ -23,10 +23,10 @@ namespace PMWORK
             Application.SetCompatibleTextRenderingDefault(false);
             var container = new Container(new TypeRegistery());
             var frm = container.GetInstance<frmLogin2>();
+            frm.Container = container;
             Application.Run(frm);
             if (frm.DialogResult == DialogResult.OK)
             {
-
                 var frmMain = container.GetInstance<MainForm>();
                 frmMain.Container = container;
                 frmMain.ShowDialog();
