@@ -9,15 +9,19 @@ namespace PMWORK
 
         public AppDbContext() : base("Conn")
         {
-            //Database.SetInitializer(new PMDBInitializer());
+            //var find =  ApplicationUsers.AnyAsync(x => x.UserName == "admin");
+            //if (!find.Result)
+            //{
+            //   // Database.SetInitializer(new PMDBInitializer());
+            //}
+           
         }
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {
             base.OnModelCreating(builder);
              
-
-
+            
             builder.Entity<ApplicationUser>().HasKey(x => x.UserId);
             builder.Entity<ApplicationUser>().Property(x => x.UserId).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             builder.Entity<ApplicationUser>().Property(x => x.UserName).IsRequired().HasMaxLength(20);

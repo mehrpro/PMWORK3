@@ -19,7 +19,7 @@ namespace PMWORK.Admin
         private delegate void DelegateMaster();
 
         private string connectionString;
-        private List<string> _instanceList;
+        private List<string> _databaseList;
 
         private ISetDatabase _setDatabase;
 
@@ -71,9 +71,9 @@ namespace PMWORK.Admin
                             var callBack = new AsyncCallback(asyncRes =>
                             {
                                 var list = startJob.EndInvoke(asyncRes);
-                                Invoke(new Action(() => _instanceList = new List<string>() ));
-                                Invoke(new Action(() => _instanceList.AddRange(list)));
-
+                                Invoke(new Action(() => _databaseList = new List<string>() ));
+                                Invoke(new Action(() => _databaseList.AddRange(list)));
+                                Invoke(new Action(()=> cbxDatabase.Properties.Items.Clear()));
                                 Invoke(new Action(() => cbxDatabase.Properties.Items.AddRange(list)));
                                 Invoke(new Action(() => btnSave.Enabled = cbxDatabase.Enabled = true));
                                 Invoke(new Action(() => progressBar.Visible = false));
@@ -121,8 +121,9 @@ namespace PMWORK.Admin
                             var callBack = new AsyncCallback(asyncRes =>
                             {
                                 var list = startJob.EndInvoke(asyncRes);
-                                Invoke(new Action(() => _instanceList = new List<string>()));
-                                Invoke(new Action(() => _instanceList.AddRange(list)));
+                                Invoke(new Action(() => _databaseList = new List<string>()));
+                                Invoke(new Action(() => _databaseList.AddRange(list)));
+                                Invoke(new Action(() => cbxDatabase.Properties.Items.Clear()));
                                 Invoke(new Action(() => cbxDatabase.Properties.Items.AddRange(list)));
                                 Invoke(new Action(() => btnSave.Enabled = cbxDatabase.Enabled = true));
                                 Invoke(new Action(() => progressBar.Visible = false));
@@ -232,7 +233,7 @@ namespace PMWORK.Admin
                 frm.ServerName = cbxServer.Text.Trim();
                 frm.AuthenticationMode = cbxAuthentication.Text;
                 frm.ConnectionString = connectionString;
-                frm.InstanceList = _instanceList;
+                frm.DatabaseList = _databaseList;
                 if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
                 {
                     frm.UserName = frm.Password = string.Empty;
@@ -343,9 +344,6 @@ namespace PMWORK.Admin
         {
             progressBar.Visible = true;
             var cbxServerDelegate = new DelegateMaster(cbxServerInstance);
-
-
-
             //var cbxServerDelegate = new Func<bool>(cbxServerInstance);
             //var callBack = new AsyncCallback(asyncRes =>
             //{

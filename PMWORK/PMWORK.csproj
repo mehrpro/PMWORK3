@@ -260,6 +260,7 @@
   <ItemGroup>
     <Compile Include="Admin\AppSetting.cs" />
     <Compile Include="Admin\EnCoding.cs" />
+    <Compile Include="Admin\InitialDatabase.cs" />
     <Compile Include="Admin\NewDatabaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +311,7 @@
     <Compile Include="CodingForms\GroupForm.Designer.cs">
       <DependentUpon>GroupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\PMDBInitializer.cs" />
     <Compile Include="Entities\Repairout.cs" />
     <Compile Include="MachineryForms\RepairOutForm.cs">
       <SubType>Form</SubType>
