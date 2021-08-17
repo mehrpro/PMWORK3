@@ -170,6 +170,921 @@
     <value>..\Resources\icons8-maintenance-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sqlScriptForNewDatabase" xml:space="preserve">
-    <value>252</value>
+    <value>/****** Object:  Database [95]    Script Date: 26/05/1400 11:48:54 ق.ظ ******/
+CREATE DATABASE [95]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'95', FILENAME = N'AddressFileForSave\95.mdf' , SIZE = 4288KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'95_log', FILENAME = N'AddressFileForSave\95_log.ldf' , SIZE = 1344KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+
+ALTER DATABASE [95] SET COMPATIBILITY_LEVEL = 120
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [95].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [95] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [95] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [95] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [95] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [95] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [95] SET AUTO_CLOSE ON 
+GO
+ALTER DATABASE [95] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [95] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [95] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [95] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [95] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [95] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [95] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [95] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [95] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [95] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [95] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [95] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [95] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [95] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [95] SET READ_COMMITTED_SNAPSHOT ON 
+GO
+ALTER DATABASE [95] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [95] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [95] SET  MULTI_USER 
+GO
+ALTER DATABASE [95] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [95] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [95] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [95] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+GO
+ALTER DATABASE [95] SET DELAYED_DURABILITY = DISABLED 
+GO
+USE [95]
+GO
+/****** Object:  Table [dbo].[__MigrationHistory]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[__MigrationHistory](
+	[MigrationId] [nvarchar](150) NOT NULL,
+	[ContextKey] [nvarchar](300) NOT NULL,
+	[Model] [varbinary](max) NOT NULL,
+	[ProductVersion] [nvarchar](32) NOT NULL,
+ CONSTRAINT [PK_dbo.__MigrationHistory] PRIMARY KEY CLUSTERED 
+(
+	[MigrationId] ASC,
+	[ContextKey] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Applicants]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Applicants](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[ApplicantTitle] [nvarchar](150) NOT NULL,
+	[Description] [nvarchar](250) NULL,
+	[CompanyID_FK] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.Applicants] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ApplicationUsers]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ApplicationUsers](
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [nvarchar](20) NOT NULL,
+	[UserPassword] [nvarchar](100) NOT NULL,
+	[FullName] [nvarchar](200) NOT NULL,
+	[Editor] [nvarchar](10) NOT NULL,
+	[LimetedCompany] [bit] NOT NULL,
+	[Enabled] [bit] NOT NULL,
+	[CompanyID_FK] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.ApplicationUsers] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Cleams]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Cleams](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[UserID_FK] [int] NOT NULL,
+	[GroupID_FK] [int] NOT NULL,
+	[MenuItemID_FK] [int] NOT NULL,
+	[IsDelete] [bit] NOT NULL,
+ CONSTRAINT [PK_dbo.Cleams] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Codings]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Codings](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[CompanyID_FK] [int] NOT NULL,
+	[GroupID_FK] [int] NOT NULL,
+	[SubGroupID_FK] [int] NOT NULL,
+	[UserID_FK] [int] NOT NULL,
+	[CodeIndex] [smallint] NOT NULL,
+	[Code] [int] NOT NULL,
+	[CodeTitle] [nvarchar](150) NOT NULL,
+	[Description] [nvarchar](250) NULL,
+ CONSTRAINT [PK_dbo.Codings] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Companies]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Companies](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[CompnayIndex] [tinyint] NOT NULL,
+	[CompanyTitle] [nvarchar](150) NOT NULL,
+	[Description] [nvarchar](250) NULL,
+ CONSTRAINT [PK_dbo.Companies] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ConsumableParts]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ConsumableParts](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[RequestID_FK] [bigint] NOT NULL,
+	[ConsumablePartTitel] [nvarchar](250) NOT NULL,
+	[Number] [int] NOT NULL,
+	[UnitID_FK] [int] NOT NULL,
+ CONSTRAINT [PK_dbo.ConsumableParts] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Groups]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Groups](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[CompanyID_FK] [int] NOT NULL,
+	[GroupIndex] [tinyint] NOT NULL,
+	[GroupTitle] [nvarchar](150) NOT NULL,
+	[Description] [nvarchar](250) NULL,
+ CONSTRAINT [PK_dbo.Groups] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[IdentityMachineries]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[IdentityMachineries](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[MachinerID_FK] [int] NOT NULL,
+	[TypeDevice] [nvarchar](250) NULL,
+	[dateTimeImport] [datetime] NOT NULL,
+	[dateTimeStart] [datetime] NOT NULL,
+	[dateStartWaranty] [datetime] NOT NULL,
+	[dateEndWaranty] [datetime] NOT NULL,
+	[Calibration] [bit] NOT NULL,
+	[NewDivice] [bit] NOT NULL,
+	[Length] [int] NOT NULL,
+	[Width] [int] NOT NULL,
+	[Height] [int] NOT NULL,
+	[Wight] [int] NOT NULL,
+	[Company] [nvarchar](250) NULL,
+	[Countery] [nvarchar](50) NULL,
+	[CompanyAddress] [nvarchar](250) NULL,
+	[CompanyTel] [nvarchar](15) NULL,
+	[CompanyFax] [nvarchar](15) NULL,
+	[SupplyName] [nvarchar](250) NULL,
+	[SupplyAddress] [nvarchar](250) NULL,
+	[SupplyTel] [nvarchar](15) NULL,
+	[SupplyFax] [nvarchar](15) NULL,
+	[CalibrationCompany] [nvarchar](250) NULL,
+	[CalibrationAddress] [nvarchar](250) NULL,
+	[CalibrationTel] [nvarchar](15) NULL,
+	[CalibrationFax] [nvarchar](15) NULL,
+	[Applicant_ID] [int] NULL,
+ CONSTRAINT [PK_dbo.IdentityMachineries] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Machineries]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Machineries](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[IsActive] [bit] NOT NULL,
+	[IsDelete] [bit] NOT NULL,
+	[CompanyID] [int] NOT NULL,
+	[CodeID_FK] [bigint] NOT NULL,
+	[ApplicantID_FK] [int] NOT NULL,
+	[MachineryTitle] [nvarchar](150) NOT NULL,
+	[Description] [nvarchar](250) NULL,
+ CONSTRAINT [PK_dbo.Machineries] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MenuGroups]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[MenuGroups](
+	[GroupID] [int] IDENTITY(1,1) NOT NULL,
+	[MenuGroupTitle] [nvarchar](100) NOT NULL,
+	[Description] [nvarchar](250) NOT NULL,
+ CONSTRAINT [PK_dbo.MenuGroups] PRIMARY KEY CLUSTERED 
+(
+	[GroupID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MenuItems]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[MenuItems](
+	[ItemID] [int] IDENTITY(1,1) NOT NULL,
+	[GroupID_FK] [int] NOT NULL,
+	[ItemTitel] [nvarchar](150) NOT NULL,
+	[Description] [nvarchar](250) NOT NULL,
+ CONSTRAINT [PK_dbo.MenuItems] PRIMARY KEY CLUSTERED 
+(
+	[ItemID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PowerElectricalMachineries]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PowerElectricalMachineries](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[MachineryID_FK] [int] NOT NULL,
+	[Title] [nvarchar](250) NULL,
+	[Manifactor] [nvarchar](250) NULL,
+	[KW] [nvarchar](10) NULL,
+	[RPM] [int] NOT NULL,
+	[Voltag] [nvarchar](10) NULL,
+	[Amper] [nvarchar](10) NULL,
+	[IsDelete] [bit] NOT NULL,
+ CONSTRAINT [PK_dbo.PowerElectricalMachineries] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PublicTypes]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PublicTypes](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Group] [int] NOT NULL,
+	[Title] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_dbo.PublicTypes] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[RepairManListeds]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[RepairManListeds](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[RepairManIdFk] [int] NOT NULL,
+	[WorkOrderIdFk] [bigint] NOT NULL,
+	[IsDelete] [bit] NOT NULL,
+ CONSTRAINT [PK_dbo.RepairManListeds] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[RepairMen]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[RepairMen](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Repairman_FullName] [nvarchar](250) NOT NULL,
+	[RepairMan_Status] [nvarchar](250) NOT NULL,
+	[IsActive] [bit] NOT NULL,
+ CONSTRAINT [PK_dbo.RepairMen] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Repairouts]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Repairouts](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[CompanyID_FK] [int] NOT NULL,
+	[UserID_FK] [int] NOT NULL,
+	[RequestID_FK] [bigint] NOT NULL,
+	[RequestRepairOut] [nvarchar](500) NOT NULL,
+	[Regidtered] [datetime] NOT NULL,
+	[RepairOutFullName] [nvarchar](250) NOT NULL,
+	[RepairReportOut] [nvarchar](500) NULL,
+	[BackendRequest] [datetime] NOT NULL,
+	[IsClosed] [bit] NOT NULL,
+	[IsDelete] [bit] NOT NULL,
+	[IsActive] [bit] NOT NULL,
+ CONSTRAINT [PK_dbo.Repairouts] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[RequestRepairs]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[RequestRepairs](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[IsActive] [bit] NOT NULL,
+	[IsRepairOut] [bit] NOT NULL,
+	[IsDelete] [bit] NOT NULL,
+	[IsClose] [bit] NOT NULL,
+	[EM] [bit] NOT NULL,
+	[CompanyID_FK] [int] NOT NULL,
+	[MachineryID_FK] [int] NOT NULL,
+	[UserID_FK] [int] NOT NULL,
+	[RequestDataTime] [datetime] NOT NULL,
+	[PublicTypeID_FK] [int] NOT NULL,
+	[ApplicantID_FK] [int] NOT NULL,
+	[RequestTitle] [nvarchar](500) NOT NULL,
+ CONSTRAINT [PK_dbo.RequestRepairs] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ServicePeriodes]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ServicePeriodes](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[MachineryID_FK] [int] NOT NULL,
+	[ServiceTitle] [nvarchar](250) NOT NULL,
+	[Periode] [int] NOT NULL,
+	[UnitID_FK] [int] NOT NULL,
+	[Description] [nvarchar](250) NULL,
+	[IsActive] [bit] NOT NULL,
+	[Registred] [datetime] NOT NULL,
+ CONSTRAINT [PK_dbo.ServicePeriodes] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SpareParts]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SpareParts](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[MachineryID_FK] [int] NOT NULL,
+	[SparePartTitle] [nvarchar](250) NOT NULL,
+	[SparePartNumber] [nvarchar](150) NULL,
+	[Minimal] [int] NOT NULL,
+	[UnitID_FK] [int] NOT NULL,
+	[Description] [nvarchar](250) NULL,
+	[IsActive] [bit] NOT NULL,
+ CONSTRAINT [PK_dbo.SpareParts] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SubGroups]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SubGroups](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[CompanyID_FK] [int] NOT NULL,
+	[GroupID_FK] [int] NOT NULL,
+	[SubGroupIndex] [tinyint] NOT NULL,
+	[SubGroupTitle] [nvarchar](150) NOT NULL,
+	[Description] [nvarchar](250) NULL,
+ CONSTRAINT [PK_dbo.SubGroups] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UnitOfMeasurements]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UnitOfMeasurements](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Unit] [nvarchar](150) NOT NULL,
+	[Description] [nvarchar](250) NULL,
+ CONSTRAINT [PK_dbo.UnitOfMeasurements] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[WorkOrders]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[WorkOrders](
+	[ID] [bigint] IDENTITY(1,1) NOT NULL,
+	[IsDelete] [bit] NOT NULL,
+	[RequestID_FK] [bigint] NOT NULL,
+	[WorkingTotalMin] [int] NOT NULL,
+	[StopTotalMin] [int] NOT NULL,
+	[RepairOutside] [bit] NOT NULL,
+	[RepairOutSideReportID_FK] [int] NULL,
+	[StartWorking] [datetime] NOT NULL,
+	[EndWorking] [datetime] NOT NULL,
+	[Cause_Exhaustion] [bit] NOT NULL,
+	[Cause_OperatorNegligence] [bit] NOT NULL,
+	[Cause_QualityofSpareParts] [bit] NOT NULL,
+	[OtherError] [bit] NOT NULL,
+	[OtherErrorDescription] [nvarchar](250) NULL,
+	[ReportRepair] [nvarchar](700) NOT NULL,
+	[PersonHours] [bit] NOT NULL,
+	[PersonHoursTime] [smallint] NOT NULL,
+	[PersonHoursDescription] [nvarchar](250) NULL,
+	[ProductionPlanning] [bit] NOT NULL,
+	[ProductionPlanningTime] [smallint] NOT NULL,
+	[ProductionPlanningDescription] [nvarchar](250) NULL,
+	[NoSpareParts] [bit] NOT NULL,
+	[NoSparePartsTime] [smallint] NOT NULL,
+	[NoSparePartsDescription] [nvarchar](250) NULL,
+	[Other] [bit] NOT NULL,
+	[OtherTime] [smallint] NOT NULL,
+	[OtherDescription] [nvarchar](250) NULL,
+	[CloseRequest] [bit] NOT NULL,
+	[DateTimeClosing] [datetime] NOT NULL,
+ CONSTRAINT [PK_dbo.WorkOrders] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CompanyID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_CompanyID_FK] ON [dbo].[Applicants]
+(
+	[CompanyID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CompanyID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_CompanyID_FK] ON [dbo].[ApplicationUsers]
+(
+	[CompanyID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_GroupID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_GroupID_FK] ON [dbo].[Cleams]
+(
+	[GroupID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_MenuItemID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_MenuItemID_FK] ON [dbo].[Cleams]
+(
+	[MenuItemID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_UserID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_UserID_FK] ON [dbo].[Cleams]
+(
+	[UserID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CompanyID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_CompanyID_FK] ON [dbo].[Codings]
+(
+	[CompanyID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_GroupID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_GroupID_FK] ON [dbo].[Codings]
+(
+	[GroupID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_SubGroupID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_SubGroupID_FK] ON [dbo].[Codings]
+(
+	[SubGroupID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_UserID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_UserID_FK] ON [dbo].[Codings]
+(
+	[UserID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_RequestID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_RequestID_FK] ON [dbo].[ConsumableParts]
+(
+	[RequestID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_UnitID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_UnitID_FK] ON [dbo].[ConsumableParts]
+(
+	[UnitID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CompanyID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_CompanyID_FK] ON [dbo].[Groups]
+(
+	[CompanyID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_Applicant_ID]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_Applicant_ID] ON [dbo].[IdentityMachineries]
+(
+	[Applicant_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_MachinerID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_MachinerID_FK] ON [dbo].[IdentityMachineries]
+(
+	[MachinerID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_ApplicantID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_ApplicantID_FK] ON [dbo].[Machineries]
+(
+	[ApplicantID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CodeID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_CodeID_FK] ON [dbo].[Machineries]
+(
+	[CodeID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_GroupID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_GroupID_FK] ON [dbo].[MenuItems]
+(
+	[GroupID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_MachineryID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_MachineryID_FK] ON [dbo].[PowerElectricalMachineries]
+(
+	[MachineryID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_RepairManIdFk]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_RepairManIdFk] ON [dbo].[RepairManListeds]
+(
+	[RepairManIdFk] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_WorkOrderIdFk]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_WorkOrderIdFk] ON [dbo].[RepairManListeds]
+(
+	[WorkOrderIdFk] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_RequestID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_RequestID_FK] ON [dbo].[Repairouts]
+(
+	[RequestID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_UserID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_UserID_FK] ON [dbo].[Repairouts]
+(
+	[UserID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_ApplicantID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_ApplicantID_FK] ON [dbo].[RequestRepairs]
+(
+	[ApplicantID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CompanyID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_CompanyID_FK] ON [dbo].[RequestRepairs]
+(
+	[CompanyID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_MachineryID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_MachineryID_FK] ON [dbo].[RequestRepairs]
+(
+	[MachineryID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_PublicTypeID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_PublicTypeID_FK] ON [dbo].[RequestRepairs]
+(
+	[PublicTypeID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_UserID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_UserID_FK] ON [dbo].[RequestRepairs]
+(
+	[UserID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_MachineryID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_MachineryID_FK] ON [dbo].[ServicePeriodes]
+(
+	[MachineryID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_UnitID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_UnitID_FK] ON [dbo].[ServicePeriodes]
+(
+	[UnitID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_MachineryID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_MachineryID_FK] ON [dbo].[SpareParts]
+(
+	[MachineryID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_UnitID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_UnitID_FK] ON [dbo].[SpareParts]
+(
+	[UnitID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_CompanyID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_CompanyID_FK] ON [dbo].[SubGroups]
+(
+	[CompanyID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_GroupID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_GroupID_FK] ON [dbo].[SubGroups]
+(
+	[GroupID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_RequestID_FK]    Script Date: 26/05/1400 11:48:55 ق.ظ ******/
+CREATE NONCLUSTERED INDEX [IX_RequestID_FK] ON [dbo].[WorkOrders]
+(
+	[RequestID_FK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Applicants]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Applicants_dbo.Companies_CompanyID_FK] FOREIGN KEY([CompanyID_FK])
+REFERENCES [dbo].[Companies] ([ID])
+GO
+ALTER TABLE [dbo].[Applicants] CHECK CONSTRAINT [FK_dbo.Applicants_dbo.Companies_CompanyID_FK]
+GO
+ALTER TABLE [dbo].[ApplicationUsers]  WITH CHECK ADD  CONSTRAINT [FK_dbo.ApplicationUsers_dbo.Companies_CompanyID_FK] FOREIGN KEY([CompanyID_FK])
+REFERENCES [dbo].[Companies] ([ID])
+GO
+ALTER TABLE [dbo].[ApplicationUsers] CHECK CONSTRAINT [FK_dbo.ApplicationUsers_dbo.Companies_CompanyID_FK]
+GO
+ALTER TABLE [dbo].[Cleams]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Cleams_dbo.ApplicationUsers_UserID_FK] FOREIGN KEY([UserID_FK])
+REFERENCES [dbo].[ApplicationUsers] ([UserId])
+GO
+ALTER TABLE [dbo].[Cleams] CHECK CONSTRAINT [FK_dbo.Cleams_dbo.ApplicationUsers_UserID_FK]
+GO
+ALTER TABLE [dbo].[Cleams]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Cleams_dbo.MenuGroups_GroupID_FK] FOREIGN KEY([GroupID_FK])
+REFERENCES [dbo].[MenuGroups] ([GroupID])
+GO
+ALTER TABLE [dbo].[Cleams] CHECK CONSTRAINT [FK_dbo.Cleams_dbo.MenuGroups_GroupID_FK]
+GO
+ALTER TABLE [dbo].[Cleams]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Cleams_dbo.MenuItems_MenuItemID_FK] FOREIGN KEY([MenuItemID_FK])
+REFERENCES [dbo].[MenuItems] ([ItemID])
+GO
+ALTER TABLE [dbo].[Cleams] CHECK CONSTRAINT [FK_dbo.Cleams_dbo.MenuItems_MenuItemID_FK]
+GO
+ALTER TABLE [dbo].[Codings]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Codings_dbo.ApplicationUsers_UserID_FK] FOREIGN KEY([UserID_FK])
+REFERENCES [dbo].[ApplicationUsers] ([UserId])
+GO
+ALTER TABLE [dbo].[Codings] CHECK CONSTRAINT [FK_dbo.Codings_dbo.ApplicationUsers_UserID_FK]
+GO
+ALTER TABLE [dbo].[Codings]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Codings_dbo.Companies_CompanyID_FK] FOREIGN KEY([CompanyID_FK])
+REFERENCES [dbo].[Companies] ([ID])
+GO
+ALTER TABLE [dbo].[Codings] CHECK CONSTRAINT [FK_dbo.Codings_dbo.Companies_CompanyID_FK]
+GO
+ALTER TABLE [dbo].[Codings]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Codings_dbo.Groups_GroupID_FK] FOREIGN KEY([GroupID_FK])
+REFERENCES [dbo].[Groups] ([ID])
+GO
+ALTER TABLE [dbo].[Codings] CHECK CONSTRAINT [FK_dbo.Codings_dbo.Groups_GroupID_FK]
+GO
+ALTER TABLE [dbo].[Codings]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Codings_dbo.SubGroups_SubGroupID_FK] FOREIGN KEY([SubGroupID_FK])
+REFERENCES [dbo].[SubGroups] ([ID])
+GO
+ALTER TABLE [dbo].[Codings] CHECK CONSTRAINT [FK_dbo.Codings_dbo.SubGroups_SubGroupID_FK]
+GO
+ALTER TABLE [dbo].[ConsumableParts]  WITH CHECK ADD  CONSTRAINT [FK_dbo.ConsumableParts_dbo.RequestRepairs_RequestID_FK] FOREIGN KEY([RequestID_FK])
+REFERENCES [dbo].[RequestRepairs] ([ID])
+GO
+ALTER TABLE [dbo].[ConsumableParts] CHECK CONSTRAINT [FK_dbo.ConsumableParts_dbo.RequestRepairs_RequestID_FK]
+GO
+ALTER TABLE [dbo].[ConsumableParts]  WITH CHECK ADD  CONSTRAINT [FK_dbo.ConsumableParts_dbo.UnitOfMeasurements_UnitID_FK] FOREIGN KEY([UnitID_FK])
+REFERENCES [dbo].[UnitOfMeasurements] ([ID])
+GO
+ALTER TABLE [dbo].[ConsumableParts] CHECK CONSTRAINT [FK_dbo.ConsumableParts_dbo.UnitOfMeasurements_UnitID_FK]
+GO
+ALTER TABLE [dbo].[Groups]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Groups_dbo.Companies_CompanyID_FK] FOREIGN KEY([CompanyID_FK])
+REFERENCES [dbo].[Companies] ([ID])
+GO
+ALTER TABLE [dbo].[Groups] CHECK CONSTRAINT [FK_dbo.Groups_dbo.Companies_CompanyID_FK]
+GO
+ALTER TABLE [dbo].[IdentityMachineries]  WITH CHECK ADD  CONSTRAINT [FK_dbo.IdentityMachineries_dbo.Applicants_Applicant_ID] FOREIGN KEY([Applicant_ID])
+REFERENCES [dbo].[Applicants] ([ID])
+GO
+ALTER TABLE [dbo].[IdentityMachineries] CHECK CONSTRAINT [FK_dbo.IdentityMachineries_dbo.Applicants_Applicant_ID]
+GO
+ALTER TABLE [dbo].[IdentityMachineries]  WITH CHECK ADD  CONSTRAINT [FK_dbo.IdentityMachineries_dbo.Machineries_MachinerID_FK] FOREIGN KEY([MachinerID_FK])
+REFERENCES [dbo].[Machineries] ([ID])
+GO
+ALTER TABLE [dbo].[IdentityMachineries] CHECK CONSTRAINT [FK_dbo.IdentityMachineries_dbo.Machineries_MachinerID_FK]
+GO
+ALTER TABLE [dbo].[Machineries]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Machineries_dbo.Applicants_ApplicantID_FK] FOREIGN KEY([ApplicantID_FK])
+REFERENCES [dbo].[Applicants] ([ID])
+GO
+ALTER TABLE [dbo].[Machineries] CHECK CONSTRAINT [FK_dbo.Machineries_dbo.Applicants_ApplicantID_FK]
+GO
+ALTER TABLE [dbo].[Machineries]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Machineries_dbo.Codings_CodeID_FK] FOREIGN KEY([CodeID_FK])
+REFERENCES [dbo].[Codings] ([ID])
+GO
+ALTER TABLE [dbo].[Machineries] CHECK CONSTRAINT [FK_dbo.Machineries_dbo.Codings_CodeID_FK]
+GO
+ALTER TABLE [dbo].[MenuItems]  WITH CHECK ADD  CONSTRAINT [FK_dbo.MenuItems_dbo.MenuGroups_GroupID_FK] FOREIGN KEY([GroupID_FK])
+REFERENCES [dbo].[MenuGroups] ([GroupID])
+GO
+ALTER TABLE [dbo].[MenuItems] CHECK CONSTRAINT [FK_dbo.MenuItems_dbo.MenuGroups_GroupID_FK]
+GO
+ALTER TABLE [dbo].[PowerElectricalMachineries]  WITH CHECK ADD  CONSTRAINT [FK_dbo.PowerElectricalMachineries_dbo.Machineries_MachineryID_FK] FOREIGN KEY([MachineryID_FK])
+REFERENCES [dbo].[Machineries] ([ID])
+GO
+ALTER TABLE [dbo].[PowerElectricalMachineries] CHECK CONSTRAINT [FK_dbo.PowerElectricalMachineries_dbo.Machineries_MachineryID_FK]
+GO
+ALTER TABLE [dbo].[RepairManListeds]  WITH CHECK ADD  CONSTRAINT [FK_dbo.RepairManListeds_dbo.RepairMen_RepairManIdFk] FOREIGN KEY([RepairManIdFk])
+REFERENCES [dbo].[RepairMen] ([ID])
+GO
+ALTER TABLE [dbo].[RepairManListeds] CHECK CONSTRAINT [FK_dbo.RepairManListeds_dbo.RepairMen_RepairManIdFk]
+GO
+ALTER TABLE [dbo].[RepairManListeds]  WITH CHECK ADD  CONSTRAINT [FK_dbo.RepairManListeds_dbo.WorkOrders_WorkOrderIdFk] FOREIGN KEY([WorkOrderIdFk])
+REFERENCES [dbo].[WorkOrders] ([ID])
+GO
+ALTER TABLE [dbo].[RepairManListeds] CHECK CONSTRAINT [FK_dbo.RepairManListeds_dbo.WorkOrders_WorkOrderIdFk]
+GO
+ALTER TABLE [dbo].[Repairouts]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Repairouts_dbo.ApplicationUsers_UserID_FK] FOREIGN KEY([UserID_FK])
+REFERENCES [dbo].[ApplicationUsers] ([UserId])
+GO
+ALTER TABLE [dbo].[Repairouts] CHECK CONSTRAINT [FK_dbo.Repairouts_dbo.ApplicationUsers_UserID_FK]
+GO
+ALTER TABLE [dbo].[Repairouts]  WITH CHECK ADD  CONSTRAINT [FK_dbo.Repairouts_dbo.RequestRepairs_RequestID_FK] FOREIGN KEY([RequestID_FK])
+REFERENCES [dbo].[RequestRepairs] ([ID])
+GO
+ALTER TABLE [dbo].[Repairouts] CHECK CONSTRAINT [FK_dbo.Repairouts_dbo.RequestRepairs_RequestID_FK]
+GO
+ALTER TABLE [dbo].[RequestRepairs]  WITH CHECK ADD  CONSTRAINT [FK_dbo.RequestRepairs_dbo.Applicants_ApplicantID_FK] FOREIGN KEY([ApplicantID_FK])
+REFERENCES [dbo].[Applicants] ([ID])
+GO
+ALTER TABLE [dbo].[RequestRepairs] CHECK CONSTRAINT [FK_dbo.RequestRepairs_dbo.Applicants_ApplicantID_FK]
+GO
+ALTER TABLE [dbo].[RequestRepairs]  WITH CHECK ADD  CONSTRAINT [FK_dbo.RequestRepairs_dbo.ApplicationUsers_UserID_FK] FOREIGN KEY([UserID_FK])
+REFERENCES [dbo].[ApplicationUsers] ([UserId])
+GO
+ALTER TABLE [dbo].[RequestRepairs] CHECK CONSTRAINT [FK_dbo.RequestRepairs_dbo.ApplicationUsers_UserID_FK]
+GO
+ALTER TABLE [dbo].[RequestRepairs]  WITH CHECK ADD  CONSTRAINT [FK_dbo.RequestRepairs_dbo.Companies_CompanyID_FK] FOREIGN KEY([CompanyID_FK])
+REFERENCES [dbo].[Companies] ([ID])
+GO
+ALTER TABLE [dbo].[RequestRepairs] CHECK CONSTRAINT [FK_dbo.RequestRepairs_dbo.Companies_CompanyID_FK]
+GO
+ALTER TABLE [dbo].[RequestRepairs]  WITH CHECK ADD  CONSTRAINT [FK_dbo.RequestRepairs_dbo.Machineries_MachineryID_FK] FOREIGN KEY([MachineryID_FK])
+REFERENCES [dbo].[Machineries] ([ID])
+GO
+ALTER TABLE [dbo].[RequestRepairs] CHECK CONSTRAINT [FK_dbo.RequestRepairs_dbo.Machineries_MachineryID_FK]
+GO
+ALTER TABLE [dbo].[RequestRepairs]  WITH CHECK ADD  CONSTRAINT [FK_dbo.RequestRepairs_dbo.PublicTypes_PublicTypeID_FK] FOREIGN KEY([PublicTypeID_FK])
+REFERENCES [dbo].[PublicTypes] ([ID])
+GO
+ALTER TABLE [dbo].[RequestRepairs] CHECK CONSTRAINT [FK_dbo.RequestRepairs_dbo.PublicTypes_PublicTypeID_FK]
+GO
+ALTER TABLE [dbo].[ServicePeriodes]  WITH CHECK ADD  CONSTRAINT [FK_dbo.ServicePeriodes_dbo.Machineries_MachineryID_FK] FOREIGN KEY([MachineryID_FK])
+REFERENCES [dbo].[Machineries] ([ID])
+GO
+ALTER TABLE [dbo].[ServicePeriodes] CHECK CONSTRAINT [FK_dbo.ServicePeriodes_dbo.Machineries_MachineryID_FK]
+GO
+ALTER TABLE [dbo].[ServicePeriodes]  WITH CHECK ADD  CONSTRAINT [FK_dbo.ServicePeriodes_dbo.UnitOfMeasurements_UnitID_FK] FOREIGN KEY([UnitID_FK])
+REFERENCES [dbo].[UnitOfMeasurements] ([ID])
+GO
+ALTER TABLE [dbo].[ServicePeriodes] CHECK CONSTRAINT [FK_dbo.ServicePeriodes_dbo.UnitOfMeasurements_UnitID_FK]
+GO
+ALTER TABLE [dbo].[SpareParts]  WITH CHECK ADD  CONSTRAINT [FK_dbo.SpareParts_dbo.Machineries_MachineryID_FK] FOREIGN KEY([MachineryID_FK])
+REFERENCES [dbo].[Machineries] ([ID])
+GO
+ALTER TABLE [dbo].[SpareParts] CHECK CONSTRAINT [FK_dbo.SpareParts_dbo.Machineries_MachineryID_FK]
+GO
+ALTER TABLE [dbo].[SpareParts]  WITH CHECK ADD  CONSTRAINT [FK_dbo.SpareParts_dbo.UnitOfMeasurements_UnitID_FK] FOREIGN KEY([UnitID_FK])
+REFERENCES [dbo].[UnitOfMeasurements] ([ID])
+GO
+ALTER TABLE [dbo].[SpareParts] CHECK CONSTRAINT [FK_dbo.SpareParts_dbo.UnitOfMeasurements_UnitID_FK]
+GO
+ALTER TABLE [dbo].[SubGroups]  WITH CHECK ADD  CONSTRAINT [FK_dbo.SubGroups_dbo.Companies_CompanyID_FK] FOREIGN KEY([CompanyID_FK])
+REFERENCES [dbo].[Companies] ([ID])
+GO
+ALTER TABLE [dbo].[SubGroups] CHECK CONSTRAINT [FK_dbo.SubGroups_dbo.Companies_CompanyID_FK]
+GO
+ALTER TABLE [dbo].[SubGroups]  WITH CHECK ADD  CONSTRAINT [FK_dbo.SubGroups_dbo.Groups_GroupID_FK] FOREIGN KEY([GroupID_FK])
+REFERENCES [dbo].[Groups] ([ID])
+GO
+ALTER TABLE [dbo].[SubGroups] CHECK CONSTRAINT [FK_dbo.SubGroups_dbo.Groups_GroupID_FK]
+GO
+ALTER TABLE [dbo].[WorkOrders]  WITH CHECK ADD  CONSTRAINT [FK_dbo.WorkOrders_dbo.RequestRepairs_RequestID_FK] FOREIGN KEY([RequestID_FK])
+REFERENCES [dbo].[RequestRepairs] ([ID])
+GO
+ALTER TABLE [dbo].[WorkOrders] CHECK CONSTRAINT [FK_dbo.WorkOrders_dbo.RequestRepairs_RequestID_FK]
+GO
+USE [master]
+GO
+ALTER DATABASE [95] SET  READ_WRITE 
+GO</value>
   </data>
 </root>

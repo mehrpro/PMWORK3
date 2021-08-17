@@ -29,6 +29,8 @@ namespace PMWORK.Admin
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnCreate = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
@@ -42,6 +44,7 @@ namespace PMWORK.Admin
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtUser = new DevExpress.XtraEditors.TextEdit();
             this.cbxDataBase = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).BeginInit();
@@ -49,6 +52,7 @@ namespace PMWORK.Admin
             ((System.ComponentModel.ISupportInitialize)(this.txtAuthentication.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxDataBase.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -185,6 +189,9 @@ namespace PMWORK.Admin
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxDataBase.Size = new System.Drawing.Size(235, 20);
             this.cbxDataBase.TabIndex = 1;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxDataBase, conditionValidationRule1);
             // 
             // NewDatabaseForm
             // 
@@ -204,6 +211,7 @@ namespace PMWORK.Admin
             ((System.ComponentModel.ISupportInitialize)(this.txtAuthentication.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxDataBase.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,5 +231,6 @@ namespace PMWORK.Admin
         private DevExpress.XtraEditors.MarqueeProgressBarControl progressBar;
         private DevExpress.XtraEditors.TextEdit txtServer;
         private DevExpress.XtraEditors.ComboBoxEdit cbxDataBase;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dx;
     }
 }

@@ -231,7 +231,20 @@ namespace PMWORK.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 252.
+        ///   Looks up a localized string similar to /****** Object:  Database [95]    Script Date: 26/05/1400 11:48:54 ق.ظ ******/
+        ///CREATE DATABASE [95]
+        /// CONTAINMENT = NONE
+        /// ON  PRIMARY 
+        ///( NAME = N&apos;95&apos;, FILENAME = N&apos;AddressFileForSave\95.mdf&apos; , SIZE = 4288KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+        /// LOG ON 
+        ///( NAME = N&apos;95_log&apos;, FILENAME = N&apos;AddressFileForSave\95_log.ldf&apos; , SIZE = 1344KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+        ///GO
+        ///
+        ///ALTER DATABASE [95] SET COMPATIBILITY_LEVEL = 120
+        ///GO
+        ///IF (1 = FULLTEXTSERVICEPROPERTY(&apos;IsFullTextInstalled&apos;))
+        ///begin
+        ///E [rest of string was truncated]&quot;;.
         /// </summary>
         public static string sqlScriptForNewDatabase {
             get {

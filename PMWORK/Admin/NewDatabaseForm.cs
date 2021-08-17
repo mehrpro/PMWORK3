@@ -1,7 +1,10 @@
 ﻿using DevExpress.XtraEditors;
+using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace PMWORK.Admin
 {
@@ -46,9 +49,37 @@ namespace PMWORK.Admin
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            var srvServer = new Server(_connectionString);
-            var db = new Database(srvServer, cbxDataBase.Text.Trim());
-            db.Create();
+            if (dx.Validate())
+            {
+
+                var folderBrowserDialog = new FolderBrowserDialog();
+                folderBrowserDialog.ShowNewFolderButton = true;
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var folder = folderBrowserDialog.SelectedPath;
+                    var scriptNew = Properties.Resources.sqlScriptForNewDatabase.Replace("95", cbxDataBase.Text).Replace("AddressFileForSave", folder);
+                    //string sqlConnectionString = _connectionString;                    
+                    var conn = new SqlConnection(_connectionString);
+                    var inst = _serverName.Split(new char[] {'\\'});
+                    if (inst[1].Equals(string.Empty) || inst[1] == null)
+                    {
+
+                    }
+                    var ServerConn = new ServerConnection();
+                    
+                    Server server = new Server(ServerConn);
+                    server.ConnectionContext.ExecuteNonQuery(scriptNew);
+                }
+
+
+            }
+            else
+            {
+                PublicClass.ErrorValidationMessage(Text);
+            }
+
+
+
         }
     }
 }
