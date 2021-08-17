@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data.Entity;
+
 
 namespace PMWORK.Admin
 {
@@ -72,19 +74,11 @@ namespace PMWORK.Admin
                         srv.ConnectionContext.Login = _userName;
                         srv.ConnectionContext.ServerInstance = inst[1];                      
                     }
-                    srv.ConnectionContext.ExecuteNonQuery(scriptNew);
+                    srv.ConnectionContext.ExecuteNonQuery(scriptNew);                   
+   
+                }
 
-                    var appuser = srv.Databases["ApplicationUser"];
-                    
-
-                }            
-
-
-
-                IList<ApplicationUser> defaultUsers = new List<ApplicationUser>();
-                defaultUsers.Add(new ApplicationUser() { UserId = 1, Enabled = true, UserName = "admin", UserPassword = "admin", FullName = "مدیرسیستم", CompanyID_FK = 1, Editor = "Admin", LimetedCompany = false }); ;
-                //context.ApplicationUsers.AddRange(defaultUsers);
-          
+                System.Data.Entity.Database.SetInitializer(new InitialDatabase());
 
                 PublicClass.SuccessMessage(Text);
                 Close();

@@ -1,4 +1,5 @@
-﻿using PMWORK.Entities;
+﻿using PMWORK.Admin;
+using PMWORK.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 
@@ -9,12 +10,9 @@ namespace PMWORK
 
         public AppDbContext() : base("Conn")
         {
-            //var find =  ApplicationUsers.AnyAsync(x => x.UserName == "admin");
-            //if (!find.Result)
-            //{
-            //   // Database.SetInitializer(new PMDBInitializer());
-            //}
-           
+
+                Database.SetInitializer(new InitialDatabase());        
+
         }
 
         protected override void OnModelCreating(DbModelBuilder builder)
