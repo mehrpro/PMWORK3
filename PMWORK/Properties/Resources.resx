@@ -1087,4 +1087,23 @@ GO
 ALTER DATABASE [95] SET  READ_WRITE 
 GO</value>
   </data>
+  <data name="ScriptApplicationUser" xml:space="preserve">
+    <value>insert into ApplicationUsers (CompanyID_FK ,Editor,Enabled,FullName,LimetedCompany,UserName,UserPassword) 
+Values (1,'Admin',1,'administrator',0,'admin','admin')</value>
+  </data>
+  <data name="ScriptCompany" xml:space="preserve">
+    <value>insert into Companies (CompnayIndex,CompanyTitle,[Description]) values(1,'شرکت پیش فرض','شرکت پیش فرض')</value>
+  </data>
+  <data name="ScriptUnitOfMa" xml:space="preserve">
+    <value>insert into UnitOfMeasurements (Unit) Values ('عدد') 
+insert into UnitOfMeasurements (Unit) Values ('دستگاه')
+insert into UnitOfMeasurements (Unit) Values ('کیلوگرم')
+insert into UnitOfMeasurements (Unit) Values ('گرم')
+insert into UnitOfMeasurements (Unit) Values ('متر')
+insert into UnitOfMeasurements (Unit) Values ('سانتیمتر')
+insert into UnitOfMeasurements (Unit) Values ('میلیمتر')
+insert into UnitOfMeasurements (Unit) Values ('برگ')
+insert into UnitOfMeasurements (Unit) Values ('ورق')
+insert into UnitOfMeasurements (Unit) Values ('بسته')</value>
+  </data>
 </root>

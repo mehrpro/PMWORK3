@@ -231,6 +231,43 @@ namespace PMWORK.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to insert into ApplicationUsers (CompanyID_FK ,Editor,Enabled,FullName,LimetedCompany,UserName,UserPassword) 
+        ///Values (1,&apos;Admin&apos;,1,&apos;administrator&apos;,0,&apos;admin&apos;,&apos;admin&apos;).
+        /// </summary>
+        public static string ScriptApplicationUser {
+            get {
+                return ResourceManager.GetString("ScriptApplicationUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to insert into Companies (CompnayIndex,CompanyTitle,[Description]) values(1,&apos;شرکت پیش فرض&apos;,&apos;شرکت پیش فرض&apos;).
+        /// </summary>
+        public static string ScriptCompany {
+            get {
+                return ResourceManager.GetString("ScriptCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to insert into UnitOfMeasurements (Unit) Values (&apos;عدد&apos;) 
+        ///insert into UnitOfMeasurements (Unit) Values (&apos;دستگاه&apos;)
+        ///insert into UnitOfMeasurements (Unit) Values (&apos;کیلوگرم&apos;)
+        ///insert into UnitOfMeasurements (Unit) Values (&apos;گرم&apos;)
+        ///insert into UnitOfMeasurements (Unit) Values (&apos;متر&apos;)
+        ///insert into UnitOfMeasurements (Unit) Values (&apos;سانتیمتر&apos;)
+        ///insert into UnitOfMeasurements (Unit) Values (&apos;میلیمتر&apos;)
+        ///insert into UnitOfMeasurements (Unit) Values (&apos;برگ&apos;)
+        ///insert into UnitOfMeasurements (Unit) Values (&apos;ورق&apos;)
+        ///insert in [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ScriptUnitOfMa {
+            get {
+                return ResourceManager.GetString("ScriptUnitOfMa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /****** Object:  Database [95]    Script Date: 26/05/1400 11:48:54 ق.ظ ******/
         ///CREATE DATABASE [95]
         /// CONTAINMENT = NONE

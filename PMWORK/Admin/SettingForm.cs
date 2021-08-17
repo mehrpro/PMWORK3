@@ -32,7 +32,7 @@ namespace PMWORK.Admin
         }
 
         private void cbxServerInstance()
-        {          
+        {
             Invoke(new Action(() => cbxServer.Properties.Items.Clear()));
             var list = _setDatabase.GetServerInstance();
             Invoke(new Action(() => cbxServer.Properties.Items.AddRange(list)));
@@ -54,7 +54,7 @@ namespace PMWORK.Admin
 
             if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
             {
-                if (dx.Validate(cbxServer) &&  dx.Validate(cbxAuthentication))
+                if (dx.Validate(cbxServer) && dx.Validate(cbxAuthentication))
                 {
                     connectionString = $"Data Source= {cbxServer.Text} ; Integrated Security = SSPI;";
                     connectionstr.WindowsAuthentication = true;
@@ -66,20 +66,20 @@ namespace PMWORK.Admin
                         btnConnecting.Enabled = false;
                         SqlHelper helper = new SqlHelper(connectionString);
                         if (helper.IsConnection)
-                        { 
+                        {
 
                             var callBack = new AsyncCallback(asyncRes =>
                             {
                                 var list = startJob.EndInvoke(asyncRes);
-                                Invoke(new Action(() => _databaseList = new List<string>() ));
+                                Invoke(new Action(() => _databaseList = new List<string>()));
                                 Invoke(new Action(() => _databaseList.AddRange(list)));
-                                Invoke(new Action(()=> cbxDatabase.Properties.Items.Clear()));
+                                Invoke(new Action(() => cbxDatabase.Properties.Items.Clear()));
                                 Invoke(new Action(() => cbxDatabase.Properties.Items.AddRange(list)));
                                 Invoke(new Action(() => btnSave.Enabled = cbxDatabase.Enabled = true));
                                 Invoke(new Action(() => progressBar.Visible = false));
                                 Invoke(new Action(() => btnConnecting.Enabled = true));
                             });
-                            var result =  startJob.BeginInvoke(connectionstr, callBack, null);
+                            var result = startJob.BeginInvoke(connectionstr, callBack, null);
                             return true;
                         }
                         else
@@ -147,13 +147,13 @@ namespace PMWORK.Admin
                     return false;
                 }
 
-            }        
-             //https://docs.microsoft.com/en-us/sql/relational-databases/server-management-objects-smo/create-program/connecting-to-an-instance-of-sql-server?view=sql-server-ver15
-                            
+            }
+            //https://docs.microsoft.com/en-us/sql/relational-databases/server-management-objects-smo/create-program/connecting-to-an-instance-of-sql-server?view=sql-server-ver15
+
         }
         private void btnTest_Click(object sender, EventArgs e)
         {
-           TestConnection();           
+            TestConnection();
         }
 
         private void cbxAuthentication_SelectedIndexChanged(object sender, EventArgs e)
@@ -226,23 +226,38 @@ namespace PMWORK.Admin
 
         private void newDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var result = TestConnection();
+            //var result = TestConnection();
+
+
+            var srvconn = new ConnectionStrViewModel()
+            {
+                UserID = txtUser.Text,
+                Password = txtPassword.Text,
+                WindowsAuthentication = cbxAuthentication.Text == @"Windows Authentication",
+                ServerName = cbxServer.Text.Split('\\')[0],
+                InstanceName = cbxServer.Text.Split('\\').Length > 1 ? cbxServer.Text.Split('\\')[1] : string.Empty,
+            };
+
+            var result = _setDatabase.SqlServerConnect(srvconn);
             if (result)
             {
-                var frm = new NewDatabaseForm();
-                frm.ServerName = cbxServer.Text.Trim();
-                frm.AuthenticationMode = cbxAuthentication.Text;
-                frm.ConnectionString = connectionString;
+                var contain = new StructureMap.Container(new TypeRegistery());
+
+                var frm = contain.GetInstance<NewDatabaseForm>();
+                //frm.ServerName = cbxServer.Text.Trim();
+                //frm.AuthenticationMode = cbxAuthentication.Text;
+                //frm.ConnectionString = connectionString;
                 frm.DatabaseList = _databaseList;
-                if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
-                {
-                    frm.UserName = frm.Password = string.Empty;
-                }
-                else
-                {
-                    frm.UserName = txtUser.Text;
-                    frm.Password = txtPassword.Text;
-                }
+                frm.ConnectionStrViewModel = srvconn;
+                //if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
+                //{
+                //    frm.UserName = frm.Password = string.Empty;
+                //}
+                //else
+                //{
+                //    frm.UserName = txtUser.Text;
+                //    frm.Password = txtPassword.Text;
+                //}
                 frm.ShowDialog();
             }
 
