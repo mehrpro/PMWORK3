@@ -273,7 +273,6 @@
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\SqlHelper.cs" />
-    <Compile Include="Admin\SqlHelperAsync.cs" />
     <Compile Include="Admin\UserAccessForm.cs">
       <SubType>Form</SubType>
     </Compile>

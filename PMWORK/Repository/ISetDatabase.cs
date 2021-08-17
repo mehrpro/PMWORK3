@@ -1,4 +1,5 @@
-﻿using Microsoft.SqlServer.Management.Smo;
+﻿using Microsoft.SqlServer.Management.Common;
+using Microsoft.SqlServer.Management.Smo;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,6 +14,7 @@ namespace PMWORK.Repository
     {
         List<string> GetServerInstance();
         List<string> GetDatabaseListByServerName(ConnectionStrViewModel model);
+        object IsConnectiong(ConnectionStrViewModel model);
     }
 
     public class SetDatabase : ISetDatabase
@@ -59,6 +61,41 @@ namespace PMWORK.Repository
                     result.Add(database.Name);                
                 return result;
             }
+        }
+
+        public object IsConnectiong(ConnectionStrViewModel model)
+        {     
+            if (model.UserID == null)
+            {
+                Server srv1 = new Server(model.ServerName);   // connects to default instance  
+                srv1.ConnectionContext.LoginSecure = model.WindowsAuthentication;   // set to true for Windows Authentication  
+                //srv1.ConnectionContext.Login = model.UserID;
+                //srv1.ConnectionContext.Password = model.Password;
+                var re = srv1.Information.Version;
+
+
+                ServerConnection srvConn = new ServerConnection(model.ServerName);
+                var re2 = srv1.Name;
+                srvConn.ServerInstance = model.InstanceName;
+                srvConn.LoginSecure = model.WindowsAuthentication;
+            
+                //srvConn.Login = model.UserID;
+                //srvConn.Password = model.Password;
+                Server srv = new Server(srvConn);
+                return srv.Information.Version;
+            }
+            else
+            {
+                ServerConnection srvConn = new ServerConnection(model.ServerName);
+                srvConn.ServerInstance = model.InstanceName;
+                srvConn.LoginSecure = model.WindowsAuthentication;
+                srvConn.Login = model.UserID;
+                srvConn.Password = model.Password;
+                Server srv = new Server(srvConn);
+                return srv.Information.Version;
+            }
+
+
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Sql;
+using System.Threading;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
@@ -18,6 +19,7 @@ namespace PMWORK.Admin
         private delegate void DelegateMaster();
 
         private string connectionString;
+        private List<string> _instanceList;
 
         private ISetDatabase _setDatabase;
 
@@ -45,7 +47,7 @@ namespace PMWORK.Admin
 
         }
 
-        private void TestConnection()
+        private bool TestConnection()
         {
             var connectionstr = new ConnectionStrViewModel();
             var startJob = new Func<ConnectionStrViewModel, List<string>>(_setDatabase.GetDatabaseListByServerName);
@@ -54,7 +56,7 @@ namespace PMWORK.Admin
             {
                 if (dx.Validate(cbxServer) &&  dx.Validate(cbxAuthentication))
                 {
-                    connectionString =$"Data Source= {cbxServer.Text} ; Initial Catalog = {cbxDatabase.Text} ; Integrated Security = SSPI;";
+                    connectionString = $"Data Source= {cbxServer.Text} ; Integrated Security = SSPI;";
                     connectionstr.WindowsAuthentication = true;
                     connectionstr.ServerName = cbxServer.Text;
                     connectionstr.UserID = connectionstr.Password = "";
@@ -64,30 +66,39 @@ namespace PMWORK.Admin
                         btnConnecting.Enabled = false;
                         SqlHelper helper = new SqlHelper(connectionString);
                         if (helper.IsConnection)
-                        {
-                            //Invoke(new Action(() => cbxDatabase.Properties.Items.AddRange(_setDatabase.GetDatabaseListByServerName(connectionstr))));
-                            //Invoke(new Action(() => btnSave.Enabled = cbxDatabase.Enabled = true));
-                          
+                        { 
+
                             var callBack = new AsyncCallback(asyncRes =>
                             {
                                 var list = startJob.EndInvoke(asyncRes);
+                                Invoke(new Action(() => _instanceList = new List<string>() ));
+                                Invoke(new Action(() => _instanceList.AddRange(list)));
+
                                 Invoke(new Action(() => cbxDatabase.Properties.Items.AddRange(list)));
                                 Invoke(new Action(() => btnSave.Enabled = cbxDatabase.Enabled = true));
                                 Invoke(new Action(() => progressBar.Visible = false));
                                 Invoke(new Action(() => btnConnecting.Enabled = true));
                             });
                             var result =  startJob.BeginInvoke(connectionstr, callBack, null);
-
-
+                            return true;
                         }
+                        else
+                        {
+                            return false;
+                        }
+
                     }
                     catch (Exception exception)
                     {
                         XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
                     }
                 }
                 else
+                {
                     PublicClass.ErrorValidationMessage(Text);
+                    return false;
+                }
 
             }
             else
@@ -96,7 +107,6 @@ namespace PMWORK.Admin
                 {
                     connectionString =
                         $"Data Source = {cbxServer.Text};" +
-                        $"Initial Catalog={cbxDatabase.Text};" +
                         $"User ID={txtUser.Text};" +
                         $"Password={txtPassword.Text};";
                     connectionstr.WindowsAuthentication = false;
@@ -106,18 +116,35 @@ namespace PMWORK.Admin
                     try
                     {
                         SqlHelper helper = new SqlHelper(connectionString);
+                        if (helper.IsConnection)
                         {
-                            Invoke(new Action(() => cbxDatabase.Properties.Items.AddRange(_setDatabase.GetDatabaseListByServerName(connectionstr))));
-                            Invoke(new Action(() => btnSave.Enabled = cbxDatabase.Enabled = true));
+                            var callBack = new AsyncCallback(asyncRes =>
+                            {
+                                var list = startJob.EndInvoke(asyncRes);
+                                Invoke(new Action(() => _instanceList = new List<string>()));
+                                Invoke(new Action(() => _instanceList.AddRange(list)));
+                                Invoke(new Action(() => cbxDatabase.Properties.Items.AddRange(list)));
+                                Invoke(new Action(() => btnSave.Enabled = cbxDatabase.Enabled = true));
+                                Invoke(new Action(() => progressBar.Visible = false));
+                                Invoke(new Action(() => btnConnecting.Enabled = true));
+                            });
+                            var result = startJob.BeginInvoke(connectionstr, callBack, null);
+                            return true;
                         }
+                        else
+                            return false;
                     }
                     catch (Exception exception)
                     {
                         XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
                     }
                 }
                 else
+                {
                     PublicClass.ErrorValidationMessage(Text);
+                    return false;
+                }
 
             }        
              //https://docs.microsoft.com/en-us/sql/relational-databases/server-management-objects-smo/create-program/connecting-to-an-instance-of-sql-server?view=sql-server-ver15
@@ -125,7 +152,7 @@ namespace PMWORK.Admin
         }
         private void btnTest_Click(object sender, EventArgs e)
         {
-            TestConnection();
+           TestConnection();           
         }
 
         private void cbxAuthentication_SelectedIndexChanged(object sender, EventArgs e)
@@ -198,24 +225,25 @@ namespace PMWORK.Admin
 
         private void newDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //var result = TestConnection();
-            //if (result)
-            //{
-            //    var frm = new NewDatabaseForm();
-            //    frm.ServerName = cbxServer.Text.Trim();
-            //    frm.AuthenticationMode = cbxAuthentication.Text;
-            //    frm.ConnectionString = connectionString;
-            //    if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
-            //    {
-            //        frm.UserName = frm.Password = string.Empty;
-            //    }
-            //    else
-            //    {
-            //        frm.UserName = txtUser.Text;
-            //        frm.Password = txtPassword.Text;
-            //    }
-            //    frm.ShowDialog();
-            //}
+            var result = TestConnection();
+            if (result)
+            {
+                var frm = new NewDatabaseForm();
+                frm.ServerName = cbxServer.Text.Trim();
+                frm.AuthenticationMode = cbxAuthentication.Text;
+                frm.ConnectionString = connectionString;
+                frm.InstanceList = _instanceList;
+                if (cbxAuthentication.SelectedIndex == 0 && cbxAuthentication.Text == @"Windows Authentication")
+                {
+                    frm.UserName = frm.Password = string.Empty;
+                }
+                else
+                {
+                    frm.UserName = txtUser.Text;
+                    frm.Password = txtPassword.Text;
+                }
+                frm.ShowDialog();
+            }
 
 
         }
