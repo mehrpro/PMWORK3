@@ -10,6 +10,7 @@ namespace PMWORK
             var _db = new AppDbContext();
             For<IRequestRepairRepository>().Use<RequestRepairRepository>().Ctor<AppDbContext>().Is(_db);
             For<ICodingRepository>().Use<CodingRepository>().Ctor<AppDbContext>().Is(_db);
+            For<IDeviceIdentity>().Use<DeviceIdentity>().Ctor<AppDbContext>().Is(_db);
             For<ISetDatabase>().Use<SetDatabase>();
         }
 

@@ -67,30 +67,30 @@ namespace PMWORK.PMForms
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.chkCalibration = new DevExpress.XtraEditors.ToggleSwitch();
-            this.chkNewDevice = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.txtCompanyTel = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.txtCompanyFax = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
-            this.txtSupplyName = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.txtSuppluAddress = new DevExpress.XtraEditors.TextEdit();
-            this.txtSupplyTel = new DevExpress.XtraEditors.TextEdit();
-            this.txtSupplyFax = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
-            this.txtCalibCompany = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
-            this.txtCalibAddress = new DevExpress.XtraEditors.TextEdit();
-            this.txtCalibTel = new DevExpress.XtraEditors.TextEdit();
-            this.txtCalibFax = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
+            this.txtCalibFax = new DevExpress.XtraEditors.TextEdit();
+            this.txtSupplyFax = new DevExpress.XtraEditors.TextEdit();
+            this.txtCompanyFax = new DevExpress.XtraEditors.TextEdit();
+            this.txtCalibTel = new DevExpress.XtraEditors.TextEdit();
+            this.txtSupplyTel = new DevExpress.XtraEditors.TextEdit();
+            this.txtCompanyTel = new DevExpress.XtraEditors.TextEdit();
+            this.txtCalibAddress = new DevExpress.XtraEditors.TextEdit();
+            this.txtSuppluAddress = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.txtCalibCompany = new DevExpress.XtraEditors.TextEdit();
+            this.txtSupplyName = new DevExpress.XtraEditors.TextEdit();
+            this.chkNewDevice = new DevExpress.XtraEditors.ToggleSwitch();
+            this.chkCalibration = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtCountery.Properties)).BeginInit();
@@ -114,18 +114,18 @@ namespace PMWORK.PMForms
             ((System.ComponentModel.ISupportInitialize)(this.txtCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkCalibration.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkNewDevice.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyTel.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyFax.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSupplyName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSuppluAddress.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSupplyTel.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSupplyFax.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCalibCompany.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCalibAddress.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCalibTel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCalibFax.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSupplyFax.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyFax.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCalibTel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSupplyTel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyTel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCalibAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSuppluAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCalibCompany.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSupplyName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkNewDevice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkCalibration.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.SuspendLayout();
@@ -208,6 +208,7 @@ namespace PMWORK.PMForms
             this.btnSave.Size = new System.Drawing.Size(80, 30);
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "ذخیره";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // numWidth
             // 
@@ -590,7 +591,162 @@ namespace PMWORK.PMForms
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(725, 432);
             this.panelControl3.TabIndex = 20;
-            this.panelControl3.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl3_Paint);
+            // 
+            // labelControl32
+            // 
+            this.labelControl32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl32.Location = new System.Drawing.Point(324, 362);
+            this.labelControl32.Name = "labelControl32";
+            this.labelControl32.Size = new System.Drawing.Size(84, 13);
+            this.labelControl32.TabIndex = 11;
+            this.labelControl32.Text = "فکس کالیبره کننده";
+            // 
+            // labelControl25
+            // 
+            this.labelControl25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl25.Location = new System.Drawing.Point(324, 228);
+            this.labelControl25.Name = "labelControl25";
+            this.labelControl25.Size = new System.Drawing.Size(65, 13);
+            this.labelControl25.TabIndex = 11;
+            this.labelControl25.Text = "فکس پشتیبان";
+            // 
+            // labelControl21
+            // 
+            this.labelControl21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl21.Location = new System.Drawing.Point(324, 124);
+            this.labelControl21.Name = "labelControl21";
+            this.labelControl21.Size = new System.Drawing.Size(59, 13);
+            this.labelControl21.TabIndex = 11;
+            this.labelControl21.Text = "فکس شرکت";
+            // 
+            // labelControl31
+            // 
+            this.labelControl31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl31.Location = new System.Drawing.Point(324, 336);
+            this.labelControl31.Name = "labelControl31";
+            this.labelControl31.Size = new System.Drawing.Size(80, 13);
+            this.labelControl31.TabIndex = 11;
+            this.labelControl31.Text = "تلفن کالیبره کننده";
+            // 
+            // labelControl24
+            // 
+            this.labelControl24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl24.Location = new System.Drawing.Point(324, 202);
+            this.labelControl24.Name = "labelControl24";
+            this.labelControl24.Size = new System.Drawing.Size(61, 13);
+            this.labelControl24.TabIndex = 11;
+            this.labelControl24.Text = "تلفن پشتیبان";
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl20.Location = new System.Drawing.Point(324, 98);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(55, 13);
+            this.labelControl20.TabIndex = 11;
+            this.labelControl20.Text = "تلفن شرکت";
+            // 
+            // labelControl30
+            // 
+            this.labelControl30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl30.Location = new System.Drawing.Point(324, 310);
+            this.labelControl30.Name = "labelControl30";
+            this.labelControl30.Size = new System.Drawing.Size(84, 13);
+            this.labelControl30.TabIndex = 11;
+            this.labelControl30.Text = "آدرس کالیبره کننده";
+            // 
+            // labelControl22
+            // 
+            this.labelControl22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl22.Location = new System.Drawing.Point(324, 176);
+            this.labelControl22.Name = "labelControl22";
+            this.labelControl22.Size = new System.Drawing.Size(65, 13);
+            this.labelControl22.TabIndex = 11;
+            this.labelControl22.Text = "آدرس پشتیبان";
+            // 
+            // txtCalibFax
+            // 
+            this.txtCalibFax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCalibFax.Enabled = false;
+            this.txtCalibFax.Location = new System.Drawing.Point(21, 359);
+            this.txtCalibFax.Name = "txtCalibFax";
+            this.txtCalibFax.Parmida_ActivePlusMultiKeys = false;
+            this.txtCalibFax.Size = new System.Drawing.Size(297, 20);
+            this.txtCalibFax.TabIndex = 3;
+            // 
+            // txtSupplyFax
+            // 
+            this.txtSupplyFax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSupplyFax.Location = new System.Drawing.Point(21, 225);
+            this.txtSupplyFax.Name = "txtSupplyFax";
+            this.txtSupplyFax.Parmida_ActivePlusMultiKeys = false;
+            this.txtSupplyFax.Size = new System.Drawing.Size(297, 20);
+            this.txtSupplyFax.TabIndex = 3;
+            // 
+            // txtCompanyFax
+            // 
+            this.txtCompanyFax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCompanyFax.Location = new System.Drawing.Point(21, 121);
+            this.txtCompanyFax.Name = "txtCompanyFax";
+            this.txtCompanyFax.Parmida_ActivePlusMultiKeys = false;
+            this.txtCompanyFax.Size = new System.Drawing.Size(297, 20);
+            this.txtCompanyFax.TabIndex = 3;
+            // 
+            // txtCalibTel
+            // 
+            this.txtCalibTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCalibTel.Enabled = false;
+            this.txtCalibTel.Location = new System.Drawing.Point(21, 333);
+            this.txtCalibTel.Name = "txtCalibTel";
+            this.txtCalibTel.Parmida_ActivePlusMultiKeys = false;
+            this.txtCalibTel.Size = new System.Drawing.Size(297, 20);
+            this.txtCalibTel.TabIndex = 3;
+            // 
+            // txtSupplyTel
+            // 
+            this.txtSupplyTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSupplyTel.Location = new System.Drawing.Point(21, 199);
+            this.txtSupplyTel.Name = "txtSupplyTel";
+            this.txtSupplyTel.Parmida_ActivePlusMultiKeys = false;
+            this.txtSupplyTel.Size = new System.Drawing.Size(297, 20);
+            this.txtSupplyTel.TabIndex = 3;
+            // 
+            // txtCompanyTel
+            // 
+            this.txtCompanyTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCompanyTel.Location = new System.Drawing.Point(21, 95);
+            this.txtCompanyTel.Name = "txtCompanyTel";
+            this.txtCompanyTel.Parmida_ActivePlusMultiKeys = false;
+            this.txtCompanyTel.Size = new System.Drawing.Size(297, 20);
+            this.txtCompanyTel.TabIndex = 3;
+            // 
+            // txtCalibAddress
+            // 
+            this.txtCalibAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCalibAddress.Enabled = false;
+            this.txtCalibAddress.Location = new System.Drawing.Point(21, 307);
+            this.txtCalibAddress.Name = "txtCalibAddress";
+            this.txtCalibAddress.Parmida_ActivePlusMultiKeys = false;
+            this.txtCalibAddress.Size = new System.Drawing.Size(297, 20);
+            this.txtCalibAddress.TabIndex = 3;
+            // 
+            // txtSuppluAddress
+            // 
+            this.txtSuppluAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSuppluAddress.Location = new System.Drawing.Point(21, 173);
+            this.txtSuppluAddress.Name = "txtSuppluAddress";
+            this.txtSuppluAddress.Parmida_ActivePlusMultiKeys = false;
+            this.txtSuppluAddress.Size = new System.Drawing.Size(297, 20);
+            this.txtSuppluAddress.TabIndex = 3;
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl18.Location = new System.Drawing.Point(620, 332);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(34, 13);
+            this.labelControl18.TabIndex = 11;
+            this.labelControl18.Text = "وضعیت";
             // 
             // labelControl1
             // 
@@ -601,21 +757,42 @@ namespace PMWORK.PMForms
             this.labelControl1.TabIndex = 11;
             this.labelControl1.Text = "نیاز به کالیبراسیون";
             // 
-            // chkCalibration
+            // labelControl27
             // 
-            this.chkCalibration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkCalibration.Location = new System.Drawing.Point(190, 251);
-            this.chkCalibration.Name = "chkCalibration";
-            this.chkCalibration.Parmida_ActivePlusMultiKeys = false;
-            this.chkCalibration.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.chkCalibration.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.chkCalibration.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.chkCalibration.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.chkCalibration.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
-            this.chkCalibration.Properties.OffText = "ندارد";
-            this.chkCalibration.Properties.OnText = "دارد";
-            this.chkCalibration.Size = new System.Drawing.Size(128, 24);
-            this.chkCalibration.TabIndex = 3;
+            this.labelControl27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl27.Location = new System.Drawing.Point(324, 284);
+            this.labelControl27.Name = "labelControl27";
+            this.labelControl27.Size = new System.Drawing.Size(82, 13);
+            this.labelControl27.TabIndex = 11;
+            this.labelControl27.Text = "شرکت کالیبرکننده";
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl15.Location = new System.Drawing.Point(324, 150);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(71, 13);
+            this.labelControl15.TabIndex = 11;
+            this.labelControl15.Text = "شرکت پشتیبان";
+            // 
+            // txtCalibCompany
+            // 
+            this.txtCalibCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCalibCompany.Enabled = false;
+            this.txtCalibCompany.Location = new System.Drawing.Point(21, 281);
+            this.txtCalibCompany.Name = "txtCalibCompany";
+            this.txtCalibCompany.Parmida_ActivePlusMultiKeys = false;
+            this.txtCalibCompany.Size = new System.Drawing.Size(297, 20);
+            this.txtCalibCompany.TabIndex = 3;
+            // 
+            // txtSupplyName
+            // 
+            this.txtSupplyName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSupplyName.Location = new System.Drawing.Point(21, 147);
+            this.txtSupplyName.Name = "txtSupplyName";
+            this.txtSupplyName.Parmida_ActivePlusMultiKeys = false;
+            this.txtSupplyName.Size = new System.Drawing.Size(297, 20);
+            this.txtSupplyName.TabIndex = 3;
             // 
             // chkNewDevice
             // 
@@ -634,198 +811,21 @@ namespace PMWORK.PMForms
             this.chkNewDevice.Size = new System.Drawing.Size(128, 24);
             this.chkNewDevice.TabIndex = 3;
             // 
-            // labelControl18
+            // chkCalibration
             // 
-            this.labelControl18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl18.Location = new System.Drawing.Point(620, 332);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(34, 13);
-            this.labelControl18.TabIndex = 11;
-            this.labelControl18.Text = "وضعیت";
-            // 
-            // txtCompanyTel
-            // 
-            this.txtCompanyTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCompanyTel.Location = new System.Drawing.Point(21, 95);
-            this.txtCompanyTel.Name = "txtCompanyTel";
-            this.txtCompanyTel.Parmida_ActivePlusMultiKeys = false;
-            this.txtCompanyTel.Size = new System.Drawing.Size(297, 20);
-            this.txtCompanyTel.TabIndex = 3;
-            // 
-            // labelControl20
-            // 
-            this.labelControl20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl20.Location = new System.Drawing.Point(324, 98);
-            this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(55, 13);
-            this.labelControl20.TabIndex = 11;
-            this.labelControl20.Text = "تلفن شرکت";
-            // 
-            // txtCompanyFax
-            // 
-            this.txtCompanyFax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCompanyFax.Location = new System.Drawing.Point(21, 121);
-            this.txtCompanyFax.Name = "txtCompanyFax";
-            this.txtCompanyFax.Parmida_ActivePlusMultiKeys = false;
-            this.txtCompanyFax.Size = new System.Drawing.Size(297, 20);
-            this.txtCompanyFax.TabIndex = 3;
-            // 
-            // labelControl21
-            // 
-            this.labelControl21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl21.Location = new System.Drawing.Point(324, 124);
-            this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(59, 13);
-            this.labelControl21.TabIndex = 11;
-            this.labelControl21.Text = "فکس شرکت";
-            // 
-            // txtSupplyName
-            // 
-            this.txtSupplyName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSupplyName.Location = new System.Drawing.Point(21, 147);
-            this.txtSupplyName.Name = "txtSupplyName";
-            this.txtSupplyName.Parmida_ActivePlusMultiKeys = false;
-            this.txtSupplyName.Size = new System.Drawing.Size(297, 20);
-            this.txtSupplyName.TabIndex = 3;
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl15.Location = new System.Drawing.Point(324, 150);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(71, 13);
-            this.labelControl15.TabIndex = 11;
-            this.labelControl15.Text = "شرکت پشتیبان";
-            // 
-            // txtSuppluAddress
-            // 
-            this.txtSuppluAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSuppluAddress.Location = new System.Drawing.Point(21, 173);
-            this.txtSuppluAddress.Name = "txtSuppluAddress";
-            this.txtSuppluAddress.Parmida_ActivePlusMultiKeys = false;
-            this.txtSuppluAddress.Size = new System.Drawing.Size(297, 20);
-            this.txtSuppluAddress.TabIndex = 3;
-            // 
-            // txtSupplyTel
-            // 
-            this.txtSupplyTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSupplyTel.Location = new System.Drawing.Point(21, 199);
-            this.txtSupplyTel.Name = "txtSupplyTel";
-            this.txtSupplyTel.Parmida_ActivePlusMultiKeys = false;
-            this.txtSupplyTel.Size = new System.Drawing.Size(297, 20);
-            this.txtSupplyTel.TabIndex = 3;
-            // 
-            // txtSupplyFax
-            // 
-            this.txtSupplyFax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSupplyFax.Location = new System.Drawing.Point(21, 225);
-            this.txtSupplyFax.Name = "txtSupplyFax";
-            this.txtSupplyFax.Parmida_ActivePlusMultiKeys = false;
-            this.txtSupplyFax.Size = new System.Drawing.Size(297, 20);
-            this.txtSupplyFax.TabIndex = 3;
-            // 
-            // labelControl22
-            // 
-            this.labelControl22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl22.Location = new System.Drawing.Point(324, 176);
-            this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(65, 13);
-            this.labelControl22.TabIndex = 11;
-            this.labelControl22.Text = "آدرس پشتیبان";
-            // 
-            // labelControl24
-            // 
-            this.labelControl24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl24.Location = new System.Drawing.Point(324, 202);
-            this.labelControl24.Name = "labelControl24";
-            this.labelControl24.Size = new System.Drawing.Size(61, 13);
-            this.labelControl24.TabIndex = 11;
-            this.labelControl24.Text = "تلفن پشتیبان";
-            // 
-            // labelControl25
-            // 
-            this.labelControl25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl25.Location = new System.Drawing.Point(324, 228);
-            this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(65, 13);
-            this.labelControl25.TabIndex = 11;
-            this.labelControl25.Text = "فکس پشتیبان";
-            // 
-            // txtCalibCompany
-            // 
-            this.txtCalibCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCalibCompany.Enabled = false;
-            this.txtCalibCompany.Location = new System.Drawing.Point(21, 281);
-            this.txtCalibCompany.Name = "txtCalibCompany";
-            this.txtCalibCompany.Parmida_ActivePlusMultiKeys = false;
-            this.txtCalibCompany.Size = new System.Drawing.Size(297, 20);
-            this.txtCalibCompany.TabIndex = 3;
-            // 
-            // labelControl27
-            // 
-            this.labelControl27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl27.Location = new System.Drawing.Point(324, 284);
-            this.labelControl27.Name = "labelControl27";
-            this.labelControl27.Size = new System.Drawing.Size(82, 13);
-            this.labelControl27.TabIndex = 11;
-            this.labelControl27.Text = "شرکت کالیبرکننده";
-            // 
-            // txtCalibAddress
-            // 
-            this.txtCalibAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCalibAddress.Enabled = false;
-            this.txtCalibAddress.Location = new System.Drawing.Point(21, 307);
-            this.txtCalibAddress.Name = "txtCalibAddress";
-            this.txtCalibAddress.Parmida_ActivePlusMultiKeys = false;
-            this.txtCalibAddress.Size = new System.Drawing.Size(297, 20);
-            this.txtCalibAddress.TabIndex = 3;
-            // 
-            // txtCalibTel
-            // 
-            this.txtCalibTel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCalibTel.Enabled = false;
-            this.txtCalibTel.Location = new System.Drawing.Point(21, 333);
-            this.txtCalibTel.Name = "txtCalibTel";
-            this.txtCalibTel.Parmida_ActivePlusMultiKeys = false;
-            this.txtCalibTel.Size = new System.Drawing.Size(297, 20);
-            this.txtCalibTel.TabIndex = 3;
-            // 
-            // txtCalibFax
-            // 
-            this.txtCalibFax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCalibFax.Enabled = false;
-            this.txtCalibFax.Location = new System.Drawing.Point(21, 359);
-            this.txtCalibFax.Name = "txtCalibFax";
-            this.txtCalibFax.Parmida_ActivePlusMultiKeys = false;
-            this.txtCalibFax.Size = new System.Drawing.Size(297, 20);
-            this.txtCalibFax.TabIndex = 3;
-            // 
-            // labelControl30
-            // 
-            this.labelControl30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl30.Location = new System.Drawing.Point(324, 310);
-            this.labelControl30.Name = "labelControl30";
-            this.labelControl30.Size = new System.Drawing.Size(84, 13);
-            this.labelControl30.TabIndex = 11;
-            this.labelControl30.Text = "آدرس کالیبره کننده";
-            // 
-            // labelControl31
-            // 
-            this.labelControl31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl31.Location = new System.Drawing.Point(324, 336);
-            this.labelControl31.Name = "labelControl31";
-            this.labelControl31.Size = new System.Drawing.Size(80, 13);
-            this.labelControl31.TabIndex = 11;
-            this.labelControl31.Text = "تلفن کالیبره کننده";
-            // 
-            // labelControl32
-            // 
-            this.labelControl32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl32.Location = new System.Drawing.Point(324, 362);
-            this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(84, 13);
-            this.labelControl32.TabIndex = 11;
-            this.labelControl32.Text = "فکس کالیبره کننده";
+            this.chkCalibration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkCalibration.Location = new System.Drawing.Point(190, 251);
+            this.chkCalibration.Name = "chkCalibration";
+            this.chkCalibration.Parmida_ActivePlusMultiKeys = false;
+            this.chkCalibration.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.chkCalibration.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.chkCalibration.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.chkCalibration.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.chkCalibration.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            this.chkCalibration.Properties.OffText = "ندارد";
+            this.chkCalibration.Properties.OnText = "دارد";
+            this.chkCalibration.Size = new System.Drawing.Size(128, 24);
+            this.chkCalibration.TabIndex = 3;
             // 
             // labelControl17
             // 
@@ -879,18 +879,18 @@ namespace PMWORK.PMForms
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkCalibration.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkNewDevice.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyTel.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyFax.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSupplyName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSuppluAddress.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSupplyTel.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSupplyFax.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCalibCompany.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCalibAddress.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCalibTel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCalibFax.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSupplyFax.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyFax.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCalibTel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSupplyTel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCompanyTel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCalibAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSuppluAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCalibCompany.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSupplyName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkNewDevice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkCalibration.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
