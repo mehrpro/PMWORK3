@@ -64,6 +64,7 @@ namespace PMWORK.Admin
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cbxDatabase = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.btnReadConnectionString = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxServer.Properties)).BeginInit();
@@ -78,40 +79,45 @@ namespace PMWORK.Admin
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(63, 57);
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Location = new System.Drawing.Point(311, 51);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(32, 13);
+            this.labelControl1.Size = new System.Drawing.Size(25, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Server";
+            this.labelControl1.Text = "سرور";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(49, 191);
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Location = new System.Drawing.Point(311, 185);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(46, 13);
+            this.labelControl2.Size = new System.Drawing.Size(65, 13);
             this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Database";
+            this.labelControl2.Text = "بانک اطلاعاتی";
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(73, 110);
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Location = new System.Drawing.Point(311, 104);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(22, 13);
+            this.labelControl3.Size = new System.Drawing.Size(46, 13);
             this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "User";
+            this.labelControl3.Text = "نام کاربری";
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(49, 136);
+            this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl4.Location = new System.Drawing.Point(311, 130);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(46, 13);
+            this.labelControl4.Size = new System.Drawing.Size(35, 13);
             this.labelControl4.TabIndex = 6;
-            this.labelControl4.Text = "Password";
+            this.labelControl4.Text = "رمزعبور";
             // 
             // txtUser
             // 
+            this.txtUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUser.EditValue = "sa";
-            this.txtUser.Location = new System.Drawing.Point(101, 107);
+            this.txtUser.Location = new System.Drawing.Point(34, 101);
             this.txtUser.Name = "txtUser";
             this.txtUser.Parmida_ActivePlusMultiKeys = false;
             this.txtUser.Size = new System.Drawing.Size(271, 20);
@@ -122,7 +128,8 @@ namespace PMWORK.Admin
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(101, 133);
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPassword.Location = new System.Drawing.Point(34, 127);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Parmida_ActivePlusMultiKeys = false;
             this.txtPassword.Properties.PasswordChar = '*';
@@ -131,27 +138,30 @@ namespace PMWORK.Admin
             // 
             // btnConnecting
             // 
-            this.btnConnecting.Location = new System.Drawing.Point(298, 159);
+            this.btnConnecting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConnecting.Location = new System.Drawing.Point(34, 153);
             this.btnConnecting.Name = "btnConnecting";
             this.btnConnecting.Size = new System.Drawing.Size(74, 23);
             this.btnConnecting.TabIndex = 8;
-            this.btnConnecting.Text = "Connect";
+            this.btnConnecting.Text = "اتصال";
             this.btnConnecting.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // btnSave
             // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(298, 214);
+            this.btnSave.Location = new System.Drawing.Point(34, 208);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 9;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "ذخیره";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cbxServer
             // 
+            this.cbxServer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxServer.EditValue = "02MOHAMMADI-F\\TEW_SQLEXPRESS";
-            this.cbxServer.Location = new System.Drawing.Point(101, 54);
+            this.cbxServer.Location = new System.Drawing.Point(62, 48);
             this.cbxServer.Name = "cbxServer";
             this.cbxServer.Parmida_ActivePlusMultiKeys = false;
             this.cbxServer.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -175,8 +185,9 @@ namespace PMWORK.Admin
             // 
             // cbxAuthentication
             // 
+            this.cbxAuthentication.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxAuthentication.EditValue = "SQL Server Authentication";
-            this.cbxAuthentication.Location = new System.Drawing.Point(101, 81);
+            this.cbxAuthentication.Location = new System.Drawing.Point(34, 75);
             this.cbxAuthentication.Name = "cbxAuthentication";
             this.cbxAuthentication.Parmida_ActivePlusMultiKeys = false;
             this.cbxAuthentication.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -198,21 +209,23 @@ namespace PMWORK.Admin
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(25, 84);
+            this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl5.Location = new System.Drawing.Point(311, 78);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(70, 13);
+            this.labelControl5.Size = new System.Drawing.Size(58, 13);
             this.labelControl5.TabIndex = 0;
-            this.labelControl5.Text = "Authentication";
+            this.labelControl5.Text = "اعتبارسنجی";
             // 
             // labelControl6
             // 
+            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(101, 25);
+            this.labelControl6.Location = new System.Drawing.Point(122, 19);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(177, 23);
+            this.labelControl6.Size = new System.Drawing.Size(183, 23);
             this.labelControl6.TabIndex = 0;
-            this.labelControl6.Text = "Database Connection";
+            this.labelControl6.Text = "اتصال به بانک اطلاعاتی";
             // 
             // barMain
             // 
@@ -232,7 +245,8 @@ namespace PMWORK.Admin
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(399, 24);
+            this.menuStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuStrip.Size = new System.Drawing.Size(387, 24);
             this.menuStrip.TabIndex = 14;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -241,44 +255,45 @@ namespace PMWORK.Admin
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newDatabaseToolStripMenuItem,
             this.backupToolStripMenuItem,
-            this.restoreToolStripMenuItem});
+            this.restoreToolStripMenuItem,
+            this.btnReadConnectionString});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.fileToolStripMenuItem.Text = "امکانات";
             // 
             // newDatabaseToolStripMenuItem
             // 
             this.newDatabaseToolStripMenuItem.Name = "newDatabaseToolStripMenuItem";
-            this.newDatabaseToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.newDatabaseToolStripMenuItem.Text = "New Database";
+            this.newDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newDatabaseToolStripMenuItem.Text = "بانک اطلاعاتی جدید";
             this.newDatabaseToolStripMenuItem.Click += new System.EventHandler(this.newDatabaseToolStripMenuItem_Click);
             // 
             // backupToolStripMenuItem
             // 
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.backupToolStripMenuItem.Text = "Backup";
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backupToolStripMenuItem.Text = "پشتیبان گیری";
             this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
             // 
             // restoreToolStripMenuItem
             // 
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.restoreToolStripMenuItem.Text = "Restore";
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restoreToolStripMenuItem.Text = "بازیابی اطلاعات";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.helpToolStripMenuItem.Text = "راهنما";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Text = "درباره ما";
             // 
             // progressBar
             // 
@@ -289,13 +304,14 @@ namespace PMWORK.Admin
             this.progressBar.Parmida_ActivePlusMultiKeys = false;
             this.progressBar.Properties.Appearance.BackColor = System.Drawing.Color.Black;
             this.progressBar.Properties.Appearance.ForeColor = System.Drawing.Color.Transparent;
-            this.progressBar.Size = new System.Drawing.Size(395, 5);
+            this.progressBar.Size = new System.Drawing.Size(383, 5);
             this.progressBar.TabIndex = 17;
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.ImageOptions.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(347, 52);
+            this.btnRefresh.Location = new System.Drawing.Point(31, 46);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(25, 23);
             this.btnRefresh.TabIndex = 8;
@@ -321,14 +337,15 @@ namespace PMWORK.Admin
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 24);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(399, 249);
+            this.panelControl1.Size = new System.Drawing.Size(387, 249);
             this.panelControl1.TabIndex = 18;
             // 
             // cbxDatabase
             // 
+            this.cbxDatabase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxDatabase.EditValue = "PMWORKDB";
             this.cbxDatabase.Enabled = false;
-            this.cbxDatabase.Location = new System.Drawing.Point(101, 188);
+            this.cbxDatabase.Location = new System.Drawing.Point(34, 182);
             this.cbxDatabase.Name = "cbxDatabase";
             this.cbxDatabase.Parmida_ActivePlusMultiKeys = false;
             this.cbxDatabase.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -341,18 +358,26 @@ namespace PMWORK.Admin
             this.cbxDatabase.Size = new System.Drawing.Size(271, 20);
             this.cbxDatabase.TabIndex = 3;
             // 
+            // btnReadConnectionString
+            // 
+            this.btnReadConnectionString.Name = "btnReadConnectionString";
+            this.btnReadConnectionString.Size = new System.Drawing.Size(180, 22);
+            this.btnReadConnectionString.Text = "ارتباط فعلی";
+            this.btnReadConnectionString.Click += new System.EventHandler(this.btnReadConnectionString_Click);
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 273);
+            this.ClientSize = new System.Drawing.Size(387, 273);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "SettingForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Connection ";
+            this.Text = "تنظیمات ارتباط";
             this.Load += new System.EventHandler(this.SettingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
@@ -398,5 +423,6 @@ namespace PMWORK.Admin
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.ComboBoxEdit cbxDatabase;
+        private System.Windows.Forms.ToolStripMenuItem btnReadConnectionString;
     }
 }

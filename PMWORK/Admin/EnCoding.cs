@@ -21,6 +21,15 @@ namespace PMWORK.Admin
             if (connectionStringSection != null && connectionStringSection.SectionInformation.IsProtected)
                 connectionStringSection.SectionInformation.UnprotectSection();
             config.Save();
+
+
+        }
+
+        public static string ConnString()
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["Conn"].ConnectionString;
+            return connectionString;
+
         }
 
     }

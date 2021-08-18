@@ -231,7 +231,7 @@ namespace PMWORK.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to insert into ApplicationUsers (CompanyID_FK ,Editor,Enabled,FullName,LimetedCompany,UserName,UserPassword) 
+        ///   Looks up a localized string similar to use 95 insert into ApplicationUsers (CompanyID_FK ,Editor,Enabled,FullName,LimetedCompany,UserName,UserPassword) 
         ///Values (1,&apos;Admin&apos;,1,&apos;administrator&apos;,0,&apos;admin&apos;,&apos;admin&apos;).
         /// </summary>
         public static string ScriptApplicationUser {
@@ -241,7 +241,7 @@ namespace PMWORK.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to insert into Companies (CompnayIndex,CompanyTitle,[Description]) values(1,&apos;شرکت پیش فرض&apos;,&apos;شرکت پیش فرض&apos;).
+        ///   Looks up a localized string similar to use 95 insert into Companies (CompnayIndex,CompanyTitle,[Description]) values(1,&apos;شرکت پیش فرض&apos;,&apos;شرکت پیش فرض&apos;).
         /// </summary>
         public static string ScriptCompany {
             get {
@@ -250,7 +250,7 @@ namespace PMWORK.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to insert into UnitOfMeasurements (Unit) Values (&apos;عدد&apos;) 
+        ///   Looks up a localized string similar to use 95 insert into UnitOfMeasurements (Unit) Values (&apos;عدد&apos;) 
         ///insert into UnitOfMeasurements (Unit) Values (&apos;دستگاه&apos;)
         ///insert into UnitOfMeasurements (Unit) Values (&apos;کیلوگرم&apos;)
         ///insert into UnitOfMeasurements (Unit) Values (&apos;گرم&apos;)
@@ -259,7 +259,7 @@ namespace PMWORK.Properties {
         ///insert into UnitOfMeasurements (Unit) Values (&apos;میلیمتر&apos;)
         ///insert into UnitOfMeasurements (Unit) Values (&apos;برگ&apos;)
         ///insert into UnitOfMeasurements (Unit) Values (&apos;ورق&apos;)
-        ///insert in [rest of string was truncated]&quot;;.
+        ///in [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ScriptUnitOfMa {
             get {

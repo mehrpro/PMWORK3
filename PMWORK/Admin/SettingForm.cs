@@ -17,10 +17,8 @@ namespace PMWORK.Admin
     {
 
         private delegate void DelegateMaster();
-
         private string connectionString;
         private List<string> _databaseList;
-
         private ISetDatabase _setDatabase;
 
         public SettingForm(ISetDatabase setDatabase)
@@ -42,7 +40,13 @@ namespace PMWORK.Admin
 
         private void SettingForm_Load(object sender, EventArgs e)
         {
+            var str = EnCoding.ConnString();
+            if (!string.IsNullOrWhiteSpace(str))
+            {
+                cbxServer.Text = str.Split(';')[0].Split('=')[1];
+                cbxDatabase.Text = str.Split(';')[1].Split('=')[1];
 
+            }
 
 
         }
@@ -90,7 +94,7 @@ namespace PMWORK.Admin
                     }
                     catch (Exception exception)
                     {
-                        XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show(exception.Message, "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                 }
@@ -137,7 +141,7 @@ namespace PMWORK.Admin
                     }
                     catch (Exception exception)
                     {
-                        XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show(exception.Message, "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                 }
@@ -176,7 +180,7 @@ namespace PMWORK.Admin
                 if (dx.Validate(cbxServer) && dx.Validate(cbxDatabase) && dx.Validate(cbxAuthentication))
                 {
                     connectionString =
-                        $"Data Source= {cbxServer.Text} ; Initial Catalog = {cbxDatabase.Text} ; Integrated Security = SSPI;";
+                        $"Data Source = {cbxServer.Text} ; Initial Catalog = {cbxDatabase.Text} ; Integrated Security = SSPI;";
                     try
                     {
                         SqlHelper helper = new SqlHelper(connectionString);
@@ -184,13 +188,14 @@ namespace PMWORK.Admin
                         {
                             AppSetting appSetting = new AppSetting();
                             appSetting.SaveConnectionString("Conn", connectionString);
-                            PublicClass.SuccessMessage(Text);
-
+                            XtraMessageBox.Show("اطلاعات با موفقیت ذخیره شد", "بانک اطلاعاتی", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            PublicClass.CloseForce = true;
+                            Close();
                         }
                     }
                     catch (Exception exception)
                     {
-                        XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show(exception.Message, "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -210,12 +215,14 @@ namespace PMWORK.Admin
                         {
                             AppSetting appSetting = new AppSetting();
                             appSetting.SaveConnectionString("Conn", connectionString);
-                            PublicClass.SuccessMessage(Text);
+                            XtraMessageBox.Show("اطلاعات با موفقیت ذخیره شد", "بانک اطلاعاتی", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            PublicClass.CloseForce = true;
+                            Close();
                         }
                     }
                     catch (Exception exception)
                     {
-                        XtraMessageBox.Show(exception.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show(exception.Message, "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -234,8 +241,9 @@ namespace PMWORK.Admin
                 UserID = txtUser.Text,
                 Password = txtPassword.Text,
                 WindowsAuthentication = cbxAuthentication.Text == @"Windows Authentication",
+                Server_Instance = cbxServer.Text.Trim(),
                 ServerName = cbxServer.Text.Split('\\')[0],
-                InstanceName = cbxServer.Text.Split('\\').Length > 1 ? cbxServer.Text.Split('\\')[1] : string.Empty,
+                InstanceName = cbxServer.Text.Split('\\').Length > 1 ? cbxServer.Text.Split('\\')[1] : null,
             };
 
             var result = _setDatabase.SqlServerConnect(srvconn);
@@ -278,12 +286,12 @@ namespace PMWORK.Admin
                     var resultFinal = delegateBackup.EndInvoke(asyncRes);
                     if (resultFinal)
                     {
-                        XtraMessageBox.Show("Full Backup Complate.");
+                        XtraMessageBox.Show("فایل پشتیبان با موفقیت ایجاد شد", "پشتیبان گیری", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                     else
                     {
-                        XtraMessageBox.Show("Error", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show("خطا در پشتیبان گیری", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
                 });
@@ -367,6 +375,14 @@ namespace PMWORK.Admin
             //});
             var result = cbxServerDelegate.BeginInvoke(null, null);
 
+        }
+
+        private void btnReadConnectionString_Click(object sender, EventArgs e)
+        {
+            var appsettimg = new AppSetting();
+            var str = appsettimg.GetConnectionString("Conn");
+            MessageBox.Show(EnCoding.ConnString().Split(';')[0] + "\n"
+                                                                   + EnCoding.ConnString().Split(';')[1], "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -10,8 +10,9 @@ namespace PMWORK
 {
     public static class PublicClass
     {
+        public static bool CloseForce { get; set; }
         public static int UserID { get; set; }
-        public static bool  LimitedCompany { get; set; }
+        public static bool LimitedCompany { get; set; }
         public static string Editor { get; set; }
         public static int CompanyID { get; set; }
 
@@ -44,7 +45,7 @@ namespace PMWORK
             return $"{pc.GetYear(today)}/{pc.GetMonth(today)}/{pc.GetDayOfMonth(today)}";
         }
 
-        
+
 
     }
 }

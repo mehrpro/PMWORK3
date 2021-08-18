@@ -30,25 +30,36 @@ namespace PMWORK
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (dx.Validate())
+            if (PublicClass.CloseForce)
             {
-                var result = _codingRepository.LoginUser(txtUserName.Text.Trim(), txtPassword.Text.Trim(), false);
-                if (result)
-                {
-                    DialogResult = DialogResult.OK;
-                    Close();
-                }
-                else
-                {
-                    XtraMessageBox.Show("نام کاربری یا گذرواژه اشتباه است ", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                XtraMessageBox.Show("تنظیمات اتصال تغیر کرده است لطفا برنامه را بسته و مجدداً برای ورود اقدام کنید",
+                    "تنظیمات سیستم", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult = DialogResult.Cancel;
+                Close();
             }
             else
             {
-                PublicClass.ErrorValidationMessage(Text);
+
+                if (dx.Validate())
+                {
+                    var result = _codingRepository.LoginUser(txtUserName.Text.Trim(), txtPassword.Text.Trim(), false);
+                    if (result)
+                    {
+                        DialogResult = DialogResult.OK;
+                        Close();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("نام کاربری یا گذرواژه اشتباه است ", Text, MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    PublicClass.ErrorValidationMessage(Text);
+                }
+
             }
-
-
 
         }
 
@@ -65,10 +76,10 @@ namespace PMWORK
             //    var result = _codingRepository.LoginUser(txtUserName.Text.Trim(), txtPassword.Text.Trim(), true);
             //    if (result)
             //    {
-                    this.Hide();                    
-                    var frm = _container.GetInstance<SettingForm>();
-                    frm.ShowDialog();
-                    this.Show();
+            this.Hide();
+            var frm = _container.GetInstance<SettingForm>();
+            frm.ShowDialog();
+            this.Show();
             //    }
             //    else
             //    {

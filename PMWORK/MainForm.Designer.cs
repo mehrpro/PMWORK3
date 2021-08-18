@@ -66,15 +66,12 @@ namespace PMWORK
             this.ribPageInfrasturcture = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PGMachinery = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PGCoding = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribPageMaintanace = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PGRequestReapir = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribPageReports = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PGReportRepair = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribPageManage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PGUsers = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.PGDataBase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -421,8 +418,7 @@ namespace PMWORK
             this.ribPageInfrasturcture.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.Yes;
             this.ribPageInfrasturcture.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.PGMachinery,
-            this.PGCoding,
-            this.ribbonPageGroup2});
+            this.PGCoding});
             this.ribPageInfrasturcture.Name = "ribPageInfrasturcture";
             this.ribPageInfrasturcture.Text = "مدیریت دارایی سازمانی";
             // 
@@ -447,12 +443,6 @@ namespace PMWORK
             this.PGCoding.ShowCaptionButton = false;
             this.PGCoding.Text = "کدینگ موجودیت";
             // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "لیست ماشین آلات";
-            // 
             // ribPageMaintanace
             // 
             this.ribPageMaintanace.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -474,8 +464,7 @@ namespace PMWORK
             // ribPageReports
             // 
             this.ribPageReports.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.PGReportRepair,
-            this.ribbonPageGroup1});
+            this.PGReportRepair});
             this.ribPageReports.Name = "ribPageReports";
             this.ribPageReports.Text = "گزارشات";
             // 
@@ -488,16 +477,10 @@ namespace PMWORK
             this.PGReportRepair.ShowCaptionButton = false;
             this.PGReportRepair.Text = "گزارش تعمیر";
             // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "لیست ماشین آلات";
-            // 
             // ribPageManage
             // 
             this.ribPageManage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.PGUsers,
-            this.PGDataBase});
+            this.PGUsers});
             this.ribPageManage.Name = "ribPageManage";
             this.ribPageManage.Text = "مدیر نرم افزار";
             // 
@@ -508,15 +491,6 @@ namespace PMWORK
             this.PGUsers.Name = "PGUsers";
             this.PGUsers.ShowCaptionButton = false;
             this.PGUsers.Text = "مدیریت کاربران";
-            // 
-            // PGDataBase
-            // 
-            this.PGDataBase.ItemLinks.Add(this.btnNewDataBase);
-            this.PGDataBase.ItemLinks.Add(this.btnBackupDB);
-            this.PGDataBase.ItemLinks.Add(this.btnRestoreDB);
-            this.PGDataBase.Name = "PGDataBase";
-            this.PGDataBase.ShowCaptionButton = false;
-            this.PGDataBase.Text = "بانک اطلاعاتی";
             // 
             // repositoryItemDateEdit1
             // 
@@ -618,12 +592,9 @@ namespace PMWORK
         private DevExpress.XtraBars.BarButtonItem btnNewDataBase;
         private DevExpress.XtraBars.BarButtonItem btnBackupDB;
         private DevExpress.XtraBars.BarButtonItem btnRestoreDB;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGDataBase;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem btnServicePeriode;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnRepairOut;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         }
 }
