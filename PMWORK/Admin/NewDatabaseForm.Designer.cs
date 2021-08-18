@@ -153,6 +153,7 @@ namespace PMWORK.Admin
             this.txtServer.Name = "txtServer";
             this.txtServer.Parmida_ActivePlusMultiKeys = false;
             this.txtServer.Properties.ReadOnly = true;
+            this.txtServer.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtServer.Size = new System.Drawing.Size(235, 20);
             this.txtServer.TabIndex = 11;
             // 
@@ -164,6 +165,7 @@ namespace PMWORK.Admin
             this.txtAuthentication.Name = "txtAuthentication";
             this.txtAuthentication.Parmida_ActivePlusMultiKeys = false;
             this.txtAuthentication.Properties.ReadOnly = true;
+            this.txtAuthentication.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtAuthentication.Size = new System.Drawing.Size(235, 20);
             this.txtAuthentication.TabIndex = 11;
             // 
@@ -184,6 +186,7 @@ namespace PMWORK.Admin
             this.txtUser.Name = "txtUser";
             this.txtUser.Parmida_ActivePlusMultiKeys = false;
             this.txtUser.Properties.ReadOnly = true;
+            this.txtUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtUser.Size = new System.Drawing.Size(235, 20);
             this.txtUser.TabIndex = 13;
             // 
@@ -199,6 +202,7 @@ namespace PMWORK.Admin
             this.cbxDataBase.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.cbxDataBase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxDataBase.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cbxDataBase.Size = new System.Drawing.Size(235, 20);
             this.cbxDataBase.TabIndex = 1;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -211,7 +215,9 @@ namespace PMWORK.Admin
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 196);
             this.Controls.Add(this.panelControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NewDatabaseForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

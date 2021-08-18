@@ -29,7 +29,12 @@ namespace PMWORK.MachineryForms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestRepairForm));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dateRegistered = new DevExpress.XtraEditors.DateEdit();
             this.radioGroupEMPM = new DevExpress.XtraEditors.RadioGroup();
@@ -53,6 +58,7 @@ namespace PMWORK.MachineryForms
             this.txtRequest = new DevExpress.XtraEditors.MemoEdit();
             this.txtRequestTitle = new DevExpress.XtraEditors.TextEdit();
             this.txtMachinery = new DevExpress.XtraEditors.TextEdit();
+            this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateRegistered.Properties.CalendarTimeProperties)).BeginInit();
@@ -67,6 +73,7 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.txtRequest.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequestTitle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMachinery.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -162,6 +169,9 @@ namespace PMWORK.MachineryForms
             this.cbxApplicant.Properties.PopupView = this.gridView1;
             this.cbxApplicant.Size = new System.Drawing.Size(298, 20);
             this.cbxApplicant.TabIndex = 5;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxApplicant, conditionValidationRule1);
             this.cbxApplicant.EditValueChanged += new System.EventHandler(this.cbxApplicant_EditValueChanged);
             // 
             // gridView1
@@ -255,6 +265,9 @@ namespace PMWORK.MachineryForms
             this.cbxCompany.Properties.PopupView = this.gridView2;
             this.cbxCompany.Size = new System.Drawing.Size(298, 20);
             this.cbxCompany.TabIndex = 3;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxCompany, conditionValidationRule2);
             this.cbxCompany.EditValueChanged += new System.EventHandler(this.cbxCompany_EditValueChanged);
             // 
             // gridView2
@@ -329,6 +342,9 @@ namespace PMWORK.MachineryForms
             this.cbxMachinery.Properties.PopupView = this.searchLookUpEdit1View;
             this.cbxMachinery.Size = new System.Drawing.Size(111, 20);
             this.cbxMachinery.TabIndex = 7;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxMachinery, conditionValidationRule3);
             this.cbxMachinery.EditValueChanged += new System.EventHandler(this.cbxMachinery_EditValueChanged_1);
             // 
             // searchLookUpEdit1View
@@ -468,6 +484,9 @@ namespace PMWORK.MachineryForms
             this.txtRequest.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtRequest.Size = new System.Drawing.Size(298, 88);
             this.txtRequest.TabIndex = 12;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtRequest, conditionValidationRule4);
             // 
             // txtRequestTitle
             // 
@@ -531,6 +550,7 @@ namespace PMWORK.MachineryForms
             ((System.ComponentModel.ISupportInitialize)(this.txtRequest.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequestTitle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMachinery.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -560,5 +580,6 @@ namespace PMWORK.MachineryForms
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraGrid.Columns.GridColumn ApplicantTitle;
         private DevExpress.XtraGrid.Columns.GridColumn Description;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dx;
     }
 }

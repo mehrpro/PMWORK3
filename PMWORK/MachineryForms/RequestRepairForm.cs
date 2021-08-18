@@ -68,37 +68,45 @@ namespace PMWORK.MachineryForms
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (btnSave.Text == "ذخیره")
+            if (dx.Validate())
             {
-                var select = _request.FindRequestRepairById(_requestRepairEdit.ID);
-                select.MachineryID_FK = Convert.ToInt32(cbxMachinery.EditValue);
-                select.CompanyID_FK = Convert.ToInt32(cbxCompany.EditValue);
-                select.ApplicantID_FK = Convert.ToInt32(cbxApplicant.EditValue);
-                select.EM = Convert.ToBoolean(radioGroupEMPM.EditValue);
-                select.RequestTitle = txtRequest.Text.Trim();
-                var result = _request.UpdateRequestRepair(select);
-                if (!result)
-                    PublicClass.ErrorSave(Text);
+                if (btnSave.Text == "ذخیره")
+                {
+                    var select = _request.FindRequestRepairById(_requestRepairEdit.ID);
+                    select.MachineryID_FK = Convert.ToInt32(cbxMachinery.EditValue);
+                    select.CompanyID_FK = Convert.ToInt32(cbxCompany.EditValue);
+                    select.ApplicantID_FK = Convert.ToInt32(cbxApplicant.EditValue);
+                    select.EM = Convert.ToBoolean(radioGroupEMPM.EditValue);
+                    select.RequestTitle = txtRequest.Text.Trim();
+                    var result = _request.UpdateRequestRepair(select);
+                    if (!result)
+                        PublicClass.ErrorSave(Text);
+                    else
+                        Close();
+                }
                 else
-                    Close();
+                {
+                    var model = new RequestRepair();
+                    model.IsActive = true;
+                    model.UserID_FK = PublicClass.UserID;
+                    model.RequestDataTime = DateTime.Now;
+                    model.MachineryID_FK = Convert.ToInt32(cbxMachinery.EditValue);
+                    model.CompanyID_FK = Convert.ToInt32(cbxCompany.EditValue);
+                    model.ApplicantID_FK = Convert.ToInt32(cbxApplicant.EditValue);
+                    model.PublicTypeID_FK = _typeofRequest;
+                    model.EM = Convert.ToBoolean(radioGroupEMPM.EditValue);
+                    model.RequestTitle = txtRequest.Text.Trim();
+                    var result = _request.AddNewRequestRepair(model);
+                    if (!result)
+                        PublicClass.ErrorSave(Text);
+                    else
+                        Close();
+                }
             }
             else
             {
-                var model = new RequestRepair();
-                model.IsActive = true;
-                model.UserID_FK = PublicClass.UserID;
-                model.RequestDataTime = DateTime.Now;
-                model.MachineryID_FK = Convert.ToInt32(cbxMachinery.EditValue);
-                model.CompanyID_FK = Convert.ToInt32(cbxCompany.EditValue);
-                model.ApplicantID_FK = Convert.ToInt32(cbxApplicant.EditValue);
-                model.PublicTypeID_FK = _typeofRequest;
-                model.EM = Convert.ToBoolean(radioGroupEMPM.EditValue);
-                model.RequestTitle = txtRequest.Text.Trim();
-                var result = _request.AddNewRequestRepair(model);
-                if (!result)
-                    PublicClass.ErrorSave(Text);
-                else
-                    Close();
+                PublicClass.ErrorValidationMessage(Text);
+
             }
 
         }

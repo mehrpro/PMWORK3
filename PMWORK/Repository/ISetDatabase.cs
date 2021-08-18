@@ -61,7 +61,7 @@ namespace PMWORK.Repository
             var result = new List<string>();
             if (model.WindowsAuthentication)
             {
-                var srvConn = new ServerConnection(model.ServerName);
+                var srvConn = new ServerConnection(model.Server_Instance);
                 srvConn.LoginSecure = true;
                 var srv = new Server(srvConn);
                 foreach (Database database in srv.Databases)
@@ -70,8 +70,9 @@ namespace PMWORK.Repository
             }
             else
             {
-                var srvConn = new ServerConnection(model.ServerName);
+                var srvConn = new ServerConnection(model.Server_Instance);
                 srvConn.LoginSecure = false;
+
                 var srv = new Server(srvConn);
                 srv.ConnectionContext.Login = model.UserID;
                 srv.ConnectionContext.Password = model.Password;
@@ -86,26 +87,16 @@ namespace PMWORK.Repository
 
         public bool SqlServerConnect(ConnectionStrViewModel model)
         {
-            try
+            var servConn = new ServerConnection(model.Server_Instance);
+            servConn.ServerInstance = model.Server_Instance;
+            servConn.LoginSecure = model.WindowsAuthentication;
+            if (!model.WindowsAuthentication)
             {
-                var servConn = new ServerConnection(model.Server_Instance);
-                servConn.ServerInstance = model.Server_Instance;
-                servConn.LoginSecure = model.WindowsAuthentication;
-                if (!model.WindowsAuthentication)
-                {
-                    servConn.Login = model.UserID;
-                    servConn.Password = model.Password;
-                }
-        
-                servConn.Connect();
-                return servConn.IsOpen;
+                servConn.Login = model.UserID;
+                servConn.Password = model.Password;
             }
-            catch
-            {
-                return false;
-
-            }
-
+            servConn.Connect();
+            return servConn.IsOpen;
         }
 
         public bool SaveAppSetting(ConnectionStrViewModel model)

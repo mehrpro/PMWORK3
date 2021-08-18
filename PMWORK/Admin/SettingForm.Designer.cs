@@ -31,14 +31,16 @@ namespace PMWORK.Admin
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -52,29 +54,29 @@ namespace PMWORK.Admin
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.cbxDatabase = new DevExpress.XtraEditors.ComboBoxEdit();
             this.barMain = new DevExpress.XtraBars.Bar();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnReadConnectionString = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.progressBar = new DevExpress.XtraEditors.MarqueeProgressBarControl();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.cbxDatabase = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.btnReadConnectionString = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxServer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxAuthentication.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxDatabase.Properties)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxDatabase.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -120,6 +122,7 @@ namespace PMWORK.Admin
             this.txtUser.Location = new System.Drawing.Point(34, 101);
             this.txtUser.Name = "txtUser";
             this.txtUser.Parmida_ActivePlusMultiKeys = false;
+            this.txtUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtUser.Size = new System.Drawing.Size(271, 20);
             this.txtUser.TabIndex = 5;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -133,8 +136,12 @@ namespace PMWORK.Admin
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Parmida_ActivePlusMultiKeys = false;
             this.txtPassword.Properties.PasswordChar = '*';
+            this.txtPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPassword.Size = new System.Drawing.Size(271, 20);
             this.txtPassword.TabIndex = 7;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtPassword, conditionValidationRule2);
             // 
             // btnConnecting
             // 
@@ -168,20 +175,18 @@ namespace PMWORK.Admin
             this.cbxServer.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.cbxServer.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.cbxServer.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             serializableAppearanceObject1.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             serializableAppearanceObject2.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             serializableAppearanceObject3.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             serializableAppearanceObject4.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.cbxServer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cbxServer.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cbxServer.Size = new System.Drawing.Size(243, 20);
             this.cbxServer.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.cbxServer, conditionValidationRule2);
-            this.cbxServer.Popup += new System.EventHandler(this.cbxServer_Popup);
-            this.cbxServer.BeforePopup += new System.EventHandler(this.cbxServer_BeforePopup);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxServer, conditionValidationRule3);
             // 
             // cbxAuthentication
             // 
@@ -200,11 +205,12 @@ namespace PMWORK.Admin
             this.cbxAuthentication.Properties.Items.AddRange(new object[] {
             "Windows Authentication",
             "SQL Server Authentication"});
+            this.cbxAuthentication.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cbxAuthentication.Size = new System.Drawing.Size(271, 20);
             this.cbxAuthentication.TabIndex = 1;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.cbxAuthentication, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxAuthentication, conditionValidationRule4);
             this.cbxAuthentication.SelectedIndexChanged += new System.EventHandler(this.cbxAuthentication_SelectedIndexChanged);
             // 
             // labelControl5
@@ -226,6 +232,28 @@ namespace PMWORK.Admin
             this.labelControl6.Size = new System.Drawing.Size(183, 23);
             this.labelControl6.TabIndex = 0;
             this.labelControl6.Text = "اتصال به بانک اطلاعاتی";
+            // 
+            // cbxDatabase
+            // 
+            this.cbxDatabase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxDatabase.EditValue = "PMWORKDB";
+            this.cbxDatabase.Enabled = false;
+            this.cbxDatabase.Location = new System.Drawing.Point(34, 182);
+            this.cbxDatabase.Name = "cbxDatabase";
+            this.cbxDatabase.Parmida_ActivePlusMultiKeys = false;
+            this.cbxDatabase.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDatabase.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDatabase.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDatabase.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
+            this.cbxDatabase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxDatabase.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbxDatabase.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbxDatabase.Size = new System.Drawing.Size(271, 20);
+            this.cbxDatabase.TabIndex = 3;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxDatabase, conditionValidationRule5);
             // 
             // barMain
             // 
@@ -264,36 +292,45 @@ namespace PMWORK.Admin
             // newDatabaseToolStripMenuItem
             // 
             this.newDatabaseToolStripMenuItem.Name = "newDatabaseToolStripMenuItem";
-            this.newDatabaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newDatabaseToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.newDatabaseToolStripMenuItem.Text = "بانک اطلاعاتی جدید";
             this.newDatabaseToolStripMenuItem.Click += new System.EventHandler(this.newDatabaseToolStripMenuItem_Click);
             // 
             // backupToolStripMenuItem
             // 
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.backupToolStripMenuItem.Text = "پشتیبان گیری";
             this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
             // 
             // restoreToolStripMenuItem
             // 
+            this.restoreToolStripMenuItem.Enabled = false;
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.restoreToolStripMenuItem.Text = "بازیابی اطلاعات";
+            // 
+            // btnReadConnectionString
+            // 
+            this.btnReadConnectionString.Name = "btnReadConnectionString";
+            this.btnReadConnectionString.Size = new System.Drawing.Size(169, 22);
+            this.btnReadConnectionString.Text = "ارتباط فعلی";
+            this.btnReadConnectionString.Click += new System.EventHandler(this.btnReadConnectionString_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.btnAbout});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.helpToolStripMenuItem.Text = "راهنما";
             // 
-            // aboutToolStripMenuItem
+            // btnAbout
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aboutToolStripMenuItem.Text = "درباره ما";
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(115, 22);
+            this.btnAbout.Text = "درباره ما";
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // progressBar
             // 
@@ -337,43 +374,20 @@ namespace PMWORK.Admin
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 24);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(387, 249);
+            this.panelControl1.Size = new System.Drawing.Size(387, 242);
             this.panelControl1.TabIndex = 18;
-            // 
-            // cbxDatabase
-            // 
-            this.cbxDatabase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxDatabase.EditValue = "PMWORKDB";
-            this.cbxDatabase.Enabled = false;
-            this.cbxDatabase.Location = new System.Drawing.Point(34, 182);
-            this.cbxDatabase.Name = "cbxDatabase";
-            this.cbxDatabase.Parmida_ActivePlusMultiKeys = false;
-            this.cbxDatabase.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.cbxDatabase.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.cbxDatabase.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.cbxDatabase.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.cbxDatabase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxDatabase.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbxDatabase.Size = new System.Drawing.Size(271, 20);
-            this.cbxDatabase.TabIndex = 3;
-            // 
-            // btnReadConnectionString
-            // 
-            this.btnReadConnectionString.Name = "btnReadConnectionString";
-            this.btnReadConnectionString.Size = new System.Drawing.Size(180, 22);
-            this.btnReadConnectionString.Text = "ارتباط فعلی";
-            this.btnReadConnectionString.Click += new System.EventHandler(this.btnReadConnectionString_Click);
             // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 273);
+            this.ClientSize = new System.Drawing.Size(387, 266);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.menuStrip);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SettingForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -384,13 +398,13 @@ namespace PMWORK.Admin
             ((System.ComponentModel.ISupportInitialize)(this.cbxServer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxAuthentication.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxDatabase.Properties)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.progressBar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxDatabase.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,7 +432,7 @@ namespace PMWORK.Admin
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnAbout;
         private DevExpress.XtraEditors.MarqueeProgressBarControl progressBar;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.XtraEditors.PanelControl panelControl1;

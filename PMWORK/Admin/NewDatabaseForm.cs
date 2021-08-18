@@ -57,27 +57,43 @@ namespace PMWORK.Admin
                     var result = _setDatabase.SqlServerConnect(_connectionStr);
                     if (result)
                     {
-                        var srv = new Server(srvConn);
-                        srv.ConnectionContext.ExecuteNonQuery(scriptNew);
-                        srv.ConnectionContext.ExecuteNonQuery(Properties.Resources.ScriptCompany.Replace("95", cbxDataBase.Text.Trim()));
-                        srv.ConnectionContext.ExecuteNonQuery(Properties.Resources.ScriptApplicationUser.Replace("95", cbxDataBase.Text.Trim()));
-                        srv.ConnectionContext.ExecuteNonQuery(Properties.Resources.ScriptUnitOfMa.Replace("95", cbxDataBase.Text.Trim()));
-                        _connectionStr.DatabaseName = cbxDataBase.Text.Trim();
-                        var connectionString = _setDatabase.SaveAppSetting(_connectionStr);
-                        XtraMessageBox.Show("بانک اطلاعاتی جدید با موفقیت ایجاد شد", "بانک اطلاعاتی",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        PublicClass.CloseForce = true;
-                        Close();
+                        try
+                        {
+                            var srv = new Server(srvConn);
+                            srv.ConnectionContext.ExecuteNonQuery(scriptNew);
+                            srv.ConnectionContext.ExecuteNonQuery(Properties.Resources.ScriptCompany.Replace("95", cbxDataBase.Text.Trim()));
+                            srv.ConnectionContext.ExecuteNonQuery(Properties.Resources.ScriptApplicationUser.Replace("95", cbxDataBase.Text.Trim()));
+                            srv.ConnectionContext.ExecuteNonQuery(Properties.Resources.ScriptUnitOfMa.Replace("95", cbxDataBase.Text.Trim()));
+                            srv.ConnectionContext.ExecuteNonQuery(Properties.Resources.ScriptMenu.Replace("95", cbxDataBase.Text.Trim()));
+                            _connectionStr.DatabaseName = cbxDataBase.Text.Trim();
+                            var connectionString = _setDatabase.SaveAppSetting(_connectionStr);
+                            if (connectionString)
+                            {
+                                XtraMessageBox.Show("بانک اطلاعاتی جدید با موفقیت ایجاد شد", "بانک اطلاعاتی",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                PublicClass.CloseForce = true;
+                                Close();
+                            }
+                            else
+                            {
+                                PublicClass.ErrorSave("خطا");
+                            }
+                        }
+                        catch (Exception exception)
+                        {
+                            XtraMessageBox.Show(exception.Message, "Error");
+                        }
+  
                     }
                     else
-                        XtraMessageBox.Show("ازتباط با سرور ممکن نیست", "خطا", MessageBoxButtons.OK,
+                        XtraMessageBox.Show("ارتباط با سرور ممکن نیست", "خطا", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                 }
 
             }
             else
             {
-                PublicClass.ErrorValidationMessage("حطا");
+                PublicClass.ErrorValidationMessage("خطا");
             }
         }
 

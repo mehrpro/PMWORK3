@@ -205,8 +205,7 @@ namespace PMWORK.Repository
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                throw;
+                return false;
             }
 
         }
@@ -457,9 +456,9 @@ namespace PMWORK.Repository
         }
 
         public bool RemoveRepairOut(int repairoutId)
-            {
+        {
             try
-                {
+            {
                 var find = _context.Repairouts.Find(repairoutId);
                 find.IsActive = find.IsClosed = false;
                 find.IsDelete = true;
@@ -469,21 +468,21 @@ namespace PMWORK.Repository
                 findReq.IsActive = true;
                 _context.SaveChanges();
                 return true;
-                }
-            catch 
-                {
-                return false;
-                }
             }
+            catch
+            {
+                return false;
+            }
+        }
 
         public List<Repairout> GetRepairouts()
-            {
+        {
             return _context.Repairouts
                 .Include(x => x.RequestRepair)
                 .Include(x => x.RequestRepair.Machinery.Coding)
                 .Include(x => x.RequestRepair.Applicant)
                 .Where(x => !x.IsDelete && x.IsActive)
                 .ToList();
-            }
         }
+    }
 }

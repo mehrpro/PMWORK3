@@ -167,7 +167,9 @@ namespace PMWORK.Admin
             this.ClientSize = new System.Drawing.Size(387, 379);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "UserAccessForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "دسترسی کاربران";

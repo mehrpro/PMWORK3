@@ -250,6 +250,23 @@ namespace PMWORK.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to use 95
+        ///
+        ///insert into MenuGroups (MenuGroupTitle,Description) Values(&apos;ribPageInfrasturcture&apos;,&apos;دارایی فیزیکی&apos;)
+        ///insert into MenuGroups (MenuGroupTitle,Description) Values(&apos;ribPageMaintanace&apos;,&apos;نگهداری تعمیرات&apos;)
+        ///insert into MenuGroups (MenuGroupTitle,Description) Values(&apos;ribPageReports&apos;,&apos;گزارشات&apos;)
+        ///insert into MenuGroups (MenuGroupTitle,Description) Values(&apos;ribPageManage&apos;,&apos;مدیریت نرم افزار&apos;)
+        ///
+        ///insert into MenuItems (GroupID_FK,ItemTitel,Description) Values (1,&apos;PGMachinery&apos;,&apos;ماشین آلات&apos;)
+        ///insert into MenuItem [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ScriptMenu {
+            get {
+                return ResourceManager.GetString("ScriptMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to use 95 insert into UnitOfMeasurements (Unit) Values (&apos;عدد&apos;) 
         ///insert into UnitOfMeasurements (Unit) Values (&apos;دستگاه&apos;)
         ///insert into UnitOfMeasurements (Unit) Values (&apos;کیلوگرم&apos;)

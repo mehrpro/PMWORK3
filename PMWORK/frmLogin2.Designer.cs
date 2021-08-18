@@ -61,7 +61,7 @@ namespace PMWORK {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Point similar to {X=17,Y=95}.
+        ///   Looks up a localized resource of type System.Drawing.Point similar to {X=321,Y=17}.
         /// </summary>
         internal static System.Drawing.Point dx_TrayLocation {
             get {
@@ -71,7 +71,7 @@ namespace PMWORK {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Point similar to {X=17,Y=56}.
+        ///   Looks up a localized resource of type System.Drawing.Point similar to {X=188,Y=17}.
         /// </summary>
         internal static System.Drawing.Point formAssistant1_TrayLocation {
             get {
