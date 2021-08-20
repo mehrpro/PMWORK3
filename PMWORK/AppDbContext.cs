@@ -11,7 +11,7 @@ namespace PMWORK
         public AppDbContext() : base("Conn")
         {
 
-            // Database.SetInitializer(new InitialDatabase());        
+            //Database.SetInitializer(new InitialDatabase());        
 
         }
 
@@ -307,7 +307,11 @@ namespace PMWORK
                  .WithRequired(x => x.UnitOfMeasurement)
                  .HasForeignKey(x => x.UnitID_FK)
                  .WillCascadeOnDelete(false);
-
+            builder.Entity<UnitOfMeasurement>()
+                 .HasMany(x => x.SubCounterDevices)
+                 .WithRequired(x => x.UnitOfMeasurement)
+                 .HasForeignKey(x => x.UnitID_FK)
+                 .WillCascadeOnDelete(false);
 
             builder.Entity<WorkOrder>().HasKey(x => x.ID);
             builder.Entity<WorkOrder>().Property(s => s.ID).IsRequired()
@@ -468,7 +472,7 @@ namespace PMWORK
                      .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             builder.Entity<SubCounterDevice>().Property(x => x.IsActive).IsRequired();
             builder.Entity<SubCounterDevice>().Property(x => x.TerminalNumber).HasMaxLength(250).IsRequired();
-            builder.Entity<SubCounterDevice>().Property(x => x.TypeCounter).IsRequired().HasMaxLength(250);
+            builder.Entity<SubCounterDevice>().Property(x => x.UnitID_FK).IsRequired();
             builder.Entity<SubCounterDevice>().Property(x => x.Description).HasMaxLength(250);
             builder.Entity<SubCounterDevice>()
                 .HasMany(x => x.MachineryCounterDevices)

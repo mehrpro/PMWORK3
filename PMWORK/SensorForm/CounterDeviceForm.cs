@@ -55,7 +55,7 @@ namespace PMWORK.SensorForm
         {
             txtCounterName.Text = txtDescription.Text = txtID.Text = "";
             chkIsActive.Checked = true;
-            cbxCompany.EditValue = 0;
+            //cbxCompany.EditValue = 0;
             btnClose.Text = PublicClass.CloseStr;
             txtCounterName.Focus();
             _selectedRow = null;
@@ -78,7 +78,7 @@ namespace PMWORK.SensorForm
         {
             if (dx.Validate())
             {
-                if (_selectedRow.ID > 0)
+                if (_selectedRow != null)
                 {
                     _selectedRow.CounterTitle = txtCounterName.Text.Trim();
                     _selectedRow.ApplicatinID_FK = _selectApplicant.ID;
@@ -127,6 +127,7 @@ namespace PMWORK.SensorForm
             txtDescription.EditValue = _selectedRow.Description;
             cbxApplicant.EditValue = _selectedRow.ApplicatinID_FK;
             cbxCompany.EditValue = _selectedRow.Applicant.CompanyID_FK;
+            btnClose.Text = PublicClass.CancelStr;
         }
     }
 }

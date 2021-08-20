@@ -19,7 +19,9 @@ namespace PMWORK.Entities
         public int ID { get; set; }
 
         public string TerminalNumber { get; set; }
-        public string TypeCounter { get; set; }
+
+        public int UnitID_FK { get; set; }
+        public UnitOfMeasurement UnitOfMeasurement { get; set; }
 
         public int CounterDeviceID_FK { get; set; }
         public CounterDevice CounterDevice { get; set; }

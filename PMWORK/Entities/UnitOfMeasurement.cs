@@ -17,6 +17,7 @@ namespace PMWORK.Entities
             ConsumableParts = new HashSet<ConsumablePart>();
             ServicePeriodes = new HashSet<ServicePeriode>();
             SpareParts = new HashSet<SparePart>();
+            SubCounterDevices = new HashSet<SubCounterDevice>();
         }
 
 
@@ -28,5 +29,6 @@ namespace PMWORK.Entities
         public virtual ICollection<ConsumablePart> ConsumableParts { get; set; }
         public virtual ICollection<ServicePeriode> ServicePeriodes { get; set; }
         public virtual ICollection<SparePart> SpareParts { get; set; }
+        public virtual ICollection<SubCounterDevice> SubCounterDevices { get; set; }
     }
 }

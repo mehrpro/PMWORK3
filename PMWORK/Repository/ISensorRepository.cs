@@ -11,12 +11,16 @@ namespace PMWORK.Repository
     public interface ISensorRepository
     {
         Task<List<Company>> GetAllCompany();
+        Task<List<UnitOfMeasurement>> GetUnitOfMeasurementsList();
         Task<List<Applicant>> GetApplicantListByCompanyId(int companyId);
         Task<List<CounterDevice>> GetCounterDevicesByCompanyId(int companyId);
+        Task<List<SubCounterDevice>> GetSubCounterDevicesByCompanyId(int companyId);
+        Task<List<SubCounterDevice>> GetSubCounterDevicesByCounterDevice(int counterId);
 
 
 
         Task<bool> AddEditCounterDevice(CounterDevice model);
+        Task<bool> AddEditSubCounterDevice(SubCounterDevice model);
 
     }
 
@@ -65,6 +69,42 @@ namespace PMWORK.Repository
             }
         }
 
+        public async Task<bool> AddEditSubCounterDevice(SubCounterDevice model)
+        {
+            if (model.ID > 0)
+            {
+                try
+                {
+                    var local = _context.Set<SubCounterDevice>().Local.FirstOrDefault(x => x.ID == model.ID);
+                    if (local != null)
+                    {
+                        _context.Entry(local).State = EntityState.Detached;
+                    }
+                    _context.Entry(model).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    _context.SubCounterDevices.Add(model);
+                    await _context.SaveChangesAsync();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
         public async Task<List<Company>> GetAllCompany()
         {
             return await _context.Companies.ToListAsync();
@@ -72,12 +112,40 @@ namespace PMWORK.Repository
 
         public async Task<List<Applicant>> GetApplicantListByCompanyId(int companyId)
         {
-            return await _context.Applicants.Where(x => x.CompanyID_FK == companyId).ToListAsync();
+            return await _context.Applicants
+                .Where(x => x.CompanyID_FK == companyId)
+                .ToListAsync();
         }
 
         public async Task<List<CounterDevice>> GetCounterDevicesByCompanyId(int companyId)
         {
-            return await _context.CounterDevices.Include(x => x.Applicant).Where(x => x.Applicant.CompanyID_FK == companyId).ToListAsync();
+            return await _context.CounterDevices
+                .Include(x => x.Applicant)
+                .Where(x => x.Applicant.CompanyID_FK == companyId)
+                .ToListAsync();
+        }
+
+        public async Task<List<SubCounterDevice>> GetSubCounterDevicesByCompanyId(int companyId)
+        {
+            return await _context.SubCounterDevices
+                .Include(x => x.CounterDevice.Applicant)
+                .Include(x => x.UnitOfMeasurement)
+                .Where(x => x.CounterDevice.Applicant.CompanyID_FK == companyId)
+                .ToListAsync();
+        }
+
+        public async Task<List<SubCounterDevice>> GetSubCounterDevicesByCounterDevice(int counterId)
+        {
+            return await _context.SubCounterDevices
+                      .Include(x => x.CounterDevice.Applicant)
+                      .Include(x => x.UnitOfMeasurement)
+                      .Where(x => x.CounterDeviceID_FK == counterId)
+                      .ToListAsync();
+        }
+
+        public async Task<List<UnitOfMeasurement>> GetUnitOfMeasurementsList()
+        {
+            return await _context.UnitOfMeasurements.ToListAsync();
         }
     }
 

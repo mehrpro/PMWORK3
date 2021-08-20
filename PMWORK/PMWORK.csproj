@@ -465,6 +465,10 @@
     <Compile Include="Migrations\202108191700325_NewTable.designer.cs">
       <DependentUpon>202108191700325_NewTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108200736265_updateSubDev.cs" />
+    <Compile Include="Migrations\202108200736265_updateSubDev.designer.cs">
+      <DependentUpon>202108200736265_updateSubDev.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="IdentitiyForms\IdentityMachineryForm.cs">
       <SubType>Form</SubType>
@@ -511,6 +515,18 @@
     </Compile>
     <Compile Include="SensorForm\CounterDeviceForm.Designer.cs">
       <DependentUpon>CounterDeviceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SensorForm\MachineryCounterDeviceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SensorForm\MachineryCounterDeviceForm.Designer.cs">
+      <DependentUpon>MachineryCounterDeviceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SensorForm\SubCounterDeviceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SensorForm\SubCounterDeviceForm.Designer.cs">
+      <DependentUpon>SubCounterDeviceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
@@ -611,6 +627,9 @@
     <EmbeddedResource Include="Migrations\202108191700325_NewTable.resx">
       <DependentUpon>202108191700325_NewTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108200736265_updateSubDev.resx">
+      <DependentUpon>202108200736265_updateSubDev.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -623,6 +642,12 @@
     </Compile>
     <EmbeddedResource Include="SensorForm\CounterDeviceForm.resx">
       <DependentUpon>CounterDeviceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SensorForm\MachineryCounterDeviceForm.resx">
+      <DependentUpon>MachineryCounterDeviceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SensorForm\SubCounterDeviceForm.resx">
+      <DependentUpon>SubCounterDeviceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>

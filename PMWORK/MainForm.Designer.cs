@@ -64,8 +64,8 @@ namespace PMWORK
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnRepairOut = new DevExpress.XtraBars.BarButtonItem();
             this.btnCounterDevice = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSubCounterDevice = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMachineryCounterDevice = new DevExpress.XtraBars.BarButtonItem();
             this.ribPageInfrasturcture = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PGMachinery = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PGCoding = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -125,8 +125,8 @@ namespace PMWORK
             this.barButtonItem1,
             this.btnRepairOut,
             this.btnCounterDevice,
-            this.barButtonItem2,
-            this.barButtonItem5});
+            this.btnSubCounterDevice,
+            this.btnMachineryCounterDevice});
             this.ribMain.Location = new System.Drawing.Point(0, 0);
             this.ribMain.MaxItemId = 31;
             this.ribMain.Name = "ribMain";
@@ -430,21 +430,23 @@ namespace PMWORK
             this.btnCounterDevice.Name = "btnCounterDevice";
             this.btnCounterDevice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCounterDevice_ItemClick);
             // 
-            // barButtonItem2
+            // btnSubCounterDevice
             // 
-            this.barButtonItem2.Caption = "حسگر";
-            this.barButtonItem2.Id = 29;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btnSubCounterDevice.Caption = "حسگر";
+            this.btnSubCounterDevice.Id = 29;
+            this.btnSubCounterDevice.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSubCounterDevice.ImageOptions.Image")));
+            this.btnSubCounterDevice.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSubCounterDevice.ImageOptions.LargeImage")));
+            this.btnSubCounterDevice.Name = "btnSubCounterDevice";
+            this.btnSubCounterDevice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSubCounterDevice_ItemClick);
             // 
-            // barButtonItem5
+            // btnMachineryCounterDevice
             // 
-            this.barButtonItem5.Caption = "حسگر دستگاه";
-            this.barButtonItem5.Id = 30;
-            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.barButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.btnMachineryCounterDevice.Caption = "حسگر دستگاه";
+            this.btnMachineryCounterDevice.Id = 30;
+            this.btnMachineryCounterDevice.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.btnMachineryCounterDevice.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.btnMachineryCounterDevice.Name = "btnMachineryCounterDevice";
+            this.btnMachineryCounterDevice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMachineryCounterDevice_ItemClick);
             // 
             // ribPageInfrasturcture
             // 
@@ -487,8 +489,8 @@ namespace PMWORK
             // PGSensor
             // 
             this.PGSensor.ItemLinks.Add(this.btnCounterDevice);
-            this.PGSensor.ItemLinks.Add(this.barButtonItem2);
-            this.PGSensor.ItemLinks.Add(this.barButtonItem5);
+            this.PGSensor.ItemLinks.Add(this.btnSubCounterDevice);
+            this.PGSensor.ItemLinks.Add(this.btnMachineryCounterDevice);
             this.PGSensor.Name = "PGSensor";
             this.PGSensor.Text = "مدیریت شمارنده";
             // 
@@ -646,8 +648,8 @@ namespace PMWORK
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnRepairOut;
         private DevExpress.XtraBars.BarButtonItem btnCounterDevice;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem btnSubCounterDevice;
+        private DevExpress.XtraBars.BarButtonItem btnMachineryCounterDevice;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribSensor;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup PGSensor;
     }

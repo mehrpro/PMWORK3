@@ -30,8 +30,8 @@ namespace PMWORK.SensorForm
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
@@ -58,6 +58,7 @@ namespace PMWORK.SensorForm
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -80,6 +81,7 @@ namespace PMWORK.SensorForm
             ((System.ComponentModel.ISupportInitialize)(this.dgvCounterDevice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCounterDevice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -90,7 +92,7 @@ namespace PMWORK.SensorForm
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(606, 186);
+            this.panelControl1.Size = new System.Drawing.Size(498, 186);
             this.panelControl1.TabIndex = 0;
             // 
             // btnSave
@@ -133,7 +135,7 @@ namespace PMWORK.SensorForm
             this.layoutControl1.OptionsView.RightToLeftMirroringApplied = true;
             this.layoutControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(602, 149);
+            this.layoutControl1.Size = new System.Drawing.Size(494, 149);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -146,24 +148,24 @@ namespace PMWORK.SensorForm
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxApplicant.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ApplicantTitle", "واحد")});
-            this.cbxApplicant.Size = new System.Drawing.Size(273, 20);
+            this.cbxApplicant.Size = new System.Drawing.Size(214, 20);
             this.cbxApplicant.StyleController = this.layoutControl1;
             this.cbxApplicant.TabIndex = 7;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.cbxApplicant, conditionValidationRule3);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxApplicant, conditionValidationRule1);
             this.cbxApplicant.EditValueChanged += new System.EventHandler(this.cbxApplicant_EditValueChanged);
             // 
             // cbxCompany
             // 
-            this.cbxCompany.Location = new System.Drawing.Point(332, 60);
+            this.cbxCompany.Location = new System.Drawing.Point(273, 60);
             this.cbxCompany.Name = "cbxCompany";
             this.cbxCompany.Parmida_ActivePlusMultiKeys = false;
             this.cbxCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxCompany.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyTitle", "شرکت")});
-            this.cbxCompany.Size = new System.Drawing.Size(215, 20);
+            this.cbxCompany.Size = new System.Drawing.Size(166, 20);
             this.cbxCompany.StyleController = this.layoutControl1;
             this.cbxCompany.TabIndex = 6;
             this.cbxCompany.EditValueChanged += new System.EventHandler(this.cbxCompany_EditValueChanged);
@@ -173,20 +175,20 @@ namespace PMWORK.SensorForm
             this.txtCounterName.Location = new System.Drawing.Point(12, 36);
             this.txtCounterName.Name = "txtCounterName";
             this.txtCounterName.Parmida_ActivePlusMultiKeys = false;
-            this.txtCounterName.Size = new System.Drawing.Size(535, 20);
+            this.txtCounterName.Size = new System.Drawing.Size(427, 20);
             this.txtCounterName.StyleController = this.layoutControl1;
             this.txtCounterName.TabIndex = 5;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.txtCounterName, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtCounterName, conditionValidationRule2);
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(332, 12);
+            this.txtID.Location = new System.Drawing.Point(273, 12);
             this.txtID.Name = "txtID";
             this.txtID.Parmida_ActivePlusMultiKeys = false;
             this.txtID.Properties.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(215, 20);
+            this.txtID.Size = new System.Drawing.Size(166, 20);
             this.txtID.StyleController = this.layoutControl1;
             this.txtID.TabIndex = 4;
             // 
@@ -202,20 +204,20 @@ namespace PMWORK.SensorForm
             this.chkIsActive.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.chkIsActive.Properties.Caption = "فعال";
             this.chkIsActive.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.chkIsActive.Size = new System.Drawing.Size(273, 19);
+            this.chkIsActive.Size = new System.Drawing.Size(214, 19);
             this.chkIsActive.StyleController = this.layoutControl1;
             this.chkIsActive.TabIndex = 9;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(12, 84);
+            this.txtDescription.Location = new System.Drawing.Point(12, 100);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Parmida_ActivePlusMultiKeys = false;
             this.txtDescription.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtDescription.Properties.AppearanceDisabled.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtDescription.Properties.AppearanceFocused.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtDescription.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
-            this.txtDescription.Size = new System.Drawing.Size(535, 53);
+            this.txtDescription.Size = new System.Drawing.Size(470, 37);
             this.txtDescription.StyleController = this.layoutControl1;
             this.txtDescription.TabIndex = 8;
             // 
@@ -231,15 +233,15 @@ namespace PMWORK.SensorForm
             this.layoutControlItem4,
             this.layoutControlItem6});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(602, 149);
+            this.Root.Size = new System.Drawing.Size(494, 149);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtID;
-            this.layoutControlItem1.Location = new System.Drawing.Point(320, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(261, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(262, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(213, 24);
             this.layoutControlItem1.Text = "شناسه";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(40, 13);
             // 
@@ -248,16 +250,16 @@ namespace PMWORK.SensorForm
             this.layoutControlItem2.Control = this.txtCounterName;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(582, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(474, 24);
             this.layoutControlItem2.Text = "مرکزداده";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(40, 13);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.cbxCompany;
-            this.layoutControlItem3.Location = new System.Drawing.Point(320, 48);
+            this.layoutControlItem3.Location = new System.Drawing.Point(261, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(262, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(213, 24);
             this.layoutControlItem3.Text = "شرکت";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(40, 13);
             // 
@@ -266,8 +268,9 @@ namespace PMWORK.SensorForm
             this.layoutControlItem5.Control = this.txtDescription;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(582, 57);
+            this.layoutControlItem5.Size = new System.Drawing.Size(474, 57);
             this.layoutControlItem5.Text = "توضیحات";
+            this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(40, 13);
             // 
             // layoutControlItem4
@@ -275,7 +278,7 @@ namespace PMWORK.SensorForm
             this.layoutControlItem4.Control = this.cbxApplicant;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(320, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(261, 24);
             this.layoutControlItem4.Text = "واحد";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(40, 13);
             // 
@@ -284,7 +287,7 @@ namespace PMWORK.SensorForm
             this.layoutControlItem6.Control = this.chkIsActive;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(320, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(261, 24);
             this.layoutControlItem6.Text = "وضعیت ";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(40, 13);
             // 
@@ -294,7 +297,7 @@ namespace PMWORK.SensorForm
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 186);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(606, 278);
+            this.panelControl2.Size = new System.Drawing.Size(498, 327);
             this.panelControl2.TabIndex = 1;
             // 
             // dgvCounterDevice
@@ -303,7 +306,9 @@ namespace PMWORK.SensorForm
             this.dgvCounterDevice.Location = new System.Drawing.Point(2, 2);
             this.dgvCounterDevice.MainView = this.gvCounterDevice;
             this.dgvCounterDevice.Name = "dgvCounterDevice";
-            this.dgvCounterDevice.Size = new System.Drawing.Size(602, 274);
+            this.dgvCounterDevice.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoExEdit1});
+            this.dgvCounterDevice.Size = new System.Drawing.Size(494, 323);
             this.dgvCounterDevice.TabIndex = 0;
             this.dgvCounterDevice.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCounterDevice});
@@ -418,6 +423,7 @@ namespace PMWORK.SensorForm
             // colDescription
             // 
             this.colDescription.Caption = "توضیحات";
+            this.colDescription.ColumnEdit = this.repositoryItemMemoExEdit1;
             this.colDescription.FieldName = "Description";
             this.colDescription.Name = "colDescription";
             this.colDescription.Visible = true;
@@ -434,11 +440,18 @@ namespace PMWORK.SensorForm
             this.colIsActive.VisibleIndex = 4;
             this.colIsActive.Width = 60;
             // 
+            // repositoryItemMemoExEdit1
+            // 
+            this.repositoryItemMemoExEdit1.AutoHeight = false;
+            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
+            // 
             // CounterDeviceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 464);
+            this.ClientSize = new System.Drawing.Size(498, 513);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -470,6 +483,7 @@ namespace PMWORK.SensorForm
             ((System.ComponentModel.ISupportInitialize)(this.dgvCounterDevice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCounterDevice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -502,5 +516,6 @@ namespace PMWORK.SensorForm
         private DevExpress.XtraGrid.Columns.GridColumn colDescription;
         private DevExpress.XtraGrid.Columns.GridColumn colIsActive;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dx;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
     }
 }
