@@ -24,7 +24,7 @@
 
 
 
-            IList <Company> defaultCompany = new List<Company>();
+            IList<Company> defaultCompany = new List<Company>();
             defaultCompany.Add(new Company() { ID = 1, CompanyTitle = "کیمیای زنجان گستران", CompnayIndex = 1, Description = "مجتمع صنعتی معدنی زرین" });
             defaultCompany.Add(new Company() { ID = 2, CompanyTitle = "سرب و روی ایرانیان", CompnayIndex = 2, Description = "مجتمع صنعتی معدنی زرین" });
             defaultCompany.Add(new Company() { ID = 3, CompanyTitle = "ذوبگران رنگین فلز", CompnayIndex = 3, Description = "مجتمع صنعتی معدنی زرین" });
@@ -124,7 +124,7 @@
             context.Machineries.AddRange(machineries);
 
             IList<ApplicationUser> defaultUsers = new List<ApplicationUser>();
-            defaultUsers.Add(new ApplicationUser() { UserId = 1, Enabled = true, UserName = "admin", UserPassword = "admin", FullName = "مدیرسیستم", CompanyID_FK = 1 ,Editor = "Admin" ,LimetedCompany = false}); ;
+            defaultUsers.Add(new ApplicationUser() { UserId = 1, Enabled = true, UserName = "admin", UserPassword = "admin", FullName = "مدیرسیستم", CompanyID_FK = 1, Editor = "Admin", LimetedCompany = false }); ;
             context.ApplicationUsers.AddRange(defaultUsers);
 
 
@@ -133,7 +133,10 @@
             menuGroup.Add(new MenuGroup() { GroupID = 2, MenuGroupTitle = "ribPageMaintanace", Description = "نگهداری تعمیرات" });
             menuGroup.Add(new MenuGroup() { GroupID = 3, MenuGroupTitle = "ribPageReports", Description = "گزارشات" });
             menuGroup.Add(new MenuGroup() { GroupID = 4, MenuGroupTitle = "ribPageManage", Description = "مدیریت نرم افزار" });
+            menuGroup.Add(new MenuGroup() { GroupID = 5, MenuGroupTitle = "ribSensor", Description = "شمارنده " });
+
             context.MenuGroups.AddRange(menuGroup);
+
 
 
 
@@ -144,7 +147,10 @@
             menuItems.Add(new MenuItem() { ItemID = 3, GroupID_FK = 2, ItemTitel = "PGRequestReapir", Description = "تعمیرگاه" });
             menuItems.Add(new MenuItem() { ItemID = 4, GroupID_FK = 3, ItemTitel = "PGReportRepair", Description = "گزارش تعمیر" });
             menuItems.Add(new MenuItem() { ItemID = 5, GroupID_FK = 4, ItemTitel = "PGUsers", Description = "مدیریت کاربران" });
+            menuItems.Add(new MenuItem() { ItemID = 6, GroupID_FK = 5, ItemTitel = "PGSensor", Description = "مدیریت شمارنده" });
+
             context.MenuItems.AddRange(menuItems);
+
 
 
 
@@ -154,6 +160,8 @@
             cleams.Add(new Cleam() { ID = 3, GroupID_FK = 2, IsDelete = false, UserID_FK = 1, MenuItemID_FK = 3 });
             cleams.Add(new Cleam() { ID = 4, GroupID_FK = 3, IsDelete = false, UserID_FK = 1, MenuItemID_FK = 4 });
             cleams.Add(new Cleam() { ID = 5, GroupID_FK = 4, IsDelete = false, UserID_FK = 1, MenuItemID_FK = 5 });
+            cleams.Add(new Cleam() { ID = 6, GroupID_FK = 5, IsDelete = false, UserID_FK = 1, MenuItemID_FK = 6 });
+
             context.Cleams.AddRange(cleams);
         }
     }

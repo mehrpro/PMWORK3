@@ -11,6 +11,7 @@ namespace PMWORK
             For<IRequestRepairRepository>().Use<RequestRepairRepository>().Ctor<AppDbContext>().Is(_db);
             For<ICodingRepository>().Use<CodingRepository>().Ctor<AppDbContext>().Is(_db);
             For<IDeviceIdentity>().Use<DeviceIdentity>().Ctor<AppDbContext>().Is(_db);
+            For<ISensorRepository>().Use<SensorRepository>().Ctor<AppDbContext>().Is(_db);
             For<ISetDatabase>().Use<SetDatabase>();
         }
 

@@ -293,7 +293,7 @@ namespace PMWORK.CodingForms
             // CodingColumn
             // 
             this.CodingColumn.Caption = "کد دستگاه";
-            this.CodingColumn.FieldName = "Codings.Code";
+            this.CodingColumn.FieldName = "Coding.Code";
             this.CodingColumn.MaxWidth = 80;
             this.CodingColumn.MinWidth = 80;
             this.CodingColumn.Name = "CodingColumn";

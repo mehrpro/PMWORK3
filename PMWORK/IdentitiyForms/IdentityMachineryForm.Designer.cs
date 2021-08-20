@@ -161,6 +161,8 @@ namespace PMWORK.PMForms
             this.numWight.Parmida_ActivePlusMultiKeys = false;
             this.numWight.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.numWight.Properties.IsFloatValue = false;
+            this.numWight.Properties.Mask.EditMask = "N00";
             this.numWight.Size = new System.Drawing.Size(128, 20);
             this.numWight.TabIndex = 24;
             // 
@@ -177,6 +179,8 @@ namespace PMWORK.PMForms
             this.numHeight.Parmida_ActivePlusMultiKeys = false;
             this.numHeight.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.numHeight.Properties.IsFloatValue = false;
+            this.numHeight.Properties.Mask.EditMask = "N00";
             this.numHeight.Size = new System.Drawing.Size(128, 20);
             this.numHeight.TabIndex = 23;
             // 
@@ -223,6 +227,8 @@ namespace PMWORK.PMForms
             this.numWidth.Parmida_ActivePlusMultiKeys = false;
             this.numWidth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.numWidth.Properties.IsFloatValue = false;
+            this.numWidth.Properties.Mask.EditMask = "N00";
             this.numWidth.Size = new System.Drawing.Size(128, 20);
             this.numWidth.TabIndex = 22;
             // 
@@ -239,6 +245,8 @@ namespace PMWORK.PMForms
             this.numLenght.Parmida_ActivePlusMultiKeys = false;
             this.numLenght.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.numLenght.Properties.IsFloatValue = false;
+            this.numLenght.Properties.Mask.EditMask = "N00";
             this.numLenght.Size = new System.Drawing.Size(128, 20);
             this.numLenght.TabIndex = 21;
             // 
@@ -826,6 +834,7 @@ namespace PMWORK.PMForms
             this.chkCalibration.Properties.OnText = "دارد";
             this.chkCalibration.Size = new System.Drawing.Size(128, 24);
             this.chkCalibration.TabIndex = 3;
+            this.chkCalibration.Toggled += new System.EventHandler(this.chkCalibration_Toggled);
             // 
             // labelControl17
             // 

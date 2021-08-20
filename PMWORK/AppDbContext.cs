@@ -120,6 +120,11 @@ namespace PMWORK
                  .WithRequired(x => x.Applicant)
                   .HasForeignKey(x => x.ApplicantID_FK)
                   .WillCascadeOnDelete(false);
+            builder.Entity<Applicant>()
+     .HasMany(x => x.CounterDevices)
+     .WithRequired(x => x.Applicant)
+      .HasForeignKey(x => x.ApplicatinID_FK)
+      .WillCascadeOnDelete(false);
 
 
 
@@ -209,27 +214,30 @@ namespace PMWORK
                 .HasForeignKey(x => x.MachineryID_FK)
                 .WillCascadeOnDelete(false);
             builder.Entity<Machinery>()
-    .HasMany(x => x.SpareParts)
-    .WithRequired(x => x.Machinery)
-    .HasForeignKey(x => x.MachineryID_FK)
-    .WillCascadeOnDelete(false);
+                 .HasMany(x => x.SpareParts)
+                 .WithRequired(x => x.Machinery)
+                 .HasForeignKey(x => x.MachineryID_FK)
+                 .WillCascadeOnDelete(false);
             builder.Entity<Machinery>()
-    .HasMany(x => x.ServicePeriodes)
-    .WithRequired(x => x.Machinery)
-    .HasForeignKey(x => x.MachineryID_FK)
-    .WillCascadeOnDelete(false);
+                 .HasMany(x => x.ServicePeriodes)
+                 .WithRequired(x => x.Machinery)
+                 .HasForeignKey(x => x.MachineryID_FK)
+                 .WillCascadeOnDelete(false);
             builder.Entity<Machinery>()
-.HasMany(x => x.PowerElectricalMachineries)
-.WithRequired(x => x.Machinery)
-.HasForeignKey(x => x.MachineryID_FK)
-.WillCascadeOnDelete(false);
+                .HasMany(x => x.PowerElectricalMachineries)
+                .WithRequired(x => x.Machinery)
+                .HasForeignKey(x => x.MachineryID_FK)
+                .WillCascadeOnDelete(false);
             builder.Entity<Machinery>()
-.HasMany(x => x.IdentityMachineries)
-.WithRequired(x => x.Machinery)
-.HasForeignKey(x => x.MachinerID_FK)
-.WillCascadeOnDelete(false);
-
-
+               .HasMany(x => x.IdentityMachineries)
+               .WithRequired(x => x.Machinery)
+               .HasForeignKey(x => x.MachinerID_FK)
+               .WillCascadeOnDelete(false);
+            builder.Entity<Machinery>()
+               .HasMany(x => x.MachineryCounterDevices)
+               .WithRequired(x => x.Machinery)
+               .HasForeignKey(x => x.MachineryID_FK)
+               .WillCascadeOnDelete(false);
 
             builder.Entity<RequestRepair>().HasKey(x => x.ID);
             builder.Entity<RequestRepair>().Property(x => x.ID).IsRequired()
@@ -438,6 +446,59 @@ namespace PMWORK
 
 
 
+
+
+            builder.Entity<CounterDevice>().HasKey(x => x.ID);
+            builder.Entity<CounterDevice>().Property(x => x.ID).IsRequired()
+                     .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<CounterDevice>().Property(x => x.IsActive).IsRequired();
+            builder.Entity<CounterDevice>().Property(x => x.CounterTitle).HasMaxLength(250);
+            builder.Entity<CounterDevice>().Property(x => x.ApplicatinID_FK).IsRequired();
+            builder.Entity<CounterDevice>().Property(x => x.Description).HasMaxLength(250);
+            builder.Entity<CounterDevice>()
+                .HasMany(x => x.SubCounterDevices)
+                .WithRequired(x => x.CounterDevice)
+                .HasForeignKey(x => x.CounterDeviceID_FK)
+                .WillCascadeOnDelete(false);
+
+
+
+            builder.Entity<SubCounterDevice>().HasKey(x => x.ID);
+            builder.Entity<SubCounterDevice>().Property(x => x.ID).IsRequired()
+                     .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<SubCounterDevice>().Property(x => x.IsActive).IsRequired();
+            builder.Entity<SubCounterDevice>().Property(x => x.TerminalNumber).HasMaxLength(250).IsRequired();
+            builder.Entity<SubCounterDevice>().Property(x => x.TypeCounter).IsRequired().HasMaxLength(250);
+            builder.Entity<SubCounterDevice>().Property(x => x.Description).HasMaxLength(250);
+            builder.Entity<SubCounterDevice>()
+                .HasMany(x => x.MachineryCounterDevices)
+                .WithRequired(x => x.SubCounterDevice)
+                .HasForeignKey(x => x.SubCounterDeviceID_FK)
+                .WillCascadeOnDelete(false);
+
+
+            builder.Entity<MachineryCounterDevice>().HasKey(x => x.ID);
+            builder.Entity<MachineryCounterDevice>().Property(x => x.ID).IsRequired()
+                     .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<MachineryCounterDevice>().Property(x => x.IsActive).IsRequired();
+            builder.Entity<MachineryCounterDevice>().Property(x => x.MachineryID_FK).IsRequired();
+            builder.Entity<MachineryCounterDevice>().Property(x => x.SubCounterDeviceID_FK).IsRequired();
+
+            builder.Entity<TimeRecoding>().HasKey(x => x.ID);
+            builder.Entity<TimeRecoding>().Property(x => x.ID).IsRequired()
+                     .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            builder.Entity<TimeRecoding>().Property(x => x.IsActive).IsRequired();
+            builder.Entity<TimeRecoding>().Property(x => x.IsDelete).IsRequired();
+            builder.Entity<TimeRecoding>().Property(x => x.IsRecord).IsRequired();
+            builder.Entity<TimeRecoding>().Property(x => x.SubCounterDeviceID_FK).IsRequired();
+            builder.Entity<TimeRecoding>().Property(x => x.TotalMin).IsRequired();
+            builder.Entity<TimeRecoding>().Property(x => x.Registerd).IsRequired().HasColumnType("datetime");
+
+
+
+
+
+
         }
 
 
@@ -464,6 +525,10 @@ namespace PMWORK
         public virtual DbSet<IdentityMachinery> IdentityMachineries { get; set; }
         public virtual DbSet<PowerElectricalMachinery> PowerElectricalMachineries { get; set; }
         public virtual DbSet<Repairout> Repairouts { get; set; }
+        public virtual DbSet<CounterDevice> CounterDevices { get; set; }
+        public virtual DbSet<SubCounterDevice> SubCounterDevices { get; set; }
+        public virtual DbSet<MachineryCounterDevice> MachineryCounterDevices { get; set; }
+        public virtual DbSet<TimeRecoding> TimeRecodings { get; set; }
 
 
     }

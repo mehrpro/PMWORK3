@@ -335,8 +335,12 @@
     <Compile Include="CodingForms\GroupForm.Designer.cs">
       <DependentUpon>GroupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entities\CounterDevice.cs" />
+    <Compile Include="Entities\MachineryCounterDevice.cs" />
+    <Compile Include="Entities\SubCounterDevice.cs" />
     <Compile Include="Entities\PMDBInitializer.cs" />
     <Compile Include="Entities\Repairout.cs" />
+    <Compile Include="Entities\TimeRecoding.cs" />
     <Compile Include="MachineryForms\RepairOutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -457,9 +461,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108121001534_DBCREATE.cs" />
-    <Compile Include="Migrations\202108121001534_DBCREATE.designer.cs">
-      <DependentUpon>202108121001534_DBCREATE.cs</DependentUpon>
+    <Compile Include="Migrations\202108191700325_NewTable.cs" />
+    <Compile Include="Migrations\202108191700325_NewTable.designer.cs">
+      <DependentUpon>202108191700325_NewTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="IdentitiyForms\IdentityMachineryForm.cs">
@@ -500,7 +504,14 @@
     <Compile Include="Repository\ICodingRepository.cs" />
     <Compile Include="Repository\IDeviceIdentity.cs" />
     <Compile Include="Repository\IRequestRepairRepository.cs" />
+    <Compile Include="Repository\ISensorRepository.cs" />
     <Compile Include="Repository\ISetDatabase.cs" />
+    <Compile Include="SensorForm\CounterDeviceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SensorForm\CounterDeviceForm.Designer.cs">
+      <DependentUpon>CounterDeviceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -597,8 +608,8 @@
     <EmbeddedResource Include="IdentitiyForms\SparePartsForm.resx">
       <DependentUpon>SparePartsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108121001534_DBCREATE.resx">
-      <DependentUpon>202108121001534_DBCREATE.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108191700325_NewTable.resx">
+      <DependentUpon>202108191700325_NewTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -610,6 +621,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SensorForm\CounterDeviceForm.resx">
+      <DependentUpon>CounterDeviceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
@@ -629,6 +643,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrasturcture\" />
+    <Folder Include="ReportForm\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\10460122071.jpg" />

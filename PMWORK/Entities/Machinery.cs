@@ -15,6 +15,7 @@ namespace PMWORK.Entities
             SpareParts = new HashSet<SparePart>();
             PowerElectricalMachineries = new HashSet<PowerElectricalMachinery>();
             IdentityMachineries = new HashSet<IdentityMachinery>();
+            MachineryCounterDevices = new HashSet<MachineryCounterDevice>();
 
         }
 
@@ -37,6 +38,8 @@ namespace PMWORK.Entities
         public virtual ICollection<SparePart> SpareParts { get; set; }
         public virtual ICollection<PowerElectricalMachinery> PowerElectricalMachineries { get; set; }
         public virtual ICollection<IdentityMachinery> IdentityMachineries { get; set; }
+        public virtual ICollection<MachineryCounterDevice> MachineryCounterDevices { get; set; }
+
 
 
 

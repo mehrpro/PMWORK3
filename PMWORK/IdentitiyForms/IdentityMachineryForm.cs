@@ -1,6 +1,8 @@
 ﻿using DevExpress.XtraEditors;
 using PMWORK.Repository;
 using System;
+using System.Threading.Tasks;
+using System.Windows.Forms.VisualStyles;
 using DevExpress.Utils.Extensions;
 using PMWORK.Entities;
 
@@ -28,15 +30,24 @@ namespace PMWORK.PMForms
 
         }
 
-        private void IdentityMachineryForm_Load(object sender, EventArgs e)
+        private async void IdentityMachineryForm_Load(object sender, EventArgs e)
         {
-
+            await SetForm(machineryID);
+            txtMachineryName.EditValue = machineryName;
+            txtMachineryID.EditValue = machineryID;
+            txtCode.EditValue = code;
+            datEndWaranty.DateTime = datStartWaranty.DateTime =
+                datTimeImport.DateTime = datTimeStart.DateTime = DateTime.Today;
         }
 
-        private async void SetForm(int machinery)
+        private async Task SetForm(int machinery)
         {
             _identityMachinery = await _deviceIdentity.GetIdentityMachineryByMachineryId(machinery);
-
+            if (_identityMachinery == null)
+            {
+                _identityMachinery=new IdentityMachinery();
+                return;
+            };
             txtTypeDevice.Text = _identityMachinery.TypeDevice;
             datTimeImport.DateTime = _identityMachinery.dateTimeImport.Date;
             datTimeStart.DateTime = _identityMachinery.dateTimeStart.Date;
@@ -66,41 +77,55 @@ namespace PMWORK.PMForms
 
         private void GetForm()
         {
-            _identityMachinery = new IdentityMachinery
-            {
 
-                MachinerID_FK = machineryID,
-                TypeDevice = txtTypeDevice.Text.Trim(),
-                dateTimeImport = datTimeImport.DateTime.Date,
-                dateTimeStart = datTimeStart.DateTime.Date,
-                dateStartWaranty = datStartWaranty.DateTime.Date,
-                dateEndWaranty = datEndWaranty.DateTime.Date,
-                Calibration = Convert.ToBoolean(chkCalibration.EditValue),
-                NewDivice = Convert.ToBoolean(chkNewDevice.EditValue),
-                Length = Convert.ToInt32(numLenght.EditValue),
-                Width = Convert.ToInt32(numWidth.EditValue),
-                Height = Convert.ToInt32(numHeight.EditValue),
-                Wight = Convert.ToInt32(numWight.EditValue),
-                Company = txtCompany.Text.Trim(),
-                Countery = txtCountery.Text.Trim(),
-                CompanyAddress = txtCompanyAddress.Text.Trim(),
-                CompanyTel = txtCompanyTel.Text.Trim(),
-                CompanyFax = txtCompanyFax.Text.Trim(),
-                SupplyName = txtSupplyName.Text.Trim(),
-                SupplyAddress = txtSuppluAddress.Text.Trim(),
-                SupplyTel = txtSupplyTel.Text.Trim(),
-                SupplyFax = txtSupplyFax.Text.Trim(),
-                CalibrationCompany = txtCalibCompany.Text.Trim(),
-                CalibrationAddress = txtCalibAddress.Text.Trim(),
-                CalibrationTel = txtCalibTel.Text.Trim(),
-                CalibrationFax = txtCalibFax.Text.Trim()
-            };
+            _identityMachinery.MachinerID_FK = machineryID;
+            _identityMachinery.TypeDevice = txtTypeDevice.Text.Trim();
+            _identityMachinery.dateTimeImport = datTimeImport.DateTime.Date;
+            _identityMachinery.dateTimeStart = datTimeStart.DateTime.Date;
+            _identityMachinery.dateStartWaranty = datStartWaranty.DateTime.Date;
+            _identityMachinery.dateEndWaranty = datEndWaranty.DateTime.Date;
+            _identityMachinery.Calibration = Convert.ToBoolean(chkCalibration.EditValue);
+            _identityMachinery.NewDivice = Convert.ToBoolean(chkNewDevice.EditValue);
+            _identityMachinery.Length = Convert.ToInt32(numLenght.EditValue);
+            _identityMachinery.Width = Convert.ToInt32(numWidth.EditValue);
+            _identityMachinery.Height = Convert.ToInt32(numHeight.EditValue);
+            _identityMachinery.Wight = Convert.ToInt32(numWight.EditValue);
+            _identityMachinery.Company = txtCompany.Text.Trim();
+            _identityMachinery.Countery = txtCountery.Text.Trim();
+            _identityMachinery.CompanyAddress = txtCompanyAddress.Text.Trim();
+            _identityMachinery.CompanyTel = txtCompanyTel.Text.Trim();
+            _identityMachinery.CompanyFax = txtCompanyFax.Text.Trim();
+            _identityMachinery.SupplyName = txtSupplyName.Text.Trim();
+            _identityMachinery.SupplyAddress = txtSuppluAddress.Text.Trim();
+            _identityMachinery.SupplyTel = txtSupplyTel.Text.Trim();
+            _identityMachinery.SupplyFax = txtSupplyFax.Text.Trim();
+            _identityMachinery.CalibrationCompany = txtCalibCompany.Text.Trim();
+            _identityMachinery.CalibrationAddress = txtCalibAddress.Text.Trim();
+            _identityMachinery.CalibrationTel = txtCalibTel.Text.Trim();
+            _identityMachinery.CalibrationFax = txtCalibFax.Text.Trim();
         }
 
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
+            GetForm();
+            var result = await _deviceIdentity.AddEditIdentityMachinery(_identityMachinery);
+            if (result)
+            {
+                PublicClass.SuccessMessage(Text);
+                Close();
+            }
+            else
+            {
+                PublicClass.ErrorSave(Text);
+            }
+        }
 
+        private void chkCalibration_Toggled(object sender, EventArgs e)
+        {
+            var se = (ToggleSwitch)sender;
+            txtCalibTel.Enabled = txtCalibAddress.Enabled = txtCalibCompany.Enabled = txtCalibFax.Enabled = se.IsOn;
+            txtCalibTel.Text = txtCalibAddress.Text = txtCalibCompany.Text = txtCalibFax.Text = null;
         }
     }
 }

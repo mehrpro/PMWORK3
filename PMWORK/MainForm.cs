@@ -9,6 +9,7 @@ using System.Linq;
 using PMWORK.Entities;
 using PMWORK.Repository;
 using System;
+using PMWORK.SensorForm;
 
 namespace PMWORK
 {
@@ -252,7 +253,7 @@ namespace PMWORK
         }
 
         private void btnRepairOut_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-            {
+        {
             foreach (var x in MdiChildren) x.Close();
             var frm = _container.GetInstance<RequestListForm333>();
             frm.Container = _container;
@@ -261,6 +262,13 @@ namespace PMWORK
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
-            }
         }
+
+        private void btnCounterDevice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = _container.GetInstance<CounterDeviceForm>();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
+        }
+    }
 }

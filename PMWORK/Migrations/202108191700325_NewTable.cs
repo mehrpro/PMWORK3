@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class DBCREATE : DbMigration
+    public partial class NewTable : DbMigration
     {
         public override void Up()
         {
@@ -200,6 +200,50 @@
                 .ForeignKey("dbo.Applicants", t => t.Applicant_ID)
                 .Index(t => t.MachinerID_FK)
                 .Index(t => t.Applicant_ID);
+            
+            CreateTable(
+                "dbo.MachineryCounterDevices",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        MachineryID_FK = c.Int(nullable: false),
+                        SubCounterDeviceID_FK = c.Int(nullable: false),
+                        IsActive = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.SubCounterDevices", t => t.SubCounterDeviceID_FK)
+                .ForeignKey("dbo.Machineries", t => t.MachineryID_FK)
+                .Index(t => t.MachineryID_FK)
+                .Index(t => t.SubCounterDeviceID_FK);
+            
+            CreateTable(
+                "dbo.SubCounterDevices",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        TerminalNumber = c.String(nullable: false, maxLength: 250),
+                        TypeCounter = c.String(nullable: false, maxLength: 250),
+                        CounterDeviceID_FK = c.Int(nullable: false),
+                        Description = c.String(maxLength: 250),
+                        IsActive = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.CounterDevices", t => t.CounterDeviceID_FK)
+                .Index(t => t.CounterDeviceID_FK);
+            
+            CreateTable(
+                "dbo.CounterDevices",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        CounterTitle = c.String(maxLength: 250),
+                        ApplicatinID_FK = c.Int(nullable: false),
+                        Description = c.String(maxLength: 250),
+                        IsActive = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Applicants", t => t.ApplicatinID_FK)
+                .Index(t => t.ApplicatinID_FK);
             
             CreateTable(
                 "dbo.PowerElectricalMachineries",
@@ -410,6 +454,20 @@
                     })
                 .PrimaryKey(t => t.ID);
             
+            CreateTable(
+                "dbo.TimeRecodings",
+                c => new
+                    {
+                        ID = c.Long(nullable: false, identity: true),
+                        SubCounterDeviceID_FK = c.Int(nullable: false),
+                        TotalMin = c.Int(nullable: false),
+                        Registerd = c.DateTime(nullable: false),
+                        IsActive = c.Boolean(nullable: false),
+                        IsRecord = c.Boolean(nullable: false),
+                        IsDelete = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
         }
         
         public override void Down()
@@ -417,6 +475,7 @@
             DropForeignKey("dbo.RequestRepairs", "ApplicantID_FK", "dbo.Applicants");
             DropForeignKey("dbo.Machineries", "ApplicantID_FK", "dbo.Applicants");
             DropForeignKey("dbo.IdentityMachineries", "Applicant_ID", "dbo.Applicants");
+            DropForeignKey("dbo.CounterDevices", "ApplicatinID_FK", "dbo.Applicants");
             DropForeignKey("dbo.SubGroups", "CompanyID_FK", "dbo.Companies");
             DropForeignKey("dbo.RequestRepairs", "CompanyID_FK", "dbo.Companies");
             DropForeignKey("dbo.Groups", "CompanyID_FK", "dbo.Companies");
@@ -439,6 +498,9 @@
             DropForeignKey("dbo.ServicePeriodes", "UnitID_FK", "dbo.UnitOfMeasurements");
             DropForeignKey("dbo.ConsumableParts", "UnitID_FK", "dbo.UnitOfMeasurements");
             DropForeignKey("dbo.PowerElectricalMachineries", "MachineryID_FK", "dbo.Machineries");
+            DropForeignKey("dbo.MachineryCounterDevices", "MachineryID_FK", "dbo.Machineries");
+            DropForeignKey("dbo.MachineryCounterDevices", "SubCounterDeviceID_FK", "dbo.SubCounterDevices");
+            DropForeignKey("dbo.SubCounterDevices", "CounterDeviceID_FK", "dbo.CounterDevices");
             DropForeignKey("dbo.IdentityMachineries", "MachinerID_FK", "dbo.Machineries");
             DropForeignKey("dbo.SubGroups", "GroupID_FK", "dbo.Groups");
             DropForeignKey("dbo.Codings", "SubGroupID_FK", "dbo.SubGroups");
@@ -465,6 +527,10 @@
             DropIndex("dbo.RequestRepairs", new[] { "MachineryID_FK" });
             DropIndex("dbo.RequestRepairs", new[] { "CompanyID_FK" });
             DropIndex("dbo.PowerElectricalMachineries", new[] { "MachineryID_FK" });
+            DropIndex("dbo.CounterDevices", new[] { "ApplicatinID_FK" });
+            DropIndex("dbo.SubCounterDevices", new[] { "CounterDeviceID_FK" });
+            DropIndex("dbo.MachineryCounterDevices", new[] { "SubCounterDeviceID_FK" });
+            DropIndex("dbo.MachineryCounterDevices", new[] { "MachineryID_FK" });
             DropIndex("dbo.IdentityMachineries", new[] { "Applicant_ID" });
             DropIndex("dbo.IdentityMachineries", new[] { "MachinerID_FK" });
             DropIndex("dbo.Machineries", new[] { "ApplicantID_FK" });
@@ -482,6 +548,7 @@
             DropIndex("dbo.Cleams", new[] { "UserID_FK" });
             DropIndex("dbo.ApplicationUsers", new[] { "CompanyID_FK" });
             DropIndex("dbo.Applicants", new[] { "CompanyID_FK" });
+            DropTable("dbo.TimeRecodings");
             DropTable("dbo.RepairMen");
             DropTable("dbo.RepairManListeds");
             DropTable("dbo.WorkOrders");
@@ -493,6 +560,9 @@
             DropTable("dbo.ConsumableParts");
             DropTable("dbo.RequestRepairs");
             DropTable("dbo.PowerElectricalMachineries");
+            DropTable("dbo.CounterDevices");
+            DropTable("dbo.SubCounterDevices");
+            DropTable("dbo.MachineryCounterDevices");
             DropTable("dbo.IdentityMachineries");
             DropTable("dbo.Machineries");
             DropTable("dbo.SubGroups");
