@@ -119,6 +119,8 @@ namespace PMWORK.SensorForm
                         PublicClass.ErrorSave(Text);
                     }
                 }
+                dgvSubCounterDevice.DataSource =
+                        await _sensorRepository.GetSubCounterDevicesByCounterDevice(_selectCounterDevice.ID);
             }
             else
             {
