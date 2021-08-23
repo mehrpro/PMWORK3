@@ -30,10 +30,10 @@ namespace PMWORK.SensorForm
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
@@ -159,12 +159,12 @@ namespace PMWORK.SensorForm
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxCounterDevice.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CounterTitle", "مرکز داده")});
-            this.cbxCounterDevice.Size = new System.Drawing.Size(254, 20);
+            this.cbxCounterDevice.Size = new System.Drawing.Size(257, 20);
             this.cbxCounterDevice.StyleController = this.layoutControl1;
             this.cbxCounterDevice.TabIndex = 10;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.cbxCounterDevice, conditionValidationRule5);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxCounterDevice, conditionValidationRule1);
             this.cbxCounterDevice.EditValueChanged += new System.EventHandler(this.cbxCounterDevice_EditValueChanged);
             // 
             // chkIsActive
@@ -174,7 +174,7 @@ namespace PMWORK.SensorForm
             this.chkIsActive.Name = "chkIsActive";
             this.chkIsActive.Parmida_ActivePlusMultiKeys = false;
             this.chkIsActive.Properties.Caption = "فعال";
-            this.chkIsActive.Size = new System.Drawing.Size(254, 19);
+            this.chkIsActive.Size = new System.Drawing.Size(257, 19);
             this.chkIsActive.StyleController = this.layoutControl1;
             this.chkIsActive.TabIndex = 9;
             // 
@@ -183,12 +183,12 @@ namespace PMWORK.SensorForm
             this.txtTerminal.Location = new System.Drawing.Point(338, 60);
             this.txtTerminal.Name = "txtTerminal";
             this.txtTerminal.Parmida_ActivePlusMultiKeys = false;
-            this.txtTerminal.Size = new System.Drawing.Size(255, 20);
+            this.txtTerminal.Size = new System.Drawing.Size(258, 20);
             this.txtTerminal.StyleController = this.layoutControl1;
             this.txtTerminal.TabIndex = 6;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.txtTerminal, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.txtTerminal, conditionValidationRule2);
             // 
             // txtID
             // 
@@ -196,7 +196,7 @@ namespace PMWORK.SensorForm
             this.txtID.Name = "txtID";
             this.txtID.Parmida_ActivePlusMultiKeys = false;
             this.txtID.Properties.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(255, 20);
+            this.txtID.Size = new System.Drawing.Size(258, 20);
             this.txtID.StyleController = this.layoutControl1;
             this.txtID.TabIndex = 4;
             // 
@@ -214,12 +214,12 @@ namespace PMWORK.SensorForm
             this.cbxCompany.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyTitle", "شرکت")});
             this.cbxCompany.Properties.NullText = "";
-            this.cbxCompany.Size = new System.Drawing.Size(255, 20);
+            this.cbxCompany.Size = new System.Drawing.Size(258, 20);
             this.cbxCompany.StyleController = this.layoutControl1;
             this.cbxCompany.TabIndex = 5;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.cbxCompany, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxCompany, conditionValidationRule3);
             this.cbxCompany.EditValueChanged += new System.EventHandler(this.cbxCompany_EditValueChanged);
             // 
             // txtDescription
@@ -252,12 +252,12 @@ namespace PMWORK.SensorForm
             this.cbxType.Properties.NullText = "";
             this.cbxType.Properties.PopupSizeable = false;
             this.cbxType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.cbxType.Size = new System.Drawing.Size(254, 20);
+            this.cbxType.Size = new System.Drawing.Size(257, 20);
             this.cbxType.StyleController = this.layoutControl1;
             this.cbxType.TabIndex = 7;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dx.SetValidationRule(this.cbxType, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dx.SetValidationRule(this.cbxType, conditionValidationRule4);
             // 
             // Root
             // 
@@ -283,7 +283,7 @@ namespace PMWORK.SensorForm
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(327, 24);
             this.layoutControlItem1.Text = "شناسه";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(65, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(62, 13);
             // 
             // emptySpaceItem1
             // 
@@ -300,7 +300,7 @@ namespace PMWORK.SensorForm
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(327, 24);
             this.layoutControlItem2.Text = "شرکت";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(65, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem3
             // 
@@ -308,8 +308,8 @@ namespace PMWORK.SensorForm
             this.layoutControlItem3.Location = new System.Drawing.Point(326, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(327, 24);
-            this.layoutControlItem3.Text = "شماره ترمینال";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(65, 13);
+            this.layoutControlItem3.Text = "Register N.O";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem5
             // 
@@ -319,7 +319,7 @@ namespace PMWORK.SensorForm
             this.layoutControlItem5.Size = new System.Drawing.Size(653, 59);
             this.layoutControlItem5.Text = "توضیحات";
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(65, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem6
             // 
@@ -328,7 +328,7 @@ namespace PMWORK.SensorForm
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(326, 24);
             this.layoutControlItem6.Text = "وضعیت";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(65, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem7
             // 
@@ -337,7 +337,7 @@ namespace PMWORK.SensorForm
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(326, 24);
             this.layoutControlItem7.Text = "مرکزداده";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(65, 13);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem4
             // 
@@ -346,7 +346,7 @@ namespace PMWORK.SensorForm
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(326, 24);
             this.layoutControlItem4.Text = "واحد شمارش";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(65, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(62, 13);
             // 
             // panelControl2
             // 
@@ -474,7 +474,7 @@ namespace PMWORK.SensorForm
             // 
             // colTerminalNumber
             // 
-            this.colTerminalNumber.Caption = "شماره ترمینال";
+            this.colTerminalNumber.Caption = "Register N.O";
             this.colTerminalNumber.FieldName = "TerminalNumber";
             this.colTerminalNumber.MaxWidth = 100;
             this.colTerminalNumber.MinWidth = 100;

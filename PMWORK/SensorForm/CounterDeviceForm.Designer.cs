@@ -56,9 +56,9 @@ namespace PMWORK.SensorForm
             this.colCounterTitle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colApplicatinID_FK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.colIsActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dx = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -80,8 +80,8 @@ namespace PMWORK.SensorForm
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCounterDevice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCounterDevice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -297,7 +297,7 @@ namespace PMWORK.SensorForm
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 186);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(498, 327);
+            this.panelControl2.Size = new System.Drawing.Size(498, 253);
             this.panelControl2.TabIndex = 1;
             // 
             // dgvCounterDevice
@@ -308,7 +308,7 @@ namespace PMWORK.SensorForm
             this.dgvCounterDevice.Name = "dgvCounterDevice";
             this.dgvCounterDevice.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoExEdit1});
-            this.dgvCounterDevice.Size = new System.Drawing.Size(494, 323);
+            this.dgvCounterDevice.Size = new System.Drawing.Size(494, 249);
             this.dgvCounterDevice.TabIndex = 0;
             this.dgvCounterDevice.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCounterDevice});
@@ -429,6 +429,13 @@ namespace PMWORK.SensorForm
             this.colDescription.Visible = true;
             this.colDescription.VisibleIndex = 3;
             // 
+            // repositoryItemMemoExEdit1
+            // 
+            this.repositoryItemMemoExEdit1.AutoHeight = false;
+            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
+            // 
             // colIsActive
             // 
             this.colIsActive.Caption = "وضعیت";
@@ -440,18 +447,11 @@ namespace PMWORK.SensorForm
             this.colIsActive.VisibleIndex = 4;
             this.colIsActive.Width = 60;
             // 
-            // repositoryItemMemoExEdit1
-            // 
-            this.repositoryItemMemoExEdit1.AutoHeight = false;
-            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
-            // 
             // CounterDeviceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 513);
+            this.ClientSize = new System.Drawing.Size(498, 439);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -482,8 +482,8 @@ namespace PMWORK.SensorForm
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCounterDevice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCounterDevice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dx)).EndInit();
             this.ResumeLayout(false);
 
         }

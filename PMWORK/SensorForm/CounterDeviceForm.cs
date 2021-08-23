@@ -51,7 +51,7 @@ namespace PMWORK.SensorForm
             }
         }
 
-        private async void ClearForm()
+        private void ClearForm()
         {
             txtCounterName.Text = txtDescription.Text = txtID.Text = "";
             chkIsActive.Checked = true;

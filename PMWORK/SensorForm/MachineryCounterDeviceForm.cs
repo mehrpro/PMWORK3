@@ -82,7 +82,7 @@ namespace PMWORK.SensorForm
             UpdateList();
         }
 
-        private async void cbxTerminal_EditValueChanged(object sender, EventArgs e)
+        private  void cbxTerminal_EditValueChanged(object sender, EventArgs e)
         {
             _selectTerminal = (SubCounterDevice)cbxTerminal.GetSelectedDataRow();
             if (_selectTerminal == null)

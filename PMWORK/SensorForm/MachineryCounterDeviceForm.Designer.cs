@@ -151,7 +151,7 @@ namespace PMWORK.SensorForm
             this.chkActive.Name = "chkActive";
             this.chkActive.Parmida_ActivePlusMultiKeys = false;
             this.chkActive.Properties.Caption = "فعال";
-            this.chkActive.Size = new System.Drawing.Size(322, 19);
+            this.chkActive.Size = new System.Drawing.Size(299, 19);
             this.chkActive.StyleController = this.layoutControl1;
             this.chkActive.TabIndex = 9;
             // 
@@ -161,7 +161,7 @@ namespace PMWORK.SensorForm
             this.txtID.Name = "txtID";
             this.txtID.Parmida_ActivePlusMultiKeys = false;
             this.txtID.Properties.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(322, 20);
+            this.txtID.Size = new System.Drawing.Size(299, 20);
             this.txtID.StyleController = this.layoutControl1;
             this.txtID.TabIndex = 4;
             // 
@@ -180,7 +180,7 @@ namespace PMWORK.SensorForm
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Coding.Code", "کد دستگاه"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MachineryTitle", "دستگاه")});
             this.cbxMachineryList.Properties.NullText = "";
-            this.cbxMachineryList.Size = new System.Drawing.Size(322, 20);
+            this.cbxMachineryList.Size = new System.Drawing.Size(299, 20);
             this.cbxMachineryList.StyleController = this.layoutControl1;
             this.cbxMachineryList.TabIndex = 8;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -204,7 +204,7 @@ namespace PMWORK.SensorForm
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("UnitOfMeasurements.Unit", "واحد شمارش"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "توضیحات")});
             this.cbxTerminal.Properties.NullText = "";
-            this.cbxTerminal.Size = new System.Drawing.Size(322, 20);
+            this.cbxTerminal.Size = new System.Drawing.Size(299, 20);
             this.cbxTerminal.StyleController = this.layoutControl1;
             this.cbxTerminal.TabIndex = 7;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -226,7 +226,7 @@ namespace PMWORK.SensorForm
             this.cbxCounterDevice.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CounterTitle", "مرکز داده")});
             this.cbxCounterDevice.Properties.NullText = "";
-            this.cbxCounterDevice.Size = new System.Drawing.Size(322, 20);
+            this.cbxCounterDevice.Size = new System.Drawing.Size(299, 20);
             this.cbxCounterDevice.StyleController = this.layoutControl1;
             this.cbxCounterDevice.TabIndex = 6;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -248,7 +248,7 @@ namespace PMWORK.SensorForm
             this.cbxCompany.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyTitle", "شرکت")});
             this.cbxCompany.Properties.NullText = "";
-            this.cbxCompany.Size = new System.Drawing.Size(322, 20);
+            this.cbxCompany.Size = new System.Drawing.Size(299, 20);
             this.cbxCompany.StyleController = this.layoutControl1;
             this.cbxCompany.TabIndex = 5;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -279,7 +279,7 @@ namespace PMWORK.SensorForm
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(368, 24);
             this.layoutControlItem1.Text = "شناسه";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(39, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(62, 13);
             // 
             // emptySpaceItem1
             // 
@@ -296,7 +296,7 @@ namespace PMWORK.SensorForm
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(368, 24);
             this.layoutControlItem2.Text = "شرکت";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(39, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem4
             // 
@@ -304,8 +304,8 @@ namespace PMWORK.SensorForm
             this.layoutControlItem4.Location = new System.Drawing.Point(368, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(368, 24);
-            this.layoutControlItem4.Text = "ترمینال";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(39, 13);
+            this.layoutControlItem4.Text = "Register N.O";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem6
             // 
@@ -314,7 +314,7 @@ namespace PMWORK.SensorForm
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(368, 24);
             this.layoutControlItem6.Text = "وضعیت";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(39, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem3
             // 
@@ -323,7 +323,7 @@ namespace PMWORK.SensorForm
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(368, 24);
             this.layoutControlItem3.Text = "مرکزداده";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(39, 13);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(62, 13);
             // 
             // layoutControlItem5
             // 
@@ -332,7 +332,7 @@ namespace PMWORK.SensorForm
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(368, 24);
             this.layoutControlItem5.Text = "دستگاه";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(39, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(62, 13);
             // 
             // panelControl2
             // 
@@ -340,7 +340,7 @@ namespace PMWORK.SensorForm
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 133);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(760, 398);
+            this.panelControl2.Size = new System.Drawing.Size(760, 244);
             this.panelControl2.TabIndex = 1;
             // 
             // dgvMachineryCounter
@@ -349,7 +349,7 @@ namespace PMWORK.SensorForm
             this.dgvMachineryCounter.Location = new System.Drawing.Point(2, 2);
             this.dgvMachineryCounter.MainView = this.gvMachineryCounter;
             this.dgvMachineryCounter.Name = "dgvMachineryCounter";
-            this.dgvMachineryCounter.Size = new System.Drawing.Size(756, 394);
+            this.dgvMachineryCounter.Size = new System.Drawing.Size(756, 240);
             this.dgvMachineryCounter.TabIndex = 0;
             this.dgvMachineryCounter.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMachineryCounter});
@@ -498,7 +498,7 @@ namespace PMWORK.SensorForm
             // 
             // colMachinery1
             // 
-            this.colMachinery1.Caption = "ترمینال";
+            this.colMachinery1.Caption = "Register N.O";
             this.colMachinery1.FieldName = "SubCounterDevice.TerminalNumber";
             this.colMachinery1.MaxWidth = 100;
             this.colMachinery1.MinWidth = 100;
@@ -522,7 +522,7 @@ namespace PMWORK.SensorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 531);
+            this.ClientSize = new System.Drawing.Size(760, 377);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
